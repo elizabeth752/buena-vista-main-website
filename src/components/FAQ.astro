@@ -1,0 +1,67 @@
+---
+const faqs = [
+  {
+    q: "I'm terrified of going through withdrawal. Will I actually be okay?",
+    a: "Yes — and we take that fear seriously. Medical detox is one of the most important things we do, and we don't rush it or minimize it. Dr. Heise and our nursing team monitor you continuously throughout withdrawal. You won't be alone in a room wondering if what you're feeling is normal. Someone will be checking on you, adjusting your protocol, and managing your comfort at every step. Withdrawal is hard — we're not going to lie to you about that — but you'll be safe, and you won't be going through it alone.",
+  },
+  {
+    q: "I've tried to get sober before and it didn't stick. Why would this time be any different?",
+    a: "That's one of the most honest questions someone can ask, and it deserves an honest answer. A lot of programs treat the substance and ignore everything underneath it — the trauma, the anxiety, the patterns of thinking that were driving the use in the first place. We treat dual diagnosis as a core part of care, not an afterthought. We also don't discharge you and disappear. The aftercare support, alumni check-ins, and continuing care planning are built into what we do — because we know recovery doesn't end at discharge.",
+  },
+  {
+    q: "What if I check in and then change my mind? Can I just leave?",
+    a: "This is a voluntary program. You are not locked in. But here's what we've seen: the moment people want to leave is usually the moment the work is starting to do something. Our clinical team will always have an honest conversation with you about where you are, what's coming up, and what leaving at that stage might mean for your recovery. We won't hold you here against your will — but we will ask you to talk to us before you go.",
+  },
+  {
+    q: "I can't stop worrying about my job. Do I have to tell my employer where I'm going?",
+    a: "No. Under HIPAA, your treatment is completely confidential — your employer has no right to that information and we don't share it. If you need to take time off, you may be eligible for FMLA (Family and Medical Leave Act), which protects your job while you're in treatment without requiring you to disclose the specific reason. We've helped many people navigate this. Just bring it up when you call and we'll walk you through your options.",
+  },
+  {
+    q: "Will people here judge me for how bad things got?",
+    a: "No. Full stop. One of our core values is seeing people clearly — not through the lens of their worst moments, but as who they actually are. The staff at Buena Vista didn't choose this field to judge anyone. They chose it because they believe in people's capacity to change. Whatever brought you here, you won't be made to feel ashamed of it. What happened before you walked through our doors stays where it belongs — in the past.",
+  },
+  {
+    q: "My loved one refuses to get help. What do I do?",
+    a: "This might be the hardest position there is — loving someone who isn't ready yet. The first thing to know is that you are not helpless. You can call us and talk through intervention options, boundary-setting, and what to do when (not if) they become ready. We also want to remind you: taking care of yourself right now is not selfish. It's what allows you to still be there when they are ready. Call us — this conversation is for families too.",
+  },
+  {
+    q: "I'm worried about my phone and being cut off from everything.",
+    a: "You're not going dark. Technology access is available every day from 4 PM to 10 PM — so you can call your kids, text your partner, check in with the things that matter. That intentional structure exists because the therapeutic day needs focus, not because we think you need to be punished or isolated. Most people find they actually appreciate the boundary after a few days — it turns out having hours where the world isn't pulling at you feels less like restriction and more like relief.",
+  },
+  {
+    q: "What if my insurance barely covers this — or I don't have great coverage?",
+    a: "Call us before you assume the answer is no. We're in-network with Aetna, Blue Cross Blue Shield, Cigna, Humana, and UnitedHealthcare, and we also accept Medicaid. Our billing team runs an instant verification and gives you a straight answer about what's covered. If there's a gap, we'll talk through it honestly — including cash pay options and what those look like. We'd rather have that conversation with you now than have cost be the reason you didn't get help.",
+  },
+];
+---
+<section class="bg-cream py-[50px]">
+  <div class="max-w-4xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="text-center mb-[30px]">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center justify-center gap-2">
+        <span class="w-6 h-px bg-gold inline-block"></span>
+        Real Questions, Real Answers
+        <span class="w-6 h-px bg-gold inline-block"></span>
+      </p>
+      <h2 class="font-display text-black mb-4">The Things People Actually Want to Know</h2>
+      <p class="font-body text-black text-base leading-relaxed">
+        No talking points. No corporate non-answers. Just honest responses to the questions people are actually afraid to ask.
+      </p>
+    </div>
+
+    <div class="space-y-3">
+      {faqs.map((faq, i) => (
+        <details class="bg-white rounded-xl border border-cream-soft shadow-sm group" open={i === 0}>
+          <summary class="flex items-start justify-between px-5 py-5 cursor-pointer gap-4">
+            <span class="font-body font-medium text-black text-sm md:text-base leading-snug">{faq.q}</span>
+            <span class="shrink-0 w-7 h-7 rounded-full bg-cream flex items-center justify-center text-black font-bold text-xl leading-none mt-0.5 transition-transform group-open:rotate-45 select-none">
+              +
+            </span>
+          </summary>
+          <div class="px-5 pb-5">
+            <p class="font-body text-black text-sm leading-relaxed border-t border-cream-soft pt-4">{faq.a}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

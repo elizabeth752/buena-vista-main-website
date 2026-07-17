@@ -1,0 +1,61 @@
+---
+---
+<section class="bg-cream py-[50px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-14 items-center">
+
+      <!-- Left: Copy -->
+      <div>
+        <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+          <span class="w-6 h-px bg-gold inline-block"></span>
+          The Environment
+        </p>
+        <h2 class="font-display text-black mb-6">
+          A Space Built for Recovery Work
+        </h2>
+
+        <ul class="space-y-4">
+          {[
+            ['Private rooms with en suite bathrooms', 'Your space is yours. You won\'t share a room.'],
+            ['Meals prepared daily by a dedicated culinary team', 'Real food, made with care — because nutrition is part of healing.'],
+            ['Technology access from 4 PM – 10 PM', 'Stay connected to your family and your life, in a structured way.'],
+            ['Outdoor lounge, recreation rooms, fitness access', 'Because your body needs to heal alongside your mind.'],
+            ['Wheelchair accessible · open 24 hours, 365 days', 'We\'re here whenever you\'re ready — day or night.'],
+          ].map(([title, desc]) => (
+            <li class="flex gap-4">
+              <div class="w-6 h-6 rounded-full bg-gold/10 flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-3.5 h-3.5 text-gold" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <div>
+                <p class="font-body font-bold text-black text-sm">{title}</p>
+                <p class="font-body text-black text-sm">{desc}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+
+        <div class="mt-10">
+          <a href="tel:8883625576" class="bg-navy hover:bg-navy-mid text-white font-bold px-7 py-3.5 rounded transition-colors font-body tracking-wide inline-block">
+            Talk to Our Team
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Facility Photo -->
+      <div class="relative">
+        <div class="rounded-2xl overflow-hidden shadow-2xl aspect-[4/3]">
+          <img
+            src="/Asset/stock%20photo/Desktop%20Dimensions/Facility/Double-height%20social%20atrium%20with%20mixed%20seating%20and%20floor-to-ceiling%20windows.png"
+            alt="Buena Vista Recovery — welcoming social atrium with natural light"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div class="absolute -bottom-4 -left-4 w-24 h-24 bg-gold/20 rounded-2xl -z-10"></div>
+        <div class="absolute -top-4 -right-4 w-16 h-16 border-2 border-gold/30 rounded-2xl -z-10"></div>
+      </div>
+
+    </div>
+  </div>
+</section>

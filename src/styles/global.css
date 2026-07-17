@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Qurova';
+  src: url('/Fonts/Qurova.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --color-navy-deep: #0F1E2E;
+  --color-navy: #002B5C;
+  --color-navy-mid: #2D3F50;
+  --color-gold: #B9975B;
+  --color-gold-dark: #8C6A28;
+  --color-cream: #F8F5F0;
+  --color-cream-soft: #F0EBE3;
+  --color-ink: #2E2E2E;
+  --color-muted: #6B6B6B;
+
+  --font-family-display: 'Qurova', sans-serif;
+  --font-family-body: 'Montserrat', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-body);
+  color: var(--color-ink);
+  background-color: var(--color-cream);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-display);
+  letter-spacing: 0.02em;
+  text-wrap: balance;
+}
+
+h2 {
+  font-size: 36px;
+  line-height: 40px;
+}
+
+@media (min-width: 768px) {
+  h2 {
+    font-size: 48px;
+    line-height: 48px;
+  }
+}
+
+p {
+  text-wrap: pretty;
+}
+
+details > summary { list-style: none; cursor: pointer; }
+details > summary::-webkit-details-marker { display: none; }
+details[open] .faq-plus { display: none; }
+details:not([open]) .faq-minus { display: none; }

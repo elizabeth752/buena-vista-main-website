@@ -1,0 +1,59 @@
+---
+const substances = [
+  { name: 'Alcohol Addiction', desc: 'Comprehensive detox and residential treatment for alcohol dependence, including medically supervised withdrawal and behavioral therapy.' },
+  { name: 'Opioid Addiction', desc: 'Evidence-based care for opioid use disorder — heroin, fentanyl, prescription opioids — with clinical support at every level.' },
+  { name: 'Stimulant Addiction', desc: 'Treatment for cocaine, methamphetamine, and prescription stimulant misuse, with a focus on behavioral health and relapse prevention.' },
+  { name: 'Benzodiazepine Dependence', desc: 'Medically supervised detox and structured therapy for benzo dependency — one of the most complex withdrawal processes we safely manage.' },
+  { name: 'Cannabis Use Disorder', desc: 'Targeted support for those struggling with cannabis dependence, including dual diagnosis evaluation for underlying anxiety and mood disorders.' },
+  { name: 'Prescription Drug Misuse', desc: 'Individualized care for misuse of prescription medications beyond opioids and benzos, including sleep aids and muscle relaxants.' },
+];
+
+const conditions = [
+  'Mood Disorders', 'Anxiety Disorders', 'Dual Diagnosis / Co-occurring Disorders', 'Suicidality', 'Self-Harm', 'PTSD',
+];
+---
+<section id="treatment" class="bg-navy-deep text-white py-[50px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+
+    <div class="text-center mb-14">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center justify-center gap-2">
+        <span class="w-6 h-px bg-gold inline-block"></span>
+        Clinical Scope
+        <span class="w-6 h-px bg-gold inline-block"></span>
+      </p>
+      <h2 class="font-display text-white mb-4">
+        Find Help for What You're Facing Right Now
+      </h2>
+      <p class="font-body text-white/70 max-w-2xl mx-auto text-base leading-relaxed">
+        We treat a wide range of substance use disorders and co-occurring mental health conditions. If you don't see your situation listed, call us — we'll let you know honestly if we can help.
+      </p>
+    </div>
+
+    <!-- Substances -->
+    <div class="mb-12">
+      <h3 class="font-display text-2xl text-gold mb-6 text-center">Substance Use Disorders</h3>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {substances.map(s => (
+          <div class="bg-white border border-cream-soft rounded-xl p-5 sm:p-6 shadow-sm hover:shadow-md transition-shadow">
+            <h4 class="font-display text-xl text-black mb-2">{s.name}</h4>
+            <p class="font-body text-black text-sm leading-relaxed">{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Mental Health -->
+    <div class="bg-white border border-cream-soft rounded-2xl p-5 sm:p-8 shadow-sm">
+      <h3 class="font-display text-2xl text-gold mb-6">Mental Health Conditions Treated</h3>
+      <div class="flex flex-wrap gap-3 mb-6">
+        {conditions.map(c => (
+          <span class="bg-navy text-white font-body text-sm font-semibold px-4 py-2 rounded-full whitespace-nowrap shrink-0">{c}</span>
+        ))}
+      </div>
+      <p class="font-body text-black text-sm leading-relaxed">
+        Our licensed clinical team evaluates and treats co-occurring mental health conditions alongside substance use disorders — because true recovery requires treating the whole person.
+      </p>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,65 @@
+---
+const team = [
+  {
+    photo: '/Asset/Our%20Team/Darren-Lee-M.A.-LPC.webp',
+    name: 'Darren Lee',
+    credentials: 'M.A., LPC',
+    title: 'Clinical Director',
+  },
+  {
+    photo: '/Asset/Our%20Team/Will-Heise-MD-FACMT.webp',
+    name: 'Will Heise',
+    credentials: 'MD, FACMT',
+    title: 'Chief Medical Officer',
+  },
+  {
+    photo: '/Asset/Our%20Team/Breana-Ramirez-BSN-RN.webp',
+    name: 'Breana Ramirez',
+    credentials: 'BSN, RN',
+    title: 'Director of Nursing',
+  },
+  {
+    photo: '/Asset/Our%20Team/Wade-Muhlhauser.webp',
+    name: 'Wade Muhlhauser',
+    credentials: '',
+    title: 'CEO & Partner',
+  },
+];
+---
+<section id="team" class="bg-white py-[50px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center justify-center gap-2">
+        <span class="w-6 h-px bg-gold inline-block"></span>
+        The People Behind Your Care
+        <span class="w-6 h-px bg-gold inline-block"></span>
+      </p>
+      <h2 class="font-display text-black mb-4">
+        Experienced. Licensed. In Your Corner.
+      </h2>
+      <p class="font-body text-black max-w-2xl mx-auto text-base leading-relaxed">
+        Putting your life — or your loved one's life — in someone else's hands is an enormous act of trust. Here's who's on the other side of that trust.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      {team.map(member => (
+        <div class="group bg-cream rounded-xl overflow-hidden hover:shadow-xl transition-shadow w-[320px] mx-auto sm:w-auto sm:mx-0">
+          <div class="aspect-[3/4] overflow-hidden">
+            <img
+              src={member.photo}
+              alt={`${member.name} — ${member.title} at Buena Vista Recovery`}
+              class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+          <div class="p-5">
+            <p class="text-gold font-body text-[10px] font-bold tracking-widest uppercase mb-1">{member.title}</p>
+            <h3 class="font-body text-base text-black whitespace-nowrap">
+              {member.name}{member.credentials && <span class="text-black text-sm">, {member.credentials}</span>}
+            </h3>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

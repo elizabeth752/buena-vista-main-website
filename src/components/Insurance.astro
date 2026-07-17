@@ -1,0 +1,42 @@
+---
+const insurers = [
+  { name: 'Aetna', logo: '/Asset/Insurances/Aetna.svg' },
+  { name: 'Blue Cross Blue Shield', logo: '/Asset/Insurances/BCBS.svg' },
+  { name: 'Cigna', logo: '/Asset/Insurances/Cigna.svg' },
+  { name: 'Humana', logo: '/Asset/Insurances/Humana.svg' },
+  { name: 'Medicare', logo: '/Asset/Insurances/Medicare.svg' },
+  { name: 'UnitedHealthcare', logo: '/Asset/Insurances/United%20Healthcare.svg' },
+];
+---
+<section id="insurance" class="bg-cream py-[50px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="text-center mb-[30px] sm:mb-12">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center justify-center gap-2">
+        <span class="w-6 h-px bg-gold inline-block"></span>
+        Coverage
+        <span class="w-6 h-px bg-gold inline-block"></span>
+      </p>
+      <h2 class="font-display text-black mb-4">
+        Most Plans Accepted & Verified in Minutes
+      </h2>
+      <p class="font-body text-black max-w-xl mx-auto text-base leading-relaxed">
+        We work with most major insurance carriers to make treatment accessible. Use our online form or call us to verify your benefits at no cost — and with no obligation to commit.
+      </p>
+    </div>
+
+    <!-- Insurance logos -->
+    <div class="flex flex-wrap justify-center items-center gap-3 sm:gap-8 mb-[30px] sm:mb-12">
+      {insurers.map(ins => (
+        <div class="flex items-center justify-center bg-white rounded-xl px-6 py-4 shadow-sm border border-cream-soft hover:shadow-md transition-shadow" style="min-width:120px; min-height:60px;">
+          <img src={ins.logo} alt={ins.name} class="h-8 max-w-[110px] object-contain" />
+        </div>
+      ))}
+    </div>
+
+    <div class="text-center">
+      <a href="#verify" class="inline-block bg-navy hover:bg-navy-mid text-white font-bold px-9 py-4 rounded transition-colors font-body tracking-wide">
+        Verify Your Coverage
+      </a>
+    </div>
+  </div>
+</section>
