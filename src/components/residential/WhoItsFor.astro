@@ -1,0 +1,104 @@
+---
+const signs = [
+  'You\'ve tried to stop on your own, more than once, and it hasn\'t held',
+  'Your home or daily environment makes staying sober feel impossible',
+  'Withdrawal has been dangerous, frightening, or medically risky before',
+  'Substance use is tangled up with trauma, anxiety, depression, or grief',
+  'Outpatient treatment hasn\'t been enough structure to keep you steady',
+  'You need to step fully out of your life for a while to get your footing back',
+];
+
+const substances = [
+  'Alcohol',
+  'Fentanyl & other opioids',
+  'Methamphetamine',
+  'Benzodiazepines',
+  'Cocaine',
+  'Kratom',
+];
+
+const conditions = [
+  'PTSD & complex trauma',
+  'Bipolar disorder',
+  'Anxiety',
+  'Depression',
+  'Borderline personality disorder',
+  'Grief & life stress',
+];
+---
+<section id="who-its-for" class="bg-white py-[50px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+
+    <div class="mb-14 max-w-3xl">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+        <span class="w-6 h-px bg-gold inline-block"></span>
+        Who Residential Is For
+      </p>
+      <h2 class="font-display text-charcoal mb-4">
+        Is this the right level of care?
+      </h2>
+      <p class="font-body text-charcoal max-w-2xl text-[17px] leading-[29px]">
+        There's no test to pass and no bottom you have to hit first. But if several of these sound like your life right now, residential is likely the level of care that gives you a real chance.
+      </p>
+    </div>
+
+    <!-- Signs -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-16">
+      {signs.map(sign => (
+        <div class="flex gap-4 bg-cream rounded-xl p-6">
+          <div class="w-6 h-6 rounded-full bg-gold/15 flex items-center justify-center shrink-0 mt-0.5">
+            <svg class="w-3.5 h-3.5 text-gold" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+          </div>
+          <p class="font-body text-charcoal text-[16px] leading-[26px]">{sign}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- What we treat -->
+    <div class="mb-10 max-w-3xl">
+      <h3 class="font-display text-3xl text-charcoal mb-3">What we treat</h3>
+      <p class="font-body text-charcoal max-w-2xl text-[17px] leading-[29px]">
+        We treat substance use — and, just as importantly, the mental health conditions that so often come with it. When both show up together, treating them at the same time gives you the best chance at lasting recovery.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-cream rounded-xl p-8 border border-cream-soft">
+        <p class="font-body text-xs font-bold uppercase tracking-[0.18em] text-gold mb-5">Substances</p>
+        <ul class="grid sm:grid-cols-2 gap-x-6 gap-y-3">
+          {substances.map(s => (
+            <li class="flex items-center gap-3 font-body text-charcoal text-sm">
+              <span class="w-1.5 h-1.5 rounded-full bg-gold shrink-0"></span>
+              {s}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="bg-cream rounded-xl p-8 border border-cream-soft">
+        <p class="font-body text-xs font-bold uppercase tracking-[0.18em] text-gold mb-5">Co-Occurring Mental Health</p>
+        <ul class="grid sm:grid-cols-2 gap-x-6 gap-y-3">
+          {conditions.map(c => (
+            <li class="flex items-center gap-3 font-body text-charcoal text-sm">
+              <span class="w-1.5 h-1.5 rounded-full bg-navy shrink-0"></span>
+              {c}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <!-- Scope boundary — honest, keeps the page compliant -->
+    <div class="mt-10 flex gap-4 bg-navy-deep rounded-xl p-7 text-white max-w-4xl mx-auto">
+      <svg class="w-6 h-6 text-gold shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"/>
+      </svg>
+      <p class="font-body text-white/85 text-[16px] leading-[26px]">
+        <strong class="text-white font-bold">Being straight with you about our scope.</strong> We're an inpatient detox and residential provider for substance use, with mental health support built in alongside it. We don't offer standalone mental-health-only treatment or court-ordered outpatient evaluations. If that's what you need, tell us when you call and we'll point you toward the right place rather than waste your time.
+      </p>
+    </div>
+
+  </div>
+</section>

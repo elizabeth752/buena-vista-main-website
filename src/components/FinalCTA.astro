@@ -1,29 +1,110 @@
 ---
----
-<section
-  class="relative text-white pt-[50px] pb-[40px] overflow-hidden"
-  style="background-image: linear-gradient(to bottom, rgba(10,20,35,0.80) 0%, rgba(10,20,35,0.88) 100%), url('/Asset/stock%20photo/Desktop%20Dimensions/CTA-Image.png'); background-size: cover; background-position: center;"
->
-  <div class="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8 text-center">
-    <h2 class="font-display text-white mb-6">
-      Recovery Starts With One Honest Conversation
-    </h2>
-    <p class="font-body text-white/80 text-base md:text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
-      You don't need to have everything figured out before you call. Our team is available right now — day or night — to answer your questions, check your coverage, and help you take the next step.
-    </p>
-    <a href="tel:8883625576" class="inline-flex items-center gap-3 bg-white hover:bg-cream text-black font-bold px-10 py-5 rounded transition-colors font-body tracking-wide text-base">
-      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
-      </svg>
-      Call Now — (888) 362-5576
-    </a>
-  </div>
+import Horizon from './Horizon.astro';
 
-  <!-- Footer bar -->
-  <div class="mt-16 border-t border-white/10 pt-8">
-    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-body text-white/40">
-      <img src="/Asset/stock%20photo/Logo%20Buena%20Vista.svg" alt="Buena Vista Health & Recovery Centers" class="h-6 brightness-0 invert opacity-40" />
-      <p>© {new Date().getFullYear()} Buena Vista Health & Recovery Centers · 3033 S Arizona Ave, Chandler, AZ 85286</p>
+const accreditations = [
+  { src: '/Asset/Accreditations/The%20Joint%20Commission.svg', alt: 'The Joint Commission Accredited' },
+  { src: '/Asset/Accreditations/psychology_today%201.svg',      alt: 'Psychology Today Verified' },
+  { src: '/Asset/Accreditations/Legit.svg',                     alt: 'LegitScript Certified' },
+  { src: '/Asset/Accreditations/NAATP.svg',                     alt: 'NAATP Member' },
+  { src: '/Asset/Accreditations/BBB.svg',                       alt: 'BBB Accredited' },
+];
+
+const nav = [
+  ['Programs', '/#programs'],
+  ['Residential treatment', '/residential-treatment'],
+  ['What we treat', '/#treatment'],
+  ['Our team', '/#team'],
+  ['Insurance', '/#insurance'],
+  ['Locations', '/#location'],
+];
+---
+<!-- Closing CTA. One soft ridge rises behind it — the motif's second and final
+     appearance on the page. -->
+<section class="bg-cream">
+  <Horizon variant="ridge" class="-mb-px" />
+
+  <div class="bg-sand">
+    <div class="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8 py-[70px]">
+      <h2 class="font-display text-charcoal mb-5">
+        Start with one call. We'll take it from there.
+      </h2>
+      <p class="font-body text-charcoal text-[20px] leading-[33px] mb-9">
+        Someone real answers, any hour of the day or night. There is nothing you have to decide on that first call, and nothing you need to have worked out before you make it.
+      </p>
+      <a href="tel:8883625576" class="inline-flex items-center justify-center gap-3 bg-gold hover:bg-gold-dark text-navy font-semibold h-14 px-9 rounded-lg transition-colors font-body text-[17px]">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+        </svg>
+        <span class="tel-number">Call (888) 362-5576</span>
+      </a>
     </div>
   </div>
 </section>
+
+<footer class="bg-navy text-white">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-14">
+
+    <div class="grid md:grid-cols-[1.3fr_1fr_1.2fr] gap-12 mb-12">
+
+      <!-- Brand -->
+      <div>
+        <img src="/Asset/stock%20photo/Logo%20Buena%20Vista.svg" alt="Buena Vista Health &amp; Recovery Centers" class="h-9 brightness-0 invert mb-5" />
+        <p class="font-body text-white/70 text-[16px] leading-[26px] max-w-sm">
+          Medically supervised detox and residential treatment in Chandler and Tucson, Arizona — in a place that treats you like a person, not a number.
+        </p>
+        <a href="tel:8883625576" class="inline-block font-body font-semibold text-white text-[20px] mt-5 tel-number hover:opacity-70 transition-opacity">
+          (888) 362-5576
+        </a>
+      </div>
+
+      <!-- Navigation -->
+      <nav aria-label="Footer">
+        <p class="font-body text-gold text-xs font-bold tracking-[0.18em] uppercase mb-5">Explore</p>
+        <ul class="space-y-3">
+          {nav.map(([label, href]) => (
+            <li>
+              <a href={href} class="font-body text-white/70 hover:text-white text-[16px] transition-colors">{label}</a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      <!-- Locations & crisis -->
+      <div>
+        <p class="font-body text-gold text-xs font-bold tracking-[0.18em] uppercase mb-5">Our locations</p>
+        <p class="font-body text-white/70 text-[16px] leading-[26px] mb-2">3033 S Arizona Ave<br />Chandler, AZ 85286</p>
+        <p class="font-body text-white/70 text-[16px] leading-[26px] mb-6">5151 E Pima St<br />Tucson, AZ</p>
+
+        <div class="border-l-2 border-gold pl-4">
+          <p class="font-body font-semibold text-white text-[16px] mb-1">In a crisis right now?</p>
+          <p class="font-body text-white/70 text-[15px] leading-[24px]">
+            Call or text <a href="tel:988" class="text-gold font-semibold hover:opacity-70 transition-opacity tel-number">988</a> for the Suicide &amp; Crisis Lifeline, any hour. If someone is in immediate danger, call 911.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Accreditation -->
+    <div class="flex flex-wrap items-center gap-3 pb-10 border-b border-white/10">
+      {accreditations.map(a => (
+        <div class="bg-white rounded-lg px-3 py-2 flex items-center justify-center" style="min-width:76px; height:48px;">
+          <img src={a.src} alt={a.alt} class="h-8 max-w-[84px] object-contain" loading="lazy" />
+        </div>
+      ))}
+    </div>
+
+    <!-- Legal -->
+    <div class="pt-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <p class="font-body text-white/50 text-[13px] leading-[20px]">
+        © {new Date().getFullYear()} Buena Vista Health &amp; Recovery Centers. All rights reserved.
+      </p>
+      <ul class="flex flex-wrap gap-x-6 gap-y-2">
+        {['Privacy policy', 'Notice of privacy practices', 'Accessibility', 'Terms'].map(item => (
+          <li><a href="#" class="font-body text-white/50 hover:text-white/80 text-[13px] transition-colors">{item}</a></li>
+        ))}
+      </ul>
+    </div>
+
+  </div>
+</footer>

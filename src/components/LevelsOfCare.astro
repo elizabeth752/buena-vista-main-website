@@ -3,45 +3,44 @@ const levels = [
   {
     image: '/Asset/stock%20photo/Desktop%20Dimensions/Medical%20Detox.png',
     label: 'Level of Care · 01',
-    title: 'Medical Detox',
+    title: 'Medical detox',
     desc: 'Safe, medically supervised withdrawal management for alcohol, opioids, benzodiazepines, and other substances. Our clinical team monitors you around the clock to manage symptoms, minimize discomfort, and prepare your body for the next stage of recovery.',
-    details: ['24/7 medical supervision', 'Individualized withdrawal protocols', 'Up to 35 beds available', 'Average LOS: 5–7 days (Commercial), 3 days (Medicaid)'],
+    details: ['Nursing on site around the clock', 'A withdrawal plan built for your body, not a protocol sheet', 'Medication to keep you comfortable', 'A private room with a private bathroom'],
   },
   {
     image: '/Asset/stock%20photo/Desktop%20Dimensions/Inpatient%20Residential%20Treatment.png',
     label: 'Level of Care · 02',
-    title: 'Inpatient Residential Treatment',
+    title: 'Inpatient residential treatment',
     desc: 'Structured, immersive residential care for adults seeking lasting recovery. Daily individual therapy, group sessions, psychoeducation, and clinical programming in a supportive, distraction-free environment with private rooms and meals prepared by a dedicated culinary team.',
-    details: ['Up to 39 residential beds', 'Daily individual & group therapy', 'Co-ed with gender-specific housing', 'Average LOS: 25–30 days (Commercial), 30–45 days (Medicaid)'],
+    details: ['Group therapy twice a day, plus one-on-one sessions', 'Meals prepared daily by a dedicated culinary team', 'A case manager planning your next step from day one', 'Evenings to call the people who matter to you'],
   },
   {
     image: '/Asset/stock%20photo/Desktop%20Dimensions/Outpatient%20Continuum.png',
     label: 'Level of Care · 03',
-    title: 'Outpatient Continuum',
+    title: 'Outpatient continuum',
     desc: 'Flexible step-down programs including Intensive Outpatient (IOP), standard Outpatient Therapy, and Licensed Primary Mental Health services — designed to support your continued recovery as you reintegrate into daily life.',
     details: ['Intensive Outpatient (IOP)', 'Standard Outpatient Program', 'Licensed Primary Mental Health', 'Ongoing relapse prevention planning'],
   },
 ];
 ---
-<section id="programs" class="bg-cream-soft py-[50px]">
+<section id="programs" class="bg-sand py-[50px]">
   <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-    <div class="text-center mb-6 sm:mb-14">
-      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center justify-center gap-2">
+    <div class="mb-6 sm:mb-14 max-w-3xl">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
         <span class="w-6 h-px bg-gold inline-block"></span>
         Levels of Care
-        <span class="w-6 h-px bg-gold inline-block"></span>
       </p>
-      <h2 class="font-display text-black mb-4">
-        A Clear Path: Detox, Residential & Beyond
+      <h2 class="font-display text-charcoal mb-4">
+        A clear path: detox, residential, and beyond
       </h2>
-      <p class="font-body text-black max-w-2xl mx-auto text-base leading-relaxed">
+      <p class="font-body text-charcoal max-w-2xl text-[17px] leading-[29px]">
         Every step of our program is designed to meet you where you are and move you forward with purpose. From first contact to aftercare, we're with you.
       </p>
     </div>
 
     <div class="space-y-8">
       {levels.map((level, i) => (
-        <div class={`grid lg:grid-cols-2 gap-0 rounded-2xl overflow-hidden shadow-lg ${i % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
+        <div class={`grid lg:grid-cols-2 gap-0 rounded-xl overflow-hidden shadow-lg ${i % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
           <div class={`relative aspect-[16/9] lg:aspect-auto ${i % 2 === 1 ? 'lg:order-2' : ''}`}>
             <img
               src={level.image}
@@ -51,11 +50,11 @@ const levels = [
           </div>
           <div class={`bg-white p-5 md:p-10 flex flex-col justify-center ${i % 2 === 1 ? 'lg:order-1' : ''}`}>
             <p class="text-gold font-body text-xs font-bold tracking-[0.15em] uppercase mb-3">{level.label}</p>
-            <h3 class="font-display text-3xl md:text-4xl text-black mb-4">{level.title}</h3>
-            <p class="font-body text-black text-sm leading-relaxed mb-6">{level.desc}</p>
+            <h3 class="font-display text-3xl md:text-4xl text-charcoal mb-4">{level.title}</h3>
+            <p class="font-body text-charcoal text-[17px] leading-[29px] mb-6">{level.desc}</p>
             <ul class="space-y-2 mb-8">
               {level.details.map(d => (
-                <li class="flex items-center gap-2 text-sm font-body text-black">
+                <li class="flex items-start gap-2.5 text-[16px] leading-[26px] font-body text-charcoal">
                   <svg class="w-4 h-4 text-gold shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                   </svg>
@@ -63,8 +62,8 @@ const levels = [
                 </li>
               ))}
             </ul>
-            <a href="tel:8883625576" class="self-start bg-navy hover:bg-navy-mid text-white font-bold px-7 py-3 rounded transition-colors font-body tracking-wide text-sm">
-              Begin Treatment
+            <a href="tel:8883625576" class="self-start bg-teal hover:bg-teal-dark text-white font-bold px-7 py-3 rounded-lg transition-colors font-body tracking-wide text-sm">
+              Ask about this program
             </a>
           </div>
         </div>

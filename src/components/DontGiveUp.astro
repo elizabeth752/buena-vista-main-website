@@ -1,61 +1,66 @@
 ---
+// The two audiences, answered directly. This sits high on the page because a
+// frightened person and a worried parent both need to be spoken to before
+// anything else. Specifics replace census metrics — a family member does not
+// care about bed count.
+const specifics = [
+  ['Your own room', "A private room with a private bathroom. You won't share, and you won't sleep on a ward."],
+  ['Meals made daily', 'Catered by a dedicated culinary team, with a rotating menu and dietary needs accommodated.'],
+  ["Staff who've been there", "Many of the people who will care for you are in recovery themselves. The empathy isn't training."],
+  ['One team, start to finish', 'Detox and residential under one roof, with the same case manager from your first day.'],
+];
 ---
-<section
-  class="relative bg-navy-deep text-white py-[50px] overflow-hidden"
-  style="background-image: linear-gradient(to right, rgba(10,20,35,0.96) 50%, rgba(10,20,35,0.70) 100%), url('/Asset/stock%20photo/Desktop%20Dimensions/CTA.png'); background-size: cover; background-position: center;"
->
-  <div class="absolute left-0 top-0 bottom-0 w-1 bg-gold"></div>
+<section class="bg-cream py-[60px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-14 lg:gap-20 items-start">
 
-  <div class="max-w-7xl mx-auto px-[25px] sm:px-6 lg:px-8">
-    <div class="grid lg:grid-cols-2 gap-16 items-center">
-
-      <!-- Left: Copy -->
+      <!-- Left: the two audiences -->
       <div>
-        <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-6 flex items-center gap-2">
+        <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-5 flex items-center gap-2">
           <span class="w-6 h-px bg-gold inline-block"></span>
-          Our Promise
+          Wherever you're starting from
         </p>
-        <h2 class="font-display mb-8">
-          We Don't Give Up On People
+        <h2 class="font-display text-charcoal mb-8">
+          You don't have to have it figured out before you call
         </h2>
 
-        <!-- For the person seeking help -->
-        <div class="mb-8 border-l-2 border-gold/40 pl-5">
-          <p class="font-body text-white/85 text-base leading-relaxed mb-3">
-            <strong class="text-white font-bold">If you're the one struggling:</strong> you don't have to have everything figured out before you call. You don't have to be at rock bottom. You don't have to be certain you're ready. You just have to be willing to try — and we'll meet you exactly where you are.
-          </p>
+        <div class="space-y-7">
+          <div class="border-l-2 border-teal pl-6">
+            <p class="font-body font-bold text-charcoal text-[17px] mb-2">If you're the one struggling</p>
+            <p class="font-body text-charcoal text-[17px] leading-[29px]">
+              You don't have to be at your lowest. You don't have to be certain. You don't even have to know what you want to say. You can call and just start talking, and we'll take it from there — no judgment, and nothing you have to decide today.
+            </p>
+          </div>
+
+          <div class="border-l-2 border-gold pl-6">
+            <p class="font-body font-bold text-charcoal text-[17px] mb-2">If you're calling for someone you love</p>
+            <p class="font-body text-charcoal text-[17px] leading-[29px]">
+              You already know how it feels to watch someone disappear into this. You're tired, and you may be frightened, and both of those are allowed. Calling for someone else is an act of love, not a betrayal — and we'll walk you through every option there is.
+            </p>
+          </div>
         </div>
 
-        <!-- For families -->
-        <div class="mb-10 border-l-2 border-white/30 pl-5">
-          <p class="font-body text-white/85 text-base leading-relaxed">
-            <strong class="text-white font-bold">If you're a family member:</strong> you already know what it feels like to watch someone you love disappear into addiction. You've tried everything. You're exhausted, maybe angry, maybe both. That's completely valid. And you need to know this: calling for someone else is an act of love, not betrayal. We'll walk you through every option.
-          </p>
+        <div class="mt-10">
+          <a href="tel:8883625576" class="inline-flex items-center justify-center gap-2 bg-teal hover:bg-teal-dark text-white font-semibold h-14 px-8 rounded-lg transition-colors font-body">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+            </svg>
+            Call any time — we're here 24/7
+          </a>
         </div>
-
-        <p class="font-body text-white/60 text-sm italic mb-10">
-          Tenacity is one of our core values. We don't quit on people — and we don't let them quit on themselves.
-        </p>
-
-        <a href="tel:8883625576" class="inline-flex items-center gap-3 bg-white hover:bg-cream text-navy font-bold px-8 py-4 rounded transition-colors font-body tracking-wide">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
-          </svg>
-          Call Now — We're Here 24/7
-        </a>
       </div>
 
-      <!-- Right: Stats -->
-      <div class="grid grid-cols-2 gap-5">
-        {[
-          ['20+', 'Years of combined clinical experience on our team'],
-          ['74', 'Total beds across detox & residential care'],
-          ['11', 'Evidence-based therapy modalities offered'],
-          ['12', 'Aftercare & alumni support programs post-discharge'],
-        ].map(([num, label]) => (
-          <div class="bg-white/8 border border-white/12 rounded-xl p-[17px] sm:p-6 backdrop-blur-sm">
-            <div class="font-display text-5xl text-gold mb-2">{num}</div>
-            <p class="font-body text-white/70 text-sm leading-snug">{label}</p>
+      <!-- Right: what that actually looks like -->
+      <div class="grid sm:grid-cols-2 gap-5">
+        {specifics.map(([title, desc]) => (
+          <div class="bg-white rounded-xl p-7 border border-cream-soft flex flex-col">
+            <div class="w-10 h-10 rounded-full bg-gold/15 flex items-center justify-center mb-4 shrink-0">
+              <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
+              </svg>
+            </div>
+            <p class="font-body font-bold text-charcoal text-[17px] mb-2 leading-snug">{title}</p>
+            <p class="font-body text-charcoal text-[16px] leading-[26px]">{desc}</p>
           </div>
         ))}
       </div>

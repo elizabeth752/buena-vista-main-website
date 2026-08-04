@@ -1,5 +1,16 @@
 ---
-const faqs = [
+// Shared FAQ section. Defaults render the homepage FAQ; pass `faqs` (plus
+// optional copy overrides) to reuse the same layout on a program page.
+interface FaqItem { q: string; a: string; }
+interface Props {
+  eyebrow?: string;
+  heading?: string;
+  intro?: string;
+  faqs?: FaqItem[];
+  bg?: string;
+}
+
+const defaultFaqs: FaqItem[] = [
   {
     q: "I'm terrified of going through withdrawal. Will I actually be okay?",
     a: "Yes — and we take that fear seriously. Medical detox is one of the most important things we do, and we don't rush it or minimize it. Dr. Heise and our nursing team monitor you continuously throughout withdrawal. You won't be alone in a room wondering if what you're feeling is normal. Someone will be checking on you, adjusting your protocol, and managing your comfort at every step. Withdrawal is hard — we're not going to lie to you about that — but you'll be safe, and you won't be going through it alone.",
@@ -30,21 +41,28 @@ const faqs = [
   },
   {
     q: "What if my insurance barely covers this — or I don't have great coverage?",
-    a: "Call us before you assume the answer is no. We're in-network with Aetna, Blue Cross Blue Shield, Cigna, Humana, and UnitedHealthcare, and we also accept Medicaid. Our billing team runs an instant verification and gives you a straight answer about what's covered. If there's a gap, we'll talk through it honestly — including cash pay options and what those look like. We'd rather have that conversation with you now than have cost be the reason you didn't get help.",
+    a: "Call us before you assume the answer is no. We work with a range of plans and our billing team runs an instant verification while you're on the phone, then gives you a straight answer about what's covered. Network relationships change, so we'd rather check your specific plan than have you guess from a list. If there's a gap, we'll talk through it honestly — including cash pay options and what those look like. We'd rather have that conversation with you now than have cost be the reason you didn't get help.",
   },
 ];
+
+const {
+  eyebrow = 'Real Questions, Real Answers',
+  heading = 'The things people actually want to know',
+  intro = 'No talking points. No corporate non-answers. Just honest responses to the questions people are actually afraid to ask.',
+  faqs = defaultFaqs,
+  bg = 'bg-cream',
+} = Astro.props;
 ---
-<section class="bg-cream py-[50px]">
+<section id="faq" class={`${bg} py-[50px]`}>
   <div class="max-w-4xl mx-auto px-5 sm:px-6 lg:px-8">
-    <div class="text-center mb-[30px]">
-      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center justify-center gap-2">
+    <div class="mb-[30px] max-w-3xl">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
         <span class="w-6 h-px bg-gold inline-block"></span>
-        Real Questions, Real Answers
-        <span class="w-6 h-px bg-gold inline-block"></span>
+        {eyebrow}
       </p>
-      <h2 class="font-display text-black mb-4">The Things People Actually Want to Know</h2>
-      <p class="font-body text-black text-base leading-relaxed">
-        No talking points. No corporate non-answers. Just honest responses to the questions people are actually afraid to ask.
+      <h2 class="font-display text-charcoal mb-4">{heading}</h2>
+      <p class="font-body text-charcoal text-[17px] leading-[29px]">
+        {intro}
       </p>
     </div>
 
@@ -52,13 +70,13 @@ const faqs = [
       {faqs.map((faq, i) => (
         <details class="bg-white rounded-xl border border-cream-soft shadow-sm group" open={i === 0}>
           <summary class="flex items-start justify-between px-5 py-5 cursor-pointer gap-4">
-            <span class="font-body font-medium text-black text-sm md:text-base leading-snug">{faq.q}</span>
-            <span class="shrink-0 w-7 h-7 rounded-full bg-cream flex items-center justify-center text-black font-bold text-xl leading-none mt-0.5 transition-transform group-open:rotate-45 select-none">
+            <span class="font-body font-medium text-charcoal text-sm md:text-base leading-snug">{faq.q}</span>
+            <span class="shrink-0 w-7 h-7 rounded-full bg-cream flex items-center justify-center text-charcoal font-bold text-xl leading-none mt-0.5 transition-transform group-open:rotate-45 select-none">
               +
             </span>
           </summary>
           <div class="px-5 pb-5">
-            <p class="font-body text-black text-sm leading-relaxed border-t border-cream-soft pt-4">{faq.a}</p>
+            <p class="font-body text-charcoal text-[16px] leading-[26px] border-t border-cream-soft pt-4">{faq.a}</p>
           </div>
         </details>
       ))}

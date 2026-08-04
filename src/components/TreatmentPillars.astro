@@ -1,77 +1,74 @@
 ---
+// Titles are single strings — the previous version hard-coded a <br> between two
+// halves, which is what made them wrap badly inside a narrow card.
 const pillars = [
   {
-    title: ['Honest', 'Assessment'],
-    desc: 'We start by seeing you clearly — not your worst moment, but where you actually are right now. No sugarcoating. No judgment. Just the truth, delivered with respect.',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="w-7 h-7 text-gold"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-3.5-3.5"/><path stroke-linecap="round" d="M8.5 11.5l2 2 3-3.5"/></svg>`,
+    title: 'We start by listening',
+    desc: "Your first conversation here is not an interrogation. We ask what's been happening and we listen to the answer — where you actually are right now, not the worst day you've had.",
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="w-7 h-7 text-gold"><path stroke-linecap="round" stroke-linejoin="round" d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48L4.5 20.25l3.75-1.125A9.06 9.06 0 0012 20.25z"/></svg>`,
   },
   {
-    title: ['Clinical Supervision', 'Every Day'],
-    desc: 'Licensed clinicians and medical staff are involved at every level of care. You are never just a bed number — someone who knows your name and your case is watching over your progress.',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="w-7 h-7 text-gold"><path stroke-linecap="round" d="M9 12h6m-3-3v6m-7 1a7 7 0 1114 0v1a2 2 0 01-2 2H6a2 2 0 01-2-2v-1z"/><circle cx="12" cy="7" r="3"/></svg>`,
+    title: 'Someone knows your name',
+    desc: 'Licensed clinicians and medical staff are involved at every level of care. You are never a bed number — the person watching your progress knows who you are and what you are working through.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="w-7 h-7 text-gold"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.5 20.118a7.5 7.5 0 0115 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.5-1.632z"/></svg>`,
   },
   {
-    title: ['Dual', 'Diagnosis Care'],
-    desc: 'Addiction rarely shows up alone. When anxiety, depression, PTSD, or trauma are part of the picture, we treat all of it — because ignoring what\'s underneath is how people relapse.',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="w-7 h-7 text-gold"><path stroke-linecap="round" d="M9.5 4C7 4 5 6.2 5 9c0 4.5 7 11 7 11s7-6.5 7-11c0-2.8-2-5-4.5-5-1.2 0-2.2.6-3 1.5-.8-.9-1.8-1.5-3-1.5z"/></svg>`,
+    title: 'We treat what is underneath',
+    desc: "Addiction rarely shows up alone. When anxiety, depression, PTSD, or trauma are part of the picture, we treat all of it at the same time — because what's underneath is usually what pulls people back.",
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="w-7 h-7 text-gold"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg>`,
   },
   {
-    title: ['Evidence-Based', 'Therapies'],
-    desc: 'CBT, DBT, EMDR, Motivational Interviewing, Trauma Therapy — these are the tools we use every day, because they actually work.',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="w-7 h-7 text-gold"><rect x="8" y="2" width="8" height="4" rx="1"/><path stroke-linecap="round" d="M8 4H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2"/><path stroke-linecap="round" d="M9 12l2 2 4-4"/></svg>`,
+    title: 'Therapies that actually work',
+    desc: 'CBT, DBT, EMDR, motivational interviewing, and trauma therapy are part of daily care here — not a list on a brochure, but the work you do in the room, with someone trained to do it well.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="w-7 h-7 text-gold"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`,
   },
   {
-    title: ['Family Is', 'Part of Recovery'],
-    desc: 'If someone you love is in treatment here, you are not on the outside. We involve families intentionally — because loved ones often carry just as much pain.',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="w-7 h-7 text-gold"><circle cx="9" cy="7" r="3"/><circle cx="17" cy="9" r="2.5"/><path stroke-linecap="round" d="M3 19c0-3.3 2.7-6 6-6h2"/><path stroke-linecap="round" d="M13 19c0-2.2 1.8-4 4-4s4 1.8 4 4"/></svg>`,
+    title: 'Your family is welcome here',
+    desc: 'If someone you love is in treatment with us, you are not on the outside of it. We bring families in on purpose — because the people who love someone through this carry a great deal of it themselves.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="w-7 h-7 text-gold"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72M6.34 18.72a9.09 9.09 0 01-3.74-.479 3 3 0 014.68-2.72m11.72 3.199a5.971 5.971 0 00-.94-3.197A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.06 2.772 5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0z"/></svg>`,
   },
   {
-    title: ['Holistic', 'Programming'],
-    desc: 'Mindfulness, fitness, life skills, meditation — woven into daily care. Recovery is about rebuilding a life worth living, tending to the whole person.',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="w-7 h-7 text-gold"><path stroke-linecap="round" d="M12 3c-4 6-4 9 0 12s4 6 0 9M8 6c2 2 3 5 1 8M16 6c-2 2-3 5-1 8"/></svg>`,
+    title: 'Room to breathe, and to heal',
+    desc: 'Mindfulness, fitness, life skills, and quiet time are part of the day, not extras. Recovery is about rebuilding a life worth staying sober for, and that takes more than clinical hours.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="w-7 h-7 text-gold"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18m0-18c-3 4.5-3 7.5 0 12m0-12c3 4.5 3 7.5 0 12M4.5 9c2.25 1.5 3.75 3.75 3.75 6M19.5 9c-2.25 1.5-3.75 3.75-3.75 6"/></svg>`,
   },
   {
-    title: ['A Full', 'Path Forward'],
-    desc: 'From the first day of detox to months of aftercare, you won\'t be handed off and forgotten. Our continuum of care follows you through every transition.',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="w-7 h-7 text-gold"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" d="M9 12h6m-3-3l3 3-3 3"/></svg>`,
+    title: 'The same team, all the way through',
+    desc: "From your first day of detox through months of aftercare, you won't be handed between strangers. The people who start with you are the people who see it through.",
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="w-7 h-7 text-gold"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>`,
   },
   {
-    title: ['We Finish', 'What We Start'],
-    desc: 'Accountability is a core value here — for our staff as much as for our clients. We don\'t abandon people mid-journey. We stay in it with you, even when it\'s hard.',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="w-7 h-7 text-gold"><path stroke-linecap="round" d="M12 3l2.5 5.5L20 9.5l-4 4 1 5.5L12 16.5 7 19l1-5.5-4-4 5.5-1z"/></svg>`,
+    title: "We stay, even when it's hard",
+    desc: 'People have bad days here, and change their minds, and want to leave. That is part of it. Nobody gets written off for having a hard week — we stay in it with you.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="w-7 h-7 text-gold"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/></svg>`,
   },
 ];
 ---
-<section class="bg-white py-[50px]">
+<section class="bg-cream py-[60px]">
   <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-    <div class="text-center mb-14">
-      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center justify-center gap-2">
+    <div class="mb-14 max-w-3xl">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
         <span class="w-6 h-px bg-gold inline-block"></span>
-        What Makes Us Different
-        <span class="w-6 h-px bg-gold inline-block"></span>
+        What makes us different
       </p>
-      <h2 class="font-display text-black mb-4">
-        Treatment Built on Truth, Structure & Integrity
+      <h2 class="font-display text-charcoal mb-4">
+        Care that starts with a conversation
       </h2>
-      <p class="font-body text-black max-w-2xl mx-auto text-base leading-relaxed">
-        A lot of treatment centers say the right things. We're less interested in saying them and more interested in doing them — every day, with every person who walks through our doors.
+      <p class="font-body text-charcoal max-w-2xl text-[17px] leading-[29px]">
+        Plenty of treatment centers say the right things. What our clients tell us they noticed was smaller and more ordinary than that — being remembered, being fed well, being spoken to like an adult on a hard day.
       </p>
     </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+    <!-- Three-up so the serif headings have room to sit on one or two lines.
+         h-full equalizes card heights across the row. -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {pillars.map(p => (
-        <div class="bg-cream rounded-xl p-6 border border-cream-soft hover:shadow-md hover:border-gold/30 transition-all group text-center sm:text-left">
-          <div class="mb-4 p-2.5 bg-white rounded-lg w-fit shadow-sm group-hover:shadow-md transition-shadow mx-auto sm:mx-0" set:html={p.icon}></div>
-          <h3 class="font-display text-xl text-black mb-2">{p.title[0]}<br />{p.title[1]}</h3>
-          <p class="font-body text-black text-sm leading-relaxed">{p.desc}</p>
+        <div class="bg-white rounded-xl p-8 border border-cream-soft hover:shadow-md hover:border-gold/30 transition-all group flex flex-col h-full">
+          <div class="mb-5 p-2.5 bg-cream rounded-lg w-fit shadow-sm group-hover:shadow-md transition-shadow" set:html={p.icon}></div>
+          <h3 class="font-display text-2xl text-charcoal mb-3 leading-snug">{p.title}</h3>
+          <p class="font-body text-charcoal text-[16px] leading-[26px]">{p.desc}</p>
         </div>
       ))}
-    </div>
-
-    <div class="text-center mt-6 sm:mt-12">
-      <a href="tel:8883625576" class="bg-navy hover:bg-navy-mid text-white font-bold px-9 py-4 rounded transition-colors font-body tracking-wide inline-block">
-        Talk to Someone on Our Team
-      </a>
     </div>
   </div>
 </section>

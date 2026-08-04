@@ -1,0 +1,68 @@
+---
+// Differentiators corroborated by BOTH the patient reviews and the admissions
+// calls. Staff are described by role and lived experience, never by name.
+const differentiators = [
+  {
+    title: 'Treated like a person, not a number',
+    desc: 'This is the thing people tell us again and again — not a case file, not a paycheck, not a bed number. It\'s the most consistent theme across everything our clients say about us, and it\'s the standard we hold ourselves to.',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/>`,
+  },
+  {
+    title: 'Staff who have lived recovery themselves',
+    desc: 'Many of the people who will care for you have walked this road and are in recovery. That means the empathy you feel isn\'t a script — it\'s real, and most clients say they can tell the difference immediately.',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/>`,
+  },
+  {
+    title: 'Your own room, your own bathroom',
+    desc: 'Not a shared ward. A private room with a private bathroom, in a space that\'s clean, calm, and comfortable rather than cold and institutional. Dignity is not an upgrade here — it\'s the baseline.',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"/>`,
+  },
+  {
+    title: 'Catered meals people actually rave about',
+    desc: 'Food comes up almost as often as the clinical program when our clients describe their stay. Meals are catered and provided, with a rotating menu and accommodation for dietary needs.',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/>`,
+  },
+  {
+    title: 'Detox and residential under one roof',
+    desc: 'You\'re not handed off between strangers at every step. Medical detox and residential happen here, with case management coordinating what comes next from your very first day.',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25H3m18 0a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 8.25m18 0v10.5A2.25 2.25 0 0118.75 21H5.25A2.25 2.25 0 013 18.75V8.25M12 11.25v6m3-3H9"/>`,
+  },
+  {
+    title: 'Fast, humane intake',
+    desc: 'A real person answers the phone. The assessment takes 10 to 15 minutes. Transportation can be arranged within our local service area, and when a bed is open, admission is often possible the same day.',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/>`,
+  },
+];
+---
+<section id="difference" class="bg-cream py-[50px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+
+    <div class="mb-14 max-w-3xl">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+        <span class="w-6 h-px bg-gold inline-block"></span>
+        The Buena Vista Difference
+      </p>
+      <h2 class="font-display text-charcoal mb-4">
+        Why people choose to do this work here
+      </h2>
+      <p class="font-body text-charcoal max-w-2xl text-[17px] leading-[29px]">
+        Every treatment center says it cares. Here's what our clients point to specifically, in their own words, when they explain what was different.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {differentiators.map(d => (
+        <div class="bg-white rounded-xl p-8 shadow-sm border border-cream-soft flex flex-col">
+          <div class="w-14 h-14 rounded-full bg-navy-deep flex items-center justify-center mb-6 ring-4 ring-gold/15">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="w-7 h-7 text-gold">
+              <Fragment set:html={d.icon} />
+            </svg>
+          </div>
+          <h3 class="font-display text-2xl text-charcoal mb-3 leading-tight">{d.title}</h3>
+          <p class="font-body text-charcoal text-[16px] leading-[26px]">{d.desc}</p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

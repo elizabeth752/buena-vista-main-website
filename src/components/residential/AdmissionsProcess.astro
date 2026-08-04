@@ -1,0 +1,76 @@
+---
+const steps = [
+  {
+    num: '01',
+    title: 'Call and speak with a real person',
+    desc: 'Not a menu, not a form, not a callback queue. Someone answers, and you can ask anything you need to before committing to a single thing.',
+  },
+  {
+    num: '02',
+    title: 'A brief phone assessment',
+    desc: 'About 10 to 15 minutes covering what you\'ve been using, when you last used, your medical and mental health history, and any current medications. Honest answers help us place you safely — nothing here is used to judge you.',
+  },
+  {
+    num: '03',
+    title: 'Insurance verification',
+    desc: 'We check your benefits and network status while you\'re on the phone, or talk through private-pay options if that\'s a better fit. You\'ll get a straight answer before you commit.',
+  },
+  {
+    num: '04',
+    title: 'Provider review',
+    desc: 'A provider reviews your assessment to confirm our program is a safe, appropriate fit for your situation. This is the step that makes same-day admission possible without cutting corners.',
+  },
+  {
+    num: '05',
+    title: 'Bed confirmation & intake scheduling',
+    desc: 'Once a bed is available and your approval is in place, we schedule your intake — and in many cases that can happen the same day. If we\'re full, we\'ll tell you honestly and give you the earliest realistic time.',
+  },
+  {
+    num: '06',
+    title: 'Transportation, if you need it',
+    desc: 'Getting there is often the last barrier standing in the way. We can arrange a ride within our local service area — just tell the admissions team when you call.',
+  },
+];
+---
+<section id="admissions" class="bg-white py-[50px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+
+    <div class="mb-14 max-w-3xl">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+        <span class="w-6 h-px bg-gold inline-block"></span>
+        Getting Started
+      </p>
+      <h2 class="font-display text-charcoal mb-4">
+        How admission actually works
+      </h2>
+      <p class="font-body text-charcoal max-w-2xl text-[17px] leading-[29px]">
+        Six steps, most of them handled on a single phone call. When someone is finally ready to get help, waiting even a day can feel impossible — so this process is built to move.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+      {steps.map(step => (
+        <div class="bg-cream rounded-xl p-8 border border-cream-soft flex flex-col">
+          <div class="flex items-center gap-4 mb-4">
+            <span class="w-12 h-12 rounded-full bg-navy-deep text-gold font-display text-xl flex items-center justify-center shrink-0">
+              {step.num}
+            </span>
+            <h3 class="font-display text-xl text-charcoal leading-tight">{step.title}</h3>
+          </div>
+          <p class="font-body text-charcoal text-[16px] leading-[26px]">{step.desc}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- The one hard rule -->
+    <div class="flex gap-4 bg-navy-deep rounded-xl p-7 text-white max-w-4xl mx-auto">
+      <svg class="w-6 h-6 text-gold shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"/>
+      </svg>
+      <p class="font-body text-white/85 text-[16px] leading-[26px]">
+        <strong class="text-white font-bold">Please call first — we don't accept walk-ins.</strong> A phone assessment and insurance verification are required before admission. That call is what lets us prepare a bed, your medical review, and a warm welcome, instead of leaving you waiting at the door.
+      </p>
+    </div>
+
+  </div>
+</section>

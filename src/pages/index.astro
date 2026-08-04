@@ -3,10 +3,11 @@ import Layout from '../layouts/Layout.astro';
 import TopBar from '../components/TopBar.astro';
 import Nav from '../components/Nav.astro';
 import Hero from '../components/Hero.astro';
+import DontGiveUp from '../components/DontGiveUp.astro';
+import VerifySection from '../components/VerifySection.astro';
 import SpaceBuilt from '../components/SpaceBuilt.astro';
 import FacilityGallery from '../components/FacilityGallery.astro';
 import TreatmentPillars from '../components/TreatmentPillars.astro';
-import DontGiveUp from '../components/DontGiveUp.astro';
 import LevelsOfCare from '../components/LevelsOfCare.astro';
 import WhatWeTreat from '../components/WhatWeTreat.astro';
 import OurTeam from '../components/OurTeam.astro';
@@ -14,37 +15,33 @@ import Insurance from '../components/Insurance.astro';
 import HowToStart from '../components/HowToStart.astro';
 import LocationSection from '../components/LocationSection.astro';
 import FacilityShowcase from '../components/FacilityShowcase.astro';
-import PreFooterCTA from '../components/PreFooterCTA.astro';
 import Testimonials from '../components/Testimonials.astro';
 import FAQ from '../components/FAQ.astro';
 import FinalCTA from '../components/FinalCTA.astro';
-import InsuranceForm from '../components/InsuranceForm.astro';
 ---
 <Layout>
   <TopBar />
   <Nav />
+
+  <!-- Warm open, no form. Both audiences are spoken to before anything is asked. -->
   <Hero />
-  <SpaceBuilt />
-  <FacilityGallery />
-  <TreatmentPillars />
   <DontGiveUp />
+
+  <!-- The coverage check sits here rather than as a co-hero. -->
+  <VerifySection />
+
   <LevelsOfCare />
+  <FacilityGallery />
+  <SpaceBuilt />
+  <TreatmentPillars />
   <WhatWeTreat />
   <OurTeam />
   <Insurance />
   <HowToStart />
   <FacilityShowcase />
-  <PreFooterCTA />
   <Testimonials />
   <LocationSection />
   <FAQ />
-
-  <!-- Mobile-only: insurance verify form (desktop version lives in the Hero section) -->
-  <section class="lg:hidden bg-navy-deep py-[50px]">
-    <div class="max-w-lg mx-auto px-5">
-      <InsuranceForm id="verify-mobile" />
-    </div>
-  </section>
 
   <FinalCTA />
 </Layout>

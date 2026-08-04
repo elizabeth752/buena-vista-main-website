@@ -1,78 +1,101 @@
 ---
+// Both Arizona campuses are presented as active. The phone number is the same
+// tracked line for both locations on purpose — routing Tucson to a separate
+// number would split call attribution in CTM.
+const locations = [
+  {
+    city: 'Chandler',
+    address: '3033 S Arizona Ave, Chandler, AZ 85286',
+    mapQuery: '3033+S+Arizona+Ave,+Chandler,+AZ+85286',
+    photo: '/Asset/stock%20photo/Desktop%20Dimensions/Chandler%20recovery%20center%20exterior%20with%20covered%20entrance%20and%20tower%20feature.png',
+    alt: 'Buena Vista Health & Recovery Centers — Chandler, AZ exterior',
+    nearby: 'Easily reached from Phoenix, Tempe, Mesa, Gilbert, and the greater East Valley.',
+  },
+  {
+    city: 'Tucson',
+    address: '5151 E Pima St, Tucson, AZ',
+    mapQuery: '5151+E+Pima+St,+Tucson,+AZ',
+    photo: '/Asset/stock%20photo/Desktop%20Dimensions/Tucson%20recovery%20center%20exterior%20with%20covered%20drop-off%20area%20and%20desert%20landscaping.png',
+    alt: 'Buena Vista Health & Recovery Centers — Tucson, AZ exterior',
+    nearby: 'Serving Tucson, Oro Valley, Marana, Vail, and southern Arizona.',
+  },
+];
 ---
 <section id="location" class="bg-white py-[50px]">
   <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-    <div class="text-center mb-12">
-      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center justify-center gap-2">
+
+    <div class="mb-12 max-w-3xl">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
         <span class="w-6 h-px bg-gold inline-block"></span>
-        Find Us
-        <span class="w-6 h-px bg-gold inline-block"></span>
+        Find us
       </p>
-      <h2 class="font-display text-black mb-4">
-        Our Addiction Treatment Center in Chandler, AZ
+      <h2 class="font-display text-charcoal mb-4">
+        Two Arizona campuses, one standard of care
       </h2>
-      <p class="font-body text-black max-w-xl mx-auto text-base leading-relaxed">
-        Located in Chandler, Arizona — easily accessible from Phoenix, Tempe, Mesa, Gilbert, and the greater East Valley.
+      <p class="font-body text-charcoal max-w-xl text-[17px] leading-[29px]">
+        Detox and residential treatment in Chandler and Tucson — the same private rooms, the same catered meals, and the same team of people who have been where you are.
       </p>
     </div>
 
-    <div class="grid lg:grid-cols-2 gap-8 items-stretch">
-      <!-- Info panel -->
-      <div class="flex flex-col gap-5">
-        <!-- Photo -->
-        <div class="rounded-2xl overflow-hidden h-[220px] lg:h-[280px]">
-          <img
-            src="/Asset/stock%20photo/Desktop%20Dimensions/Chandler%20recovery%20center%20exterior%20with%20covered%20entrance%20and%20tower%20feature.png"
-            alt="Buena Vista Health & Recovery Centers — Chandler, AZ exterior"
-            class="w-full h-full object-cover"
-          />
-        </div>
+    <div class="grid lg:grid-cols-2 gap-8 items-start">
+      {locations.map(loc => (
+        <div class="flex flex-col gap-5">
 
-        <!-- Address & details card -->
-        <div class="bg-white border-2 border-navy rounded-2xl p-5 lg:p-7">
-          <div class="flex items-start gap-3 mb-5">
-            <span class="w-8 h-8 bg-gold rounded-lg flex items-center justify-center shrink-0 mt-0.5">
-              <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
-              </svg>
-            </span>
-            <div>
-              <p class="font-body font-bold text-black text-sm">Buena Vista Health & Recovery Centers</p>
-              <p class="font-body text-black text-sm">3033 S Arizona Ave, Chandler, AZ 85286</p>
+          <!-- Photo -->
+          <div class="rounded-xl overflow-hidden h-[220px] lg:h-[280px]">
+            <img src={loc.photo} alt={loc.alt} class="w-full h-full object-cover" loading="lazy" decoding="async" />
+          </div>
+
+          <!-- Address & details -->
+          <div class="bg-white border-2 border-navy rounded-xl p-5 lg:p-7">
+            <h3 class="font-display text-2xl text-charcoal mb-4">{loc.city}, Arizona</h3>
+
+            <div class="flex items-start gap-3 mb-5">
+              <span class="w-8 h-8 bg-gold rounded-lg flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-4 h-4 text-navy" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                </svg>
+              </span>
+              <div>
+                <p class="font-body font-bold text-charcoal text-[16px]">Buena Vista Health &amp; Recovery Centers</p>
+                <p class="font-body text-charcoal text-[16px] leading-[26px]">{loc.address}</p>
+              </div>
+            </div>
+
+            <p class="font-body text-charcoal text-[16px] leading-[26px] mb-5">{loc.nearby}</p>
+
+            <div class="grid grid-cols-2 gap-4 mb-6">
+              <div>
+                <p class="text-gold font-body text-xs font-bold uppercase tracking-wide mb-1">Hours</p>
+                <p class="font-body text-charcoal text-[16px]">Open 24/7 · 365 days</p>
+              </div>
+              <div>
+                <p class="text-gold font-body text-xs font-bold uppercase tracking-wide mb-1">Phone</p>
+                <p class="font-body text-charcoal text-[16px] tel-number">(888) 362-5576</p>
+              </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-3">
+              <a href="tel:8883625576" class="flex-1 inline-flex items-center justify-center bg-teal hover:bg-teal-dark text-white font-semibold h-12 px-5 rounded-lg transition-colors font-body text-[16px]">
+                Talk to someone
+              </a>
+              <a
+                href={`https://www.google.com/maps/dir/?api=1&destination=${loc.mapQuery}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex-1 inline-flex items-center justify-center gap-2 border-2 border-navy text-navy hover:bg-navy hover:text-white font-semibold h-12 px-5 rounded-lg transition-colors font-body text-[16px]"
+              >
+                Get directions
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/>
+                </svg>
+              </a>
             </div>
           </div>
 
-          <div class="grid grid-cols-2 gap-4 mb-6">
-            {[
-              ['Hours', 'Open 24/7 · 365 days'],
-              ['Phone', '(888) 362-5576'],
-            ].map(([k, v]) => (
-              <div>
-                <p class="text-gold font-body text-xs font-bold uppercase tracking-wide mb-1">{k}</p>
-                <p class="font-body text-black text-sm">{v}</p>
-              </div>
-            ))}
-          </div>
-
-          <a href="tel:8883625576" class="block text-center bg-navy hover:bg-navy-mid text-white font-bold px-5 py-2.5 rounded transition-colors font-body text-sm tracking-wide">
-            Check Availability
-          </a>
         </div>
-      </div>
-
-      <!-- Map -->
-      <div class="rounded-2xl overflow-hidden shadow-lg h-[220px] lg:h-full">
-        <iframe
-          title="Buena Vista Recovery Chandler Location"
-          src="https://maps.google.com/maps?q=3033+S+Arizona+Ave,+Chandler,+AZ+85286&t=&z=15&ie=UTF8&iwloc=&output=embed"
-          width="100%"
-          height="100%"
-          style="border:0;"
-          allowfullscreen
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
-      </div>
+      ))}
     </div>
+
   </div>
 </section>

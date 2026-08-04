@@ -1,0 +1,77 @@
+---
+const rhythm = [
+  {
+    period: 'Morning',
+    title: 'Group therapy',
+    desc: 'The day opens with group — learning how addiction actually works, building coping skills, and sitting with people who understand exactly what you\'re going through without you having to explain it.',
+  },
+  {
+    period: 'Through the week',
+    title: 'One-on-one therapy',
+    desc: 'Individual sessions with your therapist, where the more personal work happens — the trauma, the patterns, the things that are harder to say out loud in a room full of people.',
+  },
+  {
+    period: 'Afternoon',
+    title: 'Second group + case management',
+    desc: 'A second group session, plus check-ins with your case manager, who starts mapping out your life after treatment from your very first day rather than the week you leave.',
+  },
+  {
+    period: '4:00 – 9:00 PM',
+    title: 'Phone access',
+    desc: 'Your window to call your kids, text your partner, check in with your sponsor. The therapeutic day needs your focus — the evenings are yours to stay connected to the people who matter.',
+  },
+  {
+    period: 'Evening',
+    title: 'Optional 12-step meetings',
+    desc: 'Nightly meetings for those who want them. Genuinely optional — some people find their footing there, others find it elsewhere, and both are fine.',
+  },
+  {
+    period: 'Around the clock',
+    title: 'Nursing & support staff',
+    desc: 'Nursing and support staff are present 24/7, so there is always someone there if you need help — at 3 PM or 3 AM.',
+  },
+];
+---
+<section id="a-day" class="bg-white py-[50px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+
+    <div class="mb-14 max-w-3xl">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+        <span class="w-6 h-px bg-gold inline-block"></span>
+        A Day in Residential
+      </p>
+      <h2 class="font-display text-charcoal mb-4">
+        What your days will actually look like
+      </h2>
+      <p class="font-body text-charcoal max-w-2xl text-[17px] leading-[29px]">
+        Your day has a rhythm to it, and that structure is a real part of why residential works. Enough to keep you grounded and moving forward — enough space to actually breathe and think.
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-x-14 gap-y-2 max-w-5xl mx-auto">
+      {rhythm.map((item, i) => (
+        <div class={`flex gap-6 py-6 ${i < rhythm.length - 1 ? 'border-b border-cream-soft' : ''}`}>
+          <div class="shrink-0 w-10 h-10 rounded-full bg-cream flex items-center justify-center font-body text-sm font-bold text-navy">
+            {i + 1}
+          </div>
+          <div>
+            <p class="font-body text-xs font-bold uppercase tracking-[0.14em] text-gold mb-1.5">{item.period}</p>
+            <h3 class="font-display text-xl text-charcoal mb-2">{item.title}</h3>
+            <p class="font-body text-charcoal text-[16px] leading-[26px]">{item.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-14 bg-cream rounded-xl p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 max-w-5xl mx-auto">
+      <div>
+        <p class="font-display text-2xl text-charcoal mb-1">Want to know what a day looks like for your situation?</p>
+        <p class="font-body text-charcoal text-[16px] leading-[26px]">Call and ask. We'd rather answer the question than have you spend another night wondering.</p>
+      </div>
+      <a href="tel:8883625576" class="shrink-0 bg-teal hover:bg-teal-dark text-white font-bold px-8 py-4 rounded-lg transition-colors font-body tracking-wide whitespace-nowrap">
+        Call (888) 362-5576
+      </a>
+    </div>
+
+  </div>
+</section>

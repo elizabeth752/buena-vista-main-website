@@ -1,0 +1,100 @@
+---
+const included = [
+  ['Private room with private bathroom', 'In both detox and residential. You won\'t share a room.'],
+  ['Group therapy twice daily', 'The core of the therapeutic day.'],
+  ['One-on-one therapy', 'Individual sessions with your therapist.'],
+  ['Case management', 'Coordinating your next step from day one.'],
+  ['Catered meals', 'Rotating menu, with dietary needs accommodated.'],
+  ['On-site labs & medications', 'Plus physician evaluations and 24/7 nursing.'],
+  ['Optional nightly 12-step meetings', 'There if you want them, never required.'],
+  ['Upgraded residential amenities', 'A real step up in comfort from the detox setting.'],
+];
+
+const bring = [
+  'Three to seven comfortable outfits (about three stay in your room; the rest are stored)',
+  'New, unopened, alcohol-free hygiene products — many toiletries contain alcohol',
+  'Any medications you\'re currently taking, so our medical team can review them',
+  'If you smoke or vape: brand-new, sealed cigarettes or disposable vapes',
+];
+
+const leave = [
+  'Alcohol-based products of any kind',
+  'Weapons',
+  'Outside substances',
+  'Pets and emotional support animals (we can help you arrange boarding)',
+];
+---
+<section id="amenities" class="bg-cream py-[50px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+
+    <div class="mb-14 max-w-3xl">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+        <span class="w-6 h-px bg-gold inline-block"></span>
+        Amenities & Environment
+      </p>
+      <h2 class="font-display text-charcoal mb-4">
+        What's included — and what to pack
+      </h2>
+      <p class="font-body text-charcoal max-w-2xl text-[17px] leading-[29px]">
+        No surprises on arrival. Here's exactly what the residential program includes and what our admissions team tells people to bring.
+      </p>
+    </div>
+
+    <!-- What's included -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-16">
+      {included.map(([title, desc]) => (
+        <div class="bg-white rounded-xl p-6 shadow-sm border border-cream-soft">
+          <div class="w-6 h-6 rounded-full bg-gold/15 flex items-center justify-center mb-4">
+            <svg class="w-3.5 h-3.5 text-gold" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+          </div>
+          <p class="font-body font-bold text-charcoal text-[16px] mb-1.5 leading-snug">{title}</p>
+          <p class="font-body text-charcoal text-[16px] leading-[26px]">{desc}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Packing -->
+    <div class="grid lg:grid-cols-2 gap-6">
+      <div class="bg-white rounded-xl p-8 shadow-sm border border-cream-soft">
+        <h3 class="font-display text-2xl text-charcoal mb-5">What to bring</h3>
+        <ul class="space-y-4">
+          {bring.map(item => (
+            <li class="flex gap-4">
+              <div class="w-6 h-6 rounded-full bg-gold/15 flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-3.5 h-3.5 text-gold" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <p class="font-body text-charcoal text-[16px] leading-[26px]">{item}</p>
+            </li>
+          ))}
+        </ul>
+        <p class="font-body text-charcoal text-[16px] leading-[26px] mt-6 pt-6 border-t border-cream-soft">
+          We have supplies on-site if you arrive with nothing. If you're coming in with only the clothes you're wearing, that's okay — we've helped plenty of people start exactly there.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-xl p-8 shadow-sm border border-cream-soft">
+        <h3 class="font-display text-2xl text-charcoal mb-5">What to leave behind</h3>
+        <ul class="space-y-4">
+          {leave.map(item => (
+            <li class="flex gap-4">
+              <div class="w-6 h-6 rounded-full bg-navy/10 flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-3.5 h-3.5 text-navy" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+              </div>
+              <p class="font-body text-charcoal text-[16px] leading-[26px]">{item}</p>
+            </li>
+          ))}
+        </ul>
+        <p class="font-body text-charcoal text-[16px] leading-[26px] mt-6 pt-6 border-t border-cream-soft">
+          Not sure whether to bring something? Ask during your phone assessment. Our team would rather answer the question than have you worry about it.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>

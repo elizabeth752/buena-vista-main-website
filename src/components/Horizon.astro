@@ -1,0 +1,28 @@
+---
+// The horizon — the one ownable graphic device, taken from the gold rule in the
+// logo. Use it quietly: the brand book allows about two appearances per page.
+//   variant="rule"  → the 2px gold line (under a hero image, above a footer)
+//   variant="ridge" → soft layered ridgelines in sand and sage, max three layers
+interface Props {
+  variant?: 'rule' | 'ridge';
+  class?: string;
+}
+const { variant = 'rule', class: className = '' } = Astro.props;
+---
+{variant === 'rule' && (
+  <div class={`h-0.5 w-full bg-gold ${className}`} aria-hidden="true"></div>
+)}
+
+{variant === 'ridge' && (
+  <svg
+    class={`w-full block ${className}`}
+    viewBox="0 0 1440 160"
+    preserveAspectRatio="none"
+    aria-hidden="true"
+    focusable="false"
+  >
+    <path d="M0 128 Q 360 74 720 104 T 1440 88 V160 H0 Z" fill="#7C9885" opacity="0.16" />
+    <path d="M0 142 Q 400 96 800 122 T 1440 110 V160 H0 Z" fill="#E8DCC8" opacity="0.55" />
+    <path d="M0 154 Q 420 124 860 142 T 1440 134 V160 H0 Z" fill="#E8DCC8" />
+  </svg>
+)}

@@ -1,26 +1,39 @@
 @import "tailwindcss";
 
-@font-face {
-  font-family: 'Qurova';
-  src: url('/Fonts/Qurova.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
+/* ---------------------------------------------------------------------------
+   Buena Vista Brand System v1.0 (2026)
+   Navy and gold are fixed — taken from the logo. Teal and sage give the system
+   range without drifting into generic medical blue; sand and cream do the heavy
+   lifting on backgrounds so the brand never reads clinical.
+   Target proportion: ~60% warm neutral, 25% navy, 10% teal/sage, 5% gold.
+--------------------------------------------------------------------------- */
 
 @theme {
-  --color-navy-deep: #0F1E2E;
+  /* Fixed brand colors — from the logo */
   --color-navy: #002B5C;
-  --color-navy-mid: #2D3F50;
   --color-gold: #B9975B;
-  --color-gold-dark: #8C6A28;
-  --color-cream: #F8F5F0;
-  --color-cream-soft: #F0EBE3;
-  --color-ink: #2E2E2E;
+
+  /* System colors */
+  --color-teal: #2E7D8A;      /* primary action: buttons, links, active states */
+  --color-sage: #7C9885;      /* secondary accent, quiet section backgrounds */
+  --color-sand: #E8DCC8;      /* large calm fields, quote blocks, alternating sections */
+  --color-cream: #FAF7F2;     /* default page surface — used instead of pure white */
+  --color-charcoal: #2B2B2B;  /* body text — softer and warmer than pure black */
+
+  /* Supporting shades: hover, pressed, depth */
+  --color-navy-deep: #001E42;
+  --color-navy-mid: #12467E;
+  --color-teal-dark: #21575F;
+  --color-sage-tint: #F3F7F5;
+  --color-gold-dark: #94743E;
+  --color-cream-soft: #EFE7DA; /* hairline borders on cream and white surfaces */
+  --color-ink: #2B2B2B;
   --color-muted: #6B6B6B;
 
-  --font-family-display: 'Qurova', sans-serif;
-  --font-family-body: 'Montserrat', sans-serif;
+  /* Type — Newsreader carries the emotional lines, Source Sans 3 carries
+     everything a stressed person actually has to read. Never the inverse. */
+  --font-display: 'Newsreader', Georgia, serif;
+  --font-body: 'Source Sans 3', system-ui, sans-serif;
 }
 
 html {
@@ -28,32 +41,62 @@ html {
 }
 
 body {
-  font-family: var(--font-family-body);
-  color: var(--color-ink);
+  font-family: var(--font-body);
+  color: var(--color-charcoal);
   background-color: var(--color-cream);
+  /* Body default 17/29. Never below 16px on any screen. */
+  font-size: 17px;
+  line-height: 29px;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-family-display);
-  letter-spacing: 0.02em;
+/* --- Heading scale ---------------------------------------------------------
+   H1–H3 are Newsreader and step down on mobile.
+   H4–H6 are Source Sans 3 and do not change size on mobile. */
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
   text-wrap: balance;
 }
 
-h2 {
-  font-size: 36px;
-  line-height: 40px;
+h4, h5, h6 {
+  font-family: var(--font-body);
+  text-wrap: balance;
+}
+
+h1 { font-size: 40px; line-height: 44px; letter-spacing: -0.025em; }
+h2 { font-size: 32px; line-height: 36px; letter-spacing: -0.02em; }
+h3 { font-size: 26px; line-height: 31px; letter-spacing: -0.01em; }
+h4 { font-size: 28px; line-height: 35px; font-weight: 600; }
+h5 { font-size: 22px; line-height: 29px; font-weight: 600; }
+
+/* Labels and eyebrows only — never a sentence. */
+h6 {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 @media (min-width: 768px) {
-  h2 {
-    font-size: 48px;
-    line-height: 48px;
-  }
+  h1 { font-size: 64px; line-height: 67px; }
+  h2 { font-size: 48px; line-height: 53px; }
+  h3 { font-size: 36px; line-height: 41px; }
 }
 
 p {
   text-wrap: pretty;
 }
+
+/* Focus ring: 3px, offset, teal at 45%. Never removed. */
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--color-teal) 45%, transparent);
+  outline-offset: 2px;
+}
+
+/* Phone numbers stay tabular and unstyled. */
+.tel-number { font-variant-numeric: tabular-nums; }
 
 details > summary { list-style: none; cursor: pointer; }
 details > summary::-webkit-details-marker { display: none; }

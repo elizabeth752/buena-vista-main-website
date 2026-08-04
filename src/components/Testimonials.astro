@@ -2,60 +2,54 @@
 const reviews = [
   {
     photo: '/Asset/Image%20reviews/Jennifer%20Mills.svg',
-    name: 'Jennifer Mills',
+    name: 'Jennifer M.',
     stars: 5,
     text: "Buena Vista was great for me. Comfortable, good groups, great staff. If I need to return I know they are there. And I'd recommend this place to anyone in need of recovery from addiction. Lolo at the front is always warm and welcoming, the nurses are caring and always there to help! Can't forget the BHTs always asking what they can do to help in whatever way they can.",
   },
   {
     photo: '/Asset/Image%20reviews/Travis%20Shrader.svg',
-    name: 'Travis Shrader',
+    name: 'Travis S.',
     stars: 5,
     text: "I cannot express enough gratitude for the support I received from Buena Vista Recovery. Katy went above and beyond in helping me navigate my court case and making pre-trial calls, ensuring I felt supported and informed every step of the way. Her dedication was truly remarkable. Mr Bacon and the entire staff played a pivotal role in changing my life for the better. Their compassion, understanding, and commitment to my recovery made all the difference. I highly recommend Buena Vista Recovery to anyone seeking help and transformation. Thank you all for everything!",
   },
   {
     photo: '/Asset/Image%20reviews/Sonia%20Forsgren.svg',
-    name: 'Sonia Forsgren',
+    name: 'Sonia F.',
     stars: 5,
     text: "So incredibly grateful for everyone that has been there for me throughout my recovery journey. I really miss residential lol. Not only were the staff there absolutely phenomenal and amazingly informed, but most really enjoyed what they were doing. The kitchen and food was five star most days. On top of all that, I got to have my own room and bathroom, queen size bed, vaulted ceilings, and flat screen tv. But, I am extremely grateful for the monthly Alumni events that we have. It's one of the highlights of my month every single time. Thank you Buena Vista. If I could give more stars, I so would.",
   },
   {
     photo: '/Asset/Image%20reviews/Lisa%20Teresi.svg',
-    name: 'Lisa Teresi',
+    name: 'Lisa T.',
     stars: 5,
     text: "I had an amazing experience at Buena Vista… The staff is great… The food is good… Lolo, Lorenzo, Millie, Eva, Bianca and Miss Katherine are awesome facilitators… I'm really going to miss them… I'm continuing with their after care IOP classes with Millie virtually which is perfect for me… Justin runs a great program and Chris runs a great group of staff… thank you all of you for being an active part of my recovery. I couldn't have done this without you guys. Love all of you!!! Lolo, you're a wonderful person that cares about all the patients there and it really shows… you welcome us all and make us comfortable and your classes are great! Love you Queen!",
   },
   {
     photo: '/Asset/Image%20reviews/Tommy%20Cox.svg',
-    name: 'Tommy Cox',
+    name: 'Tommy C.',
     stars: 5,
     text: "I'm so grateful for this place 💯!!! I learned so much about myself and got some great tools and the help I need. I'm out of inpatient but I'm still going there for services. I have all the love for the faculty and that place in general. They are amazing. Anyone that has anything bad to say about Buena Vista was either there for the wrong reasons or weren't ready. Thank you guys all the way around",
   },
   {
     photo: '/Asset/Image%20reviews/Sean%20Brown.svg',
-    name: 'Sean Brown',
+    name: 'Sean B.',
     stars: 5,
     text: "I just want to say thank you to Buena Vista and the staff that work there. These people care. I can personally tell the difference between someone who just comes in for a paycheck and someone who has unconditional love and concern for every individual that they work with. From detox to out patient the staff go above and beyond to get their patients needs met! A special thanks to my case manager Katy for believing in me when I didn't even believe in myself. She met with me every day she worked and set me up for success! I'm on the next chapter of my life not only clean but finally happy. Thank you Katy!! And thank you Buena Vista. I recommend anybody needing help to at least check in for detox. Much love to you all",
   },
 ];
 ---
-<section class="bg-cream-soft py-[50px]">
+<section class="bg-sand py-[50px]">
   <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
 
     <!-- Header -->
-    <div class="text-center mb-8">
-      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center justify-center gap-2">
+    <div class="mb-8 max-w-3xl">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
         <span class="w-6 h-px bg-gold inline-block"></span>
         Patient Stories
-        <span class="w-6 h-px bg-gold inline-block"></span>
       </p>
-      <h2 class="font-display text-black mb-4">
-        Real Stories. Real Recovery.
+      <h2 class="font-display text-charcoal mb-4">
+        Real stories. Real recovery.
       </h2>
-      <div class="flex items-center justify-center gap-3 mt-3">
-        <img src="/Asset/Accreditations/Google-Reviews.svg" alt="Google Reviews" class="w-20 h-auto" />
-        <div class="flex text-[#FCD504] text-xl">{"★★★★★"}</div>
-        <span class="font-body text-black text-sm font-semibold">4.9 out of 5</span>
-      </div>
     </div>
 
     <!-- Mobile: carousel (1.2 cards visible) · sm+: mosaic -->
@@ -65,7 +59,7 @@ const reviews = [
     >
       <div class="shrink-0 w-4 sm:hidden" aria-hidden="true"></div>
       {reviews.map(r => (
-        <div class="shrink-0 w-[83%] snap-start sm:w-auto sm:shrink sm:snap-align-none sm:break-inside-avoid sm:mb-5 bg-white rounded-2xl p-5 shadow-sm border border-cream-soft">
+        <div class="shrink-0 w-[83%] snap-start sm:w-auto sm:shrink sm:snap-align-none sm:break-inside-avoid sm:mb-5 bg-white rounded-xl p-5 shadow-sm border border-cream-soft">
 
           <!-- Photo + name ABOVE review text -->
           <div class="flex items-center gap-3 mb-3 pb-3 border-b border-cream-soft">
@@ -75,26 +69,30 @@ const reviews = [
               class="w-9 h-9 rounded-full object-cover flex-shrink-0"
             />
             <div class="flex-1 min-w-0">
-              <p class="font-body font-bold text-black text-sm leading-tight">{r.name}</p>
+              <p class="font-body font-bold text-charcoal text-[16px] leading-tight">{r.name}</p>
               <div class="flex text-[#FCD504] text-sm mt-0.5">{"★".repeat(r.stars)}</div>
             </div>
           </div>
 
           <!-- Review text: 4 lines visible, rest scrolls -->
-          <div class="max-h-[92px] overflow-y-auto pr-1">
-            <p class="font-body text-black text-sm leading-relaxed">"{r.text}"</p>
+          <div class="max-h-[132px] overflow-y-auto pr-1">
+            <p class="font-body text-charcoal text-[16px] leading-[26px]">"{r.text}"</p>
           </div>
         </div>
       ))}
       <div class="shrink-0 w-4 sm:hidden" aria-hidden="true"></div>
     </div>
 
+    <p class="font-body text-muted text-[13px] leading-[20px] mt-8 max-w-3xl">
+      Reviews are published with written consent and lightly condensed for length; wording is unchanged. These are individual experiences and are not a guarantee of any particular outcome. Reviewers were not compensated.
+    </p>
+
     <!-- Mobile carousel arrows -->
     <div class="flex justify-center items-center gap-4 mt-6 sm:hidden">
       <button
         id="reviews-prev"
         aria-label="Previous review"
-        class="w-11 h-11 rounded-full bg-white hover:bg-cream text-black flex items-center justify-center shadow-md border border-cream-soft transition-colors"
+        class="w-11 h-11 rounded-full bg-white hover:bg-cream text-charcoal flex items-center justify-center shadow-md border border-cream-soft transition-colors"
       >
         <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
@@ -103,7 +101,7 @@ const reviews = [
       <button
         id="reviews-next"
         aria-label="Next review"
-        class="w-11 h-11 rounded-full bg-white hover:bg-cream text-black flex items-center justify-center shadow-md border border-cream-soft transition-colors"
+        class="w-11 h-11 rounded-full bg-white hover:bg-cream text-charcoal flex items-center justify-center shadow-md border border-cream-soft transition-colors"
       >
         <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>

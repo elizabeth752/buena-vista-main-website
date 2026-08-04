@@ -1,12 +1,11 @@
 ---
-import Horizon from './Horizon.astro';
+import Horizon from '../Horizon.astro';
 
-// Cream carries the page. Navy is saved for the two moments that matter most,
-// so the hero opens warm rather than anchoring. No night exterior, no black.
 const reassurances = [
-  'Someone real answers, any hour',
-  "Most insurance accepted — we'll check for you",
-  "Private rooms, catered meals, staff who've been there",
+  "A private room with your own bathroom — you won't share",
+  'Group therapy twice daily, plus one-on-one sessions',
+  'Catered meals, not cafeteria trays',
+  'Detox and residential under one roof — no second facility',
 ];
 ---
 <section id="hero" class="bg-cream">
@@ -17,18 +16,18 @@ const reassurances = [
       <div>
         <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-5 flex items-center gap-2">
           <span class="w-6 h-px bg-gold inline-block"></span>
-          Chandler &amp; Tucson, Arizona
+          Residential treatment · Chandler &amp; Tucson, Arizona
         </p>
 
         <h1 class="font-display text-navy mb-6">
-          A better view forward.
+          Room to breathe, and room to heal.
         </h1>
 
         <p class="font-body text-charcoal text-[20px] leading-[33px] max-w-xl mb-8">
-          Medically supervised detox and residential treatment — in a place that treats you like a person, not a number.
+          Thirty days to step out of everything pulling at you and do the real work of recovery — in your own room, with staff who have walked this road themselves.
         </p>
 
-        <ul class="space-y-3 mb-10">
+        <ul class="space-y-3 mb-9">
           {reassurances.map(item => (
             <li class="flex items-start gap-3 font-body text-charcoal text-[17px] leading-[29px]">
               <svg class="w-5 h-5 text-teal mt-1 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
@@ -39,7 +38,12 @@ const reassurances = [
           ))}
         </ul>
 
-        <!-- One primary action per screen. Everything else is secondary. -->
+        <div class="border-l-2 border-gold pl-5 mb-9 max-w-xl">
+          <p class="font-body text-charcoal text-[16px] leading-[26px]">
+            <strong class="font-bold">When you call, a real person answers.</strong> A short assessment — about 10 to 15 minutes — and we'll check your coverage while you're still on the phone. When a bed is open and you're approved, admission can often happen the same day.
+          </p>
+        </div>
+
         <div class="flex flex-col sm:flex-row gap-4">
           <a
             href="tel:8883625576"
@@ -59,7 +63,7 @@ const reassurances = [
         </div>
       </div>
 
-      <!-- Right: the private room — the shot that proves "not an institution" -->
+      <!-- Right: the private room -->
       <div>
         <div class="overflow-hidden rounded-t-[160px] rounded-b-xl shadow-xl">
           <img
@@ -70,7 +74,6 @@ const reassurances = [
             decoding="async"
           />
         </div>
-        <!-- The horizon rule sits under the hero image. -->
         <Horizon variant="rule" class="mt-5" />
         <p class="font-body text-muted text-[15px] leading-[24px] mt-3">
           Your own room, your own bathroom. You won't share.

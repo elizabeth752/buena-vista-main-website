@@ -1,0 +1,182 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TopBar from '../components/TopBar.astro';
+import Nav from '../components/Nav.astro';
+import InsuranceForm from '../components/InsuranceForm.astro';
+
+// Shared sections reused as visual breathers between content-heavy blocks
+import FacilityShowcase from '../components/FacilityShowcase.astro';
+import FacilityGallery from '../components/FacilityGallery.astro';
+import Testimonials from '../components/Testimonials.astro';
+import Insurance from '../components/Insurance.astro';
+import FAQ from '../components/FAQ.astro';
+import VerifySection from '../components/VerifySection.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+
+// Residential-specific sections
+import ResidentialHero from '../components/residential/ResidentialHero.astro';
+import WhatIsResidential from '../components/residential/WhatIsResidential.astro';
+import WhoItsFor from '../components/residential/WhoItsFor.astro';
+import ResidentialDifference from '../components/residential/ResidentialDifference.astro';
+import DayInResidential from '../components/residential/DayInResidential.astro';
+import DetoxPathway from '../components/residential/DetoxPathway.astro';
+import AmenitiesEnvironment from '../components/residential/AmenitiesEnvironment.astro';
+import AdmissionsProcess from '../components/residential/AdmissionsProcess.astro';
+
+const title = 'Residential Treatment in Chandler & Tucson, AZ | Buena Vista Health & Recovery';
+const description = 'Live-in residential addiction treatment in Chandler and Tucson, AZ. Private rooms, catered meals, staff in recovery, and same-day admission. Detox through residential under one roof. Call to verify your insurance.';
+
+// FAQ bank from the content brief. Answers marked "safe to publish" are used as
+// written; VERIFY items (payer names, pricing, transport radius, IOP
+// availability, Tucson) are deliberately kept out of these answers.
+const faqs = [
+  {
+    q: 'What is residential treatment, and how is it different from detox?',
+    a: "Residential treatment is a live-in level of care where you stay at our facility full-time and focus completely on recovery, without the distractions, triggers, or responsibilities of daily life pulling at you. It's the step that comes after medical detox. Detox is the short, medically supervised process of getting substances safely out of your body and through withdrawal — at Buena Vista that typically takes around four to seven days, with 24/7 nursing, medications to keep you comfortable, and physician oversight. Residential is where the real work of recovery begins once your body is stable. In our residential program, most people stay about 30 days, with group therapy twice a day, one-on-one sessions with your therapist, case management to plan what comes next, and optional evening 12-step meetings — all while living in a private room with your own bathroom and eating catered meals.",
+  },
+  {
+    q: 'How long does the residential program last?',
+    a: "Our residential program is typically 30 days, though the exact length depends on your individual needs, your progress, and your clinical team's recommendations. Some people benefit from a slightly longer stay, and in certain cases the program can extend toward 45 days when that's the right call for lasting recovery. It's important to know that our residential program is voluntary. You're choosing to be here, and that choice matters — it's one of the strongest predictors of a good outcome. Before you arrive and throughout your stay, your case manager and clinical team will talk with you honestly about the length of stay that gives you the best foundation. The goal is never to rush you out or keep you longer than helps.",
+  },
+  {
+    q: 'Do I have to go through detox before residential?',
+    a: "In most cases, yes — if you're still physically dependent on alcohol or another substance, you'll start with medical detox and then step down into residential once you're stabilized. This isn't a hurdle; it's a safety measure. Withdrawal from substances like alcohol, opioids, and benzodiazepines can be dangerous or even life-threatening without medical supervision. The good news is that both happen here, so there's no scrambling to find a second facility or repeating your story to a whole new team. For some people — depending on the substance and how recently they used — a clinical assessment may determine that detox isn't necessary and they can begin at the residential level. Residential treatment for methamphetamine in particular often doesn't require a traditional medical detox, since the withdrawal profile is different. Your assessment will clarify the right path for your situation.",
+  },
+  {
+    q: 'Can I use my phone while I’m in residential?',
+    a: "Yes. This is one of the most common questions families and clients ask, so here's the straight answer: during detox, phones are not permitted — those first few days are about your safety and your body, with no outside distractions. Once you move into residential, you'll have phone access every evening, typically from 4:00 to 9:00 PM. That window exists for a reason. Recovery works best when you're present and engaged during the therapeutic day, and evening phone time lets you stay connected to the people who matter — your kids, your partner, your sponsor, your support system — without the constant pull of the outside world interfering with your treatment. If you're a parent or caregiver worried about staying reachable, talk with your case manager; they're used to helping people balance their responsibilities with the space they need to heal.",
+  },
+  {
+    q: 'How fast can I get in? Can I come in the same day?',
+    a: "Often, yes — same-day admission is possible when we have a bed available and your assessment and approval are complete. Our admissions line is answered by a real person, and the process is designed to move quickly because we know that when someone is finally ready to get help, waiting even a day can feel impossible. Here's how it works: you call, we do a brief phone assessment (about 10 to 15 minutes), we verify your insurance or discuss private-pay options, and a provider reviews everything to confirm the program is a safe fit. Once a bed is confirmed and you're approved, we schedule your intake — and in many cases that can happen the same day. If we don't have a bed open the moment you call, we'll tell you honestly and give you the earliest realistic time. We don't accept walk-ins, so please always call first.",
+  },
+  {
+    q: 'Will my insurance cover residential treatment?',
+    a: "Many plans do, and the fastest way to know for certain is to call us — we'll verify your specific benefits in just a few minutes and explain exactly what's covered before you commit to anything. There are no surprises and no obligation. We work with a range of insurance plans and also offer private-pay options for those without coverage or whose plan isn't a fit. Because behavioral health coverage varies so much from plan to plan — and because network relationships change over time — we always recommend a quick verification call rather than guessing from a list. When you call, have your insurance card handy if you can; if you don't have it in front of you, we can often still look things up with your basic information. If we're not in-network with your particular plan, we'll tell you honestly and, where we can, point you toward reputable options that are.",
+  },
+  {
+    q: 'What should I bring with me?',
+    a: "Pack light and simple. Here's what our admissions team tells people to bring: three to seven comfortable outfits (you'll keep about three in your room at a time and the rest are stored); new, unopened, alcohol-free hygiene products, since many toiletries contain alcohol; any necessary medications you're currently taking, so our medical team can review and manage them; and if you smoke or vape, brand-new sealed cigarettes or disposable vapes. Please leave behind anything that isn't allowed, including alcohol-based products, weapons, and outside substances. If you're not sure whether to bring something, just ask during your phone assessment — our team would rather answer the question than have you worry about it. And if you're coming in with nothing but the clothes you're wearing, that's okay too; we've helped plenty of people start exactly there.",
+  },
+  {
+    q: 'Can I smoke or vape while I’m there?',
+    a: "Yes, with some structure around it. If you smoke or vape, you're allowed to bring cigarettes or disposable vapes as long as they're brand-new and sealed when you arrive. Smoking happens on scheduled breaks throughout the day rather than whenever you like — this keeps the day organized and fair for everyone. We know that quitting everything at once is a lot to ask of someone who's just getting sober from a serious substance, so we don't force you to give up nicotine on day one. Your focus is on the substance that brought you here.",
+  },
+  {
+    q: 'Are men and women treated together?',
+    a: "Buena Vista's residential program is coed, meaning we serve both men and women. Group therapy and daily programming bring everyone together as a community, which many clients say becomes one of the most powerful parts of their recovery — being understood by people who truly get it, regardless of gender. That said, we understand some people feel safest and do their best work in a gender-specific setting, and it's a completely valid thing to ask about. If a women's-only or men's-only environment is important to you, mention it during your phone assessment. Our team can talk through your comfort level and, if needed, help coordinate the right fit.",
+  },
+  {
+    q: 'Do you offer transportation to the facility?',
+    a: "Yes, we can arrange transportation to get you to our facility within our local service area. For a lot of people, figuring out how to physically get to treatment is one of the last barriers standing in the way, and we don't want that to be the thing that stops you. When you call, let the admissions team know you need a ride and they'll coordinate the details. One honest limitation: our transportation covers the local area, so we're not able to arrange long-distance pickups from far outside the region. If you're coming from farther away, our team will help you think through options — including whether your health plan or another resource can assist with medical transport — so you still have a path in.",
+  },
+  {
+    q: 'Can I bring my emotional support animal or pet?',
+    a: "We understand how much comfort an animal can bring, especially during a stressful time — but unfortunately we're not able to accommodate pets or emotional support animals in the facility. This is a common policy in residential treatment settings and it's in place for the safety, comfort, and health of everyone in the program. If you have a pet you're worried about leaving, please mention it when you call. Our team has helped people arrange boarding and pet care so they could go get the help they needed with peace of mind. Don't let this be the reason you put off treatment — there's almost always a solution.",
+  },
+  {
+    q: 'Is treatment confidential? Will my family know what’s going on?',
+    a: "Your privacy is protected by law. As a healthcare provider, we follow strict federal confidentiality rules (including HIPAA and the additional protections that apply specifically to substance use treatment), which means we cannot share information about your care — not even confirm that you're here — without your written permission. That also means you decide who gets to be involved. If you want your spouse, parent, or another loved one to be able to check in and be part of your recovery, you can authorize that, and many people find that family involvement helps. If you'd rather keep things private, that's your right too. When you call, our admissions team can explain exactly how this works and make sure your wishes are documented from the start.",
+  },
+  {
+    q: 'I’m on probation or have a court requirement. Can treatment help with that?',
+    a: "Many of the people we work with are navigating the legal system, and choosing to enter treatment voluntarily can be a meaningful step. We do provide voluntary residential treatment that can be part of your recovery while you're on probation, and our case managers are experienced in supporting clients who have legal considerations. A couple of honest notes so you know what to expect. First, we're an inpatient detox and residential provider — we don't perform standalone court-ordered screenings or outpatient assessments, so if a court has ordered only an evaluation, that's a different service and we'll point you in the right direction. Second, if your requirement specifies a particular length of stay, bring that up during your assessment so we can talk through whether our program aligns with what the court needs.",
+  },
+  {
+    q: 'I’m on methadone or another opioid medication. Can I still come?',
+    a: "This is an important question and the honest answer requires some nuance. Buena Vista does not start or dispense methadone on-site — we're not a methadone clinic. If you're currently established with a methadone provider, our team can talk with you about how to coordinate, but we can't continue a methadone dose ourselves. What we can often do is help you through detox with other approved medications, and in some situations a switch to buprenorphine-based medication may be clinically appropriate as part of your care — that's a decision our medical team makes with you based on your assessment. Being on methadone is not automatically a disqualifier, but it does affect how your admission and medical plan are handled, so it's essential to be upfront about it during your phone assessment. If it turns out our program isn't the right medical fit for your situation, our team routinely helps people find an appropriate provider that can meet their needs.",
+  },
+  {
+    q: 'What happens after I finish residential?',
+    a: "Residential is a beginning, not an ending, and planning for what comes next starts on your very first day — that's a big part of what your case manager is doing throughout your stay. As you near the end of the program, your team helps you build a step-down plan so you're not going from a highly structured environment straight back into old routines with no support. For many people the next step is a lower level of care plus ongoing recovery support and connection to a sober community. Your case manager will coordinate the details based on what you need, whether that's continued treatment, help finding sober living, or plugging into aftercare support. The whole point is continuity: you leave with a plan and people in your corner, not just a discharge date.",
+  },
+];
+
+// FAQPage + MedicalWebPage schema, per the brief's SEO guidance
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'MedicalWebPage',
+      name: 'Residential Treatment in Chandler & Tucson, AZ',
+      description,
+      about: {
+        '@type': 'MedicalCondition',
+        name: 'Substance Use Disorder',
+      },
+      audience: { '@type': 'Patient' },
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map(f => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    },
+  ],
+};
+---
+<Layout title={title} description={description}>
+  <TopBar />
+  <Nav />
+
+  <!-- 1. Hero -->
+  <ResidentialHero />
+
+  <!-- Coverage check, one section down from the hero -->
+  <VerifySection />
+
+  <!-- 2. What residential treatment is -->
+  <WhatIsResidential />
+
+  <!-- BREATHER: full-bleed facility imagery -->
+  <FacilityShowcase />
+
+  <!-- 3. Who it's for + what we treat -->
+  <WhoItsFor />
+
+  <!-- BREATHER: facility gallery carousel -->
+  <FacilityGallery />
+
+  <!-- 4. The Buena Vista difference -->
+  <ResidentialDifference />
+
+  <!-- 5. A day in residential -->
+  <DayInResidential />
+
+  <!-- BREATHER: patient reviews -->
+  <Testimonials />
+
+  <!-- 6. The detox-to-residential pathway -->
+  <DetoxPathway />
+
+  <!-- 7. Amenities, environment & packing -->
+  <AmenitiesEnvironment />
+
+  <!-- BREATHER: coverage. Logos are suppressed here because the brief flags the
+       in-network payer list as unverified — the section still does its job as a
+       visual pause and routes to verification. -->
+  <Insurance
+    showLogos={false}
+    heading="Insurance & Private Pay"
+    intro="We accept many major insurance plans and offer private-pay options. Coverage for residential treatment varies from plan to plan, so the fastest way to know what yours covers is a quick verification call — a few minutes, at no cost, with no obligation."
+  />
+
+  <!-- 8. Admissions process -->
+  <AdmissionsProcess />
+
+  <!-- 9. FAQ -->
+  <FAQ
+    faqs={faqs}
+    eyebrow="Residential FAQ"
+    heading="The Questions People Actually Ask Us"
+    intro="These are the real questions our admissions team fields every day — answered the same way we'd answer them on the phone."
+  />
+
+
+  <!-- 10. Final CTA -->
+  <FinalCTA />
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+</Layout>

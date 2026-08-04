@@ -1,0 +1,31 @@
+---
+import InsuranceForm from './InsuranceForm.astro';
+// Quiet sage-tint background — the brand's "quiet section background" role.
+// The form lives here rather than in the hero, so nobody meets a lead-capture
+// form before they meet a human.
+---
+<section class="bg-sage-tint py-[60px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-[1fr_minmax(0,420px)] gap-12 items-center">
+
+      <div>
+        <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+          <span class="w-6 h-px bg-gold inline-block"></span>
+          Coverage
+        </p>
+        <h2 class="font-display text-charcoal mb-5">
+          We'll check your coverage while you're on the phone
+        </h2>
+        <p class="font-body text-charcoal text-[17px] leading-[29px] max-w-xl mb-6">
+          You don't need to work out what your plan covers before you call. Tell us what you have and we'll find out for you — usually in a few minutes, at no cost, with nothing owed either way.
+        </p>
+        <p class="font-body text-charcoal text-[17px] leading-[29px] max-w-xl">
+          If we're not in-network with your plan, we'll say so honestly and help you find somewhere that is.
+        </p>
+      </div>
+
+      <InsuranceForm id="verify" />
+
+    </div>
+  </div>
+</section>

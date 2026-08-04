@@ -5,28 +5,29 @@ interface Props {
 }
 const { id = 'verify', class: className = '' } = Astro.props;
 ---
-<div id={id} class={`bg-white rounded-2xl shadow-2xl px-3 py-7 lg:p-7 text-black ${className}`}>
+<div id={id} class={`bg-white rounded-xl shadow-2xl px-3 py-7 lg:p-7 text-charcoal ${className}`}>
 
-  <!-- Form heading + HIPAA badge as trust indicator -->
-  <div class="flex flex-col items-center text-center gap-2 mb-1 lg:flex-row lg:items-center lg:justify-between lg:text-left lg:gap-3">
-    <img src="/Asset/Accreditations/HIPAA%20Compliant.svg" alt="HIPAA Compliant" class="h-9 shrink-0 lg:order-2" />
-    <h3 class="font-display text-[20px] text-black whitespace-nowrap lg:order-1">Check Your Coverage Now</h3>
+  <!-- Form heading + HIPAA badge as trust indicator.
+       In-form headings are H5: Source Sans 3 600 · 22/29, not the display serif. -->
+  <div class="flex flex-row items-center justify-between gap-3 mb-1">
+    <h5 class="font-body font-semibold text-[22px] leading-[29px] text-charcoal">Check your coverage now</h5>
+    <img src="/Asset/Accreditations/HIPAA%20Compliant.svg" alt="HIPAA Compliant" class="h-9 shrink-0" />
   </div>
-  <p class="text-black text-sm font-body mb-5 text-center lg:text-left">Takes less than a minute. No commitment required.</p>
+  <p class="text-charcoal text-[16px] leading-[26px] font-body mb-5">Takes less than a minute. No commitment required.</p>
 
   <form class="space-y-4" onsubmit="return false;">
     <div class="grid grid-cols-2 gap-3 lg:gap-4">
       <div>
-        <label class="block text-xs font-bold text-black uppercase tracking-wide mb-1.5" for={`${id}-name`}>Your Name</label>
-        <input id={`${id}-name`} type="text" placeholder="First and last name" class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm font-body focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy transition-colors" />
+        <label class="block text-xs font-bold text-charcoal uppercase tracking-wide mb-1.5" for={`${id}-name`}>Your Name</label>
+        <input id={`${id}-name`} type="text" placeholder="First and last name" class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm font-body focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal transition-colors" />
       </div>
       <div>
-        <label class="block text-xs font-bold text-black uppercase tracking-wide mb-1.5" for={`${id}-phone`}>Your Phone</label>
-        <input id={`${id}-phone`} type="tel" placeholder="(555) 000-0000" class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm font-body focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy transition-colors" />
+        <label class="block text-xs font-bold text-charcoal uppercase tracking-wide mb-1.5" for={`${id}-phone`}>Your Phone</label>
+        <input id={`${id}-phone`} type="tel" placeholder="(555) 000-0000" class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm font-body focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal transition-colors" />
       </div>
       <div>
-        <label class="block text-xs font-bold text-black uppercase tracking-wide mb-1.5" for={`${id}-insurance`}>Insurance Carrier</label>
-        <select id={`${id}-insurance`} class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm font-body focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy transition-colors text-black bg-white">
+        <label class="block text-xs font-bold text-charcoal uppercase tracking-wide mb-1.5" for={`${id}-insurance`}>Insurance Carrier</label>
+        <select id={`${id}-insurance`} class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm font-body focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal transition-colors text-charcoal bg-white">
           <option value="">Select your carrier</option>
           <option>Aetna</option>
           <option>Blue Cross Blue Shield</option>
@@ -38,21 +39,17 @@ const { id = 'verify', class: className = '' } = Astro.props;
         </select>
       </div>
       <div>
-        <label class="block text-xs font-bold text-black uppercase tracking-wide mb-1.5 whitespace-nowrap" for={`${id}-policy`}>Membership Policy ID</label>
-        <input id={`${id}-policy`} type="text" placeholder="Policy ID" class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm font-body focus:outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy transition-colors" />
+        <label class="block text-xs font-bold text-charcoal uppercase tracking-wide mb-1.5 whitespace-nowrap" for={`${id}-policy`}>Membership Policy ID</label>
+        <input id={`${id}-policy`} type="text" placeholder="Policy ID" class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm font-body focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal transition-colors" />
       </div>
     </div>
-    <button type="submit" class="w-full bg-navy hover:bg-navy-mid text-white font-bold py-3.5 rounded-lg transition-colors font-body tracking-wide text-sm">
-      CHECK MY COVERAGE
+    <button type="submit" class="w-full bg-teal hover:bg-teal-dark text-white font-bold py-3.5 rounded-lg transition-colors font-body tracking-wide text-sm">
+      Check my coverage
     </button>
   </form>
 
-  <p class="text-xs text-black font-body text-center mt-4 leading-relaxed">
+  <p class="text-xs text-charcoal font-body mt-4 leading-relaxed">
     Confidential &middot; No pressure &middot; No spam
   </p>
 
-  <div class="mt-4 pt-4 border-t border-gray-100 flex items-center justify-center gap-3">
-    <div class="flex text-gold text-lg leading-none">★★★★★</div>
-    <span class="text-xs font-body text-black">4.9 · Verified Google Reviews</span>
-  </div>
 </div>

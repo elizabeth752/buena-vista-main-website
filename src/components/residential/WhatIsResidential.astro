@@ -1,0 +1,74 @@
+---
+const comparison = [
+  {
+    label: 'Medical detox',
+    tag: 'Typically 4–7 days',
+    desc: 'The medically supervised process of getting substances safely out of your body and through withdrawal, with 24/7 nursing, medication to keep you comfortable, and physician oversight. Detox helps your body.',
+  },
+  {
+    label: 'Residential treatment',
+    tag: 'Typically 30 days',
+    desc: 'Live-in care that begins once your body is stable. Group therapy twice a day, one-on-one work with your therapist, and a case manager planning what comes after. Residential helps you build the tools.',
+  },
+];
+---
+<section id="what-is-residential" class="bg-cream py-[50px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-14 items-center">
+
+      <!-- Left: Copy -->
+      <div>
+        <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+          <span class="w-6 h-px bg-gold inline-block"></span>
+          The Level of Care
+        </p>
+        <h2 class="font-display text-charcoal mb-6">
+          What residential treatment actually means
+        </h2>
+
+        <div class="space-y-5 font-body text-charcoal text-[17px] leading-[29px]">
+          <p>
+            Residential treatment is a live-in level of care. You stay at our facility full-time and focus completely on recovery — without the distractions, the triggers, or the responsibilities of daily life pulling at you.
+          </p>
+          <p>
+            It's the step that comes after medical detox. Most people stay about 30 days, though the exact length depends on your needs, your progress, and what your clinical team recommends. Some people benefit from a slightly longer stay, and in certain cases the program can extend toward 45 days when that's the right call.
+          </p>
+          <p>
+            Our residential program is <strong class="font-bold">voluntary</strong>. You're choosing to be here, and that choice matters — it's one of the strongest predictors of a good outcome.
+          </p>
+        </div>
+
+        <div class="mt-10">
+          <a href="tel:8883625576" class="bg-teal hover:bg-teal-dark text-white font-bold px-7 py-3.5 rounded-lg transition-colors font-body tracking-wide inline-block">
+            Talk to our team
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Detox vs Residential -->
+      <div class="space-y-5">
+        {comparison.map(item => (
+          <div class="bg-white rounded-xl p-7 shadow-sm border border-cream-soft">
+            <div class="flex items-center justify-between gap-4 mb-3">
+              <h3 class="font-display text-2xl text-charcoal">{item.label}</h3>
+              <span class="shrink-0 font-body text-xs font-bold uppercase tracking-wide text-gold bg-gold/10 rounded-full px-3 py-1.5">
+                {item.tag}
+              </span>
+            </div>
+            <p class="font-body text-charcoal text-[16px] leading-[26px]">{item.desc}</p>
+          </div>
+        ))}
+
+        <div class="flex gap-4 bg-navy-deep rounded-xl p-7 text-white">
+          <svg class="w-6 h-6 text-gold shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/>
+          </svg>
+          <p class="font-body text-white/85 text-[16px] leading-[26px]">
+            <strong class="text-white font-bold">One continuum, one team.</strong> You don't have to piece together detox at one place and treatment at another. You move from detox directly into residential under the same roof, with staff who already know you and a case manager who's been with you since day one.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

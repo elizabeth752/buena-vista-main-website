@@ -28,23 +28,22 @@ const team = [
 ---
 <section id="team" class="bg-white py-[50px]">
   <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-    <div class="text-center mb-14">
-      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center justify-center gap-2">
+    <div class="mb-14 max-w-3xl">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
         <span class="w-6 h-px bg-gold inline-block"></span>
         The People Behind Your Care
-        <span class="w-6 h-px bg-gold inline-block"></span>
       </p>
-      <h2 class="font-display text-black mb-4">
-        Experienced. Licensed. In Your Corner.
+      <h2 class="font-display text-charcoal mb-4">
+        Experienced. Licensed. In your corner.
       </h2>
-      <p class="font-body text-black max-w-2xl mx-auto text-base leading-relaxed">
+      <p class="font-body text-charcoal max-w-2xl text-[17px] leading-[29px]">
         Putting your life — or your loved one's life — in someone else's hands is an enormous act of trust. Here's who's on the other side of that trust.
       </p>
     </div>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
       {team.map(member => (
-        <div class="group bg-cream rounded-xl overflow-hidden hover:shadow-xl transition-shadow w-[320px] mx-auto sm:w-auto sm:mx-0">
+        <div class="group bg-cream rounded-xl overflow-hidden hover:shadow-xl transition-shadow flex flex-col h-full w-full max-w-[320px] mx-auto sm:max-w-none sm:mx-0">
           <div class="aspect-[3/4] overflow-hidden">
             <img
               src={member.photo}
@@ -52,11 +51,12 @@ const team = [
               class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
             />
           </div>
-          <div class="p-5">
-            <p class="text-gold font-body text-[10px] font-bold tracking-widest uppercase mb-1">{member.title}</p>
-            <h3 class="font-body text-base text-black whitespace-nowrap">
-              {member.name}{member.credentials && <span class="text-black text-sm">, {member.credentials}</span>}
-            </h3>
+          <div class="p-5 flex flex-col flex-1">
+            <p class="text-gold font-body text-[12px] font-bold tracking-[0.14em] uppercase mb-2">{member.title}</p>
+            <h3 class="font-body font-semibold text-[18px] leading-tight text-charcoal">{member.name}</h3>
+            {member.credentials && (
+              <p class="font-body text-[15px] leading-[24px] text-muted mt-0.5">{member.credentials}</p>
+            )}
           </div>
         </div>
       ))}
