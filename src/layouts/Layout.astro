@@ -3,10 +3,13 @@ import '../styles/global.css';
 interface Props {
   title?: string;
   description?: string;
+  /** Keeps a page out of search results — used for pages awaiting sign-off. */
+  noindex?: boolean;
 }
 const {
   title = 'Buena Vista Health & Recovery Centers | Chandler & Tucson, AZ',
-  description = 'Honest, structured addiction treatment in Arizona. Medically supervised detox and residential treatment in Chandler and Tucson, AZ. Call (888) 362-5576.'
+  description = 'Honest, structured addiction treatment in Arizona. Medically supervised detox and residential treatment in Chandler and Tucson, AZ. Call (888) 362-5576.',
+  noindex = false
 } = Astro.props;
 ---
 <!doctype html>
@@ -15,6 +18,7 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

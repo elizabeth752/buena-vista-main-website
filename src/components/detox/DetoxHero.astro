@@ -1,0 +1,85 @@
+---
+import Horizon from '../Horizon.astro';
+
+// Detox is the point of maximum fear and maximum medical risk. Lead with
+// safety, then speed. Never fear-based, never "pain-free" or "risk-free".
+const reassurances = [
+  'Nurses on site 24 hours a day, with physician oversight',
+  'Comfort medications so you are not white-knuckling withdrawal',
+  'Your own room and your own bathroom — not a shared ward',
+  'Same-day admission is often possible when a bed is open',
+];
+---
+<section id="hero" class="bg-cream">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-[60px] lg:py-[80px]">
+    <div class="grid lg:grid-cols-[1fr_minmax(0,500px)] gap-12 lg:gap-16 items-center">
+
+      <div>
+        <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-5 flex items-center gap-2">
+          <span class="w-6 h-px bg-gold inline-block"></span>
+          Medical detox · Chandler &amp; Tucson, Arizona
+        </p>
+
+        <h1 class="font-display text-navy mb-6">
+          You will be safe, and you will be looked after.
+        </h1>
+
+        <p class="font-body text-charcoal text-[20px] leading-[33px] max-w-xl mb-8">
+          Medically supervised detox for alcohol, opioids, and more — with nursing care around the clock and medication to keep you as comfortable as we can while the hardest part passes.
+        </p>
+
+        <ul class="space-y-3 mb-9">
+          {reassurances.map(item => (
+            <li class="flex items-start gap-3 font-body text-charcoal text-[17px] leading-[29px]">
+              <svg class="w-5 h-5 text-teal mt-1 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
+              </svg>
+              {item}
+            </li>
+          ))}
+        </ul>
+
+        <div class="border-l-2 border-gold pl-5 mb-9 max-w-xl">
+          <p class="font-body text-charcoal text-[16px] leading-[26px]">
+            <strong class="font-bold">Our line is answered by a real person, day or night.</strong> The assessment takes about 10 to 20 minutes, and we can do it even if you are using right now. If you need a ride, we can often arrange one locally.
+          </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a
+            href="tel:8883625576"
+            class="inline-flex items-center justify-center gap-2 bg-teal hover:bg-teal-dark text-white font-semibold h-14 px-8 rounded-lg transition-colors font-body"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+            </svg>
+            Talk to someone now
+          </a>
+          <a
+            href="#verify"
+            class="inline-flex items-center justify-center border-2 border-navy text-navy hover:bg-navy hover:text-white font-semibold h-14 px-8 rounded-lg transition-colors font-body"
+          >
+            Check my insurance
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <div class="overflow-hidden rounded-t-[160px] rounded-b-xl shadow-xl">
+          <img
+            src="/Asset/stock%20photo/Desktop%20Dimensions/Facility/Private%20bedroom%20with%20upholstered%20bed,%20reading%20chair,%20and%20large%20window.png"
+            alt="A private bedroom at Buena Vista — upholstered bed, reading chair, and a large window with natural light"
+            class="w-full object-cover aspect-[4/5]"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </div>
+        <Horizon variant="rule" class="mt-5" />
+        <p class="font-body text-muted text-[15px] leading-[24px] mt-3">
+          You get a private room and private bathroom in detox, not a shared ward.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>

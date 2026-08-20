@@ -1,0 +1,66 @@
+---
+// Medication language stays general: the calls suggest Buena Vista reviews and
+// coordinates psychiatric care rather than acting as a standalone prescriber.
+const approach = [
+  {
+    title: 'One team, both problems',
+    desc: 'The people supporting your recovery are the same people paying attention to the anxiety or trauma running underneath it. You are not handed between two programs that never speak to each other.',
+  },
+  {
+    title: 'Therapy that goes underneath',
+    desc: 'Group work most days, plus one-on-one sessions where the more personal material comes up — the things that are harder to say out loud in a room full of people.',
+  },
+  {
+    title: 'Your medication reviewed properly',
+    desc: 'Plenty of people arrive on something for anxiety, depression, or bipolar disorder — and plenty have quietly stopped taking it. Our medical team reviews what you are on and coordinates psychiatric care where you need it.',
+  },
+  {
+    title: 'A plan that accounts for both',
+    desc: 'Your case manager builds what comes next around the whole picture, not just the substance use, so you are not discharged straight back into the thing that started it.',
+  },
+];
+---
+<section id="why-together" class="bg-white py-[60px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-14 lg:gap-20 items-start">
+
+      <div>
+        <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-5 flex items-center gap-2">
+          <span class="w-6 h-px bg-gold inline-block"></span>
+          Why both at once
+        </p>
+        <h2 class="font-display text-charcoal mb-6">
+          Treating one and ignoring the other rarely holds
+        </h2>
+
+        <div class="space-y-5 font-body text-charcoal text-[17px] leading-[29px]">
+          <p>
+            For a lot of people, substances became the way to cope with something painful — the anxiety, the memories that will not quiet down, the sleeplessness, the grief. If treatment deals with the drinking or the using but never touches what sat underneath it, that pain is still waiting when treatment ends.
+          </p>
+          <p>
+            It works the other way too. It is very hard to make progress on your mental health while active substance use is pulling everything apart underneath you.
+          </p>
+          <p>
+            So we treat them together. Not because it is a nicer thing to say, but because fighting on two fronts separately is how people end up doing this three and four times.
+          </p>
+        </div>
+
+        <div class="mt-9">
+          <a href="tel:8883625576" class="inline-flex items-center justify-center bg-teal hover:bg-teal-dark text-white font-semibold h-14 px-8 rounded-lg transition-colors font-body">
+            Talk it through with someone
+          </a>
+        </div>
+      </div>
+
+      <div class="space-y-5">
+        {approach.map(item => (
+          <div class="bg-cream rounded-xl p-7 border border-cream-soft">
+            <h3 class="font-display text-xl text-charcoal mb-2 leading-snug">{item.title}</h3>
+            <p class="font-body text-charcoal text-[16px] leading-[26px]">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </div>
+</section>

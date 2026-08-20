@@ -1,0 +1,81 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TopBar from '../components/TopBar.astro';
+import Nav from '../components/Nav.astro';
+
+import OurTeam from '../components/OurTeam.astro';
+import SpaceBuilt from '../components/SpaceBuilt.astro';
+import FacilityGallery from '../components/FacilityGallery.astro';
+import Testimonials from '../components/Testimonials.astro';
+import LocationSection from '../components/LocationSection.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+
+import AboutHero from '../components/about/AboutHero.astro';
+import OurStory from '../components/about/OurStory.astro';
+import OurContinuum from '../components/about/OurContinuum.astro';
+
+const title = 'About Buena Vista Health & Recovery Centers | Compassionate Addiction Treatment in Arizona';
+const description = 'Learn about Buena Vista Health & Recovery Centers — Arizona addiction treatment offering medical detox and residential care, delivered by a team that treats you like a person, not a number.';
+
+// VERIFY before publishing: the exact ownership framing and which reopening
+// dates to state publicly; and every name, title, credential and consent in the
+// team section (the brief lists Director of Nursing as "Brianna" Ramirez while
+// the site currently says "Breana" — one of the two is wrong).
+
+// Organization schema supports E-E-A-T for a brand/trust page. Person schema
+// for named leadership is deliberately omitted until names are confirmed.
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalOrganization',
+  name: 'Buena Vista Health & Recovery Centers',
+  description,
+  url: 'https://buenavistarecovery.com/about',
+  logo: '/Asset/stock%20photo/Logo%20Buena%20Vista.svg',
+  telephone: '+1-888-362-5576',
+  medicalSpecialty: 'Addiction Medicine',
+  address: [
+    {
+      '@type': 'PostalAddress',
+      streetAddress: '3033 S Arizona Ave',
+      addressLocality: 'Chandler',
+      addressRegion: 'AZ',
+      postalCode: '85286',
+      addressCountry: 'US',
+    },
+    {
+      '@type': 'PostalAddress',
+      streetAddress: '5151 E Pima St',
+      addressLocality: 'Tucson',
+      addressRegion: 'AZ',
+      addressCountry: 'US',
+    },
+  ],
+};
+---
+<Layout title={title} description={description}>
+  <TopBar />
+  <Nav />
+
+  <AboutHero />
+  <OurStory />
+
+  <!-- BREATHER -->
+  <FacilityGallery />
+
+  <!-- The people. Trust on a treatment site is built on faces. -->
+  <OurTeam />
+
+  <OurContinuum />
+
+  <!-- The environment — the non-institutional promise, shown not claimed -->
+  <SpaceBuilt />
+
+  <!-- BREATHER -->
+  <Testimonials />
+
+  <LocationSection />
+
+  <FinalCTA />
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+</Layout>

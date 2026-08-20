@@ -1,0 +1,51 @@
+---
+const steps = [
+  {
+    num: '01',
+    title: 'Share your insurance details',
+    desc: 'A quick form or a phone call. We need your name, date of birth, and your plan information — and if the card is not in front of you, call and we can usually work it out anyway.',
+  },
+  {
+    num: '02',
+    title: 'We verify your benefits',
+    desc: 'Usually within minutes. Our team checks what your plan actually covers for treatment, at no cost to you and with no obligation to go any further.',
+  },
+  {
+    num: '03',
+    title: 'We explain it in plain language',
+    desc: 'What is covered, what is not, and what if anything you would be responsible for. Honestly, without pressure, and with time for your questions.',
+  },
+];
+---
+<section id="how-it-works" class="bg-white py-[60px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+
+    <div class="mb-14 max-w-3xl">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+        <span class="w-6 h-px bg-gold inline-block"></span>
+        How it works
+      </p>
+      <h2 class="font-display text-charcoal mb-4">
+        Three steps, and none of them commit you to anything
+      </h2>
+      <p class="font-body text-charcoal text-[17px] leading-[29px] max-w-2xl">
+        Checking your coverage is not the same as signing up for treatment. It is simply finding out where you stand, which is usually the thing standing between someone and the decision to get help.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      {steps.map(step => (
+        <div class="bg-cream rounded-xl p-8 border border-cream-soft flex flex-col h-full">
+          <div class="flex items-center gap-4 mb-4">
+            <span class="w-12 h-12 rounded-full bg-navy text-gold font-display text-xl flex items-center justify-center shrink-0">
+              {step.num}
+            </span>
+            <h3 class="font-display text-xl text-charcoal leading-tight">{step.title}</h3>
+          </div>
+          <p class="font-body text-charcoal text-[16px] leading-[26px]">{step.desc}</p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

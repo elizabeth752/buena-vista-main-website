@@ -1,0 +1,80 @@
+---
+import Horizon from '../Horizon.astro';
+
+// Many people with co-occurring conditions have been turned away elsewhere for
+// being "too complicated". The page should feel like relief — while staying
+// unambiguous that this is addiction treatment with integrated mental-health
+// support, not psychiatric care.
+---
+<section id="hero" class="bg-cream">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-[60px] lg:py-[80px]">
+    <div class="grid lg:grid-cols-[1fr_minmax(0,500px)] gap-12 lg:gap-16 items-center">
+
+      <div>
+        <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-5 flex items-center gap-2">
+          <span class="w-6 h-px bg-gold inline-block"></span>
+          Dual diagnosis · Chandler &amp; Tucson, Arizona
+        </p>
+
+        <h1 class="font-display text-navy mb-6">
+          You are not too complicated to help.
+        </h1>
+
+        <p class="font-body text-charcoal text-[20px] leading-[33px] max-w-xl mb-8">
+          Addiction rarely travels alone. When anxiety, depression, PTSD, or trauma are tangled up in it, we treat both together — because treating one and ignoring the other is how people end up back where they started.
+        </p>
+
+        <ul class="space-y-3 mb-9">
+          {[
+            'Substance use and co-occurring conditions treated at the same time',
+            'Trauma-informed therapy, one-on-one and in groups',
+            'A medical team that reviews the medication you already take',
+            'Staff who have been through recovery themselves',
+          ].map(item => (
+            <li class="flex items-start gap-3 font-body text-charcoal text-[17px] leading-[29px]">
+              <svg class="w-5 h-5 text-teal mt-1 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
+              </svg>
+              {item}
+            </li>
+          ))}
+        </ul>
+
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a
+            href="tel:8883625576"
+            class="inline-flex items-center justify-center gap-2 bg-teal hover:bg-teal-dark text-white font-semibold h-14 px-8 rounded-lg transition-colors font-body"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+            </svg>
+            Talk to someone now
+          </a>
+          <a
+            href="#verify"
+            class="inline-flex items-center justify-center border-2 border-navy text-navy hover:bg-navy hover:text-white font-semibold h-14 px-8 rounded-lg transition-colors font-body"
+          >
+            Check my insurance
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <div class="overflow-hidden rounded-t-[160px] rounded-b-xl shadow-xl">
+          <img
+            src="/Asset/stock%20photo/Desktop%20Dimensions/Facility/Quiet%20reading%20nook%20with%20armchairs,%20side%20table,%20and%20natural%20light.png"
+            alt="A quiet reading nook at Buena Vista with armchairs, a side table, and natural light"
+            class="w-full object-cover aspect-[4/5]"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </div>
+        <Horizon variant="rule" class="mt-5" />
+        <p class="font-body text-muted text-[15px] leading-[24px] mt-3">
+          Somewhere quiet to sit with what comes up. That matters more than people expect.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>

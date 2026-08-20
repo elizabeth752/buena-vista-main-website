@@ -1,0 +1,114 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TopBar from '../components/TopBar.astro';
+import Nav from '../components/Nav.astro';
+
+import VerifySection from '../components/VerifySection.astro';
+import FacilityShowcase from '../components/FacilityShowcase.astro';
+import Testimonials from '../components/Testimonials.astro';
+import FAQ from '../components/FAQ.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+
+import DualHero from '../components/dual/DualHero.astro';
+import CrisisBand from '../components/dual/CrisisBand.astro';
+import WhyTogether from '../components/dual/WhyTogether.astro';
+import ConditionsSupported from '../components/dual/ConditionsSupported.astro';
+import ScopeBoundary from '../components/dual/ScopeBoundary.astro';
+
+const title = 'Dual Diagnosis Treatment in Arizona | Addiction & Co-Occurring Care | Buena Vista';
+const description = 'Addiction rarely travels alone. Buena Vista treats substance use alongside co-occurring conditions like anxiety, depression, PTSD, and trauma — as part of whole-person care in Arizona.';
+
+// Written to the conservative, call-supported framing: substance-use-primary
+// with integrated co-occurring support. Nothing here implies psychiatric or
+// standalone mental-health treatment, and no acute conditions are claimed.
+const faqs = [
+  {
+    q: 'What is a dual diagnosis (co-occurring disorder)?',
+    a: "A dual diagnosis — also called a co-occurring disorder — simply means someone is living with both a substance use disorder and a mental-health condition at the same time, like addiction alongside depression, anxiety, PTSD, or bipolar disorder. It's far more common than most people realize: for many, substance use and mental-health struggles are deeply tangled together, each one feeding the other. That's exactly why they're best treated together rather than separately. When you treat only the addiction and ignore the anxiety or trauma underneath it — or treat the mental health and ignore the substance use — you leave the door open for relapse. At Buena Vista we care for the whole person, addressing both sides of the picture as part of your treatment.",
+  },
+  {
+    q: 'Do you treat mental health conditions as well as addiction?',
+    a: "Yes — as part of addiction treatment. Many of the people we care for are carrying more than substance use alone: anxiety, depression, PTSD, trauma, or bipolar disorder often walk hand-in-hand with addiction. Our approach is built around treating the whole person, so your care accounts for both the substance use and the mental-health struggles connected to it, through medical support, individual and group therapy, and case management. It's important to be clear and honest about what we are, though: Buena Vista is a substance use treatment center — a detox and residential program — not a psychiatric hospital. We're at our best when we're treating addiction alongside the mental-health conditions intertwined with it. If someone's primary need is standalone psychiatric care, or they're in an acute mental-health crisis, that calls for a different, higher level of care — and if that's the case, we'll help point you toward the right place.",
+  },
+  {
+    q: 'Why is it better to treat both at the same time?',
+    a: "Because they're connected. For a lot of people, substances became a way to cope with something painful — anxiety, trauma, depression, sleeplessness, memories that won't quiet down. If treatment tackles the addiction but never touches what's underneath, that underlying pain is still there when treatment ends, and it's one of the biggest drivers of relapse. The reverse is true too: it's very hard to make progress on your mental health while active substance use is destabilizing everything. Integrated care treats both together, so you're not left fighting a war on two fronts alone. At Buena Vista that means the same team supporting your recovery is also attentive to the anxiety, trauma, or depression woven through it.",
+  },
+  {
+    q: "I've been turned away elsewhere for being 'too complicated'. Can you help?",
+    a: "First — we're sorry that happened, and we understand how discouraging it feels. Carrying both addiction and a mental-health condition can make people feel like they're too much for anyone to handle, and that simply isn't true. Co-occurring conditions are common, and treating them alongside addiction is a core part of what we do. We do want to be honest with you about fit, because the right care matters more than saying yes to everyone. Buena Vista is well suited to treat addiction together with conditions like anxiety, depression, PTSD, and trauma. If your primary need is intensive psychiatric care, or you're in an acute crisis, we'll tell you honestly and help connect you to a program equipped for that — we won't just turn you away and leave you on your own. The best way to find out where you fit is to call and talk it through with a real person, with no judgment.",
+  },
+  {
+    q: 'Will I be able to keep taking my psychiatric medication?',
+    a: "If you're currently taking psychiatric medication, it's important to tell us during your assessment so our medical team can review it and plan your care safely. Many people come to us on medication for anxiety, depression, bipolar disorder, or other conditions, and our team takes that into account as part of your treatment. Every situation is individual, and decisions about medication are made by our medical providers with your safety in mind. If your care would be better supported by coordinating with a psychiatric provider, our team helps arrange that. The key is being open about what you're taking so nothing falls through the cracks.",
+  },
+  {
+    q: 'What conditions do you treat alongside addiction?',
+    a: "We commonly support people whose substance use is intertwined with conditions like PTSD and trauma, anxiety, depression, and bipolar disorder. Because these so often fuel addiction — and are fueled by it — we address them as part of your overall treatment rather than treating your recovery in a vacuum. Every person's situation is unique, so the best way to understand whether we're the right fit for your specific needs is to talk with our team during a confidential assessment. We'll ask about both your substance use and your mental and emotional health so we can understand the full picture and, if we're not the right level of care, help guide you to the right one.",
+  },
+  {
+    q: 'Is my mental health information kept private?',
+    a: "Yes. Everything you share — about your substance use and your mental health — is protected by strict federal privacy laws, including HIPAA and the additional confidentiality protections that apply to substance use treatment. We can't share your information, or even confirm that you're here, without your written permission. That confidentiality is part of what makes it safe to be honest with us. The more openly you can talk about what you're really dealing with, the better we can help — and none of it leaves our care without your say-so.",
+  },
+  {
+    q: "What if I'm in a mental health crisis right now?",
+    a: "If you or someone you love is in immediate danger or having thoughts of suicide, please reach out for emergency help right now: call or text 988 to reach the Suicide and Crisis Lifeline, available 24/7, or call 911 if there's an immediate emergency. A mental-health crisis needs immediate crisis care, which is different from the treatment we provide. Buena Vista is a substance use detox and residential program, and while we care deeply, we're not a crisis or psychiatric emergency service. Once someone is safe and stable, we're here to help with the addiction and co-occurring conditions that follow — and if you reach out to us during a crisis, we'll help point you toward the right immediate resources first.",
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'MedicalWebPage',
+      name: 'Dual Diagnosis Treatment in Arizona',
+      description,
+      about: { '@type': 'MedicalCondition', name: 'Co-Occurring Substance Use and Mental Health Disorders' },
+      audience: { '@type': 'Patient' },
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map(f => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    },
+  ],
+};
+---
+<Layout title={title} description={description}>
+  <TopBar />
+  <Nav />
+
+  <DualHero />
+
+  <!-- Crisis resources sit high on this page, not only in the footer -->
+  <CrisisBand />
+
+  <WhyTogether />
+
+  <!-- BREATHER -->
+  <FacilityShowcase />
+
+  <ConditionsSupported />
+
+  <!-- The expectation-setting section the brief calls the most valuable here -->
+  <ScopeBoundary />
+
+  <!-- BREATHER -->
+  <Testimonials />
+
+  <VerifySection />
+
+  <FAQ
+    faqs={faqs}
+    eyebrow="Dual diagnosis FAQ"
+    heading="The questions people are afraid to ask"
+    intro="Carrying both addiction and a mental-health condition is common, and it does not make you a difficult case. Here are honest answers."
+  />
+
+  <FinalCTA />
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+</Layout>

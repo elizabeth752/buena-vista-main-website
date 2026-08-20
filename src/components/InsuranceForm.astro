@@ -15,7 +15,7 @@ const { id = 'verify', class: className = '' } = Astro.props;
   </div>
   <p class="text-charcoal text-[16px] leading-[26px] font-body mb-5">Takes less than a minute. No commitment required.</p>
 
-  <form class="space-y-4" onsubmit="return false;">
+  <form class={`space-y-4 verify-form verify-form-${id}`} data-form-id={id} onsubmit="return false;">
     <div class="grid grid-cols-2 gap-3 lg:gap-4">
       <div>
         <label class="block text-xs font-bold text-charcoal uppercase tracking-wide mb-1.5" for={`${id}-name`}>Your Name</label>
@@ -32,9 +32,7 @@ const { id = 'verify', class: className = '' } = Astro.props;
           <option>Aetna</option>
           <option>Blue Cross Blue Shield</option>
           <option>Cigna</option>
-          <option>Humana</option>
           <option>UnitedHealthcare</option>
-          <option>Medicaid</option>
           <option>Other / Not sure</option>
         </select>
       </div>
@@ -46,6 +44,14 @@ const { id = 'verify', class: className = '' } = Astro.props;
     <button type="submit" class="w-full bg-teal hover:bg-teal-dark text-white font-bold py-3.5 rounded-lg transition-colors font-body tracking-wide text-sm">
       Check my coverage
     </button>
+
+    <!-- INTERIM: submissions are not yet wired to CTM. Rather than silently
+         discarding what someone typed, we route them to the phone. Remove this
+         block and POST to the CTM API once that integration exists. -->
+    <p class={`form-fallback-${id} hidden font-body text-[15px] leading-[24px] text-charcoal bg-cream border border-cream-soft rounded-lg p-4`}>
+      Give us a call and we'll check your coverage with you right now —
+      <a href="tel:8883625576" class="text-teal font-semibold underline underline-offset-2 tel-number">(888) 362-5576</a>. Someone real answers, any hour.
+    </p>
   </form>
 
   <p class="text-xs text-charcoal font-body mt-4 leading-relaxed">
@@ -53,3 +59,16 @@ const { id = 'verify', class: className = '' } = Astro.props;
   </p>
 
 </div>
+
+<script>
+// INTERIM behavior until the CTM API integration lands. The form does not yet
+// transmit anything, so instead of failing silently we surface the phone path.
+document.querySelectorAll<HTMLFormElement>('form.verify-form').forEach((form) => {
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const id = form.dataset.formId;
+    const fallback = form.querySelector(`.form-fallback-${id}`);
+    if (fallback) fallback.classList.remove('hidden');
+  });
+});
+</script>

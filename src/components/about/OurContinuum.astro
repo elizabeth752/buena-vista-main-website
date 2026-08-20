@@ -1,0 +1,64 @@
+---
+// Only the levels of care that are live are described. Outpatient and alumni
+// availability remain unverified post-reopening and are deliberately not
+// promised here.
+const steps = [
+  {
+    num: '01',
+    title: 'Medical detox',
+    desc: 'Where it usually begins. Nursing around the clock, comfort medications, and a private room while your body stabilizes — typically about five to seven days.',
+    href: '/medical-detox',
+    linkLabel: 'About medical detox',
+  },
+  {
+    num: '02',
+    title: 'Residential treatment',
+    desc: 'The deeper work, once your body is steady. Group therapy twice a day, one-on-one sessions, catered meals, and a case manager planning your next step from the beginning.',
+    href: '/residential-treatment',
+    linkLabel: 'About residential treatment',
+  },
+  {
+    num: '03',
+    title: 'What comes after',
+    desc: 'Your recovery does not end at discharge, so your case manager helps you build a plan before you leave — continued care, sober living, and the support that keeps you steady at home.',
+    href: null,
+    linkLabel: null,
+  },
+];
+---
+<section id="continuum" class="bg-cream py-[60px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+
+    <div class="mb-14 max-w-3xl">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+        <span class="w-6 h-px bg-gold inline-block"></span>
+        Our continuum of care
+      </p>
+      <h2 class="font-display text-charcoal mb-4">
+        Recovery happens in stages. We are there for each one.
+      </h2>
+      <p class="font-body text-charcoal text-[17px] leading-[29px] max-w-2xl">
+        You will not be handed between facilities or asked to tell your story again to a new team. It happens here, with the same people, from the first day to the last.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      {steps.map(step => (
+        <div class="bg-white rounded-xl p-8 border border-cream-soft flex flex-col h-full">
+          <div class="font-display text-4xl text-gold mb-4">{step.num}</div>
+          <h3 class="font-display text-2xl text-charcoal mb-3">{step.title}</h3>
+          <p class="font-body text-charcoal text-[16px] leading-[26px] flex-1">{step.desc}</p>
+          {step.href && (
+            <a href={step.href} class="inline-flex items-center gap-2 font-body font-semibold text-teal hover:text-teal-dark transition-colors text-[16px] mt-5">
+              {step.linkLabel}
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+              </svg>
+            </a>
+          )}
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

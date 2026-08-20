@@ -1,0 +1,60 @@
+---
+// The continuum, framed honestly. Residential is named as the primary next
+// step because it is live; outpatient/IOP availability is a VERIFY item in the
+// brief and is deliberately not promised here.
+---
+<section
+  id="after-detox"
+  class="relative bg-navy text-white py-[60px] overflow-hidden"
+  style="background-image: linear-gradient(to right, rgba(0,43,92,0.90) 50%, rgba(0,43,92,0.58) 100%), url('/Asset/stock%20photo/Desktop%20Dimensions/CTA.png'); background-size: cover; background-position: center;"
+>
+  <div class="absolute left-0 top-0 bottom-0 w-1 bg-gold"></div>
+
+  <div class="max-w-7xl mx-auto px-[25px] sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+
+      <div>
+        <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-5 flex items-center gap-2">
+          <span class="w-6 h-px bg-gold inline-block"></span>
+          What happens next
+        </p>
+        <h2 class="font-display text-white mb-6">
+          Detox is the first step, not the whole journey
+        </h2>
+
+        <div class="space-y-5 font-body text-white/85 text-[17px] leading-[29px]">
+          <p>
+            Getting substances safely out of your body is essential, but on its own it is not treatment. It is the part that makes treatment possible. That is why your case manager starts planning your next step while you are still in your detox room.
+          </p>
+          <p>
+            For most people that next step is residential treatment — moving into more comfortable housing here and starting the therapeutic work. Because both happen under one roof, you do not have to find a second facility or tell your story to a whole new team.
+          </p>
+        </div>
+
+        <div class="mt-9 flex flex-col sm:flex-row gap-4">
+          <a href="/residential-treatment" class="inline-flex items-center justify-center gap-2 bg-white hover:bg-cream text-navy font-semibold h-14 px-8 rounded-lg transition-colors font-body">
+            See residential treatment
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-5">
+        {[
+          ['The same team', 'The people who cared for you through detox are the people who carry you into what comes next.'],
+          ['A case manager', 'Yours from early on, coordinating the next level of care, sober living, or ongoing support.'],
+          ['Somewhere to go', 'You leave with a plan and people in your corner, rather than a discharge date and a car park.'],
+          ['No starting over', 'No second admission, no repeating your history, no gap between finishing detox and beginning treatment.'],
+        ].map(([title, desc]) => (
+          <div class="bg-white/8 border border-white/12 rounded-xl p-7 backdrop-blur-sm">
+            <p class="font-body font-bold text-white text-[17px] mb-2">{title}</p>
+            <p class="font-body text-white/70 text-[16px] leading-[26px]">{desc}</p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,107 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TopBar from '../components/TopBar.astro';
+import Nav from '../components/Nav.astro';
+
+import Insurance from '../components/Insurance.astro';
+import FacilityShowcase from '../components/FacilityShowcase.astro';
+import Testimonials from '../components/Testimonials.astro';
+import FAQ from '../components/FAQ.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+
+import InsuranceHero from '../components/insurance/InsuranceHero.astro';
+import HowVerifyWorks from '../components/insurance/HowVerifyWorks.astro';
+import CoverageOptions from '../components/insurance/CoverageOptions.astro';
+
+const title = 'Verify Your Insurance for Rehab in Arizona | Buena Vista Health & Recovery';
+const description = "Wondering if your insurance covers treatment? Verify your benefits in minutes — free, confidential, and with no obligation. Buena Vista accepts most major insurance plans. Call today.";
+
+// No plan is named and no coverage is promised anywhere in these answers.
+// Network status changes month to month, so everything routes to verification.
+const faqs = [
+  {
+    q: 'Do you take my insurance?',
+    a: "The honest answer is: quite possibly — and the fastest way to know for certain is to let us check for you. We accept most major insurance plans, and because coverage depends on your specific plan and can change over time, we verify your benefits directly rather than have you guess from a list. It takes just a few minutes, it's completely free, and there's no obligation whatsoever. Give us a call or fill out the quick verification form with your insurance information, and we'll tell you exactly what your plan covers and what your options are. Even if we're not the right fit for your particular coverage, we'll be honest about it and help point you toward reputable options — because getting you into the right care matters more to us than anything else.",
+  },
+  {
+    q: 'How do I verify my insurance benefits?',
+    a: "It's simple and takes just a few minutes. You can call us and a real person will check your coverage with you over the phone, or you can fill out our verification form with a few basic details — your name, date of birth, and insurance information. Either way, our team confirms what your plan covers for treatment and walks you through it in plain language. There's no cost and no commitment to verify. Many people are relieved to learn their coverage is better than they feared — and even if you don't have your insurance card in front of you, give us a call and we can often still help you figure it out.",
+  },
+  {
+    q: 'Will my insurance cover the full cost of treatment?',
+    a: "Coverage varies from plan to plan — some cover treatment in full, others involve a copay, a deductible, or coverage for certain levels of care but not others. That's exactly why verifying your benefits is so valuable: rather than facing surprises, you'll know up front what your plan covers and what, if anything, you'd be responsible for. When we verify your benefits we'll explain all of this clearly and honestly, so you can make an informed decision with no guesswork. If there are out-of-pocket costs, we'll talk through your options with you.",
+  },
+  {
+    q: 'Does my plan cover detox but not residential, or the other way around?',
+    a: "It can happen — some insurance plans approve one level of care but have different rules for another, and coverage can also depend on medical necessity as determined during your assessment. This is one of the most common questions we help people untangle. When we verify your benefits, we look at coverage across the levels of care you may need — detox, residential, and beyond — so you get a complete picture rather than a piece of it. If your plan covers one part but not another, we'll be upfront about it and help you understand your options.",
+  },
+  {
+    q: 'What if I don’t have insurance?',
+    a: "Please still reach out — don't let a lack of insurance stop you from making the call. Our team can talk through your situation and help you understand your options, and we also offer private-pay options for those who prefer or need them. If it turns out we're not the right fit for your circumstances, we'll help connect you with reputable resources and facilities that can serve you. There's no wrong door here; the important thing is that you reach out so we can help you find a path forward.",
+  },
+  {
+    q: 'Is verifying my insurance confidential? Will it affect anything?',
+    a: "Yes, it's completely confidential. As a healthcare provider we're bound by strict federal privacy laws — including HIPAA and the additional protections that apply to substance use treatment — so your information is protected and never shared without your permission. Verifying your benefits is simply us checking what your plan covers. It doesn't obligate you to anything, and it won't affect your coverage or your premiums. It's a no-pressure, no-risk way to get clarity, and many people feel a weight lift once they finally know where they stand.",
+  },
+  {
+    q: 'Do you accept Medicare?',
+    a: "We're not able to accept Medicare or Medicare Advantage plans, as our program isn't Medicare-certified. Medicare-covered detox and treatment are usually provided in a hospital or psychiatric setting rather than a residential facility like ours. If you have Medicare and are seeking treatment, give us a call anyway — we can help point you toward appropriate Medicare-covered options so you still get the care you need. And if you have a secondary or different plan alongside Medicare, we're happy to check whether that changes your options.",
+  },
+  {
+    q: 'Why do I need to verify instead of just reading a list?',
+    a: "Because a list would mislead you. Insurance networks change over time, coverage differs between plans from the same carrier, and what a plan approves can depend on the level of care and on medical necessity determined during your assessment. A name on a page tells you almost nothing about your specific situation. A five-minute verification call tells you what you'd actually be responsible for — and it means nobody is relying on information that went out of date months ago.",
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'MedicalWebPage',
+      name: 'Verify Your Insurance for Rehab in Arizona',
+      description,
+      audience: { '@type': 'Patient' },
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map(f => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    },
+  ],
+};
+---
+<Layout title={title} description={description}>
+  <TopBar />
+  <Nav />
+
+  <InsuranceHero />
+  <HowVerifyWorks />
+
+  <!-- Carrier logos + the generic acceptance line -->
+  <Insurance
+    bg="bg-sand"
+    heading="We accept most major insurance plans"
+    intro="Rather than publish a list that goes out of date, we check your specific plan for you — free, in a few minutes, with no obligation."
+  />
+
+  <CoverageOptions />
+
+  <!-- BREATHER -->
+  <FacilityShowcase />
+
+  <Testimonials />
+
+  <FAQ
+    faqs={faqs}
+    eyebrow="Insurance FAQ"
+    heading="What people ask us about paying for treatment"
+    intro="Money is the reason people most often talk themselves out of getting help. These are the honest answers."
+  />
+
+  <FinalCTA />
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+</Layout>

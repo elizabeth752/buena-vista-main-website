@@ -1,0 +1,162 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TopBar from '../components/TopBar.astro';
+import Nav from '../components/Nav.astro';
+
+// Shared sections reused as visual breathers between content-heavy blocks
+import FacilityShowcase from '../components/FacilityShowcase.astro';
+import FacilityGallery from '../components/FacilityGallery.astro';
+import Testimonials from '../components/Testimonials.astro';
+import VerifySection from '../components/VerifySection.astro';
+import FAQ from '../components/FAQ.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+
+// Detox-specific sections
+import DetoxHero from '../components/detox/DetoxHero.astro';
+import WhatIsDetox from '../components/detox/WhatIsDetox.astro';
+import WhatWeDetoxFrom from '../components/detox/WhatWeDetoxFrom.astro';
+import WhatToExpect from '../components/detox/WhatToExpect.astro';
+import AfterDetox from '../components/detox/AfterDetox.astro';
+import DetoxAdmissions from '../components/detox/DetoxAdmissions.astro';
+
+const title = 'Medical Detox in Chandler & Tucson, AZ | Buena Vista Health & Recovery';
+const description = 'Safe, medically supervised drug and alcohol detox in Arizona. 24/7 nursing, private rooms, comfort medications, and same-day admission. Call any time to verify your insurance.';
+
+// FAQ bank from the content brief. VERIFY items are deliberately excluded:
+// no payer list, no pricing, no transport radius, no IOP promise, no outpatient
+// detox implication, and no specific medication protocols.
+const faqs = [
+  {
+    q: 'Is medical detox safe? What if I have a seizure or serious withdrawal?',
+    a: "Medically supervised detox is the safest way to withdraw from alcohol, opioids, and other substances — safety is exactly why it exists. At Buena Vista you're under 24/7 nursing care with physician oversight, and our medical team uses comfort medications to manage your symptoms and keep you stable the whole way through. You're never left to tough it out alone. This matters most with alcohol and benzodiazepines, where withdrawal can genuinely be dangerous — seizures and delirium tremens are real risks when people try to quit cold turkey on their own, and that's the specific danger medical detox is designed to prevent. Our staff monitors your vital signs, watches for warning signs, and steps in immediately if anything changes. If a situation ever needed hospital-level care, we're equipped to coordinate that quickly too.",
+  },
+  {
+    q: 'Can I get in today? I need help right now.',
+    a: "Often, yes — same-day admission is possible when we have a bed available, and our admissions line is answered by a real person around the clock. We know that when someone is finally ready, or when a family is watching a loved one in withdrawal, waiting even a few hours can feel unbearable. Here's how it works: you call, we do a brief phone assessment (about 10 to 20 minutes) — and yes, we can do this even if you're currently using or under the influence — we verify insurance or discuss private pay, and a provider reviews everything to confirm detox is safe for your situation. Once a bed is confirmed we schedule intake, and in many cases that happens the same day. If we don't have a bed open the moment you call, we'll be honest about the earliest availability and take your information so we're ready the instant a spot opens. One thing to know: we don't take walk-ins, so please always call first.",
+  },
+  {
+    q: 'How long does detox take?',
+    a: "For most people, medical detox at Buena Vista takes about five to seven days, though the exact length depends on the substance you're detoxing from, how much and how long you've been using, and how your body responds. Some people are ready to step down sooner; others — particularly with certain substances or medical complications — may need a little longer, and our team lets your body and your clinical picture set the pace rather than a rigid clock. The goal is to get you safely and comfortably through the acute withdrawal period so you're stable enough to begin the real work of recovery. When you call, we'll ask about your history so we can give you a realistic sense of what your own timeline might look like.",
+  },
+  {
+    q: 'What substances do you detox from?',
+    a: "We provide medically supervised detox for alcohol, opioids and fentanyl (including heroin and prescription painkillers like oxycodone and Percocet), benzodiazepines, and other substances. Alcohol and opioid detox are the most common, and we're equipped to manage the withdrawal that comes with each. A quick, honest note about stimulants like methamphetamine and cocaine: their withdrawal works differently and usually doesn't require the same kind of medical detox that alcohol or opioids do. If stimulants are your main concern you're still absolutely welcome — during your assessment we'll figure out the right starting point for you, which may be moving directly into residential treatment or a short period of observation rather than a traditional detox.",
+  },
+  {
+    q: 'Do you offer at-home or outpatient detox?',
+    a: "No — Buena Vista provides inpatient medical detox only, meaning you stay with us in our facility where our medical team can monitor and support you 24/7. We don't offer at-home or outpatient detox. This is a safety decision, not an inconvenience. Withdrawal from substances like alcohol and benzodiazepines can become dangerous quickly and unpredictably, and being somewhere with round-the-clock nursing and immediate medical support is what keeps you safe if things escalate. Once you've completed detox with us, lower levels of care become the right next steps — but the detox itself should happen under a watchful medical eye.",
+  },
+  {
+    q: 'What will detox actually be like, day to day?',
+    a: "You'll have your own private room with a private bathroom — not a shared ward — which surprises a lot of people who expect detox to feel cold and institutional. Nurses and staff are present around the clock, checking on you and providing comfort medications to ease withdrawal symptoms as they come. Meals are provided, and there's daily group support for those who feel up to it, though the early days are really about rest and letting the medical team keep you stable. A few honest logistics: during detox phones aren't permitted — those first days are about your safety and healing without outside stress, and phone access begins once you move into residential, from 4:00 to 9:00 PM each evening. Detox rooms are kept simple and calm, so the TVs and larger living space come with the residential step. If you smoke or vape, that's allowed on scheduled breaks as long as you bring sealed, unopened products.",
+  },
+  {
+    q: 'Will I be given medication to help with withdrawal?',
+    a: "Yes. Comfort medications are a core part of medically supervised detox — the goal is to ease your symptoms and keep you safe, not to have you white-knuckle through withdrawal. Our medical team assesses what you need based on the substance you're detoxing from and your individual health, and adjusts your care as you move through the process. Every person's plan is a little different, and specific medication decisions are always made by our clinical team with your safety first. If you're currently taking prescriptions — or if you're on a medication like methadone or buprenorphine — it's important to tell us during your phone assessment so our providers can plan appropriately and safely.",
+  },
+  {
+    q: "I'm on methadone or another opioid medication. Can I still detox there?",
+    a: "It's important to be upfront about this during your assessment, because it shapes your medical plan. Buena Vista does not dispense or start methadone on-site — we're not a methadone clinic. If you're currently established with a methadone provider, our team can talk through how to coordinate, and in some cases our providers may determine that a buprenorphine-based medication (such as Suboxone or Subutex) is clinically appropriate as part of your care. Being on methadone isn't automatically a barrier, but it does affect how your detox is handled, so honesty on the phone helps us keep you safe. And if it turns out our program isn't the right medical fit for your specific situation, we won't leave you without options — our team routinely helps people find an appropriate provider so your care stays safe and continuous.",
+  },
+  {
+    q: 'What should I bring to detox?',
+    a: "Pack light and simple. Our admissions team tells people to bring a few days' worth of comfortable clothing, since you'll be with us about a week; new, unopened, alcohol-free hygiene products, as many toiletries contain alcohol; any necessary medications or prescriptions you're currently taking so our medical team can review and manage them; and if you smoke or vape, brand-new sealed cigarettes or disposable vapes. Please leave alcohol-based products, weapons, and any outside substances at home. If you're arriving with nothing but the clothes you're wearing, that's completely okay — we've helped many people start exactly there. When you call, feel free to ask about anything you're unsure of.",
+  },
+  {
+    q: 'Can I use my phone during detox?',
+    a: "During detox, phones are not permitted. Those first several days are focused entirely on your safety, rest, and physical stabilization, without the stress and distraction of the outside world. It's a short window, and it's there to protect your healing at the most fragile stage. Once you complete detox and step into residential treatment, you'll have phone access every evening, typically from 4:00 to 9:00 PM, so you can stay connected to the people who matter. If you're a parent or caregiver worried about being reachable, tell our team during your assessment — they're used to helping people balance responsibilities with the space they need to get well.",
+  },
+  {
+    q: 'Will my insurance cover detox?',
+    a: "Many plans do, and the fastest way to know for sure is to call — we'll verify your specific benefits in just a few minutes and explain exactly what's covered before you commit to anything, with no obligation. We work with a range of insurance plans and also offer private-pay options. One thing worth knowing: some plans cover detox but have different rules for residential treatment, and occasionally the reverse, so a quick verification call is the best way to understand your full picture. Have your insurance card handy if you can; if you don't have it in front of you, we can often still look things up with your basic information. And if we're not in-network with your plan, we'll tell you honestly and, where we can, point you toward reputable options that are.",
+  },
+  {
+    q: 'What happens after detox?',
+    a: "Detox is the first step, not the whole journey — and planning for what comes next starts while you're still with us. Getting substances safely out of your body is essential, but it's the treatment that follows that helps you stay well, so your case manager begins mapping your next step from early on. For most people the recommended next step is residential treatment, where you move from your detox room into more comfortable residential housing and begin the therapeutic work — groups, one-on-one therapy, and building the tools and support system for lasting recovery. Because detox and residential are both here, you don't have to find a new facility or start over with a new team. Your case manager coordinates the details, whether that's residential, ongoing support, or help finding sober living.",
+  },
+  {
+    q: 'Is there an age limit, and can anyone come?',
+    a: "Buena Vista's detox program is coed and serves adults, and our admissions team doesn't cite an upper age limit — what matters is that detox is medically appropriate and safe for you. Because this is a residential setting rather than a hospital, clients generally need to be independent and able to move about on their own. One specific note on coverage: Buena Vista is not Medicare-certified, so we're not able to accept Medicare or Medicare Advantage plans; Medicare-covered detox usually happens in a hospital or psychiatric setting. If you have questions about whether our program is the right fit for your situation or your health needs, just ask during your phone assessment — we'll give you an honest answer and help you find the right place if we're not it.",
+  },
+  {
+    q: 'Is detox confidential?',
+    a: "Yes. As a healthcare provider we follow strict federal privacy laws — including HIPAA and the additional confidentiality protections that apply specifically to substance use treatment — which means we cannot share information about your care, or even confirm that you're here, without your written permission. You also control who gets to be involved. If you want a spouse, parent, or trusted person to be able to check in, you can authorize that; if you'd rather keep things completely private, that's your right. When you call, our team can walk you through exactly how this works so your wishes are documented from the start.",
+  },
+  {
+    q: "What makes Buena Vista's detox different?",
+    a: "The thing people tell us again and again is that here, even in detox, they were treated like a person rather than a number. A lot of that is our staff — many of them have been through recovery themselves, so the care you feel is real, not rehearsed, and there's no judgment in it. When you're at your lowest and most ashamed, that difference is everything. It's also in the details. You get your own private room and private bathroom during detox, not a shared ward. You're kept as comfortable as possible with medications and around-the-clock nursing. And because detox here is the first step of a full continuum, you're not handed off to strangers at every stage. Finally, we try to make reaching out as human as the care itself: a real person answers the phone, day or night, and we can often get you in the same day.",
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'MedicalWebPage',
+      name: 'Medical Detox in Chandler & Tucson, AZ',
+      description,
+      about: { '@type': 'MedicalCondition', name: 'Substance Withdrawal' },
+      audience: { '@type': 'Patient' },
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map(f => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    },
+  ],
+};
+---
+<Layout title={title} description={description}>
+  <TopBar />
+  <Nav />
+
+  <DetoxHero />
+
+  <!-- Coverage check, one section down from the hero -->
+  <VerifySection />
+
+  <WhatIsDetox />
+
+  <!-- BREATHER -->
+  <FacilityShowcase />
+
+  <WhatWeDetoxFrom />
+
+  <!-- BREATHER -->
+  <FacilityGallery />
+
+  <WhatToExpect />
+
+  <!-- BREATHER -->
+  <Testimonials />
+
+  <AfterDetox />
+  <DetoxAdmissions />
+
+  <FAQ
+    faqs={faqs}
+    eyebrow="Detox FAQ"
+    heading="The questions people ask us at 3am"
+    intro="These are the real questions our admissions line fields, answered the same way we would answer them on the phone."
+  />
+
+  <!-- Crisis resources. The brief asks for a discreet note for anyone in
+       immediate danger; the footer carries it site-wide as well. -->
+  <section class="bg-sand py-10">
+    <div class="max-w-4xl mx-auto px-5 sm:px-6 lg:px-8">
+      <div class="border-l-2 border-gold pl-6">
+        <p class="font-body font-bold text-charcoal text-[17px] mb-1">If you are in danger right now</p>
+        <p class="font-body text-charcoal text-[16px] leading-[26px]">
+          Detox admission takes a little time to arrange. If you or someone you love is in immediate danger, call or text <a href="tel:988" class="text-teal font-semibold underline underline-offset-2 tel-number">988</a> for the Suicide &amp; Crisis Lifeline, any hour — or call 911 in an emergency.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <FinalCTA />
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+</Layout>

@@ -1,0 +1,87 @@
+---
+// Safety is the #1 fear in the call data, so it is answered here rather than
+// held for the FAQ. Language stays "safest way", never "pain-free" or
+// "risk-free" — the brief's compliance guardrail.
+const safety = [
+  {
+    title: 'Nursing around the clock',
+    desc: 'Staff check on you through the night, track your vital signs, and watch for the warning signs that matter — so nobody is guessing whether what they feel is normal.',
+  },
+  {
+    title: 'A physician overseeing your care',
+    desc: 'A provider reviews your history before you arrive and stays involved, because withdrawal is a medical event and it deserves to be treated as one.',
+  },
+  {
+    title: 'Medication to ease the symptoms',
+    desc: 'Comfort medications are the point of medical detox. You are not meant to grit your teeth through this, and our team adjusts your care as things change.',
+  },
+  {
+    title: 'A plan if anything escalates',
+    desc: 'Alcohol and benzodiazepine withdrawal can turn serious quickly. If a situation ever needed hospital-level care, we coordinate that immediately.',
+  },
+];
+---
+<section id="what-is-detox" class="bg-white py-[60px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-14 lg:gap-20 items-start">
+
+      <div>
+        <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-5 flex items-center gap-2">
+          <span class="w-6 h-px bg-gold inline-block"></span>
+          What medical detox is
+        </p>
+        <h2 class="font-display text-charcoal mb-6">
+          The safest way through withdrawal
+        </h2>
+
+        <div class="space-y-5 font-body text-charcoal text-[17px] leading-[29px]">
+          <p>
+            Detox is the short, medically supervised process of getting substances out of your body and through withdrawal. For most people it takes about five to seven days, though the substance, how long you have been using, and how your body responds all move that number.
+          </p>
+          <p>
+            It exists for one reason: withdrawal from alcohol, opioids, and benzodiazepines can be genuinely dangerous on your own. Seizures and delirium tremens are real risks when people stop cold turkey without help. Medical detox is what prevents that.
+          </p>
+          <p>
+            If fear of withdrawal is the thing that has been stopping you, that is exactly the part we take off your shoulders.
+          </p>
+        </div>
+
+        <div class="mt-9 flex flex-col sm:flex-row gap-4">
+          <a href="tel:8883625576" class="inline-flex items-center justify-center bg-teal hover:bg-teal-dark text-white font-semibold h-14 px-8 rounded-lg transition-colors font-body">
+            Talk to someone now
+          </a>
+        </div>
+      </div>
+
+      <div class="space-y-5">
+        {safety.map(item => (
+          <div class="bg-cream rounded-xl p-7 border border-cream-soft">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-teal/12 flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5 text-teal" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-display text-xl text-charcoal mb-2 leading-snug">{item.title}</h3>
+                <p class="font-body text-charcoal text-[16px] leading-[26px]">{item.desc}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+
+        <!-- Inpatient only. The brief is explicit that no outpatient or at-home
+             detox option may be implied anywhere on this page. -->
+        <div class="flex gap-4 bg-navy rounded-xl p-7 text-white">
+          <svg class="w-6 h-6 text-gold shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"/>
+          </svg>
+          <p class="font-body text-white/85 text-[16px] leading-[26px]">
+            <strong class="text-white font-bold">We only offer detox as an inpatient stay.</strong> There is no at-home or outpatient detox here. That is a safety decision rather than an inconvenience — withdrawal can escalate fast, and being somewhere with nursing on hand is what keeps you safe if it does.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

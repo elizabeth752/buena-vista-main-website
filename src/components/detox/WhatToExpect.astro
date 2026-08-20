@@ -1,0 +1,78 @@
+---
+const timeline = [
+  {
+    when: 'The first call',
+    title: 'A real person, then a short assessment',
+    desc: 'Ten to twenty minutes about what you have been using, when you last used, your medical history, and any medications. We can do this even if you are using right now — being honest helps us keep you safe.',
+  },
+  {
+    when: 'Arrival',
+    title: 'Settling into your own room',
+    desc: 'A private room with a private bathroom. Detox rooms are kept simple and calm on purpose; the TVs and the larger living space come with the residential step afterwards.',
+  },
+  {
+    when: 'The first days',
+    title: 'Rest, medication, and being checked on',
+    desc: 'This part is mostly about being cared for while your body does hard work. Nurses come by around the clock, comfort medications ease the symptoms, and meals are brought to you.',
+  },
+  {
+    when: 'As you steady',
+    title: 'Groups, when you feel up to them',
+    desc: 'There is daily group support for people who want it. Nobody is dragged out of bed on day two — the early days are for stabilizing, and the rest comes when you are ready.',
+  },
+  {
+    when: 'Around day five to seven',
+    title: 'Deciding what comes next',
+    desc: 'A case manager has been planning this with you since early on. For most people the next step is residential treatment, in the same building with the same team.',
+  },
+];
+---
+<section id="what-to-expect" class="bg-white py-[60px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+
+    <div class="mb-14 max-w-3xl">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+        <span class="w-6 h-px bg-gold inline-block"></span>
+        What to expect
+      </p>
+      <h2 class="font-display text-charcoal mb-4">
+        What the week actually looks like
+      </h2>
+      <p class="font-body text-charcoal text-[17px] leading-[29px] max-w-2xl">
+        Most people picture something cold and clinical. Here is what really happens, hour by hour and day by day, so there are no surprises when you walk in.
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-x-14 gap-y-2 max-w-5xl">
+      {timeline.map((item, i) => (
+        <div class={`flex gap-6 py-6 ${i < timeline.length - 1 ? 'border-b border-cream-soft' : ''}`}>
+          <div class="shrink-0 w-10 h-10 rounded-full bg-cream flex items-center justify-center font-body text-[16px] font-bold text-navy">
+            {i + 1}
+          </div>
+          <div>
+            <p class="font-body text-xs font-bold uppercase tracking-[0.14em] text-gold mb-1.5">{item.when}</p>
+            <h3 class="font-display text-xl text-charcoal mb-2">{item.title}</h3>
+            <p class="font-body text-charcoal text-[16px] leading-[26px]">{item.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- The two logistics questions callers ask most -->
+    <div class="grid md:grid-cols-2 gap-6 mt-12 max-w-5xl">
+      <div class="bg-cream rounded-xl p-7 border border-cream-soft">
+        <h3 class="font-display text-xl text-charcoal mb-2">Phones during detox</h3>
+        <p class="font-body text-charcoal text-[16px] leading-[26px]">
+          Phones are not permitted while you are in detox. It is a short window, and it is there so those first days belong to your safety and rest rather than the outside world. Phone access starts when you move into residential, every evening from 4:00 to 9:00 PM.
+        </p>
+      </div>
+      <div class="bg-cream rounded-xl p-7 border border-cream-soft">
+        <h3 class="font-display text-xl text-charcoal mb-2">Smoking and vaping</h3>
+        <p class="font-body text-charcoal text-[16px] leading-[26px]">
+          Allowed on scheduled breaks, as long as what you bring is brand new and still sealed. Nobody is going to ask you to quit nicotine on the same week you are detoxing from something far harder.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>

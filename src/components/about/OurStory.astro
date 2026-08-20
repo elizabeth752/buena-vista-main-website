@@ -1,0 +1,76 @@
+---
+// The reopening is framed as renewal rather than hidden — but kept short and
+// forward-looking. No invented history, founders, or dates. Exact ownership
+// framing and the dates stated publicly still need client confirmation.
+const values = [
+  {
+    title: 'People who have been there',
+    desc: 'Many of the people who will care for you are in recovery themselves. The compassion here is not a script — it comes from people who have faced what you are facing, and it is usually the first thing our clients mention afterwards.',
+  },
+  {
+    title: 'Treated like a person, not a number',
+    desc: 'From the first phone call, answered by a real person rather than a machine, you are a human being with a story rather than a case to be processed. It is the thing we hear back most often, and it is the standard we hold ourselves to.',
+  },
+  {
+    title: 'A place that does not feel like an institution',
+    desc: 'Private rooms. Comfortable beds. Catered meals. Clean, calm spaces designed to feel like somewhere you could heal rather than somewhere you are being kept. Recovering with dignity helps people believe they are worth recovering.',
+  },
+  {
+    title: 'Care that stays with you',
+    desc: 'Recovery is not a single step, so we do not hand you between strangers. From detox through residential treatment and beyond, the same team walks with you, and your case manager starts planning what comes next from day one.',
+  },
+];
+---
+<section id="story" class="bg-white py-[60px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+
+    <div class="grid lg:grid-cols-2 gap-14 lg:gap-20 items-start mb-16">
+      <div>
+        <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-5 flex items-center gap-2">
+          <span class="w-6 h-px bg-gold inline-block"></span>
+          Who we are
+        </p>
+        <h2 class="font-display text-charcoal mb-6">
+          A new chapter, and the same idea underneath it
+        </h2>
+
+        <div class="space-y-5 font-body text-charcoal text-[17px] leading-[29px]">
+          <p>
+            Buena Vista Health &amp; Recovery Centers is an addiction treatment provider in Arizona, offering medically supervised detox and residential treatment for drug and alcohol addiction, along with support for the mental health challenges that so often come with it.
+          </p>
+          <p>
+            What we really are is simpler than that: a place where people struggling with addiction are met with warmth, dignity, and real medical care — and treated like human beings rather than case numbers.
+          </p>
+          <p>
+            We are entering a new chapter. Under new ownership we have reopened our doors with a renewed commitment to what has always mattered most here: care that feels personal, an environment that feels human, and a team that believes recovery is possible for every person who walks through them.
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-sand rounded-xl p-8 lg:p-10">
+        <h3 class="font-display text-2xl text-charcoal mb-4">What we believe</h3>
+        <div class="space-y-4 font-body text-charcoal text-[17px] leading-[29px]">
+          <p>
+            Recovery works best when people feel safe, respected, and genuinely cared for. Addiction is hard enough without shame, so we lead with compassion instead of judgment.
+          </p>
+          <p>
+            We believe in treating the whole person, body and mind, and in walking alongside people through every stage — from a first frightening phone call to life long after treatment ends.
+          </p>
+          <p>
+            And we believe comfort and dignity are not luxuries in recovery. They are part of what makes healing possible at all.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      {values.map(v => (
+        <div class="bg-cream rounded-xl p-8 border border-cream-soft flex flex-col h-full">
+          <h3 class="font-display text-2xl text-charcoal mb-3 leading-snug">{v.title}</h3>
+          <p class="font-body text-charcoal text-[16px] leading-[26px]">{v.desc}</p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

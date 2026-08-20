@@ -1,0 +1,61 @@
+---
+// Only conditions confirmed in the admissions calls, framed as things treated
+// ALONGSIDE addiction. No acute or high-acuity psychiatric conditions are
+// listed — those are referred out.
+const conditions = [
+  {
+    name: 'PTSD and trauma',
+    desc: 'Very often the thing underneath the substance use rather than a side note to it. Trauma work is one of the things people tell us afterwards made the difference.',
+  },
+  {
+    name: 'Anxiety',
+    desc: 'One of the most common conditions we see alongside addiction — and one of the most common reasons people started drinking or using in the first place.',
+  },
+  {
+    name: 'Depression',
+    desc: 'Sometimes long-standing, sometimes tied to a specific loss. Either way it does not lift on its own just because the substances stop.',
+  },
+  {
+    name: 'Bipolar disorder',
+    desc: 'Frequently mentioned by the people who call us, often by someone who has come off their medication somewhere along the way. Tell us — it changes how we care for you.',
+  },
+  {
+    name: 'Grief and life stress',
+    desc: 'A death, a divorce, a job gone. Relapse very often arrives on the back of one of these, and it deserves to be treated as a real cause rather than an excuse.',
+  },
+];
+---
+<section id="conditions" class="bg-cream py-[60px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+
+    <div class="mb-12 max-w-3xl">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+        <span class="w-6 h-px bg-gold inline-block"></span>
+        What we support
+      </p>
+      <h2 class="font-display text-charcoal mb-4">
+        Conditions we treat alongside addiction
+      </h2>
+      <p class="font-body text-charcoal text-[17px] leading-[29px] max-w-2xl">
+        These come up again and again with the people who call us. We address them as part of your treatment rather than treating your recovery in a vacuum.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {conditions.map(c => (
+        <div class="bg-white rounded-xl p-8 border border-cream-soft flex flex-col h-full">
+          <h3 class="font-display text-2xl text-charcoal mb-3 leading-snug">{c.name}</h3>
+          <p class="font-body text-charcoal text-[16px] leading-[26px]">{c.desc}</p>
+        </div>
+      ))}
+
+      <div class="bg-sand rounded-xl p-8 flex flex-col h-full">
+        <h3 class="font-display text-2xl text-charcoal mb-3 leading-snug">Something not on this list?</h3>
+        <p class="font-body text-charcoal text-[16px] leading-[26px]">
+          Everyone arrives with their own particular history. Call and tell us about it — we will give you an honest answer about whether we are the right fit, and help you find the right place if we are not.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>

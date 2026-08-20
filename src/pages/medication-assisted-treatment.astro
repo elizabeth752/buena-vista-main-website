@@ -1,0 +1,114 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TopBar from '../components/TopBar.astro';
+import Nav from '../components/Nav.astro';
+
+import VerifySection from '../components/VerifySection.astro';
+import FacilityShowcase from '../components/FacilityShowcase.astro';
+import FAQ from '../components/FAQ.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+
+import MatHero from '../components/mat/MatHero.astro';
+import MatScope from '../components/mat/MatScope.astro';
+import MatApproach from '../components/mat/MatApproach.astro';
+
+const title = 'Medication-Assisted Treatment (MAT) in Arizona | Buena Vista Health & Recovery';
+const description = 'Buena Vista incorporates medication-assisted treatment — including buprenorphine — into medically supervised detox and residential care in Arizona. Call to see if it is right for you.';
+
+// ---------------------------------------------------------------------------
+// AWAITING SIGN-OFF. This is the highest-compliance-risk page in the set. It
+// is set to noindex and is not linked from the nav until clinical and BH
+// compliance have reviewed it. Before publishing, confirm: the CMS
+// relationship and methadone continuation policy, the buprenorphine prescriber
+// arrangement, which medications are in scope, and the ADHS-required MAT
+// marketing language. Deliberately omitted here: dose numbers, protocols,
+// prescriber names, naltrexone/Vivitrol, and any outcome or success-rate claim.
+// ---------------------------------------------------------------------------
+
+const faqs = [
+  {
+    q: 'What is medication-assisted treatment (MAT)?',
+    a: "Medication-assisted treatment, or MAT, is the use of approved medications — combined with counseling and therapy — to treat opioid and alcohol use disorders. For opioids, medications like buprenorphine (often known by the brand names Suboxone or Subutex) can ease withdrawal, reduce cravings, and help stabilize your body so you can focus on recovery. It's an evidence-based approach, and needing medication to support your recovery is nothing to be ashamed of. At Buena Vista, medication is one tool within a bigger, whole-person approach. We combine it with medical supervision, therapy, and genuine human support, because medication works best when it's paired with the deeper work of healing.",
+  },
+  {
+    q: 'How does Buena Vista use MAT?',
+    a: "We incorporate medication-assisted treatment into our medically supervised detox and residential programs when it's clinically appropriate for you. In practice that most often means using buprenorphine (Suboxone or Subutex) to ease opioid withdrawal, reduce cravings, and support a safe, comfortable taper — guided by our medical team based on your individual needs. Our approach is focused on helping you move forward. Rather than simply maintaining medication indefinitely, our goal — where it's right for you — is to use it as a supported bridge: stabilizing you first, then gradually tapering when you and your clinical team decide the time is right. Every plan is individual, and every medication decision is made by our providers with your safety and long-term recovery in mind.",
+  },
+  {
+    q: "I'm on methadone. Can I still come to Buena Vista?",
+    a: "Possibly — but it's important to understand exactly how this works, because we're not a methadone clinic and we don't start or dispense methadone ourselves. If you're already established with Community Medical Services (CMS) for your methadone, we can often coordinate with them so you can enter our detox or residential program without your methadone treatment being interrupted. This coordination usually takes a couple of days to arrange, so the sooner you tell us during your assessment, the better. If you're not established with CMS, or if what you need is ongoing, long-term methadone maintenance, we likely aren't the right fit for that specific need — but we won't leave you without a path. Our team routinely helps people connect with the right provider so your care stays safe and continuous. The most important thing is that you're honest with us about your methadone on the phone, so we can give you an accurate answer and keep you safe.",
+  },
+  {
+    q: 'Do you prescribe Suboxone or Subutex?',
+    a: "When it's clinically appropriate, buprenorphine-based medications like Suboxone or Subutex can be part of your care at Buena Vista, prescribed and managed by our medical team as part of your treatment. Whether medication is right for you, and which one, is a clinical decision our providers make with you based on your history and your needs. If you're already on Suboxone or Subutex when you come to us, be sure to tell us during your assessment so our medical team can review it and plan your care safely and without interruption.",
+  },
+  {
+    q: 'Will I have to taper off my medication, or can I stay on it?',
+    a: "Every person's plan is individual, and that's a decision you and our medical team make together based on what's safest and best for your recovery. Our general philosophy leans toward using medication as a supported bridge — stabilizing you and then, when the time is right for you, tapering gradually rather than maintaining indefinitely. But we never rush that, and we never make it a one-size-fits-all rule. The goal is always your lasting recovery and your safety, not a rigid protocol. If you have concerns about tapering, bring them up — our team would much rather talk it through with you than have you worry.",
+  },
+  {
+    q: "Is MAT just 'replacing one drug with another'?",
+    a: "This is one of the most common — and most harmful — myths about medication-assisted treatment, so it's worth addressing directly. MAT is not about getting high or swapping one addiction for another. When taken as prescribed under medical supervision, medications like buprenorphine stabilize your brain chemistry, quiet the cravings and withdrawal that drive relapse, and free you up to actually engage in recovery. They're prescribed at controlled doses by medical professionals, as part of a treatment plan — that's fundamentally different from active addiction. Choosing medication-supported recovery isn't a moral failing or a shortcut. It's a legitimate, courageous choice to get well, and we'll never make you feel otherwise.",
+  },
+  {
+    q: 'Does MAT come with therapy, or is it just medication?',
+    a: "At Buena Vista, medication is never the whole plan — it's one part of comprehensive, whole-person treatment. Alongside any medication you'll have medical supervision, group therapy, one-on-one counseling, and case management to help you build the tools and support system that keep you well. The medication helps quiet the physical noise of withdrawal and cravings so you can do the real, deeper work of recovery. That combination is exactly what makes it effective. Medication supports your body; therapy and community support the rest of you.",
+  },
+  {
+    q: 'What if I only need medication and not a residential stay?',
+    a: "It's an honest and important question. Buena Vista delivers medication support within our medically supervised detox and residential treatment, so we're built for people who are engaging in that level of care — not as a standalone, walk-in medication or dosing service. If what you need right now is ongoing outpatient medication, we likely aren't the right fit for that specific need. But please still reach out. Our team can talk through your situation and, if we're not the right place, help connect you with a provider who is — such as Community Medical Services — so you get safe, continuous care. There's no wrong door here; we'll help you find the right one.",
+  },
+  {
+    q: 'Will my insurance cover MAT?',
+    a: "Coverage for medication-assisted treatment varies by plan, and the fastest way to know exactly what's covered is to call us — we'll verify your specific benefits in a few minutes, at no cost or obligation. We accept most major insurance plans and also offer private-pay options. Because MAT often involves both treatment services and medication, and because plans differ, a quick verification call is the best way to understand your full picture. If we're not the right fit for your coverage or your needs, we'll be honest about it and help point you toward reputable options.",
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'MedicalWebPage',
+      name: 'Medication-Assisted Treatment in Arizona',
+      description,
+      about: { '@type': 'MedicalCondition', name: 'Opioid Use Disorder' },
+      audience: { '@type': 'Patient' },
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map(f => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    },
+  ],
+};
+---
+<Layout title={title} description={description} noindex={true}>
+  <TopBar />
+  <Nav />
+
+  <MatHero />
+
+  <!-- The expectation-setter comes early: it prevents mismatched leads -->
+  <MatScope />
+
+  <MatApproach />
+
+  <!-- BREATHER -->
+  <FacilityShowcase />
+
+  <VerifySection />
+
+  <FAQ
+    faqs={faqs}
+    eyebrow="MAT FAQ"
+    heading="Honest answers about medication in recovery"
+    intro="Medication carries more shame and misinformation than almost anything else in this field. These are straight answers."
+  />
+
+  <FinalCTA />
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+</Layout>

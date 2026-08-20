@@ -1,0 +1,73 @@
+---
+// The brief calls this the most valuable section on the page: it sets
+// expectations, builds trust, and keeps people who need a higher level of care
+// from arriving somewhere that cannot serve them.
+const canDo = [
+  'Treat substance use and co-occurring mental-health conditions together, as part of detox and residential care',
+  'Provide medical supervision, individual and group therapy, and case management that account for both',
+  'Support people whose anxiety, depression, PTSD, or trauma are woven through their substance use',
+  'Review the psychiatric medication you already take, and coordinate ongoing psychiatric care and aftercare',
+];
+
+const cannotDo = [
+  'We are not a psychiatric hospital, and we do not provide standalone mental-health treatment',
+  'We cannot serve high-acuity psychiatric cases or someone in an active mental-health crisis',
+  'We do not provide emergency or crisis psychiatric care',
+];
+---
+<section id="scope" class="bg-white py-[60px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+
+    <div class="mb-12 max-w-3xl">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+        <span class="w-6 h-px bg-gold inline-block"></span>
+        Being straight with you
+      </p>
+      <h2 class="font-display text-charcoal mb-4">
+        What we can help with, and what we cannot
+      </h2>
+      <p class="font-body text-charcoal text-[17px] leading-[29px] max-w-2xl">
+        We would rather tell you plainly than have you arrive somewhere that is not equipped for what you need. The right care matters more than saying yes to everyone.
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-6">
+
+      <div class="bg-cream rounded-xl p-8 border border-cream-soft">
+        <h3 class="font-display text-2xl text-charcoal mb-5">What we can do</h3>
+        <ul class="space-y-4">
+          {canDo.map(item => (
+            <li class="flex gap-4">
+              <div class="w-6 h-6 rounded-full bg-teal/15 flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-3.5 h-3.5 text-teal" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
+                </svg>
+              </div>
+              <p class="font-body text-charcoal text-[16px] leading-[26px]">{item}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="bg-cream rounded-xl p-8 border border-cream-soft">
+        <h3 class="font-display text-2xl text-charcoal mb-5">What we are not</h3>
+        <ul class="space-y-4">
+          {cannotDo.map(item => (
+            <li class="flex gap-4">
+              <div class="w-6 h-6 rounded-full bg-navy/10 flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-3.5 h-3.5 text-navy" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+              </div>
+              <p class="font-body text-charcoal text-[16px] leading-[26px]">{item}</p>
+            </li>
+          ))}
+        </ul>
+        <p class="font-body text-charcoal text-[16px] leading-[26px] mt-6 pt-6 border-t border-cream-soft">
+          If that is what you need, we will say so honestly and help point you toward a program equipped for it. We will not simply turn you away and leave you to work it out alone.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>

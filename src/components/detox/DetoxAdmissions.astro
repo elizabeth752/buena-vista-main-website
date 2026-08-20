@@ -1,0 +1,75 @@
+---
+const steps = [
+  {
+    num: '01',
+    title: 'Call, any hour',
+    desc: 'Our line is answered by a real person around the clock. If you are in withdrawal at three in the morning, that is exactly when you should be calling.',
+  },
+  {
+    num: '02',
+    title: 'A short phone assessment',
+    desc: 'About 10 to 20 minutes on substances, last use, medical and mental health history, and current medications. This can happen even if you are using or under the influence right now.',
+  },
+  {
+    num: '03',
+    title: 'We check your coverage',
+    desc: 'We verify your benefits while you are on the phone, or talk through private pay. You get a straight answer before committing to anything.',
+  },
+  {
+    num: '04',
+    title: 'A provider reviews it',
+    desc: 'A medical provider confirms detox is safe and appropriate for your situation. This is the step that lets same-day admission happen without cutting corners.',
+  },
+  {
+    num: '05',
+    title: 'We confirm a bed and set a time',
+    desc: 'Often the same day. If we are full when you call, we will say so honestly, give you the earliest realistic time, and take your details so we are ready the moment something opens.',
+  },
+  {
+    num: '06',
+    title: 'A ride, if you need one',
+    desc: 'Getting there is the last barrier for a lot of people. We can arrange transport within our local service area — just say so on the call.',
+  },
+];
+---
+<section id="admissions" class="bg-cream py-[60px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+
+    <div class="mb-14 max-w-3xl">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+        <span class="w-6 h-px bg-gold inline-block"></span>
+        Getting in
+      </p>
+      <h2 class="font-display text-charcoal mb-4">
+        How quickly this can happen
+      </h2>
+      <p class="font-body text-charcoal text-[17px] leading-[29px] max-w-2xl">
+        When someone is finally ready, waiting even a few hours can feel unbearable. The whole process is built to move, and most of it happens on one phone call.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+      {steps.map(step => (
+        <div class="bg-white rounded-xl p-8 border border-cream-soft flex flex-col h-full">
+          <div class="flex items-center gap-4 mb-4">
+            <span class="w-12 h-12 rounded-full bg-navy text-gold font-display text-xl flex items-center justify-center shrink-0">
+              {step.num}
+            </span>
+            <h3 class="font-display text-xl text-charcoal leading-tight">{step.title}</h3>
+          </div>
+          <p class="font-body text-charcoal text-[16px] leading-[26px]">{step.desc}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="flex gap-4 bg-navy rounded-xl p-7 text-white max-w-4xl">
+      <svg class="w-6 h-6 text-gold shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"/>
+      </svg>
+      <p class="font-body text-white/85 text-[16px] leading-[26px]">
+        <strong class="text-white font-bold">Please call before you come — we cannot take walk-ins.</strong> A phone assessment and a benefits check have to happen first. That call is what lets us have a bed, a medical review, and a warm welcome ready for you instead of leaving you waiting at a door.
+      </p>
+    </div>
+
+  </div>
+</section>
