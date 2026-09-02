@@ -1,6 +1,7 @@
 ---
+import { mainNav, SHOW_BUILD_STATUS } from '../data/navigation';
 ---
-<nav id="main-nav" class="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
+<nav id="main-nav" class="sticky top-0 z-50 bg-white border-b border-cream-soft shadow-sm">
   <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16 md:h-18">
 
@@ -9,28 +10,176 @@
         <img src="/Asset/stock%20photo/Logo%20Buena%20Vista.svg" alt="Buena Vista Health & Recovery Centers" class="h-8 md:h-10 w-auto" />
       </a>
 
-      <!-- Desktop Nav Links -->
-      <div class="hidden lg:flex items-center gap-8">
-        <a href="/medical-detox" class="text-charcoal/80 hover:opacity-70 text-sm font-semibold tracking-wide transition-opacity">Detox</a>
-        <a href="/residential-treatment" class="text-charcoal/80 hover:opacity-70 text-sm font-semibold tracking-wide transition-opacity">Residential</a>
-        <a href="/about" class="text-charcoal/80 hover:opacity-70 text-sm font-semibold tracking-wide transition-opacity">About</a>
-        <a href="/insurance" class="text-charcoal/80 hover:opacity-70 text-sm font-semibold tracking-wide transition-opacity">Insurance</a>
-        <a href="/#location" class="text-charcoal/80 hover:opacity-70 text-sm font-semibold tracking-wide transition-opacity">Location</a>
-      </div>
+      <!-- Desktop nav. Each top-level label is a real link to its hub; the panel
+           opens on hover and on keyboard focus, so no JS is needed here. -->
+      <ul class="hidden lg:flex items-center gap-1">
+        {mainNav.map(group => (
+          <li class="group relative">
+            <a
+              href={group.href}
+              class="flex items-center gap-1 px-3 py-6 text-charcoal/80 hover:text-teal text-[13px] xl:text-sm font-semibold tracking-wide transition-colors"
+            >
+              {group.label}
+              {SHOW_BUILD_STATUS && !group.built && <span class="w-1 h-1 rounded-full bg-gold/70" aria-hidden="true"></span>}
+              <svg class="w-3 h-3 opacity-50 transition-transform group-hover:rotate-180 group-focus-within:rotate-180" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </a>
+
+            <div class="invisible opacity-0 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 transition-opacity absolute left-0 top-full pt-1 z-50">
+              <div class="bg-white border border-cream-soft rounded-xl shadow-xl p-6 flex gap-8">
+                {group.columns.map(col => (
+                  <div class="min-w-[210px]">
+                    {col.heading && (
+                      <p class="font-body text-muted text-[11px] font-bold tracking-[0.14em] uppercase mb-3">{col.heading}</p>
+                    )}
+                    <ul class="space-y-1">
+                      {col.links.map(link => (
+                        <li>
+                          <a href={link.href} class="flex items-center gap-1.5 rounded-md px-2 py-1.5 -mx-2 font-body text-charcoal/85 hover:text-teal hover:bg-sage-tint text-[15px] leading-[22px] transition-colors">
+                            {link.label}
+                            {SHOW_BUILD_STATUS && !link.built && <span class="w-1 h-1 rounded-full bg-gold/70 shrink-0" aria-hidden="true"></span>}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </li>
+        ))}
+      </ul>
 
       <!-- CTAs -->
       <div class="flex items-center gap-3">
-        <a href="tel:8883625576" class="hidden md:flex items-center gap-2 text-charcoal font-bold text-sm tracking-wide hover:opacity-70 transition-opacity">
+        <a href="tel:8883625576" class="hidden xl:flex items-center gap-2 text-charcoal font-bold text-sm tracking-wide hover:opacity-70 transition-opacity">
           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
             <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
           </svg>
-          (888) 362-5576
+          <span class="tel-number">(888) 362-5576</span>
         </a>
         <a href="#verify" class="bg-teal hover:bg-teal-dark text-white text-sm font-bold px-5 py-2.5 rounded-lg transition-colors tracking-wide whitespace-nowrap">
           Verify insurance
         </a>
+
+        <!-- Mobile menu trigger. Below lg the site previously had no navigation
+             at all, so this drawer is the only way in on a phone. -->
+        <button
+          type="button"
+          id="menu-toggle"
+          class="lg:hidden flex items-center justify-center w-10 h-10 -mr-2 rounded-lg text-charcoal hover:bg-sage-tint transition-colors"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+          <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18" />
+          </svg>
+        </button>
       </div>
 
     </div>
   </div>
+
+  <!-- Mobile drawer: one accordion per group. -->
+  <div id="mobile-menu" class="lg:hidden hidden border-t border-cream-soft bg-white max-h-[calc(100dvh-4rem)] overflow-y-auto">
+    <ul class="px-5 sm:px-6 py-2">
+      {mainNav.map(group => (
+        <li class="border-b border-cream-soft last:border-b-0">
+          <div class="flex items-stretch">
+            <a href={group.href} class="flex-1 flex items-center gap-1.5 py-4 font-body font-semibold text-charcoal text-[16px]">
+              {group.label}
+              {SHOW_BUILD_STATUS && !group.built && <span class="w-1 h-1 rounded-full bg-gold/70" aria-hidden="true"></span>}
+            </a>
+            <button
+              type="button"
+              class="mobile-accordion flex items-center justify-center w-12 shrink-0 text-charcoal/60"
+              aria-expanded="false"
+              aria-label={`Show ${group.label} pages`}
+            >
+              <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="mobile-panel hidden pb-4">
+            {group.columns.map(col => (
+              <div class="mb-4 last:mb-0">
+                {col.heading && (
+                  <p class="font-body text-muted text-[11px] font-bold tracking-[0.14em] uppercase mb-2">{col.heading}</p>
+                )}
+                <ul class="space-y-0.5">
+                  {col.links.map(link => (
+                    <li>
+                      <a href={link.href} class="flex items-center gap-1.5 py-2 pl-3 border-l-2 border-cream-soft font-body text-charcoal/80 text-[15px] leading-[22px]">
+                        {link.label}
+                        {SHOW_BUILD_STATUS && !link.built && <span class="w-1 h-1 rounded-full bg-gold/70 shrink-0" aria-hidden="true"></span>}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </li>
+      ))}
+    </ul>
+
+    <div class="px-5 sm:px-6 pb-6 pt-2 border-t border-cream-soft">
+      <a href="tel:8883625576" class="flex items-center justify-center gap-2 bg-gold hover:bg-gold-dark text-navy font-semibold h-12 rounded-lg transition-colors font-body">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+        </svg>
+        <span class="tel-number">Call (888) 362-5576</span>
+      </a>
+    </div>
+  </div>
 </nav>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
+
+  function setMenu(open: boolean) {
+    if (!toggle || !menu) return;
+    menu.classList.toggle('hidden', !open);
+    iconOpen?.classList.toggle('hidden', open);
+    iconClose?.classList.toggle('hidden', !open);
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  }
+
+  toggle?.addEventListener('click', () => {
+    setMenu(menu?.classList.contains('hidden') ?? false);
+  });
+
+  // Accordions inside the drawer.
+  document.querySelectorAll<HTMLButtonElement>('.mobile-accordion').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const panel = btn.closest('li')?.querySelector('.mobile-panel');
+      const chevron = btn.querySelector('svg');
+      if (!panel) return;
+      const open = panel.classList.contains('hidden');
+      panel.classList.toggle('hidden', !open);
+      chevron?.classList.toggle('rotate-180', open);
+      btn.setAttribute('aria-expanded', String(open));
+    });
+  });
+
+  // Close the drawer when the viewport grows into the desktop layout, otherwise
+  // it stays open behind the desktop nav.
+  window.matchMedia('(min-width: 1024px)').addEventListener('change', e => {
+    if (e.matches) setMenu(false);
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && !menu?.classList.contains('hidden')) setMenu(false);
+  });
+</script>

@@ -1,0 +1,46 @@
+---
+/* Locations hub. Chandler is the only operating facility; Tucson is shown as
+   closed with a route forward. This page is the NAP source of truth the wiki
+   flags as missing ("multiple outdated location listings"). */
+import Layout from '../../layouts/Layout.astro';
+import TopBar from '../../components/TopBar.astro';
+import Nav from '../../components/Nav.astro';
+import HubHero from '../../components/hub/HubHero.astro';
+import HubCards from '../../components/hub/HubCards.astro';
+import Testimonials from '../../components/Testimonials.astro';
+import VerifySection from '../../components/VerifySection.astro';
+import FinalCTA from '../../components/FinalCTA.astro';
+
+const title = 'Our Locations | Buena Vista Health & Recovery, Arizona';
+const description = 'Buena Vista Health & Recovery Centers in Chandler, AZ — medical detox and residential treatment, open 24 hours. Our Tucson facility is temporarily closed. Call (888) 362-5576.';
+
+const facilities = [
+  { label: 'Chandler, AZ', tag: 'Open · admitting', desc: '3033 S Arizona Ave, Chandler, AZ 85286. Medical detox and residential treatment, open every hour of every day including holidays. Licence IFBH9847r.', href: '/locations/chandler/' },
+  { label: 'Tucson, AZ', tag: 'Temporarily closed', desc: '5151 E Pima St, Tucson, AZ 85712. Not admitting while we work toward reopening — southern Arizona still has two clear routes forward.', href: '/locations/tucson/' },
+];
+
+const areas = [
+  { label: 'Phoenix', desc: 'A straightforward run down the I-10 or the 101 from across the city.' },
+  { label: 'Mesa, Gilbert & Tempe', desc: 'Neighbouring East Valley towns — a local drive rather than a journey.' },
+  { label: 'Scottsdale', desc: 'North of us across the valley, and an easy trip on the 101.' },
+  { label: 'Tucson & southern Arizona', desc: 'About two hours north on the I-10, and a route plenty of people make.' },
+  { label: 'Elsewhere in Arizona', desc: 'Flagstaff, Yuma, Prescott, the reservations — tell us where you are and we will work out the journey.' },
+  { label: 'Out of state', desc: 'Fly into Sky Harbor and we will collect you. Send the flight details when you call.', href: '/admissions/travel-and-transportation/' },
+];
+---
+<Layout title={title} description={description}>
+  <TopBar /><Nav />
+  <HubHero
+    eyebrow="Our locations"
+    title="One facility, open every hour."
+    intro="Our Chandler facility runs medical detox and residential treatment and is admitting today. Our Tucson campus is temporarily closed while we work toward reopening it."
+    points={['Chandler, AZ — open 24 hours, including holidays','Detox and residential under one roof','Serving Phoenix and the whole East Valley','Airport pickup for anyone flying in']}
+    image="/Asset/stock%20photo/Desktop%20Dimensions/Facility/Contemporary%20healthcare%20building%20with%20tower%20entry%20and%20desert%20landscaping.png"
+    alt="The Buena Vista building, with tower entry and desert landscaping"
+    caption="Chandler, Arizona."
+  />
+  <HubCards eyebrow="Our facilities" title="Where we are" items={facilities} columns={2} />
+  <HubCards eyebrow="Areas we serve" title="Where people come from" intro="These are service areas rather than additional facilities — care happens at Chandler." items={areas} bg="bg-sage-tint" />
+  <Testimonials /><VerifySection />
+  <FinalCTA />
+</Layout>

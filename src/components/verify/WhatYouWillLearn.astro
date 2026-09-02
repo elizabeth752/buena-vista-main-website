@@ -1,0 +1,44 @@
+---
+/* The four things a benefits check actually answers. Framed as what you get,
+   not as conditions to satisfy. Deliberately avoids publishing a payer table:
+   contracts are still being reinstated after the Chandler reopening, and a
+   list that goes stale is worse than a live check. */
+const learn = [
+  { n: '01', h: 'Whether we are in network with your plan', p: 'The first and biggest question. We are in network with a range of commercial plans and with Access plans including Banner University Family Care, and we are adding contracts as they land.' },
+  { n: '02', h: 'Which level of care is covered', p: 'Detox, residential, or both. Plans authorise these separately, so knowing which one applies matters more than knowing a single yes or no.' },
+  { n: '03', h: 'Roughly how long', p: 'Authorisations come with a length attached — often around a month for residential, sometimes longer. You will know the shape of it before you arrive.' },
+  { n: '04', h: 'What, if anything, you would pay', p: 'Deductibles and co-insurance vary enormously between policies. We tell you what we can see rather than leaving you to discover it later.' },
+];
+---
+<section id="learn" class="bg-sage-tint py-[70px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mb-12">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+        <span class="w-6 h-px bg-gold inline-block"></span>
+        What you get back
+      </p>
+      <h2 class="font-display text-charcoal mb-5">Four answers by the end of the call</h2>
+      <p class="font-body text-charcoal text-[18px] leading-[30px]">
+        A benefits check is not a yes-or-no. It is a picture of what your policy will actually do.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {learn.map(l => (
+        <div class="bg-white rounded-xl p-7 border border-cream-soft">
+          <p class="font-display text-gold text-[32px] leading-none mb-4">{l.n}</p>
+          <h3 class="font-display text-[21px] leading-[27px] text-navy mb-3">{l.h}</h3>
+          <p class="font-body text-charcoal text-[16px] leading-[26px]">{l.p}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-10 bg-white border-l-2 border-gold rounded-r-xl p-6 max-w-3xl">
+      <p class="font-body text-charcoal text-[16px] leading-[27px]">
+        <strong class="font-bold">If your plan turns out to be one we are still working on,</strong> you will hear that
+        plainly and we will help you find a programme in Arizona that takes it. Either way, the call ends with you
+        knowing where to go.
+      </p>
+    </div>
+  </div>
+</section>

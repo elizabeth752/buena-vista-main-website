@@ -1,5 +1,6 @@
 ---
 import Horizon from './Horizon.astro';
+import { footerColumns, legalLinks, SHOW_BUILD_STATUS } from '../data/navigation';
 
 const accreditations = [
   { src: '/Asset/Accreditations/The%20Joint%20Commission.svg', alt: 'The Joint Commission Accredited' },
@@ -9,14 +10,7 @@ const accreditations = [
   { src: '/Asset/Accreditations/BBB.svg',                       alt: 'BBB Accredited' },
 ];
 
-const nav = [
-  ['Medical detox', '/medical-detox'],
-  ['Residential treatment', '/residential-treatment'],
-  ['Insurance & coverage', '/insurance'],
-  ['About us', '/about'],
 
-  ['Locations', '/#location'],
-];
 ---
 <!-- Closing CTA. One soft ridge rises behind it — the motif's second and final
      appearance on the page. -->
@@ -44,38 +38,20 @@ const nav = [
 <footer class="bg-navy text-white">
   <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-14">
 
-    <div class="grid md:grid-cols-[1.3fr_1fr_1.2fr] gap-12 mb-12">
+    <!-- Brand, then the secondary link set. The main menu carries the
+         conversion paths; this carries everything else. -->
+    <div class="grid lg:grid-cols-[1.4fr_2.6fr] gap-12 lg:gap-16 mb-12">
 
-      <!-- Brand -->
       <div>
         <img src="/Asset/stock%20photo/Logo%20Buena%20Vista.svg" alt="Buena Vista Health &amp; Recovery Centers" class="h-9 brightness-0 invert mb-5" />
         <p class="font-body text-white/70 text-[16px] leading-[26px] max-w-sm">
-          Medically supervised detox and residential treatment in Chandler and Tucson, Arizona — in a place that treats you like a person, not a number.
+          Medically supervised detox and residential treatment in Chandler, Arizona — in a place that treats you like a person, not a number.
         </p>
         <a href="tel:8883625576" class="inline-block font-body font-semibold text-white text-[20px] mt-5 tel-number hover:opacity-70 transition-opacity">
           (888) 362-5576
         </a>
-      </div>
 
-      <!-- Navigation -->
-      <nav aria-label="Footer">
-        <p class="font-body text-gold text-xs font-bold tracking-[0.18em] uppercase mb-5">Explore</p>
-        <ul class="space-y-3">
-          {nav.map(([label, href]) => (
-            <li>
-              <a href={href} class="font-body text-white/70 hover:text-white text-[16px] transition-colors">{label}</a>
-            </li>
-          ))}
-        </ul>
-      </nav>
-
-      <!-- Locations & crisis -->
-      <div>
-        <p class="font-body text-gold text-xs font-bold tracking-[0.18em] uppercase mb-5">Our locations</p>
-        <p class="font-body text-white/70 text-[16px] leading-[26px] mb-2">3033 S Arizona Ave<br />Chandler, AZ 85286</p>
-        <p class="font-body text-white/70 text-[16px] leading-[26px] mb-6">5151 E Pima St<br />Tucson, AZ</p>
-
-        <div class="border-l-2 border-gold pl-4">
+        <div class="border-l-2 border-gold pl-4 mt-8">
           <p class="font-body font-semibold text-white text-[16px] mb-1">In a crisis right now?</p>
           <p class="font-body text-white/70 text-[15px] leading-[24px]">
             Call or text <a href="tel:988" class="text-gold font-semibold hover:opacity-70 transition-opacity tel-number">988</a> for the Suicide &amp; Crisis Lifeline, any hour. If someone is in immediate danger, call 911.
@@ -83,6 +59,55 @@ const nav = [
         </div>
       </div>
 
+      <nav aria-label="Footer" class="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10">
+        {footerColumns.map(col => (
+          <div>
+            <p class="font-body text-gold text-xs font-bold tracking-[0.18em] uppercase mb-5">{col.heading}</p>
+            <ul class="space-y-3">
+              {col.links.map(link => (
+                <li>
+                  <a href={link.href} class="inline-flex items-center gap-1.5 font-body text-white/70 hover:text-white text-[15px] leading-[22px] transition-colors">
+                    {link.label}
+                    {SHOW_BUILD_STATUS && !link.built && <span class="w-1 h-1 rounded-full bg-gold/60 shrink-0" aria-hidden="true"></span>}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </nav>
+
+    </div>
+
+    <!-- Locations -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 pb-10 mb-10 border-b border-white/10">
+      <div>
+        <p class="font-body text-gold text-xs font-bold tracking-[0.18em] uppercase mb-4">Chandler</p>
+        <p class="font-body text-white/70 text-[15px] leading-[24px]">
+          3033 S Arizona Ave<br />Chandler, AZ 85286<br />
+          <a href="tel:4806800606" class="text-white/70 hover:text-white transition-colors tel-number">(480) 680-0606</a>
+        </p>
+      </div>
+      <div>
+        <p class="font-body text-gold text-xs font-bold tracking-[0.18em] uppercase mb-4">Tucson <span class="text-white/50 normal-case tracking-normal font-semibold">· closed</span></p>
+        <p class="font-body text-white/70 text-[15px] leading-[24px]">
+          5151 E Pima St<br />Tucson, AZ 85712<br />
+          <span class="text-white/50">Temporarily closed. Call us and we will help you find care.</span>
+        </p>
+      </div>
+      <div>
+        <p class="font-body text-gold text-xs font-bold tracking-[0.18em] uppercase mb-4">Admissions</p>
+        <p class="font-body text-white/70 text-[15px] leading-[24px]">
+          Open 24 hours, including holidays.<br />
+          <a href="tel:8883625576" class="text-white/70 hover:text-white transition-colors tel-number">(888) 362-5576</a>
+        </p>
+      </div>
+      <div>
+        <p class="font-body text-gold text-xs font-bold tracking-[0.18em] uppercase mb-4">Areas we serve</p>
+        <p class="font-body text-white/70 text-[15px] leading-[24px]">
+          Phoenix &middot; Mesa &middot; Gilbert &middot; Scottsdale &middot; Tempe &middot; statewide Arizona
+        </p>
+      </div>
     </div>
 
     <!-- Accreditation -->
@@ -100,8 +125,13 @@ const nav = [
         © {new Date().getFullYear()} Buena Vista Health &amp; Recovery Centers. All rights reserved.
       </p>
       <ul class="flex flex-wrap gap-x-6 gap-y-2">
-        {['Privacy policy', 'Notice of privacy practices', 'Accessibility', 'Terms'].map(item => (
-          <li><a href="#" class="font-body text-white/50 hover:text-white/80 text-[13px] transition-colors">{item}</a></li>
+        {legalLinks.map(link => (
+          <li>
+            <a href={link.href} class="inline-flex items-center gap-1.5 font-body text-white/50 hover:text-white/80 text-[13px] transition-colors">
+              {link.label}
+              {SHOW_BUILD_STATUS && !link.built && <span class="w-1 h-1 rounded-full bg-white/30 shrink-0" aria-hidden="true"></span>}
+            </a>
+          </li>
         ))}
       </ul>
     </div>

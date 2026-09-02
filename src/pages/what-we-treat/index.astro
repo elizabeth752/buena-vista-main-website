@@ -1,0 +1,49 @@
+---
+/* What we treat hub. Substance categories and mental-health conditions follow
+   the client wiki's confirmed lists. Conditions outside those lists (ADHD,
+   schizophrenia) are deliberately absent pending clinical confirmation. */
+import Layout from '../../layouts/Layout.astro';
+import TopBar from '../../components/TopBar.astro';
+import Nav from '../../components/Nav.astro';
+import HubHero from '../../components/hub/HubHero.astro';
+import HubCards from '../../components/hub/HubCards.astro';
+import Testimonials from '../../components/Testimonials.astro';
+import VerifySection from '../../components/VerifySection.astro';
+import FinalCTA from '../../components/FinalCTA.astro';
+
+const title = 'What We Treat | Buena Vista Health & Recovery, Chandler AZ';
+const description = 'Alcohol, opioids and fentanyl, stimulants, benzodiazepines and co-occurring mental health conditions, treated at our Chandler, AZ facility. Call (888) 362-5576.';
+
+const substances = [
+  { label: 'Alcohol', desc: 'The most common reason for a medical detox, and one of the few substances where stopping without supervision carries real risk.', href: '/what-we-treat/alcohol-addiction/' },
+  { label: 'Fentanyl & opioids', desc: 'Detox with medication to blunt withdrawal, then residential care. Using more than one thing alongside it is expected, not a complication.', href: '/what-we-treat/opioid-addiction/fentanyl/' },
+  { label: 'Methamphetamine & stimulants', desc: 'Usually straight into residential treatment, since stopping meth does not put the body in the danger that alcohol or benzodiazepines do.', href: '/what-we-treat/stimulant-addiction/methamphetamine/' },
+  { label: 'Benzodiazepines', desc: 'Xanax, Klonopin, Ativan and similar. Like alcohol, these need a supervised detox rather than an attempt at tapering alone.' },
+  { label: 'Cannabis', desc: 'Treated where it is part of the picture, which it often is alongside something else.' },
+  { label: 'Prescription medications', desc: 'Painkillers, stimulants and sedatives that stopped being taken the way they were prescribed.' },
+];
+
+const mentalHealth = [
+  { label: 'Depression & mood', desc: 'Low mood that predates the drinking or using, and low mood that arrived with it — both are addressed as part of your care.' },
+  { label: 'Anxiety', desc: 'Anxiety and substance use tend to feed each other. Treating one while ignoring the other rarely holds.' },
+  { label: 'PTSD & trauma', desc: 'Trauma-specific therapy and EMDR are part of the programme, delivered by people trained to do it properly.' },
+  { label: 'Suicidal thoughts & self-harm', desc: 'Common, frightening, and something you can say out loud here. If you are in danger right now, call or text 988.' },
+  { label: 'Dual diagnosis', desc: 'When substance use and a mental-health condition are tangled together, they are treated together rather than in sequence.', href: '/dual-diagnosis' },
+];
+---
+<Layout title={title} description={description}>
+  <TopBar /><Nav />
+  <HubHero
+    eyebrow="What we treat"
+    title="Whatever it is, it has been through these doors before."
+    intro="Substance use rarely arrives on its own, and it rarely arrives tidily. Our detox and residential programmes are built for the whole picture — several substances at once, and whatever is going on mentally alongside them."
+    points={['Alcohol, opioids, stimulants, benzodiazepines and more','Several substances at once is the norm, not a complication','Mental health treated alongside, not afterwards','No threshold you have to cross to deserve help']}
+    image="/Asset/stock%20photo/Desktop%20Dimensions/Facility/Conversation%20lounge%20with%20patterned%20armchairs,%20area%20rug,%20and%20kitchenette%20backdrop.png"
+    alt="A conversation lounge with patterned armchairs and an area rug"
+    caption="Somewhere to say the whole of it out loud."
+  />
+  <HubCards eyebrow="Substance use" title="What we detox and treat" items={substances} />
+  <HubCards eyebrow="Mental health" title="What we treat alongside it" intro="These are addressed within detox and residential care rather than as a separate programme." items={mentalHealth} bg="bg-sage-tint" />
+  <Testimonials /><VerifySection />
+  <FinalCTA />
+</Layout>

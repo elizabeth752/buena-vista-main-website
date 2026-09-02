@@ -1,0 +1,59 @@
+---
+/* Ordered by how often each comes up across the alcohol calls in our own
+   admissions line: length of stay (62%), work (43%), family calling on
+   someone else's behalf (37%), and cost/coverage. */
+const faqs = [
+  {
+    q: 'How long will I be away?',
+    a: "Detox for alcohol usually runs toward the longer end — often close to a week — and residential treatment is generally around thirty days after that. Your own length of stay depends on your history, how you progress, and what your plan authorises. Your case manager will tell you honestly what they think you need rather than stretching or rushing it.",
+  },
+  {
+    q: 'What about my job?',
+    a: "It is a fair thing to ask about — plenty of people arrive having taken protected leave, and many employers handle this more quietly and more decently than people expect. Bring it up on the call and we will talk through the timing with you.",
+  },
+  {
+    q: "I'm calling about someone else. Can you help?",
+    a: "Yes. Partners, parents and adult children start this process on someone else's behalf all the time. We can talk you through what the options look like, what to say, and how admission works, even if the person themselves is not ready to pick up the phone yet.",
+  },
+  {
+    q: 'Can I afford it?',
+    a: "We are in network with Medicaid and with most major commercial plans, and we will run your specific benefits with you on the phone before you commit to anything. If cost is the thing holding you back, say so early in the call — it is a practical problem and usually a solvable one.",
+  },
+  {
+    q: "I've tried to stop before and it didn't hold.",
+    a: "That is the ordinary shape of this, not a mark against you. Most people who come through here have stopped before, sometimes for months. Coming back is a normal part of how it goes, and you will not be treated as though you have used up your chances.",
+  },
+  {
+    q: "I'm not sure I drink enough for treatment.",
+    a: "Then a phone call is exactly the right size of step. There is no threshold you have to cross to deserve help, and no one will push you into a level of care you do not need. Sometimes the answer is a bed here; sometimes it is a suggestion and a phone number.",
+  },
+];
+---
+<section id="alcohol-faq" class="bg-cream py-[70px]">
+  <div class="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8">
+    <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+      <span class="w-6 h-px bg-gold inline-block"></span>
+      Straight answers
+    </p>
+    <h2 class="font-display text-charcoal mb-10">Questions worth asking</h2>
+
+    <div class="divide-y divide-cream-soft border-t border-b border-cream-soft">
+      {faqs.map(f => (
+        <details class="group py-5">
+          <summary class="flex items-start justify-between gap-6 cursor-pointer">
+            <h3 class="font-body font-semibold text-charcoal text-[18px] leading-[28px]">{f.q}</h3>
+            <span class="shrink-0 mt-1 text-teal">
+              <svg class="faq-plus w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" d="M12 5v14M5 12h14"/>
+              </svg>
+              <svg class="faq-minus w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" d="M5 12h14"/>
+              </svg>
+            </span>
+          </summary>
+          <p class="font-body text-charcoal text-[16px] leading-[27px] mt-4 pr-10">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

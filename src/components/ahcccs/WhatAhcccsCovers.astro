@@ -1,0 +1,66 @@
+---
+/* Lengths of stay come from the client wiki. Worth noting for anyone editing:
+   the Medicaid residential authorisation (30–45 days) tends to run LONGER than
+   the commercial one (25–30), which is a genuine advantage for AHCCCS members
+   and is presented as such rather than buried. */
+const covered = [
+  {
+    label: 'Medical detox',
+    tag: 'Covered',
+    desc: 'Around-the-clock nursing, physician oversight and medication to keep you comfortable while your body clears. Typically a few days, depending on what you have been using and your medical history.',
+  },
+  {
+    label: 'Residential treatment',
+    tag: 'Covered',
+    desc: 'A full live-in stay, commonly authorised somewhere between thirty and forty-five days — often a longer stay than commercial plans allow. Private room, catered meals, group and individual therapy.',
+  },
+  {
+    label: 'Co-occurring mental health care',
+    tag: 'Covered',
+    desc: 'Depression, anxiety, PTSD and trauma treated alongside substance use inside the residential programme, rather than as something you have to arrange separately afterwards.',
+  },
+];
+---
+<section id="covers" class="bg-cream py-[55px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-14 items-start">
+
+      <div>
+        <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+          <span class="w-6 h-px bg-gold inline-block"></span>
+          What it pays for
+        </p>
+        <h2 class="font-display text-charcoal mb-6">
+          Access covers more than people expect
+        </h2>
+
+        <div class="space-y-5 font-body text-charcoal text-[17px] leading-[29px]">
+          <p>
+            State coverage is widely assumed to mean a waiting list and a watered-down version of treatment. It does not. AHCCCS covers medically supervised detox and a full residential stay, in the same building, in the same private rooms, with the same clinical team as everybody else.
+          </p>
+          <p>
+            In fact, Medicaid authorisations for residential care often run <strong class="font-bold">longer</strong> than commercial ones — which means more time to do the work rather than less.
+          </p>
+          <p>
+            You will not be treated differently here for how your care is funded. Around six in ten of the people in our care are covered by Access.
+          </p>
+        </div>
+      </div>
+
+      <div class="space-y-5">
+        {covered.map(item => (
+          <div class="bg-white rounded-xl p-7 shadow-sm border border-cream-soft">
+            <div class="flex items-center justify-between gap-4 mb-3">
+              <h3 class="font-display text-[24px] leading-[30px] text-charcoal">{item.label}</h3>
+              <span class="shrink-0 font-body text-xs font-bold uppercase tracking-wide text-teal bg-teal/10 rounded-full px-3 py-1.5">
+                {item.tag}
+              </span>
+            </div>
+            <p class="font-body text-charcoal text-[16px] leading-[26px]">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </div>
+</section>

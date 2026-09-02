@@ -1,0 +1,43 @@
+---
+/* Deliberately low-friction: the first item is the only one that really matters,
+   and every other line exists to tell someone they can still call without it. */
+const items = [
+  { h: 'The plan name', p: 'Whatever is printed on the front of the card — Banner University Family Care, Aetna, Cigna, and so on. This is the one thing genuinely worth finding.' },
+  { h: 'Your name and date of birth', p: 'Usually enough to look a policy up even when the card has gone missing.' },
+  { h: 'The member ID, if you have it', p: 'It speeds things along. Not having it to hand slows nothing down much.' },
+  { h: 'Whose policy it is', p: 'Being on a parent or partner’s plan is common and perfectly workable. Just say so.' },
+];
+---
+<section id="ready" class="bg-cream py-[60px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-16 items-start">
+
+      <div>
+        <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+          <span class="w-6 h-px bg-gold inline-block"></span>
+          Before you call
+        </p>
+        <h2 class="font-display text-charcoal mb-6">What helps to have to hand</h2>
+
+        <div class="space-y-5 font-body text-charcoal text-[17px] leading-[29px]">
+          <p>
+            None of this is required. If you have your card in front of you the call is quicker, and if you do not, we will work with whatever you can tell us.
+          </p>
+          <p>
+            <strong class="font-bold">Not knowing your plan details is completely normal.</strong> Most people have never had a reason to read their policy closely, and working it out is our job rather than yours.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-5">
+        {items.map(i => (
+          <div class="bg-white rounded-xl p-6 border border-cream-soft">
+            <h3 class="font-display text-[20px] leading-[26px] text-navy mb-2.5">{i.h}</h3>
+            <p class="font-body text-charcoal text-[15px] leading-[25px]">{i.p}</p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </div>
+</section>

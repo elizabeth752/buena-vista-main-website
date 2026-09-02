@@ -1,0 +1,80 @@
+---
+/* -----------------------------------------------------------------------------
+   Private pay & self-pay rates.
+
+   Self-pay or uninsured comes up on 33 of 571 Buena Vista calls (6%), with a
+   further 29 asking price directly.
+
+   RATES — the figures published here are the client wiki's: detox $1,000/day,
+   residential $750/day. Admissions corroborates the detox figure most often as
+   "$7,000 for seven days", and residential as "about $23,000 for 30 days".
+
+   HOWEVER — quotes given by phone are NOT consistent. One agent quotes $10,000
+   for a private-pay detox where others quote $7,000, and other figures appear
+   in the export too. Publishing a rate is partly a fix for that: a number on
+   the page is a number everyone can quote from. Flag any change here to
+   admissions so the phone script matches.
+
+   Rates are framed as typical and assessment-dependent, and the page promises
+   a written figure before commitment. Do not harden into a fixed price list
+   without billing sign-off.
+
+   ⚠ NO SURPRISES ACT — publishing self-pay rates brings Good Faith Estimate
+   obligations for uninsured and self-pay patients. The GFE page was cut from
+   the sitemap; the written-confirmation promise in the copy points that way but
+   is not a substitute for a compliant GFE process. Raise with the client before
+   this page goes live.
+
+   STYLE: no call-data sourcing, no exclusionary framing.
+----------------------------------------------------------------------------- */
+import Layout from '../../layouts/Layout.astro';
+import TopBar from '../../components/TopBar.astro';
+import Nav from '../../components/Nav.astro';
+
+import PrivatePayHero from '../../components/privatepay/PrivatePayHero.astro';
+import WhatItCosts from '../../components/privatepay/WhatItCosts.astro';
+import WhyPrivatePay from '../../components/privatepay/WhyPrivatePay.astro';
+import PrivatePayQuestions from '../../components/privatepay/PrivatePayQuestions.astro';
+
+import Testimonials from '../../components/Testimonials.astro';
+import VerifySection from '../../components/VerifySection.astro';
+import FinalCTA from '../../components/FinalCTA.astro';
+
+const title = 'Private Pay & Self-Pay Rates | Buena Vista Health & Recovery, Chandler AZ';
+const description =
+  'What detox and residential treatment costs in Chandler, AZ without insurance. Day rates, what is included, and a written figure before you commit. Call (888) 362-5576.';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    ['How much does rehab cost without insurance in Arizona?',
+     'Buena Vista works from day rates of around $1,000 per day for medical detox and around $750 per day for residential treatment. A seven-day detox is roughly $7,000 and a thirty-day residential stay roughly $22,500. Your figure depends on the length of stay indicated by your assessment and is confirmed in writing beforehand.'],
+    ['What is included in the private pay rate?',
+     'Your room, all meals, the clinical programme, medical supervision and the amenities. Detox and residential are priced as day rates covering the whole stay.'],
+    ['Is it cheaper to do detox and residential together?',
+     'Yes. Moving from detox directly into residential is priced as one continuous stay rather than two admissions, which is lower than the two quoted separately.'],
+    ['Should I check insurance even if I plan to pay privately?',
+     'Yes. Coverage is often better than expected, and a benefits check takes a few minutes at no cost.'],
+  ].map(([q, a]) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+};
+---
+<Layout title={title} description={description}>
+  <TopBar />
+  <Nav />
+
+  <PrivatePayHero />
+  <WhatItCosts />
+  <WhyPrivatePay />
+  <Testimonials />
+  <VerifySection />
+  <PrivatePayQuestions />
+
+  <FinalCTA />
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
+</Layout>

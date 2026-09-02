@@ -1,0 +1,58 @@
+---
+/* Distances are described directionally rather than in minutes. Chandler's
+   position in the East Valley is a fact; a claimed drive time is not one we
+   have verified. */
+const areas = [
+  { h: 'From Phoenix', p: 'Chandler sits south-east of Phoenix in the East Valley, a straightforward run down the I-10 or the 101. Sky Harbor is the nearest airport.' },
+  { h: 'From Mesa, Gilbert and Tempe', p: 'These are neighbouring East Valley towns — Chandler is a local drive rather than a journey, which matters when someone is making the trip on the day they decide.' },
+  { h: 'From Tucson', p: 'Roughly a two-hour drive north on the I-10. Our Tucson campus is closed at the moment, so Chandler is where southern Arizona is currently admitted.' },
+  { h: 'From out of state', p: 'Fly into Sky Harbor and we will collect you. Airport pickup and drop-off is provided; local rides are not, so tell us your flight details when you call.' },
+];
+---
+<section id="getting-here" class="bg-cream py-[70px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+
+      <div>
+        <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+          <span class="w-6 h-px bg-gold inline-block"></span>
+          Getting here
+        </p>
+        <h2 class="font-display text-charcoal mb-8">However far you are coming from</h2>
+
+        <div class="space-y-6">
+          {areas.map(a => (
+            <div class="border-l-2 border-cream-soft pl-5">
+              <h3 class="font-body font-bold text-charcoal text-[17px] mb-1.5">{a.h}</h3>
+              <p class="font-body text-charcoal text-[16px] leading-[26px]">{a.p}</p>
+            </div>
+          ))}
+        </div>
+
+        <div class="mt-9">
+          <a href="tel:8883625576" class="inline-flex items-center justify-center gap-2 bg-teal hover:bg-teal-dark text-white font-semibold h-14 px-8 rounded-lg transition-colors font-body">
+            <span class="tel-number">Call (888) 362-5576</span>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <div class="rounded-xl overflow-hidden border border-cream-soft shadow-sm">
+          <iframe
+            title="Map showing Buena Vista Health & Recovery Centers, 3033 S Arizona Ave, Chandler, AZ 85286"
+            src="https://www.google.com/maps?q=3033+S+Arizona+Ave,+Chandler,+AZ+85286&output=embed"
+            width="100%"
+            height="420"
+            style="border:0"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+        <p class="font-body text-muted text-[15px] leading-[24px] mt-3">
+          3033 S Arizona Ave, Chandler, AZ 85286 · open 24 hours
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>

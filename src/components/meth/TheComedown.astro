@@ -1,0 +1,62 @@
+---
+/* Depression and suicidal thinking are the most-raised theme on meth calls by a
+   distance, ahead of sleep, psychosis and housing. This section names that
+   plainly and surfaces 988 inline — the sitewide crisis block sits in the
+   footer, but on this page it belongs above it too. Keep the 988 line if
+   editing. Tone stays reassuring: these are normal, temporary, and survivable
+   with support. */
+const stages = [
+  { h: 'The first few days', p: 'Mostly sleep. People arrive having been awake for a long time and the body takes what it is owed. Nobody will wake you for a group session on day one.' },
+  { h: 'The week after', p: 'Flat, foggy, and hungry. Food starts tasting like something again. This is the stretch where being somewhere with a routine matters most, because on your own it is the easiest time to go back.' },
+  { h: 'Two to four weeks in', p: 'Sleep settles, energy returns unevenly, and the cravings arrive in waves rather than constantly. This is when the therapy starts doing real work, because there is finally someone home to do it.' },
+];
+---
+<section id="comedown" class="bg-sage-tint py-[70px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-[1fr_1.15fr] gap-12 lg:gap-16 items-start">
+
+      <div>
+        <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+          <span class="w-6 h-px bg-gold inline-block"></span>
+          What it actually feels like
+        </p>
+        <h2 class="font-display text-charcoal mb-6">The comedown is the part worth having help for</h2>
+
+        <div class="space-y-5 font-body text-charcoal text-[17px] leading-[29px]">
+          <p>
+            The low that follows heavy meth use is not a character failing and it is not permanent. It is what a depleted brain does while it recovers, and it lifts — but while it lasts it can be genuinely bleak, and low mood or thoughts of not wanting to be here are a recognised part of it.
+          </p>
+          <p>
+            Paranoia and hearing or seeing things can linger for a while too. Both are treatable, both are more common than people admit, and neither is something you will be judged for describing.
+          </p>
+          <p>
+            All of it is easier with a psychiatrist available, medication where it helps, and someone checking on you.
+          </p>
+        </div>
+
+        <div class="bg-white border-l-2 border-gold rounded-r-xl p-6 mt-8">
+          <p class="font-body text-charcoal text-[16px] leading-[27px]">
+            <strong class="font-bold">If you are having thoughts of ending your life right now,</strong> call or text
+            <a href="tel:988" class="text-teal font-semibold hover:opacity-70 transition-opacity tel-number">988</a>
+            for the Suicide &amp; Crisis Lifeline, any hour. If someone is in immediate danger, call 911. You can call us afterwards.
+          </p>
+        </div>
+      </div>
+
+      <div class="space-y-5">
+        {stages.map(s => (
+          <div class="bg-white rounded-xl p-7 border border-cream-soft">
+            <h3 class="font-display text-[21px] leading-[27px] text-navy mb-3">{s.h}</h3>
+            <p class="font-body text-charcoal text-[16px] leading-[26px]">{s.p}</p>
+          </div>
+        ))}
+        <div class="pt-2">
+          <a href="tel:8883625576" class="w-full inline-flex items-center justify-center gap-2 bg-teal hover:bg-teal-dark text-white font-semibold h-14 px-8 rounded-lg transition-colors font-body">
+            <span class="tel-number">Call (888) 362-5576</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

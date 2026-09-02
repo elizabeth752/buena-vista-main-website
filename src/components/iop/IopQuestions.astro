@@ -1,0 +1,42 @@
+---
+/* The four things people actually raise when they call asking about IOP,
+   ordered by how often they come up in our own admissions calls. */
+const questions = [
+  {
+    q: 'Can I keep working?',
+    a: "Keeping a job is one of the main reasons IOP exists at all. Many programs run an evening track precisely so that work is still possible. It is a fair question to lead with when you call any program — ask what times the groups run before you ask anything else.",
+  },
+  {
+    q: 'Is there housing with it?',
+    a: "Very often what people need is not just an IOP but somewhere stable to live while they attend one. Some programs pair with sober living, and a few will cover part of the housing cost while you are in their program. We do not run sober living ourselves, but we know the local landscape and can point you at it.",
+  },
+  {
+    q: 'Will my insurance cover it?',
+    a: "Usually some of it, but coverage for outpatient care is often contracted separately from inpatient — a plan that covers a residential stay will not automatically cover an IOP at the same place. This is worth checking before you get attached to a particular program. We will run your benefits with you on the phone.",
+  },
+  {
+    q: "I just finished residential. What's next?",
+    a: "Stepping down into an IOP is the standard next move after a residential stay, and it is also the point where momentum is easiest to lose, because nobody handed over the next appointment. Ask your case manager to set it up before your discharge date, not after.",
+  },
+];
+---
+<section id="iop-questions" class="bg-sage-tint py-[70px]">
+  <div class="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8">
+    <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+      <span class="w-6 h-px bg-gold inline-block"></span>
+      Worth knowing
+    </p>
+    <h2 class="font-display text-charcoal mb-10">
+      Four things worth knowing about IOP
+    </h2>
+
+    <div class="space-y-4">
+      {questions.map(item => (
+        <div class="bg-white rounded-xl p-7 border border-cream-soft">
+          <h3 class="font-display text-[24px] leading-[30px] text-navy mb-3">{item.q}</h3>
+          <p class="font-body text-charcoal text-[16px] leading-[27px]">{item.a}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

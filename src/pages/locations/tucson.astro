@@ -1,0 +1,77 @@
+---
+/* -----------------------------------------------------------------------------
+   Tucson, AZ — temporarily closed.
+
+   Tucson is raised on 179 of 571 Buena Vista calls (31%), the single biggest
+   topic in the export after the core levels of care. Of those callers, ~60%
+   want to stay in southern Arizona, ~26% raise transport or distance, and ~28%
+   end up being referred to another Tucson programme. The page mirrors what
+   admissions already does: two routes, given equal weight.
+
+   INDEXING — this page is deliberately INDEXED, which diverges from the "build
+   noindex" note in the sitemap. Reasoning: people search for Buena Vista Tucson
+   because it operated there for years, and noindexing means the only answers
+   they find are stale third-party listings that still show it as open. An
+   honest page ranking for those searches deflects the call and keeps the
+   relationship. To reverse, add `noindex={true}` to the Layout below.
+
+   It carries NO LocalBusiness schema on purpose, so it does not compete with
+   Chandler as an active location entity. Status is stated as temporarily
+   closed, matching how a closed location should be represented.
+
+   WHEN TUCSON REOPENS: add LocalBusiness schema with the NAP and hours, swap
+   the closed badge and greyscale image, flip `open: true` in LocationSection,
+   and restore the Tucson address in the about page schema.
+
+   STYLE: closure is stated as a fact and immediately paired with a route
+   forward — never as a refusal. No call-data sourcing in the copy.
+----------------------------------------------------------------------------- */
+import Layout from '../../layouts/Layout.astro';
+import TopBar from '../../components/TopBar.astro';
+import Nav from '../../components/Nav.astro';
+
+import TucsonHero from '../../components/tucson/TucsonHero.astro';
+import TucsonOptions from '../../components/tucson/TucsonOptions.astro';
+import TucsonQuestions from '../../components/tucson/TucsonQuestions.astro';
+
+import Testimonials from '../../components/Testimonials.astro';
+import VerifySection from '../../components/VerifySection.astro';
+import FinalCTA from '../../components/FinalCTA.astro';
+
+const title = 'Buena Vista Tucson, AZ — Temporarily Closed | Buena Vista Health & Recovery';
+const description =
+  'Our Tucson, AZ facility is temporarily closed. Detox and residential treatment continue at our Chandler facility, and we will help southern Arizona find local care. Call (888) 362-5576.';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    ['Is Buena Vista Tucson closed?',
+     'Yes, temporarily. The facility at 5151 E Pima St is not admitting while work toward reopening continues. The Chandler, AZ facility is open and admitting 24 hours a day.'],
+    ['When will Buena Vista Tucson reopen?',
+     'A date will be announced once it is confirmed. Admissions can say where it stands on any given day, and take your details to let you know when it changes.'],
+    ['How far is the Chandler facility from Tucson?',
+     'Roughly a two-hour drive north on the I-10. Airport pickup is provided for anyone flying in, and admissions will work through other travel arrangements with you.'],
+    ['Can Buena Vista help me find treatment in Tucson?',
+     'Yes. If travelling to Chandler is not realistic, admissions will check your coverage and help you find a programme in southern Arizona that accepts it, at no cost.'],
+  ].map(([q, a]) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+};
+---
+<Layout title={title} description={description}>
+  <TopBar />
+  <Nav />
+
+  <TucsonHero />
+  <TucsonOptions />
+  <Testimonials />
+  <VerifySection />
+  <TucsonQuestions />
+
+  <FinalCTA />
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
+</Layout>

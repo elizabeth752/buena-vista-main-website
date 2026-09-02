@@ -1,0 +1,46 @@
+---
+/* Lengths follow the client wiki: detox 5–7 days commercial / 3 days Medicaid;
+   residential 25–30 days commercial / 30–45 days Medicaid. Note the inversion —
+   Medicaid residential authorisations tend to run LONGER than commercial ones,
+   which is worth stating plainly since most people assume the reverse. */
+const factors = [
+  { h: 'What you have been using', p: 'Alcohol detox commonly needs the longer end of the range, often close to a full week. Stimulants on their own usually skip the detox stage entirely and begin with residential care.' },
+  { h: 'How your body actually responds', p: 'Withdrawal does not run to a timetable. Your clinical team watch how you are doing day by day and adjust rather than holding you to a number set on the first morning.' },
+  { h: 'What your plan authorises', p: 'Insurance approves care in blocks, and residential is commonly authorised around thirty days. Medicaid authorisations often run longer than commercial ones — sometimes toward forty-five days.' },
+  { h: 'What you and your case manager decide', p: 'From early on, someone is working with you on what comes after. If more time would genuinely help, they will make that case; if you are ready sooner, they will say that too.' },
+];
+---
+<section id="factors" class="bg-cream py-[60px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-16 items-start">
+      <div>
+        <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+          <span class="w-6 h-px bg-gold inline-block"></span>
+          What decides it
+        </p>
+        <h2 class="font-display text-charcoal mb-6">Four things shape how long you stay</h2>
+        <div class="space-y-5 font-body text-charcoal text-[17px] leading-[29px]">
+          <p>
+            The ranges on this page are real, but they are ranges for a reason. Two people arriving on the same day with the same substance can need quite different amounts of time, and pretending otherwise would just set you up for a surprise.
+          </p>
+          <p>
+            <strong class="font-bold">One thing worth knowing:</strong> if you are covered by an Access plan, your residential authorisation will often be longer than a commercial policy would allow — the opposite of what most people expect.
+          </p>
+        </div>
+        <div class="mt-8">
+          <a href="tel:8883625576" class="bg-teal hover:bg-teal-dark text-white font-bold px-7 py-3.5 rounded-lg transition-colors font-body tracking-wide inline-block">
+            Find out what yours would be
+          </a>
+        </div>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-5">
+        {factors.map(f => (
+          <div class="bg-white rounded-xl p-7 border border-cream-soft shadow-sm">
+            <h3 class="font-display text-[20px] leading-[26px] text-navy mb-3">{f.h}</h3>
+            <p class="font-body text-charcoal text-[16px] leading-[26px]">{f.p}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

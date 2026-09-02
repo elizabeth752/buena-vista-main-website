@@ -1,0 +1,55 @@
+---
+/* Who we serve hub.
+
+   SCOPE CARE — the client wiki confirms: adults 18+, co-ed programme with
+   gender-specific housing (male and female wings), and three age groups. It
+   explicitly marks identity, family and legal criteria as "not yet confirmed
+   in current intake criteria — flag with admissions before using in targeting".
+   So this page does NOT claim dedicated veteran, LGBTQ+, court-ordered or
+   pregnancy tracks. Anything added here needs admissions sign-off first. */
+import Layout from '../../layouts/Layout.astro';
+import TopBar from '../../components/TopBar.astro';
+import Nav from '../../components/Nav.astro';
+import HubHero from '../../components/hub/HubHero.astro';
+import HubCards from '../../components/hub/HubCards.astro';
+import Testimonials from '../../components/Testimonials.astro';
+import VerifySection from '../../components/VerifySection.astro';
+import FinalCTA from '../../components/FinalCTA.astro';
+
+const title = 'Who We Serve | Buena Vista Health & Recovery, Chandler AZ';
+const description = 'Adults 18 and over, in a co-ed programme with separate male and female housing. Detox and residential treatment in Chandler, AZ. Call (888) 362-5576.';
+
+const people = [
+  { label: 'Men', desc: 'Male and female housing is separate here, so the wing you live on is single-sex even though the programme itself is co-ed.' },
+  { label: 'Women', desc: 'The same — your own room and bathroom on a women’s wing, with therapy and groups shared across the programme.' },
+  { label: 'Young adults', desc: 'Adults from eighteen upward. Being at the younger end of that is common and does not put you in a room full of people twice your age.' },
+  { label: 'Adults in midlife', desc: 'People arriving with jobs, mortgages and children to think about. The practical side of that gets planned around rather than ignored.' },
+  { label: 'Older adults', desc: 'Later-life drinking and prescription use are more common than people admit, and nobody here is treated as too old to be starting this.' },
+  { label: 'Families & loved ones', desc: 'Calling about someone else is one of the most ordinary ways this begins. You can start the process before they are ready.', href: '/for-families/' },
+];
+
+const circumstances = [
+  { label: 'Coming from a hospital', desc: 'Discharge windows are short. We can speak to a case manager or discharge planner directly to coordinate the move.', href: '/referrals/' },
+  { label: 'On an Access plan', desc: 'Around six in ten of the people in our care are covered by Medicaid, and the room and the programme are identical either way.', href: '/insurance/ahcccs-medicaid/' },
+  { label: 'Paying privately', desc: 'Day rates published, a figure confirmed in writing, and a length of stay decided clinically rather than by an authorisation.', href: '/insurance/private-pay/' },
+  { label: 'Coming back after a relapse', desc: 'The ordinary shape of recovery for a lot of people. There is no limit on how many times you are allowed to try.' },
+  { label: 'Already on a prescribed medication', desc: 'Methadone, buprenorphine, or anything for pain, sleep or mental health. Raise it early and our doctors plan around it.' },
+  { label: 'Travelling in', desc: 'From Tucson, across Arizona, or out of state. Airport pickup is provided and journeys get worked out on the call.', href: '/admissions/travel-and-transportation/' },
+];
+---
+<Layout title={title} description={description}>
+  <TopBar /><Nav />
+  <HubHero
+    eyebrow="Who we serve"
+    title="Adults, eighteen and up. That is most of the criteria."
+    intro="There is no profile you have to match to be welcome here. What varies between people is the practical shape of their treatment, not whether they qualify for it."
+    points={['Adults 18 and over, admitted voluntarily','Separate male and female housing, shared programme','Private rooms with en suite bathrooms','Wheelchair accessible, with dietary accommodations']}
+    image="/Asset/stock%20photo/Desktop%20Dimensions/Facility/Fireplace%20gathering%20area%20with%20high-back%20chairs,%20sofas,%20and%20table%20lamps.png"
+    alt="A fireplace gathering area with high-back chairs and sofas"
+    caption="A room that fills up with all sorts."
+  />
+  <HubCards eyebrow="The people here" title="Who is in the building" items={people} />
+  <HubCards eyebrow="However you arrive" title="Circumstances we plan around" intro="None of these makes treatment harder to get. They change the logistics, and the logistics are our job." items={circumstances} bg="bg-sage-tint" />
+  <Testimonials /><VerifySection />
+  <FinalCTA />
+</Layout>

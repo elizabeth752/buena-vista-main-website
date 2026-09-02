@@ -1,0 +1,33 @@
+---
+const steps = [
+  { n: '01', h: 'You call', tag: '10–15 minutes', p: 'A short assessment with someone on our admissions team. You can call for yourself or for somebody else, at any hour.' },
+  { n: '02', h: 'We check your coverage', tag: 'While you wait', p: 'We run your benefits on the same call and tell you what we find. It costs nothing and commits you to nothing.' },
+  { n: '03', h: 'We agree the right level of care', tag: 'Same call', p: 'Detox first if your body needs it, residential if that is the better starting point. You will hear the reasoning, not just the recommendation.' },
+  { n: '04', h: 'You come in', tag: 'Often the same day', p: 'When a bed is open and coverage is confirmed, admission can happen that day. We will sort out the practicalities of getting here with you.' },
+];
+---
+<section id="steps" class="bg-sage-tint py-[70px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mb-12">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+        <span class="w-6 h-px bg-gold inline-block"></span>
+        How it goes
+      </p>
+      <h2 class="font-display text-charcoal mb-5">From the call to the front door</h2>
+      <p class="font-body text-charcoal text-[18px] leading-[30px]">
+        Four steps, and the first one is the only difficult one.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {steps.map(s => (
+        <div class="bg-white rounded-xl p-7 border border-cream-soft">
+          <p class="font-display text-gold text-[32px] leading-none mb-4">{s.n}</p>
+          <h3 class="font-display text-[22px] leading-[28px] text-navy mb-2">{s.h}</h3>
+          <span class="inline-block font-body text-xs font-bold uppercase tracking-wide text-gold bg-gold/10 rounded-full px-3 py-1.5 mb-4">{s.tag}</span>
+          <p class="font-body text-charcoal text-[16px] leading-[26px]">{s.p}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

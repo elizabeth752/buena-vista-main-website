@@ -1,0 +1,35 @@
+---
+const faqs = [
+  { q: 'Is the price fixed?', a: "The day rates are the figures we work from, and your total depends on the length of stay your assessment points to. You will be given a clear figure in writing before you commit, so there is nothing to discover later." },
+  { q: 'What is included?', a: "Your room, all meals, the clinical programme, medical supervision, and the amenities. Detox and residential are priced as day rates that cover the stay rather than itemising the parts." },
+  { q: 'Is it cheaper to do detox and residential together?', a: "Yes. Moving from detox straight into residential is priced as a single continuous stay rather than two separate admissions, and that combined figure is lower than the two quoted individually. Ask for it on the call." },
+  { q: 'When do I pay?', a: "Arrangements are agreed before admission so nothing is uncertain on the day. Raise any constraints on timing during the call — payment schedules can often be worked with." },
+  { q: 'Should I check my insurance even if I plan to pay privately?', a: "It is worth the few minutes. Coverage often turns out better than expected, and knowing what your policy would do makes private pay a deliberate choice rather than a default." },
+  { q: 'Does paying privately get me different treatment?', a: "No — and that is deliberate. The rooms, the meals, the therapy and the clinical team are the same for everyone here regardless of how the stay is funded." },
+  { q: 'Can a family member pay on my behalf?', a: "Yes, and that is common. They can be part of the conversation about cost and arrangements, with your say-so." },
+  { q: 'What if I cannot afford the full stay?', a: "Say so early in the call. Length of stay, payment timing and other routes into treatment are all things worth talking through before you rule anything out — and if there is a better fit elsewhere in Arizona we will help you find it." },
+];
+---
+<section id="privatepay-faq" class="bg-cream py-[70px]">
+  <div class="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8">
+    <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+      <span class="w-6 h-px bg-gold inline-block"></span>
+      Straight answers
+    </p>
+    <h2 class="font-display text-charcoal mb-10">Questions about paying directly</h2>
+    <div class="divide-y divide-cream-soft border-t border-b border-cream-soft">
+      {faqs.map(f => (
+        <details class="group py-5">
+          <summary class="flex items-start justify-between gap-6 cursor-pointer">
+            <h3 class="font-body font-semibold text-charcoal text-[18px] leading-[28px]">{f.q}</h3>
+            <span class="shrink-0 mt-1 text-teal">
+              <svg class="faq-plus w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg>
+              <svg class="faq-minus w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M5 12h14"/></svg>
+            </span>
+          </summary>
+          <p class="font-body text-charcoal text-[16px] leading-[27px] mt-4 pr-10">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

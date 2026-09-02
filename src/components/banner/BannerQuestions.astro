@@ -1,0 +1,38 @@
+---
+/* The transport answer reflects a real caveat admissions raises — arranging a
+   ride can be harder on Banner than on some other plans. It is framed as
+   something to sort out early rather than as a limitation. */
+const faqs = [
+  { q: 'Does Buena Vista accept Banner?', a: "Yes. Banner University Family Care is in network with us, and it is the plan carried by more of the people we admit than any other. Bring the card, or just your name and date of birth, and we will confirm it on the call." },
+  { q: 'Is Banner the same as Access or AHCCCS?', a: "Banner University Family Care is one of the health plans that delivers AHCCCS — Arizona's Medicaid programme, which nearly everyone calls Access. So yes: Banner Access, Banner Family Care and Banner University Family Care all mean the same thing here." },
+  { q: 'What does it cover?', a: "Medical detox and residential treatment, including the co-occurring mental health care delivered alongside them. Your room, meals and the clinical programme are part of that rather than billed separately." },
+  { q: 'How long will it authorise?', a: "Residential stays under Medicaid commonly run between thirty and forty-five days, which is often longer than a commercial policy allows. Detox is a shorter stay, sized to what your body needs." },
+  { q: 'My coverage lapsed or was just reinstated.', a: "Call anyway. Eligibility moving around is completely ordinary, and plenty of people reach us within days of being reinstated. We can check where yours stands while you are on the phone." },
+  { q: 'Will Banner cover my transport to the facility?', a: "Access plans include a non-emergency medical transport benefit, though how easily it applies to a treatment admission varies. Raise it at the start of the call — between that benefit, a ride we arrange and family, most journeys get solved on the phone." },
+  { q: 'Will I pay anything?', a: "For a covered stay under an in-network Access plan, treatment is covered — there is no separate bill for the room, the meals or the therapy. If anything about your particular plan works differently we will tell you before you arrive." },
+  { q: 'What if I have Banner but you are full?', a: "We will tell you straight away rather than leaving you waiting, keep your file open so nothing has to be repeated, and call you when a bed comes free. If waiting is not realistic we will help you find somewhere with space now." },
+];
+---
+<section id="banner-faq" class="bg-cream py-[70px]">
+  <div class="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8">
+    <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+      <span class="w-6 h-px bg-gold inline-block"></span>
+      Straight answers
+    </p>
+    <h2 class="font-display text-charcoal mb-10">Questions about Banner coverage</h2>
+    <div class="divide-y divide-cream-soft border-t border-b border-cream-soft">
+      {faqs.map(f => (
+        <details class="group py-5">
+          <summary class="flex items-start justify-between gap-6 cursor-pointer">
+            <h3 class="font-body font-semibold text-charcoal text-[18px] leading-[28px]">{f.q}</h3>
+            <span class="shrink-0 mt-1 text-teal">
+              <svg class="faq-plus w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg>
+              <svg class="faq-minus w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M5 12h14"/></svg>
+            </span>
+          </summary>
+          <p class="font-body text-charcoal text-[16px] leading-[27px] mt-4 pr-10">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

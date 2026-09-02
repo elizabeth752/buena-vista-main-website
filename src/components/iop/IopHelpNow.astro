@@ -1,0 +1,61 @@
+---
+/* What admissions can actually do today for an IOP caller. Mirrors the real
+   phone flow: assess the level of care, run benefits, then either admit to
+   detox/residential or hand the referral to the business-development rep to
+   place them at an in-network outpatient program. */
+const steps = [
+  {
+    n: '01',
+    h: 'We work out what level you actually need',
+    p: "A short conversation about how much, how often, and how long. We will tell you honestly which level of care fits, so you start in the right place rather than the nearest one.",
+  },
+  {
+    n: '02',
+    h: 'We check your coverage while you are on the phone',
+    p: "Outpatient benefits are often contracted separately from inpatient, so this is worth doing before anything else. We tell you exactly what we find, so there are no surprises later.",
+  },
+  {
+    n: '03',
+    h: 'We admit you here, or we place you somewhere that fits',
+    p: "If detox or residential is the right call, we can often admit the same day when a bed is open. If an IOP is the better fit, our referral team finds one that takes your plan and has them call you.",
+  },
+];
+---
+<section id="help-now" class="bg-cream py-[70px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mb-12">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+        <span class="w-6 h-px bg-gold inline-block"></span>
+        While our IOP is being built
+      </p>
+      <h2 class="font-display text-charcoal mb-5">
+        What we can do for you today
+      </h2>
+      <p class="font-body text-charcoal text-[18px] leading-[30px]">
+        Whoever you are and wherever you are starting from, one call gets you a clear answer and a next step.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      {steps.map(s => (
+        <div class="bg-white rounded-xl p-7 border border-cream-soft shadow-sm">
+          <p class="font-display text-gold text-[32px] leading-none mb-4">{s.n}</p>
+          <h3 class="font-display text-[22px] leading-[28px] text-navy mb-3">{s.h}</h3>
+          <p class="font-body text-charcoal text-[16px] leading-[26px]">{s.p}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-10 flex flex-col sm:flex-row gap-4">
+      <a href="tel:8883625576" class="inline-flex items-center justify-center gap-2 bg-teal hover:bg-teal-dark text-white font-semibold h-14 px-8 rounded-lg transition-colors font-body">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+        </svg>
+        <span class="tel-number">Call (888) 362-5576</span>
+      </a>
+      <a href="/medical-detox" class="inline-flex items-center justify-center border-2 border-navy text-navy hover:bg-navy hover:text-white font-semibold h-14 px-8 rounded-lg transition-colors font-body">
+        See our detox program
+      </a>
+    </div>
+  </div>
+</section>

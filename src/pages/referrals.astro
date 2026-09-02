@@ -1,0 +1,75 @@
+---
+/* -----------------------------------------------------------------------------
+   Professional & hospital referrals.
+
+   B2B page, and the only one on the site written for a colleague rather than
+   for someone in crisis — the register is deliberately more clipped and
+   scannable than the patient-facing pages.
+
+   In the Jan–Jul 2026 call export, 57 of 571 Buena Vista calls (10%) come from
+   a professional referrer — case managers, discharge planners, social workers,
+   probation officers, other facilities — and 64 (11%) involve a hospital or a
+   discharge. High leverage per page: one referrer places many people.
+
+   Scope stated for a clinical reader: detox and residential only. Note the
+   stimulant line — meth generally admits straight to residential with no
+   separate detox stage, which matters to anyone planning a placement.
+
+   MAT boundary holds here too: maintenance medication is "flag it for clinical
+   review", never an offer to continue or prescribe.
+
+   Contact details are the published admissions line and the admissions inbox.
+   The business-development mobile in the client wiki is internal — do not
+   publish it here without asking.
+
+   STYLE: call figures inform emphasis only, never the copy.
+----------------------------------------------------------------------------- */
+import Layout from '../layouts/Layout.astro';
+import TopBar from '../components/TopBar.astro';
+import Nav from '../components/Nav.astro';
+
+import ReferralsHero from '../components/referrals/ReferralsHero.astro';
+import WhoWeCanTake from '../components/referrals/WhoWeCanTake.astro';
+import HowToRefer from '../components/referrals/HowToRefer.astro';
+import ReferralQuestions from '../components/referrals/ReferralQuestions.astro';
+
+import Testimonials from '../components/Testimonials.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+
+const title = 'Professional & Hospital Referrals | Buena Vista Health & Recovery, Chandler AZ';
+const description =
+  'Refer a client to medical detox or residential treatment in Chandler, AZ. Bed status and benefits verified on the call, same-day admission when a bed is open. Call (888) 362-5576.';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    ['How quickly can Buena Vista take a referral?',
+     'When a bed is open and coverage is confirmed, admission can happen the same day. Bed status changes daily, so admissions gives a current answer on the call.'],
+    ['What information is needed to make a referral?',
+     'Name, date of birth, insurance plan and member ID, the substance involved and last use, current medications, and anything clinically relevant. A discharge summary is useful but not required.'],
+    ['Can you accept a client directly from a hospital discharge?',
+     'Yes. Admissions can liaise directly with a case manager or discharge planner to coordinate timing, which is a common route into detox or residential care.'],
+    ['Do you accept clients with probation or court obligations?',
+     'Yes. Share the requirements at the point of referral and the case manager can support attendance documentation and programme length while the client is in treatment.'],
+  ].map(([q, a]) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+};
+---
+<Layout title={title} description={description}>
+  <TopBar />
+  <Nav />
+
+  <ReferralsHero />
+  <WhoWeCanTake />
+  <HowToRefer />
+  <Testimonials />
+  <ReferralQuestions />
+
+  <FinalCTA />
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
+</Layout>

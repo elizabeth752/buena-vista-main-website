@@ -1,0 +1,83 @@
+---
+/* -----------------------------------------------------------------------------
+   Alcohol addiction treatment.
+
+   Alcohol is the highest-volume topic in the Jan–Jul 2026 call export: 686
+   mentions overall, and 122 of the 571 Buena Vista calls (21.7%). Section
+   priorities follow what those callers actually raise —
+
+     77%  drinking daily
+     62%  ask how long treatment takes
+     43%  worried about work
+     37%  calling on someone else's behalf
+     34%  a hospital or medical complication in the picture
+     28%  already describing withdrawal symptoms
+
+   Everything claimed here is inside confirmed scope: medical detox and
+   residential, both at Chandler. Lengths of stay follow the client wiki
+   (detox 5–7d commercial / 3d Medicaid; residential 25–30d / 30–45d) and are
+   given as ranges rather than promises.
+
+   Tone: welcoming. No one reaching this page should feel measured against a
+   threshold, and constraints are framed as facts to plan around.
+----------------------------------------------------------------------------- */
+import Layout from '../../layouts/Layout.astro';
+import TopBar from '../../components/TopBar.astro';
+import Nav from '../../components/Nav.astro';
+
+import AlcoholHero from '../../components/alcohol/AlcoholHero.astro';
+import WhyMedicalDetox from '../../components/alcohol/WhyMedicalDetox.astro';
+import AlcoholPathway from '../../components/alcohol/AlcoholPathway.astro';
+import AlcoholQuestions from '../../components/alcohol/AlcoholQuestions.astro';
+
+import FacilityGallery from '../../components/FacilityGallery.astro';
+import Testimonials from '../../components/Testimonials.astro';
+import VerifySection from '../../components/VerifySection.astro';
+import FinalCTA from '../../components/FinalCTA.astro';
+
+const title = 'Alcohol Addiction Treatment in Chandler, AZ | Buena Vista Health & Recovery';
+const description =
+  'Medically supervised alcohol detox and residential treatment in Chandler, AZ. Nursing on site 24/7, private rooms, AHCCCS and most major insurance accepted. Call (888) 362-5576.';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalWebPage',
+  name: 'Alcohol Addiction Treatment in Chandler, AZ',
+  description,
+  url: 'https://buenavistarecovery.com/what-we-treat/alcohol-addiction/',
+  about: {
+    '@type': 'MedicalCondition',
+    name: 'Alcohol Use Disorder',
+    alternateName: ['Alcohol addiction', 'Alcoholism'],
+  },
+  provider: {
+    '@type': 'MedicalClinic',
+    name: 'Buena Vista Health & Recovery Centers — Chandler',
+    telephone: '+1-888-362-5576',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '3033 S Arizona Ave',
+      addressLocality: 'Chandler',
+      addressRegion: 'AZ',
+      postalCode: '85286',
+      addressCountry: 'US',
+    },
+  },
+};
+---
+<Layout title={title} description={description}>
+  <TopBar />
+  <Nav />
+
+  <AlcoholHero />
+  <WhyMedicalDetox />
+  <AlcoholPathway />
+  <FacilityGallery />
+  <VerifySection />
+  <Testimonials />
+  <AlcoholQuestions />
+
+  <FinalCTA />
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
+</Layout>

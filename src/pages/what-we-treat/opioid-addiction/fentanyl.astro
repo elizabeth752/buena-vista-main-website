@@ -1,0 +1,85 @@
+---
+/* -----------------------------------------------------------------------------
+   Fentanyl treatment.
+
+   94 of the 571 Buena Vista calls in the Jan–Jul 2026 export involve fentanyl
+   (16%), counting the street names callers actually use — blues, M30s, percs.
+
+   URGENCY is the defining feature of this segment and shapes the whole page:
+   88% of these calls carry explicit urgency language, and callers routinely
+   report last use today, or minutes before dialling. Hence a hero built around
+   "if you used today, today is the right day to call" rather than a slow
+   explanatory opening, and a same-day admission promise up front.
+
+   Other priorities:
+     84%  a Medicaid-type plan — leans on AHCCCS like the meth page does
+     46%  work · 31% already describing withdrawal · 27% legal obligations
+     36%  also using meth · 33% also alcohol — polysubstance is the norm, so the
+          page is explicit that one admission covers the whole picture
+     16%  already on methadone, 7% on buprenorphine
+
+   MAT BOUNDARY — AlreadyOnMedication must NOT read as a MAT offer. The wiki
+   places MAT on hold and admissions confirms there is no methadone programme
+   here. The section exists to get maintenance medication raised early for
+   clinical review, and deliberately promises nothing about continuation.
+
+   STYLE: figures inform order and emphasis only, never the copy.
+----------------------------------------------------------------------------- */
+import Layout from '../../../layouts/Layout.astro';
+import TopBar from '../../../components/TopBar.astro';
+import Nav from '../../../components/Nav.astro';
+
+import FentanylHero from '../../../components/fentanyl/FentanylHero.astro';
+import FentanylDetox from '../../../components/fentanyl/FentanylDetox.astro';
+import AlreadyOnMedication from '../../../components/fentanyl/AlreadyOnMedication.astro';
+import FentanylQuestions from '../../../components/fentanyl/FentanylQuestions.astro';
+
+import Testimonials from '../../../components/Testimonials.astro';
+import VerifySection from '../../../components/VerifySection.astro';
+import FinalCTA from '../../../components/FinalCTA.astro';
+
+const title = 'Fentanyl Detox & Treatment in Chandler, AZ | Buena Vista Health & Recovery';
+const description =
+  'Medically supervised fentanyl detox and residential treatment in Chandler, AZ. Nursing on site 24/7, comfort medication, same-day admission when a bed is open. Call (888) 362-5576.';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalWebPage',
+  name: 'Fentanyl Detox & Treatment in Chandler, AZ',
+  description,
+  url: 'https://buenavistarecovery.com/what-we-treat/opioid-addiction/fentanyl/',
+  about: {
+    '@type': 'MedicalCondition',
+    name: 'Opioid Use Disorder',
+    alternateName: ['Fentanyl addiction', 'Opioid dependence'],
+  },
+  provider: {
+    '@type': 'MedicalClinic',
+    name: 'Buena Vista Health & Recovery Centers — Chandler',
+    telephone: '+1-888-362-5576',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '3033 S Arizona Ave',
+      addressLocality: 'Chandler',
+      addressRegion: 'AZ',
+      postalCode: '85286',
+      addressCountry: 'US',
+    },
+  },
+};
+---
+<Layout title={title} description={description}>
+  <TopBar />
+  <Nav />
+
+  <FentanylHero />
+  <FentanylDetox />
+  <AlreadyOnMedication />
+  <Testimonials />
+  <VerifySection />
+  <FentanylQuestions />
+
+  <FinalCTA />
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
+</Layout>

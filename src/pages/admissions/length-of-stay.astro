@@ -1,0 +1,73 @@
+---
+/* -----------------------------------------------------------------------------
+   How long treatment takes.
+
+   Length of stay is raised on 78 of 571 Buena Vista calls (14%) — the largest
+   remaining admissions topic once loose patterns are discarded. ("Phone" looked
+   bigger at first pass, but most of those matches were "on the phone" and
+   "phone assessment" rather than the phone policy.)
+
+   RANGES come from the client wiki:
+     Detox        5–7 days commercial · 3 days Medicaid
+     Residential  25–30 days commercial · 30–45 days Medicaid
+   Admissions corroborates the detox figure, describing alcohol as usually
+   needing "the full seven days".
+
+   Note the inversion worth keeping in the copy: Medicaid residential
+   authorisations tend to run LONGER than commercial ones. Most people assume
+   the reverse, so it is stated plainly here and on the AHCCCS page.
+
+   Ranges are presented as ranges, never as promises, and the page leans on the
+   programme being voluntary — nobody is held anywhere.
+
+   STYLE: no call-data sourcing in the copy, no exclusionary framing.
+----------------------------------------------------------------------------- */
+import Layout from '../../layouts/Layout.astro';
+import TopBar from '../../components/TopBar.astro';
+import Nav from '../../components/Nav.astro';
+
+import LengthHero from '../../components/lengthofstay/LengthHero.astro';
+import WhatDecidesIt from '../../components/lengthofstay/WhatDecidesIt.astro';
+import LengthQuestions from '../../components/lengthofstay/LengthQuestions.astro';
+
+import Testimonials from '../../components/Testimonials.astro';
+import VerifySection from '../../components/VerifySection.astro';
+import FinalCTA from '../../components/FinalCTA.astro';
+
+const title = 'How Long Is Rehab? Length of Stay | Buena Vista Health & Recovery, Chandler AZ';
+const description =
+  'Medical detox usually takes four to seven days and residential treatment around thirty days at our Chandler, AZ facility. What decides your length of stay. Call (888) 362-5576.';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    ['How long is medical detox?',
+     'Usually four to seven days. Alcohol commonly needs the longer end of that range, often close to a full week, and the exact length depends on your history and how your body responds.'],
+    ['How long is residential treatment?',
+     'Around thirty days is typical. Some stays run longer where the clinical picture calls for it and the plan supports it, and Medicaid authorisations often extend toward forty-five days.'],
+    ['Can I do detox and residential treatment back to back?',
+     'Yes. Both happen in the same building with the same team, so it is one continuous stay rather than a discharge and a separate second admission.'],
+    ['What if I need to leave treatment early?',
+     'Treatment is voluntary throughout. Raising it early with your case manager usually surfaces something solvable, and if not they will help plan a safe exit rather than an unsupported one.'],
+  ].map(([q, a]) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+};
+---
+<Layout title={title} description={description}>
+  <TopBar />
+  <Nav />
+
+  <LengthHero />
+  <WhatDecidesIt />
+  <Testimonials />
+  <VerifySection />
+  <LengthQuestions />
+
+  <FinalCTA />
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
+</Layout>

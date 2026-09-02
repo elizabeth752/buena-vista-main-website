@@ -1,0 +1,75 @@
+---
+/* Practical facts, all from the client wiki and stated exactly as recorded.
+   Constraints (service animals, English-language services) are stated as facts
+   rather than as refusals — someone should be able to plan around them without
+   feeling shut out. */
+const facts = [
+  {
+    h: 'Rooms and housing',
+    items: [
+      'Private rooms with en suite bathrooms',
+      'Separate male and female wings — housing is not co-ed',
+      'Gourmet dining, meals provided',
+      'Outdoor lounge and recreation room',
+    ],
+  },
+  {
+    h: 'Access and accommodations',
+    items: [
+      'Wheelchair accessible, with disability access throughout',
+      'Gender-neutral restrooms',
+      'Dietary accommodations available',
+      'Services are currently provided in English',
+    ],
+  },
+  {
+    h: 'Getting here and staying connected',
+    items: [
+      'Airport pickup and drop-off provided',
+      'Internet and technology access during set hours',
+      'Service animals are welcome',
+      'Admissions answers 24 hours a day, including holidays',
+    ],
+  },
+];
+---
+<section id="practical" class="bg-sage-tint py-[70px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mb-12">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+        <span class="w-6 h-px bg-gold inline-block"></span>
+        The practical details
+      </p>
+      <h2 class="font-display text-charcoal mb-5">What to expect from the building itself</h2>
+      <p class="font-body text-charcoal text-[18px] leading-[30px]">
+        The things people ask about on the phone, answered before you have to ask.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      {facts.map(f => (
+        <div class="bg-white rounded-xl p-7 border border-cream-soft">
+          <h3 class="font-display text-[22px] leading-[28px] text-navy mb-4">{f.h}</h3>
+          <ul class="space-y-3">
+            {f.items.map(i => (
+              <li class="flex items-start gap-3 font-body text-charcoal text-[16px] leading-[26px]">
+                <svg class="w-4.5 h-4.5 text-teal mt-1 shrink-0" style="width:18px;height:18px" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
+                </svg>
+                {i}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-8 bg-white border-l-2 border-gold rounded-r-xl p-6 max-w-3xl">
+      <p class="font-body text-charcoal text-[16px] leading-[27px]">
+        <strong class="font-bold">Licensed in Arizona.</strong> Our Chandler facility operates under
+        Arizona behavioral health licence <span class="font-semibold">IFBH9847r</span>. Ask us for anything
+        else you want to see — a licence number is the kind of thing you should be able to check.
+      </p>
+    </div>
+  </div>
+</section>

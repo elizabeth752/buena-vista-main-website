@@ -1,0 +1,40 @@
+---
+const faqs = [
+  { q: 'Does it cost anything to check?', a: "No. A benefits check is free and there is nothing owed either way — including if you decide against treatment afterwards, or choose somewhere else entirely." },
+  { q: 'Am I committing to anything by asking?', a: "Not at all. Checking coverage is an information-gathering step. Plenty of people do it while they are still deciding, and some do it months before they act on it." },
+  { q: 'What if I do not have my insurance card?', a: "Call anyway. Your name and date of birth will usually be enough to find the policy, and if it is not, we can talk through other ways to work it out." },
+  { q: 'Can I check coverage for somebody else?', a: "Yes. Partners, parents and adult children do this regularly. Bring their name, date of birth and plan name if you have it, and we can run the same check." },
+  { q: 'What if you are not in network with my plan?', a: "We will say so directly rather than leaving you to find out later, and then help you find a programme that does take it. Finding people the right place is a normal part of the job here." },
+  { q: 'Do you take AHCCCS?', a: "Access covers detox and residential treatment, and Banner University Family Care is in network with us today. Other plan contracts are being reinstated since our Chandler facility reopened, so it is worth checking your specific plan with us." },
+  { q: 'What if I have no insurance at all?', a: "Say so on the call. There are private-pay rates for both detox and residential, and we can talk through what that looks like as well as what other options might be open to you." },
+  { q: 'Is my information kept private?', a: "Yes. What you share stays with our admissions and clinical teams. Asking about coverage does not create a record anywhere that follows you around." },
+];
+---
+<section id="verify-faq" class="bg-cream py-[70px]">
+  <div class="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8">
+    <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+      <span class="w-6 h-px bg-gold inline-block"></span>
+      Straight answers
+    </p>
+    <h2 class="font-display text-charcoal mb-10">Questions about checking coverage</h2>
+
+    <div class="divide-y divide-cream-soft border-t border-b border-cream-soft">
+      {faqs.map(f => (
+        <details class="group py-5">
+          <summary class="flex items-start justify-between gap-6 cursor-pointer">
+            <h3 class="font-body font-semibold text-charcoal text-[18px] leading-[28px]">{f.q}</h3>
+            <span class="shrink-0 mt-1 text-teal">
+              <svg class="faq-plus w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" d="M12 5v14M5 12h14"/>
+              </svg>
+              <svg class="faq-minus w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" d="M5 12h14"/>
+              </svg>
+            </span>
+          </summary>
+          <p class="font-body text-charcoal text-[16px] leading-[27px] mt-4 pr-10">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

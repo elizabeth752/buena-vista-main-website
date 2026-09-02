@@ -1,0 +1,78 @@
+---
+/* -----------------------------------------------------------------------------
+   Travel & transportation.
+
+   Transport is raised on 33 of 571 Buena Vista calls (6%), and on roughly a
+   quarter of the calls that mention Tucson — it is the last practical barrier
+   between deciding to go and going.
+
+   ⚠ SOURCE CONFLICT — the client wiki records transport as "airport
+   pickup/dropoff only". The call export shows admissions doing considerably
+   more than that: arranging a car to collect someone from a home address,
+   scheduling an evening intake around a pickup, and using rideshare to bring
+   people in. Agents are also candid that the return journey is harder to
+   arrange than the inbound one.
+
+   This page follows the calls rather than the wiki, but hedges every claim
+   ("often", "varies", "give us your address and we will tell you straight
+   away") so nothing is promised that a given distance or day cannot deliver.
+   CONFIRM the real policy with admissions and tighten if it is narrower.
+
+   The AHCCCS non-emergency medical transport angle is genuinely underused —
+   callers mention having transport to medical appointments without realising
+   it may extend to treatment.
+
+   STYLE: no call-data sourcing in the copy; the harder return journey is framed
+   as something planned early, not as a limitation.
+----------------------------------------------------------------------------- */
+import Layout from '../../layouts/Layout.astro';
+import TopBar from '../../components/TopBar.astro';
+import Nav from '../../components/Nav.astro';
+
+import TravelHero from '../../components/travel/TravelHero.astro';
+import WaysToGetHere from '../../components/travel/WaysToGetHere.astro';
+import ComingFromFurther from '../../components/travel/ComingFromFurther.astro';
+import TravelQuestions from '../../components/travel/TravelQuestions.astro';
+
+import Testimonials from '../../components/Testimonials.astro';
+import VerifySection from '../../components/VerifySection.astro';
+import FinalCTA from '../../components/FinalCTA.astro';
+
+const title = 'Travel & Transportation to Treatment | Buena Vista Health & Recovery, Chandler AZ';
+const description =
+  'Getting to our Chandler, AZ facility: rides arranged where we can reach you, Sky Harbor airport pickup, and medical transport benefits many AHCCCS plans include. Call (888) 362-5576.';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    ['Can Buena Vista arrange transport to treatment?',
+     'Often, yes. For many admissions a car can be arranged to collect you and bring you in, including at an evening intake time. How far that reaches varies, so give admissions your address on the call for a direct answer.'],
+    ['Do you provide airport pickup?',
+     'Yes. Fly into Phoenix Sky Harbor and send the flight details; pickup and drop-off are provided.'],
+    ['Does AHCCCS cover transport to rehab?',
+     'Many Access plans include a non-emergency medical transport benefit, the same one used to reach medical appointments. It is worth asking your plan, and admissions can help you find out.'],
+    ['How do I get home after treatment?',
+     'Your case manager works on the return journey during your stay rather than on the day of discharge, covering whether family can collect you and what your plan will cover.'],
+  ].map(([q, a]) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+};
+---
+<Layout title={title} description={description}>
+  <TopBar />
+  <Nav />
+
+  <TravelHero />
+  <WaysToGetHere />
+  <ComingFromFurther />
+  <Testimonials />
+  <VerifySection />
+  <TravelQuestions />
+
+  <FinalCTA />
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
+</Layout>

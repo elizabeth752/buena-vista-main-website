@@ -1,0 +1,35 @@
+---
+const faqs = [
+  { q: 'How long is detox?', a: "Usually four to seven days. Alcohol commonly needs the longer end, often close to the full week, because the body takes longer to settle. Your team will tell you what they are seeing as the days go rather than committing to a number on day one." },
+  { q: 'How long is residential treatment?', a: "Around thirty days is the common shape of it. Some stays run longer where that is what the clinical picture calls for and the plan supports it — Medicaid authorisations in particular often extend toward forty-five days." },
+  { q: 'Can I do detox and residential back to back?', a: "Yes, and that is what most people do. Both happen in the same building with the same team, so it is one continuous stay rather than a discharge and a fresh admission in the middle of the hardest fortnight." },
+  { q: 'What if I need to leave early?', a: "You can. Treatment here is voluntary throughout, and nobody is held anywhere. If you are thinking about leaving, tell your case manager early — often what is behind it can be solved, and if it genuinely cannot, they will help you plan a safe exit rather than watch you walk out unsupported." },
+  { q: 'What if thirty days is not enough?', a: "Then that gets raised rather than ignored. Your case manager can make the case to your plan for more time, and where that is not possible they will build a step-down plan so leaving is not the same as stopping." },
+  { q: 'Does a shorter stay mean it did not work?', a: "No. Length is one variable among several, and what you do afterwards matters at least as much as how long you stayed. A shorter stay with a real plan attached beats a longer one that ends at the front door." },
+  { q: 'Will I know the length before I arrive?', a: "You will know the expected shape of it — which level of care, roughly how long, and what your plan has approved. That gets confirmed on the admissions call so you can arrange work, family and everything else around it." },
+  { q: 'Can I come back if I need to?', a: "Yes. Coming back is an ordinary part of how recovery goes for a lot of people, and there is no limit on how many times you are allowed to try." },
+];
+---
+<section id="length-faq" class="bg-cream py-[70px]">
+  <div class="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8">
+    <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+      <span class="w-6 h-px bg-gold inline-block"></span>
+      Straight answers
+    </p>
+    <h2 class="font-display text-charcoal mb-10">Questions about time</h2>
+    <div class="divide-y divide-cream-soft border-t border-b border-cream-soft">
+      {faqs.map(f => (
+        <details class="group py-5">
+          <summary class="flex items-start justify-between gap-6 cursor-pointer">
+            <h3 class="font-body font-semibold text-charcoal text-[18px] leading-[28px]">{f.q}</h3>
+            <span class="shrink-0 mt-1 text-teal">
+              <svg class="faq-plus w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg>
+              <svg class="faq-minus w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M5 12h14"/></svg>
+            </span>
+          </summary>
+          <p class="font-body text-charcoal text-[16px] leading-[27px] mt-4 pr-10">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

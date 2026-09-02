@@ -1,0 +1,49 @@
+---
+/* Therapies hub. All eleven modalities below are on the client wiki's confirmed
+   active list. Do not add a modality here without confirming it is delivered. */
+import Layout from '../../layouts/Layout.astro';
+import TopBar from '../../components/TopBar.astro';
+import Nav from '../../components/Nav.astro';
+import HubHero from '../../components/hub/HubHero.astro';
+import HubCards from '../../components/hub/HubCards.astro';
+import Testimonials from '../../components/Testimonials.astro';
+import VerifySection from '../../components/VerifySection.astro';
+import FinalCTA from '../../components/FinalCTA.astro';
+
+const title = 'Therapies & Clinical Approach | Buena Vista Health & Recovery, Chandler AZ';
+const description = 'CBT, DBT, EMDR, group and family therapy, trauma-specific work and relapse prevention, delivered as part of residential treatment in Chandler, AZ. Call (888) 362-5576.';
+
+const core = [
+  { label: 'Group therapy', desc: 'Twice a day, and the part most people are most nervous about beforehand. It is also the part they tend to name afterwards as the one that mattered.' },
+  { label: 'Individual therapy', desc: 'One-to-one sessions with your own therapist, working on what sits underneath rather than only on the substance.' },
+  { label: 'Family therapy', desc: 'Addiction rarely damages one person in isolation. Family work is part of the programme, and family follow-ups continue after discharge.' },
+  { label: 'Cognitive behavioural therapy (CBT)', desc: 'Practical work on the thinking patterns that keep the cycle turning — what to do when the thought arrives, rather than why it does.' },
+  { label: 'Dialectical behaviour therapy (DBT)', desc: 'Skills for tolerating distress and regulating emotion, useful for anyone whose using has been a way to turn feeling down.' },
+  { label: 'EMDR', desc: 'A structured, evidence-based approach to processing traumatic memory, delivered by clinicians trained specifically in it.' },
+];
+
+const supporting = [
+  { label: 'Trauma-specific therapy', desc: 'Trauma-informed work for people whose substance use grew around something that happened to them.' },
+  { label: 'Motivational interviewing', desc: 'Collaborative rather than confrontational. Nobody is argued into changing here.' },
+  { label: 'Relapse prevention', desc: 'The practical planning: what your triggers actually are, and what you do at the moment one arrives.' },
+  { label: 'Holistic therapy', desc: 'Approaches that treat the body as part of the recovery rather than an afterthought.' },
+  { label: 'Meditation & mindfulness', desc: 'Learning to sit with discomfort without immediately acting on it — a skill, not a belief system.' },
+  { label: 'Life skills training', desc: 'The ordinary machinery of a life: routine, work, money, structure. Often what makes the rest of it stick.' },
+];
+---
+<Layout title={title} description={description}>
+  <TopBar /><Nav />
+  <HubHero
+    eyebrow="Therapies & clinical approach"
+    title="Eleven ways in, because one is never enough."
+    intro="Recovery is not a single technique applied repeatedly. Your programme draws on whichever of these fits what you are actually dealing with, and it changes as you do."
+    points={['Group therapy twice daily, plus one-to-one sessions','Trauma-specific work and EMDR by trained clinicians','Family therapy, and family follow-ups after discharge','Relapse prevention planned before you leave, not after']}
+    image="/Asset/stock%20photo/Desktop%20Dimensions/Facility/Intimate%20fireside%20lounge%20with%20four%20armchairs%20and%20built-in%20fireplace.png"
+    alt="An intimate fireside lounge with four armchairs"
+    caption="Where a lot of the real work happens."
+  />
+  <HubCards eyebrow="The core of it" title="What your week is built around" items={core} />
+  <HubCards eyebrow="Alongside" title="The rest of the toolkit" intro="Drawn on where they fit, rather than applied to everyone by default." items={supporting} bg="bg-sage-tint" />
+  <Testimonials /><VerifySection />
+  <FinalCTA />
+</Layout>

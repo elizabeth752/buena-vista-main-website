@@ -1,0 +1,45 @@
+---
+/* Banner University Family Care is an AHCCCS (Access) managed-care plan, so
+   coverage follows the Medicaid pattern: detox and residential covered, and
+   residential authorisations commonly running longer than commercial ones. */
+const covered = [
+  { label: 'Medical detox', tag: 'Covered', desc: 'Nursing on site around the clock, physician oversight, and medication to manage withdrawal. Typically a few days depending on what you have been using.' },
+  { label: 'Residential treatment', tag: 'Covered', desc: 'A full live-in stay, commonly authorised between thirty and forty-five days — often longer than a commercial policy would allow.' },
+  { label: 'Co-occurring mental health', tag: 'Covered', desc: 'Depression, anxiety, PTSD and trauma addressed inside the residential programme, not arranged separately afterwards.' },
+];
+---
+<section id="covers" class="bg-cream py-[55px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-14 items-start">
+      <div>
+        <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+          <span class="w-6 h-px bg-gold inline-block"></span>
+          What it pays for
+        </p>
+        <h2 class="font-display text-charcoal mb-6">Banner covers the whole stay</h2>
+        <div class="space-y-5 font-body text-charcoal text-[17px] leading-[29px]">
+          <p>
+            Banner University Family Care is an Access plan, which means it covers medically supervised detox and residential treatment — the same rooms, the same meals and the same clinical team as anyone else here.
+          </p>
+          <p>
+            <strong class="font-bold">You are not getting a lesser version of this.</strong> If anything, Medicaid authorisations for residential care tend to run longer than commercial ones, which means more time to do the work rather than less.
+          </p>
+          <p>
+            Eligibility moves around — plenty of people arrive having just been reinstated. If yours has lapsed or you are not sure where it stands, call anyway and we will check it with you.
+          </p>
+        </div>
+      </div>
+      <div class="space-y-5">
+        {covered.map(item => (
+          <div class="bg-white rounded-xl p-7 shadow-sm border border-cream-soft">
+            <div class="flex items-center justify-between gap-4 mb-3">
+              <h3 class="font-display text-[24px] leading-[30px] text-charcoal">{item.label}</h3>
+              <span class="shrink-0 font-body text-xs font-bold uppercase tracking-wide text-teal bg-teal/10 rounded-full px-3 py-1.5">{item.tag}</span>
+            </div>
+            <p class="font-body text-charcoal text-[16px] leading-[26px]">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
