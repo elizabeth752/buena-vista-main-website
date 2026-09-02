@@ -1,0 +1,47 @@
+---
+/* The suicidality answer is the most important on the page: ~40% of these calls
+   involve it. It must (a) make it safe to say out loud, (b) surface 988, and
+   (c) be honest that an acute crisis needs a psychiatric setting first, without
+   that reading as a door closing. Keep all three if editing. */
+const faqs = [
+  { q: 'Can I say that I have thought about not being here?', a: "Yes, and it will not end the conversation or get you turned away. It is one of the more common things said on these calls. If you are in danger right now, call or text 988 or dial 911 first — an acute crisis is safest in a psychiatric setting, and we can help you get there. Once things are steadier, this is where the substance use and the depression get worked on together." },
+  { q: 'Do you treat depression, or only the addiction?', a: "Both, in the same programme. Depression, anxiety, PTSD and trauma are addressed inside detox and residential care rather than left for you to arrange afterwards — that is what dual diagnosis means here." },
+  { q: 'What if the depression is the main thing?', a: "If substance use is not really part of the picture, a mental-health setting is likely the better fit and we would rather point you to one than take a placement that will not serve you. Describe it as it actually is on the call and we will help you land in the right place." },
+  { q: 'Will getting sober fix it?', a: "Partly, and not entirely. A lot of what feels like unmanageable depression does improve once the substance is out and you have slept properly for a week or two. What remains after that is the part worth treating properly, and it gets treated here rather than deferred." },
+  { q: 'I am on antidepressants. What happens to those?', a: "Bring them in their original bottles. A psychiatrist reviews what you are taking as part of your assessment, and plenty of people arrive having quietly stopped taking something — say so if that is you. It is information, not a judgement." },
+  { q: 'I feel nothing at all rather than sad.', a: "That is depression as most people here actually experience it. Flatness, not tears — no interest in things that used to matter, and a strong sense that effort is pointless. It is the version that gets missed, and it is treated the same." },
+  { q: 'How long until I feel better?', a: "The early days are often the worst, particularly after heavy stimulant use, and then it lifts unevenly rather than in a straight line. Most people notice a real difference within the first few weeks — which is one reason the length of a residential stay matters." },
+  { q: 'Is there a psychiatrist available?', a: "Yes. Psychiatric medication management is part of the programme, and coordinating your ongoing care after discharge is something your case manager plans rather than leaves to you." },
+];
+---
+<section id="depression-faq" class="bg-cream py-[70px]">
+  <div class="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8">
+    <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+      <span class="w-6 h-px bg-gold inline-block"></span>
+      Straight answers
+    </p>
+    <h2 class="font-display text-charcoal mb-10">Questions about depression and treatment</h2>
+    <div class="divide-y divide-cream-soft border-t border-b border-cream-soft">
+      {faqs.map(f => (
+        <details class="group py-5">
+          <summary class="flex items-start justify-between gap-6 cursor-pointer">
+            <h3 class="font-body font-semibold text-charcoal text-[18px] leading-[28px]">{f.q}</h3>
+            <span class="shrink-0 mt-1 text-teal">
+              <svg class="faq-plus w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg>
+              <svg class="faq-minus w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M5 12h14"/></svg>
+            </span>
+          </summary>
+          <p class="font-body text-charcoal text-[16px] leading-[27px] mt-4 pr-10">{f.a}</p>
+        </details>
+      ))}
+    </div>
+
+    <div class="mt-10 bg-white border-l-2 border-gold rounded-r-xl p-6">
+      <p class="font-body text-charcoal text-[16px] leading-[27px]">
+        <strong class="font-bold">In crisis right now?</strong> Call or text
+        <a href="tel:988" class="text-teal font-semibold hover:opacity-70 transition-opacity tel-number">988</a>
+        for the Suicide &amp; Crisis Lifeline, any hour. If someone is in immediate danger, call 911.
+      </p>
+    </div>
+  </div>
+</section>

@@ -96,7 +96,7 @@ export const mainNav: NavGroup[] = [
         heading: 'Mental health',
         links: [
           { label: 'Anxiety', href: '/what-we-treat/anxiety/', built: true },
-          { label: 'Depression', href: '/what-we-treat/depression/' },
+          { label: 'Depression', href: '/what-we-treat/depression/', built: true },
           { label: 'PTSD & trauma', href: '/what-we-treat/ptsd-and-trauma/' },
           { label: 'Bipolar disorder', href: '/what-we-treat/bipolar-disorder/' },
           { label: 'Suicidal ideation', href: '/what-we-treat/suicidal-ideation/' },
@@ -264,7 +264,7 @@ export const footerColumns: NavColumn[] = [
       { label: 'Stimulant addiction', href: '/what-we-treat/stimulant-addiction/' },
       { label: 'Benzodiazepines', href: '/what-we-treat/benzodiazepine-addiction/' },
       { label: 'Anxiety', href: '/what-we-treat/anxiety/', built: true },
-      { label: 'Depression', href: '/what-we-treat/depression/' },
+      { label: 'Depression', href: '/what-we-treat/depression/', built: true },
       { label: 'PTSD & trauma', href: '/what-we-treat/ptsd-and-trauma/' },
     ],
   },
