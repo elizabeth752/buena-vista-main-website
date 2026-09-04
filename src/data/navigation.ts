@@ -207,7 +207,7 @@ export const mainNav: NavGroup[] = [
         heading: 'Areas we serve',
         links: [
           { label: 'Arizona', href: '/locations/arizona/' },
-          { label: 'Phoenix', href: '/locations/phoenix/' },
+          { label: 'Phoenix', href: '/locations/phoenix/', built: true },
           { label: 'Mesa', href: '/locations/mesa/' },
           { label: 'Gilbert', href: '/locations/gilbert/' },
           { label: 'Scottsdale', href: '/locations/scottsdale/' },

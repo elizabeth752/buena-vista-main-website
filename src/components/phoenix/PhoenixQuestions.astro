@@ -1,0 +1,34 @@
+---
+const faqs = [
+  { q: 'Do you have a facility in Phoenix?', a: "No — one facility, in Chandler, at 3033 S Arizona Ave. We serve Phoenix from there, about half an hour south of the city. We would rather say that plainly than have you set out for an address that does not exist." },
+  { q: 'How long is the drive?', a: "Around half an hour from central Phoenix outside of rush hour, straight down the I-10. Less from the south of the city, longer from the north or the West Valley." },
+  { q: 'Can you help me get there?', a: "Often, yes. For many admissions we can arrange a car to bring you in, and airport pickup is provided if you are flying into Sky Harbor. Many Access plans also include a medical transport benefit worth asking about." },
+  { q: 'Can my family visit from Phoenix?', a: "That is part of why the distance works. Close enough that the people who matter can stay involved, far enough that you are genuinely away from things. Ask about current visiting arrangements when you call." },
+  { q: 'What treatment is available?', a: "Medically supervised detox and residential treatment, with co-occurring mental health care throughout. Admissions answers 24 hours a day including holidays." },
+  { q: 'Do you take AHCCCS?', a: "Access covers detox and residential treatment, and Banner University Family Care is in network with us. Other plan contracts are being reinstated, so give us the plan name on your card and we will check it on the call." },
+  { q: 'How quickly could I come in?', a: "When a bed is open and coverage checks out, the same day. Bed availability moves daily, so a call gives you today's answer rather than an assumption." },
+];
+---
+<section id="phoenix-faq" class="bg-cream py-[70px]">
+  <div class="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8">
+    <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+      <span class="w-6 h-px bg-gold inline-block"></span>
+      Straight answers
+    </p>
+    <h2 class="font-display text-charcoal mb-10">Questions from Phoenix</h2>
+    <div class="divide-y divide-cream-soft border-t border-b border-cream-soft">
+      {faqs.map(f => (
+        <details class="group py-5">
+          <summary class="flex items-start justify-between gap-6 cursor-pointer">
+            <h3 class="font-body font-semibold text-charcoal text-[18px] leading-[28px]">{f.q}</h3>
+            <span class="shrink-0 mt-1 text-teal">
+              <svg class="faq-plus w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg>
+              <svg class="faq-minus w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M5 12h14"/></svg>
+            </span>
+          </summary>
+          <p class="font-body text-charcoal text-[16px] leading-[27px] mt-4 pr-10">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

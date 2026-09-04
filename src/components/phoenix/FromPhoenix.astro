@@ -1,0 +1,54 @@
+---
+/* Service-area page, NOT a location page. No NAP presented as Phoenix, no
+   LocalBusiness schema, and the hero states plainly that there is no Phoenix
+   building. Keep all three if editing — a fake location page is both a Google
+   penalty risk and sends people to an address that does not exist. */
+const areas = [
+  { h: 'Central & downtown Phoenix', p: 'South on the I-10 and you are here in around half an hour outside rush hour. The most common journey we see.' },
+  { h: 'South Phoenix & Ahwatukee', p: 'Closer still — Ahwatukee sits between the two, so the drive is a short one.' },
+  { h: 'North Phoenix & Glendale', p: 'Longer, usually via the 101. Worth asking about a ride when you call rather than assuming you have to solve it.' },
+  { h: 'Sky Harbor', p: 'The nearest airport, and we provide pickup. Send us your flight details and someone will be there.' },
+];
+const why = [
+  { h: 'Far enough to be out of it', p: 'Being half an hour from the streets, the flat and the people involved is often the difference between a stay that works and one that does not.' },
+  { h: 'Close enough for family', p: 'Near enough that the people who matter can stay involved, which matters more to outcomes than most brochures admit.' },
+  { h: 'Same day when a bed is open', p: 'Coverage checked on the call, and admission that day when there is space. The drive is not the bottleneck.' },
+];
+---
+<section id="from-phoenix" class="bg-sage-tint py-[70px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+      <div>
+        <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+          <span class="w-6 h-px bg-gold inline-block"></span>
+          Getting here
+        </p>
+        <h2 class="font-display text-charcoal mb-8">From wherever you are in the city</h2>
+        <div class="space-y-6">
+          {areas.map(a => (
+            <div class="border-l-2 border-cream-soft pl-5">
+              <h3 class="font-body font-bold text-charcoal text-[17px] mb-1.5">{a.h}</h3>
+              <p class="font-body text-charcoal text-[16px] leading-[26px]">{a.p}</p>
+            </div>
+          ))}
+        </div>
+        <div class="mt-8">
+          <a href="/admissions/travel-and-transportation/" class="font-body text-teal font-semibold hover:underline">More on getting here &rarr;</a>
+        </div>
+      </div>
+      <div class="space-y-5">
+        {why.map(w => (
+          <div class="bg-white rounded-xl p-7 border border-cream-soft shadow-sm">
+            <h3 class="font-display text-[21px] leading-[27px] text-navy mb-3">{w.h}</h3>
+            <p class="font-body text-charcoal text-[16px] leading-[26px]">{w.p}</p>
+          </div>
+        ))}
+        <div class="pt-2">
+          <a href="tel:8883625576" class="w-full inline-flex items-center justify-center gap-2 bg-teal hover:bg-teal-dark text-white font-semibold h-14 px-8 rounded-lg transition-colors font-body">
+            <span class="tel-number">Call (888) 362-5576</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
