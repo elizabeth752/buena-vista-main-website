@@ -1,0 +1,44 @@
+---
+/* Local-intent block: this is what a "detox chandler az" search wants that the
+   programme page does not answer — where it is, how fast, and whether they can
+   actually get there. Keep it specific to place. */
+interface Props { heading: string; intro: string; }
+const { heading, intro } = Astro.props;
+const areas = [
+  { h: 'Chandler and Ocotillo', p: 'You are already here. Most of Chandler is a short drive down Arizona Avenue, and the entrance has a covered drop-off whatever time you arrive.' },
+  { h: 'Gilbert, Mesa and Tempe', p: 'Neighbouring East Valley towns — a local drive rather than a journey, which matters a great deal on the day someone finally decides to go.' },
+  { h: 'Phoenix and Scottsdale', p: 'About half an hour down the I-10 or the 101 from most of the valley. Far enough to be out of it, close enough that family can still visit.' },
+  { h: 'Further out', p: 'From Tucson, Casa Grande, or out of state — raise it on the call. Between a ride we can often arrange, a plan transport benefit and family, most journeys get solved on the phone.' },
+];
+---
+<section id="getting-here" class="bg-cream py-[60px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+      <div>
+        <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+          <span class="w-6 h-px bg-gold inline-block"></span>
+          Getting here
+        </p>
+        <h2 class="font-display text-charcoal mb-6">{heading}</h2>
+        <p class="font-body text-charcoal text-[17px] leading-[29px] mb-8">{intro}</p>
+        <div class="rounded-xl overflow-hidden border border-cream-soft shadow-sm">
+          <iframe
+            title="Map showing Buena Vista Health & Recovery Centers, 3033 S Arizona Ave, Chandler, AZ 85286"
+            src="https://www.google.com/maps?q=3033+S+Arizona+Ave,+Chandler,+AZ+85286&output=embed"
+            width="100%" height="300" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+      <div class="space-y-5">
+        {areas.map(a => (
+          <div class="bg-white rounded-xl p-7 border border-cream-soft shadow-sm">
+            <h3 class="font-display text-[20px] leading-[26px] text-navy mb-2.5">{a.h}</h3>
+            <p class="font-body text-charcoal text-[16px] leading-[26px]">{a.p}</p>
+          </div>
+        ))}
+        <div class="pt-2">
+          <a href="/admissions/travel-and-transportation/" class="font-body text-teal font-semibold hover:underline">More on getting here &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

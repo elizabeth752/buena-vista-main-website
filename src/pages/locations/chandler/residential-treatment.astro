@@ -1,0 +1,61 @@
+---
+/* -----------------------------------------------------------------------------
+   Residential treatment in Chandler — location x programme crossover.
+
+   Sibling of the detox crossover. Serves "inpatient rehab chandler az" local
+   intent. Residential is raised on 194 of 571 calls (34%), Chandler on 164
+   (28.7%).
+
+   Differentiated from the detox crossover by what actually matters at this
+   level of care: duration and visiting rather than speed. Someone choosing a
+   thirty-day stay is weighing whether family can reach them.
+
+   Does NOT restate the clinical programme — links to /residential-treatment/.
+   Visiting days (Wed/Sat/Sun) are corroborated on a recorded call.
+----------------------------------------------------------------------------- */
+import Layout from '../../../layouts/Layout.astro';
+import TopBar from '../../../components/TopBar.astro';
+import Nav from '../../../components/Nav.astro';
+import LocalHero from '../../../components/chandlerprog/LocalHero.astro';
+import GettingToUs from '../../../components/chandlerprog/GettingToUs.astro';
+import Testimonials from '../../../components/Testimonials.astro';
+import VerifySection from '../../../components/VerifySection.astro';
+import FinalCTA from '../../../components/FinalCTA.astro';
+
+const title = 'Residential Treatment in Chandler, AZ | Buena Vista Health & Recovery';
+const description =
+  'Live-in residential addiction treatment at 3033 S Arizona Ave, Chandler, AZ. Private rooms, around thirty days, visiting three days a week. AHCCCS accepted. Call (888) 362-5576.';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalWebPage',
+  name: 'Residential Treatment in Chandler, AZ',
+  description,
+  url: 'https://buenavistarecovery.com/locations/chandler/residential-treatment/',
+  provider: {
+    '@type': 'MedicalClinic',
+    name: 'Buena Vista Health & Recovery Centers — Chandler',
+    telephone: '+1-480-680-0606',
+    address: { '@type': 'PostalAddress', streetAddress: '3033 S Arizona Ave', addressLocality: 'Chandler', addressRegion: 'AZ', postalCode: '85286', addressCountry: 'US' },
+  },
+};
+---
+<Layout title={title} description={description}>
+  <TopBar /><Nav />
+  <LocalHero
+    eyebrow="Residential treatment · Chandler, Arizona"
+    title="A month in Chandler, close enough that people can visit."
+    intro="Residential treatment here is around thirty days in a private room with your own bathroom, on South Arizona Avenue. For most people the location matters for one reason above all others: whether the people who matter can get to them on a Saturday."
+    points={['Around thirty days, in your own room','Group therapy twice a day, plus a weekly one-to-one','Visiting Wednesday, Saturday and Sunday','Detox happens in the same building first, if you need it']}
+    image="/Asset/stock%20photo/Desktop%20Dimensions/Facility/Contemporary%20healthcare%20building%20with%20tower%20entry%20and%20desert%20landscaping.png"
+    alt="The Chandler facility, with tower entry and desert landscaping"
+    caption="Chandler, Arizona — an East Valley drive for most families."
+  />
+  <GettingToUs
+    heading="A month is long enough that the drive matters"
+    intro="Detox is a few days and the journey is a one-off. Residential is thirty, which makes the question a different one: can the people who are going to visit you actually make that trip on a Wednesday evening or a Sunday afternoon? For most of the East Valley the answer is straightforwardly yes."
+  />
+  <Testimonials /><VerifySection />
+  <FinalCTA />
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
+</Layout>

@@ -193,6 +193,8 @@ export const mainNav: NavGroup[] = [
         heading: 'Our facilities',
         links: [
           { label: 'Chandler, AZ', href: '/locations/chandler/', built: true },
+          { label: 'Detox in Chandler', href: '/locations/chandler/medical-detox/', built: true },
+          { label: 'Residential in Chandler', href: '/locations/chandler/residential-treatment/', built: true },
           { label: 'Tucson, AZ', href: '/locations/tucson/', built: true },
         ],
       },

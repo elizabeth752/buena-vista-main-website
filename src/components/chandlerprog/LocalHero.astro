@@ -1,0 +1,66 @@
+---
+import Horizon from '../Horizon.astro';
+interface Props {
+  eyebrow: string; title: string; intro: string; points: string[];
+  image: string; alt: string; caption: string; secondaryHref: string; secondaryLabel: string;
+}
+const { eyebrow, title, intro, points, image, alt, caption, secondaryHref, secondaryLabel } = Astro.props;
+---
+<section id="hero" class="bg-cream">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-[60px] lg:py-[80px]">
+    <div class="grid lg:grid-cols-[1fr_minmax(0,470px)] gap-12 lg:gap-16 items-center">
+      <div>
+        <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-5 flex items-center gap-2">
+          <span class="w-6 h-px bg-gold inline-block"></span>
+          {eyebrow}
+        </p>
+        <h1 class="font-display text-navy mb-6">{title}</h1>
+        <p class="font-body text-charcoal text-[20px] leading-[33px] max-w-xl mb-8">{intro}</p>
+
+        <div class="bg-white border border-cream-soft rounded-xl p-6 mb-9 max-w-xl shadow-sm">
+          <div class="flex items-start gap-3 mb-4">
+            <span class="w-8 h-8 bg-gold rounded-lg flex items-center justify-center shrink-0 mt-0.5">
+              <svg class="w-4 h-4 text-navy" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+              </svg>
+            </span>
+            <div>
+              <p class="font-body font-bold text-charcoal text-[16px]">3033 S Arizona Ave</p>
+              <p class="font-body text-charcoal text-[16px] leading-[26px]">Chandler, AZ 85286 · open 24 hours</p>
+            </div>
+          </div>
+          <ul class="space-y-2.5 pt-4 border-t border-cream-soft">
+            {points.map(p => (
+              <li class="flex items-start gap-3 font-body text-charcoal text-[16px] leading-[26px]">
+                <svg class="w-4 h-4 text-teal mt-1.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
+                </svg>
+                {p}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="tel:8883625576" class="inline-flex items-center justify-center gap-2 bg-teal hover:bg-teal-dark text-white font-semibold h-14 px-8 rounded-lg transition-colors font-body">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+            </svg>
+            <span class="tel-number">Call (888) 362-5576</span>
+          </a>
+          <a href={secondaryHref} class="inline-flex items-center justify-center border-2 border-navy text-navy hover:bg-navy hover:text-white font-semibold h-14 px-8 rounded-lg transition-colors font-body">
+            {secondaryLabel}
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <div class="overflow-hidden rounded-t-[160px] rounded-b-xl shadow-xl">
+          <img src={image} alt={alt} class="w-full object-cover aspect-[4/5]" fetchpriority="high" decoding="async" />
+        </div>
+        <Horizon variant="rule" class="mt-5" />
+        <p class="font-body text-muted text-[15px] leading-[24px] mt-3">{caption}</p>
+      </div>
+    </div>
+  </div>
+</section>
