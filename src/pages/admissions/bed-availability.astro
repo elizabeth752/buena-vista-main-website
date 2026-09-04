@@ -1,0 +1,77 @@
+---
+/* -----------------------------------------------------------------------------
+   Bed availability.
+
+   The largest remaining topic in the export: 108 of 571 Buena Vista calls
+   (18.9%) ask about beds, and 53 (9.3%) are told there is nothing that day.
+   P0 in the sitemap.
+
+   ⚠ PUBLISHES NO NUMBERS, DELIBERATELY. The wiki census (detox 15/35, RTC
+   15/39) is from July and would be stale and misleading. A count that is wrong
+   by an afternoon is worse than none, because someone decides whether to call
+   based on it. The page's whole argument is that the phone is the only current
+   source — do not "improve" it by adding a live-looking figure unless it is
+   genuinely wired to the census.
+
+   DIFFERENTIATION from the summary section on /admissions/: this page explains
+   WHY the answer moves. The four moving parts — detox turning over faster than
+   residential, separate men's and women's wings, level-of-care match, and
+   coverage — are the non-obvious content. The gender-wing point in particular
+   explains why two callers an hour apart get different answers.
+
+   Being told full is treated as a common outcome rather than an edge case,
+   because roughly one in ten callers hears it. The withdrawal safety note at
+   the end of WhenWereFull matters: someone told no should not simply wait it
+   out at home.
+----------------------------------------------------------------------------- */
+import Layout from '../../layouts/Layout.astro';
+import TopBar from '../../components/TopBar.astro';
+import Nav from '../../components/Nav.astro';
+
+import BedsHero from '../../components/beds/BedsHero.astro';
+import WhyItMoves from '../../components/beds/WhyItMoves.astro';
+import WhenWereFull from '../../components/beds/WhenWereFull.astro';
+import BedsQuestions from '../../components/beds/BedsQuestions.astro';
+
+import Testimonials from '../../components/Testimonials.astro';
+import VerifySection from '../../components/VerifySection.astro';
+import FinalCTA from '../../components/FinalCTA.astro';
+
+const title = 'Bed Availability | Buena Vista Health & Recovery, Chandler AZ';
+const description =
+  'Detox and residential bed availability at our Chandler, AZ facility changes daily. Call (888) 362-5576 for today’s answer, your level of care and a coverage check in one call.';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    ['Does Buena Vista have beds available?',
+     'Availability changes daily and separately for detox and residential care, so the current answer comes from admissions on the phone. A call gives you today’s position along with a coverage check.'],
+    ['How quickly can I be admitted if a bed is open?',
+     'Often the same day. When a bed is open and coverage is confirmed, admission can happen that day, with travel arranged as part of the same call.'],
+    ['Why do two people get different answers about beds?',
+     'Housing is not co-ed, so a bed opening on the men’s wing does not help a woman waiting. Detox and residential availability also move independently, as detox stays are days and residential stays are weeks.'],
+    ['What happens if you are full?',
+     'Your file is opened anyway so the assessment and coverage check hold, admissions calls you back when a bed frees up, and in the meantime help you find a programme with space now if waiting is not realistic.'],
+  ].map(([q, a]) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+};
+---
+<Layout title={title} description={description}>
+  <TopBar />
+  <Nav />
+
+  <BedsHero />
+  <WhyItMoves />
+  <WhenWereFull />
+  <Testimonials />
+  <VerifySection />
+  <BedsQuestions />
+
+  <FinalCTA />
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
+</Layout>

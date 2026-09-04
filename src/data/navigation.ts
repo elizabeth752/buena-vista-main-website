@@ -143,7 +143,7 @@ export const mainNav: NavGroup[] = [
         heading: 'Getting started',
         links: [
           { label: 'How admissions works', href: '/admissions/', built: true },
-          { label: 'Current bed availability', href: '/admissions/bed-availability/' },
+          { label: 'Current bed availability', href: '/admissions/bed-availability/' , built: true },
           { label: 'What to expect', href: '/admissions/what-to-expect/' },
           { label: 'What to bring', href: '/admissions/what-to-bring/' },
           { label: 'How long treatment takes', href: '/admissions/length-of-stay/', built: true },
@@ -272,7 +272,7 @@ export const footerColumns: NavColumn[] = [
     heading: 'Admissions & insurance',
     links: [
       { label: 'How admissions works', href: '/admissions/', built: true },
-      { label: 'Bed availability', href: '/admissions/bed-availability/' },
+      { label: 'Bed availability', href: '/admissions/bed-availability/' , built: true },
       { label: 'Verify your benefits', href: '/insurance/verify-your-benefits/', built: true },
       { label: 'Insurance & payment', href: '/insurance', built: true },
       { label: 'AHCCCS & Medicaid', href: '/insurance/ahcccs-medicaid/', built: true },
