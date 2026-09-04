@@ -56,7 +56,7 @@ export const mainNav: NavGroup[] = [
           { label: 'Outpatient program', href: '/programs/outpatient-program/' },
           { label: 'Outpatient therapy', href: '/programs/outpatient-therapy/' },
           { label: 'Mental health treatment', href: '/programs/mental-health-treatment/' },
-          { label: 'Aftercare & alumni', href: '/programs/aftercare-and-alumni/' },
+          { label: 'What happens after', href: '/programs/aftercare-and-alumni/', built: true },
         ],
       },
       {
@@ -248,7 +248,7 @@ export const footerColumns: NavColumn[] = [
       { label: 'Intensive outpatient (IOP)', href: '/programs/intensive-outpatient-iop/', built: true },
       { label: 'Outpatient program', href: '/programs/outpatient-program/' },
       { label: 'Mental health treatment', href: '/programs/mental-health-treatment/' },
-      { label: 'Aftercare & alumni', href: '/programs/aftercare-and-alumni/' },
+      { label: 'What happens after', href: '/programs/aftercare-and-alumni/', built: true },
     ],
   },
   {
