@@ -1,5 +1,11 @@
 ---
-import { mainNav, SHOW_BUILD_STATUS } from '../data/navigation';
+import { mainNav, SHOW_BUILD_STATUS, HIDE_UNBUILT } from '../data/navigation';
+
+// Planned-but-unbuilt links are filtered out of the rendered menu by default so
+// the navigation never points at a 404 — see the note in navigation.ts.
+const visible = mainNav
+  .map(g => ({ ...g, columns: g.columns.map(c => ({ ...c, links: c.links.filter(l => !HIDE_UNBUILT || l.built) })).filter(c => c.links.length) }))
+  .filter(g => g.columns.length && (!HIDE_UNBUILT || g.built));
 ---
 <nav id="main-nav" class="sticky top-0 z-50 bg-white border-b border-cream-soft shadow-sm">
   <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
@@ -13,7 +19,7 @@ import { mainNav, SHOW_BUILD_STATUS } from '../data/navigation';
       <!-- Desktop nav. Each top-level label is a real link to its hub; the panel
            opens on hover and on keyboard focus, so no JS is needed here. -->
       <ul class="hidden lg:flex items-center gap-1">
-        {mainNav.map(group => (
+        {visible.map(group => (
           <li class="group relative">
             <a
               href={group.href}
@@ -88,7 +94,7 @@ import { mainNav, SHOW_BUILD_STATUS } from '../data/navigation';
   <!-- Mobile drawer: one accordion per group. -->
   <div id="mobile-menu" class="lg:hidden hidden border-t border-cream-soft bg-white max-h-[calc(100dvh-4rem)] overflow-y-auto">
     <ul class="px-5 sm:px-6 py-2">
-      {mainNav.map(group => (
+      {visible.map(group => (
         <li class="border-b border-cream-soft last:border-b-0">
           <div class="flex items-stretch">
             <a href={group.href} class="flex-1 flex items-center gap-1.5 py-4 font-body font-semibold text-charcoal text-[16px]">
