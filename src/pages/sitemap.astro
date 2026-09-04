@@ -14,7 +14,7 @@ import TopBar from '../components/TopBar.astro';
 import Nav from '../components/Nav.astro';
 import FinalCTA from '../components/FinalCTA.astro';
 
-const EXCLUDE = ['/programs/intensive-outpatient-iop', '/medication-assisted-treatment', '/404', '/sitemap'];
+const EXCLUDE = ['/programs/intensive-outpatient-iop', '/404', '/sitemap'];
 
 const files = import.meta.glob('./**/*.astro', { eager: false });
 const routes = Object.keys(files)

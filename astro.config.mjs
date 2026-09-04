@@ -15,24 +15,28 @@ const SITE = 'https://buenavistarecovery.com';
      an honest referral page only. Including it would invite indexing of a
      service we do not offer.
 
-   /medication-assisted-treatment
-     Live and indexed today, but admissions states there is no methadone
-     programme and the wiki says MAT must not be referenced. It is excluded from
-     the sitemap as a conservative interim — this does NOT deindex the existing
-     page, it simply declines to promote it. Resolve properly by adding noindex
-     or unpublishing once someone confirms the position.
-
    /404
      Never belongs in a sitemap.
 */
 const EXCLUDE = [
   '/programs/intensive-outpatient-iop/',
-  '/medication-assisted-treatment/',
   '/404/',
 ];
 
 export default defineConfig({
   site: SITE,
+  /* /medication-assisted-treatment was retired on 2026-09-04. Admissions states
+     there is no methadone programme, so the page described a service that does
+     not exist. It is redirected rather than deleted outright because the URL was
+     live and indexed — anyone holding the link lands on the closest relevant
+     page instead of a 404.
+
+     NOTE: Astro's static output implements this as a meta-refresh, not a true
+     301. Add a real 301 at the host (Vercel/Netlify/CloudFront) when the hosting
+     config is known, and this entry can then be removed. */
+  redirects: {
+    '/medication-assisted-treatment': '/what-we-treat/opioid-addiction/',
+  },
   integrations: [
     sitemap({
       filter: (page) => !EXCLUDE.some((path) => page === `${SITE}${path}`),
