@@ -1,0 +1,36 @@
+---
+/* The mirror of OpioidPathway, and the contrast is the point: stimulants on
+   their own admit straight to residential because there is no separate medical
+   detox stage. Admissions is explicit about this. Do not "fix" this to match
+   the opioid flow. */
+const steps = [
+  { n: '01', h: 'Usually straight into residential', tag: 'Around 30 days', p: 'Stopping stimulants does not put the body in the danger that alcohol or opioids do, so there is normally no separate detox stage. Treatment begins with a bed, a routine and clinical support through the worst of the comedown.' },
+  { n: '02', h: 'Unless something else is in the mix', tag: 'Then detox first', p: 'Fentanyl or alcohol alongside stimulants is common, and either of those does mean a supervised detox before residential. Both happen in the same building as one admission.' },
+  { n: '03', h: 'Sleep is treated as part of it', tag: 'First few days', p: 'People arrive having been awake for a long time and the body takes what it is owed. Nobody is woken for a group session on day one.' },
+  { n: '04', h: 'The low gets treated too', tag: 'Throughout', p: 'The flatness that follows heavy stimulant use is real, temporary, and easier with a psychiatrist available and people checking on you. It is not a character problem and it does not last.' },
+];
+---
+<section id="pathway" class="bg-sage-tint py-[70px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mb-12">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+        <span class="w-6 h-px bg-gold inline-block"></span>
+        How stimulant treatment works here
+      </p>
+      <h2 class="font-display text-charcoal mb-5">Usually no detox stage — and that surprises people</h2>
+      <p class="font-body text-charcoal text-[18px] leading-[30px]">
+        Worth knowing before you call, because it is the opposite of how opioids and alcohol are handled.
+      </p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {steps.map(s => (
+        <div class="bg-white rounded-xl p-7 border border-cream-soft">
+          <p class="font-display text-gold text-[32px] leading-none mb-4">{s.n}</p>
+          <h3 class="font-display text-[21px] leading-[27px] text-navy mb-2">{s.h}</h3>
+          <span class="inline-block font-body text-xs font-bold uppercase tracking-wide text-gold bg-gold/10 rounded-full px-3 py-1.5 mb-4">{s.tag}</span>
+          <p class="font-body text-charcoal text-[16px] leading-[26px]">{s.p}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

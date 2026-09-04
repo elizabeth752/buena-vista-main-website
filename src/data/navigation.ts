@@ -83,9 +83,9 @@ export const mainNav: NavGroup[] = [
         heading: 'Substance use',
         links: [
           { label: 'Alcohol addiction', href: '/what-we-treat/alcohol-addiction/', built: true },
-          { label: 'Opioid addiction', href: '/what-we-treat/opioid-addiction/' },
+          { label: 'Opioid addiction', href: '/what-we-treat/opioid-addiction/' , built: true },
           { label: 'Fentanyl', href: '/what-we-treat/opioid-addiction/fentanyl/', built: true },
-          { label: 'Stimulant addiction', href: '/what-we-treat/stimulant-addiction/' },
+          { label: 'Stimulant addiction', href: '/what-we-treat/stimulant-addiction/' , built: true },
           { label: 'Methamphetamine', href: '/what-we-treat/stimulant-addiction/methamphetamine/', built: true },
           { label: 'Benzodiazepines', href: '/what-we-treat/benzodiazepine-addiction/' },
           { label: 'Cannabis use disorder', href: '/what-we-treat/cannabis-use-disorder/' },
@@ -260,8 +260,8 @@ export const footerColumns: NavColumn[] = [
     heading: 'What we treat',
     links: [
       { label: 'Alcohol addiction', href: '/what-we-treat/alcohol-addiction/', built: true },
-      { label: 'Opioid addiction', href: '/what-we-treat/opioid-addiction/' },
-      { label: 'Stimulant addiction', href: '/what-we-treat/stimulant-addiction/' },
+      { label: 'Opioid addiction', href: '/what-we-treat/opioid-addiction/' , built: true },
+      { label: 'Stimulant addiction', href: '/what-we-treat/stimulant-addiction/' , built: true },
       { label: 'Benzodiazepines', href: '/what-we-treat/benzodiazepine-addiction/' },
       { label: 'Anxiety', href: '/what-we-treat/anxiety/', built: true },
       { label: 'Depression', href: '/what-we-treat/depression/', built: true },

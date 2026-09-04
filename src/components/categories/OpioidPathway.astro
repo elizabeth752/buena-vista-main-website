@@ -1,0 +1,39 @@
+---
+/* The single most useful thing a category page can say: opioids need a
+   medically supervised detox, and that is the opposite of the stimulant
+   pathway. Keep the contrast — people arrive assuming all substances work the
+   same way and plan around the wrong one.
+
+   MAT BOUNDARY: maintenance medication is "tell us so the doctors can plan",
+   never an offer to continue or prescribe. */
+const steps = [
+  { n: '01', h: 'Detox comes first', tag: '4–7 days', p: 'Opioid withdrawal arrives fast and hard, and it is the reason most attempts to stop at home come apart inside a day. Nursing on site around the clock, physician oversight, and medication to blunt the worst of it.' },
+  { n: '02', h: 'Then residential', tag: 'Around 30 days', p: 'Detox settles the body. Residential is where the reasons get worked on — group therapy twice a day, one-to-one sessions, and a case manager planning what happens after.' },
+  { n: '03', h: 'More than one substance is normal', tag: 'Expected', p: 'Meth alongside fentanyl is common, and so is alcohol. Detox is planned around everything at once — one admission, not a sequence of them.' },
+  { n: '04', h: 'Already on methadone or Suboxone?', tag: 'Say so early', p: 'Arriving on a maintenance medication is common and not a complication anyone minds. Tell us the dose and how long you have been on it, so our doctors can review it as part of your assessment rather than on the day.' },
+];
+---
+<section id="pathway" class="bg-sage-tint py-[70px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mb-12">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+        <span class="w-6 h-px bg-gold inline-block"></span>
+        How opioid treatment works here
+      </p>
+      <h2 class="font-display text-charcoal mb-5">Detox first, and that is not optional advice</h2>
+      <p class="font-body text-charcoal text-[18px] leading-[30px]">
+        This is where opioids differ from stimulants. If your body is physically dependent, starting with a supervised detox is what makes everything after it possible.
+      </p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {steps.map(s => (
+        <div class="bg-white rounded-xl p-7 border border-cream-soft">
+          <p class="font-display text-gold text-[32px] leading-none mb-4">{s.n}</p>
+          <h3 class="font-display text-[21px] leading-[27px] text-navy mb-2">{s.h}</h3>
+          <span class="inline-block font-body text-xs font-bold uppercase tracking-wide text-gold bg-gold/10 rounded-full px-3 py-1.5 mb-4">{s.tag}</span>
+          <p class="font-body text-charcoal text-[16px] leading-[26px]">{s.p}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
