@@ -64,11 +64,6 @@ export const mainNav: NavGroup[] = [
         links: [
           { label: 'Group therapy', href: '/therapies/group-therapy/' },
           { label: 'Individual therapy', href: '/therapies/individual-therapy/' },
-          { label: 'Family therapy', href: '/therapies/family-therapy/' },
-          { label: 'EMDR therapy', href: '/therapies/emdr-therapy/' },
-          { label: 'CBT', href: '/therapies/cognitive-behavioral-therapy-cbt/' },
-          { label: 'DBT', href: '/therapies/dialectical-behavior-therapy-dbt/' },
-          { label: 'Medication support', href: '/therapies/medication-management/' },
           { label: 'All therapies', href: '/therapies/', built: true },
         ],
       },

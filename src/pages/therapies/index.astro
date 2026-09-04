@@ -1,6 +1,29 @@
 ---
-/* Therapies hub. All eleven modalities below are on the client wiki's confirmed
-   active list. Do not add a modality here without confirming it is delivered. */
+/* -----------------------------------------------------------------------------
+   Therapies & clinical approach.
+
+   ⚠ REBUILT after a verification pass. The earlier version published all
+   eleven modalities from the client wiki as fact. Checked against the call
+   export, only three have any supporting evidence:
+
+     group therapy        7 calls
+     individual therapy  12 calls
+     step work / sponsor 28 calls   (not even on the wiki's list of eleven)
+
+   Zero call evidence for: CBT, DBT, EMDR, family therapy, trauma-specific
+   therapy, motivational interviewing, relapse prevention, life skills
+   training. Holistic/meditation: 1.
+
+   IMPORTANT CAVEAT — this is silence, not contradiction. Admissions calls are
+   about getting someone through the door; nobody discusses EMDR protocol on an
+   intake call. That is much weaker evidence than the IOP case, where agents
+   explicitly denied having the service. These modalities may well be delivered.
+
+   But the standing instruction is that the wiki is not trusted, so this page
+   now publishes only what is corroborated and says plainly that the full
+   clinical programme is described on the call. Restore any modality the
+   clinical team confirms — and when they do, note who confirmed it here.
+----------------------------------------------------------------------------- */
 import Layout from '../../layouts/Layout.astro';
 import TopBar from '../../components/TopBar.astro';
 import Nav from '../../components/Nav.astro';
@@ -10,40 +33,56 @@ import Testimonials from '../../components/Testimonials.astro';
 import VerifySection from '../../components/VerifySection.astro';
 import FinalCTA from '../../components/FinalCTA.astro';
 
-const title = 'Therapies & Clinical Approach | Buena Vista Health & Recovery, Chandler AZ';
-const description = 'CBT, DBT, EMDR, group and family therapy, trauma-specific work and relapse prevention, delivered as part of residential treatment in Chandler, AZ. Call (888) 362-5576.';
+const title = 'Therapy & Clinical Approach | Buena Vista Health & Recovery, Chandler AZ';
+const description = 'Group therapy twice daily, one-to-one sessions with your own therapist, and support for step work with your sponsor, inside residential treatment in Chandler, AZ. Call (888) 362-5576.';
 
 const core = [
-  { label: 'Group therapy', desc: 'Twice a day, and the part most people are most nervous about beforehand. It is also the part they tend to name afterwards as the one that mattered.' },
-  { label: 'Individual therapy', desc: 'One-to-one sessions with your own therapist, working on what sits underneath rather than only on the substance.' },
-  { label: 'Family therapy', desc: 'Addiction rarely damages one person in isolation. Family work is part of the programme, and family follow-ups continue after discharge.' },
-  { label: 'Cognitive behavioural therapy (CBT)', desc: 'Practical work on the thinking patterns that keep the cycle turning — what to do when the thought arrives, rather than why it does.' },
-  { label: 'Dialectical behaviour therapy (DBT)', desc: 'Skills for tolerating distress and regulating emotion, useful for anyone whose using has been a way to turn feeling down.' },
-  { label: 'EMDR', desc: 'A structured, evidence-based approach to processing traumatic memory, delivered by clinicians trained specifically in it.' },
-];
-
-const supporting = [
-  { label: 'Trauma-specific therapy', desc: 'Trauma-informed work for people whose substance use grew around something that happened to them.' },
-  { label: 'Motivational interviewing', desc: 'Collaborative rather than confrontational. Nobody is argued into changing here.' },
-  { label: 'Relapse prevention', desc: 'The practical planning: what your triggers actually are, and what you do at the moment one arrives.' },
-  { label: 'Holistic therapy', desc: 'Approaches that treat the body as part of the recovery rather than an afterthought.' },
-  { label: 'Meditation & mindfulness', desc: 'Learning to sit with discomfort without immediately acting on it — a skill, not a belief system.' },
-  { label: 'Life skills training', desc: 'The ordinary machinery of a life: routine, work, money, structure. Often what makes the rest of it stick.' },
+  { label: 'Group therapy', tag: 'Twice daily', desc: 'The backbone of the residential day, and the part most people are most nervous about beforehand. It is also the part they tend to name afterwards as the one that mattered.' },
+  { label: 'Individual therapy', tag: 'One-to-one', desc: 'Sessions with your own therapist, working on what sits underneath rather than only on the substance itself.' },
+  { label: 'Step work & your sponsor', tag: 'Encouraged', desc: 'If you have a sponsor they can come into the facility and do step work with you during your stay. If you do not, getting one is something the team will actively encourage.' },
+  { label: 'Case management', tag: 'Throughout', desc: 'Someone working alongside you on what happens next — housing, a primary care provider, ongoing psychiatric care, and the practical scaffolding that makes leaving survivable.' },
 ];
 ---
 <Layout title={title} description={description}>
   <TopBar /><Nav />
   <HubHero
-    eyebrow="Therapies & clinical approach"
-    title="Eleven ways in, because one is never enough."
-    intro="Recovery is not a single technique applied repeatedly. Your programme draws on whichever of these fits what you are actually dealing with, and it changes as you do."
-    points={['Group therapy twice daily, plus one-to-one sessions','Trauma-specific work and EMDR by trained clinicians','Family therapy, and family follow-ups after discharge','Relapse prevention planned before you leave, not after']}
+    eyebrow="Therapy & clinical approach"
+    title="The work happens in rooms with other people in them."
+    intro="Residential treatment here is built around group therapy twice a day and one-to-one sessions with your own therapist, with a case manager working on what comes after from early in your stay."
+    points={['Group therapy twice a day','Individual sessions with your own therapist','Sponsors welcome to come in and do step work','A case manager planning the next step from early on']}
     image="/Asset/stock%20photo/Desktop%20Dimensions/Facility/Intimate%20fireside%20lounge%20with%20four%20armchairs%20and%20built-in%20fireplace.png"
     alt="An intimate fireside lounge with four armchairs"
     caption="Where a lot of the real work happens."
   />
-  <HubCards eyebrow="The core of it" title="What your week is built around" items={core} />
-  <HubCards eyebrow="Alongside" title="The rest of the toolkit" intro="Drawn on where they fit, rather than applied to everyone by default." items={supporting} bg="bg-sage-tint" />
+
+  <HubCards eyebrow="What your week is built around" title="The core of it" items={core} columns={4} />
+
+  <section class="bg-sage-tint py-[70px]">
+    <div class="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+        <span class="w-6 h-px bg-gold inline-block"></span>
+        Ask about the rest
+      </p>
+      <h2 class="font-display text-charcoal mb-5">Which specific therapies you would get</h2>
+      <div class="space-y-5 font-body text-charcoal text-[17px] leading-[29px]">
+        <p>
+          Treatment programmes vary, and the specific modalities in your plan depend on what you actually need — what you have been using, what is going on mentally, and what has or has not worked for you before.
+        </p>
+        <p>
+          <strong class="font-bold">Rather than list every technique on a website, we would rather tell you accurately.</strong> Ask on the admissions call, or ask your therapist in the first days, and you will get a straight answer about what your programme includes.
+        </p>
+        <p>
+          If a particular approach matters to you — because it has helped before, or because someone recommended it — say so at the start. It is a reasonable thing to choose a programme on.
+        </p>
+      </div>
+      <div class="mt-8">
+        <a href="tel:8883625576" class="inline-flex items-center justify-center gap-2 bg-teal hover:bg-teal-dark text-white font-semibold h-14 px-8 rounded-lg transition-colors font-body">
+          <span class="tel-number">Ask us — (888) 362-5576</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <Testimonials /><VerifySection />
   <FinalCTA />
 </Layout>

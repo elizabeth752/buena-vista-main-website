@@ -1,24 +1,36 @@
 ---
-/* Practical facts, all from the client wiki and stated exactly as recorded.
-   Constraints (service animals, English-language services) are stated as facts
-   rather than as refusals — someone should be able to plan around them without
-   feeling shut out. */
+/* ⚠ VERIFIED PASS. This block used to publish the client wiki's amenity and
+   accessibility list verbatim. Checked against the call export, only some of it
+   is corroborated:
+
+     private rooms / own bathroom  25 calls   CONFIRMED
+     meals and food                 7 calls   CONFIRMED
+     internet / phone access       10 calls   CONFIRMED
+     service animals / pets         6 calls   CONFIRMED
+     wheelchair access              3 calls   weak
+     dietary accommodations         1 call    weak
+     separate male / female wings   0 calls   REMOVED
+     airport pickup                 0 calls   softened to "ask"
+
+   Note also an agent on a recorded call: "there's not, like, a whole lot of
+   amenities when it comes to our detox side" — the detox stay is more spartan
+   than a general amenity list implies.
+
+   Anything the client confirms can be restored, with a note here saying who
+   confirmed it. Do not re-add from the wiki alone. */
 const facts = [
   {
     h: 'Rooms and housing',
     items: [
       'Private rooms with en suite bathrooms',
-      'Separate male and female wings — housing is not co-ed',
-      'Gourmet dining, meals provided',
+      'Meals provided',
       'Outdoor lounge and recreation room',
     ],
   },
   {
     h: 'Access and accommodations',
     items: [
-      'Wheelchair accessible, with disability access throughout',
-      'Gender-neutral restrooms',
-      'Dietary accommodations available',
+      'Accessibility and dietary needs — tell us and we will confirm what we can do',
       'Services are currently provided in English',
     ],
   },
@@ -66,9 +78,9 @@ const facts = [
 
     <div class="mt-8 bg-white border-l-2 border-gold rounded-r-xl p-6 max-w-3xl">
       <p class="font-body text-charcoal text-[16px] leading-[27px]">
-        <strong class="font-bold">Licensed in Arizona.</strong> Our Chandler facility operates under
-        Arizona behavioral health licence <span class="font-semibold">IFBH9847r</span>. Ask us for anything
-        else you want to see — a licence number is the kind of thing you should be able to check.
+        <strong class="font-bold">Licensed in Arizona.</strong> Ask us for our current licence details and
+        anything else you want to see — that is the kind of thing you should be able to check before
+        trusting anyone with someone you love.
       </p>
     </div>
   </div>
