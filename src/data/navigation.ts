@@ -146,7 +146,7 @@ export const mainNav: NavGroup[] = [
       {
         heading: 'Practical questions',
         links: [
-          { label: 'Your medications', href: '/admissions/medications-and-prescriptions/' },
+          { label: 'Your medications', href: '/admissions/medications-and-prescriptions/', built: true },
           { label: 'Travel & transportation', href: '/admissions/travel-and-transportation/', built: true },
           { label: 'Accessibility & accommodations', href: '/admissions/accessibility-and-accommodations/' },
           { label: 'Admissions FAQ', href: '/admissions/faq/' },

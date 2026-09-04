@@ -1,0 +1,80 @@
+---
+/* -----------------------------------------------------------------------------
+   Your medication in treatment.
+
+   Medication is discussed on 68 of 571 Buena Vista calls (11.9%) — above the
+   working threshold, and higher than it first appeared, because most of it is
+   the intake asking rather than callers volunteering.
+
+   Corroborated facts, all from admissions on recorded calls:
+     "you'll see a physician within the first twenty four hours and daily
+      after that"                                        <- not used anywhere else
+     "we don't have, like, IV therapies, but we do have all the comfort
+      medications, everything on-site there"
+     "labs, medications, nursing, physician evaluations, and send-out IV care
+      if necessary are provided"
+     "bring in the medications you have, and then talk with our provider when
+      you're here about any adjustments"
+
+   The physician-within-24-hours-then-daily detail is a genuine quality signal
+   that nothing else on the site was using.
+
+   TWO BOUNDARIES apply and must not be softened:
+     MAT — maintenance medication is "raise it for clinical review", never an
+       offer to continue or prescribe.
+     PSYCHIATRY — existing prescriptions are reviewed and can be refilled here;
+       Buena Vista does NOT prescribe psychiatric medication, and ongoing
+       psychiatric care is arranged for after discharge.
+
+   Also states plainly that there is no IV therapy on site. Better heard now
+   than on arrival.
+----------------------------------------------------------------------------- */
+import Layout from '../../layouts/Layout.astro';
+import TopBar from '../../components/TopBar.astro';
+import Nav from '../../components/Nav.astro';
+
+import MedsHero from '../../components/meds/MedsHero.astro';
+import WhatsOnSite from '../../components/meds/WhatsOnSite.astro';
+import MedsQuestions from '../../components/meds/MedsQuestions.astro';
+
+import Testimonials from '../../components/Testimonials.astro';
+import VerifySection from '../../components/VerifySection.astro';
+import FinalCTA from '../../components/FinalCTA.astro';
+
+const title = 'Your Medication in Treatment | Buena Vista Health & Recovery, Chandler AZ';
+const description =
+  'Bring your medication in its original bottles. A physician sees you within 24 hours and daily after that, with comfort medication, nursing and labs on site. Call (888) 362-5576.';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    ['Can I bring my medication to rehab?',
+     'Yes. Bring everything you take in its original bottles, including anything you have stopped taking, so the label shows the dose and prescriber to the clinical team.'],
+    ['How soon do you see a doctor in detox at Buena Vista?',
+     'Within the first twenty-four hours, and then every day of the stay.'],
+    ['What happens to my psychiatric medication?',
+     'It is reviewed by the medical team rather than stopped by default, and existing prescriptions can be refilled. Buena Vista does not prescribe psychiatric medication; ongoing psychiatric care is arranged as part of aftercare planning.'],
+    ['Is IV therapy available?',
+     'Not on site. Labs, medications, nursing and physician evaluations are provided at the facility, and IV care is arranged externally where treatment calls for it.'],
+  ].map(([q, a]) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+};
+---
+<Layout title={title} description={description}>
+  <TopBar />
+  <Nav />
+
+  <MedsHero />
+  <WhatsOnSite />
+  <Testimonials />
+  <VerifySection />
+  <MedsQuestions />
+
+  <FinalCTA />
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
+</Layout>
