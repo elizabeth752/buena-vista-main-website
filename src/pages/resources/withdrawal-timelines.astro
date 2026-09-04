@@ -1,0 +1,74 @@
+---
+/* -----------------------------------------------------------------------------
+   What withdrawal is actually like.
+
+   Withdrawal appears on 35 of 571 Buena Vista calls (6.1% declarative), and 19
+   calls (3.3%) carry explicit fear language — afraid, scared, nervous, dreading.
+   That fear is what this page serves. The timeline is the vehicle; reassurance
+   is the payload.
+
+   ⚠ SAFETY — this page will be found by people considering stopping at home.
+   Alcohol and benzodiazepine withdrawal can cause seizures and can be fatal.
+   The hero therefore opens with an explicit "do not use this to detox alone",
+   the two dangerous substances are visually flagged, and the FAQ closes with an
+   emergency-room instruction. Do not remove any of those, and do not add
+   home-taper guidance of any kind.
+
+   Timings are established general clinical ranges, given as ranges and
+   attributed to the substance rather than to a Buena Vista protocol. Our own
+   detox length is stated separately where it is ours.
+
+   Justification note: this page is driven more by search intent than call
+   volume ("alcohol withdrawal timeline" is high-volume informational demand
+   that feeds the detox money page). The call-driven work is largely done, so
+   later pages increasingly rest on search rather than call evidence.
+----------------------------------------------------------------------------- */
+import Layout from '../../layouts/Layout.astro';
+import TopBar from '../../components/TopBar.astro';
+import Nav from '../../components/Nav.astro';
+
+import WithdrawalHero from '../../components/withdrawal/WithdrawalHero.astro';
+import BySubstance from '../../components/withdrawal/BySubstance.astro';
+import WithdrawalQuestions from '../../components/withdrawal/WithdrawalQuestions.astro';
+
+import Testimonials from '../../components/Testimonials.astro';
+import VerifySection from '../../components/VerifySection.astro';
+import FinalCTA from '../../components/FinalCTA.astro';
+
+const title = 'Withdrawal Timelines: What to Expect | Buena Vista Health & Recovery, Chandler AZ';
+const description =
+  'How long alcohol, opioid, benzodiazepine and stimulant withdrawal lasts, which are dangerous to stop alone, and what a medically supervised detox actually involves. Call (888) 362-5576.';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    ['How long does alcohol withdrawal last?',
+     'Symptoms typically begin 6 to 24 hours after the last drink and are hardest around 24 to 72 hours. Alcohol withdrawal can cause seizures and delirium tremens and should be managed under medical supervision.'],
+    ['Can I detox at home?',
+     'Alcohol and benzodiazepine withdrawal can cause seizures and can be fatal, so neither should be attempted alone. Opioid withdrawal is rarely life-threatening but is severe enough that most home attempts end within a day.'],
+    ['How long does opioid withdrawal last?',
+     'It often begins within 8 to 24 hours of the last dose, sooner with fentanyl, and is worst during the first one to three days. Medication in a supervised detox substantially reduces the severity.'],
+    ['Do stimulants cause physical withdrawal?',
+     'Meth and cocaine do not produce the dangerous physical withdrawal alcohol does, so there is usually no separate detox stage. They produce exhaustion and a deep low that is heaviest in the first week.'],
+  ].map(([q, a]) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+};
+---
+<Layout title={title} description={description}>
+  <TopBar />
+  <Nav />
+
+  <WithdrawalHero />
+  <BySubstance />
+  <Testimonials />
+  <VerifySection />
+  <WithdrawalQuestions />
+
+  <FinalCTA />
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
+</Layout>

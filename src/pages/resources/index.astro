@@ -1,0 +1,68 @@
+---
+/* Resources hub — the URL parent of the guides. Built so truncating any
+   /resources/... URL lands somewhere useful rather than on a 404.
+
+   The crisis numbers here are public, stable and verifiable. They are not a
+   compliance page (that was cut from the sitemap deliberately) — they are the
+   most useful thing a resources index can carry. */
+import Layout from '../../layouts/Layout.astro';
+import TopBar from '../../components/TopBar.astro';
+import Nav from '../../components/Nav.astro';
+import HubHero from '../../components/hub/HubHero.astro';
+import HubCards from '../../components/hub/HubCards.astro';
+import VerifySection from '../../components/VerifySection.astro';
+import FinalCTA from '../../components/FinalCTA.astro';
+
+const title = 'Recovery Resources | Buena Vista Health & Recovery, Arizona';
+const description = 'Plain guides to withdrawal, sober living and getting into treatment in Arizona, plus the crisis numbers worth having to hand. Call (888) 362-5576.';
+
+const guides = [
+  { label: 'What withdrawal is like', desc: 'How long each substance takes, which ones are genuinely dangerous to stop alone, and what a supervised detox actually involves.', href: '/resources/withdrawal-timelines/' },
+  { label: 'Sober living & housing', desc: 'Where to live during and after treatment, and how the housing question gets solved when you have nowhere to go.', href: '/resources/sober-living-arizona/' },
+  { label: 'How long treatment takes', desc: 'Detox is usually four to seven days, residential around thirty. What decides your own length of stay.', href: '/admissions/length-of-stay/' },
+  { label: 'Getting here', desc: 'Rides, airport pickup, and the medical transport benefit many Access plans include and most people never use.', href: '/admissions/travel-and-transportation/' },
+  { label: 'What your insurance covers', desc: 'A free benefits check, what it tells you, and what to have to hand before you call.', href: '/insurance/verify-your-benefits/' },
+  { label: 'For families', desc: 'Calling on behalf of someone else, including what to do when they are not ready yet.', href: '/for-families/' },
+];
+---
+<Layout title={title} description={description}>
+  <TopBar /><Nav />
+  <HubHero
+    eyebrow="Recovery resources"
+    title="The things worth knowing before you call."
+    intro="Plain answers to the questions that keep people from picking up the phone — what withdrawal involves, how long treatment takes, what it costs, and where you would live afterwards."
+    points={['No jargon and no scare tactics','Written to be useful whether or not you come here','Crisis numbers below, worth saving now','Someone answers our line at any hour']}
+    image="/Asset/stock%20photo/Desktop%20Dimensions/Facility/Flexible%20gathering%20space%20with%20movable%20seating,%20support%20columns,%20and%20checkerboard%20flooring.png"
+    alt="A flexible gathering space with movable seating"
+    caption="Answers first. Decisions after."
+  />
+
+  <HubCards eyebrow="Guides" title="Start here" items={guides} />
+
+  <section class="bg-navy py-[60px]">
+    <div class="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+        <span class="w-6 h-px bg-gold inline-block"></span>
+        If you need help right now
+      </p>
+      <h2 class="font-display text-white mb-6">Numbers worth saving</h2>
+      <div class="space-y-5">
+        <div class="border-l-2 border-gold pl-5">
+          <p class="font-body font-semibold text-white text-[18px] mb-1">988 — Suicide &amp; Crisis Lifeline</p>
+          <p class="font-body text-white/70 text-[16px] leading-[26px]">Call or text <a href="tel:988" class="text-gold font-semibold hover:opacity-70 transition-opacity tel-number">988</a>, any hour, anywhere in the US. If someone is in immediate danger, call 911.</p>
+        </div>
+        <div class="border-l-2 border-gold pl-5">
+          <p class="font-body font-semibold text-white text-[18px] mb-1">SAMHSA National Helpline</p>
+          <p class="font-body text-white/70 text-[16px] leading-[26px]">Free, confidential treatment referral, 24 hours a day: <a href="tel:18006624357" class="text-gold font-semibold hover:opacity-70 transition-opacity tel-number">1-800-662-4357</a>.</p>
+        </div>
+        <div class="border-l-2 border-gold pl-5">
+          <p class="font-body font-semibold text-white text-[18px] mb-1">Buena Vista admissions</p>
+          <p class="font-body text-white/70 text-[16px] leading-[26px]">A real person, any hour including holidays: <a href="tel:8883625576" class="text-gold font-semibold hover:opacity-70 transition-opacity tel-number">(888) 362-5576</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <VerifySection />
+  <FinalCTA />
+</Layout>

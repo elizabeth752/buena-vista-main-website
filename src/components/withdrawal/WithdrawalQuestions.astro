@@ -1,0 +1,42 @@
+---
+const faqs = [
+  { q: 'Will it hurt as much as I think?', a: "Usually less than the version in your head, and the reason is medication. A supervised detox is not the same experience as stopping at home — comfort medications are prescribed and adjusted as your symptoms move, and someone is checking on you the whole way through." },
+  { q: 'Can I detox at home?', a: "For alcohol and benzodiazepines this is genuinely risky — seizures and delirium tremens can be fatal, and neither gives much warning. For opioids it is rarely dangerous but it is severe enough that most attempts end within a day. If you are set on trying, please at least call first so someone can tell you what to watch for." },
+  { q: 'How long will I feel rough?', a: "The physically hardest stretch is usually the first two to three days, and most people are noticeably steadier by the end of the first week. Sleep and energy take longer to settle — often a few weeks — which is one of the reasons residential treatment follows detox rather than ending at it." },
+  { q: 'I already feel it starting. What do I do?', a: "Call now rather than waiting to see how bad it gets. If you are already having tremors, or you have had seizures or DTs in the past, that is a reason to be seen today — by us or by an emergency room." },
+  { q: 'Will I be given medication?', a: "Yes. Comfort medications are a standard part of a medical detox, prescribed under physician oversight. The aim is to keep you as comfortable as the situation allows, not to test how much you can stand." },
+  { q: 'What if I have had a bad detox before?', a: "Tell us about it in detail on the call — what happened, where, and what was or was not given. A difficult previous detox is useful clinical information, and it changes how your care is planned rather than counting against you." },
+  { q: 'Does it get easier each time?', a: "Not reliably, and with alcohol it can get harder — repeated withdrawals can make later ones more severe. That is a reason to do it properly this time rather than a reason to feel bad about the previous ones." },
+  { q: 'What happens after the physical part is over?', a: "That is where residential treatment starts, in the same building with the same team. Detox settles the body; what follows is the part that makes it hold." },
+];
+---
+<section id="withdrawal-faq" class="bg-cream py-[70px]">
+  <div class="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8">
+    <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+      <span class="w-6 h-px bg-gold inline-block"></span>
+      Straight answers
+    </p>
+    <h2 class="font-display text-charcoal mb-10">Questions about withdrawal</h2>
+    <div class="divide-y divide-cream-soft border-t border-b border-cream-soft">
+      {faqs.map(f => (
+        <details class="group py-5">
+          <summary class="flex items-start justify-between gap-6 cursor-pointer">
+            <h3 class="font-body font-semibold text-charcoal text-[18px] leading-[28px]">{f.q}</h3>
+            <span class="shrink-0 mt-1 text-teal">
+              <svg class="faq-plus w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg>
+              <svg class="faq-minus w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M5 12h14"/></svg>
+            </span>
+          </summary>
+          <p class="font-body text-charcoal text-[16px] leading-[27px] mt-4 pr-10">{f.a}</p>
+        </details>
+      ))}
+    </div>
+    <div class="mt-10 bg-white border-l-2 border-gold rounded-r-xl p-6">
+      <p class="font-body text-charcoal text-[16px] leading-[27px]">
+        <strong class="font-bold">If you are withdrawing right now and feel unwell,</strong> call us on
+        <a href="tel:8883625576" class="text-teal font-semibold hover:opacity-70 transition-opacity tel-number">(888) 362-5576</a>
+        or go to an emergency room. Seizures, confusion and hallucinations during alcohol withdrawal need medical attention the same day.
+      </p>
+    </div>
+  </div>
+</section>

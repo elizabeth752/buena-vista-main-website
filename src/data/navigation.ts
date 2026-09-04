@@ -288,7 +288,7 @@ export const footerColumns: NavColumn[] = [
       { label: 'Contact', href: '/about/contact/' },
       { label: 'Careers', href: '/about/careers/' },
       { label: 'Blog', href: '/blog/' },
-      { label: 'Withdrawal timelines', href: '/resources/withdrawal-timelines/' },
+      { label: 'Withdrawal timelines', href: '/resources/withdrawal-timelines/', built: true },
       { label: 'Sober living options', href: '/resources/sober-living-arizona/', built: true },
       { label: 'Alumni community', href: '/alumni/' },
     ],
