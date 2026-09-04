@@ -225,7 +225,7 @@ export const mainNav: NavGroup[] = [
           { label: 'Facility tour', href: '/about/facility-tour/' },
           { label: 'Accreditations & licensing', href: '/about/accreditations-and-licensing/' },
           { label: 'Careers', href: '/about/careers/' },
-          { label: 'Contact us', href: '/about/contact/' },
+          { label: 'Contact us', href: '/about/contact/', built: true },
         ],
       },
     ],

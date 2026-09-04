@@ -1,0 +1,98 @@
+---
+/* -----------------------------------------------------------------------------
+   Contact.
+
+   Low call demand by design — 0% of callers ask where the facility is, because
+   they are already on the phone. This is a utility and trust page: the site had
+   no contact page at all, which is a gap on a healthcare site and a weak signal
+   for a YMYL domain.
+
+   ⚠ EMAIL DOMAIN. The wiki gives admissions@buenavistarecovery.com; that
+   address appears ZERO times in the call export, while admissions@buena.health
+   appears 4 times and Clay Williams says on a recorded call: "Buena dot health
+   is our email tag." buena.health is used here and on the referrals page.
+   CONFIRM with the client — a wrong address loses enquiries silently, which is
+   why the phone is the primary route on every block of this page.
+
+   The "do not email medical details" section is the part worth keeping. People
+   routinely email member IDs and medication lists to admissions addresses;
+   saying so plainly protects them and is a genuine trust signal.
+----------------------------------------------------------------------------- */
+import Layout from '../../layouts/Layout.astro';
+import TopBar from '../../components/TopBar.astro';
+import Nav from '../../components/Nav.astro';
+
+import HubHero from '../../components/hub/HubHero.astro';
+import ContactRoutes from '../../components/contactpage/ContactRoutes.astro';
+import GettingHere from '../../components/chandler/GettingHere.astro';
+import FinalCTA from '../../components/FinalCTA.astro';
+
+const title = 'Contact Us | Buena Vista Health & Recovery, Chandler AZ';
+const description =
+  'Call (888) 362-5576 — someone answers at any hour, including holidays. Buena Vista Health & Recovery Centers, 3033 S Arizona Ave, Chandler, AZ 85286.';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalClinic',
+  name: 'Buena Vista Health & Recovery Centers — Chandler',
+  description,
+  url: 'https://buenavistarecovery.com/about/contact/',
+  telephone: '+1-888-362-5576',
+  email: 'admissions@buena.health',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '3033 S Arizona Ave',
+    addressLocality: 'Chandler',
+    addressRegion: 'AZ',
+    postalCode: '85286',
+    addressCountry: 'US',
+  },
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'],
+    opens: '00:00',
+    closes: '23:59',
+  },
+};
+---
+<Layout title={title} description={description}>
+  <TopBar />
+  <Nav />
+
+  <HubHero
+    eyebrow="Contact us"
+    title="Someone answers. Any hour, including holidays."
+    intro="There is no queue, no form to fill in first, and no waiting until Monday. If it is three in the morning and you have decided, that is a completely reasonable time to call."
+    points={['Admissions answers 24 hours a day, all year','A short call tells you about beds, coverage and timing','Calling to ask questions commits you to nothing','You can call about someone else — most people do']}
+    image="/Asset/stock%20photo/Desktop%20Dimensions/Facility/Central%20welcome%20desk%20with%20pendant%20lighting%20and%20adjacent%20activity%20area.png"
+    alt="The welcome desk at Buena Vista, with pendant lighting"
+    caption="Someone is at the desk whatever time you arrive."
+  />
+
+  <ContactRoutes />
+  <GettingHere />
+
+  <section class="bg-navy py-[60px]">
+    <div class="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+        <span class="w-6 h-px bg-gold inline-block"></span>
+        If you need help right now
+      </p>
+      <h2 class="font-display text-white mb-6">Numbers worth saving</h2>
+      <div class="space-y-5">
+        <div class="border-l-2 border-gold pl-5">
+          <p class="font-body font-semibold text-white text-[18px] mb-1">988 — Suicide &amp; Crisis Lifeline</p>
+          <p class="font-body text-white/70 text-[16px] leading-[26px]">Call or text <a href="tel:988" class="text-gold font-semibold hover:opacity-70 transition-opacity tel-number">988</a>, any hour. If someone is in immediate danger, call 911.</p>
+        </div>
+        <div class="border-l-2 border-gold pl-5">
+          <p class="font-body font-semibold text-white text-[18px] mb-1">SAMHSA National Helpline</p>
+          <p class="font-body text-white/70 text-[16px] leading-[26px]">Free, confidential treatment referral, 24 hours a day: <a href="tel:18006624357" class="text-gold font-semibold hover:opacity-70 transition-opacity tel-number">1-800-662-4357</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FinalCTA />
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
+</Layout>
