@@ -128,7 +128,7 @@ export const mainNav: NavGroup[] = [
           { label: 'Families & loved ones', href: '/for-families/', built: true },
           { label: 'How to help a loved one', href: '/for-families/how-to-help-a-loved-one/' },
           { label: "What to expect during treatment", href: '/for-families/what-to-expect-during-treatment/' },
-          { label: 'Visitation, phone & contact', href: '/for-families/staying-in-contact/' },
+          { label: 'Visitation, phone & contact', href: '/for-families/staying-in-contact/', built: true },
           { label: "Paying for a loved one's care", href: '/for-families/paying-for-a-loved-ones-treatment/' },
         ],
       },

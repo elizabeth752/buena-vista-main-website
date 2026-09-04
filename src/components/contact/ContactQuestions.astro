@@ -1,0 +1,35 @@
+---
+const faqs = [
+  { q: 'Can I keep my phone?', a: "Yes, once you are in residential — access opens up in the evenings, every night. During detox itself phones are generally set aside, which is a few days rather than the whole stay. Ask for the current hours on the call, since the programme sets them and they have changed before." },
+  { q: 'Why no phone during detox?', a: "Partly clinical and partly practical. The first days are physically hard and mostly spent sleeping, and the outside world tends to make that harder. It is a short stretch, and anything genuinely urgent reaches you through the facility." },
+  { q: 'When can family visit?', a: "Visiting runs three days a week during the residential stay — Wednesday, Saturday and Sunday. Confirm the current times when you call, and let us know who is coming." },
+  { q: 'Can my children visit?', a: "Raise it on the call so it can be arranged properly rather than turning up and hoping. Family contact is treated as part of recovery here, not as a favour." },
+  { q: 'What if there is an emergency at home?', a: "Call the facility and it reaches the person, whatever stage of treatment they are in. Nobody is unreachable — the arrangements are about the shape of an ordinary day, not about cutting people off." },
+  { q: 'Can my sponsor come in?', a: "Yes. Sponsors can come into the facility and do step work with you during your stay, which is one of the more useful forms of continuity available." },
+  { q: 'Can I work or study while I am here?', a: "Evening access covers the essentials, but residential treatment is designed to be the thing you are doing rather than something fitted around a job. If work is a hard constraint, say so on the first call so the timing can be planned around it." },
+  { q: 'Will my family be told how I am doing?', a: "Only with your say-so. What can be shared about an adult in our care is limited by health privacy law, and it is your decision who is on that list. Sorting it at admission saves a lot of friction later." },
+];
+---
+<section id="contact-faq" class="bg-cream py-[70px]">
+  <div class="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8">
+    <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+      <span class="w-6 h-px bg-gold inline-block"></span>
+      Straight answers
+    </p>
+    <h2 class="font-display text-charcoal mb-10">Questions about phones and visits</h2>
+    <div class="divide-y divide-cream-soft border-t border-b border-cream-soft">
+      {faqs.map(f => (
+        <details class="group py-5">
+          <summary class="flex items-start justify-between gap-6 cursor-pointer">
+            <h3 class="font-body font-semibold text-charcoal text-[18px] leading-[28px]">{f.q}</h3>
+            <span class="shrink-0 mt-1 text-teal">
+              <svg class="faq-plus w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg>
+              <svg class="faq-minus w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M5 12h14"/></svg>
+            </span>
+          </summary>
+          <p class="font-body text-charcoal text-[16px] leading-[27px] mt-4 pr-10">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
