@@ -62,9 +62,7 @@ export const mainNav: NavGroup[] = [
       {
         heading: 'Therapies',
         links: [
-          { label: 'Group therapy', href: '/therapies/group-therapy/' },
-          { label: 'Individual therapy', href: '/therapies/individual-therapy/' },
-          { label: 'All therapies', href: '/therapies/', built: true },
+          { label: 'Therapy & clinical approach', href: '/therapies/', built: true },
         ],
       },
     ],

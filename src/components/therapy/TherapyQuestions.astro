@@ -1,0 +1,35 @@
+---
+const faqs = [
+  { q: 'How much therapy is there each day?', a: "Group therapy runs twice a day, morning and afternoon, and there is an AA meeting in the evenings. On top of that you have a one-to-one session with your own therapist each week." },
+  { q: 'Only one individual session a week?', a: "That is the usual shape of it, and we would rather tell you plainly than imply more. The daily work happens in groups; the individual session is where you take the things that do not belong in a room of twelve people. Make it count — bring the thing you have been avoiding." },
+  { q: 'Do I have to talk in group?', a: "Not on the first day and not before you are ready. Sitting and listening is a completely normal way to start, and everyone in the room did the same thing at some point in the last few weeks." },
+  { q: 'Is there therapy during detox?', a: "Groups are available if you feel up to sitting in on one, and skipped without comment if you do not. The first few days are mostly about your body — the programme proper starts once you are steady." },
+  { q: 'What specific types of therapy do you use?', a: "Ask on the admissions call or ask your therapist in the first days, and you will get an accurate answer for your own programme. Rather than list every technique on a website, we would rather you heard what your plan actually includes from someone who knows it." },
+  { q: 'Can my sponsor come in?', a: "Yes, and on any day rather than only on visiting days, as long as you are doing step work together. If you do not have a sponsor yet, this is about the easiest place there is to find one." },
+  { q: 'Is AA compulsory?', a: "Meetings run nightly and you are strongly encouraged to go, but the twelve steps are not the only route through this and nobody will pretend otherwise. Plenty of people use the meetings for the room rather than the programme." },
+  { q: 'Will I see the same therapist throughout?', a: "You are assigned your own therapist, and that continuity is part of the point — it means the weekly session picks up where the last one left off rather than starting again." },
+];
+---
+<section id="therapy-faq" class="bg-cream py-[70px]">
+  <div class="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8">
+    <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+      <span class="w-6 h-px bg-gold inline-block"></span>
+      Straight answers
+    </p>
+    <h2 class="font-display text-charcoal mb-10">Questions about therapy here</h2>
+    <div class="divide-y divide-cream-soft border-t border-b border-cream-soft">
+      {faqs.map(f => (
+        <details class="group py-5">
+          <summary class="flex items-start justify-between gap-6 cursor-pointer">
+            <h3 class="font-body font-semibold text-charcoal text-[18px] leading-[28px]">{f.q}</h3>
+            <span class="shrink-0 mt-1 text-teal">
+              <svg class="faq-plus w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg>
+              <svg class="faq-minus w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M5 12h14"/></svg>
+            </span>
+          </summary>
+          <p class="font-body text-charcoal text-[16px] leading-[27px] mt-4 pr-10">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,43 @@
+---
+/* Every item here is corroborated by admissions on recorded calls:
+     "private rooms, twice-daily groups, one-on-one therapy, nightly AA"
+     "...group therapy and then one individual therapy session a week"
+     "her sponsor can come any day as long as they're doing step work together"
+     "If you're feeling up to going and sitting in and participating in group,
+      you'll be on the detox side"
+   Do not add modalities here without a named clinical confirmation. */
+const week = [
+  { h: 'Group therapy, twice a day', tag: 'Every day', p: 'Morning and afternoon. This is the spine of the residential day and where most of the work actually happens — not because talking is magic, but because a room of people who recognise what you are describing is very hard to argue with.' },
+  { h: 'One-to-one with your therapist', tag: 'Weekly', p: 'A private session each week with your own therapist. Fewer than people expect, and worth preparing for — bring the thing you would rather not say in a group.' },
+  { h: 'AA in the evenings', tag: 'Nightly', p: 'Meetings run in the evening, every night. Whether the twelve steps become your thing or not, going while you are here means the habit is already formed by the time you leave.' },
+  { h: 'Your sponsor, any day', tag: 'Not just visiting days', p: 'If you have a sponsor they can come in on any day, provided you are doing step work together. If you do not have one yet, this is the easiest place you will ever find one.' },
+];
+---
+<section id="the-week" class="bg-cream py-[60px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mb-12">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+        <span class="w-6 h-px bg-gold inline-block"></span>
+        The shape of a week
+      </p>
+      <h2 class="font-display text-charcoal mb-5">What therapy here actually consists of</h2>
+      <p class="font-body text-charcoal text-[18px] leading-[30px]">
+        Plain about the frequency, including where it is less than people assume.
+      </p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {week.map(w => (
+        <div class="bg-white rounded-xl p-7 border border-cream-soft shadow-sm">
+          <h3 class="font-display text-[21px] leading-[27px] text-navy mb-2">{w.h}</h3>
+          <span class="inline-block font-body text-xs font-bold uppercase tracking-wide text-gold bg-gold/10 rounded-full px-3 py-1.5 mb-4">{w.tag}</span>
+          <p class="font-body text-charcoal text-[16px] leading-[26px]">{w.p}</p>
+        </div>
+      ))}
+    </div>
+    <div class="mt-8 bg-sand/40 border border-sand rounded-xl p-7 max-w-3xl">
+      <p class="font-body text-charcoal text-[16px] leading-[27px]">
+        <strong class="font-bold">During detox, groups are optional.</strong> If you are up to sitting in on one you can, and if you are not, nobody will make you. The first days are for your body; the programme proper starts when you are steady enough to get something out of it.
+      </p>
+    </div>
+  </div>
+</section>
