@@ -294,5 +294,5 @@ export const legalLinks: NavLink[] = [
   { label: 'Privacy policy', href: '/privacy-policy/' },
   { label: 'Notice of privacy practices', href: '/hipaa-notice-of-privacy-practices/' },
   { label: 'Terms of use', href: '/terms-of-use/' },
-  { label: 'Sitemap', href: '/sitemap/' },
+  { label: 'Sitemap', href: '/sitemap/', built: true },
 ];
