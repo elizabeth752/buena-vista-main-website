@@ -68,7 +68,7 @@ export const mainNav: NavGroup[] = [
           { label: 'EMDR therapy', href: '/therapies/emdr-therapy/' },
           { label: 'CBT', href: '/therapies/cognitive-behavioral-therapy-cbt/' },
           { label: 'DBT', href: '/therapies/dialectical-behavior-therapy-dbt/' },
-          { label: 'Medication management', href: '/therapies/medication-management/' },
+          { label: 'Medication support', href: '/therapies/medication-management/' },
           { label: 'All therapies', href: '/therapies/', built: true },
         ],
       },
