@@ -1,0 +1,52 @@
+---
+/* SAFETY-CRITICAL PAGE. Benzodiazepine withdrawal can cause seizures and can be
+   fatal — an admissions agent puts it plainly on a recorded call: "Benzos and
+   alcohol, they're two of the things that can kill you."
+
+   Absolutely no home-taper guidance, no dose schedules, no "reduce by X%"
+   advice. The only instruction this page gives is: do it supervised, and if you
+   are already unwell, be seen today. Keep it that way.
+
+   Nearly half of these callers were prescribed originally, so nothing here
+   blames a patient or their doctor. */
+const points = [
+  { h: 'The withdrawal is the dangerous part', p: 'Not the drug itself at a prescribed dose. Stopping abruptly after long use can trigger seizures, and it does so without much warning. This is one of only two substances where that is true — alcohol is the other.' },
+  { h: 'Tapered, not stopped', p: 'Benzodiazepines are reduced gradually under medical supervision rather than simply withdrawn. That is the whole reason to do it somewhere with a physician rather than by willpower at home.' },
+  { h: 'Alcohol alongside changes everything', p: 'The two together are the highest-risk combination we see, and they are frequently found together. If both are in the picture, say so at the start of the call — it directly changes what medical support is prepared for you.' },
+  { h: 'Rebound anxiety is expected', p: 'The feeling the prescription was managing tends to come back sharply as the dose comes down. That is anticipated and treated rather than something you are left to white-knuckle, and it settles.' },
+];
+---
+<section id="why" class="bg-cream py-[60px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-[1fr_1.25fr] gap-12 lg:gap-16 items-start">
+      <div>
+        <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+          <span class="w-6 h-px bg-gold inline-block"></span>
+          Why this one needs supervision
+        </p>
+        <h2 class="font-display text-charcoal mb-6">One of two substances that can kill you on the way out</h2>
+        <div class="space-y-5 font-body text-charcoal text-[17px] leading-[29px]">
+          <p>
+            Plenty of substances make you feel dreadful when you stop. Benzodiazepines and alcohol are the two where the body's reaction can become a medical emergency, and it is worth knowing that before deciding to tough it out.
+          </p>
+          <p>
+            <strong class="font-bold">This is not an argument for staying on them.</strong> It is an argument for coming off them somewhere with a physician, a taper and someone checking on you — which turns the genuinely risky version of this into a managed few days.
+          </p>
+        </div>
+        <div class="mt-8">
+          <a href="tel:8883625576" class="bg-teal hover:bg-teal-dark text-white font-bold px-7 py-3.5 rounded-lg transition-colors font-body tracking-wide inline-block">
+            Talk it through with us
+          </a>
+        </div>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-5">
+        {points.map(p => (
+          <div class="bg-white rounded-xl p-7 border border-cream-soft shadow-sm">
+            <h3 class="font-display text-[20px] leading-[26px] text-navy mb-3">{p.h}</h3>
+            <p class="font-body text-charcoal text-[16px] leading-[26px]">{p.p}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

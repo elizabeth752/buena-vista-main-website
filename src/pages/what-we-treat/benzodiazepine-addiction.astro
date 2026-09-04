@@ -1,0 +1,75 @@
+---
+/* -----------------------------------------------------------------------------
+   Benzodiazepine addiction.
+
+   Only 17 of 571 Buena Vista calls (3.0%) mention benzodiazepines, but the page
+   earns its place on stakes rather than volume: this is one of two substances
+   where withdrawal can kill, it completes the substance tree alongside alcohol,
+   opioids and stimulants, and it carries real informational search demand from
+   people planning to stop on their own.
+
+   An admissions agent frames it exactly right on a recorded call:
+     "Benzos and alcohol, they're two of the things that can kill you."
+
+   ⚠ NO HOME-TAPER GUIDANCE. No schedules, no dose advice, no "reduce by X".
+   Every answer routes to supervision, and the FAQ closes with an emergency-room
+   instruction. This page will be found by people searching how to stop alone —
+   do not add anything they could act on unsupervised.
+
+   TONE: 8 of the 17 were prescribed these originally, and 9 mention anxiety.
+   Nothing here blames a patient or their prescriber, and the anxiety underneath
+   is treated as the reason the drug was there rather than an afterthought.
+   Cross-links to /what-we-treat/anxiety/ for that half of it.
+
+   Alcohol appears alongside in 11 of the 17 — the highest-risk combination —
+   so the page asks people to lead with it on the call.
+----------------------------------------------------------------------------- */
+import Layout from '../../layouts/Layout.astro';
+import TopBar from '../../components/TopBar.astro';
+import Nav from '../../components/Nav.astro';
+
+import BenzoHero from '../../components/benzo/BenzoHero.astro';
+import WhySupervised from '../../components/benzo/WhySupervised.astro';
+import BenzoQuestions from '../../components/benzo/BenzoQuestions.astro';
+
+import Testimonials from '../../components/Testimonials.astro';
+import VerifySection from '../../components/VerifySection.astro';
+import FinalCTA from '../../components/FinalCTA.astro';
+
+const title = 'Benzodiazepine Detox & Treatment in Chandler, AZ | Buena Vista Health & Recovery';
+const description =
+  'Medically supervised benzodiazepine detox for Xanax, Klonopin, Ativan and Valium in Chandler, AZ. Tapered with physician oversight, with the anxiety underneath treated too. Call (888) 362-5576.';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalWebPage',
+  name: 'Benzodiazepine Detox & Treatment in Chandler, AZ',
+  description,
+  url: 'https://buenavistarecovery.com/what-we-treat/benzodiazepine-addiction/',
+  about: {
+    '@type': 'MedicalCondition',
+    name: 'Sedative, Hypnotic or Anxiolytic Use Disorder',
+    alternateName: ['Benzodiazepine dependence', 'Xanax addiction'],
+  },
+  provider: {
+    '@type': 'MedicalClinic',
+    name: 'Buena Vista Health & Recovery Centers — Chandler',
+    telephone: '+1-888-362-5576',
+    address: { '@type': 'PostalAddress', streetAddress: '3033 S Arizona Ave', addressLocality: 'Chandler', addressRegion: 'AZ', postalCode: '85286', addressCountry: 'US' },
+  },
+};
+---
+<Layout title={title} description={description}>
+  <TopBar />
+  <Nav />
+
+  <BenzoHero />
+  <WhySupervised />
+  <Testimonials />
+  <VerifySection />
+  <BenzoQuestions />
+
+  <FinalCTA />
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
+</Layout>
