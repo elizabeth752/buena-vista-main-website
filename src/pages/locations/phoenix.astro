@@ -1,0 +1,71 @@
+---
+/* -----------------------------------------------------------------------------
+   Serving Phoenix — SERVICE-AREA page, not a location page.
+
+   Phoenix appears on 98 of 571 Buena Vista calls (17.2%), the largest geography
+   after Chandler itself (28.7%) and Tucson (25.4%).
+
+   ⚠ MEASUREMENT NOTE — the raw count was 153 (26.8%). These transcripts use the
+   caller's city as a speaker label ("PHOENIX      AZ:"), so labels must be
+   stripped before counting geography. 98 is the figure after stripping.
+
+   ⚠ NOT A LOCATION PAGE. There is no Phoenix facility. This page therefore
+   carries NO LocalBusiness schema and NO Phoenix NAP, and the hero states
+   plainly that the single facility is in Chandler. A fake location page risks a
+   Google penalty and, worse, sends someone in crisis to an address that does
+   not exist. Keep all three guardrails.
+
+   Drive time is given as "about half an hour", hedged, rather than a precise
+   claim nobody has verified against traffic.
+----------------------------------------------------------------------------- */
+import Layout from '../../layouts/Layout.astro';
+import TopBar from '../../components/TopBar.astro';
+import Nav from '../../components/Nav.astro';
+
+import PhoenixHero from '../../components/phoenix/PhoenixHero.astro';
+import FromPhoenix from '../../components/phoenix/FromPhoenix.astro';
+import PhoenixQuestions from '../../components/phoenix/PhoenixQuestions.astro';
+
+import Testimonials from '../../components/Testimonials.astro';
+import VerifySection from '../../components/VerifySection.astro';
+import FinalCTA from '../../components/FinalCTA.astro';
+
+const title = 'Drug & Alcohol Rehab Serving Phoenix, AZ | Buena Vista Health & Recovery';
+const description =
+  'Medical detox and residential treatment serving Phoenix from our Chandler, AZ facility, about half an hour south. AHCCCS accepted, open 24 hours. Call (888) 362-5576.';
+
+// FAQPage only — deliberately no LocalBusiness/MedicalClinic schema, because
+// there is no Phoenix facility to describe.
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    ['Does Buena Vista have a facility in Phoenix?',
+     'No. Buena Vista operates one facility, at 3033 S Arizona Ave in Chandler, AZ, and serves Phoenix from there — about half an hour south of the city.'],
+    ['How far is Buena Vista from Phoenix?',
+     'Around half an hour from central Phoenix outside rush hour, straight down the I-10. Less from south Phoenix and Ahwatukee, longer from north Phoenix and the West Valley.'],
+    ['Can Buena Vista arrange transport from Phoenix?',
+     'Often yes. A car can frequently be arranged to bring someone in, airport pickup from Sky Harbor is provided, and many AHCCCS plans include a medical transport benefit.'],
+    ['What treatment is available to people from Phoenix?',
+     'Medically supervised detox and residential treatment with co-occurring mental health care throughout, at the Chandler facility, with admissions answering 24 hours a day.'],
+  ].map(([q, a]) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+};
+---
+<Layout title={title} description={description}>
+  <TopBar />
+  <Nav />
+
+  <PhoenixHero />
+  <FromPhoenix />
+  <Testimonials />
+  <VerifySection />
+  <PhoenixQuestions />
+
+  <FinalCTA />
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
+</Layout>

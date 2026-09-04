@@ -1,0 +1,51 @@
+---
+/* Demystifies the intake assessment by naming exactly what gets asked. Drawn
+   from what admissions actually collects: date of birth (37% of calls),
+   insurance details (15%), last use (15%), current medications (13%), mental
+   health history (21%). Stated as "here is what we will ask", never as call
+   statistics. */
+const asked = [
+  { h: 'Your name and date of birth', p: 'Enough to open a file and start a coverage check. Nothing goes further than our admissions team.' },
+  { h: 'What you have been using, and how much', p: 'Not to judge the number. It decides whether detox is needed and how much medical support to have ready.' },
+  { h: 'When you last used or had a drink', p: 'This one matters clinically more than any other. It shapes the timing of everything that follows.' },
+  { h: 'Any medications you take', p: 'Prescriptions, including anything for mental health. Bring the bottles if you have them.' },
+  { h: 'Anything going on mentally', p: 'Depression, anxiety, trauma, a past diagnosis. This is treated alongside everything else, so it helps to know early.' },
+  { h: 'The plan on your insurance card', p: 'The name and the member ID if you have it to hand. If you do not, your name and date of birth will usually do.' },
+];
+---
+<section id="first-call" class="bg-cream py-[60px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-[1fr_1.25fr] gap-12 lg:gap-16 items-start">
+
+      <div>
+        <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+          <span class="w-6 h-px bg-gold inline-block"></span>
+          The first call
+        </p>
+        <h2 class="font-display text-charcoal mb-6">What we will actually ask you</h2>
+
+        <div class="space-y-5 font-body text-charcoal text-[17px] leading-[29px]">
+          <p>
+            It is easier to make a phone call when you know what is coming. The assessment takes about ten to fifteen minutes and covers roughly six things — all of them practical, none of them a test.
+          </p>
+          <p>
+            Answer as honestly as you can. Understating things is common and completely human, but the answers decide what medical support is ready when you arrive, so accuracy is genuinely in your interest.
+          </p>
+          <p>
+            <strong class="font-bold">You will not shock anyone.</strong> Whatever the honest answer is, it has been heard before.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-5">
+        {asked.map(a => (
+          <div class="bg-white rounded-xl p-6 border border-cream-soft">
+            <h3 class="font-display text-[20px] leading-[26px] text-navy mb-2.5">{a.h}</h3>
+            <p class="font-body text-charcoal text-[15px] leading-[25px]">{a.p}</p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </div>
+</section>

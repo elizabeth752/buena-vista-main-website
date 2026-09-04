@@ -1,0 +1,39 @@
+---
+/* Roughly one in ten Buena Vista callers is told there is no bed that day, so
+   this is not an edge case — it is a common outcome and the page treats it as
+   one. Framed as what happens next, never as a door closing. */
+const steps = [
+  { n: '01', h: 'You hear it straight away', p: 'Not a maybe, not a form to fill in, and not a callback that decides your afternoon. If there is nothing today you will know inside the first couple of minutes.' },
+  { n: '02', h: 'Your file gets opened anyway', p: 'The assessment and the coverage check hold. When something frees up you are not starting the conversation from the beginning, which matters when the window you are in is a short one.' },
+  { n: '03', h: 'Somebody calls you back', p: 'An actual call from an actual person when a bed comes free, rather than a promise to keep an eye out.' },
+  { n: '04', h: 'We look elsewhere at the same time', p: 'If waiting is not safe or not realistic, we help you find a programme with space now — including at other facilities in Arizona. Getting you somewhere good matters more than getting you here.' },
+];
+---
+<section id="full" class="bg-sage-tint py-[70px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mb-12">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+        <span class="w-6 h-px bg-gold inline-block"></span>
+        If the answer today is no
+      </p>
+      <h2 class="font-display text-charcoal mb-5">Being full is not the end of the call</h2>
+      <p class="font-body text-charcoal text-[18px] leading-[30px]">
+        It happens often enough that we have a proper answer for it rather than an apology. The momentum you have today is worth more than the wait.
+      </p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {steps.map(s => (
+        <div class="bg-white rounded-xl p-7 border border-cream-soft">
+          <p class="font-display text-gold text-[32px] leading-none mb-4">{s.n}</p>
+          <h3 class="font-display text-[21px] leading-[27px] text-navy mb-3">{s.h}</h3>
+          <p class="font-body text-charcoal text-[16px] leading-[26px]">{s.p}</p>
+        </div>
+      ))}
+    </div>
+    <div class="mt-8 bg-white border-l-2 border-gold rounded-r-xl p-6 max-w-3xl">
+      <p class="font-body text-charcoal text-[16px] leading-[27px]">
+        <strong class="font-bold">If you are withdrawing and we have nothing today,</strong> please do not simply wait it out at home. Alcohol and benzodiazepine withdrawal can be dangerous — tell us on the call and we will help you get seen somewhere today, or go to an emergency room.
+      </p>
+    </div>
+  </div>
+</section>

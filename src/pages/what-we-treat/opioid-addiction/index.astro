@@ -1,0 +1,74 @@
+---
+/* -----------------------------------------------------------------------------
+   Opioid addiction — category page.
+
+   Structural: this is the parent of /what-we-treat/opioid-addiction/fentanyl/
+   and was 404ing while the nav and that child both pointed at it.
+
+   Opioids appear on 81 of 571 Buena Vista calls (14.2% declarative) — fentanyl
+   59, methadone 21, buprenorphine 15, prescription painkillers 10, heroin 3.
+
+   NOTE ON HEROIN: 3 calls. Fentanyl has almost entirely displaced it in this
+   market, so the sitemap's separate heroin page is effectively dead demand —
+   it is covered as a line here instead.
+
+   The page's job is the contrast with stimulants: opioids need a supervised
+   detox first. People arrive assuming every substance works the same way and
+   plan around the wrong pathway.
+
+   MAT BOUNDARY holds: maintenance medication is raised for clinical review,
+   never offered or promised.
+----------------------------------------------------------------------------- */
+import Layout from '../../../layouts/Layout.astro';
+import TopBar from '../../../components/TopBar.astro';
+import Nav from '../../../components/Nav.astro';
+import HubHero from '../../../components/hub/HubHero.astro';
+import HubCards from '../../../components/hub/HubCards.astro';
+import OpioidPathway from '../../../components/categories/OpioidPathway.astro';
+import Testimonials from '../../../components/Testimonials.astro';
+import VerifySection from '../../../components/VerifySection.astro';
+import FinalCTA from '../../../components/FinalCTA.astro';
+
+const title = 'Opioid Addiction Treatment in Chandler, AZ | Buena Vista Health & Recovery';
+const description =
+  'Medically supervised detox and residential treatment for fentanyl, prescription painkillers and other opioids in Chandler, AZ. AHCCCS accepted. Call (888) 362-5576.';
+
+const substances = [
+  { label: 'Fentanyl', tag: 'Most common', desc: 'Now the opioid we see most by a wide margin. Withdrawal comes on fast, which is exactly why calling on the day you decide matters.', href: '/what-we-treat/opioid-addiction/fentanyl/' },
+  { label: 'Prescription painkillers', desc: 'Oxycodone, Percocet and similar — whether prescribed originally or not. A very common route in, and not one anybody here will judge you for.' },
+  { label: 'Heroin', desc: 'Less common than it was locally, largely because fentanyl has replaced it. Treated the same way, and often present alongside it.' },
+  { label: 'Methadone & buprenorphine', desc: 'Arriving on a maintenance medication is common. Tell us the dose and how long you have been taking it so our doctors can plan around it before you arrive.' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalWebPage',
+  name: 'Opioid Addiction Treatment in Chandler, AZ',
+  description,
+  url: 'https://buenavistarecovery.com/what-we-treat/opioid-addiction/',
+  about: { '@type': 'MedicalCondition', name: 'Opioid Use Disorder', alternateName: ['Opioid addiction', 'Opiate dependence'] },
+  provider: {
+    '@type': 'MedicalClinic',
+    name: 'Buena Vista Health & Recovery Centers — Chandler',
+    telephone: '+1-888-362-5576',
+    address: { '@type': 'PostalAddress', streetAddress: '3033 S Arizona Ave', addressLocality: 'Chandler', addressRegion: 'AZ', postalCode: '85286', addressCountry: 'US' },
+  },
+};
+---
+<Layout title={title} description={description}>
+  <TopBar /><Nav />
+  <HubHero
+    eyebrow="Opioid addiction · Chandler, Arizona"
+    title="Opioids are the ones where detox has to come first."
+    intro="Fentanyl, painkillers, heroin — whatever the route in, physical dependence is the part that makes stopping alone so hard. A medical detox is what turns that from an ordeal into a few supervised days."
+    points={['Nursing on site 24/7 with physician oversight','Medication to take the edge off withdrawal','Same-day admission when a bed is open','Residential treatment straight afterwards, same building']}
+    image="/Asset/stock%20photo/Desktop%20Dimensions/Facility/Central%20nurse%20station%20with%20surrounding%20corridors%20and%20administrative%20work%20area.png"
+    alt="The central nurse station at Buena Vista"
+    caption="Someone awake and nearby, whatever hour it gets hard."
+  />
+  <OpioidPathway />
+  <HubCards eyebrow="What this covers" title="Opioids we treat" intro="Most people arrive using more than one thing. That is planned for rather than treated as a complication." items={substances} columns={4} />
+  <Testimonials /><VerifySection />
+  <FinalCTA />
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
+</Layout>

@@ -1,0 +1,40 @@
+---
+const faqs = [
+  { q: 'How quickly can I come in?', a: "When a bed is open and your coverage is confirmed, admission can often happen the same day. If you are ready now, say so at the start of the call and we will work to that." },
+  { q: 'What does the first call involve?', a: "About ten to fifteen minutes with someone on our admissions team: your name and date of birth, what you have been using and how recently, any medications, anything going on mentally, and your insurance details. That is the whole of it." },
+  { q: 'Do I need to have insurance sorted before I call?', a: "No. Bring whatever you have — a card, a plan name, or just your name and date of birth. We will do the checking. If you have no coverage at all, say so and we will talk through what the options look like." },
+  { q: 'Can somebody else call for me?', a: "Yes. A partner, a parent, a friend or a case manager can start this on your behalf, ask all the same questions and get the same answers about coverage and timing." },
+  { q: 'How do I get there?', a: "Ask about airport pickup if you are flying in. For anything else, raise it on the call — getting to the door is a practical problem and usually a solvable one." },
+  { q: 'What should I bring?', a: "Photo ID, your insurance card, any medications in their original bottles, and comfortable clothes for a few weeks. If you are arriving with nothing but what you are wearing, that is genuinely fine and it has been done many times before." },
+  { q: 'Is the call confidential?', a: "Yes. What you tell admissions stays with our clinical team, and calling to ask questions does not put anything on a record anywhere." },
+  { q: 'What if I change my mind?', a: "Then you change your mind. Treatment here is voluntary, and asking questions is not the same as agreeing to anything. You are welcome to call back in a week or a month." },
+];
+---
+<section id="admissions-faq" class="bg-cream py-[70px]">
+  <div class="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8">
+    <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+      <span class="w-6 h-px bg-gold inline-block"></span>
+      Straight answers
+    </p>
+    <h2 class="font-display text-charcoal mb-10">Questions about getting in</h2>
+
+    <div class="divide-y divide-cream-soft border-t border-b border-cream-soft">
+      {faqs.map(f => (
+        <details class="group py-5">
+          <summary class="flex items-start justify-between gap-6 cursor-pointer">
+            <h3 class="font-body font-semibold text-charcoal text-[18px] leading-[28px]">{f.q}</h3>
+            <span class="shrink-0 mt-1 text-teal">
+              <svg class="faq-plus w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" d="M12 5v14M5 12h14"/>
+              </svg>
+              <svg class="faq-minus w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" d="M5 12h14"/>
+              </svg>
+            </span>
+          </summary>
+          <p class="font-body text-charcoal text-[16px] leading-[27px] mt-4 pr-10">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

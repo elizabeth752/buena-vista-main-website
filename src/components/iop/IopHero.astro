@@ -1,0 +1,71 @@
+---
+import Horizon from '../Horizon.astro';
+---
+<section id="hero" class="bg-cream">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-[60px] lg:py-[80px]">
+    <div class="grid lg:grid-cols-[1fr_minmax(0,460px)] gap-12 lg:gap-16 items-center">
+
+      <div>
+        <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-5 flex items-center gap-2">
+          <span class="w-6 h-px bg-gold inline-block"></span>
+          Intensive outpatient · Chandler, Arizona
+        </p>
+
+        <h1 class="font-display text-navy mb-6">
+          Treatment that fits around a working life.
+        </h1>
+
+        <p class="font-body text-charcoal text-[20px] leading-[33px] max-w-xl mb-8">
+          Intensive outpatient is the step where treatment stops being the whole of your day and starts fitting alongside a job, a family, and a home you go back to each night.
+        </p>
+
+        <!-- Straight about where our IOP stands, but led with what we can do.
+             Callers ask for IOP constantly; they should leave this page feeling
+             helped, not turned away. -->
+        <div class="bg-white border border-cream-soft rounded-xl p-6 mb-9 max-w-xl shadow-sm">
+          <p class="font-body font-semibold text-charcoal text-[17px] leading-[27px] mb-2">
+            Our Chandler IOP is on the way — and we can help you today.
+          </p>
+          <p class="font-body text-charcoal text-[16px] leading-[26px]">
+            We reopened Chandler with medical detox and residential treatment, and our own intensive outpatient program is being built now. In the meantime we will help you find an IOP that takes your insurance. Everyone who calls gets somewhere to go.
+          </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a
+            href="tel:8883625576"
+            class="inline-flex items-center justify-center gap-2 bg-teal hover:bg-teal-dark text-white font-semibold h-14 px-8 rounded-lg transition-colors font-body"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+            </svg>
+            Help me find an IOP
+          </a>
+          <a
+            href="#verify"
+            class="inline-flex items-center justify-center border-2 border-navy text-navy hover:bg-navy hover:text-white font-semibold h-14 px-8 rounded-lg transition-colors font-body"
+          >
+            Check my insurance
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <div class="overflow-hidden rounded-t-[160px] rounded-b-xl shadow-xl">
+          <img
+            src="/Asset/stock%20photo/Desktop%20Dimensions/Facility/Shared%20commons%20area%20with%20clustered%20seating,%20dining%20nook,%20and%20residential%20finishes.png"
+            alt="A shared commons area with clustered seating and residential finishes"
+            class="w-full object-cover aspect-[4/5]"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </div>
+        <Horizon variant="rule" class="mt-5" />
+        <p class="font-body text-muted text-[15px] leading-[24px] mt-3">
+          Chandler is open for detox and residential today.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>

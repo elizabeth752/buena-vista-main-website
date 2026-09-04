@@ -1,0 +1,56 @@
+---
+const faqs = [
+  {
+    q: 'Does Buena Vista have an intensive outpatient program?',
+    a: "It is being built. We reopened our Chandler facility with medical detox and residential treatment, and an intensive outpatient program is on the way. In the meantime, our admissions team will help you find an IOP that works with your insurance — so you still leave the call with a plan.",
+  },
+  {
+    q: 'When will your IOP open?',
+    a: "We will announce a date once we can stand behind it. Call and ask — admissions will tell you where it stands that week, and we are happy to take your details and let you know the moment it opens.",
+  },
+  {
+    q: 'What can I do at Buena Vista right now?',
+    a: "Medical detox and residential treatment, both at our Chandler facility, with admissions answering 24 hours a day including holidays. If you are drinking or using daily, that is very likely the right starting point anyway — outpatient care assumes you are already stable.",
+  },
+  {
+    q: 'Can I do IOP instead of residential?',
+    a: "It depends on where you are, and both answers are fine. If you have been sober a while and have somewhere stable to live, outpatient care may genuinely be the better fit. If you are still using, starting with detox keeps you safe and gives the rest of it a foundation — and that is care we can give you here.",
+  },
+  {
+    q: 'Do you help with housing during outpatient treatment?',
+    a: "We can point you to it. Housing comes up often enough that we know which local programs pair somewhere to live with outpatient treatment. Raise it on the call and we will help you line both up.",
+  },
+  {
+    q: 'How long is IOP?',
+    a: "It varies by program and by person, but most run several weeks rather than several days, with the number of days per week tapering as you stabilise. Any program worth attending will set that out for you before you commit.",
+  },
+];
+---
+<section id="iop-faq" class="bg-cream py-[70px]">
+  <div class="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8">
+    <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+      <span class="w-6 h-px bg-gold inline-block"></span>
+      Straight answers
+    </p>
+    <h2 class="font-display text-charcoal mb-10">Questions about IOP</h2>
+
+    <div class="divide-y divide-cream-soft border-t border-b border-cream-soft">
+      {faqs.map(f => (
+        <details class="group py-5">
+          <summary class="flex items-start justify-between gap-6 cursor-pointer">
+            <h3 class="font-body font-semibold text-charcoal text-[18px] leading-[28px]">{f.q}</h3>
+            <span class="shrink-0 mt-1 text-teal">
+              <svg class="faq-plus w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" d="M12 5v14M5 12h14"/>
+              </svg>
+              <svg class="faq-minus w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" d="M5 12h14"/>
+              </svg>
+            </span>
+          </summary>
+          <p class="font-body text-charcoal text-[16px] leading-[27px] mt-4 pr-10">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

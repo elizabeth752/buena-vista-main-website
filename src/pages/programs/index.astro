@@ -1,0 +1,55 @@
+---
+/* Programs hub. Scope is detox + residential only — see the levels-of-care
+   findings in the sitemap notes. Levels we do not run are named as things we
+   will help someone reach elsewhere, never as refusals. */
+import Layout from '../../layouts/Layout.astro';
+import TopBar from '../../components/TopBar.astro';
+import Nav from '../../components/Nav.astro';
+import HubHero from '../../components/hub/HubHero.astro';
+import HubCards from '../../components/hub/HubCards.astro';
+import Testimonials from '../../components/Testimonials.astro';
+import VerifySection from '../../components/VerifySection.astro';
+import FinalCTA from '../../components/FinalCTA.astro';
+
+const title = 'Programs & Levels of Care | Buena Vista Health & Recovery, Chandler AZ';
+const description = 'Medical detox and residential treatment in Chandler, AZ, with co-occurring mental health care throughout. Both levels of care under one roof. Call (888) 362-5576.';
+
+const levels = [
+  { label: 'Medical detox', tag: '4–7 days', desc: 'Around-the-clock nursing, physician oversight and medication to keep you comfortable while your body clears. The starting point for alcohol, opioids and benzodiazepines.', href: '/medical-detox' },
+  { label: 'Residential treatment', tag: 'Around 30 days', desc: 'Live-in care once your body is stable. Group therapy twice a day, one-to-one sessions and a case manager planning what comes after.', href: '/residential-treatment' },
+  { label: 'Dual diagnosis care', tag: 'Throughout', desc: 'Depression, anxiety, PTSD and trauma treated alongside substance use inside the residential programme rather than as a separate track.', href: '/dual-diagnosis' },
+];
+
+const elsewhere = [
+  { label: 'Intensive outpatient (IOP)', desc: 'Our own programme is being built. Until it opens we will help you find one that takes your insurance.', href: '/programs/intensive-outpatient-iop/' },
+  { label: 'Partial hospitalisation (PHP)', desc: 'Handled by other programmes in Arizona. Tell us what you need and we will point you at somewhere good.' },
+  { label: 'Sober living', desc: 'We refer rather than operate. Housing comes up often enough that we know the local landscape well.' },
+];
+---
+<Layout title={title} description={description}>
+  <TopBar /><Nav />
+  <HubHero
+    eyebrow="Programs & levels of care"
+    title="Two levels of care, under one roof."
+    intro="Detox and residential treatment happen in the same building with the same team, so the hardest fortnight of this does not also involve moving facilities halfway through."
+    points={['Medically supervised detox with nursing on site 24/7','Residential treatment with private rooms and en suite bathrooms','Co-occurring mental health care throughout, not bolted on','Admissions answering every hour, including holidays']}
+    image="/Asset/stock%20photo/Desktop%20Dimensions/Facility/Grand%20entrance%20hall%20with%20vaulted%20ceiling,%20lounge%20seating,%20and%20open%20circulation%20space.png"
+    alt="The entrance hall at Buena Vista, with vaulted ceiling and lounge seating"
+    caption="One building, start to finish."
+  />
+  <HubCards
+    eyebrow="What we run"
+    title="The care we provide at Chandler"
+    intro="Most people move through both, in this order."
+    items={levels}
+  />
+  <HubCards
+    eyebrow="Looking for something else?"
+    title="We will help you find it"
+    intro="Chandler is built around detox and residential care, and that is not where everyone starts. Call us anyway — placing people in the right programme, including at other facilities, is a normal part of what our admissions team does."
+    items={elsewhere}
+    bg="bg-sage-tint"
+  />
+  <Testimonials /><VerifySection />
+  <FinalCTA />
+</Layout>

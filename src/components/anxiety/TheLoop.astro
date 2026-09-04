@@ -1,0 +1,49 @@
+---
+/* The anxiety-specific angles that differentiate this page from the depression
+   and PTSD ones: self-medication, rebound anxiety in withdrawal, and prescribed
+   benzodiazepines becoming their own problem. Handled without blaming anyone
+   for a prescription they were given in good faith. */
+const stages = [
+  { h: 'It works, at first', p: 'A drink quiets it. So does the pill. That is not a moral failing or a lack of willpower — it is the thing doing exactly what it does, and anyone would repeat it.' },
+  { h: 'Then it needs more', p: 'The same amount stops reaching. The quiet gets shorter. What used to take the edge off starts being the thing you organise the day around.' },
+  { h: 'Then it makes it worse', p: 'Alcohol and sedatives disrupt sleep and unsettle the nervous system. The anxiety you wake up with becomes worse than the anxiety you started with, and the obvious fix is another drink.' },
+  { h: 'And stopping spikes it', p: 'Withdrawal brings its own anxiety, often sharper than anything before it. This is the point most attempts to stop alone come apart — and the point where medical supervision makes the most difference.' },
+];
+---
+<section id="loop" class="bg-cream py-[60px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-16 items-start">
+      <div>
+        <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+          <span class="w-6 h-px bg-gold inline-block"></span>
+          The loop
+        </p>
+        <h2 class="font-display text-charcoal mb-6">How the two end up feeding each other</h2>
+        <div class="space-y-5 font-body text-charcoal text-[17px] leading-[29px]">
+          <p>
+            Anxiety and substance use are rarely two separate problems sitting side by side. More often they are one loop, and treating either half on its own tends not to hold.
+          </p>
+          <p>
+            <strong class="font-bold">If a prescription is part of this, that is worth saying out loud.</strong> Plenty of people are prescribed something for anxiety in good faith and find that it becomes its own problem. Nobody here is going to treat that as your fault, and benzodiazepines in particular are something we detox from safely rather than something to stop on your own.
+          </p>
+        </div>
+        <div class="mt-8">
+          <a href="tel:8883625576" class="bg-teal hover:bg-teal-dark text-white font-bold px-7 py-3.5 rounded-lg transition-colors font-body tracking-wide inline-block">
+            Talk it through with us
+          </a>
+        </div>
+      </div>
+      <div class="space-y-5">
+        {stages.map((s,i) => (
+          <div class="bg-white rounded-xl p-7 border border-cream-soft shadow-sm flex gap-5">
+            <p class="font-display text-gold text-[26px] leading-none shrink-0 pt-1">{String(i+1).padStart(2,'0')}</p>
+            <div>
+              <h3 class="font-display text-[21px] leading-[27px] text-navy mb-2">{s.h}</h3>
+              <p class="font-body text-charcoal text-[16px] leading-[26px]">{s.p}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

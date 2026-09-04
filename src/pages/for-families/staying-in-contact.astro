@@ -1,0 +1,75 @@
+---
+/* -----------------------------------------------------------------------------
+   Visitation, phone & staying in contact.
+
+   Phone and visiting policy comes up on 23 of 571 Buena Vista calls (4.0%
+   declarative) — modest volume, but it is a decision-blocking question for both
+   the patient and the family, which is why it earns a page rather than a line.
+
+   FACTS AND THEIR SOURCE — all from admissions on recorded calls:
+     "you get access to your phone or electronics from 4PM to 9PM once you're
+      on residential"
+     "You also get your cell phone every night from 4PM to 9PM"
+     "There is visitation, which is on Wednesday, Saturday, and Sunday."
+     Sponsors can come into the facility and do step work.
+     Phone access is tied to residential, not detox.
+
+   ⚠ THE HOURS ARE NOT SETTLED. One agent quotes 4:30-8:30pm rather than 4-9pm,
+   and the wiki says 4-10pm. The page therefore says "roughly 4-9pm", pairs
+   every specific with "confirm on the call", and the hero carries an explicit
+   note that arrangements get adjusted. Do not harden these into exact times
+   without checking with the programme — and if you do confirm them, update
+   here and tell admissions so the phone script matches.
+
+   Visiting days (Wed/Sat/Sun) are stated with more confidence because they were
+   given plainly and unambiguously.
+----------------------------------------------------------------------------- */
+import Layout from '../../layouts/Layout.astro';
+import TopBar from '../../components/TopBar.astro';
+import Nav from '../../components/Nav.astro';
+
+import ContactHero from '../../components/contact/ContactHero.astro';
+import TheShapeOfIt from '../../components/contact/TheShapeOfIt.astro';
+import ContactQuestions from '../../components/contact/ContactQuestions.astro';
+
+import Testimonials from '../../components/Testimonials.astro';
+import VerifySection from '../../components/VerifySection.astro';
+import FinalCTA from '../../components/FinalCTA.astro';
+
+const title = 'Visitation, Phones & Staying in Contact | Buena Vista Health & Recovery, Chandler AZ';
+const description =
+  'Phone access in the evenings once you are in residential, and visiting on Wednesday, Saturday and Sunday. What contact with family looks like during treatment. Call (888) 362-5576.';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    ['Can I keep my phone in rehab at Buena Vista?',
+     'Yes, once you are in residential treatment. Phone and electronics access opens up in the evenings, every night. During medical detox phones are generally set aside, which is a matter of days rather than the whole stay.'],
+    ['When can family visit?',
+     'Visiting runs three days a week during the residential stay — Wednesday, Saturday and Sunday. Current times are confirmed on the admissions call.'],
+    ['Why are phones restricted during detox?',
+     'The first days are physically demanding and largely spent resting, and outside contact tends to make that harder. Anything genuinely urgent still reaches the person through the facility.'],
+    ['Can a sponsor visit during treatment?',
+     'Yes. Sponsors can come into the facility and do step work with a resident during their stay.'],
+  ].map(([q, a]) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+};
+---
+<Layout title={title} description={description}>
+  <TopBar />
+  <Nav />
+
+  <ContactHero />
+  <TheShapeOfIt />
+  <Testimonials />
+  <VerifySection />
+  <ContactQuestions />
+
+  <FinalCTA />
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
+</Layout>

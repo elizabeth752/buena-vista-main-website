@@ -1,0 +1,65 @@
+---
+/* Framed as care and reassurance rather than as a warning. Alcohol withdrawal
+   genuinely can be dangerous — our own agents tell callers "alcohol is one of
+   the more dangerous detoxes" — but the point of saying so here is to explain
+   why supervision helps, not to frighten anyone into calling. */
+const signs = [
+  'Shaking or tremors in the morning',
+  'Sweating, nausea, or a racing heart',
+  'Feeling anxious or unsettled until the first drink',
+  'Trouble sleeping without drinking',
+  'Having had a seizure or blackout when cutting down before',
+];
+---
+<section id="why-detox" class="bg-cream py-[50px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-14 items-start">
+
+      <div>
+        <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+          <span class="w-6 h-px bg-gold inline-block"></span>
+          Why supervision helps
+        </p>
+        <h2 class="font-display text-charcoal mb-6">
+          Alcohol is one of the few things worth stopping with help
+        </h2>
+
+        <div class="space-y-5 font-body text-charcoal text-[17px] leading-[29px]">
+          <p>
+            Most substances make you feel wretched when you stop. Alcohol is one of the few where the body's reaction can become genuinely risky — which is why medical detox exists, and why it is worth choosing rather than white-knuckling it at home.
+          </p>
+          <p>
+            In practice that means nursing staff on site around the clock, a physician overseeing your care, and medication to take the edge off the worst of it. You are monitored, kept comfortable, and not left to manage it on your own.
+          </p>
+          <p>
+            <strong class="font-bold">Coming in earlier is easier than coming in later.</strong> If you are already noticing symptoms, that is a good reason to call today rather than to wait until you feel worse.
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl p-8 border border-cream-soft shadow-sm">
+        <h3 class="font-display text-[24px] leading-[30px] text-navy mb-2">Signs a supervised detox is the right call</h3>
+        <p class="font-body text-muted text-[15px] leading-[24px] mb-6">
+          Any one of these is enough of a reason. You do not need all of them.
+        </p>
+        <ul class="space-y-3.5">
+          {signs.map(s => (
+            <li class="flex items-start gap-3 font-body text-charcoal text-[16px] leading-[26px]">
+              <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2.5 shrink-0"></span>
+              {s}
+            </li>
+          ))}
+        </ul>
+        <div class="mt-7 pt-6 border-t border-cream-soft">
+          <p class="font-body text-charcoal text-[16px] leading-[26px] mb-4">
+            Not sure whether any of this applies to you? It is an ordinary thing to be unsure about, and it takes about ten minutes to settle.
+          </p>
+          <a href="tel:8883625576" class="bg-teal hover:bg-teal-dark text-white font-bold px-7 py-3.5 rounded-lg transition-colors font-body tracking-wide inline-block">
+            Talk it through with us
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

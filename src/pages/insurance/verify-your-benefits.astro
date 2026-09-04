@@ -1,0 +1,76 @@
+---
+/* -----------------------------------------------------------------------------
+   Verify your benefits.
+
+   Coverage verification language appears in 89 of the 571 Buena Vista calls
+   (16%) in the Jan–Jul 2026 export — the largest remaining topic, and the
+   primary non-call conversion path in the sitemap.
+
+   BUILT CALL-FIRST ON PURPOSE. InsuranceForm.astro is not wired to a backend
+   yet — it carries `onsubmit="return false"` and falls back to a phone prompt
+   so nothing anyone types is silently discarded. This page therefore leads with
+   the phone number and treats the form as a convenience, not as an instant
+   online check. Do not add copy promising instant online verification until the
+   form actually posts somewhere.
+
+   WHEN WIRING THE FORM: it collects name, phone, carrier and policy ID, which
+   is PHI. It needs a HIPAA-safe endpoint under a BAA — not a generic form
+   service, and not a plain marketing webhook. The wiki names Zealie as the
+   billing/VOB partner; that is the integration to pursue.
+
+   PAYER TABLE deliberately omitted: contracts are still being reinstated since
+   the Chandler reopening, so a printed list would go stale and would read as a
+   rejection list. Banner University Family Care is named because it is
+   confirmed; everything else routes to a live check.
+
+   STYLE: no call-data sourcing in the copy, and gaps framed as next steps.
+----------------------------------------------------------------------------- */
+import Layout from '../../layouts/Layout.astro';
+import TopBar from '../../components/TopBar.astro';
+import Nav from '../../components/Nav.astro';
+
+import VerifyHero from '../../components/verify/VerifyHero.astro';
+import WhatToHaveReady from '../../components/verify/WhatToHaveReady.astro';
+import WhatYouWillLearn from '../../components/verify/WhatYouWillLearn.astro';
+import VerifyQuestions from '../../components/verify/VerifyQuestions.astro';
+
+import Testimonials from '../../components/Testimonials.astro';
+import FinalCTA from '../../components/FinalCTA.astro';
+
+const title = 'Verify Your Insurance Benefits | Buena Vista Health & Recovery, Chandler AZ';
+const description =
+  'Free insurance verification for detox and residential treatment in Chandler, AZ. Find out what your plan covers in minutes, with no commitment. AHCCCS accepted. Call (888) 362-5576.';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    ['Does it cost anything to verify my insurance?',
+     'No. A benefits check is free and there is nothing owed either way, including if you decide against treatment or choose another provider.'],
+    ['Am I committing to treatment by checking my coverage?',
+     'No. Checking coverage is an information-gathering step. Many people do it while still deciding, or on behalf of someone else.'],
+    ['What do I need to verify my benefits?',
+     'The plan name on your insurance card is the most useful thing. Your name and date of birth are usually enough to look a policy up if the card is missing.'],
+    ['Can I check insurance coverage for a family member?',
+     'Yes. Bring their name, date of birth and plan name if you have it, and the same check can be run on their behalf.'],
+  ].map(([q, a]) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+};
+---
+<Layout title={title} description={description}>
+  <TopBar />
+  <Nav />
+
+  <VerifyHero />
+  <WhatToHaveReady />
+  <WhatYouWillLearn />
+  <Testimonials />
+  <VerifyQuestions />
+
+  <FinalCTA />
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
+</Layout>

@@ -1,0 +1,89 @@
+---
+/* -----------------------------------------------------------------------------
+   Chandler, AZ — facility page.
+
+   This is the NAP source of truth for the brand. Every fact below is taken from
+   the client wiki: address, facility line, 24-hour opening,
+   amenities, accessibility, and the scope of care.
+
+   Scope is stated as detox + residential ONLY, which matches the Jan–Jul 2026
+   call export: BV agents repeatedly confirm Chandler runs no outpatient, PHP,
+   IOP or methadone. Do not add levels of care here without confirming with
+   admissions first.
+
+   Tucson is described as closed. 31% of inbound Buena Vista calls raise Tucson
+   and about one in ten is someone asking after a facility that cannot admit
+   them — answering it in writing is the cheapest fix available.
+----------------------------------------------------------------------------- */
+import Layout from '../../layouts/Layout.astro';
+import TopBar from '../../components/TopBar.astro';
+import Nav from '../../components/Nav.astro';
+
+import ChandlerHero from '../../components/chandler/ChandlerHero.astro';
+import ChandlerCare from '../../components/chandler/ChandlerCare.astro';
+import ChandlerPractical from '../../components/chandler/ChandlerPractical.astro';
+import GettingHere from '../../components/chandler/GettingHere.astro';
+
+import FacilityGallery from '../../components/FacilityGallery.astro';
+import Testimonials from '../../components/Testimonials.astro';
+import VerifySection from '../../components/VerifySection.astro';
+import FinalCTA from '../../components/FinalCTA.astro';
+
+const title = 'Drug & Alcohol Rehab in Chandler, AZ | Buena Vista Health & Recovery';
+const description =
+  'Medical detox and residential addiction treatment at 3033 S Arizona Ave, Chandler, AZ. Private rooms, open 24 hours, most major insurance and AHCCCS accepted. Call (888) 362-5576.';
+
+// LocalBusiness schema for the one operating facility. Tucson is deliberately
+// absent — publishing a closed campus as an address is a local-SEO liability
+// and sends people to a locked door.
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalClinic',
+  name: 'Buena Vista Health & Recovery Centers — Chandler',
+  description,
+  url: 'https://buenavistarecovery.com/locations/chandler/',
+  logo: '/Asset/stock%20photo/Logo%20Buena%20Vista.svg',
+  telephone: '+1-480-680-0606',
+  medicalSpecialty: 'Addiction Medicine',
+  isAcceptingNewPatients: true,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '3033 S Arizona Ave',
+    addressLocality: 'Chandler',
+    addressRegion: 'AZ',
+    postalCode: '85286',
+    addressCountry: 'US',
+  },
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+    opens: '00:00',
+    closes: '23:59',
+  },
+  availableService: [
+    { '@type': 'MedicalTherapy', name: 'Medical Detox' },
+    { '@type': 'MedicalTherapy', name: 'Residential Treatment' },
+    { '@type': 'MedicalTherapy', name: 'Dual Diagnosis Treatment' },
+  ],
+  areaServed: ['Chandler', 'Phoenix', 'Mesa', 'Gilbert', 'Tempe', 'Scottsdale', 'Arizona'].map(n => ({
+    '@type': 'AdministrativeArea',
+    name: n,
+  })),
+};
+---
+<Layout title={title} description={description}>
+  <TopBar />
+  <Nav />
+
+  <ChandlerHero />
+  <ChandlerCare />
+  <FacilityGallery />
+  <ChandlerPractical />
+  <VerifySection />
+  <Testimonials />
+  <GettingHere />
+
+  <FinalCTA />
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
+</Layout>

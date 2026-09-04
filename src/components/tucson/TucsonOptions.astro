@@ -1,0 +1,65 @@
+---
+/* The two paths admissions actually offers a Tucson caller. Roughly six in ten
+   of them want to stay in southern Arizona, so the local-referral route is
+   given equal weight rather than treated as a consolation — a caller who is
+   helped to a Tucson programme today is a caller who comes back when Pima
+   Street reopens. */
+const options = [
+  {
+    n: '01',
+    h: 'Come to Chandler',
+    tag: 'About two hours north',
+    p: 'Our Chandler facility runs medical detox and residential treatment and is open every hour of every day. It is a straight run up the I-10, and a great many people from Tucson and the surrounding towns make that trip.',
+    points: ['Detox and residential under one roof', 'Private rooms with en suite bathrooms', 'Airport pickup if you are flying', 'Talk to us about how you would get there'],
+    cta: { label: 'See the Chandler facility', href: '/locations/chandler/' },
+  },
+  {
+    n: '02',
+    h: 'Stay in southern Arizona',
+    tag: 'We will help you find it',
+    p: 'If travelling is not realistic — and for plenty of people it genuinely is not — say so at the start of the call. Helping people find the right programme, including at other facilities, is a normal part of what our admissions team does.',
+    points: ['We check what your plan covers first', 'We suggest programmes we would send our own to', 'No cost, and no expectation attached', 'Come back to us whenever you need'],
+    cta: { label: 'Talk it through', href: 'tel:8883625576' },
+  },
+];
+---
+<section id="options" class="bg-cream py-[60px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mb-12">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+        <span class="w-6 h-px bg-gold inline-block"></span>
+        Two routes from here
+      </p>
+      <h2 class="font-display text-charcoal mb-5">Whichever suits your life better</h2>
+      <p class="font-body text-charcoal text-[18px] leading-[30px]">
+        Neither of these is the runner-up. Getting into the right programme quickly matters more than which building it happens in.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      {options.map(o => (
+        <div class="bg-white rounded-xl p-8 border border-cream-soft shadow-sm flex flex-col">
+          <p class="font-display text-gold text-[32px] leading-none mb-4">{o.n}</p>
+          <div class="flex flex-wrap items-center gap-3 mb-3">
+            <h3 class="font-display text-[26px] leading-[32px] text-navy">{o.h}</h3>
+            <span class="font-body text-xs font-bold uppercase tracking-wide text-gold bg-gold/10 rounded-full px-3 py-1.5">{o.tag}</span>
+          </div>
+          <p class="font-body text-charcoal text-[16px] leading-[26px] mb-5">{o.p}</p>
+          <ul class="space-y-2.5 mb-7">
+            {o.points.map(pt => (
+              <li class="flex items-start gap-3 font-body text-charcoal text-[16px] leading-[26px]">
+                <svg class="w-4 h-4 text-teal mt-1.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
+                </svg>
+                {pt}
+              </li>
+            ))}
+          </ul>
+          <a href={o.cta.href} class="mt-auto inline-flex items-center justify-center bg-teal hover:bg-teal-dark text-white font-semibold h-12 px-6 rounded-lg transition-colors font-body">
+            {o.cta.label}
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

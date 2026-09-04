@@ -33,23 +33,17 @@ const schema = {
   logo: '/Asset/stock%20photo/Logo%20Buena%20Vista.svg',
   telephone: '+1-888-362-5576',
   medicalSpecialty: 'Addiction Medicine',
-  address: [
-    {
-      '@type': 'PostalAddress',
-      streetAddress: '3033 S Arizona Ave',
-      addressLocality: 'Chandler',
-      addressRegion: 'AZ',
-      postalCode: '85286',
-      addressCountry: 'US',
-    },
-    {
-      '@type': 'PostalAddress',
-      streetAddress: '5151 E Pima St',
-      addressLocality: 'Tucson',
-      addressRegion: 'AZ',
-      addressCountry: 'US',
-    },
-  ],
+  // Only the operating facility is published in structured data. The Tucson
+  // campus is closed; listing it as an address advertises a location that
+  // cannot admit anyone. Restore it when Tucson reopens.
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '3033 S Arizona Ave',
+    addressLocality: 'Chandler',
+    addressRegion: 'AZ',
+    postalCode: '85286',
+    addressCountry: 'US',
+  },
 };
 ---
 <Layout title={title} description={description}>

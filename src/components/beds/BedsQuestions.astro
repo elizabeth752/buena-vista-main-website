@@ -1,0 +1,35 @@
+---
+const faqs = [
+  { q: 'Do you have beds available right now?', a: "That changes daily, sometimes within a day, so the only honest answer is the one you get on the phone. Call and you will know in a couple of minutes — including which level of care the bed is for and whether your coverage clears." },
+  { q: 'Why does the website not just show a number?', a: "Because it would be wrong by the time you read it. Detox beds turn over every few days, and a number that is stale by an afternoon is worse than no number at all — particularly for someone deciding whether it is worth calling." },
+  { q: 'How quickly could I come in if there is one?', a: "Often the same day. When a bed is open and coverage is confirmed, admission can happen that day, and we will work through getting you here as part of the same call." },
+  { q: 'You told my friend you were full last week.', a: "Very possibly, and it may well be different today. Availability moves, and it moves separately for detox and residential — so last week's answer tells you very little about this morning's." },
+  { q: 'What if I need detox and only residential is open?', a: "Then waiting for the right bed is the correct answer rather than taking the wrong one. If you are physically dependent, being admitted to a level of care that cannot manage withdrawal would be worse than a short wait — and if waiting is not safe, we will help you find a detox bed elsewhere today." },
+  { q: 'Can I be put on a waiting list?', a: "We open your file and call you when something frees up, which is the practical version of the same thing. The assessment and coverage check stay on record so nothing has to be repeated." },
+  { q: 'Does having insurance get me a bed faster?', a: "It does not move you up any queue, but an in-network plan confirmed on the call removes one of the things that can hold up an admission. Sorting coverage early is worth doing whether or not there is a bed today." },
+  { q: 'Is it worth calling at a particular time?', a: "Admissions answers every hour of the day and night including holidays, so there is no wrong time. If you are ready to come in now, say so at the start — it changes how the call is handled." },
+];
+---
+<section id="beds-faq" class="bg-cream py-[70px]">
+  <div class="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8">
+    <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+      <span class="w-6 h-px bg-gold inline-block"></span>
+      Straight answers
+    </p>
+    <h2 class="font-display text-charcoal mb-10">Questions about availability</h2>
+    <div class="divide-y divide-cream-soft border-t border-b border-cream-soft">
+      {faqs.map(f => (
+        <details class="group py-5">
+          <summary class="flex items-start justify-between gap-6 cursor-pointer">
+            <h3 class="font-body font-semibold text-charcoal text-[18px] leading-[28px]">{f.q}</h3>
+            <span class="shrink-0 mt-1 text-teal">
+              <svg class="faq-plus w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg>
+              <svg class="faq-minus w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M5 12h14"/></svg>
+            </span>
+          </summary>
+          <p class="font-body text-charcoal text-[16px] leading-[27px] mt-4 pr-10">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

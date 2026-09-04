@@ -1,0 +1,87 @@
+---
+/* -----------------------------------------------------------------------------
+   Therapy & clinical approach — ONE consolidated page.
+
+   Deliberately a single page rather than a modality tree. Ten pages on CBT,
+   DBT, EMDR and so on would each rest on 0-12 call mentions, eight of them on
+   no verifiable evidence at all, and would compete with each other for the same
+   thin intent. One page that answers what therapy here actually involves is
+   worth more than ten that do not.
+
+   EVERY FACT HERE IS CORROBORATED by admissions on recorded calls:
+     "private rooms, twice-daily groups, one-on-one therapy, nightly AA"
+     "...group therapy and then one individual therapy session a week"
+     "her sponsor can come any day as long as they're doing step work together"
+     "If you're feeling up to going and sitting in and participating in group,
+      you'll be on the detox side"
+
+   Note the individual-therapy frequency: ONE session a week. An earlier draft
+   implied more. Publishing the real number is both honest and differentiating —
+   most competitors imply daily one-to-one care.
+
+   The group-therapy fear section exists because "do I have to talk in group" is
+   the most common unspoken worry and a high-intent search in its own right.
+
+   DO NOT add named modalities (CBT, EMDR, DBT...) without a named clinical
+   confirmation, and record who confirmed it here when you do.
+----------------------------------------------------------------------------- */
+import Layout from '../../layouts/Layout.astro';
+import TopBar from '../../components/TopBar.astro';
+import Nav from '../../components/Nav.astro';
+
+import HubHero from '../../components/hub/HubHero.astro';
+import TheWeek from '../../components/therapy/TheWeek.astro';
+import TheGroupFear from '../../components/therapy/TheGroupFear.astro';
+import TherapyQuestions from '../../components/therapy/TherapyQuestions.astro';
+
+import Testimonials from '../../components/Testimonials.astro';
+import VerifySection from '../../components/VerifySection.astro';
+import FinalCTA from '../../components/FinalCTA.astro';
+
+const title = 'Therapy in Treatment: What It Actually Involves | Buena Vista, Chandler AZ';
+const description =
+  'Group therapy twice a day, a weekly one-to-one session with your own therapist, nightly AA and sponsors welcome any day. What therapy in residential treatment really looks like. Call (888) 362-5576.';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    ['How much therapy is there each day in rehab?',
+     'At Buena Vista, group therapy runs twice a day, morning and afternoon, with an AA meeting in the evenings, plus a one-to-one session with your own therapist each week.'],
+    ['Do I have to talk in group therapy?',
+     'Not on the first day and not before you are ready. Sitting and listening is a normal way to start, and everyone in the room began the same way.'],
+    ['Is there therapy during detox?',
+     'Groups are available during detox if you feel up to attending, and skipped without comment if you do not. The first days are mostly about physical stabilisation.'],
+    ['Can my sponsor visit during treatment?',
+     'Yes, on any day rather than only on visiting days, provided you are doing step work together.'],
+  ].map(([q, a]) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+};
+---
+<Layout title={title} description={description}>
+  <TopBar />
+  <Nav />
+
+  <HubHero
+    eyebrow="Therapy & clinical approach"
+    title="Two groups a day, one session a week, and a meeting every night."
+    intro="Most treatment websites list a dozen therapy acronyms and tell you nothing about what your day contains. Here is the actual shape of it, including the parts that are less than people assume."
+    points={['Group therapy twice a day, morning and afternoon','A one-to-one session with your own therapist each week','AA meetings nightly','Your sponsor can come in any day for step work']}
+    image="/Asset/stock%20photo/Desktop%20Dimensions/Facility/Intimate%20fireside%20lounge%20with%20four%20armchairs%20and%20built-in%20fireplace.png"
+    alt="An intimate fireside lounge with four armchairs"
+    caption="Where a lot of the real work happens."
+  />
+
+  <TheWeek />
+  <TheGroupFear />
+  <Testimonials />
+  <VerifySection />
+  <TherapyQuestions />
+
+  <FinalCTA />
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
+</Layout>

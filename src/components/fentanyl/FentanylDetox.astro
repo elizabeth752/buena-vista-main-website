@@ -1,0 +1,63 @@
+---
+/* Fentanyl detox IS offered — this is core scope, unlike the meth page. Note
+   the co-use figures behind the third card: meth appears alongside fentanyl in
+   ~36% of these calls and alcohol in ~33%, so one admission covering both is
+   the common case rather than the exception. */
+const detail = [
+  {
+    h: 'Around five to seven days',
+    p: 'Long enough to get through the worst of it properly rather than being turned out halfway. The exact length depends on how much, how long, and what your body does — your clinical team will tell you what they are seeing as it goes.',
+  },
+  {
+    h: 'Medication, so it is bearable',
+    p: 'You will not be left to white-knuckle withdrawal in a room. Comfort medications are part of the process, prescribed under physician oversight and adjusted as the days move.',
+  },
+  {
+    h: 'More than one substance is fine',
+    p: 'Meth alongside fentanyl is common, and so is alcohol. Detox is planned around everything in the picture at once — one admission, not a sequence of them.',
+  },
+  {
+    h: 'Then the part that keeps it',
+    p: 'Detox settles the body. Residential treatment is where the reasons get worked on, and it happens in the same building with the same team, so there is no gap to fall through.',
+  },
+];
+---
+<section id="detox" class="bg-cream py-[55px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-16 items-start">
+
+      <div>
+        <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+          <span class="w-6 h-px bg-gold inline-block"></span>
+          The detox
+        </p>
+        <h2 class="font-display text-charcoal mb-6">What coming off fentanyl looks like here</h2>
+
+        <div class="space-y-5 font-body text-charcoal text-[17px] leading-[29px]">
+          <p>
+            Fentanyl withdrawal comes on fast and hard, and it is the reason most attempts to stop at home come apart within a day. There is nothing weak about that — it is a physiological process, and it responds to being treated as one.
+          </p>
+          <p>
+            A medical detox means nursing staff on site every hour of the day, a physician overseeing your care, and medication to blunt the worst of the symptoms. You are monitored, kept as comfortable as the situation allows, and not alone for any of it.
+          </p>
+        </div>
+
+        <div class="mt-8">
+          <a href="tel:8883625576" class="bg-teal hover:bg-teal-dark text-white font-bold px-7 py-3.5 rounded-lg transition-colors font-body tracking-wide inline-block">
+            Ask about a bed today
+          </a>
+        </div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-5">
+        {detail.map(d => (
+          <div class="bg-white rounded-xl p-7 border border-cream-soft shadow-sm">
+            <h3 class="font-display text-[21px] leading-[27px] text-navy mb-3">{d.h}</h3>
+            <p class="font-body text-charcoal text-[16px] leading-[26px]">{d.p}</p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </div>
+</section>

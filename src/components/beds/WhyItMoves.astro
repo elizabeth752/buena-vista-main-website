@@ -1,0 +1,53 @@
+---
+/* Differentiates this page from the summary section on /admissions/ by
+   explaining WHY the answer to "do you have a bed" is more complicated than
+   yes or no.
+
+   ⚠ An earlier version explained this via separate male and female wings.
+   That came from the client wiki and has NO supporting evidence in the call
+   export, so it was removed. If admissions confirms the housing
+   configuration, it can go back — with a note here saying who confirmed it.
+
+   Deliberately publishes NO census numbers. The wiki's figures are from July
+   and would be stale and misleading. */
+const factors = [
+  { h: 'Detox turns over faster than residential', p: 'A detox stay is usually four to seven days and a residential stay around thirty. So detox beds free up several times a month while residential beds move more slowly — which is why the answer can be yes for one and no for the other on the same day.' },
+  { h: 'A bed is not a bed until it is yours', p: 'Availability is tracked by unit and by clinical fit rather than as one running total, so an opening does not automatically suit whoever calls next. It is the most common reason two people calling an hour apart get different answers.' },
+  { h: 'Your level of care has to match', p: 'A bed is only a bed if it is the right one. If you need medically supervised detox, an open residential bed is not the answer, and admitting you to the wrong level would be worse than waiting.' },
+  { h: 'Coverage has to clear too', p: 'An open bed and a plan we are in network with are two separate things. Both get checked on the same call, so you find out about them together rather than one at a time.' },
+];
+---
+<section id="why" class="bg-cream py-[60px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-[1fr_1.25fr] gap-12 lg:gap-16 items-start">
+      <div>
+        <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+          <span class="w-6 h-px bg-gold inline-block"></span>
+          Why the answer changes
+        </p>
+        <h2 class="font-display text-charcoal mb-6">"Do you have a bed" has four moving parts</h2>
+        <div class="space-y-5 font-body text-charcoal text-[17px] leading-[29px]">
+          <p>
+            It sounds like a yes-or-no question and it almost never is. Four things have to line up, and they move independently of one another.
+          </p>
+          <p>
+            <strong class="font-bold">This is also why we would rather you called than filled in a form.</strong> Two minutes on the phone settles all four at once, and you leave the call knowing exactly where you stand rather than waiting on a reply.
+          </p>
+        </div>
+        <div class="mt-8">
+          <a href="tel:8883625576" class="bg-teal hover:bg-teal-dark text-white font-bold px-7 py-3.5 rounded-lg transition-colors font-body tracking-wide inline-block">
+            Get today's answer
+          </a>
+        </div>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-5">
+        {factors.map(f => (
+          <div class="bg-white rounded-xl p-7 border border-cream-soft shadow-sm">
+            <h3 class="font-display text-[20px] leading-[26px] text-navy mb-3">{f.h}</h3>
+            <p class="font-body text-charcoal text-[16px] leading-[26px]">{f.p}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

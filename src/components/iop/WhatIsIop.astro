@@ -1,0 +1,85 @@
+---
+/* Level-of-care ladder. Described generically ("most programs run…") rather than
+   as Buena Vista's own schedule — our IOP is still being built, so no hours,
+   days, or group structure here can be presented as ours. */
+const ladder = [
+  {
+    label: 'Medical detox',
+    tag: 'Typically 4–7 days',
+    desc: 'Getting substances safely out of your body under 24/7 nursing and physician oversight. You stay with us the whole time.',
+    us: true,
+  },
+  {
+    label: 'Residential treatment',
+    tag: 'Typically 30 days',
+    desc: 'Live-in care once your body is stable. Group therapy twice a day, one-on-one sessions, and a case manager planning what comes next.',
+    us: true,
+  },
+  {
+    label: 'Partial hospitalization (PHP)',
+    tag: 'Around 6 hours a day',
+    desc: 'A full clinical day without living on site. More structure than IOP, and usually too many hours to hold down a job alongside it.',
+    us: false,
+  },
+  {
+    label: 'Intensive outpatient (IOP)',
+    tag: 'Around 3 hours a day',
+    desc: 'Most programs run three to five days a week, and many offer an evening track so people can keep working. You live at home or in sober living.',
+    us: false,
+  },
+];
+---
+<section id="what-is-iop" class="bg-cream py-[50px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-14 items-start">
+
+      <div>
+        <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+          <span class="w-6 h-px bg-gold inline-block"></span>
+          The Level of Care
+        </p>
+        <h2 class="font-display text-charcoal mb-6">
+          What intensive outpatient actually means
+        </h2>
+
+        <div class="space-y-5 font-body text-charcoal text-[17px] leading-[29px]">
+          <p>
+            Intensive outpatient — usually shortened to <strong class="font-bold">IOP</strong> — is structured treatment you attend for a few hours at a time, several days a week, while living at home. It is a real clinical program, not a check-in: group therapy, individual sessions, and relapse-prevention work, on a schedule.
+          </p>
+          <p>
+            What makes it different from residential is simply where you sleep. In residential, treatment is your whole day. In IOP, treatment is a part of your day and the rest of your life keeps running alongside it — which is exactly why people ask for it.
+          </p>
+          <p>
+            IOP is usually a <strong class="font-bold">step down</strong> rather than a starting point. If you are still drinking or using daily, the safest and kindest first step is detox — and that is something we can offer you here, today.
+          </p>
+        </div>
+
+        <div class="border-l-2 border-gold pl-5 mt-8 max-w-xl">
+          <p class="font-body text-charcoal text-[16px] leading-[26px]">
+            Not sure which level you need? It is not a question to guess at. A short call sorts it out — <a href="tel:8883625576" class="text-teal font-semibold hover:opacity-70 transition-opacity tel-number">(888) 362-5576</a>.
+          </p>
+        </div>
+      </div>
+
+      <div class="space-y-4">
+        {ladder.map(item => (
+          <div class={`rounded-xl p-6 border ${item.us ? 'bg-white border-cream-soft shadow-sm' : 'bg-sand/40 border-sand'}`}>
+            <div class="flex items-center justify-between gap-4 mb-2.5">
+              <h3 class="font-display text-[22px] leading-[28px] text-charcoal">{item.label}</h3>
+              <span class="shrink-0 font-body text-xs font-bold uppercase tracking-wide text-gold bg-gold/10 rounded-full px-3 py-1.5">
+                {item.tag}
+              </span>
+            </div>
+            <p class="font-body text-charcoal text-[16px] leading-[26px] mb-3">{item.desc}</p>
+            <p class="font-body text-[13px] font-bold uppercase tracking-[0.1em]">
+              {item.us
+                ? <span class="text-teal">Offered at our Chandler facility</span>
+                : <span class="text-muted">We'll help you find one</span>}
+            </p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </div>
+</section>

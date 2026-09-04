@@ -1,0 +1,35 @@
+---
+const faqs = [
+  { q: 'When does discharge planning start?', a: "Early in your stay rather than in the final week. You are assigned a case manager in detox and again in residential, and the conversation about what comes next begins while there is still time to arrange it properly." },
+  { q: 'What actually gets set up before I leave?', a: "Ongoing therapy, psychiatric care where that applies, a primary care provider, somewhere to live if home is not viable, and the journey home. The aim is that the week after discharge has appointments in it rather than a gap." },
+  { q: 'Do you decide my plan for me?', a: "No — your case manager asks what you want to do and builds around that. A plan you did not choose tends not to survive contact with the first difficult week." },
+  { q: 'What if I do not have anywhere to go?', a: "Then that becomes the priority rather than an afterthought. We refer to sober living rather than running it, and the case manager makes the introduction. Say it early in your stay so there is time to solve it." },
+  { q: 'Do you provide the outpatient programme afterwards?', a: "Not at the moment — our own intensive outpatient programme is being built. Until it opens, your case manager helps you find one that takes your insurance, which is something the team does regularly rather than as a favour." },
+  { q: 'Will I keep seeing the same people?', a: "Your clinical team is here rather than out there, so the honest answer is that the relationships you build here mostly stay here. What carries over is the plan, the appointments, and a sponsor if you have found one." },
+  { q: 'What if it does not hold and I relapse?', a: "Then you call us again. Coming back is the ordinary shape of recovery for a lot of people, there is no limit on how many times you are allowed to try, and nobody here will treat a return as a failure." },
+  { q: 'Is there anything for family in this?', a: "Family follow-up is part of the picture, and it is worth being part of the discharge conversation if the person you love is willing. Going home to a household that knows the plan is a different proposition from going home to one that does not." },
+];
+---
+<section id="after-faq" class="bg-cream py-[70px]">
+  <div class="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8">
+    <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+      <span class="w-6 h-px bg-gold inline-block"></span>
+      Straight answers
+    </p>
+    <h2 class="font-display text-charcoal mb-10">Questions about what comes after</h2>
+    <div class="divide-y divide-cream-soft border-t border-b border-cream-soft">
+      {faqs.map(f => (
+        <details class="group py-5">
+          <summary class="flex items-start justify-between gap-6 cursor-pointer">
+            <h3 class="font-body font-semibold text-charcoal text-[18px] leading-[28px]">{f.q}</h3>
+            <span class="shrink-0 mt-1 text-teal">
+              <svg class="faq-plus w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg>
+              <svg class="faq-minus w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M5 12h14"/></svg>
+            </span>
+          </summary>
+          <p class="font-body text-charcoal text-[16px] leading-[27px] mt-4 pr-10">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,53 @@
+---
+/* Card grid for hub children. Items with an `href` render as links; items
+   without one are described in place rather than pointing at a page that does
+   not exist yet. Add the href when the page ships. */
+export interface HubItem {
+  label: string;
+  tag?: string;
+  desc: string;
+  href?: string;
+}
+interface Props {
+  eyebrow: string;
+  title: string;
+  intro?: string;
+  items: HubItem[];
+  columns?: 2 | 3 | 4;
+  bg?: string;
+}
+const { eyebrow, title, intro, items, columns = 3, bg = 'bg-cream' } = Astro.props;
+const grid = columns === 2 ? 'sm:grid-cols-2' : columns === 4 ? 'sm:grid-cols-2 lg:grid-cols-4' : 'sm:grid-cols-2 lg:grid-cols-3';
+---
+<section class={`${bg} py-[60px]`}>
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mb-11">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+        <span class="w-6 h-px bg-gold inline-block"></span>
+        {eyebrow}
+      </p>
+      <h2 class="font-display text-charcoal mb-4">{title}</h2>
+      {intro && <p class="font-body text-charcoal text-[18px] leading-[30px]">{intro}</p>}
+    </div>
+
+    <div class={`grid ${grid} gap-6`}>
+      {items.map(item => {
+        const inner = (
+          <>
+            <div class="flex flex-wrap items-center gap-3 mb-3">
+              <h3 class="font-display text-[22px] leading-[28px] text-navy">{item.label}</h3>
+              {item.tag && (
+                <span class="font-body text-xs font-bold uppercase tracking-wide text-gold bg-gold/10 rounded-full px-3 py-1.5">{item.tag}</span>
+              )}
+            </div>
+            <p class="font-body text-charcoal text-[16px] leading-[26px]">{item.desc}</p>
+            {item.href && <span class="inline-block mt-4 font-body text-teal font-semibold text-[15px] group-hover:underline">Read more &rarr;</span>}
+          </>
+        );
+        return item.href
+          ? <a href={item.href} class="group bg-white rounded-xl p-7 border border-cream-soft shadow-sm hover:border-teal transition-colors block">{inner}</a>
+          : <div class="bg-white rounded-xl p-7 border border-cream-soft">{inner}</div>;
+      })}
+    </div>
+  </div>
+</section>

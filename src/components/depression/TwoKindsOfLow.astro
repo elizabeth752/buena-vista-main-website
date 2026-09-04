@@ -1,0 +1,51 @@
+---
+/* Depression-specific differentiation from the anxiety and trauma pages: the
+   distinction between depression that predates the substance and the chemical
+   low that follows heavy use — meth appears in ~39% of these calls. Both are
+   real; separating them is the clinical work, and saying so is reassuring
+   rather than dismissive. */
+const kinds = [
+  {
+    h: 'The low that was already there',
+    p: 'Depression that predates the drinking or using, and that the substance became a way of managing. This is the one people usually mean when they say it started before. It is treated with therapy, psychiatric review and time — and it does not disappear the moment you get sober, which is exactly why it is treated here rather than left for later.',
+  },
+  {
+    h: 'The low that the substance built',
+    p: 'A depleted brain after heavy use — particularly stimulants — produces a flatness that can feel bottomless and permanent. It is neither. It lifts as the chemistry recovers, though the first weeks are genuinely bleak, and getting through them somewhere supported is the difference between it lifting and it being cut short.',
+  },
+];
+---
+<section id="two-lows" class="bg-cream py-[60px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-[1fr_1.25fr] gap-12 lg:gap-16 items-start">
+      <div>
+        <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+          <span class="w-6 h-px bg-gold inline-block"></span>
+          Two different lows
+        </p>
+        <h2 class="font-display text-charcoal mb-6">Which one you are in changes what helps</h2>
+        <div class="space-y-5 font-body text-charcoal text-[17px] leading-[29px]">
+          <p>
+            Depression alongside substance use tends to come in two forms, and they need different things. Working out which one you are dealing with — often both — is part of what your assessment is for.
+          </p>
+          <p>
+            <strong class="font-bold">Nobody expects you to know the answer.</strong> "I cannot tell any more whether I feel like this because of the drinking or whether I drink because I feel like this" is a completely ordinary thing to say on the phone, and it is not a question you have to solve before you call.
+          </p>
+        </div>
+        <div class="mt-8">
+          <a href="/what-we-treat/stimulant-addiction/methamphetamine/" class="font-body text-teal font-semibold hover:underline">
+            More on the comedown after stimulant use &rarr;
+          </a>
+        </div>
+      </div>
+      <div class="space-y-5">
+        {kinds.map(k => (
+          <div class="bg-white rounded-xl p-8 border border-cream-soft shadow-sm">
+            <h3 class="font-display text-[24px] leading-[30px] text-navy mb-3">{k.h}</h3>
+            <p class="font-body text-charcoal text-[16px] leading-[27px]">{k.p}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

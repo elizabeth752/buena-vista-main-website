@@ -1,0 +1,76 @@
+---
+/* -----------------------------------------------------------------------------
+   AHCCCS / Medicaid coverage.
+
+   Highest-value insurance page by a distance: 268 of the 571 Buena Vista calls
+   in the Jan–Jul 2026 export involve a Medicaid-type plan, and the wiki puts
+   the payer mix at 60% Medicaid with a sub-$1,000 cost-per-admit target.
+
+   VOCABULARY: callers say "Access", not "AHCCCS" — 207 mentions versus 1. The
+   copy leads with Access and uses AHCCCS as the formal term.
+
+   CONTRACT STATUS — read before editing. The wiki records a blanket "Medicaid —
+   In-network". The calls show that is only partly true: contracts were lost in
+   the closure/ownership change and are being reinstated one at a time.
+     Banner University Family Care  — CONFIRMED in network ("one of the few
+                                      access plans that we can take right now")
+     Mercy Care                     — repeatedly stated as not contracted
+     Arizona Complete Health        — "not yet, expect the contract in 3-4 weeks"
+                                      (as of the export window; may have landed)
+     UnitedHealthcare (via AHCCCS)  — not in network
+   So this page names Banner as confirmed and routes every other plan to a live
+   check, rather than printing a table that goes stale and reads as a rejection
+   list. Update the confirmed list in CheckYourPlan.astro as contracts land, and
+   get a current payer grid from billing/Zealie before promising anything more.
+----------------------------------------------------------------------------- */
+import Layout from '../../layouts/Layout.astro';
+import TopBar from '../../components/TopBar.astro';
+import Nav from '../../components/Nav.astro';
+
+import AhcccsHero from '../../components/ahcccs/AhcccsHero.astro';
+import WhatAhcccsCovers from '../../components/ahcccs/WhatAhcccsCovers.astro';
+import CheckYourPlan from '../../components/ahcccs/CheckYourPlan.astro';
+import AhcccsQuestions from '../../components/ahcccs/AhcccsQuestions.astro';
+
+import Testimonials from '../../components/Testimonials.astro';
+import VerifySection from '../../components/VerifySection.astro';
+import FinalCTA from '../../components/FinalCTA.astro';
+
+const title = 'AHCCCS & Medicaid Rehab Coverage in Chandler, AZ | Buena Vista Health & Recovery';
+const description =
+  'Does AHCCCS cover rehab? Access covers medical detox and residential treatment at our Chandler, AZ facility. Banner University Family Care in network. Free coverage check — call (888) 362-5576.';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    ['Is AHCCCS the same thing as Access?',
+     "Yes. They are two names for the same programme — Arizona's Medicaid programme — and it covers substance use and mental health treatment."],
+    ['Does AHCCCS cover drug and alcohol rehab?',
+     'Yes. AHCCCS covers medically supervised detox and residential treatment, including co-occurring mental health care delivered alongside it.'],
+    ['Do I get less time in treatment on AHCCCS?',
+     'Generally the opposite. Residential stays authorised through Medicaid often run around thirty to forty-five days, which tends to be longer than commercial plans allow.'],
+    ['Which AHCCCS plans does Buena Vista accept?',
+     'Banner University Family Care is in network. Our Chandler facility reopened recently and further health-plan contracts are being reinstated, so the fastest way to know about your plan is a free check by phone on (888) 362-5576.'],
+  ].map(([q, a]) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+};
+---
+<Layout title={title} description={description}>
+  <TopBar />
+  <Nav />
+
+  <AhcccsHero />
+  <WhatAhcccsCovers />
+  <CheckYourPlan />
+  <Testimonials />
+  <VerifySection />
+  <AhcccsQuestions />
+
+  <FinalCTA />
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
+</Layout>

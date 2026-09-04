@@ -1,0 +1,39 @@
+---
+/* Only modalities on the wiki's confirmed active list appear here.
+
+   ⚠ MEDICATION: admissions states plainly that Buena Vista does NOT prescribe
+   psychiatric medication — "they don't prescribe psychiatric meds but arrange
+   aftercare/psychiatry". On-site providers review what someone arrives on and
+   existing prescriptions can be refilled; ongoing psychiatric care is arranged
+   for after discharge. Do not reintroduce claims of an on-site psychiatrist. */
+const care = [
+  { h: 'Your medication reviewed properly', p: 'A great many people arrive already on something for anxiety, and plenty have quietly stopped taking it. Bring the bottles. Our medical team reviews what you are on as part of your assessment, and your case manager lines up ongoing psychiatric care for after you leave.' },
+  { h: 'Withdrawal anxiety managed', p: 'The spike that comes with stopping is anticipated rather than endured. Nursing on site around the clock and medication to take the edge off are part of what a medical detox is for.' },
+  { h: 'CBT and DBT', p: 'Practical work on what to do when the feeling arrives — the thought patterns that keep it turning, and skills for tolerating distress without immediately reaching for something.' },
+  { h: 'EMDR and trauma-specific work', p: 'Where the anxiety grew out of something that happened, that gets addressed directly by clinicians trained in it rather than talked around.' },
+  { h: 'Group therapy, twice a day', p: 'The part most people dread beforehand and name afterwards. Saying it out loud in a room where nobody flinches does something that individual work alone does not.' },
+  { h: 'Sleep, food and a routine', p: 'Unglamorous and genuinely load-bearing. A lot of what looks like unmanageable anxiety improves once someone has slept properly for a week.' },
+];
+---
+<section id="how" class="bg-sage-tint py-[70px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mb-12">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+        <span class="w-6 h-px bg-gold inline-block"></span>
+        How it is treated here
+      </p>
+      <h2 class="font-display text-charcoal mb-5">Both halves, at the same time</h2>
+      <p class="font-body text-charcoal text-[18px] leading-[30px]">
+        This happens inside detox and residential treatment rather than as a separate programme you have to arrange afterwards.
+      </p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {care.map(c => (
+        <div class="bg-white rounded-xl p-7 border border-cream-soft">
+          <h3 class="font-display text-[21px] leading-[27px] text-navy mb-3">{c.h}</h3>
+          <p class="font-body text-charcoal text-[16px] leading-[26px]">{c.p}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

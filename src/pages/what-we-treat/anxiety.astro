@@ -1,0 +1,90 @@
+---
+/* -----------------------------------------------------------------------------
+   Anxiety & substance use.
+
+   Anxiety is raised on 66 of 571 Buena Vista calls (11.6%), the largest
+   remaining condition topic.
+
+   FRAMING IS LOAD-BEARING. 97% of those calls also involve a substance — only
+   8 are mental-health-only. Combined with Primary Mental Health sitting at
+   HOLD in the sitemap (no BV agent describes a standalone mental-health track),
+   this page treats anxiety as a CO-OCCURRING presentation inside detox and
+   residential care. It must not read as an offer of standalone anxiety
+   treatment. The FAQ answers the mental-health-only case by pointing elsewhere.
+
+   Differentiation from the depression and PTSD pages, which overlap heavily
+   (79% of these calls also mention depression, 68% trauma): this page owns the
+   anxiety-specific angles — self-medication, rebound anxiety in withdrawal at
+   38% of these calls, and prescribed benzodiazepines becoming their own
+   problem. If the depression and PTSD pages cannot be differentiated as
+   sharply, consider consolidating them rather than shipping near-duplicates.
+
+   Modalities named are on the wiki's confirmed active list.
+
+   ⚠ Buena Vista does NOT prescribe psychiatric medication — admissions is
+   explicit that they "don't prescribe psychiatric meds but arrange
+   aftercare/psychiatry". Medication is described as reviewed by the medical
+   team, with psychiatry arranged for aftercare. Never claim an on-site
+   psychiatrist.
+
+   STYLE: no call-data sourcing in the copy; the "we are not the right fit"
+   answer routes rather than refuses.
+----------------------------------------------------------------------------- */
+import Layout from '../../layouts/Layout.astro';
+import TopBar from '../../components/TopBar.astro';
+import Nav from '../../components/Nav.astro';
+
+import AnxietyHero from '../../components/anxiety/AnxietyHero.astro';
+import TheLoop from '../../components/anxiety/TheLoop.astro';
+import HowWeTreatAnxiety from '../../components/anxiety/HowWeTreatAnxiety.astro';
+import AnxietyQuestions from '../../components/anxiety/AnxietyQuestions.astro';
+
+import Testimonials from '../../components/Testimonials.astro';
+import VerifySection from '../../components/VerifySection.astro';
+import FinalCTA from '../../components/FinalCTA.astro';
+
+const title = 'Anxiety & Addiction Treatment in Chandler, AZ | Buena Vista Health & Recovery';
+const description =
+  'Anxiety treated alongside substance use in detox and residential care at our Chandler, AZ facility. Medication reviewed, CBT, DBT and EMDR. Call (888) 362-5576.';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalWebPage',
+  name: 'Anxiety & Substance Use Treatment in Chandler, AZ',
+  description,
+  url: 'https://buenavistarecovery.com/what-we-treat/anxiety/',
+  about: {
+    '@type': 'MedicalCondition',
+    name: 'Co-occurring Anxiety Disorder and Substance Use Disorder',
+    alternateName: ['Anxiety and addiction', 'Dual diagnosis anxiety'],
+  },
+  provider: {
+    '@type': 'MedicalClinic',
+    name: 'Buena Vista Health & Recovery Centers — Chandler',
+    telephone: '+1-888-362-5576',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '3033 S Arizona Ave',
+      addressLocality: 'Chandler',
+      addressRegion: 'AZ',
+      postalCode: '85286',
+      addressCountry: 'US',
+    },
+  },
+};
+---
+<Layout title={title} description={description}>
+  <TopBar />
+  <Nav />
+
+  <AnxietyHero />
+  <TheLoop />
+  <HowWeTreatAnxiety />
+  <Testimonials />
+  <VerifySection />
+  <AnxietyQuestions />
+
+  <FinalCTA />
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
+</Layout>

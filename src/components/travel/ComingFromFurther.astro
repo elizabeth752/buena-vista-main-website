@@ -1,0 +1,45 @@
+---
+/* Journey home is deliberately addressed rather than skipped: admissions is
+   candid that arranging a ride out is harder than arranging one in, and that
+   it is worked on during the stay. Framed as planning, not as a limitation. */
+const routes = [
+  { h: 'Phoenix, Mesa, Gilbert, Tempe', p: 'Neighbouring East Valley towns. A local drive rather than a journey, which matters on the day someone finally decides to go.' },
+  { h: 'Tucson and southern Arizona', p: 'About two hours north on the I-10. A well-worn route, and one where a plan-provided medical transport benefit is especially worth checking.' },
+  { h: 'Elsewhere in Arizona', p: 'Flagstaff, Yuma, Prescott, the reservations — tell us where you are and we will work out the most realistic way to get you here.' },
+  { h: 'Out of state', p: 'Fly into Sky Harbor and ask us about being collected. Give us the flight details on the call and the rest is arranged around them.' },
+];
+---
+<section id="from" class="bg-sage-tint py-[70px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-[1fr_1.15fr] gap-12 lg:gap-16 items-start">
+      <div>
+        <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+          <span class="w-6 h-px bg-gold inline-block"></span>
+          Wherever you are starting
+        </p>
+        <h2 class="font-display text-charcoal mb-6">Coming from further out</h2>
+        <div class="space-y-5 font-body text-charcoal text-[17px] leading-[29px]">
+          <p>
+            Distance changes the logistics rather than the answer. People come to Chandler from across Arizona and from out of state, and the trip is worked out on the admissions call rather than left to you.
+          </p>
+          <p>
+            <strong class="font-bold">The journey home is planned too.</strong> Getting a ride out is a different problem from getting a ride in, so your case manager starts on it early in your stay rather than the morning you leave — including whether family can collect you and what your plan will cover.
+          </p>
+        </div>
+        <div class="mt-8">
+          <a href="tel:8883625576" class="bg-teal hover:bg-teal-dark text-white font-bold px-7 py-3.5 rounded-lg transition-colors font-body tracking-wide inline-block">
+            Work out the journey with us
+          </a>
+        </div>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-5">
+        {routes.map(r => (
+          <div class="bg-white rounded-xl p-7 border border-cream-soft">
+            <h3 class="font-display text-[20px] leading-[26px] text-navy mb-3">{r.h}</h3>
+            <p class="font-body text-charcoal text-[16px] leading-[26px]">{r.p}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

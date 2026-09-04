@@ -1,0 +1,85 @@
+---
+/* -----------------------------------------------------------------------------
+   Methamphetamine treatment.
+
+   Meth is the second-highest substance in the Jan–Jul 2026 call export and
+   appears in 76 of the 571 Buena Vista calls (13.7%).
+
+   THE KEY STRUCTURAL FACT — do not restructure this page to mirror the alcohol
+   page. Admissions is explicit that meth on its own does not get a separate
+   detox: "residential treatment for meth typically doesn't include detox", and
+   meth-only admissions go straight into residential. Detox applies when
+   something else is present, which it very often is — fentanyl appears in 38%
+   of these calls and alcohol in 30%.
+
+   Section priorities follow what these callers raise:
+     87%  a Medicaid-type plan (far above the 45% site-wide average — this page
+          leans on AHCCCS coverage more heavily than the others for that reason)
+     41%  work
+     36%  depression or suicidality — the highest of any theme, which is why
+          TheComedown surfaces 988 inline rather than relying on the footer
+     26%  legal obligations
+     18%  psychosis or paranoia
+     17%  housing instability
+
+   STYLE: those figures shape what appears and in what order, and must never
+   appear in the copy. State the fact, not the source.
+----------------------------------------------------------------------------- */
+import Layout from '../../../layouts/Layout.astro';
+import TopBar from '../../../components/TopBar.astro';
+import Nav from '../../../components/Nav.astro';
+
+import MethHero from '../../../components/meth/MethHero.astro';
+import MethPathway from '../../../components/meth/MethPathway.astro';
+import TheComedown from '../../../components/meth/TheComedown.astro';
+import MethQuestions from '../../../components/meth/MethQuestions.astro';
+
+import Testimonials from '../../../components/Testimonials.astro';
+import VerifySection from '../../../components/VerifySection.astro';
+import FinalCTA from '../../../components/FinalCTA.astro';
+
+const title = 'Meth Addiction Treatment in Chandler, AZ | Buena Vista Health & Recovery';
+const description =
+  'Residential treatment for methamphetamine addiction in Chandler, AZ, with medical detox when opioids or alcohol are also involved. AHCCCS accepted. Call (888) 362-5576.';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalWebPage',
+  name: 'Meth Addiction Treatment in Chandler, AZ',
+  description,
+  url: 'https://buenavistarecovery.com/what-we-treat/stimulant-addiction/methamphetamine/',
+  about: {
+    '@type': 'MedicalCondition',
+    name: 'Methamphetamine Use Disorder',
+    alternateName: ['Meth addiction', 'Stimulant use disorder'],
+  },
+  provider: {
+    '@type': 'MedicalClinic',
+    name: 'Buena Vista Health & Recovery Centers — Chandler',
+    telephone: '+1-888-362-5576',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '3033 S Arizona Ave',
+      addressLocality: 'Chandler',
+      addressRegion: 'AZ',
+      postalCode: '85286',
+      addressCountry: 'US',
+    },
+  },
+};
+---
+<Layout title={title} description={description}>
+  <TopBar />
+  <Nav />
+
+  <MethHero />
+  <MethPathway />
+  <TheComedown />
+  <Testimonials />
+  <VerifySection />
+  <MethQuestions />
+
+  <FinalCTA />
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
+</Layout>

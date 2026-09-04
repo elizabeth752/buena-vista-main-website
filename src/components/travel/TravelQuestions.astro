@@ -1,0 +1,35 @@
+---
+const faqs = [
+  { q: 'Can you send someone to pick me up?', a: "Often, yes. For many admissions we can arrange a car to collect you and bring you in, including at an evening intake time. How far that reaches varies, so give us your address on the call and you will have an answer straight away." },
+  { q: 'Do you collect people from the airport?', a: "Yes. Fly into Phoenix Sky Harbor, send us the flight details, and someone will be there. Drop-off at the end of your stay is arranged the same way." },
+  { q: 'Will my insurance pay for transport?', a: "It might. Many Access plans include a non-emergency medical transport benefit — the same one people use to get to appointments — and it is commonly forgotten about. Ask your plan, or raise it with us and we will help you find out." },
+  { q: 'Can a family member drive me?', a: "Absolutely, at any hour including holidays. There is a covered drop-off at the entrance and someone at the desk whenever you arrive, so nobody is left waiting outside." },
+  { q: 'How do I get home afterwards?', a: "Your case manager works on it during your stay rather than on the day you leave. That covers whether family can collect you, what your plan will cover, and where you are going — the last one matters more than the lift." },
+  { q: 'What if I have no way of getting there at all?', a: "Call and say exactly that. It is a common enough starting point, and between a ride, a transport benefit and family, most journeys get solved on the phone. If we genuinely cannot reach you, we will help you find a programme closer to home." },
+  { q: 'Can I drive myself and leave my car there?', a: "Ask on the call. Parking is straightforward, and what makes sense depends on how long you are staying and who could collect the car if needed." },
+  { q: 'How far is Chandler from Phoenix?', a: "Chandler sits south-east of Phoenix in the East Valley, a straightforward run down the I-10 or the 101, with Sky Harbor the nearest airport." },
+];
+---
+<section id="travel-faq" class="bg-cream py-[70px]">
+  <div class="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8">
+    <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+      <span class="w-6 h-px bg-gold inline-block"></span>
+      Straight answers
+    </p>
+    <h2 class="font-display text-charcoal mb-10">Questions about getting here</h2>
+    <div class="divide-y divide-cream-soft border-t border-b border-cream-soft">
+      {faqs.map(f => (
+        <details class="group py-5">
+          <summary class="flex items-start justify-between gap-6 cursor-pointer">
+            <h3 class="font-body font-semibold text-charcoal text-[18px] leading-[28px]">{f.q}</h3>
+            <span class="shrink-0 mt-1 text-teal">
+              <svg class="faq-plus w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg>
+              <svg class="faq-minus w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M5 12h14"/></svg>
+            </span>
+          </summary>
+          <p class="font-body text-charcoal text-[16px] leading-[27px] mt-4 pr-10">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

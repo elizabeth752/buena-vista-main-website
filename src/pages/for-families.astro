@@ -1,0 +1,79 @@
+---
+/* -----------------------------------------------------------------------------
+   For families & loved ones.
+
+   130 of the 571 Buena Vista calls in the Jan–Jul 2026 export come from someone
+   ringing about another person. Section priorities follow what those callers
+   actually raise:
+
+     85%  how soon could they come in
+     79%  insurance or coverage
+     63%  detox · 50% residential
+     25%  a hospital visit or discharge is the trigger
+     21%  asked us to contact the person directly
+     20%  the person is hesitant or not ready
+     18%  legal involvement · 18% no idea where to start
+     12%  nowhere for them to live
+
+   Note the spread of relationships: sons (21) and daughters (15), but also
+   adult children calling about a parent (27), partners and spouses (35), and
+   siblings (23). Copy says "the person you love", not "your child".
+
+   Everything offered here is something admissions already does on the phone —
+   running a coverage check from a name and date of birth, calling the person
+   directly, speaking to a discharge planner. Nothing new is promised.
+
+   HIPAA: the page is careful to separate "you can ask us anything" from "we can
+   tell you about someone already in our care". Keep that distinction if editing.
+----------------------------------------------------------------------------- */
+import Layout from '../layouts/Layout.astro';
+import TopBar from '../components/TopBar.astro';
+import Nav from '../components/Nav.astro';
+
+import FamiliesHero from '../components/families/FamiliesHero.astro';
+import WhatWeCanDoForYou from '../components/families/WhatWeCanDoForYou.astro';
+import WhenTheyAreNotReady from '../components/families/WhenTheyAreNotReady.astro';
+import FamilyQuestions from '../components/families/FamilyQuestions.astro';
+
+import Testimonials from '../components/Testimonials.astro';
+import VerifySection from '../components/VerifySection.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+
+const title = 'Help for Families & Loved Ones | Buena Vista Health & Recovery, Chandler AZ';
+const description =
+  'Calling about someone else? You can check their coverage, ask about beds, and we can even call them for you. Detox and residential treatment in Chandler, AZ. Call (888) 362-5576.';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    ['Can I call a rehab on behalf of someone else?',
+     'Yes. You can ask about the programme, the timing and the cost without the person being present or ready. Health privacy law limits what can be shared back about an adult already in care, but nothing stops you asking questions or starting the process.'],
+    ['Can you check my loved one’s insurance for them?',
+     'Usually yes. A name, a date of birth and the plan on their card is normally enough to run a coverage check by phone. It is free and commits nobody to anything.'],
+    ['Will you call my loved one directly?',
+     'If it would help, yes. Give us a number and a good time to try, and someone experienced will make the first approach so it does not have to come from you.'],
+    ['My loved one is in hospital. What should I do?',
+     'Call while they are still there. Discharge windows are short, and we can speak to a case manager or discharge planner directly to coordinate a move into detox or residential care.'],
+  ].map(([q, a]) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+};
+---
+<Layout title={title} description={description}>
+  <TopBar />
+  <Nav />
+
+  <FamiliesHero />
+  <WhatWeCanDoForYou />
+  <WhenTheyAreNotReady />
+  <Testimonials />
+  <VerifySection />
+  <FamilyQuestions />
+
+  <FinalCTA />
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
+</Layout>

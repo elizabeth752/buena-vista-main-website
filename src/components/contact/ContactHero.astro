@@ -1,0 +1,70 @@
+---
+import Horizon from '../Horizon.astro';
+---
+<section id="hero" class="bg-cream">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-[60px] lg:py-[80px]">
+    <div class="grid lg:grid-cols-[1fr_minmax(0,470px)] gap-12 lg:gap-16 items-center">
+      <div>
+        <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-5 flex items-center gap-2">
+          <span class="w-6 h-px bg-gold inline-block"></span>
+          Staying in contact
+        </p>
+
+        <h1 class="font-display text-navy mb-6">
+          Nobody disappears in here.
+        </h1>
+
+        <p class="font-body text-charcoal text-[20px] leading-[33px] max-w-xl mb-8">
+          One of the quieter reasons people put treatment off is the thought of vanishing from their own life for a month. In practice there is a short stretch at the start with no phone, and then evenings and visiting days for the rest of the stay.
+        </p>
+
+        <div class="grid sm:grid-cols-2 gap-4 mb-9 max-w-xl">
+          <div class="bg-white rounded-xl p-6 border border-cream-soft shadow-sm">
+            <p class="font-body text-gold text-xs font-bold tracking-[0.14em] uppercase mb-2">Your phone</p>
+            <p class="font-display text-navy text-[26px] leading-[32px] mb-1">Evenings</p>
+            <p class="font-body text-muted text-[15px] leading-[24px]">Once you are in residential</p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-cream-soft shadow-sm">
+            <p class="font-body text-gold text-xs font-bold tracking-[0.14em] uppercase mb-2">Visiting</p>
+            <p class="font-display text-navy text-[26px] leading-[32px] mb-1">3 days a week</p>
+            <p class="font-body text-muted text-[15px] leading-[24px]">Wednesday, Saturday, Sunday</p>
+          </div>
+        </div>
+
+        <div class="border-l-2 border-gold pl-5 mb-9 max-w-xl">
+          <p class="font-body text-charcoal text-[16px] leading-[26px]">
+            <strong class="font-bold">Arrangements do get adjusted from time to time.</strong> The shape below is what to expect, and the current detail is confirmed on the admissions call and again when you arrive — so please ask rather than plan around this page alone.
+          </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="tel:8883625576" class="inline-flex items-center justify-center gap-2 bg-teal hover:bg-teal-dark text-white font-semibold h-14 px-8 rounded-lg transition-colors font-body">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+            </svg>
+            Ask about the current arrangements
+          </a>
+          <a href="/for-families/" class="inline-flex items-center justify-center border-2 border-navy text-navy hover:bg-navy hover:text-white font-semibold h-14 px-8 rounded-lg transition-colors font-body">
+            For families
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <div class="overflow-hidden rounded-t-[160px] rounded-b-xl shadow-xl">
+          <img
+            src="/Asset/stock%20photo/Desktop%20Dimensions/Facility/Central%20welcome%20desk%20with%20pendant%20lighting%20and%20adjacent%20activity%20area.png"
+            alt="The welcome desk at Buena Vista, with pendant lighting and an activity area"
+            class="w-full object-cover aspect-[4/5]"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </div>
+        <Horizon variant="rule" class="mt-5" />
+        <p class="font-body text-muted text-[15px] leading-[24px] mt-3">
+          Where visitors are met on the days people come.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

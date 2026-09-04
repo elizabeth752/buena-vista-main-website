@@ -1,0 +1,61 @@
+---
+/* Clinical scope for a professional audience — the fastest possible read.
+   Scope is detox + residential only; outpatient levels are not offered here.
+   Framed as "what we take" plus an explicit offer to redirect, never as an
+   exclusion list. */
+const takes = [
+  { h: 'Medical detox', p: 'Alcohol, opioids including fentanyl, benzodiazepines, and polysubstance presentations. 24/7 nursing with physician oversight. Typically four to seven days.' },
+  { h: 'Residential treatment', p: 'Commonly around 30 days, and often longer under Medicaid authorisation. Private rooms with en suite bathrooms.' },
+  { h: 'Co-occurring presentations', p: 'Depression, anxiety, PTSD and trauma addressed inside the residential programme rather than referred out separately.' },
+  { h: 'Stimulant presentations', p: 'Methamphetamine and other stimulants generally admit directly to residential, since there is no separate detox stage unless opioids or alcohol are also present.' },
+];
+
+const good = [
+  'Adults 18 and over',
+  'Voluntary admission',
+  'Medicaid and most major commercial plans',
+  'Clients arriving from a hospital or emergency department',
+  'Clients with probation or court obligations',
+  'Clients already on a maintenance medication — flag it early for clinical review',
+];
+---
+<section id="scope" class="bg-cream py-[60px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mb-12">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+        <span class="w-6 h-px bg-gold inline-block"></span>
+        Clinical scope
+      </p>
+      <h2 class="font-display text-charcoal mb-5">What we take at Chandler</h2>
+      <p class="font-body text-charcoal text-[18px] leading-[30px]">
+        Two levels of care, both under one roof, so a detox referral does not become a second placement problem a week later.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-6 mb-10">
+      {takes.map(t => (
+        <div class="bg-white rounded-xl p-7 border border-cream-soft shadow-sm">
+          <h3 class="font-display text-[22px] leading-[28px] text-navy mb-3">{t.h}</h3>
+          <p class="font-body text-charcoal text-[16px] leading-[26px]">{t.p}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="bg-sand/40 border border-sand rounded-xl p-7 max-w-3xl">
+      <h3 class="font-display text-[22px] leading-[28px] text-charcoal mb-4">Placements that fit well here</h3>
+      <ul class="grid sm:grid-cols-2 gap-x-8 gap-y-2.5 mb-5">
+        {good.map(g => (
+          <li class="flex items-start gap-2.5 font-body text-charcoal text-[16px] leading-[26px]">
+            <svg class="w-4 h-4 text-teal mt-1.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
+            </svg>
+            {g}
+          </li>
+        ))}
+      </ul>
+      <p class="font-body text-charcoal text-[16px] leading-[27px]">
+        Outpatient and partial hospitalisation are handled elsewhere in Arizona, and we are glad to point you at programmes we rate if that is the level your client needs.
+      </p>
+    </div>
+  </div>
+</section>

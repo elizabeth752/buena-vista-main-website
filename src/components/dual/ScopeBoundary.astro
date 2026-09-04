@@ -1,7 +1,8 @@
 ---
-// The brief calls this the most valuable section on the page: it sets
-// expectations, builds trust, and keeps people who need a higher level of care
-// from arriving somewhere that cannot serve them.
+// The most valuable section on the page: it sets expectations and keeps someone
+// who needs a psychiatric setting from arriving somewhere that is not built for
+// it. The clinical boundary is real and must stay — but it is framed as a
+// redirection, not a refusal. Nobody reading this should feel turned away.
 const canDo = [
   'Treat substance use and co-occurring mental-health conditions together, as part of detox and residential care',
   'Provide medical supervision, individual and group therapy, and case management that account for both',
@@ -9,10 +10,11 @@ const canDo = [
   'Review the psychiatric medication you already take, and coordinate ongoing psychiatric care and aftercare',
 ];
 
-const cannotDo = [
-  'We are not a psychiatric hospital, and we do not provide standalone mental-health treatment',
-  'We cannot serve high-acuity psychiatric cases or someone in an active mental-health crisis',
-  'We do not provide emergency or crisis psychiatric care',
+// Same clinical facts, pointed somewhere rather than closed off.
+const betterElsewhere = [
+  'Standalone mental-health treatment, and psychiatric hospital care, are handled by specialist facilities — tell us and we will help you find one',
+  'An acute mental-health crisis is safer in a psychiatric setting first, and we can help you get there',
+  'For emergency or crisis psychiatric care, call 988 or 911 — then call us once things are steadier and we will pick it up from there',
 ];
 ---
 <section id="scope" class="bg-white py-[60px]">
@@ -24,17 +26,17 @@ const cannotDo = [
         Being straight with you
       </p>
       <h2 class="font-display text-charcoal mb-4">
-        What we can help with, and what we cannot
+        Making sure this is the right place for you
       </h2>
       <p class="font-body text-charcoal text-[17px] leading-[29px] max-w-2xl">
-        We would rather tell you plainly than have you arrive somewhere that is not equipped for what you need. The right care matters more than saying yes to everyone.
+        We would rather be straight with you now than have you arrive somewhere that is not built for what you need. Whichever way it falls, one call and you will know where to go.
       </p>
     </div>
 
     <div class="grid lg:grid-cols-2 gap-6">
 
       <div class="bg-cream rounded-xl p-8 border border-cream-soft">
-        <h3 class="font-display text-2xl text-charcoal mb-5">What we can do</h3>
+        <h3 class="font-display text-2xl text-charcoal mb-5">What we do here</h3>
         <ul class="space-y-4">
           {canDo.map(item => (
             <li class="flex gap-4">
@@ -50,9 +52,9 @@ const cannotDo = [
       </div>
 
       <div class="bg-cream rounded-xl p-8 border border-cream-soft">
-        <h3 class="font-display text-2xl text-charcoal mb-5">What we are not</h3>
+        <h3 class="font-display text-2xl text-charcoal mb-5">Where we will point you instead</h3>
         <ul class="space-y-4">
-          {cannotDo.map(item => (
+          {betterElsewhere.map(item => (
             <li class="flex gap-4">
               <div class="w-6 h-6 rounded-full bg-navy/10 flex items-center justify-center shrink-0 mt-0.5">
                 <svg class="w-3.5 h-3.5 text-navy" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">

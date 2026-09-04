@@ -1,0 +1,52 @@
+---
+/* Four things a family caller can actually get from one phone call. Ordered by
+   how often each comes up: timing (85%), coverage (79%), us contacting the
+   person directly (21%), and the "no idea where to start" call (18%).
+   Those figures inform the ORDER only — never state them in the copy. */
+const offers = [
+  {
+    n: '01',
+    h: 'Find out how soon they could come in',
+    p: 'When things are urgent this is the question that matters. We will tell you honestly what today looks like — whether a bed is open, what admission would involve, and how quickly it could happen.',
+  },
+  {
+    n: '02',
+    h: 'Check their insurance for them',
+    p: 'Usually all we need is a name, a date of birth and the plan on the card. We can run it while you are on the phone, so you find out what is covered before you raise it with them.',
+  },
+  {
+    n: '03',
+    h: 'Call them, if that would help',
+    p: 'If the conversation would land better coming from outside the family, we can make the approach instead. Give us a number and a good time, and someone experienced will have that first conversation so it does not have to come from you.',
+  },
+  {
+    n: '04',
+    h: 'Just talk it through',
+    p: 'Calling with no plan at all, only worry, is a completely reasonable use of this phone number. We will help you work out what you are actually looking at and what the options are.',
+  },
+];
+---
+<section id="what-we-can-do" class="bg-cream py-[60px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mb-12">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+        <span class="w-6 h-px bg-gold inline-block"></span>
+        What one call gets you
+      </p>
+      <h2 class="font-display text-charcoal mb-5">You can do more from here than you think</h2>
+      <p class="font-body text-charcoal text-[18px] leading-[30px]">
+        None of this requires the person to be ready, or even to know you are calling.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-6">
+      {offers.map(o => (
+        <div class="bg-white rounded-xl p-7 border border-cream-soft shadow-sm">
+          <p class="font-display text-gold text-[32px] leading-none mb-4">{o.n}</p>
+          <h3 class="font-display text-[23px] leading-[29px] text-navy mb-3">{o.h}</h3>
+          <p class="font-body text-charcoal text-[16px] leading-[26px]">{o.p}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

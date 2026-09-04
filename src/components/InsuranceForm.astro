@@ -7,7 +7,13 @@ const { id = 'verify', class: className = '' } = Astro.props;
 ---
 <div id={id} class={`bg-white rounded-xl shadow-2xl px-3 py-7 lg:p-7 text-charcoal ${className}`}>
 
-  <!-- Form heading + HIPAA badge as trust indicator.
+  <!-- Carrier list covers AHCCCS/Access plans as well as commercial ones.
+       Access is the majority payer for this facility, and a form that only
+       offered commercial carriers pushed most people to "Other / Not sure".
+       Listing a plan here is a picker option, NOT a claim that we are in
+       network with it — network status is confirmed on the call.
+
+       Form heading + HIPAA badge as trust indicator.
        In-form headings are H5: Source Sans 3 600 · 22/29, not the display serif. -->
   <div class="flex flex-row items-center justify-between gap-3 mb-1">
     <h5 class="font-body font-semibold text-[22px] leading-[29px] text-charcoal">Check your coverage now</h5>
@@ -29,11 +35,23 @@ const { id = 'verify', class: className = '' } = Astro.props;
         <label class="block text-xs font-bold text-charcoal uppercase tracking-wide mb-1.5" for={`${id}-insurance`}>Insurance Carrier</label>
         <select id={`${id}-insurance`} class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm font-body focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal transition-colors text-charcoal bg-white">
           <option value="">Select your carrier</option>
-          <option>Aetna</option>
-          <option>Blue Cross Blue Shield</option>
-          <option>Cigna</option>
-          <option>UnitedHealthcare</option>
+          <optgroup label="AHCCCS / Access plans">
+            <option>Banner University Family Care</option>
+            <option>Mercy Care</option>
+            <option>Arizona Complete Health</option>
+            <option>Health Choice Arizona</option>
+            <option>Molina Healthcare</option>
+            <option>AHCCCS &mdash; not sure which plan</option>
+          </optgroup>
+          <optgroup label="Commercial plans">
+            <option>Aetna</option>
+            <option>Blue Cross Blue Shield</option>
+            <option>Cigna</option>
+            <option>Humana</option>
+            <option>UnitedHealthcare</option>
+          </optgroup>
           <option>Other / Not sure</option>
+          <option>I don't have insurance</option>
         </select>
       </div>
       <div>

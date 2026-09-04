@@ -1,0 +1,46 @@
+---
+/* Every item corroborated by admissions on recorded calls:
+     "before she leaves residential, she does have a case manager... they can
+      get her all set up with getting a primary care provider, getting a
+      psychiatrist, getting a therapist"
+     "the case manager will help me find somewhere to go to afterwards"
+     "detox should have a case manager or a social worker that talks with the
+      client and asks them what they wanna do"
+     "the case manager should be able to set her up with medical transport at
+      discharge"
+     "you work with a case manager to see what your aftercare program is gonna
+      look like"
+
+   ⚠ Do NOT add the wiki's alumni app, alumni events or reunions here — alumni
+   appears in 2 calls and none of those services is corroborated. */
+const arranged = [
+  { h: 'A therapist to carry on with', p: 'Ongoing therapy set up before you leave, so the week after discharge has an appointment in it rather than a gap.' },
+  { h: 'Psychiatric care, where you need it', p: 'We do not prescribe psychiatric medication here, so if that is part of your picture your case manager arranges it for outside — which is the point at which it should be arranged.' },
+  { h: 'A primary care provider', p: 'Unglamorous and frequently missing. A lot of people arrive without one, and leaving with one is quietly one of the more useful things that happens here.' },
+  { h: 'Somewhere to live', p: 'If home is not somewhere you can stay sober, that gets worked on rather than hoped about — including referrals to sober living houses we would actually send someone to.' },
+  { h: 'The journey home', p: 'Transport at discharge is arranged rather than assumed, including where a health plan benefit covers it.' },
+  { h: 'Meetings and a sponsor', p: 'If AA is going to be part of it, the habit is already formed by the time you leave — meetings run here nightly, and your sponsor can come in during your stay.' },
+];
+---
+<section id="case-manager" class="bg-sage-tint py-[70px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mb-12">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+        <span class="w-6 h-px bg-gold inline-block"></span>
+        Your case manager
+      </p>
+      <h2 class="font-display text-charcoal mb-5">One person whose whole job is what happens next</h2>
+      <p class="font-body text-charcoal text-[18px] leading-[30px]">
+        You are assigned one in detox and again in residential. They ask what you want to do rather than handing you a plan, and then they go and arrange it.
+      </p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {arranged.map(a => (
+        <div class="bg-white rounded-xl p-7 border border-cream-soft">
+          <h3 class="font-display text-[21px] leading-[27px] text-navy mb-3">{a.h}</h3>
+          <p class="font-body text-charcoal text-[16px] leading-[26px]">{a.p}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

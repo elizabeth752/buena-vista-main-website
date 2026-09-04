@@ -1,0 +1,66 @@
+---
+/* -----------------------------------------------------------------------------
+   Medical detox in Chandler — location x programme crossover.
+
+   Serves local bottom-funnel intent ("detox chandler az") that neither parent
+   answers: /medical-detox/ explains what detox IS, /locations/chandler/
+   describes the facility. This answers "is there detox here, where, and how
+   fast can I get in".
+
+   Detox is raised on 257 of 571 Buena Vista calls (45%) and Chandler on 164
+   (28.7%) — the highest-value crossover available.
+
+   Deliberately does NOT restate the clinical detail; it links to the programme
+   page for that. Keep it local: address, journey, speed, and the call.
+
+   All claims confirmed: detox and residential are the two services actually
+   run, admissions answers 24h, same-day admission when a bed is open.
+----------------------------------------------------------------------------- */
+import Layout from '../../../layouts/Layout.astro';
+import TopBar from '../../../components/TopBar.astro';
+import Nav from '../../../components/Nav.astro';
+import LocalHero from '../../../components/chandlerprog/LocalHero.astro';
+import GettingToUs from '../../../components/chandlerprog/GettingToUs.astro';
+import Testimonials from '../../../components/Testimonials.astro';
+import VerifySection from '../../../components/VerifySection.astro';
+import FinalCTA from '../../../components/FinalCTA.astro';
+
+const title = 'Medical Detox in Chandler, AZ | Buena Vista Health & Recovery';
+const description =
+  'Medically supervised detox at 3033 S Arizona Ave, Chandler, AZ. Nursing on site 24/7, same-day admission when a bed is open, AHCCCS accepted. Call (888) 362-5576.';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalWebPage',
+  name: 'Medical Detox in Chandler, AZ',
+  description,
+  url: 'https://buenavistarecovery.com/locations/chandler/medical-detox/',
+  provider: {
+    '@type': 'MedicalClinic',
+    name: 'Buena Vista Health & Recovery Centers — Chandler',
+    telephone: '+1-480-680-0606',
+    address: { '@type': 'PostalAddress', streetAddress: '3033 S Arizona Ave', addressLocality: 'Chandler', addressRegion: 'AZ', postalCode: '85286', addressCountry: 'US' },
+  },
+};
+---
+<Layout title={title} description={description}>
+  <TopBar /><Nav />
+  <LocalHero
+    eyebrow="Medical detox · Chandler, Arizona"
+    title="Detox in Chandler, and you can be here today."
+    intro="If you are looking for a detox in Chandler you have found the building rather than a call centre. It is on South Arizona Avenue, it is open every hour of every day, and when a bed is free admission can happen the same day."
+    points={['Nursing on site around the clock','Medication to take the edge off withdrawal','Residential treatment continues in the same building','Someone answers the phone at any hour, including holidays']}
+    image="/Asset/stock%20photo/Desktop%20Dimensions/Facility/Covered%20drop-off%20entrance%20with%20tower%20feature%20and%20circular%20driveway.png"
+    alt="The covered drop-off entrance at the Chandler facility"
+    caption="A covered drop-off, whatever time you arrive."
+    secondaryHref="/medical-detox"
+    secondaryLabel="What detox involves"
+  />
+  <GettingToUs
+    heading="Detox is the part where getting here quickly matters"
+    intro="With alcohol and opioids the window between deciding to stop and being too unwell to act on it is short. That is the whole argument for calling before you have the journey worked out — the journey is usually the easier half of the problem."
+  />
+  <Testimonials /><VerifySection />
+  <FinalCTA />
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
+</Layout>

@@ -1,0 +1,84 @@
+---
+/* Chandler runs medical detox and residential. Roughly a fifth of inbound calls
+   ask for a level of care we don't run yet, so those are named here too — but
+   framed as "we'll get you there" rather than as a list of refusals. Nobody
+   reaching this page should feel turned away. */
+const offered = [
+  {
+    label: 'Medical detox',
+    tag: 'Typically 4–7 days',
+    desc: '24/7 nursing, medication to keep you comfortable through withdrawal, and physician oversight. For alcohol this is usually closer to the seven-day end.',
+    href: '/locations/chandler/medical-detox/',
+  },
+  {
+    label: 'Residential treatment',
+    tag: 'Typically 30 days',
+    desc: 'Live-in care once your body is stable. Group therapy twice a day, one-on-one sessions with your therapist, and a case manager working on what comes after.',
+    href: '/locations/chandler/residential-treatment/',
+  },
+  {
+    label: 'Co-occurring care',
+    tag: 'Within residential',
+    desc: 'Depression, anxiety, PTSD and trauma addressed alongside substance use rather than after it — inside the residential program, not as a separate track.',
+    href: '/dual-diagnosis',
+  },
+];
+
+// Care we help people reach elsewhere — for now.
+const weWillHelpYouFind = [
+  'Intensive outpatient (IOP) and outpatient care',
+  'Partial hospitalization (PHP)',
+  'Medication-assisted treatment',
+  'Sober living and supportive housing',
+];
+---
+<section id="care" class="bg-cream py-[60px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mb-12">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+        <span class="w-6 h-px bg-gold inline-block"></span>
+        What happens here
+      </p>
+      <h2 class="font-display text-charcoal mb-5">Two levels of care, done properly</h2>
+      <p class="font-body text-charcoal text-[18px] leading-[30px]">
+        Detox and residential, under one roof, so you do not have to move facilities halfway through.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6 mb-12">
+      {offered.map(o => (
+        <a href={o.href} class="group bg-white rounded-xl p-7 border border-cream-soft shadow-sm hover:border-teal transition-colors block">
+          <div class="flex items-start justify-between gap-3 mb-3">
+            <h3 class="font-display text-[24px] leading-[30px] text-navy">{o.label}</h3>
+          </div>
+          <span class="inline-block font-body text-xs font-bold uppercase tracking-wide text-gold bg-gold/10 rounded-full px-3 py-1.5 mb-4">{o.tag}</span>
+          <p class="font-body text-charcoal text-[16px] leading-[26px] mb-4">{o.desc}</p>
+          <span class="font-body text-teal font-semibold text-[15px] group-hover:underline">Read more →</span>
+        </a>
+      ))}
+    </div>
+
+    <div class="bg-sand/40 border border-sand rounded-xl p-7 max-w-3xl">
+      <h3 class="font-display text-[22px] leading-[28px] text-charcoal mb-3">Looking for something else? Call us anyway.</h3>
+      <p class="font-body text-charcoal text-[16px] leading-[27px] mb-5">
+        Chandler is built around detox and residential care, and that is not where everyone starts.
+        If what you need is one of these, we will help you find it — placing people in the right
+        program, including at other facilities, is something our admissions team does every day.
+      </p>
+      <ul class="grid sm:grid-cols-2 gap-x-8 gap-y-2.5 mb-5">
+        {weWillHelpYouFind.map(n => (
+          <li class="flex items-start gap-2.5 font-body text-charcoal text-[16px] leading-[26px]">
+            <svg class="w-4 h-4 text-teal mt-1.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5-5 5M6 12h12"/>
+            </svg>
+            {n}
+          </li>
+        ))}
+      </ul>
+      <p class="font-body text-charcoal text-[16px] leading-[27px]">
+        One call, and you will leave it knowing where to go — whether that is a bed here or a
+        place somewhere else that fits you better.
+      </p>
+    </div>
+  </div>
+</section>

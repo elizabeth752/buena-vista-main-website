@@ -1,0 +1,71 @@
+---
+/* RATES — read before editing.
+
+   Day rates come from the client wiki: detox $1,000/day, residential $750/day.
+   They are corroborated by admissions, who most often quote $7,000 for a
+   seven-day detox (= $1,000/day) and around $23,000 for a thirty-day
+   residential stay (= $750/day). One agent has also been heard quoting $10,000
+   for detox, so the numbers people are given by phone are not consistent —
+   publishing them here is partly to fix that.
+
+   Rates are presented as typical and assessment-dependent, never as a quote.
+   Do not harden this into a fixed price list without sign-off from billing, and
+   see the note in the page file about Good Faith Estimate obligations. */
+const rates = [
+  {
+    label: 'Medical detox',
+    rate: 'around $1,000 per day',
+    typical: 'A seven-day stay is common for alcohol, so roughly $7,000',
+    includes: ['24/7 nursing and physician oversight', 'Medication to manage withdrawal', 'Private room with en suite bathroom', 'All meals'],
+  },
+  {
+    label: 'Residential treatment',
+    rate: 'around $750 per day',
+    typical: 'A thirty-day stay works out at roughly $22,500',
+    includes: ['Group therapy twice daily', 'One-to-one sessions with your therapist', 'Case management and discharge planning', 'Private room, all meals, and amenities'],
+  },
+];
+---
+<section id="rates" class="bg-cream py-[60px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mb-12">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+        <span class="w-6 h-px bg-gold inline-block"></span>
+        The rates
+      </p>
+      <h2 class="font-display text-charcoal mb-5">What it costs, in plain numbers</h2>
+      <p class="font-body text-charcoal text-[18px] leading-[30px]">
+        These are the day rates we work from. Your own figure depends on the length of stay your assessment points to, and you will have it confirmed in writing before you commit to anything.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 mb-8">
+      {rates.map(r => (
+        <div class="bg-white rounded-xl p-8 border border-cream-soft shadow-sm">
+          <h3 class="font-display text-[26px] leading-[32px] text-navy mb-2">{r.label}</h3>
+          <p class="font-display text-teal text-[30px] leading-[38px] mb-2">{r.rate}</p>
+          <p class="font-body text-muted text-[15px] leading-[24px] mb-6">{r.typical}</p>
+          <p class="font-body text-charcoal text-xs font-bold tracking-[0.12em] uppercase mb-3">Included in the rate</p>
+          <ul class="space-y-2.5">
+            {r.includes.map(i => (
+              <li class="flex items-start gap-3 font-body text-charcoal text-[16px] leading-[26px]">
+                <svg class="w-4 h-4 text-teal mt-1.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
+                </svg>
+                {i}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <div class="bg-sand/40 border border-sand rounded-xl p-7 max-w-3xl">
+      <p class="font-body text-charcoal text-[16px] leading-[27px]">
+        <strong class="font-bold">Doing both together costs less than the two added up.</strong> Most people move from detox
+        straight into residential, and that is priced as one stay rather than two admissions. Ask for the combined figure
+        on the call and you will get it.
+      </p>
+    </div>
+  </div>
+</section>

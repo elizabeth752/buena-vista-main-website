@@ -1,0 +1,44 @@
+---
+/* All corroborated by admissions on recorded calls:
+     "you'll see a physician within the first twenty four hours and daily
+      after that"
+     "we don't have, like, IV therapies, but we do have all the comfort
+      medications, everything on-site there"
+     "labs, medications, nursing, physician evaluations, and send-out IV care
+      if necessary are provided"
+     "bring in the medications you have, and then talk with our provider when
+      you're here about any adjustments"
+
+   ⚠ Psychiatric prescribing is NOT done here - see the sitewide correction.
+   Existing prescriptions are reviewed and can be refilled; ongoing psychiatric
+   care is arranged for after discharge. Do not soften that back. */
+const onsite = [
+  { h: 'A physician within 24 hours', tag: 'Then daily', p: 'Not a phone consult on day three. You are seen by a physician inside the first day and every day after that, which is the difference between a medical detox and simply being somewhere while you get through it.' },
+  { h: 'Comfort medication', tag: 'On site', p: 'The medication that makes withdrawal bearable is here and prescribed under that physician oversight, adjusted as your symptoms move rather than set once on arrival.' },
+  { h: 'Nursing and labs', tag: 'On site', p: 'Nursing staff around the clock and bloodwork done here, so what is happening to you is measured rather than guessed at.' },
+  { h: 'IV care, if it is needed', tag: 'Arranged out', p: 'There is no IV therapy in the building. If your care needs it, it is arranged externally rather than skipped — worth knowing in advance if that is part of your picture.' },
+];
+---
+<section id="onsite" class="bg-sage-tint py-[70px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mb-12">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+        <span class="w-6 h-px bg-gold inline-block"></span>
+        What is actually on site
+      </p>
+      <h2 class="font-display text-charcoal mb-5">The medical side, plainly</h2>
+      <p class="font-body text-charcoal text-[18px] leading-[30px]">
+        Including the one thing that is not here, because you should hear it now rather than on arrival.
+      </p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {onsite.map(o => (
+        <div class="bg-white rounded-xl p-7 border border-cream-soft">
+          <h3 class="font-display text-[21px] leading-[27px] text-navy mb-2">{o.h}</h3>
+          <span class="inline-block font-body text-xs font-bold uppercase tracking-wide text-gold bg-gold/10 rounded-full px-3 py-1.5 mb-4">{o.tag}</span>
+          <p class="font-body text-charcoal text-[16px] leading-[26px]">{o.p}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

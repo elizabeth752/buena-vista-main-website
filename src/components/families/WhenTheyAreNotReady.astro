@@ -1,0 +1,64 @@
+---
+/* Written for the ~20% of family callers dealing with someone who is hesitant.
+   Deliberately not an intervention script and not a set of instructions — the
+   aim is to take the pressure off the caller, not to add a technique they can
+   fail at. */
+const ideas = [
+  {
+    h: 'Timing matters more than persuasion',
+    p: 'Almost nobody agrees to treatment because of one perfect conversation. What tends to help is being ready when they are — knowing where they would go, what it costs, and that a bed is there. Doing that groundwork now means saying yes takes a phone call rather than a week.',
+  },
+  {
+    h: 'You can hand off the hard part',
+    p: 'If the conversation keeps ending badly, it does not have to be you having it. We can call them directly. Sometimes hearing it from someone outside the family, who is not hurt or frightened, lands differently.',
+  },
+  {
+    h: 'A hospital stay is often the moment',
+    p: 'A hospital visit or a discharge is often the moment something shifts. If that is where you are, tell us — those windows are short, and we can move quickly when there is a bed.',
+  },
+  {
+    h: 'Looking after yourself is part of it',
+    p: 'Living alongside someone else’s drinking or using is exhausting, and it does not require a crisis to justify asking for support. Ask us about family therapy and what support looks like for you, not only for them.',
+  },
+];
+---
+<section id="not-ready" class="bg-sage-tint py-[70px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-16 items-start">
+
+      <div>
+        <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+          <span class="w-6 h-px bg-gold inline-block"></span>
+          When they are not there yet
+        </p>
+        <h2 class="font-display text-charcoal mb-6">
+          If the person you love is not ready
+        </h2>
+        <div class="space-y-5 font-body text-charcoal text-[17px] leading-[29px]">
+          <p>
+            There is no script for this that reliably works. What can be said is that readiness tends to arrive suddenly and without much warning — and that the families who are prepared for it lose the least time.
+          </p>
+          <p>
+            Whatever has already been said or tried, none of it counts against them here. People arrive after years of it and people arrive after one bad week. Both are welcome.
+          </p>
+        </div>
+
+        <div class="mt-8">
+          <a href="tel:8883625576" class="bg-teal hover:bg-teal-dark text-white font-bold px-7 py-3.5 rounded-lg transition-colors font-body tracking-wide inline-block">
+            Talk to someone who has heard this before
+          </a>
+        </div>
+      </div>
+
+      <div class="space-y-5">
+        {ideas.map(i => (
+          <div class="bg-white rounded-xl p-7 border border-cream-soft">
+            <h3 class="font-display text-[21px] leading-[27px] text-navy mb-3">{i.h}</h3>
+            <p class="font-body text-charcoal text-[16px] leading-[26px]">{i.p}</p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </div>
+</section>

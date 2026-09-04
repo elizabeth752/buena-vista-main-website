@@ -1,0 +1,75 @@
+---
+import Horizon from '../Horizon.astro';
+
+const points = [
+  'A case manager assigned from early in your stay',
+  'They ask what you want to do, rather than telling you',
+  'Appointments arranged before you leave, not after',
+  'Getting home is planned too, not left to the last day',
+];
+---
+<section id="hero" class="bg-cream">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-[60px] lg:py-[80px]">
+    <div class="grid lg:grid-cols-[1fr_minmax(0,470px)] gap-12 lg:gap-16 items-center">
+      <div>
+        <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-5 flex items-center gap-2">
+          <span class="w-6 h-px bg-gold inline-block"></span>
+          After treatment · Chandler, Arizona
+        </p>
+
+        <h1 class="font-display text-navy mb-6">
+          The month is not the hard part. The month after is.
+        </h1>
+
+        <p class="font-body text-charcoal text-[20px] leading-[33px] max-w-xl mb-8">
+          Almost everyone does well in a building where the day has a shape and somebody is checking on them. What decides how this goes is the fortnight after you walk out — and that is worked on from early in your stay rather than on the morning you leave.
+        </p>
+
+        <ul class="space-y-3 mb-9">
+          {points.map(item => (
+            <li class="flex items-start gap-3 font-body text-charcoal text-[17px] leading-[29px]">
+              <svg class="w-5 h-5 text-teal mt-1 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
+              </svg>
+              {item}
+            </li>
+          ))}
+        </ul>
+
+        <div class="border-l-2 border-gold pl-5 mb-9 max-w-xl">
+          <p class="font-body text-charcoal text-[16px] leading-[26px]">
+            <strong class="font-bold">If you are choosing between programmes, ask each of them this.</strong> Not what their success rate is — nobody can substantiate that — but who plans your discharge, when they start, and what is actually booked before you leave. The answers vary far more than the brochures do.
+          </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="tel:8883625576" class="inline-flex items-center justify-center gap-2 bg-teal hover:bg-teal-dark text-white font-semibold h-14 px-8 rounded-lg transition-colors font-body">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+            </svg>
+            Ask us how discharge works
+          </a>
+          <a href="/resources/sober-living-arizona/" class="inline-flex items-center justify-center border-2 border-navy text-navy hover:bg-navy hover:text-white font-semibold h-14 px-8 rounded-lg transition-colors font-body">
+            Somewhere to live after
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <div class="overflow-hidden rounded-t-[160px] rounded-b-xl shadow-xl">
+          <img
+            src="/Asset/stock%20photo/Desktop%20Dimensions/Facility/Open%20multipurpose%20hall%20with%20patterned%20flooring,%20gallery%20walls,%20and%20wide%20circulation%20space.png"
+            alt="An open multipurpose hall with gallery walls and wide circulation space"
+            class="w-full object-cover aspect-[4/5]"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </div>
+        <Horizon variant="rule" class="mt-5" />
+        <p class="font-body text-muted text-[15px] leading-[24px] mt-3">
+          The door you walk out of, with a plan attached.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

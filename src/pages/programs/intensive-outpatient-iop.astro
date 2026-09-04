@@ -1,0 +1,63 @@
+---
+/* -----------------------------------------------------------------------------
+   Intensive Outpatient (IOP)
+
+   IMPORTANT — read before editing the copy on this page.
+
+   The client wiki lists IOP as an active level of care. The call export
+   (CallTrackingMetrics, Jan–Jul 2026, 4,030 calls) contradicts that. Across 122
+   calls mentioning IOP, six different Buena Vista agents state on the record
+   that we do not have one:
+
+     Elizabeth Pruitt  "We actually don't have an IOP program currently."
+     Clay Williams     "We don't have IOP right now. We do plan to have one,
+                        but it's a little bit down the road."
+     Carlos Armenta    "We don't have outpatient at our facility. However, our
+                        sister company does."
+     Michael Montoya   "Buena Vista, we don't have our IOP program open just yet."
+     Hailey Jones      "We haven't gotten our IOP up and running just yet."
+
+   Every affirmative "we offer IOP" quote in the export belongs to a different
+   PIR brand (Revive, Plugged In Recovery, Mosaic Minds) — the export covers all
+   of them, not just Buena Vista. The residential page's own FAQ comment already
+   flags "IOP availability" as unverified.
+
+   So this page does NOT claim we run an IOP. It ranks for the term, tells the
+   truth about availability, and captures the demand as a referral — which is
+   what admissions already does on the phone. It is noindex until availability
+   is confirmed either way.
+
+   WHEN THE IOP OPENS: drop the hero disclosure and IopHelpNow, replace with real
+   program detail (schedule, group structure, length), remove noindex, and flip
+   `built: true` in src/data/navigation.ts.
+----------------------------------------------------------------------------- */
+import Layout from '../../layouts/Layout.astro';
+import TopBar from '../../components/TopBar.astro';
+import Nav from '../../components/Nav.astro';
+
+import IopHero from '../../components/iop/IopHero.astro';
+import WhatIsIop from '../../components/iop/WhatIsIop.astro';
+import IopHelpNow from '../../components/iop/IopHelpNow.astro';
+import IopQuestions from '../../components/iop/IopQuestions.astro';
+import IopFaq from '../../components/iop/IopFaq.astro';
+
+import VerifySection from '../../components/VerifySection.astro';
+import FinalCTA from '../../components/FinalCTA.astro';
+
+const title = 'Intensive Outpatient (IOP) in Chandler, AZ | Buena Vista Health & Recovery';
+const description =
+  'What intensive outpatient treatment involves, and how it fits after detox and residential. Our Chandler IOP is not open yet — we will help you find one that takes your insurance. Call (888) 362-5576.';
+---
+<Layout title={title} description={description} noindex={true}>
+  <TopBar />
+  <Nav />
+
+  <IopHero />
+  <WhatIsIop />
+  <IopHelpNow />
+  <IopQuestions />
+  <VerifySection />
+  <IopFaq />
+
+  <FinalCTA />
+</Layout>

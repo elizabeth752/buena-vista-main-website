@@ -1,0 +1,85 @@
+---
+/* -----------------------------------------------------------------------------
+   Depression & substance use.
+
+   Depression appears on 57 of 571 Buena Vista calls (10%).
+
+   ⚠ SAFETY — 40% of these calls involve suicidality, the highest rate of any
+   theme measured across this corpus. 988 therefore appears TWICE on this page:
+   in the hero above the fold, and again after the FAQ. The first FAQ answer is
+   built to make it sayable out loud without the conversation ending. Do not
+   remove either 988 block, and do not soften the acute-crisis answer — an
+   active crisis belongs in a psychiatric setting first, and the page says so
+   while keeping the door open for afterwards.
+
+   FRAMING: like the anxiety page, this is CO-OCCURRING care inside detox and
+   residential, not standalone mental-health treatment (Primary Mental Health is
+   HOLD in the sitemap). The FAQ routes the mental-health-only case elsewhere.
+
+   DIFFERENTIATION — these three condition pages overlap heavily in the calls
+   (91% of depression calls also mention anxiety, 72% also trauma), so each has
+   to own a distinct angle or be consolidated. This page owns the two-kinds-of-
+   low distinction: depression that predates the substance versus the chemical
+   flatness that follows heavy use, with meth present in ~39% of these calls.
+   The anxiety page owns self-medication and rebound anxiety. A trauma page, if
+   built, should own interpersonal harm — domestic situations appear in ~35% of
+   trauma calls and abuse or assault in ~19%.
+
+   STYLE: no call-data sourcing in the copy.
+----------------------------------------------------------------------------- */
+import Layout from '../../layouts/Layout.astro';
+import TopBar from '../../components/TopBar.astro';
+import Nav from '../../components/Nav.astro';
+
+import DepressionHero from '../../components/depression/DepressionHero.astro';
+import TwoKindsOfLow from '../../components/depression/TwoKindsOfLow.astro';
+import DepressionQuestions from '../../components/depression/DepressionQuestions.astro';
+
+import Testimonials from '../../components/Testimonials.astro';
+import VerifySection from '../../components/VerifySection.astro';
+import FinalCTA from '../../components/FinalCTA.astro';
+
+const title = 'Depression & Addiction Treatment in Chandler, AZ | Buena Vista Health & Recovery';
+const description =
+  'Depression treated alongside substance use in detox and residential care at our Chandler, AZ facility. Medication reviewed and dual diagnosis care. Call (888) 362-5576.';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalWebPage',
+  name: 'Depression & Substance Use Treatment in Chandler, AZ',
+  description,
+  url: 'https://buenavistarecovery.com/what-we-treat/depression/',
+  about: {
+    '@type': 'MedicalCondition',
+    name: 'Co-occurring Depressive Disorder and Substance Use Disorder',
+    alternateName: ['Depression and addiction', 'Dual diagnosis depression'],
+  },
+  provider: {
+    '@type': 'MedicalClinic',
+    name: 'Buena Vista Health & Recovery Centers — Chandler',
+    telephone: '+1-888-362-5576',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '3033 S Arizona Ave',
+      addressLocality: 'Chandler',
+      addressRegion: 'AZ',
+      postalCode: '85286',
+      addressCountry: 'US',
+    },
+  },
+};
+---
+<Layout title={title} description={description}>
+  <TopBar />
+  <Nav />
+
+  <DepressionHero />
+  <TwoKindsOfLow />
+  <Testimonials />
+  <VerifySection />
+  <DepressionQuestions />
+
+  <FinalCTA />
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
+</Layout>

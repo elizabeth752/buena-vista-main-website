@@ -1,0 +1,146 @@
+---
+/* -----------------------------------------------------------------------------
+   HTML sitemap.
+
+   Generated from the actual page files via import.meta.glob rather than a
+   hand-kept list, so it cannot drift out of sync with the site. Grouped by URL
+   section, with titles derived from each page's own <title>/H1 where possible.
+
+   Excludes the same pages as the XML sitemap (see astro.config.mjs) plus this
+   page itself. If you add an exclusion there, add it here too.
+----------------------------------------------------------------------------- */
+import Layout from '../layouts/Layout.astro';
+import TopBar from '../components/TopBar.astro';
+import Nav from '../components/Nav.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+
+const EXCLUDE = ['/programs/intensive-outpatient-iop', '/404', '/sitemap'];
+
+const files = import.meta.glob('./**/*.astro', { eager: false });
+const routes = Object.keys(files)
+  .map((f) => f.replace('./', '/').replace(/\.astro$/, '').replace(/\/index$/, ''))
+  .map((u) => (u === '' ? '/' : u))
+  .filter((u) => !EXCLUDE.includes(u))
+  .sort();
+
+// Human labels, section by section. Anything not named here still appears,
+// falling back to the last URL segment.
+const LABELS: Record<string, string> = {
+  '/': 'Home',
+  '/about': 'About Buena Vista',
+  '/about/contact': 'Contact us',
+  '/admissions': 'Admissions',
+  '/admissions/bed-availability': 'Bed availability',
+  '/admissions/length-of-stay': 'How long treatment takes',
+  '/admissions/medications-and-prescriptions': 'Your medication in treatment',
+  '/admissions/travel-and-transportation': 'Travel & transportation',
+  '/dual-diagnosis': 'Dual diagnosis',
+  '/for-families': 'For families & loved ones',
+  '/for-families/staying-in-contact': 'Visitation, phones & staying in contact',
+  '/insurance': 'Insurance & payment options',
+  '/insurance/ahcccs-medicaid': 'AHCCCS & Medicaid',
+  '/insurance/banner-university-family-care': 'Banner University Family Care',
+  '/insurance/private-pay': 'Private pay & rates',
+  '/insurance/verify-your-benefits': 'Verify your benefits',
+  '/locations': 'Our locations',
+  '/locations/chandler': 'Chandler, AZ',
+  '/locations/chandler/medical-detox': 'Medical detox in Chandler',
+  '/locations/chandler/residential-treatment': 'Residential treatment in Chandler',
+  '/locations/phoenix': 'Serving Phoenix, AZ',
+  '/locations/tucson': 'Tucson, AZ (temporarily closed)',
+  '/medical-detox': 'Medical detox',
+  '/programs': 'Programs & levels of care',
+  '/programs/aftercare-and-alumni': 'What happens after treatment',
+  '/referrals': 'Professional & hospital referrals',
+  '/residential-treatment': 'Residential treatment',
+  '/resources': 'Recovery resources',
+  '/resources/sober-living-arizona': 'Sober living & housing',
+  '/resources/withdrawal-timelines': 'What withdrawal is actually like',
+  '/therapies': 'Therapy & clinical approach',
+  '/what-we-treat': 'What we treat',
+  '/what-we-treat/alcohol-addiction': 'Alcohol addiction',
+  '/what-we-treat/anxiety': 'Anxiety & substance use',
+  '/what-we-treat/benzodiazepine-addiction': 'Benzodiazepines',
+  '/what-we-treat/depression': 'Depression & substance use',
+  '/what-we-treat/opioid-addiction': 'Opioid addiction',
+  '/what-we-treat/opioid-addiction/fentanyl': 'Fentanyl',
+  '/what-we-treat/stimulant-addiction': 'Stimulant addiction',
+  '/what-we-treat/stimulant-addiction/methamphetamine': 'Methamphetamine',
+  '/who-we-serve': 'Who we serve',
+};
+
+const SECTIONS: { key: string; title: string }[] = [
+  { key: '/programs', title: 'Programs & levels of care' },
+  { key: '/what-we-treat', title: 'What we treat' },
+  { key: '/therapies', title: 'Therapy' },
+  { key: '/who-we-serve', title: 'Who we serve' },
+  { key: '/for-families', title: 'For families' },
+  { key: '/admissions', title: 'Admissions' },
+  { key: '/insurance', title: 'Insurance & paying' },
+  { key: '/locations', title: 'Locations' },
+  { key: '/resources', title: 'Resources' },
+  { key: '/about', title: 'About' },
+];
+
+const label = (u: string) => LABELS[u] ?? (u.split('/').filter(Boolean).pop() ?? 'Home').replace(/-/g, ' ');
+const inSection = (u: string, key: string) => u === key || u.startsWith(key + '/');
+const claimed = new Set<string>();
+const grouped = SECTIONS.map((s) => {
+  const items = routes.filter((u) => inSection(u, s.key) && !claimed.has(u));
+  items.forEach((u) => claimed.add(u));
+  return { ...s, items };
+}).filter((s) => s.items.length);
+const other = routes.filter((u) => !claimed.has(u));
+
+const title = 'Sitemap | Buena Vista Health & Recovery, Chandler AZ';
+const description = 'Every page on the Buena Vista Health & Recovery site, grouped by section.';
+---
+<Layout title={title} description={description}>
+  <TopBar />
+  <Nav />
+
+  <section class="bg-cream py-[70px]">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+        <span class="w-6 h-px bg-gold inline-block"></span>
+        Sitemap
+      </p>
+      <h1 class="font-display text-navy mb-5">Everything on this site</h1>
+      <p class="font-body text-charcoal text-[18px] leading-[30px] max-w-2xl mb-12">
+        If you would rather scan a list than work through a menu, this is the whole site on one page.
+        If you cannot find what you are looking for, call
+        <a href="tel:8883625576" class="text-teal font-semibold hover:opacity-70 transition-opacity tel-number">(888) 362-5576</a>
+        and ask — someone answers at any hour.
+      </p>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-10">
+        {grouped.map((s) => (
+          <div>
+            <h2 class="font-body text-gold text-xs font-bold tracking-[0.18em] uppercase mb-4">{s.title}</h2>
+            <ul class="space-y-2.5">
+              {s.items.map((u) => (
+                <li>
+                  <a href={`${u}/`.replace('//', '/')} class="font-body text-charcoal hover:text-teal text-[16px] leading-[26px] transition-colors">{label(u)}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+        {other.length > 0 && (
+          <div>
+            <h2 class="font-body text-gold text-xs font-bold tracking-[0.18em] uppercase mb-4">More</h2>
+            <ul class="space-y-2.5">
+              {other.map((u) => (
+                <li>
+                  <a href={`${u}/`.replace('//', '/')} class="font-body text-charcoal hover:text-teal text-[16px] leading-[26px] transition-colors">{label(u)}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <FinalCTA />
+</Layout>

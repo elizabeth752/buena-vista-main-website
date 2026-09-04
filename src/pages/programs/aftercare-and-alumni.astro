@@ -1,0 +1,80 @@
+---
+/* -----------------------------------------------------------------------------
+   What happens after treatment.
+
+   Closes a real gap: the site previously ended at discharge, and "then what?"
+   is a question both patients and families ask when choosing a programme.
+
+   Built on CASE MANAGEMENT, which is corroborated on 32 of 571 calls (5.6%) —
+   above the working threshold — rather than on the wiki's twelve aftercare
+   services, of which almost none is evidenced.
+
+   Corroborating quotes:
+     "before she leaves residential, she does have a case manager... they can
+      get her all set up with getting a primary care provider, getting a
+      psychiatrist, getting a therapist"
+     "the case manager will help me find somewhere to go to afterwards"
+     "detox should have a case manager or a social worker that talks with the
+      client and asks them what they wanna do"
+     "the case manager should be able to set her up with medical transport at
+      discharge"
+     "you work with a case manager to see what your aftercare program is gonna
+      look like"
+
+   ⚠ The URL keeps "alumni" to stay aligned with the sitemap row, but the page
+   deliberately does NOT claim an alumni app, alumni events or reunions. Alumni
+   appears in 2 calls and none of those services is corroborated. Retitle the
+   sitemap row rather than adding them back.
+
+   Note the psychiatry line is consistent with the sitewide correction: care is
+   ARRANGED for outside, not prescribed here.
+----------------------------------------------------------------------------- */
+import Layout from '../../layouts/Layout.astro';
+import TopBar from '../../components/TopBar.astro';
+import Nav from '../../components/Nav.astro';
+
+import AfterHero from '../../components/after/AfterHero.astro';
+import YourCaseManager from '../../components/after/YourCaseManager.astro';
+import AfterQuestions from '../../components/after/AfterQuestions.astro';
+
+import Testimonials from '../../components/Testimonials.astro';
+import VerifySection from '../../components/VerifySection.astro';
+import FinalCTA from '../../components/FinalCTA.astro';
+
+const title = 'What Happens After Treatment | Buena Vista Health & Recovery, Chandler AZ';
+const description =
+  'Discharge planning starts early in your stay: ongoing therapy, a primary care provider, somewhere to live and the journey home, arranged before you leave. Call (888) 362-5576.';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    ['When does discharge planning start at Buena Vista?',
+     'Early in the stay rather than the final week. A case manager is assigned in detox and again in residential, and planning for what comes next begins while there is time to arrange it.'],
+    ['What is arranged before I leave treatment?',
+     'Ongoing therapy, psychiatric care where it applies, a primary care provider, housing if home is not viable, and transport home — so the week after discharge has appointments in it rather than a gap.'],
+    ['Does Buena Vista provide outpatient treatment after residential?',
+     'Not at present — an intensive outpatient programme is being built. Until it opens, case managers help people find an outpatient programme that accepts their insurance.'],
+    ['What happens if I relapse after treatment?',
+     'You can call again. Returning is a normal part of recovery for many people and there is no limit on how many times someone can try.'],
+  ].map(([q, a]) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+};
+---
+<Layout title={title} description={description}>
+  <TopBar />
+  <Nav />
+
+  <AfterHero />
+  <YourCaseManager />
+  <Testimonials />
+  <VerifySection />
+  <AfterQuestions />
+
+  <FinalCTA />
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
+</Layout>

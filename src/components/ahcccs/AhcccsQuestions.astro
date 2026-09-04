@@ -1,0 +1,56 @@
+---
+const faqs = [
+  {
+    q: 'Is AHCCCS the same thing as Access?',
+    a: "Yes — two names for the same programme, and Access is the one used day to day. It is Arizona's Medicaid programme, and it covers substance use and mental health treatment.",
+  },
+  {
+    q: 'Will treatment cost me anything?',
+    a: "For people covered by an Access plan we are in network with, treatment is covered. There is no separate bill for the room, the meals or the therapy. If anything about your particular plan works differently, we will tell you before you arrive rather than after.",
+  },
+  {
+    q: 'How do I find out which plan I have?',
+    a: "The plan name is printed on your AHCCCS card — Banner University Family Care, Mercy Care, Health Choice, Molina and Arizona Complete Health are the common ones. If you cannot find the card, we can usually work it out from your name and date of birth on the phone.",
+  },
+  {
+    q: 'Do I get less time in treatment on Access?',
+    a: "Generally the opposite. Residential stays authorised through Medicaid often run around thirty to forty-five days, which tends to be longer than commercial plans allow. Detox is usually a shorter stay, sized to what your body needs.",
+  },
+  {
+    q: 'What if I have Access but no way to get there?',
+    a: "Say so when you call. We provide airport pickup, and for anyone coming from further out our admissions team will talk through the practicalities with you rather than leaving transport as your problem to solve.",
+  },
+  {
+    q: "What if I'm not on AHCCCS yet?",
+    a: "You can still call. Being mid-application, or unsure whether you qualify at all, is a perfectly normal place to start from, and we can talk through what your options look like in the meantime — including what treatment costs without insurance.",
+  },
+];
+---
+<section id="ahcccs-faq" class="bg-cream py-[70px]">
+  <div class="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8">
+    <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+      <span class="w-6 h-px bg-gold inline-block"></span>
+      Straight answers
+    </p>
+    <h2 class="font-display text-charcoal mb-10">Questions about Access coverage</h2>
+
+    <div class="divide-y divide-cream-soft border-t border-b border-cream-soft">
+      {faqs.map(f => (
+        <details class="group py-5">
+          <summary class="flex items-start justify-between gap-6 cursor-pointer">
+            <h3 class="font-body font-semibold text-charcoal text-[18px] leading-[28px]">{f.q}</h3>
+            <span class="shrink-0 mt-1 text-teal">
+              <svg class="faq-plus w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" d="M12 5v14M5 12h14"/>
+              </svg>
+              <svg class="faq-minus w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" d="M5 12h14"/>
+              </svg>
+            </span>
+          </summary>
+          <p class="font-body text-charcoal text-[16px] leading-[27px] mt-4 pr-10">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

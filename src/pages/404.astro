@@ -1,0 +1,45 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TopBar from '../components/TopBar.astro';
+import Nav from '../components/Nav.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+---
+<Layout
+  title="Page not found | Buena Vista Health & Recovery Centers"
+  description="That page isn't here. Call (888) 362-5576 — someone answers any hour."
+  noindex={true}
+>
+  <TopBar />
+  <Nav />
+
+  <section class="bg-cream">
+    <div class="max-w-2xl mx-auto px-5 sm:px-6 lg:px-8 py-[90px] md:py-[130px]">
+      <p class="font-body text-teal text-xs font-bold tracking-[0.18em] uppercase mb-5">404</p>
+      <h1 class="font-display text-charcoal mb-6">This page isn't here.</h1>
+      <p class="font-body text-charcoal text-[20px] leading-[33px] mb-9">
+        The link may be out of date, or the page may not be published yet. If you were
+        looking for something specific, calling is faster than hunting for it — someone
+        real answers, any hour of the day or night.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-3 mb-12">
+        <a href="tel:8883625576" class="inline-flex items-center justify-center gap-3 bg-gold hover:bg-gold-dark text-navy font-semibold h-14 px-9 rounded-lg transition-colors font-body text-[17px]">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+          </svg>
+          <span class="tel-number">Call (888) 362-5576</span>
+        </a>
+        <a href="/" class="inline-flex items-center justify-center h-14 px-9 rounded-lg border border-cream-soft bg-white hover:bg-sage-tint text-charcoal font-semibold transition-colors font-body text-[17px]">
+          Back to the homepage
+        </a>
+      </div>
+
+      <p class="font-body text-muted text-[13px] leading-[22px]">
+        If you are in immediate danger, call 911. For the Suicide &amp; Crisis Lifeline,
+        call or text <a href="tel:988" class="text-teal font-semibold hover:opacity-70 transition-opacity tel-number">988</a>, any hour.
+      </p>
+    </div>
+  </section>
+
+  <FinalCTA />
+</Layout>

@@ -1,0 +1,42 @@
+---
+const reasons = [
+  { h: 'Your length of stay is a clinical decision', p: 'Nobody is negotiating an authorisation in the background. How long you stay is worked out between you and your clinical team, based on what is actually helping.' },
+  { h: 'Nothing goes through a claim', p: 'For anyone who would rather their treatment not appear in an insurance record, paying directly keeps it out of that system entirely.' },
+  { h: 'It works when a plan does not', p: 'Out-of-network policies, high deductibles, plans that carve out behavioural health — private pay is a straightforward route around all of it.' },
+  { h: 'You can start immediately', p: 'There is no waiting on a prior authorisation to come back. When a bed is open and the figure is agreed, admission can happen the same day.' },
+];
+---
+<section id="why" class="bg-sage-tint py-[70px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-16 items-start">
+      <div>
+        <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+          <span class="w-6 h-px bg-gold inline-block"></span>
+          Why people choose it
+        </p>
+        <h2 class="font-display text-charcoal mb-6">Paying directly buys more than a bed</h2>
+        <div class="space-y-5 font-body text-charcoal text-[17px] leading-[29px]">
+          <p>
+            Private pay is not only for people without insurance. A fair number of people who could claim choose not to, usually for one of the reasons alongside — most often because they would rather the length of their stay be decided clinically than by a utilisation review.
+          </p>
+          <p>
+            It is worth checking your coverage first regardless. Knowing what your policy would do makes this an informed choice rather than a guess.
+          </p>
+        </div>
+        <div class="mt-8">
+          <a href="tel:8883625576" class="bg-teal hover:bg-teal-dark text-white font-bold px-7 py-3.5 rounded-lg transition-colors font-body tracking-wide inline-block">
+            Talk through the numbers
+          </a>
+        </div>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-5">
+        {reasons.map(r => (
+          <div class="bg-white rounded-xl p-7 border border-cream-soft">
+            <h3 class="font-display text-[20px] leading-[26px] text-navy mb-3">{r.h}</h3>
+            <p class="font-body text-charcoal text-[16px] leading-[26px]">{r.p}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

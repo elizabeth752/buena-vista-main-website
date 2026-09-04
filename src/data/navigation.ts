@@ -1,0 +1,300 @@
+/* ---------------------------------------------------------------------------
+   Site navigation — single source of truth for the header and the footer.
+
+   Derived from the proposed sitemap (Sep 2026). The split is deliberate:
+
+   MAIN MENU  carries the paths a person in crisis actually walks — what the
+              program is, what it treats, who it's for, how to get in, what it
+              costs, where it is. Seven groups, nothing deeper than two clicks.
+
+   FOOTER     carries everything that is real but low-intent: the blog, the
+              resource guides, careers, alumni, and the legal/technical pages.
+              Nobody navigates to a privacy policy from a nav bar.
+
+   `built: true` marks a page that exists today. Everything else is planned and
+   will 404 until it ships — flip the flag when the page lands. Note that the
+   live pages still sit on their flat URLs (/medical-detox, not
+   /programs/medical-detox/); update these hrefs when the folder migration runs.
+--------------------------------------------------------------------------- */
+
+export interface NavLink {
+  label: string;
+  href: string;
+  /** Page exists today. Unset means planned-but-not-built. */
+  built?: boolean;
+}
+
+export interface NavColumn {
+  heading?: string;
+  links: NavLink[];
+}
+
+export interface NavGroup {
+  label: string;
+  /** Hub page the top-level label points at. */
+  href: string;
+  built?: boolean;
+  columns: NavColumn[];
+}
+
+/* Two switches control how planned-but-unbuilt links behave.
+
+   HIDE_UNBUILT (default true) keeps them out of the rendered menu entirely.
+   The entries stay in this file as the IA of record, and each one reappears
+   automatically the moment its page ships and `built: true` is set.
+
+   That default matters for more than tidiness: three of the unbuilt entries
+   (/programs/outpatient-program/, /programs/outpatient-therapy/,
+   /programs/mental-health-treatment/) describe levels of care admissions has
+   confirmed we do NOT run. Rendering them would advertise services that do not
+   exist, in the main navigation, on every page.
+
+   Set HIDE_UNBUILT to false to preview the full planned architecture; the dots
+   from SHOW_BUILD_STATUS then mark which pages are not built yet. */
+export const HIDE_UNBUILT = true;
+
+/** Dev aid: dots planned links when they are shown. Irrelevant while HIDE_UNBUILT is true. */
+export const SHOW_BUILD_STATUS = true;
+
+export const mainNav: NavGroup[] = [
+  {
+    label: 'Programs',
+    href: '/programs/',
+    built: true,
+    columns: [
+      {
+        heading: 'Levels of care',
+        links: [
+          { label: 'Medical detox', href: '/medical-detox', built: true },
+          { label: 'Residential treatment', href: '/residential-treatment', built: true },
+          { label: 'Dual diagnosis', href: '/dual-diagnosis', built: true },
+          { label: 'Intensive outpatient (IOP)', href: '/programs/intensive-outpatient-iop/', built: true },
+          { label: 'Outpatient program', href: '/programs/outpatient-program/' },
+          { label: 'Outpatient therapy', href: '/programs/outpatient-therapy/' },
+          { label: 'Mental health treatment', href: '/programs/mental-health-treatment/' },
+          { label: 'What happens after', href: '/programs/aftercare-and-alumni/', built: true },
+        ],
+      },
+      {
+        heading: 'Therapies',
+        links: [
+          { label: 'Therapy & clinical approach', href: '/therapies/', built: true },
+        ],
+      },
+    ],
+  },
+  {
+    label: 'What we treat',
+    href: '/what-we-treat/',
+    built: true,
+    columns: [
+      {
+        heading: 'Substance use',
+        links: [
+          { label: 'Alcohol addiction', href: '/what-we-treat/alcohol-addiction/', built: true },
+          { label: 'Opioid addiction', href: '/what-we-treat/opioid-addiction/', built: true },
+          { label: 'Fentanyl', href: '/what-we-treat/opioid-addiction/fentanyl/', built: true },
+          { label: 'Stimulant addiction', href: '/what-we-treat/stimulant-addiction/', built: true },
+          { label: 'Methamphetamine', href: '/what-we-treat/stimulant-addiction/methamphetamine/', built: true },
+          { label: 'Benzodiazepines', href: '/what-we-treat/benzodiazepine-addiction/', built: true },
+          { label: 'Cannabis use disorder', href: '/what-we-treat/cannabis-use-disorder/' },
+        ],
+      },
+      {
+        heading: 'Mental health',
+        links: [
+          { label: 'Anxiety', href: '/what-we-treat/anxiety/', built: true },
+          { label: 'Depression', href: '/what-we-treat/depression/', built: true },
+          { label: 'PTSD & trauma', href: '/what-we-treat/ptsd-and-trauma/' },
+          { label: 'Bipolar disorder', href: '/what-we-treat/bipolar-disorder/' },
+          { label: 'Dual diagnosis', href: '/dual-diagnosis', built: true },
+        ],
+      },
+    ],
+  },
+  {
+    label: 'Who we serve',
+    href: '/who-we-serve/',
+    built: true,
+    columns: [
+      {
+        heading: 'Our residents',
+        links: [
+          { label: 'Men', href: '/who-we-serve/men/' },
+          { label: 'Women', href: '/who-we-serve/women/' },
+          { label: 'Young adults (18–30)', href: '/who-we-serve/young-adults/' },
+          { label: 'Adults (30–55)', href: '/who-we-serve/adults/' },
+          { label: 'Older adults (55+)', href: '/who-we-serve/older-adults/' },
+          { label: 'Professionals & executives', href: '/who-we-serve/professionals-and-executives/' },
+        ],
+      },
+      {
+        heading: 'For families',
+        links: [
+          { label: 'Families & loved ones', href: '/for-families/', built: true },
+          { label: 'Visitation, phone & contact', href: '/for-families/staying-in-contact/', built: true },
+          { label: "Paying for a loved one's care", href: '/for-families/paying-for-a-loved-ones-treatment/' },
+        ],
+      },
+    ],
+  },
+  {
+    label: 'Admissions',
+    href: '/admissions/',
+    built: true,
+    columns: [
+      {
+        heading: 'Getting started',
+        links: [
+          { label: 'How admissions works', href: '/admissions/', built: true },
+          { label: 'Current bed availability', href: '/admissions/bed-availability/', built: true },
+          { label: 'How long treatment takes', href: '/admissions/length-of-stay/', built: true },
+        ],
+      },
+      {
+        heading: 'Practical questions',
+        links: [
+          { label: 'Your medications', href: '/admissions/medications-and-prescriptions/', built: true },
+          { label: 'Travel & transportation', href: '/admissions/travel-and-transportation/', built: true },
+          { label: 'Accessibility & accommodations', href: '/admissions/accessibility-and-accommodations/' },
+          { label: 'Admissions FAQ', href: '/admissions/faq/' },
+          { label: 'Professional & hospital referrals', href: '/referrals/', built: true },
+        ],
+      },
+    ],
+  },
+  {
+    label: 'Insurance',
+    href: '/insurance',
+    built: true,
+    columns: [
+      {
+        heading: 'Coverage',
+        links: [
+          { label: 'Insurance & payment options', href: '/insurance', built: true },
+          { label: 'Verify your benefits', href: '/insurance/verify-your-benefits/', built: true },
+          { label: 'AHCCCS & Medicaid', href: '/insurance/ahcccs-medicaid/', built: true },
+          { label: 'Banner University Family Care', href: '/insurance/banner-university-family-care/', built: true },
+          { label: 'UnitedHealthcare', href: '/insurance/unitedhealthcare/' },
+          { label: 'Blue Cross Blue Shield', href: '/insurance/blue-cross-blue-shield/' },
+          { label: 'Aetna', href: '/insurance/aetna/' },
+        ],
+      },
+      {
+        heading: 'Paying for treatment',
+        links: [
+          { label: 'Private pay & rates', href: '/insurance/private-pay/', built: true },
+          { label: 'Not sure about your plan?', href: '/insurance/plans-we-do-not-accept/' },
+        ],
+      },
+    ],
+  },
+  {
+    label: 'Locations',
+    href: '/locations/',
+    built: true,
+    columns: [
+      {
+        heading: 'Our facilities',
+        links: [
+          { label: 'Chandler, AZ', href: '/locations/chandler/', built: true },
+          { label: 'Detox in Chandler', href: '/locations/chandler/medical-detox/', built: true },
+          { label: 'Residential in Chandler', href: '/locations/chandler/residential-treatment/', built: true },
+          { label: 'Tucson, AZ', href: '/locations/tucson/', built: true },
+        ],
+      },
+      {
+        heading: 'Areas we serve',
+        links: [
+          { label: 'Arizona', href: '/locations/arizona/' },
+          { label: 'Phoenix', href: '/locations/phoenix/', built: true },
+          { label: 'Mesa', href: '/locations/mesa/' },
+          { label: 'Scottsdale', href: '/locations/scottsdale/' },
+        ],
+      },
+    ],
+  },
+  {
+    label: 'About',
+    href: '/about',
+    built: true,
+    columns: [
+      {
+        links: [
+          { label: 'About Buena Vista', href: '/about', built: true },
+          { label: 'Clinical leadership & team', href: '/about/our-team/' },
+          { label: 'Our clinical approach', href: '/about/our-approach/' },
+          { label: 'Facility tour', href: '/about/facility-tour/' },
+          { label: 'Accreditations & licensing', href: '/about/accreditations-and-licensing/' },
+          { label: 'Careers', href: '/about/careers/' },
+          { label: 'Contact us', href: '/about/contact/', built: true },
+        ],
+      },
+    ],
+  },
+];
+
+/* --- Footer ---------------------------------------------------------------
+   Deliberately not a mirror of the main menu. It repeats a shallow slice of
+   the money pages for crawlers and scroll-to-bottom readers, then carries the
+   things that have no business in a nav bar: the blog, the guides, careers,
+   alumni, and the legal set. */
+
+export const footerColumns: NavColumn[] = [
+  {
+    heading: 'Programs',
+    links: [
+      { label: 'Medical detox', href: '/medical-detox', built: true },
+      { label: 'Residential treatment', href: '/residential-treatment', built: true },
+      { label: 'Dual diagnosis', href: '/dual-diagnosis', built: true },
+      { label: 'Intensive outpatient (IOP)', href: '/programs/intensive-outpatient-iop/', built: true },
+      { label: 'Outpatient program', href: '/programs/outpatient-program/' },
+      { label: 'Mental health treatment', href: '/programs/mental-health-treatment/' },
+      { label: 'What happens after', href: '/programs/aftercare-and-alumni/', built: true },
+    ],
+  },
+  {
+    heading: 'What we treat',
+    links: [
+      { label: 'Alcohol addiction', href: '/what-we-treat/alcohol-addiction/', built: true },
+      { label: 'Opioid addiction', href: '/what-we-treat/opioid-addiction/', built: true },
+      { label: 'Stimulant addiction', href: '/what-we-treat/stimulant-addiction/', built: true },
+      { label: 'Benzodiazepines', href: '/what-we-treat/benzodiazepine-addiction/', built: true },
+      { label: 'Anxiety', href: '/what-we-treat/anxiety/', built: true },
+      { label: 'Depression', href: '/what-we-treat/depression/', built: true },
+      { label: 'PTSD & trauma', href: '/what-we-treat/ptsd-and-trauma/' },
+    ],
+  },
+  {
+    heading: 'Admissions & insurance',
+    links: [
+      { label: 'How admissions works', href: '/admissions/', built: true },
+      { label: 'Bed availability', href: '/admissions/bed-availability/', built: true },
+      { label: 'Verify your benefits', href: '/insurance/verify-your-benefits/', built: true },
+      { label: 'Insurance & payment', href: '/insurance', built: true },
+      { label: 'AHCCCS & Medicaid', href: '/insurance/ahcccs-medicaid/', built: true },
+      { label: 'Professional referrals', href: '/referrals/', built: true },
+    ],
+  },
+  {
+    heading: 'Company & resources',
+    links: [
+      { label: 'About us', href: '/about', built: true },
+      { label: 'Clinical leadership', href: '/about/our-team/' },
+      { label: 'Contact', href: '/about/contact/', built: true },
+      { label: 'Careers', href: '/about/careers/' },
+      { label: 'Blog', href: '/blog/' },
+      { label: 'Recovery resources', href: '/resources/', built: true },
+      { label: 'Withdrawal timelines', href: '/resources/withdrawal-timelines/', built: true },
+      { label: 'Sober living options', href: '/resources/sober-living-arizona/', built: true },
+      { label: 'Alumni community', href: '/alumni/' },
+    ],
+  },
+];
+
+export const legalLinks: NavLink[] = [
+  { label: 'Privacy policy', href: '/privacy-policy/' },
+  { label: 'Notice of privacy practices', href: '/hipaa-notice-of-privacy-practices/' },
+  { label: 'Terms of use', href: '/terms-of-use/' },
+  { label: 'Sitemap', href: '/sitemap/', built: true },
+];

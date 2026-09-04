@@ -1,0 +1,70 @@
+---
+/* -----------------------------------------------------------------------------
+   Admissions hub.
+
+   Central conversion page. Content and section order are drawn from the
+   Jan–Jul 2026 call export — same-day admission is discussed on ~60% of Buena
+   Vista calls, a date of birth is taken on ~37%, a follow-up is promised on
+   ~37%, and bed availability comes up on ~35%. The assessment questions named
+   in TheFirstCall mirror what admissions actually collects.
+
+   STYLE: those figures inform what appears and in what order. They must never
+   appear in the copy — no "most people who call us" framing anywhere on this
+   site. State the fact, not the source.
+
+   Capacity is deliberately not published as a number: it moves daily, and a
+   stale count is worse than none. IfBedsAreFull sets the expectation instead.
+----------------------------------------------------------------------------- */
+import Layout from '../../layouts/Layout.astro';
+import TopBar from '../../components/TopBar.astro';
+import Nav from '../../components/Nav.astro';
+
+import AdmissionsHero from '../../components/admissions/AdmissionsHero.astro';
+import TheFirstCall from '../../components/admissions/TheFirstCall.astro';
+import AdmissionsSteps from '../../components/admissions/AdmissionsSteps.astro';
+import IfBedsAreFull from '../../components/admissions/IfBedsAreFull.astro';
+import AdmissionsQuestions from '../../components/admissions/AdmissionsQuestions.astro';
+
+import Testimonials from '../../components/Testimonials.astro';
+import VerifySection from '../../components/VerifySection.astro';
+import FinalCTA from '../../components/FinalCTA.astro';
+
+const title = 'Admissions | Buena Vista Health & Recovery, Chandler AZ';
+const description =
+  'How admission works at our Chandler, AZ facility: one call, a short assessment, a free coverage check, and same-day admission when a bed is open. Call (888) 362-5576, any hour.';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    ['How quickly can I get into rehab?',
+     'When a bed is open and coverage is confirmed, admission can often happen the same day. Buena Vista admissions answers 24 hours a day, including holidays.'],
+    ['What happens on the first call to admissions?',
+     'A short assessment of about ten to fifteen minutes: your name and date of birth, what you have been using and how recently, any medications, anything going on mentally, and your insurance details. Coverage is checked on the same call.'],
+    ['Do I need insurance sorted before I call?',
+     'No. A card, a plan name, or simply your name and date of birth is enough for us to run a check. If you have no coverage, we will talk through the options.'],
+    ['Can someone else start admission on my behalf?',
+     'Yes. A partner, parent, friend or case manager can call, ask the same questions, and get the same answers about coverage and timing.'],
+  ].map(([q, a]) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+};
+---
+<Layout title={title} description={description}>
+  <TopBar />
+  <Nav />
+
+  <AdmissionsHero />
+  <TheFirstCall />
+  <AdmissionsSteps />
+  <IfBedsAreFull />
+  <Testimonials />
+  <VerifySection />
+  <AdmissionsQuestions />
+
+  <FinalCTA />
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
+</Layout>

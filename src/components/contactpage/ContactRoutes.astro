@@ -1,0 +1,56 @@
+---
+/* ⚠ EMAIL DOMAIN — the client wiki gives admissions@buenavistarecovery.com.
+   That address appears ZERO times in the call export. What does appear:
+     admissions@buena.health   4 mentions
+     tia@buena.health          8 · j.rizzo@buena.health 5 · hr@buena.health 2
+     Clay Williams on a recorded call: "Buena dot health is our email tag."
+   So buena.health is used here instead. CONFIRM with the client — a wrong
+   address on a referral page loses leads silently. The phone is deliberately
+   the primary route everywhere on this page for exactly that reason.
+
+   Records requests: an agent directs a caller to a medicalrecords@ address,
+   but the domain is garbled in the transcript, so it is not published. Records
+   route through the main line until someone confirms it. */
+const routes = [
+  { h: 'Admissions', tag: '24 hours', body: 'Someone real answers at any hour, including holidays. This is the fastest route for anything about getting in — beds, coverage, timing.', tel: '(888) 362-5576', href: 'tel:8883625576' },
+  { h: 'The Chandler facility', tag: 'Front desk', body: 'For anything about the building itself, or if you are already on your way and need to reach the desk.', tel: '(480) 680-0606', href: 'tel:4806800606' },
+  { h: 'Professional referrals', tag: 'Case managers & clinicians', body: 'Bed status, benefits and clinical fit settled on one call. Or send the details by email and someone will come back to you.', tel: 'admissions@buena.health', href: 'mailto:admissions@buena.health' },
+  { h: 'Records, careers and everything else', tag: 'Via the main line', body: 'Requests for past treatment records, job enquiries and anything that is not admissions can be routed from the main number to the right person.', tel: '(888) 362-5576', href: 'tel:8883625576' },
+];
+---
+<section id="routes" class="bg-cream py-[60px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mb-12">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+        <span class="w-6 h-px bg-gold inline-block"></span>
+        How to reach us
+      </p>
+      <h2 class="font-display text-charcoal mb-5">Four ways in, and one of them is always open</h2>
+      <p class="font-body text-charcoal text-[18px] leading-[30px]">
+        The phone is the fastest for anything that matters today. Everything else can wait for an email.
+      </p>
+    </div>
+    <div class="grid sm:grid-cols-2 gap-6">
+      {routes.map(r => (
+        <div class="bg-white rounded-xl p-7 border border-cream-soft shadow-sm">
+          <div class="flex flex-wrap items-center gap-3 mb-3">
+            <h3 class="font-display text-[22px] leading-[28px] text-navy">{r.h}</h3>
+            <span class="font-body text-xs font-bold uppercase tracking-wide text-gold bg-gold/10 rounded-full px-3 py-1.5">{r.tag}</span>
+          </div>
+          <p class="font-body text-charcoal text-[16px] leading-[26px] mb-4">{r.body}</p>
+          <a href={r.href} class="font-body font-semibold text-teal text-[17px] hover:opacity-70 transition-opacity break-words tel-number">{r.tel}</a>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-8 bg-sand/40 border border-sand rounded-xl p-7 max-w-3xl">
+      <h3 class="font-display text-[22px] leading-[28px] text-charcoal mb-3">Please do not email us medical details</h3>
+      <p class="font-body text-charcoal text-[16px] leading-[27px]">
+        Ordinary email is not a secure way to send a diagnosis, a medication list, a member ID or anything else about
+        someone's health — yours or a client's. It is a very common thing to do and no one will mind, but the phone is
+        both faster and safer for that. Send an email saying you would like to talk, and we will take the details
+        properly from there.
+      </p>
+    </div>
+  </div>
+</section>

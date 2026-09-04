@@ -1,0 +1,72 @@
+---
+/* -----------------------------------------------------------------------------
+   Sober living & housing.
+
+   Housing need appears on 42 of 571 Buena Vista calls (7.4%) once every
+   phrasing is counted — "sober living" (18), homeless or nowhere to go (22),
+   supportive housing, halfway house, needs somewhere to live. That makes it the
+   strongest remaining topic that is not blocked on a payer confirmation.
+
+   ⚠ WE DO NOT OPERATE SOBER LIVING. Referral only, per the wiki and admissions.
+   NO PRICES on this page: the weekly rates in the call export ($210/week and
+   similar) belong to sister-brand houses (Hudson, Recovery), not to anything
+   Buena Vista runs or controls. Quoting them here would be quoting someone
+   else's business. Let the house quote its own rate.
+
+   The page deliberately serves two different needs at once: post-treatment
+   housing, and the more urgent case of someone with nowhere to go tonight.
+   For the latter the honest and useful point is that detox plus residential is
+   30-45 days of a bed with an address, which buys time to solve the rest.
+
+   STYLE: no call-data sourcing; "we don't run these" is stated as a fact
+   immediately paired with what we do instead.
+----------------------------------------------------------------------------- */
+import Layout from '../../layouts/Layout.astro';
+import TopBar from '../../components/TopBar.astro';
+import Nav from '../../components/Nav.astro';
+
+import SoberLivingHero from '../../components/soberliving/SoberLivingHero.astro';
+import HousingOptions from '../../components/soberliving/HousingOptions.astro';
+import SoberLivingQuestions from '../../components/soberliving/SoberLivingQuestions.astro';
+
+import Testimonials from '../../components/Testimonials.astro';
+import VerifySection from '../../components/VerifySection.astro';
+import FinalCTA from '../../components/FinalCTA.astro';
+
+const title = 'Sober Living & Housing After Treatment | Buena Vista Health & Recovery, AZ';
+const description =
+  'Where to live during and after treatment in Arizona. Detox and residential are live-in, and we refer to sober living rather than run it. Call (888) 362-5576.';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    ['Does Buena Vista run sober living houses?',
+     'No. Buena Vista refers to sober living homes rather than operating them, and can make an introduction to houses in the Phoenix area and across Arizona.'],
+    ['I have nowhere to live. Can I still go to treatment?',
+     'Yes. Detox and residential treatment are live-in, so treatment answers the housing question for the first month or so while a longer-term plan is worked out with a case manager.'],
+    ['Can I go straight into sober living instead of treatment?',
+     'Sober living generally expects someone to be stable already, as it is housing rather than clinical care. If daily drinking or using is still happening, detox first is safer and usually what a house will want to see.'],
+    ['When is housing planned during treatment?',
+     'Discharge planning begins early in the stay rather than in the final week, so housing is worked on alongside the clinical programme.'],
+  ].map(([q, a]) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+};
+---
+<Layout title={title} description={description}>
+  <TopBar />
+  <Nav />
+
+  <SoberLivingHero />
+  <HousingOptions />
+  <Testimonials />
+  <VerifySection />
+  <SoberLivingQuestions />
+
+  <FinalCTA />
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
+</Layout>

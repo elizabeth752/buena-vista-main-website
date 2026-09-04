@@ -1,0 +1,38 @@
+---
+/* MAT and psychiatry boundaries both apply here. Maintenance medication is
+   "raise it for clinical review", never an offer to continue or prescribe.
+   Psychiatric medication is reviewed and refilled, not newly prescribed. */
+const faqs = [
+  { q: 'Can I bring my medication with me?', a: "Yes, and please do — in the original bottles rather than loose, so the label tells our team the dose and the prescriber. Bring everything, including things you have stopped taking, because that is clinically useful too." },
+  { q: 'What about medication for a physical condition?', a: "Blood pressure, diabetes, thyroid, seizure medication and the rest — bring it and say so at the assessment. These are the ones people most often forget to mention, and they are exactly the ones that matter on the first night." },
+  { q: "I'm on methadone or Suboxone.", a: "Raise it at the very start of the call with the dose and how long you have been on it. Our doctors review maintenance medication as part of your assessment and plan around it, and that is a much better conversation to have before you arrive than on the day." },
+  { q: 'What happens to my antidepressant?', a: "It gets reviewed by our medical team rather than stopped by default, and existing prescriptions can be refilled here. We are not a psychiatric prescriber though — ongoing psychiatric care is arranged by your case manager as part of your aftercare, so you leave with it in place." },
+  { q: 'Will you take my pain medication away?', a: "Nothing is stopped or changed without a clinician deciding it, and you will be part of that conversation rather than told afterwards. If prescribed pain medication is part of a complicated picture, say so on the first call so it can be planned properly." },
+  { q: 'Do you have IV treatments?', a: "Not in the building. Labs, medications, nursing and physician evaluations are all here, and IV care is arranged externally if your treatment calls for it. If that matters to you, raise it before you arrive." },
+  { q: 'How soon do I see a doctor?', a: "Within the first twenty-four hours, and then every day. Detox is a medical process here rather than a room you wait in." },
+  { q: 'What if I am not sure what I am taking?', a: "Bring the bottles and let the labels do the work, or bring the pharmacy's number. If you have none of that, come anyway — it is a solvable problem and a very common one." },
+];
+---
+<section id="meds-faq" class="bg-cream py-[70px]">
+  <div class="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8">
+    <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+      <span class="w-6 h-px bg-gold inline-block"></span>
+      Straight answers
+    </p>
+    <h2 class="font-display text-charcoal mb-10">Questions about medication</h2>
+    <div class="divide-y divide-cream-soft border-t border-b border-cream-soft">
+      {faqs.map(f => (
+        <details class="group py-5">
+          <summary class="flex items-start justify-between gap-6 cursor-pointer">
+            <h3 class="font-body font-semibold text-charcoal text-[18px] leading-[28px]">{f.q}</h3>
+            <span class="shrink-0 mt-1 text-teal">
+              <svg class="faq-plus w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg>
+              <svg class="faq-minus w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M5 12h14"/></svg>
+            </span>
+          </summary>
+          <p class="font-body text-charcoal text-[16px] leading-[27px] mt-4 pr-10">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

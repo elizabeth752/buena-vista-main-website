@@ -1,0 +1,56 @@
+---
+/* Capacity is the single biggest practical constraint on admission, and it
+   moves week to week. Rather than publish a live count that goes stale, this
+   section sets the expectation and makes the waiting productive — a file
+   opened, a coverage check done, a call back when something opens. Framed as
+   what we will do, never as a refusal. */
+const then = [
+  { h: 'We open your file anyway', p: 'The assessment and the coverage check hold good. When something opens you are not starting from the beginning again.' },
+  { h: 'We call you back', p: 'Not a vague promise to keep an eye out — an actual call, from an actual person, when a bed comes free.' },
+  { h: 'We look elsewhere in the meantime', p: 'If waiting is not safe or not realistic, we will help you find a programme with space now, including at other facilities in Arizona.' },
+];
+---
+<section id="beds" class="bg-cream py-[60px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+
+      <div>
+        <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+          <span class="w-6 h-px bg-gold inline-block"></span>
+          If we are full that day
+        </p>
+        <h2 class="font-display text-charcoal mb-6">
+          Beds move. Call and find out where they are today.
+        </h2>
+        <div class="space-y-5 font-body text-charcoal text-[17px] leading-[29px]">
+          <p>
+            Detox and residential capacity changes by the day, which is why no honest website can print a number and expect it to be true by the time you read it. What we can promise is a straight answer the moment you ask.
+          </p>
+          <p>
+            And if the answer that day is that we are full, the call is still worth making — the momentum you have right now is worth more than the wait.
+          </p>
+        </div>
+        <div class="mt-8">
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="tel:8883625576" class="inline-flex items-center justify-center gap-2 bg-teal hover:bg-teal-dark text-white font-semibold h-14 px-8 rounded-lg transition-colors font-body">
+              <span class="tel-number">Ask about today — (888) 362-5576</span>
+            </a>
+            <a href="/admissions/bed-availability/" class="inline-flex items-center justify-center border-2 border-navy text-navy hover:bg-navy hover:text-white font-semibold h-14 px-8 rounded-lg transition-colors font-body">
+              Why availability moves
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-5">
+        {then.map(t => (
+          <div class="bg-white rounded-xl p-7 border border-cream-soft shadow-sm">
+            <h3 class="font-display text-[21px] leading-[27px] text-navy mb-3">{t.h}</h3>
+            <p class="font-body text-charcoal text-[16px] leading-[26px]">{t.p}</p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </div>
+</section>

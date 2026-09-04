@@ -1,0 +1,75 @@
+---
+/* -----------------------------------------------------------------------------
+   Banner University Family Care.
+
+   ⚠ NOT A SITEMAP ROW — added on call evidence, per the standing rule that the
+   call export outranks the client wiki.
+
+   Banner is mentioned on 72 of 571 Buena Vista calls (12.6%), more than any
+   other payer, and it is the one admissions names as in network:
+     "Carlos confirmed Banner is in-network"
+     "Banner is one of the few access plans that we can take right now"
+
+   By contrast the sitemap carries per-payer rows for Cigna (0.2% of BV calls)
+   and Aetna (2.5%) but none for Banner. Those two rows should drop and this one
+   should be added — see the note in the handover.
+
+   Callers use several names for it: Banner University Family Care, Banner
+   Family Care, Banner Access, Banner University Medical, or just Banner. The
+   copy names them all so the page matches how people actually search.
+
+   Transport caveat is real: admissions notes it can be harder to arrange a ride
+   on Banner than on some plans. Handled in the FAQ as something to raise early.
+
+   STYLE: no call-data sourcing in the copy; capacity limits framed as next
+   steps rather than refusals.
+----------------------------------------------------------------------------- */
+import Layout from '../../layouts/Layout.astro';
+import TopBar from '../../components/TopBar.astro';
+import Nav from '../../components/Nav.astro';
+
+import BannerHero from '../../components/banner/BannerHero.astro';
+import BannerCovers from '../../components/banner/BannerCovers.astro';
+import BannerQuestions from '../../components/banner/BannerQuestions.astro';
+
+import Testimonials from '../../components/Testimonials.astro';
+import VerifySection from '../../components/VerifySection.astro';
+import FinalCTA from '../../components/FinalCTA.astro';
+
+const title = 'Does Buena Vista Accept Banner? | Banner University Family Care, Chandler AZ';
+const description =
+  'Banner University Family Care is in network at our Chandler, AZ facility. Access covers medical detox and residential treatment. Free eligibility check — call (888) 362-5576.';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    ['Does Buena Vista accept Banner University Family Care?',
+     'Yes. Banner University Family Care is in network at the Chandler facility, and it is the plan carried by more admitted patients than any other. Eligibility is confirmed free on the admissions call.'],
+    ['Is Banner the same as AHCCCS or Access?',
+     'Banner University Family Care is one of the health plans delivering AHCCCS, Arizona’s Medicaid programme, commonly called Access. Banner Access, Banner Family Care and Banner University Family Care all refer to the same coverage.'],
+    ['What does Banner cover at Buena Vista?',
+     'Medical detox and residential treatment, including co-occurring mental health care delivered alongside them. Room, meals and the clinical programme are included rather than billed separately.'],
+    ['How long will Banner authorise residential treatment?',
+     'Residential stays under Medicaid commonly run between thirty and forty-five days, often longer than a commercial policy allows. Detox is a shorter stay sized to clinical need.'],
+  ].map(([q, a]) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+};
+---
+<Layout title={title} description={description}>
+  <TopBar />
+  <Nav />
+
+  <BannerHero />
+  <BannerCovers />
+  <Testimonials />
+  <VerifySection />
+  <BannerQuestions />
+
+  <FinalCTA />
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
+</Layout>

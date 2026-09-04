@@ -1,0 +1,59 @@
+---
+/* FACTS, and where they came from — admissions on recorded calls:
+     "you get access to your phone or electronics from 4PM to 9PM once you're
+      on residential"  ·  "your cell phone every night from 4PM to 9PM"
+     "There is visitation, which is on Wednesday, Saturday, and Sunday."
+     Sponsors can come into the facility and do step work.
+
+   One agent quotes 4:30-8:30pm instead of 4-9pm, and the wiki says 4-10pm, so
+   the window is described as "roughly" and every claim is paired with "confirm
+   on the call". Do not harden these into exact times without checking with the
+   programme — the hours are theirs to set and they have moved before. */
+const stages = [
+  {
+    h: 'During detox',
+    tag: 'Usually 4–7 days',
+    p: 'The quiet stretch. Phones are generally not part of detox, and there is a good reason for it beyond policy: the first days are physically hard and largely spent sleeping, and the outside world tends to make them harder rather than easier. If someone needs to reach you urgently, they call the facility and it gets passed on.',
+  },
+  {
+    h: 'Once you move into residential',
+    tag: 'Evenings, roughly 4–9pm',
+    p: 'Phone and electronics access opens up in the evenings, every night. It is enough to call home, say goodnight to your children, and deal with the things that genuinely cannot wait a month — without your phone being in the room during therapy.',
+  },
+  {
+    h: 'Visiting days',
+    tag: 'Wednesday, Saturday, Sunday',
+    p: 'Three days a week during the residential stay. Far enough apart that the week has a shape to it, frequent enough that nobody goes a fortnight without seeing anyone.',
+  },
+  {
+    h: 'Sponsors are welcome too',
+    tag: 'By arrangement',
+    p: 'If you have a sponsor, they can come into the facility and do step work with you while you are here. That continuity is worth more than most people expect once they leave.',
+  },
+];
+---
+<section id="shape" class="bg-cream py-[60px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mb-12">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+        <span class="w-6 h-px bg-gold inline-block"></span>
+        What it actually looks like
+      </p>
+      <h2 class="font-display text-charcoal mb-5">A quiet start, then a routine</h2>
+      <p class="font-body text-charcoal text-[18px] leading-[30px]">
+        The restriction is front-loaded and short. It is not a punishment, and it is not the whole month.
+      </p>
+    </div>
+    <div class="grid sm:grid-cols-2 gap-6">
+      {stages.map(s => (
+        <div class="bg-white rounded-xl p-7 border border-cream-soft shadow-sm">
+          <div class="flex flex-wrap items-center gap-3 mb-3">
+            <h3 class="font-display text-[22px] leading-[28px] text-navy">{s.h}</h3>
+            <span class="font-body text-xs font-bold uppercase tracking-wide text-gold bg-gold/10 rounded-full px-3 py-1.5">{s.tag}</span>
+          </div>
+          <p class="font-body text-charcoal text-[16px] leading-[26px]">{s.p}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

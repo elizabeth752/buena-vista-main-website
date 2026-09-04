@@ -1,0 +1,35 @@
+---
+const faqs = [
+  { q: 'Do you treat anxiety, or just the drinking?', a: "Both, together. Anxiety, depression, PTSD and trauma are addressed inside detox and residential treatment rather than left for you to sort out afterwards — that is what dual diagnosis care means here." },
+  { q: 'What if my anxiety is the only problem?', a: "Then a different setting is likely the better fit, and we would rather point you to one than take a placement that will not serve you. Our programmes are built around substance use with mental health treated alongside it. Call and describe it as it is — we will help you find the right place either way." },
+  { q: 'Will I be taken off my anxiety medication?', a: "That is a clinical decision made after our medical team reviews your assessment, not a policy applied to everyone. Bring your medication in its original bottles and raise it at the start of the call so the planning happens before you arrive." },
+  { q: 'I was prescribed Xanax and now I cannot stop.', a: "This is a common and completely understandable place to end up, and it is not something anyone here will hold against you. Benzodiazepines are one of the substances where stopping without supervision carries real risk, which is exactly what a medical detox is for." },
+  { q: 'Will detox make my anxiety worse?', a: "The first days can be sharper, which is precisely why doing it with nursing on site and medication available beats doing it alone. It settles, and most people find their baseline anxiety is markedly lower a few weeks in than it was when they arrived." },
+  { q: 'Who looks after my medication here?', a: "Our on-site medical providers review the medication you arrive on, and existing prescriptions can be refilled here. We are not a psychiatric prescriber, though — ongoing psychiatric care is something your case manager arranges as part of your aftercare, so you leave with it lined up rather than with a gap." },
+  { q: 'What if I have never been diagnosed with anything?', a: "That is fine and very common. You do not need a diagnosis to say that something has felt wrong for a long time. Describing it plainly on the call is enough to start with." },
+  { q: 'Does group therapy make anxiety worse?', a: "It is the thing people most often dread and most often end up valuing. Nobody is made to speak before they are ready, and the room is full of people who have arrived feeling exactly the same way." },
+];
+---
+<section id="anxiety-faq" class="bg-cream py-[70px]">
+  <div class="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8">
+    <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+      <span class="w-6 h-px bg-gold inline-block"></span>
+      Straight answers
+    </p>
+    <h2 class="font-display text-charcoal mb-10">Questions about anxiety and treatment</h2>
+    <div class="divide-y divide-cream-soft border-t border-b border-cream-soft">
+      {faqs.map(f => (
+        <details class="group py-5">
+          <summary class="flex items-start justify-between gap-6 cursor-pointer">
+            <h3 class="font-body font-semibold text-charcoal text-[18px] leading-[28px]">{f.q}</h3>
+            <span class="shrink-0 mt-1 text-teal">
+              <svg class="faq-plus w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg>
+              <svg class="faq-minus w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M5 12h14"/></svg>
+            </span>
+          </summary>
+          <p class="font-body text-charcoal text-[16px] leading-[27px] mt-4 pr-10">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,66 @@
+---
+/* IMPORTANT — the pathway for meth differs from alcohol and opioids, and the
+   call export is explicit about it: "residential treatment for meth typically
+   doesn't include detox", and meth-only admissions go straight into residential.
+   Detox applies when something else is in the mix — and it usually is, since a
+   large share of meth admissions involve fentanyl or alcohol alongside it.
+   Do not restructure this page to mirror the alcohol page's detox-first flow. */
+const routes = [
+  {
+    label: 'Meth on its own',
+    tag: 'Straight into residential',
+    desc: 'Stopping meth does not put the body in the kind of danger that alcohol or benzodiazepines do, so there is usually no separate medical detox stage. Treatment starts with residential care — a bed, a routine, and clinical support through the worst of the comedown.',
+  },
+  {
+    label: 'Meth alongside fentanyl, alcohol or other opioids',
+    tag: 'Medical detox first',
+    desc: 'Using more than one thing is the norm rather than the exception, and when opioids or alcohol are in the picture a supervised detox comes first. Both happen in the same building, so it is one admission rather than two.',
+  },
+  {
+    label: 'Already on methadone or Suboxone',
+    tag: 'Tell us on the call',
+    desc: 'Being on a maintenance medication does not rule you out of treatment. Raise it early in the conversation so the clinical team can plan around it properly before you arrive.',
+  },
+];
+---
+<section id="pathway" class="bg-cream py-[55px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-14 items-start">
+
+      <div>
+        <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+          <span class="w-6 h-px bg-gold inline-block"></span>
+          Where you would start
+        </p>
+        <h2 class="font-display text-charcoal mb-6">
+          Meth treatment usually skips the detox stage
+        </h2>
+
+        <div class="space-y-5 font-body text-charcoal text-[17px] leading-[29px]">
+          <p>
+            This surprises people, and it is worth knowing before you call. Alcohol and benzodiazepines can make the body genuinely unsafe when they stop, which is what a medical detox is built for. Meth does not work that way — the difficulty is real, but it is not that kind of medical emergency.
+          </p>
+          <p>
+            So for meth on its own, treatment tends to begin with <strong class="font-bold">residential care</strong> rather than a detox stay: thirty days or so of structure, therapy and rest, starting from the day you arrive.
+          </p>
+          <p>
+            Where it changes is when something else is in the mix — and it very often is. Fentanyl and alcohol alongside meth are common, and either of those does mean a supervised detox first.
+          </p>
+        </div>
+      </div>
+
+      <div class="space-y-5">
+        {routes.map(r => (
+          <div class="bg-white rounded-xl p-7 shadow-sm border border-cream-soft">
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-3">
+              <h3 class="font-display text-[22px] leading-[28px] text-charcoal">{r.label}</h3>
+              <span class="shrink-0 font-body text-xs font-bold uppercase tracking-wide text-gold bg-gold/10 rounded-full px-3 py-1.5">{r.tag}</span>
+            </div>
+            <p class="font-body text-charcoal text-[16px] leading-[26px]">{r.desc}</p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </div>
+</section>

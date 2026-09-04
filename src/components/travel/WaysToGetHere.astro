@@ -1,0 +1,55 @@
+---
+/* GROUNDING — the client wiki records transport as "airport pickup/dropoff
+   only", but admissions routinely offers more than that: sending a ride
+   (commonly a rideshare) to bring someone in, and arranging pickup from a home
+   address at a scheduled intake time. This page reflects what is actually
+   offered, hedged with "often" and "ask on the call" because availability
+   plainly varies by distance and day. Confirm the real policy with admissions
+   and tighten this if it turns out to be narrower than the calls suggest. */
+const ways = [
+  {
+    n: '01',
+    h: 'We send a ride',
+    p: 'For many admissions we can arrange a car to collect you and bring you in, including at an intake time in the evening. How far we can reach varies, so give us your address on the call and we will tell you straight away whether it works.',
+  },
+  {
+    n: '02',
+    h: 'Airport pickup',
+    p: 'If you are flying in, Sky Harbor is the airport and pickup may be available — ask. Send us your flight details when you call and ask what can be arranged.',
+  },
+  {
+    n: '03',
+    h: 'Your health plan may cover it',
+    p: 'Many Access plans include non-emergency medical transport — the same benefit people use for appointments. It is easy to overlook and worth asking your plan about, and we can talk you through how to.',
+  },
+  {
+    n: '04',
+    h: 'Someone drives you',
+    p: 'A family member or friend can bring you at any hour, including holidays. There is a covered drop-off at the front and someone at the desk whenever you arrive.',
+  },
+];
+---
+<section id="ways" class="bg-cream py-[60px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mb-12">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+        <span class="w-6 h-px bg-gold inline-block"></span>
+        Four ways in
+      </p>
+      <h2 class="font-display text-charcoal mb-5">However you get here is fine</h2>
+      <p class="font-body text-charcoal text-[18px] leading-[30px]">
+        Most people use one of these. If none of them fits your situation, say so and we will work on it with you.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {ways.map(w => (
+        <div class="bg-white rounded-xl p-7 border border-cream-soft shadow-sm">
+          <p class="font-display text-gold text-[32px] leading-none mb-4">{w.n}</p>
+          <h3 class="font-display text-[21px] leading-[27px] text-navy mb-3">{w.h}</h3>
+          <p class="font-body text-charcoal text-[16px] leading-[26px]">{w.p}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
