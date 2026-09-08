@@ -1,15 +1,31 @@
 ---
-const BASE = '/Asset/Facility/';
+/* Full-bleed photo divider.
+
+   ⚠ WAS PIXELATED. It pulled from /Asset/Facility/, where the files are
+   530x396, and stretched them across a full-width band up to 500px tall — a
+   4x upscale. The same shots exist at 2120x1280 under
+   /Asset/stock photo/Desktop Dimensions/Facility/, which is what it now uses.
+   Do not point this back at /Asset/Facility/.
+
+   Band height raised from 500px to 640px so it reads as a deliberate break
+   rather than a squeezed strip. */
+const BASE = '/Asset/stock%20photo/Desktop%20Dimensions/Facility/';
 
 const images = [
-  { file: '8. Evening exterior facade with illuminated entrance and curved driveway.png', alt: 'Evening exterior facade with illuminated entrance and curved driveway' },
-  { file: '9. Sunlit common hall with lounge furniture, tall windows, and open floor plan.png', alt: 'Sunlit common hall with lounge furniture and tall windows' },
-].map(i => ({ ...i, src: BASE + i.file.replace(/ /g, '%20') }));
+  {
+    file: 'Evening%20exterior%20facade%20with%20illuminated%20entrance%20and%20curved%20driveway.png',
+    alt: 'The Buena Vista facility at dusk, with an illuminated entrance and curved driveway',
+  },
+  {
+    file: 'Sunlit%20common%20hall%20with%20lounge%20furniture,%20tall%20windows,%20and%20open%20floor%20plan.png',
+    alt: 'A sunlit common hall with lounge furniture, tall windows and an open floor plan',
+  },
+].map(i => ({ ...i, src: BASE + i.file }));
 ---
-<section class="w-full">
+<section class="w-full" aria-hidden="true">
   <div class="flex flex-col md:flex-row w-full">
     {images.map((img, i) => (
-      <div class={`${i === 1 ? 'hidden md:block' : ''} w-full md:w-1/2 h-[320px] md:h-[500px] max-h-[500px]`}>
+      <div class={`${i === 1 ? 'hidden md:block' : ''} w-full md:w-1/2 h-[420px] md:h-[640px]`}>
         <img
           src={img.src}
           alt={img.alt}

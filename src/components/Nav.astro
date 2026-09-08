@@ -18,12 +18,12 @@ const visible = mainNav
 
       <!-- Desktop nav. Each top-level label is a real link to its hub; the panel
            opens on hover and on keyboard focus, so no JS is needed here. -->
-      <ul class="hidden lg:flex items-center gap-1">
+      <ul class="hidden lg:flex items-center gap-0.5 xl:gap-1">
         {visible.map(group => (
           <li class="group relative">
             <a
               href={group.href}
-              class="flex items-center gap-1 px-3 py-6 text-charcoal/80 hover:text-teal text-[13px] xl:text-sm font-semibold tracking-wide transition-colors"
+              class="flex items-center gap-1 px-2.5 xl:px-3 py-6 text-charcoal/80 hover:text-teal text-[13px] xl:text-[15px] font-semibold tracking-tight xl:tracking-normal transition-colors whitespace-nowrap"
             >
               {group.label}
               {SHOW_BUILD_STATUS && !group.built && <span class="w-1 h-1 rounded-full bg-gold/70" aria-hidden="true"></span>}
@@ -59,14 +59,11 @@ const visible = mainNav
 
       <!-- CTAs -->
       <div class="flex items-center gap-3">
-        <a href="tel:8883625576" class="hidden xl:flex items-center gap-2 text-charcoal font-bold text-sm tracking-wide hover:opacity-70 transition-opacity">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+        <a href="tel:8883625576" class="flex items-center gap-2 bg-teal hover:bg-teal-dark text-white text-sm font-bold px-5 py-2.5 rounded-lg transition-colors tracking-wide whitespace-nowrap">
+          <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 20 20">
             <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
           </svg>
           <span class="tel-number">(888) 362-5576</span>
-        </a>
-        <a href="#verify" class="bg-teal hover:bg-teal-dark text-white text-sm font-bold px-5 py-2.5 rounded-lg transition-colors tracking-wide whitespace-nowrap">
-          Verify insurance
         </a>
 
         <!-- Mobile menu trigger. Below lg the site previously had no navigation

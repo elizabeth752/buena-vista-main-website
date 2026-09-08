@@ -113,12 +113,12 @@ export const mainNav: NavGroup[] = [
     ],
   },
   {
-    label: 'Who we serve',
-    href: '/who-we-serve/',
+    label: 'For families',
+    href: '/for-families/',
     built: true,
     columns: [
       {
-        heading: 'Our residents',
+        heading: 'Who we serve',
         links: [
           { label: 'Men', href: '/who-we-serve/men/' },
           { label: 'Women', href: '/who-we-serve/women/' },
@@ -242,52 +242,16 @@ export const mainNav: NavGroup[] = [
 
 export const footerColumns: NavColumn[] = [
   {
-    heading: 'Programs',
+    heading: 'More',
     links: [
-      { label: 'Medical detox', href: '/medical-detox', built: true },
-      { label: 'Residential treatment', href: '/residential-treatment', built: true },
-      { label: 'Dual diagnosis', href: '/dual-diagnosis', built: true },
-      { label: 'Intensive outpatient (IOP)', href: '/programs/intensive-outpatient-iop/', built: true },
-      { label: 'Outpatient program', href: '/programs/outpatient-program/' },
-      { label: 'Mental health treatment', href: '/programs/mental-health-treatment/' },
-      { label: 'What happens after', href: '/programs/aftercare-and-alumni/', built: true },
-    ],
-  },
-  {
-    heading: 'What we treat',
-    links: [
-      { label: 'Alcohol addiction', href: '/what-we-treat/alcohol-addiction/', built: true },
-      { label: 'Opioid addiction', href: '/what-we-treat/opioid-addiction/', built: true },
-      { label: 'Stimulant addiction', href: '/what-we-treat/stimulant-addiction/', built: true },
-      { label: 'Benzodiazepines', href: '/what-we-treat/benzodiazepine-addiction/', built: true },
-      { label: 'Anxiety', href: '/what-we-treat/anxiety/', built: true },
-      { label: 'Depression', href: '/what-we-treat/depression/', built: true },
-      { label: 'PTSD & trauma', href: '/what-we-treat/ptsd-and-trauma/' },
-    ],
-  },
-  {
-    heading: 'Admissions & insurance',
-    links: [
-      { label: 'How admissions works', href: '/admissions/', built: true },
-      { label: 'Bed availability', href: '/admissions/bed-availability/', built: true },
-      { label: 'Verify your benefits', href: '/insurance/verify-your-benefits/', built: true },
-      { label: 'Insurance & payment', href: '/insurance', built: true },
-      { label: 'AHCCCS & Medicaid', href: '/insurance/ahcccs-medicaid/', built: true },
+      { label: 'Recovery resources', href: '/resources/', built: true },
+      { label: 'What withdrawal is like', href: '/resources/withdrawal-timelines/', built: true },
+      { label: 'Sober living & housing', href: '/resources/sober-living-arizona/', built: true },
       { label: 'Professional referrals', href: '/referrals/', built: true },
-    ],
-  },
-  {
-    heading: 'Company & resources',
-    links: [
-      { label: 'About us', href: '/about', built: true },
-      { label: 'Clinical leadership', href: '/about/our-team/' },
-      { label: 'Contact', href: '/about/contact/', built: true },
+      { label: 'Contact us', href: '/about/contact/', built: true },
       { label: 'Careers', href: '/about/careers/' },
       { label: 'Blog', href: '/blog/' },
-      { label: 'Recovery resources', href: '/resources/', built: true },
-      { label: 'Withdrawal timelines', href: '/resources/withdrawal-timelines/', built: true },
-      { label: 'Sober living options', href: '/resources/sober-living-arizona/', built: true },
-      { label: 'Alumni community', href: '/alumni/' },
+      { label: 'Sitemap', href: '/sitemap/', built: true },
     ],
   },
 ];
