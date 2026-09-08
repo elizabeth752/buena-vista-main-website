@@ -102,3 +102,31 @@ details > summary { list-style: none; cursor: pointer; }
 details > summary::-webkit-details-marker { display: none; }
 details[open] .faq-plus { display: none; }
 details:not([open]) .faq-minus { display: none; }
+
+/* Buena Vista mark as a section watermark.
+
+   Fixed attachment so it holds still while the section scrolls over it, which is
+   the "sticky background" effect. Kept very low contrast — it should register as
+   texture, not as a logo placement. Disabled for reduced-motion users, where a
+   fixed background reads as parallax drift. */
+.bv-watermark::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/favicon.svg');
+  background-repeat: no-repeat;
+  background-position: right -120px center;
+  background-size: 620px auto;
+  background-attachment: fixed;
+  opacity: 0.05;
+  pointer-events: none;
+}
+.bv-watermark--light::before { opacity: 0.07; filter: brightness(0) invert(1); }
+.bv-watermark > * { position: relative; }
+
+@media (prefers-reduced-motion: reduce) {
+  .bv-watermark::before { background-attachment: scroll; }
+}
+@media (max-width: 767px) {
+  .bv-watermark::before { background-size: 380px auto; background-position: right -140px top 40px; }
+}

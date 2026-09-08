@@ -1,5 +1,15 @@
 ---
 import InsuranceForm from './InsuranceForm.astro';
+
+// Same four carriers as the Insurance section. The repo only ships six logos and
+// two of those (Medicare, United Healthcare) do not reflect what we accept, so
+// the rest are named in text until the client sends the real payer grid.
+const insurers = [
+  { name: 'Aetna', logo: '/Asset/Insurances/Aetna.svg' },
+  { name: 'Blue Cross Blue Shield', logo: '/Asset/Insurances/BCBS.svg' },
+  { name: 'Cigna', logo: '/Asset/Insurances/Cigna.svg' },
+  { name: 'Humana', logo: '/Asset/Insurances/Humana.svg' },
+];
 // Quiet sage-tint background — the brand's "quiet section background" role.
 // The form lives here rather than in the hero, so nobody meets a lead-capture
 // form before they meet a human.
@@ -19,9 +29,20 @@ import InsuranceForm from './InsuranceForm.astro';
         <p class="font-body text-charcoal text-[17px] leading-[29px] max-w-xl mb-6">
           You don't need to work out what your plan covers before you call. Tell us what you have and we'll find out for you — usually in a few minutes, at no cost, with nothing owed either way.
         </p>
-        <p class="font-body text-charcoal text-[17px] leading-[29px] max-w-xl">
+        <p class="font-body text-charcoal text-[17px] leading-[29px] max-w-xl mb-8">
           If we're not in-network with your plan, we'll say so honestly and help you find somewhere that is.
         </p>
+
+        <div class="flex flex-wrap items-center gap-3">
+          {insurers.map(ins => (
+            <div class="flex items-center justify-center bg-white rounded-xl px-5 py-3 shadow-sm border border-cream-soft" style="min-width:112px; min-height:56px;">
+              <img src={ins.logo} alt={ins.name} class="h-7 max-w-[100px] object-contain" loading="lazy" />
+            </div>
+          ))}
+          <div class="flex items-center justify-center bg-white/60 rounded-xl px-5 py-3 border border-dashed border-charcoal/15" style="min-width:112px; min-height:56px;">
+            <span class="font-body text-muted text-[14px] font-semibold text-center leading-[18px]">AHCCCS plans<br />&amp; more</span>
+          </div>
+        </div>
       </div>
 
       <InsuranceForm id="verify" />

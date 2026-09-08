@@ -46,7 +46,7 @@ const {
 ---
 <section id="insurance" class={`${bg} py-[60px]`}>
   <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-    <div class="grid lg:grid-cols-[1fr_minmax(0,420px)] gap-12 lg:gap-16 items-start">
+    <div class="grid lg:grid-cols-[1fr_minmax(0,420px)] gap-12 lg:gap-16 items-center">
 
       <div>
         <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
@@ -56,19 +56,10 @@ const {
         <h2 class="font-display text-charcoal mb-4">{heading}</h2>
         <p class="font-body text-charcoal max-w-xl text-[17px] leading-[29px] mb-8">{intro}</p>
 
-        <div class="bg-white border border-cream-soft rounded-xl p-6 mb-8 max-w-xl">
-          <p class="font-body font-semibold text-charcoal text-[17px] leading-[27px] mb-2">
-            On AHCCCS? Most of the people we care for are.
-          </p>
-          <p class="font-body text-charcoal text-[16px] leading-[26px]">
-            Access covers medical detox and residential treatment, and
-            <strong class="font-bold">Banner University Family Care is in network with us</strong>.
-            Give us the plan name on your card and we will check it while you are on the phone.
-          </p>
-          <a href="/insurance/ahcccs-medicaid/" class="inline-block mt-3 font-body text-teal font-semibold text-[15px] hover:underline">
-            More on AHCCCS &amp; Medicaid &rarr;
-          </a>
-        </div>
+        <p class="font-body text-charcoal text-[16px] leading-[26px] mb-8 max-w-xl">
+          Commercial plans and AHCCCS both cover treatment here.
+          <a href="/insurance/ahcccs-medicaid/" class="text-teal font-semibold hover:underline">See what your plan covers &rarr;</a>
+        </p>
 
         {showLogos && (
           <div>

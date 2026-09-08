@@ -14,18 +14,20 @@ import Horizon from './Horizon.astro';
                                       twenty four hours and daily after that"
      detox and residential in one building, no second admission
 */
+/* Kept to a matching shape on purpose: one line of heading, two lines of body
+   each, with no orphan word left sitting on a line of its own. */
 const usps = [
   {
     h: 'Your own room, and your own bathroom',
-    p: 'Not a shared ward. Rare at this level of care, and the thing people are most surprised by when they arrive.',
+    p: 'Not a shared ward — rare at this level of care, and the first thing you notice on arrival.',
   },
   {
-    h: 'A physician within 24 hours, then every day',
-    p: 'Detox here is a medical process with a doctor attached, not a room you wait in.',
+    h: 'A physician within 24 hours, then daily',
+    p: 'Detox here is a medical process with a doctor attached, not a room you are left to wait in.',
   },
   {
     h: 'Detox and residential under one roof',
-    p: 'You are not discharged mid-way and sent to find a second facility during the hardest fortnight.',
+    p: 'No discharge halfway through, and no second facility to find during the hardest two weeks.',
   },
 ];
 
@@ -99,18 +101,18 @@ const badges = [
           ))}
           <a href="#reviews" class="bg-white rounded-lg px-3 py-2 flex items-center gap-2.5 border border-cream-soft hover:border-teal transition-colors" style="height:46px;">
             <img src="/Asset/Accreditations/Google-Reviews.svg" alt="Google Reviews" class="h-6 max-w-[84px] object-contain" loading="lazy" />
-            <span class="font-body text-[13px] font-bold text-charcoal whitespace-nowrap" aria-label="Five star reviews">★★★★★</span>
+            <span class="text-[#FBBC05] text-[14px] tracking-tight whitespace-nowrap" aria-label="Five star reviews">★★★★★</span>
           </a>
         </div>
       </div>
 
-      <!-- The lobby, not a bedroom. It is the strongest shot in the library and
-           it reads as "not an institution" faster than any sentence does. -->
+      <!-- The atrium. Reads as "not an institution" faster than any sentence,
+           and warmer than the reception shot it replaced. -->
       <div>
         <div class="overflow-hidden rounded-t-[160px] rounded-b-xl shadow-xl">
           <img
-            src="/Asset/stock%20photo/Desktop%20Dimensions/Facility/Open%20concierge%20lobby%20with%20reception%20counter,%20double-height%20ceiling,%20and%20wood%20flooring.png"
-            alt="The lobby at Buena Vista — a double-height concierge space with a reception counter and wood flooring"
+            src="/Asset/stock%20photo/Desktop%20Dimensions/Facility/Double-height%20social%20atrium%20with%20mixed%20seating%20and%20floor-to-ceiling%20windows.png"
+            alt="The double-height atrium at Buena Vista, with mixed seating and floor-to-ceiling windows"
             class="w-full object-cover aspect-[4/5]"
             fetchpriority="high"
             decoding="async"
@@ -118,7 +120,7 @@ const badges = [
         </div>
         <Horizon variant="rule" class="mt-5" />
         <p class="font-body text-muted text-[15px] leading-[24px] mt-3">
-          You walk into a lobby, not an intake window.
+          Light, height, and somewhere to sit. Not an institution.
         </p>
       </div>
 

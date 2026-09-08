@@ -14,17 +14,17 @@ const substances = [
   { name: 'Fentanyl & opioids', note: 'Detox first, with medication', href: '/what-we-treat/opioid-addiction/' },
   { name: 'Meth & stimulants', note: 'Usually straight to residential', href: '/what-we-treat/stimulant-addiction/' },
   { name: 'Benzodiazepines', note: 'Xanax, Klonopin, Ativan', href: '/what-we-treat/benzodiazepine-addiction/' },
+  { name: 'Dual diagnosis', note: 'Addiction and mental health together', href: '/dual-diagnosis' },
 ];
 
 const mental = [
   { name: 'Anxiety', href: '/what-we-treat/anxiety/' },
   { name: 'Depression', href: '/what-we-treat/depression/' },
-  { name: 'Dual diagnosis', href: '/dual-diagnosis' },
   { name: 'PTSD & trauma', href: null },
   { name: 'Mood disorders', href: null },
 ];
 ---
-<section id="treatment" class="bg-navy-deep text-white py-[70px]">
+<section id="treatment" class="bg-navy-deep text-white py-[70px] relative overflow-hidden bv-watermark bv-watermark--light">
   <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
 
     <div class="mb-10 max-w-3xl">
@@ -37,18 +37,18 @@ const mental = [
       </h2>
     </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-10">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
       {substances.map(s => (
-        <a href={s.href} class="group bg-white rounded-xl p-6 hover:bg-cream transition-colors flex flex-col justify-between min-h-[148px]">
-          <h3 class="font-display text-[24px] leading-[29px] text-navy mb-3">{s.name}</h3>
+        <a href={s.href} class="group bg-white rounded-xl p-6 hover:bg-cream transition-colors flex flex-col justify-between min-h-[168px]">
+          <h3 class="font-display text-[26px] leading-[32px] text-navy mb-3 [overflow-wrap:anywhere]">{s.name}</h3>
           <div>
             <p class="font-body text-charcoal/75 text-[15px] leading-[22px] mb-2">{s.note}</p>
             <span class="font-body text-teal font-bold text-[14px] group-hover:underline">See treatment &rarr;</span>
           </div>
         </a>
       ))}
-      <a href="/what-we-treat/" class="group bg-navy border border-white/15 rounded-xl p-6 hover:border-gold transition-colors flex flex-col justify-between min-h-[148px]">
-        <h3 class="font-display text-[24px] leading-[29px] text-white mb-3">Something else</h3>
+      <a href="/what-we-treat/" class="group bg-navy border border-white/15 rounded-xl p-6 hover:border-gold transition-colors flex flex-col justify-between min-h-[168px]">
+        <h3 class="font-display text-[26px] leading-[32px] text-white mb-3">Something else</h3>
         <div>
           <p class="font-body text-white/60 text-[15px] leading-[22px] mb-2">Cannabis, prescription drugs, more than one thing at once</p>
           <span class="font-body text-gold font-bold text-[14px] group-hover:underline">See everything &rarr;</span>

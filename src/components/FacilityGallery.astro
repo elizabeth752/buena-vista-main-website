@@ -1,36 +1,39 @@
 ---
-/* Facility gallery — one featured image plus the wider set.
+/* Facility gallery.
 
-   The previous version showed three photographs. The library holds 29 at
-   2120x1280 and the facility is the strongest proof on the page that this is
-   not an institution, so showing three of them undersold it badly.
+   Layout is a 4-column grid: the featured shot spans 2x2 top-left, four photos
+   fill the 2x2 beside it, and four more run along the bottom.
 
-   All sourced from Desktop Dimensions (2120x1280), never /Asset/Facility/
-   (530x396), which is what made the old divider look pixelated. */
+   No captions. They were describing what the photograph already shows, which
+   added reading without adding information.
+
+   Photo set is curated rather than exhaustive — the entrance hall, common hall,
+   reading nook and blue lounge were cut for reading as empty circulation space
+   rather than somewhere you would want to be.
+
+   All from Desktop Dimensions (2120x1280), never /Asset/Facility/ (530x396). */
 const BASE = '/Asset/stock%20photo/Desktop%20Dimensions/Facility/';
 
 const featured = {
-  file: 'Grand%20entrance%20hall%20with%20vaulted%20ceiling,%20lounge%20seating,%20and%20open%20circulation%20space.png',
-  alt: 'The grand entrance hall at Buena Vista, with a vaulted ceiling, lounge seating and open circulation space',
-  caption: 'The entrance hall. This is what walking in actually looks like.',
+  file: 'Contemporary%20healthcare%20building%20with%20tower%20entry%20and%20desert%20landscaping.png',
+  alt: 'The Buena Vista facility in Chandler, Arizona — a contemporary building with tower entry and desert landscaping',
 };
 
-const photos = [
-  { file: 'Private%20bedroom%20with%20upholstered%20bed,%20reading%20chair,%20and%20large%20window.png', alt: 'A private bedroom with an upholstered bed, reading chair and large window', caption: 'Your own room, with a door that closes' },
-  { file: 'Double-height%20social%20atrium%20with%20mixed%20seating%20and%20floor-to-ceiling%20windows.png', alt: 'A double-height social atrium with mixed seating and floor-to-ceiling windows', caption: 'The atrium' },
-  { file: 'Cafe-style%20dining%20room%20with%20round%20tables,%20upholstered%20chairs,%20and%20large%20windows.png', alt: 'A café-style dining room with round tables and large windows', caption: 'Meals at a table, with other people' },
-  { file: 'Intimate%20fireside%20lounge%20with%20four%20armchairs%20and%20built-in%20fireplace.png', alt: 'An intimate fireside lounge with four armchairs and a built-in fireplace', caption: 'Somewhere to sit that is not your room' },
-  { file: 'Sunlit%20common%20hall%20with%20lounge%20furniture,%20tall%20windows,%20and%20open%20floor%20plan.png', alt: 'A sunlit common hall with lounge furniture and tall windows', caption: 'The common hall' },
-  { file: 'Quiet%20reading%20nook%20with%20armchairs,%20side%20table,%20and%20natural%20light.png', alt: 'A quiet reading nook with armchairs, a side table and natural light', caption: 'A reading nook' },
-  { file: 'Fireplace%20gathering%20area%20with%20high-back%20chairs,%20sofas,%20and%20table%20lamps.png', alt: 'A fireplace gathering area with high-back chairs, sofas and table lamps', caption: 'Evenings' },
-  { file: 'Executive%20dining%20room%20with%20wood%20table,%20upholstered%20seating,%20and%20textured%20wall%20finish.png', alt: 'An executive dining room with a wood table and upholstered seating', caption: 'The dining room' },
-  { file: 'Salon%20and%20personal%20care%20room%20with%20styling%20chair,%20mirrors,%20and%20waiting%20seating.png', alt: 'A salon and personal care room with a styling chair, mirrors and waiting seating', caption: 'Salon and personal care' },
-  { file: 'Blue%20accent%20lounge%20with%20armchairs,%20coffee%20table,%20and%20framed%20artwork.png', alt: 'A lounge with blue accent armchairs, a coffee table and framed artwork', caption: 'A quieter lounge' },
-  { file: 'Residential%20living%20room%20with%20lounge%20seating,%20coffee%20table,%20and%20open%20kitchen%20view.png', alt: 'A residential living room with lounge seating and an open kitchen view', caption: 'The living room' },
-  { file: 'Contemporary%20healthcare%20building%20with%20tower%20entry%20and%20desert%20landscaping.png', alt: 'The building exterior, with tower entry and desert landscaping', caption: 'Chandler, Arizona' },
-].map(p => ({ ...p, src: BASE + p.file }));
+const grid = [
+  { file: 'Private%20bedroom%20with%20upholstered%20bed,%20reading%20chair,%20and%20large%20window.png', alt: 'A private bedroom with an upholstered bed, reading chair and large window' },
+  { file: 'Cafe-style%20dining%20room%20with%20round%20tables,%20upholstered%20chairs,%20and%20large%20windows.png', alt: 'A café-style dining room with round tables and large windows' },
+  { file: 'Intimate%20fireside%20lounge%20with%20four%20armchairs%20and%20built-in%20fireplace.png', alt: 'An intimate fireside lounge with four armchairs and a built-in fireplace' },
+  { file: 'Residential%20living%20room%20with%20lounge%20seating,%20coffee%20table,%20and%20open%20kitchen%20view.png', alt: 'A residential living room with lounge seating and an open kitchen view' },
+];
+
+const bottom = [
+  { file: 'Fireplace%20gathering%20area%20with%20high-back%20chairs,%20sofas,%20and%20table%20lamps.png', alt: 'A fireplace gathering area with high-back chairs, sofas and table lamps' },
+  { file: 'Executive%20dining%20room%20with%20wood%20table,%20upholstered%20seating,%20and%20textured%20wall%20finish.png', alt: 'An executive dining room with a wood table and upholstered seating' },
+  { file: 'Salon%20and%20personal%20care%20room%20with%20styling%20chair,%20mirrors,%20and%20waiting%20seating.png', alt: 'A salon and personal care room with a styling chair and mirrors' },
+  { file: 'Covered%20drop-off%20entrance%20with%20tower%20feature%20and%20circular%20driveway.png', alt: 'The covered drop-off entrance with tower feature and circular driveway' },
+];
 ---
-<section id="facility-gallery" class="bg-sand py-[70px]">
+<section id="facility-gallery" class="bg-cream py-[70px]">
   <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
 
     <div class="mb-10 max-w-3xl">
@@ -47,21 +50,22 @@ const photos = [
       </p>
     </div>
 
-    <figure class="mb-8">
-      <div class="overflow-hidden rounded-2xl shadow-xl">
-        <img src={BASE + featured.file} alt={featured.alt} class="w-full object-cover aspect-[16/9]" loading="lazy" decoding="async" />
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+      <!-- Featured: two columns wide, two rows tall -->
+      <div class="col-span-2 row-span-2 overflow-hidden rounded-xl shadow-lg">
+        <img src={BASE + featured.file} alt={featured.alt} class="w-full h-full object-cover" loading="lazy" decoding="async" />
       </div>
-      <figcaption class="font-body text-charcoal text-[16px] leading-[26px] mt-4">{featured.caption}</figcaption>
-    </figure>
 
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-      {photos.map(p => (
-        <figure>
-          <div class="overflow-hidden rounded-xl shadow-sm">
-            <img src={p.src} alt={p.alt} class="w-full object-cover aspect-[4/3] hover:scale-[1.03] transition-transform duration-500" loading="lazy" decoding="async" />
-          </div>
-          <figcaption class="font-body text-charcoal/80 text-[14px] leading-[21px] mt-2.5">{p.caption}</figcaption>
-        </figure>
+      {grid.map(p => (
+        <div class="overflow-hidden rounded-xl shadow-sm aspect-[4/3]">
+          <img src={BASE + p.file} alt={p.alt} class="w-full h-full object-cover hover:scale-[1.04] transition-transform duration-500" loading="lazy" decoding="async" />
+        </div>
+      ))}
+
+      {bottom.map(p => (
+        <div class="overflow-hidden rounded-xl shadow-sm aspect-[4/3]">
+          <img src={BASE + p.file} alt={p.alt} class="w-full h-full object-cover hover:scale-[1.04] transition-transform duration-500" loading="lazy" decoding="async" />
+        </div>
       ))}
     </div>
   </div>

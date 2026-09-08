@@ -32,17 +32,18 @@ const locations = [
       </p>
     </div>
 
-    <div class="grid lg:grid-cols-[minmax(0,560px)_1fr] gap-8 items-start">
-      {locations.map(loc => (
-        <div class="flex flex-col gap-5">
+    <!-- Photo runs the full width with the detail card sitting in front of it.
+         Previously the card stacked under a half-width photo, which left the
+         right-hand half of the row empty. Below lg the card drops beneath the
+         image, because overlaying it there would bury the photo entirely. -->
+    {locations.map(loc => (
+      <div class="relative">
+        <div class="rounded-xl overflow-hidden h-[260px] sm:h-[340px] lg:h-[520px]">
+          <img src={loc.photo} alt={loc.alt} class={`w-full h-full object-cover ${loc.open ? '' : 'grayscale opacity-60'}`} loading="lazy" decoding="async" />
+        </div>
 
-          <!-- Photo -->
-          <div class="rounded-xl overflow-hidden h-[220px] lg:h-[280px]">
-            <img src={loc.photo} alt={loc.alt} class={`w-full h-full object-cover ${loc.open ? '' : 'grayscale opacity-60'}`} loading="lazy" decoding="async" />
-          </div>
-
-          <!-- Address & details -->
-          <div class="bg-white border-2 border-navy rounded-xl p-5 lg:p-7">
+        <div class="relative -mt-10 mx-4 sm:mx-8 lg:mx-0 lg:mt-0 lg:absolute lg:inset-y-0 lg:left-8 xl:left-14 lg:flex lg:items-center lg:w-[440px] xl:w-[480px]">
+          <div class="bg-white rounded-xl shadow-xl border border-cream-soft p-6 lg:p-8 w-full">
             <div class="flex items-center justify-between gap-3 mb-4">
               <h3 class="font-display text-2xl text-charcoal">{loc.city}, Arizona</h3>
               <span class={`shrink-0 font-body text-xs font-bold uppercase tracking-wide rounded-full px-3 py-1.5 ${loc.open ? 'text-teal bg-teal/10' : 'text-muted bg-charcoal/5'}`}>
@@ -94,10 +95,9 @@ const locations = [
               </a>
             </div>
           </div>
-
         </div>
-      ))}
-    </div>
+      </div>
+    ))}
 
   </div>
 </section>
