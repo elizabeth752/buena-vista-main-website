@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/medication-assisted-treatment",
+      "destination": "/what-we-treat/opioid-addiction/",
+      "permanent": true
+    }
+  ]
+}

@@ -31,9 +31,10 @@ export default defineConfig({
      live and indexed — anyone holding the link lands on the closest relevant
      page instead of a 404.
 
-     NOTE: Astro's static output implements this as a meta-refresh, not a true
-     301. Add a real 301 at the host (Vercel/Netlify/CloudFront) when the hosting
-     config is known, and this entry can then be removed. */
+     The real 301 now lives in vercel.json, which is where the host can issue a
+     proper permanent redirect. This Astro-level entry is kept as a fallback so
+     the redirect still works in local dev and anywhere the site is served
+     without Vercel's edge config. Keep both. */
   redirects: {
     '/medication-assisted-treatment': '/what-we-treat/opioid-addiction/',
   },
