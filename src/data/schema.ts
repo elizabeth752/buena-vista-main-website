@@ -53,7 +53,7 @@ export const organization = {
     'https://www.youtube.com/@buenavistarecovery',
     'https://co.pinterest.com/buenavistahealth/',
     'https://bsky.app/profile/buenavistahealth.bsky.social',
-    'https://www.jointcommission.org/en-us/accreditation/behavioral-health-care-and-human-services/provider-locator/605564',
+    'https://www.jointcommission.org/en-us/accreditation/behavioral-health-care-and-human-services/provider-locator/605564/646853',
     'https://www.legitscript.com/websites/?checker_keywords=buenavistarecovery.com',
     'https://www.psychologytoday.com/us/treatment-rehab/buena-vista-health-and-recovery-centers-chandler-az/906339',
     'https://recovery.com/buena-vista-recovery-chandler-arizona/',
@@ -65,7 +65,7 @@ export const organization = {
       credentialCategory: 'Accreditation',
       name: 'The Joint Commission Gold Seal of Approval',
       recognizedBy: { '@type': 'Organization', name: 'The Joint Commission' },
-      url: 'https://www.jointcommission.org/en-us/accreditation/behavioral-health-care-and-human-services/provider-locator/605564',
+      url: 'https://www.jointcommission.org/en-us/accreditation/behavioral-health-care-and-human-services/provider-locator/605564/646853',
     },
     {
       '@type': 'EducationalOccupationalCredential',
