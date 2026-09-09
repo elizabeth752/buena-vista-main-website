@@ -1,34 +1,12 @@
 ---
-const team = [
-  {
-    photo: '/Asset/Our%20Team/Darren-Lee-M.A.-LPC.webp',
-    name: 'Darren Lee',
-    credentials: 'M.A., LPC',
-    title: 'Clinical Director',
-  },
-  {
-    photo: '/Asset/Our%20Team/Will-Heise-MD-FACMT.webp',
-    name: 'Will Heise',
-    credentials: 'MD, FACMT',
-    title: 'Chief Medical Officer',
-  },
-  {
-    photo: '/Asset/Our%20Team/Breana-Ramirez-BSN-RN.webp',
-    name: 'Breana Ramirez',
-    credentials: 'BSN, RN',
-    title: 'Director of Nursing',
-  },
-  {
-    photo: '/Asset/Our%20Team/Wade-Muhlhauser.webp',
-    name: 'Wade Muhlhauser',
-    credentials: '',
-    title: 'CEO & Partner',
-  },
-];
+import { team } from '../data/team';
 
+/* The roster lives in src/data/team.ts so the grid, the blog bylines, the
+   reviewer credits and the individual bio pages cannot drift apart. Each card
+   links to that person's page — an unlinked bio is an invisible one, and the
+   E-E-A-T value of these pages depends on them being reachable. */
 interface Props { eyebrow?: string; heading?: string; bg?: string; }
 const { eyebrow, heading, bg = 'bg-white' } = Astro.props;
-
 ---
 <section id="team" class={`${bg} py-[60px]`}>
   <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
@@ -45,7 +23,10 @@ const { eyebrow, heading, bg = 'bg-white' } = Astro.props;
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
       {team.map(member => (
-        <div class="group bg-cream rounded-xl overflow-hidden hover:shadow-xl transition-shadow flex flex-col h-full w-full max-w-[320px] mx-auto sm:max-w-none sm:mx-0">
+        <a
+          href={`/about/team/${member.slug}/`}
+          class="group bg-cream rounded-xl overflow-hidden hover:shadow-xl transition-shadow flex flex-col h-full w-full max-w-[320px] mx-auto sm:max-w-none sm:mx-0 border border-transparent hover:border-teal"
+        >
           <div class="aspect-[3/4] overflow-hidden">
             <img
               src={member.photo}
@@ -59,8 +40,9 @@ const { eyebrow, heading, bg = 'bg-white' } = Astro.props;
             {member.credentials && (
               <p class="font-body text-[15px] leading-[24px] text-muted mt-0.5">{member.credentials}</p>
             )}
+            <span class="font-body text-teal font-semibold text-[15px] mt-3 group-hover:underline">Read bio &rarr;</span>
           </div>
-        </div>
+        </a>
       ))}
     </div>
   </div>
