@@ -192,6 +192,23 @@ details:not([open]) .faq-minus { display: none; }
 
 .prose-bv strong { font-weight: 700; color: var(--color-charcoal); }
 
-/* Anything marked not-prose opts out entirely. */
+/* Anything marked not-prose opts out entirely.
+
+   The link rule above is why this matters: `.prose-bv a` beats the `text-white`
+   utility on specificity, so a teal button inside the article body rendered
+   teal text on a teal ground and the label vanished. Reset every property the
+   prose rules set, not just the font. */
 .prose-bv .not-prose,
 .prose-bv .not-prose * { font-family: inherit; }
+
+.prose-bv .not-prose a {
+  color: inherit;
+  font-weight: inherit;
+  text-decoration: none;
+}
+.prose-bv .not-prose a:hover { opacity: 1; }
+
+/* The teal call button and the outlined one keep their own colours. */
+.prose-bv .not-prose a.bg-teal { color: #fff; }
+.prose-bv .not-prose ul { list-style: none; padding-left: 0; }
+.prose-bv .not-prose li::marker { content: none; }
