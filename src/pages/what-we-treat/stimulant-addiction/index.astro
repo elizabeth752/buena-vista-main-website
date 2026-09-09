@@ -23,20 +23,68 @@ import HubCards from '../../../components/hub/HubCards.astro';
 import StimulantPathway from '../../../components/categories/StimulantPathway.astro';
 import Testimonials from '../../../components/Testimonials.astro';
 import VerifySection from '../../../components/VerifySection.astro';
+import FAQ from '../../../components/FAQ.astro';
+import AdmissionsPath from '../../../components/AdmissionsPath.astro';
 import FinalCTA from '../../../components/FinalCTA.astro';
 
 const title = 'Stimulant Addiction Treatment in Chandler, AZ | Buena Vista Health & Recovery';
 const description =
   'Residential treatment for methamphetamine, cocaine and other stimulants in Chandler, AZ, with medical detox when opioids or alcohol are also involved. Call (888) 362-5576.';
 
+/* No "most common" tags here. Ranking substances tells whoever is not top of
+   the list that they are the afterthought, and every one of these cards is
+   somebody's whole reason for calling. Describe the care, not the volume. */
 const substances = [
-  { label: 'Methamphetamine', tag: 'Most common', desc: 'The stimulant we see most. Usually admits straight into residential, with the first days given over to sleep and the comedown treated as part of the work.', href: '/what-we-treat/stimulant-addiction/methamphetamine/' },
-  { label: 'Cocaine & crack', desc: 'Same pathway as meth in most cases, and frequently present alongside alcohol — which does change whether a detox is needed first.' },
-  { label: 'Prescription stimulants', desc: 'Adderall and similar, whether prescribed originally or not. Worth raising early so a psychiatrist can review it as part of your assessment.' },
+  { label: 'Methamphetamine', desc: 'Usually admits straight into residential, with the first days given over to sleep and the comedown treated as part of the work rather than something to push through.', href: '/what-we-treat/stimulant-addiction/methamphetamine/' },
+  { label: 'Cocaine and crack', desc: 'The same pathway, and often present alongside alcohol, which does change whether a supervised detox is needed before residential begins.' },
+  { label: 'Prescription stimulants', desc: 'Adderall and similar, whether they were prescribed originally or not. Worth raising early so a psychiatrist can review it as part of your assessment.' },
+];
+
+/* FAQ bank. The questions stimulant callers ask most, in the order they ask
+   them. "Do I need a detox" leads because it is the single most common
+   misconception, and the honest answer is usually no.
+
+   ⚠ Keep answer 1 consistent with StimulantPathway. Admissions is explicit
+   that stimulants alone admit straight to residential — do not soften it into
+   a maybe, and do not restructure this page to match the opioid flow. */
+const faqs = [
+  {
+    q: 'Do I need a medical detox for meth or cocaine?',
+    a: "Usually not, and that surprises people. Stopping stimulants does not put your body into the kind of danger that stopping alcohol or opioids can, so there is normally no separate detox stage. With stimulants on their own you would go straight into residential treatment, which is where the part that actually matters happens. The exception is if opioids or alcohol are in the picture too, which is common. Either of those does mean a supervised detox first, and because both levels happen in the same Chandler building that is still one admission rather than two.",
+  },
+  {
+    q: 'How soon can I get in?',
+    a: "Often the same week, and sometimes the same day when a bed is open. Because most stimulant admissions skip the detox stage, there is one less step between the call and a bed. The process is a phone assessment of ten to twenty minutes, a coverage check while you are on the line, a provider review to confirm the level of care, then a time to come in. If we are full when you call we will tell you honestly, give you the earliest realistic slot, and take your details so we are ready the moment something opens rather than leaving you to keep calling back.",
+  },
+  {
+    q: 'How long does the crash last?',
+    a: "The first few days are mostly sleep, and then there is a stretch of feeling flat, foggy and hungry that people usually describe as the hardest part. It lifts. Sleep settles, food starts tasting like something again, and energy comes back unevenly over the following weeks. Low mood during that window is a recognized part of it rather than a character problem, and it is exactly why doing this somewhere with staff on site works better than doing it alone. If you are having thoughts of ending your life at any point, call or text 988, any hour.",
+  },
+  {
+    q: 'How am I going to sleep?',
+    a: "Mostly, at first, you will. People arrive having been awake for a very long time and the body takes back what it is owed. Nobody is woken for a group session on day one, and the first days are deliberately built around rest rather than around a timetable. Later in the stay, when sleep is unsettled rather than absent, that is treated as part of your care and not as something to push through. It comes up on assessment for a reason, so say how bad it has been.",
+  },
+  {
+    q: 'I am using meth and fentanyl together. What happens then?',
+    a: "That combination is one of the most common things we see, and it changes the pathway rather than complicating it. The opioid side means a supervised detox comes first, then residential, both in the same building as a single admission. Alcohol alongside stimulants works the same way. The important thing is telling us everything on the phone, including how much and when you last used each one, because that is what a provider needs in order to place you at the right level of care rather than the nearest one.",
+  },
+  {
+    q: 'How long is the program?',
+    a: "Residential treatment usually runs around thirty days, and it can extend toward forty-five when that is the right clinical call and your plan authorizes it. If a detox is needed first because of opioids or alcohol, that typically adds four to seven days at the front. The exact length depends on your history, your progress and what your clinical team recommends, and it gets discussed with you rather than decided at you. Your case manager starts planning what comes after treatment from early in the stay, not in your final week.",
+  },
+  {
+    q: 'Will my insurance cover it?',
+    a: "Often, yes, and it takes a few minutes to find out for certain. We work with AHCCCS plans and with most major commercial and private carriers, and we check your specific plan while you are still on the phone rather than leaving you to guess from a list. There is no cost for the check and nothing owed either way. If money is the thing stopping you from calling, call anyway — it is the quickest part of the conversation and you will get a straight answer before committing to anything.",
+  },
+  {
+    q: 'Can my family visit while I am in treatment?',
+    a: "Yes. Family involvement tends to help outcomes rather than hinder them, which is one of the arguments for treating close to home rather than flying somewhere. Visiting happens on a schedule so it does not cut across the therapeutic day, and your case manager will walk your family through how it works. Phone access begins once you move into residential, in the evenings, so you can stay in touch with the people who matter between visits. Ask about the current arrangements when you call, since they are set by the program.",
+  },
 ];
 
 const schema = {
   '@context': 'https://schema.org',
+  '@graph': [{
   '@type': 'MedicalWebPage',
   name: 'Stimulant Addiction Treatment in Chandler, AZ',
   description,
@@ -48,22 +96,57 @@ const schema = {
     telephone: '+1-888-362-5576',
     address: { '@type': 'PostalAddress', streetAddress: '3033 S Arizona Ave', addressLocality: 'Chandler', addressRegion: 'AZ', postalCode: '85286', addressCountry: 'US' },
   },
+  }, {
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(f => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  }],
 };
 ---
 <Layout title={title} description={description}>
   <TopBar /><Nav />
   <HubHero
-    eyebrow="Stimulant addiction · Chandler, Arizona"
-    title="With stimulants, the hard part comes after you stop."
-    intro="Putting it down is rarely the difficulty. The week that follows — the exhaustion, the flatness, the wanting — is what sends people back, and it is a great deal easier somewhere with a bed and people who understand it."
-    points={['Residential treatment, often starting the same week','Detox first when opioids or alcohol are also involved','Sleep treated as part of recovery, not an inconvenience','Medical staff on site for the low that follows']}
+    eyebrow="Meth and cocaine treatment"
+    title="Stimulant Addiction Treatment in Chandler, Arizona"
+    promise="With stimulants, the hard part comes after you stop."
+    points={[
+      { text: 'Residential treatment, often starting the same week you call',
+        d: 'M21 8.25H3m18 0a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 8.25m18 0v10.5A2.25 2.25 0 0118.75 21H5.25A2.25 2.25 0 013 18.75V8.25M12 11.25v6m3-3H9' },
+      { text: 'Usually no separate detox stage, unless opioids or alcohol are in it too',
+        d: 'M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z' },
+      { text: 'Sleep treated as part of recovery, not as an inconvenience',
+        d: 'M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z' },
+      { text: 'Medical staff on site for the low that follows, which is real and temporary',
+        d: 'M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z' },
+      { text: 'Using something else alongside is the norm, and it is planned for',
+        d: 'M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z' },
+    ]}
     image="/Asset/stock%20photo/Desktop%20Dimensions/Facility/Conversation%20lounge%20with%20patterned%20armchairs,%20area%20rug,%20and%20kitchenette%20backdrop.png"
     alt="A conversation lounge with patterned armchairs"
     caption="Somewhere quiet for the week that matters most."
   />
   <StimulantPathway />
   <HubCards eyebrow="What this covers" title="Stimulants we treat" intro="Using something else alongside is the norm, and it is planned for from the first call." items={substances} />
-  <Testimonials /><VerifySection />
+  <Testimonials />
+  <VerifySection heading="Does insurance cover stimulant treatment in Arizona?" />
+  <AdmissionsPath
+    heading="How to get into stimulant treatment in Arizona"
+    steps={[
+      { title: 'Call, any hour',   note: 'A real person picks up' },
+      { title: 'Phone assessment', note: 'Ten to twenty minutes' },
+      { title: 'Coverage check',   note: 'While you are on the line' },
+      { title: 'Provider review',  note: 'Confirming the right level' },
+      { title: 'Bed confirmed',    note: 'Often the same week' },
+      { title: 'You arrive',       note: 'We can arrange the ride' },
+    ]}
+    bg="bg-white"
+    ring="ring-white"
+    noteBg="bg-navy-deep"
+  />
+  <FAQ faqs={faqs} eyebrow="Straight answers" heading="Questions about stimulant treatment" />
   <FinalCTA />
   <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
 </Layout>

@@ -5,15 +5,18 @@
      "her sponsor can come any day as long as they're doing step work together"
      "If you're feeling up to going and sitting in and participating in group,
       you'll be on the detox side"
-   Do not add modalities here without a named clinical confirmation. */
+   Do not add modalities here without a named clinical confirmation.
+
+   ALIGNMENT: every title holds one line at the pinned size, every tag is one
+   or two words, and every body is written to the same length. */
 const week = [
-  { h: 'Group therapy, twice a day', tag: 'Every day', p: 'Morning and afternoon. This is the spine of the residential day and where most of the work actually happens — not because talking is magic, but because a room of people who recognise what you are describing is very hard to argue with.' },
-  { h: 'One-to-one with your therapist', tag: 'Weekly', p: 'A private session each week with your own therapist. Fewer than people expect, and worth preparing for — bring the thing you would rather not say in a group.' },
-  { h: 'AA in the evenings', tag: 'Nightly', p: 'Meetings run in the evening, every night. Whether the twelve steps become your thing or not, going while you are here means the habit is already formed by the time you leave.' },
-  { h: 'Your sponsor, any day', tag: 'Not just visiting days', p: 'If you have a sponsor they can come in on any day, provided you are doing step work together. If you do not have one yet, this is the easiest place you will ever find one.' },
+  { h: 'Group therapy', tag: 'Twice a day', p: 'Morning and afternoon, and the spine of the residential day. A room of people who recognize what you are describing is very hard to argue with.' },
+  { h: 'Individual therapy', tag: 'Weekly', p: 'A private hour with your own therapist each week. Fewer than people expect, so bring the thing you would rather not say in front of a group.' },
+  { h: 'AA in the evenings', tag: 'Nightly', p: 'Meetings run here every night. Whether the twelve steps become your thing or not, going while you are here means the habit is already formed.' },
+  { h: 'Your sponsor', tag: 'Any day', p: 'If you have a sponsor they can come in on any day, not just visiting days, provided you are doing step work together while they are here.' },
 ];
 ---
-<section id="the-week" class="bg-cream py-[60px]">
+<section id="the-week" class="bg-white py-[60px]">
   <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
     <div class="max-w-2xl mb-12">
       <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
@@ -25,19 +28,25 @@ const week = [
         Plain about the frequency, including where it is less than people assume.
       </p>
     </div>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
       {week.map(w => (
-        <div class="bg-white rounded-xl p-7 border border-cream-soft shadow-sm">
-          <h3 class="font-display text-[21px] leading-[27px] text-navy mb-2">{w.h}</h3>
+        <div class="bg-cream rounded-xl p-7 border border-cream-soft border-t-4 border-t-gold h-full">
+          <h3 class="week-title font-display text-navy mb-2">{w.h}</h3>
           <span class="inline-block font-body text-xs font-bold uppercase tracking-wide text-gold bg-gold/10 rounded-full px-3 py-1.5 mb-4">{w.tag}</span>
           <p class="font-body text-charcoal text-[16px] leading-[26px]">{w.p}</p>
         </div>
       ))}
     </div>
-    <div class="mt-8 bg-sand/40 border border-sand rounded-xl p-7 max-w-3xl">
+    <div class="mt-8 bg-cream border border-cream-soft border-l-4 border-l-gold rounded-xl p-7 max-w-3xl">
       <p class="font-body text-charcoal text-[16px] leading-[27px]">
-        <strong class="font-bold">During detox, groups are optional.</strong> If you are up to sitting in on one you can, and if you are not, nobody will make you. The first days are for your body; the programme proper starts when you are steady enough to get something out of it.
+        <strong class="font-bold">During detox, groups are optional.</strong> If you are up to sitting in on one you can, and if you are not, nobody will make you. The first days are for your body; the program proper starts when you are steady enough to get something out of it.
       </p>
     </div>
   </div>
 </section>
+
+<style>
+  /* Unlayered, so it beats the global h3 scale. Every title holds one line at
+     this size, which is what keeps the four columns level. */
+  .week-title { font-size: 21px; line-height: 27px; letter-spacing: 0; }
+</style>

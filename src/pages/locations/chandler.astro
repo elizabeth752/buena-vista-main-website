@@ -27,6 +27,11 @@ import GettingHere from '../../components/chandler/GettingHere.astro';
 import FacilityGallery from '../../components/FacilityGallery.astro';
 import Testimonials from '../../components/Testimonials.astro';
 import VerifySection from '../../components/VerifySection.astro';
+import ChandlerToc from '../../components/chandler/ChandlerToc.astro';
+import WhatWeTreat from '../../components/WhatWeTreat.astro';
+import OurTeam from '../../components/OurTeam.astro';
+import AdmissionsPath from '../../components/AdmissionsPath.astro';
+import FAQ from '../../components/FAQ.astro';
 import FinalCTA from '../../components/FinalCTA.astro';
 
 const title = 'Drug & Alcohol Rehab in Chandler, AZ | Buena Vista Health & Recovery';
@@ -36,6 +41,31 @@ const description =
 // LocalBusiness schema for the one operating facility. Tucson is deliberately
 // absent — publishing a closed campus as an address is a local-SEO liability
 // and sends people to a locked door.
+/* Location FAQ, per the Recovery.com checklist: practical questions people ask
+   about this building specifically, not about treatment in general. */
+const faqs = [
+  {
+    q: 'Where exactly is the Chandler facility?',
+    a: "We are at 3033 S Arizona Avenue in Chandler, AZ 85286, on the east side of Arizona Avenue with a covered entrance and parking on site. The building is open 24 hours a day, every day of the year including holidays, and somebody is at the desk whatever time you arrive. If you are driving in from Phoenix it is a straight run down the I-10, and from Gilbert, Mesa or Tempe it is a local drive rather than a journey.",
+  },
+  {
+    q: 'Can I just turn up at the building?',
+    a: "Please call before you come. A phone assessment and a benefits check have to happen first, and a provider needs to confirm that the level of care is right and safe for you. That call is what lets us hold a bed, complete the medical review and have someone expecting you, rather than leaving you waiting at a door. It takes ten to twenty minutes and the line is answered at any hour.",
+  },
+  {
+    q: 'What is on site at Chandler?',
+    a: "Medical detox and residential treatment, in the same building, so you move between the two without a second admission or a change of team. You get a private room with a private bathroom, catered meals, group therapy twice a day and one-to-one sessions with your own therapist. Nursing and support staff are on site around the clock. Right now Chandler is the only Buena Vista campus admitting.",
+  },
+  {
+    q: 'Is there parking, and can family visit here?',
+    a: "There is parking on site and a covered entrance for drop-off. Family visiting happens on a schedule so it does not cut across the therapeutic day, and your case manager will walk your family through how it works once you are admitted. Being close enough for family to visit without booking a flight is one of the arguments for treating in the East Valley rather than travelling out of state.",
+  },
+  {
+    q: 'How do I get there if I cannot drive?',
+    a: "Say so when you call. We can arrange transport within our local service area, and it is one of the last practical barriers we can take off the table for someone who has already decided to come in. If you are flying in, Sky Harbor is the nearest airport. If you are coming from further out in Arizona, tell the admissions team where from and they will work the journey out with you.",
+  },
+];
+
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'MedicalClinic',
@@ -76,12 +106,26 @@ const schema = {
   <Nav />
 
   <ChandlerHero />
+  <ChandlerToc />
   <ChandlerCare />
   <FacilityGallery />
   <ChandlerPractical />
-  <VerifySection />
+  <VerifySection heading="Does your insurance cover treatment in Chandler?" />
+  <OurTeam
+    eyebrow="Who looks after you here"
+    heading="The clinical team at Chandler"
+    bg="bg-white"
+  />
   <Testimonials />
+  <WhatWeTreat />
+  <AdmissionsPath
+    heading="How to start treatment at our Chandler facility"
+    bg="bg-cream"
+    ring="ring-cream"
+    noteBg="bg-navy-deep"
+  />
   <GettingHere />
+  <FAQ faqs={faqs} eyebrow="Straight answers" heading="Questions about our Chandler facility" bg="bg-sage-tint" />
 
   <FinalCTA />
 

@@ -34,6 +34,7 @@ import FacilityGallery from '../../components/FacilityGallery.astro';
 import Testimonials from '../../components/Testimonials.astro';
 import VerifySection from '../../components/VerifySection.astro';
 import FinalCTA from '../../components/FinalCTA.astro';
+import AdmissionsPath from '../../components/AdmissionsPath.astro';
 
 const title = 'Alcohol Addiction Treatment in Chandler, AZ | Buena Vista Health & Recovery';
 const description =
@@ -73,8 +74,22 @@ const schema = {
   <WhyMedicalDetox />
   <AlcoholPathway />
   <FacilityGallery />
-  <VerifySection />
+  <VerifySection
+    heading="Does insurance cover alcohol treatment in Arizona?"
+    bullets={[
+      'AHCCCS plans and most major commercial and private carriers',
+      'We check your plan while you are on the phone, usually in a few minutes',
+      'Detox and residential can differ, so we check both at once',
+      'It costs nothing, and you owe nothing either way',
+    ]}
+  />
   <Testimonials />
+  <AdmissionsPath
+    heading="How to get into alcohol treatment in Arizona"
+    bg="bg-white"
+    ring="ring-white"
+    noteBg="bg-navy-deep"
+  />
   <AlcoholQuestions />
 
   <FinalCTA />

@@ -1,16 +1,30 @@
 ---
-/* Shared hero for the section hubs. Hubs orient and route; they are not money
-   pages, so the layout is lighter than a treatment page. */
+/* Shared hero for the section hubs.
+
+   Upgraded to the hero standard: the H1 carries the keyword, an optional
+   `promise` line sits directly above the bullets where eyes land, `intro` is
+   optional so a page can drop the subtitle entirely, and points may carry
+   their own icon.
+
+   Backwards compatible on purpose — the other hubs still pass a plain string
+   array and an intro, and get the check icon and the old layout until each is
+   converted one page at a time. */
+interface Point { text: string; d: string; }
 interface Props {
   eyebrow: string;
   title: string;
-  intro: string;
-  points?: string[];
+  promise?: string;
+  intro?: string;
+  points?: (string | Point)[];
   image: string;
   alt: string;
   caption?: string;
 }
-const { eyebrow, title, intro, points = [], image, alt, caption } = Astro.props;
+const { eyebrow, title, promise, intro, points = [], image, alt, caption } = Astro.props;
+
+const CHECK = 'M4.5 12.75l6 6 9-13.5';
+const items: Point[] = points.map(p => typeof p === 'string' ? { text: p, d: CHECK } : p);
+
 import Horizon from '../Horizon.astro';
 ---
 <section id="hero" class="bg-cream">
@@ -22,16 +36,25 @@ import Horizon from '../Horizon.astro';
           {eyebrow}
         </p>
         <h1 class="font-display text-navy mb-6">{title}</h1>
-        <p class="font-body text-charcoal text-[20px] leading-[33px] max-w-xl mb-8">{intro}</p>
 
-        {points.length > 0 && (
-          <ul class="space-y-3 mb-9">
-            {points.map(item => (
-              <li class="flex items-start gap-3 font-body text-charcoal text-[17px] leading-[29px]">
-                <svg class="w-5 h-5 text-teal mt-1 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
-                </svg>
-                {item}
+        {promise && (
+          <p class="font-display text-navy text-[26px] leading-[34px] md:text-[30px] md:leading-[39px] border-l-[3px] border-gold pl-5 mb-8 max-w-xl">
+            {promise}
+          </p>
+        )}
+
+        {intro && <p class="font-body text-charcoal text-[20px] leading-[33px] max-w-xl mb-8">{intro}</p>}
+
+        {items.length > 0 && (
+          <ul class="space-y-4 mb-9">
+            {items.map(item => (
+              <li class="flex items-start gap-3.5 font-body text-charcoal text-[17px] leading-[29px]">
+                <span class="w-9 h-9 rounded-full bg-teal/10 flex items-center justify-center shrink-0 mt-0.5">
+                  <svg class="w-[19px] h-[19px] text-teal" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d={item.d}/>
+                  </svg>
+                </span>
+                <span>{item.text}</span>
               </li>
             ))}
           </ul>

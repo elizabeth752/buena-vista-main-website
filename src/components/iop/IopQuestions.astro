@@ -20,7 +20,7 @@ const questions = [
   },
 ];
 ---
-<section id="iop-questions" class="bg-sage-tint py-[70px]">
+<section id="iop-questions" class="bg-white py-[70px]">
   <div class="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8">
     <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
       <span class="w-6 h-px bg-gold inline-block"></span>
@@ -32,11 +32,16 @@ const questions = [
 
     <div class="space-y-4">
       {questions.map(item => (
-        <div class="bg-white rounded-xl p-7 border border-cream-soft">
-          <h3 class="font-display text-[24px] leading-[30px] text-navy mb-3">{item.q}</h3>
+        <div class="bg-cream rounded-xl p-7 border border-cream-soft">
+          <h3 class="q-title font-display text-navy mb-3">{item.q}</h3>
           <p class="font-body text-charcoal text-[16px] leading-[27px]">{item.a}</p>
         </div>
       ))}
     </div>
   </div>
 </section>
+
+<style>
+  /* Unlayered, so it beats the global h3 scale. */
+  .q-title { font-size: 24px; line-height: 30px; letter-spacing: 0; }
+</style>

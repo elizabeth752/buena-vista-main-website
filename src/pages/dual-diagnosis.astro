@@ -8,12 +8,13 @@ import FacilityShowcase from '../components/FacilityShowcase.astro';
 import Testimonials from '../components/Testimonials.astro';
 import FAQ from '../components/FAQ.astro';
 import FinalCTA from '../components/FinalCTA.astro';
+import AdmissionsPath from '../components/AdmissionsPath.astro';
 
 import DualHero from '../components/dual/DualHero.astro';
 import CrisisBand from '../components/dual/CrisisBand.astro';
 import WhyTogether from '../components/dual/WhyTogether.astro';
 import ConditionsSupported from '../components/dual/ConditionsSupported.astro';
-import ScopeBoundary from '../components/dual/ScopeBoundary.astro';
+import WhatWeTreatHere from '../components/dual/WhatWeTreatHere.astro';
 
 const title = 'Dual Diagnosis Treatment in Arizona | Addiction & Co-Occurring Care | Buena Vista';
 const description = 'Addiction rarely travels alone. Buena Vista treats substance use alongside co-occurring conditions like anxiety, depression, PTSD, and trauma — as part of whole-person care in Arizona.';
@@ -83,23 +84,44 @@ const schema = {
 
   <DualHero />
 
-  <!-- Crisis resources sit high on this page, not only in the footer -->
+  {/* Crisis resources sit high on this page, not only in the footer */}
   <CrisisBand />
 
   <WhyTogether />
 
-  <!-- BREATHER -->
+  {/* BREATHER */}
   <FacilityShowcase />
 
   <ConditionsSupported />
 
-  <!-- The expectation-setting section the brief calls the most valuable here -->
-  <ScopeBoundary />
+  {/* What we treat, stated positively. This was a two-column scope boundary
+       with a "somewhere else" column; never rebuild it that way. */}
+  <WhatWeTreatHere />
 
-  <!-- BREATHER -->
+  {/* BREATHER */}
   <Testimonials />
 
-  <VerifySection />
+  <VerifySection
+    heading="Does insurance cover dual diagnosis treatment in Arizona?"
+    bullets={[
+      'We check your benefits while you are on the phone, usually in a few minutes',
+      'It costs nothing, and you owe nothing either way',
+      'AHCCCS and commercial plans both cover care here',
+      'Not in network with your plan? We will say so, and help you find who is',
+    ]}
+  />
+
+  <AdmissionsPath
+    heading="How to get into dual diagnosis treatment in Arizona"
+    steps={[
+      { title: 'Call, any hour',   note: 'A real person picks up' },
+      { title: 'Phone assessment', note: 'Substances and mental health' },
+      { title: 'Coverage check',   note: 'While you are on the line' },
+      { title: 'Provider review',  note: 'Confirming this is a safe fit' },
+      { title: 'Bed confirmed',    note: 'Often the same day' },
+      { title: 'You arrive',       note: 'We can arrange the ride' },
+    ]}
+  />
 
   <FAQ
     faqs={faqs}

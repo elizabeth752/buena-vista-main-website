@@ -25,17 +25,19 @@ const team = [
     title: 'CEO & Partner',
   },
 ];
+
+interface Props { eyebrow?: string; heading?: string; bg?: string; }
+const { eyebrow, heading, bg = 'bg-white' } = Astro.props;
+
 ---
-<section id="team" class="bg-white py-[50px]">
+<section id="team" class={`${bg} py-[60px]`}>
   <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
     <div class="mb-14 max-w-3xl">
       <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
         <span class="w-6 h-px bg-gold inline-block"></span>
-        The People Behind Your Care
+        {eyebrow ?? 'The People Behind Your Care'}
       </p>
-      <h2 class="font-display text-charcoal mb-4">
-        Experienced. Licensed. In your corner.
-      </h2>
+      <h2 class="font-display text-charcoal mb-4">{heading ?? 'Experienced. Licensed. In your corner.'}</h2>
       <p class="font-body text-charcoal max-w-2xl text-[17px] leading-[29px]">
         Putting your life — or your loved one's life — in someone else's hands is an enormous act of trust. Here's who's on the other side of that trust.
       </p>

@@ -1,5 +1,45 @@
 ---
 import Horizon from '../Horizon.astro';
+
+/* Hero standard, adapted for a location page: eyebrow, keyword H1, the NAP
+   card, then bullets with their own icons, then CTAs. No subtitle paragraph
+   and no styled display line.
+
+   The NAP card holds the name, address and hours and must stay above the fold
+   — it is what a local search lands here for. */
+/* Accreditation marks in the hero, per the location-page checklist. The Google
+   review rating is deliberately NOT shown: Chandler sits at 3.6, below the ~4.0
+   threshold where a displayed rating helps rather than hurts. Revisit once the
+   reputation work moves it. */
+const badges = [
+  { src: '/Asset/Accreditations/The%20Joint%20Commission.svg', alt: 'Accredited by The Joint Commission' },
+  { src: '/Asset/Accreditations/Legit.svg',                    alt: 'LegitScript certified' },
+  { src: '/Asset/Accreditations/NAATP.svg',                    alt: 'NAATP member' },
+  { src: '/Asset/Accreditations/HIPAA%20Compliant.svg',        alt: 'HIPAA compliant' },
+];
+
+const points = [
+  {
+    text: 'Medical detox and residential treatment in one building',
+    d: 'M21 8.25H3m18 0a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 8.25m18 0v10.5A2.25 2.25 0 0118.75 21H5.25A2.25 2.25 0 013 18.75V8.25M12 11.25v6m3-3H9',
+  },
+  {
+    text: 'The only Buena Vista campus admitting right now',
+    d: 'M15 10.5a3 3 0 11-6 0 3 3 0 016 0z M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z',
+  },
+  {
+    text: 'Same-day admission when a bed is open',
+    d: 'M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z',
+  },
+  {
+    text: 'Transport can be arranged within our local service area',
+    d: 'M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3',
+  },
+  {
+    text: 'AHCCCS plans and most major commercial and private carriers',
+    d: 'M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z',
+  },
+];
 ---
 <section id="hero" class="bg-cream">
   <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-[60px] lg:py-[80px]">
@@ -8,16 +48,12 @@ import Horizon from '../Horizon.astro';
       <div>
         <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-5 flex items-center gap-2">
           <span class="w-6 h-px bg-gold inline-block"></span>
-          Our facility · Chandler, Arizona
+          Our Chandler facility
         </p>
 
         <h1 class="font-display text-navy mb-6">
-          Detox and residential treatment in Chandler.
+          Drug and Alcohol Rehab in Chandler, Arizona
         </h1>
-
-        <p class="font-body text-charcoal text-[20px] leading-[33px] max-w-xl mb-8">
-          One building on South Arizona Avenue, open every hour of every day. This is where our care happens — and right now, it is the only Buena Vista campus admitting.
-        </p>
 
         <div class="bg-white border border-cream-soft rounded-xl p-6 mb-8 shadow-sm max-w-xl">
           <div class="flex items-start gap-3 mb-4">
@@ -42,6 +78,27 @@ import Horizon from '../Horizon.astro';
             </div>
           </div>
         </div>
+
+        <div class="flex flex-wrap items-center gap-2.5 mb-8">
+          {badges.map(b => (
+            <div class="bg-white rounded-lg px-3 py-2 flex items-center justify-center border border-cream-soft" style="min-width:80px; height:50px;">
+              <img src={b.src} alt={b.alt} class="max-h-8 max-w-[88px] object-contain" loading="eager" />
+            </div>
+          ))}
+        </div>
+
+        <ul class="space-y-4 mb-9 max-w-xl">
+          {points.map(item => (
+            <li class="flex items-start gap-3.5 font-body text-charcoal text-[17px] leading-[29px]">
+              <span class="w-9 h-9 rounded-full bg-teal/10 flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-[19px] h-[19px] text-teal" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d={item.d}/>
+                </svg>
+              </span>
+              <span>{item.text}</span>
+            </li>
+          ))}
+        </ul>
 
         <div class="flex flex-col sm:flex-row gap-4">
           <a href="tel:8883625576" class="inline-flex items-center justify-center gap-2 bg-teal hover:bg-teal-dark text-white font-semibold h-14 px-8 rounded-lg transition-colors font-body">

@@ -10,9 +10,9 @@
    misuse fold into the hub and the opioid category rather than getting weak
    links of their own. */
 const substances = [
-  { name: 'Alcohol', note: 'The most common reason people call', href: '/what-we-treat/alcohol-addiction/' },
-  { name: 'Fentanyl & opioids', note: 'Detox first, with medication', href: '/what-we-treat/opioid-addiction/' },
-  { name: 'Meth & stimulants', note: 'Usually straight to residential', href: '/what-we-treat/stimulant-addiction/' },
+  { name: 'Alcohol', note: 'Nursed detox, then residential', href: '/what-we-treat/alcohol-addiction/' },
+  { name: 'Fentanyl and opioids', note: 'Detox first, with medication', href: '/what-we-treat/opioid-addiction/' },
+  { name: 'Meth and stimulants', note: 'Usually straight to residential', href: '/what-we-treat/stimulant-addiction/' },
   { name: 'Benzodiazepines', note: 'Xanax, Klonopin, Ativan', href: '/what-we-treat/benzodiazepine-addiction/' },
   { name: 'Dual diagnosis', note: 'Addiction and mental health together', href: '/dual-diagnosis' },
 ];
@@ -24,7 +24,7 @@ const mental = [
   { name: 'Mood disorders', href: null },
 ];
 ---
-<section id="treatment" class="bg-navy-deep text-white py-[70px] relative overflow-hidden bv-watermark bv-watermark--light">
+<section id="what-we-treat" class="bg-navy-deep text-white py-[70px] relative overflow-hidden bv-watermark bv-watermark--light">
   <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
 
     <div class="mb-10 max-w-3xl">
@@ -58,7 +58,7 @@ const mental = [
 
     <div class="border-t border-white/15 pt-9 grid lg:grid-cols-[1fr_auto] gap-8 items-start">
       <div>
-        <h3 class="font-body text-gold text-xs font-bold tracking-[0.18em] uppercase mb-4">Treated alongside, not afterwards</h3>
+        <p class="font-body text-gold text-xs font-bold tracking-[0.18em] uppercase mb-4">Treated alongside, not afterwards</p>
         <div class="flex flex-wrap gap-2.5 mb-5">
           {mental.map(c => (
             c.href
@@ -67,14 +67,14 @@ const mental = [
           ))}
         </div>
         <p class="font-body text-white/70 text-[16px] leading-[26px] max-w-2xl">
-          Treating one without the other rarely holds, so both happen in the same programme.
+          Treating one without the other rarely holds, so both happen in the same program.
         </p>
       </div>
 
       <div class="bg-white/5 border-l-2 border-gold pl-5 py-1 max-w-sm">
         <p class="font-body text-white/80 text-[15px] leading-[25px]">
-          Having thoughts of suicide will not disqualify you from care — say so when you call.
-          If you need someone right now, call or text
+          Having thoughts of suicide will not disqualify you from care, so say so when you call.
+          If you need someone right now, call or text{' '}
           <a href="tel:988" class="text-gold font-semibold hover:opacity-70 transition-opacity tel-number">988</a>.
         </p>
       </div>

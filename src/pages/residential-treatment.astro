@@ -8,7 +8,6 @@ import InsuranceForm from '../components/InsuranceForm.astro';
 import FacilityShowcase from '../components/FacilityShowcase.astro';
 import FacilityGallery from '../components/FacilityGallery.astro';
 import Testimonials from '../components/Testimonials.astro';
-import Insurance from '../components/Insurance.astro';
 import FAQ from '../components/FAQ.astro';
 import VerifySection from '../components/VerifySection.astro';
 import FinalCTA from '../components/FinalCTA.astro';
@@ -21,7 +20,7 @@ import ResidentialDifference from '../components/residential/ResidentialDifferen
 import DayInResidential from '../components/residential/DayInResidential.astro';
 import DetoxPathway from '../components/residential/DetoxPathway.astro';
 import AmenitiesEnvironment from '../components/residential/AmenitiesEnvironment.astro';
-import AdmissionsProcess from '../components/residential/AdmissionsProcess.astro';
+import AdmissionsPath from '../components/AdmissionsPath.astro';
 
 const title = 'Residential Treatment in Chandler, AZ | Buena Vista Health & Recovery';
 const description = 'Live-in residential addiction treatment in Chandler, AZ. Private rooms, catered meals, staff in recovery, and same-day admission. Detox through residential under one roof. Call to verify your insurance.';
@@ -121,51 +120,64 @@ const schema = {
   <TopBar />
   <Nav />
 
-  <!-- 1. Hero -->
+  {/* 1. Hero */}
   <ResidentialHero />
 
-  <!-- Coverage check, one section down from the hero -->
-  <VerifySection />
-
-  <!-- 2. What residential treatment is -->
-  <WhatIsResidential />
-
-  <!-- BREATHER: full-bleed facility imagery -->
-  <FacilityShowcase />
-
-  <!-- 3. Who it's for + what we treat -->
-  <WhoItsFor />
-
-  <!-- BREATHER: facility gallery carousel -->
-  <FacilityGallery />
-
-  <!-- 4. The Buena Vista difference -->
-  <ResidentialDifference />
-
-  <!-- 5. A day in residential -->
-  <DayInResidential />
-
-  <!-- BREATHER: patient reviews -->
-  <Testimonials />
-
-  <!-- 6. The detox-to-residential pathway -->
-  <DetoxPathway />
-
-  <!-- 7. Amenities, environment & packing -->
-  <AmenitiesEnvironment />
-
-  <!-- BREATHER: coverage. Logos are suppressed here because the brief flags the
-       in-network payer list as unverified — the section still does its job as a
-       visual pause and routes to verification. -->
-  <Insurance
-    heading="Insurance & private pay"
-    intro="We accept most major insurance plans and offer private-pay options. The fastest way to know what yours covers is a quick verification call — a few minutes, at no cost, with no obligation."
+  {/* Coverage check, one section down from the hero */}
+  <VerifySection
+    heading="Does insurance cover residential treatment in Arizona?"
+    bullets={[
+      'We check your benefits while you are on the phone, usually in a few minutes',
+      'It costs nothing, and you owe nothing either way',
+      'AHCCCS and commercial plans both cover residential care here',
+      'Not in network with your plan? We will say so, and help you find who is',
+    ]}
   />
 
-  <!-- 8. Admissions process -->
-  <AdmissionsProcess />
+  {/* 2. What residential treatment is */}
+  <WhatIsResidential />
 
-  <!-- 9. FAQ -->
+  {/* BREATHER: full-bleed facility imagery */}
+  <FacilityShowcase />
+
+  {/* 3. Who it's for + what we treat */}
+  <WhoItsFor />
+
+  {/* BREATHER: facility gallery carousel */}
+  <FacilityGallery />
+
+  {/* 4. The Buena Vista difference */}
+  <ResidentialDifference />
+
+  {/* 5. A day in residential */}
+  <DayInResidential />
+
+  {/* BREATHER: patient reviews */}
+  <Testimonials />
+
+  {/* 6. The detox-to-residential pathway */}
+  <DetoxPathway />
+
+  {/* 7. Amenities, environment & packing */}
+  <AmenitiesEnvironment />
+
+  {/* 8. Admissions process */}
+  <AdmissionsPath
+    heading="How to get into residential treatment in Arizona"
+    steps={[
+      { title: 'Call, any hour',   note: 'A real person picks up' },
+      { title: 'Phone assessment', note: 'Ten to fifteen minutes' },
+      { title: 'Coverage check',   note: 'While you are on the line' },
+      { title: 'Provider review',  note: 'Confirming this is a safe fit' },
+      { title: 'Bed confirmed',    note: 'Often the same day' },
+      { title: 'You arrive',       note: 'We can arrange the ride' },
+    ]}
+    bg="bg-white"
+    ring="ring-white"
+    noteBg="bg-navy-deep"
+  />
+
+  {/* 9. FAQ */}
   <FAQ
     faqs={faqs}
     eyebrow="Residential FAQ"
@@ -174,7 +186,7 @@ const schema = {
   />
 
 
-  <!-- 10. Final CTA -->
+  {/* 10. Final CTA */}
   <FinalCTA />
 
   <script type="application/ld+json" set:html={JSON.stringify(schema)} />

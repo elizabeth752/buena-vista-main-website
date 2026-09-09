@@ -2,12 +2,12 @@
 const steps = [
   {
     num: '01',
-    title: 'Share your insurance details',
+    title: 'Share your details',
     desc: 'A quick form or a phone call. We need your name, date of birth, and your plan information — and if the card is not in front of you, call and we can usually work it out anyway.',
   },
   {
     num: '02',
-    title: 'We verify your benefits',
+    title: 'We verify benefits',
     desc: 'Usually within minutes. Our team checks what your plan actually covers for treatment, at no cost to you and with no obligation to go any further.',
   },
   {
@@ -26,16 +26,16 @@ const steps = [
         How it works
       </p>
       <h2 class="font-display text-charcoal mb-4">
-        Three steps, and none of them commit you to anything
+        How insurance verification works here
       </h2>
       <p class="font-body text-charcoal text-[17px] leading-[29px] max-w-2xl">
         Checking your coverage is not the same as signing up for treatment. It is simply finding out where you stand, which is usually the thing standing between someone and the decision to get help.
       </p>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-6">
+    <div class="grid md:grid-cols-3 gap-6 items-stretch">
       {steps.map(step => (
-        <div class="bg-cream rounded-xl p-8 border border-cream-soft flex flex-col h-full">
+        <div class="bg-cream rounded-xl p-8 border border-cream-soft border-t-4 border-t-gold h-full">
           <div class="flex items-center gap-4 mb-4">
             <span class="w-12 h-12 rounded-full bg-navy text-gold font-display text-xl flex items-center justify-center shrink-0">
               {step.num}

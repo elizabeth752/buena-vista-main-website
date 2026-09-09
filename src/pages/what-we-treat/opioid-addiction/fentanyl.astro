@@ -19,7 +19,7 @@
      16%  already on methadone, 7% on buprenorphine
 
    MAT BOUNDARY — AlreadyOnMedication must NOT read as a MAT offer. The wiki
-   places MAT on hold and admissions confirms there is no methadone programme
+   places MAT on hold and admissions confirms there is no methadone program
    here. The section exists to get maintenance medication raised early for
    clinical review, and deliberately promises nothing about continuation.
 
@@ -36,6 +36,7 @@ import FentanylQuestions from '../../../components/fentanyl/FentanylQuestions.as
 
 import Testimonials from '../../../components/Testimonials.astro';
 import VerifySection from '../../../components/VerifySection.astro';
+import AdmissionsPath from '../../../components/AdmissionsPath.astro';
 import FinalCTA from '../../../components/FinalCTA.astro';
 
 const title = 'Fentanyl Detox & Treatment in Chandler, AZ | Buena Vista Health & Recovery';
@@ -76,7 +77,13 @@ const schema = {
   <FentanylDetox />
   <AlreadyOnMedication />
   <Testimonials />
-  <VerifySection />
+  <VerifySection heading="Does insurance cover fentanyl treatment in Arizona?" />
+  <AdmissionsPath
+    heading="How to get into fentanyl detox in Arizona"
+    bg="bg-white"
+    ring="ring-white"
+    noteBg="bg-navy-deep"
+  />
   <FentanylQuestions />
 
   <FinalCTA />

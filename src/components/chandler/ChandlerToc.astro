@@ -1,0 +1,35 @@
+---
+/* Sticky table of contents, per the Recovery.com location-page checklist:
+   five or six links, sticky while scrolling, smooth scroll to each section.
+   Sits directly under the hero so it is the first thing after the NAP card. */
+const sections = [
+  { label: 'Levels of care',  href: '#care' },
+  { label: 'The building',    href: '#practical' },
+  { label: 'Our team',        href: '#team' },
+  { label: 'What we treat',   href: '#what-we-treat' },
+  { label: 'Insurance',       href: '#verify' },
+  { label: 'Getting here',    href: '#getting-here' },
+  { label: 'Questions',       href: '#faq' },
+];
+---
+<nav aria-label="On this page" class="sticky top-16 md:top-18 z-40 bg-cream/95 backdrop-blur border-y border-cream-soft">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <ul class="flex gap-1 overflow-x-auto py-2.5 no-scrollbar">
+      {sections.map(s => (
+        <li class="shrink-0">
+          <a
+            href={s.href}
+            class="inline-block font-body text-[15px] font-semibold text-charcoal/75 hover:text-teal px-3.5 py-2 rounded-lg hover:bg-white transition-colors whitespace-nowrap"
+          >
+            {s.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</nav>
+
+<style>
+  .no-scrollbar { scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+</style>

@@ -7,14 +7,14 @@
 const then = [
   { h: 'We open your file anyway', p: 'The assessment and the coverage check hold good. When something opens you are not starting from the beginning again.' },
   { h: 'We call you back', p: 'Not a vague promise to keep an eye out — an actual call, from an actual person, when a bed comes free.' },
-  { h: 'We look elsewhere in the meantime', p: 'If waiting is not safe or not realistic, we will help you find a programme with space now, including at other facilities in Arizona.' },
+  { h: 'We look elsewhere too', p: 'If waiting is not safe or not realistic, we will help you find a program with space now, including at other facilities in Arizona.' },
 ];
 ---
-<section id="beds" class="bg-cream py-[60px]">
+<section id="beds" class="bg-sage-tint py-[70px]">
   <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
     <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
 
-      <div>
+      <div class="lg:sticky lg:top-24">
         <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
           <span class="w-6 h-px bg-gold inline-block"></span>
           If we are full that day
@@ -44,7 +44,7 @@ const then = [
 
       <div class="space-y-5">
         {then.map(t => (
-          <div class="bg-white rounded-xl p-7 border border-cream-soft shadow-sm">
+          <div class="bg-white rounded-xl p-7 border border-cream-soft border-t-4 border-t-gold h-full">
             <h3 class="font-display text-[21px] leading-[27px] text-navy mb-3">{t.h}</h3>
             <p class="font-body text-charcoal text-[16px] leading-[26px]">{t.p}</p>
           </div>

@@ -6,12 +6,12 @@
 const offers = [
   {
     n: '01',
-    h: 'Find out how soon they could come in',
+    h: 'Find out how soon',
     p: 'When things are urgent this is the question that matters. We will tell you honestly what today looks like — whether a bed is open, what admission would involve, and how quickly it could happen.',
   },
   {
     n: '02',
-    h: 'Check their insurance for them',
+    h: 'Check their insurance',
     p: 'Usually all we need is a name, a date of birth and the plan on the card. We can run it while you are on the phone, so you find out what is covered before you raise it with them.',
   },
   {
@@ -26,27 +26,40 @@ const offers = [
   },
 ];
 ---
-<section id="what-we-can-do" class="bg-cream py-[60px]">
+<section id="what-we-can-do" class="bg-white py-[60px]">
   <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
     <div class="max-w-2xl mb-12">
       <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
         <span class="w-6 h-px bg-gold inline-block"></span>
         What one call gets you
       </p>
-      <h2 class="font-display text-charcoal mb-5">You can do more from here than you think</h2>
+      <h2 class="font-display text-charcoal mb-5">What one phone call can do for your family</h2>
       <p class="font-body text-charcoal text-[18px] leading-[30px]">
         None of this requires the person to be ready, or even to know you are calling.
       </p>
     </div>
 
-    <div class="grid sm:grid-cols-2 gap-6">
+    <div class="grid sm:grid-cols-2 gap-6 items-stretch">
       {offers.map(o => (
-        <div class="bg-white rounded-xl p-7 border border-cream-soft shadow-sm">
+        <div class="bg-cream rounded-xl p-7 border border-cream-soft border-t-4 border-t-gold h-full">
           <p class="font-display text-gold text-[32px] leading-none mb-4">{o.n}</p>
-          <h3 class="font-display text-[23px] leading-[29px] text-navy mb-3">{o.h}</h3>
+          <h3 class="fam-title font-display text-navy mb-3">{o.h}</h3>
           <p class="font-body text-charcoal text-[16px] leading-[26px]">{o.p}</p>
         </div>
       ))}
     </div>
+
+    <div class="mt-10 border-l-2 border-gold pl-6 max-w-3xl">
+      <p class="font-body text-charcoal text-[17px] leading-[29px]">
+        <strong class="font-bold">You do not need their permission to ask questions.</strong> You can find out what treatment involves, what it costs and whether a bed is open, without committing anyone to anything. That call often comes weeks before the person you love is ready, and it is still the right call to make.
+      </p>
+    </div>
+
   </div>
 </section>
+
+<style>
+  /* Unlayered, so it beats the global h3 scale. A two-line floor keeps the four
+     cards level. */
+  .fam-title { font-size: 23px; line-height: 29px; letter-spacing: 0; min-height: 58px; }
+</style>

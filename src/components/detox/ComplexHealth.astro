@@ -1,0 +1,62 @@
+---
+/* Promoted out of WhatWeDetoxFrom to its own section. This is a reassurance
+   point, not a barrier: people with complicated health assume they will be
+   turned away, and it is the reason they should be here rather than at home.
+
+   Conditions listed are the ones already in the approved copy. Do not add to
+   the list without the brief — it reads as a screening criteria list. */
+const conditions = [
+  {
+    name: 'High blood pressure',
+    d: 'M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 010 3.75H5.625a1.875 1.875 0 010-3.75z',
+  },
+  {
+    name: 'Liver disease',
+    d: 'M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582',
+  },
+  {
+    name: 'Cardiac history',
+    d: 'M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z',
+  },
+  {
+    name: 'Anxiety, depression, or PTSD',
+    d: 'M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z',
+  },
+];
+---
+<section id="complex-health" class="bg-sage-tint py-[70px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+
+    <div class="max-w-3xl mb-10">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+        <span class="w-6 h-px bg-gold inline-block"></span>
+        Detoxing with other conditions
+      </p>
+      <h2 class="font-display text-charcoal mb-5">
+        If your health is complicated, that is a reason to detox here
+      </h2>
+      <p class="font-body text-charcoal text-[19px] leading-[31px]">
+        People assume a complicated medical history will get them turned away. It is the opposite: being medically supervised is precisely what makes detox appropriate when there is more going on.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-9">
+      {conditions.map(c => (
+        <div class="bg-white rounded-xl border border-cream-soft p-6 flex items-center gap-4">
+          <span class="w-11 h-11 rounded-full bg-teal/12 flex items-center justify-center shrink-0">
+            <svg class="w-[22px] h-[22px] text-teal" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d={c.d}/>
+            </svg>
+          </span>
+          <p class="font-body font-semibold text-charcoal text-[16px] leading-[22px]">{c.name}</p>
+        </div>
+      ))}
+    </div>
+
+    <p class="font-body text-charcoal text-[17px] leading-[29px] max-w-3xl">
+      Tell our team everything during your phone assessment: the medications, the diagnoses, the things you would rather not mention. That is what lets a provider plan your detox properly.
+      <a href="/dual-diagnosis" class="text-teal font-semibold hover:opacity-70 transition-opacity">See how we treat mental health alongside substance use &rarr;</a>
+    </p>
+
+  </div>
+</section>

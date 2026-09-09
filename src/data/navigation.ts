@@ -72,13 +72,13 @@ export const mainNav: NavGroup[] = [
           { label: 'Outpatient program', href: '/programs/outpatient-program/' },
           { label: 'Outpatient therapy', href: '/programs/outpatient-therapy/' },
           { label: 'Mental health treatment', href: '/programs/mental-health-treatment/' },
-          { label: 'What happens after', href: '/programs/aftercare-and-alumni/', built: true },
+          { label: 'Aftercare', href: '/programs/aftercare/', built: true },
         ],
       },
       {
         heading: 'Therapies',
         links: [
-          { label: 'Therapy & clinical approach', href: '/therapies/', built: true },
+          { label: 'Therapies', href: '/therapies/', built: true },
         ],
       },
     ],
@@ -91,13 +91,13 @@ export const mainNav: NavGroup[] = [
       {
         heading: 'Substance use',
         links: [
-          { label: 'Alcohol addiction', href: '/what-we-treat/alcohol-addiction/', built: true },
-          { label: 'Opioid addiction', href: '/what-we-treat/opioid-addiction/', built: true },
+          { label: 'Alcohol', href: '/what-we-treat/alcohol-addiction/', built: true },
+          { label: 'Opioids', href: '/what-we-treat/opioid-addiction/', built: true },
           { label: 'Fentanyl', href: '/what-we-treat/opioid-addiction/fentanyl/', built: true },
-          { label: 'Stimulant addiction', href: '/what-we-treat/stimulant-addiction/', built: true },
+          { label: 'Stimulants', href: '/what-we-treat/stimulant-addiction/', built: true },
           { label: 'Methamphetamine', href: '/what-we-treat/stimulant-addiction/methamphetamine/', built: true },
           { label: 'Benzodiazepines', href: '/what-we-treat/benzodiazepine-addiction/', built: true },
-          { label: 'Cannabis use disorder', href: '/what-we-treat/cannabis-use-disorder/' },
+          { label: 'Cannabis', href: '/what-we-treat/cannabis-use-disorder/' },
         ],
       },
       {
@@ -105,8 +105,8 @@ export const mainNav: NavGroup[] = [
         links: [
           { label: 'Anxiety', href: '/what-we-treat/anxiety/', built: true },
           { label: 'Depression', href: '/what-we-treat/depression/', built: true },
-          { label: 'PTSD & trauma', href: '/what-we-treat/ptsd-and-trauma/' },
-          { label: 'Bipolar disorder', href: '/what-we-treat/bipolar-disorder/' },
+          { label: 'PTSD and trauma', href: '/what-we-treat/ptsd-and-trauma/' },
+          { label: 'Bipolar', href: '/what-we-treat/bipolar-disorder/' },
           { label: 'Dual diagnosis', href: '/dual-diagnosis', built: true },
         ],
       },
@@ -198,9 +198,17 @@ export const mainNav: NavGroup[] = [
         heading: 'Our facilities',
         links: [
           { label: 'Chandler, AZ', href: '/locations/chandler/', built: true },
-          { label: 'Detox in Chandler', href: '/locations/chandler/medical-detox/', built: true },
-          { label: 'Residential in Chandler', href: '/locations/chandler/residential-treatment/', built: true },
           { label: 'Tucson, AZ', href: '/locations/tucson/', built: true },
+        ],
+      },
+      {
+        heading: 'Areas we serve',
+        links: [
+          { label: 'Phoenix', href: '/locations/phoenix/', built: true },
+          { label: 'Mesa', href: '/locations/mesa/', built: true },
+          { label: 'Gilbert', href: '/locations/gilbert/', built: true },
+          { label: 'Tempe', href: '/locations/tempe/', built: true },
+          { label: 'Casa Grande', href: '/locations/casa-grande/', built: true },
         ],
       },
       {
@@ -261,4 +269,16 @@ export const legalLinks: NavLink[] = [
   { label: 'Notice of privacy practices', href: '/hipaa-notice-of-privacy-practices/' },
   { label: 'Terms of use', href: '/terms-of-use/' },
   { label: 'Sitemap', href: '/sitemap/', built: true },
+];
+
+/* Social profiles. Sourced from the archived pre-brand-system build, which
+   already carried them — not guessed. Add TikTok or X here if those exist and
+   the footer picks them up automatically. */
+export interface SocialLink { label: string; href: string; icon: 'facebook' | 'instagram' | 'linkedin' | 'youtube'; }
+
+export const socialLinks: SocialLink[] = [
+  { label: 'Facebook',  icon: 'facebook',  href: 'https://www.facebook.com/people/Buena-Vista-Health/61589704096967/' },
+  { label: 'Instagram', icon: 'instagram', href: 'https://www.instagram.com/buenavista_recovery/' },
+  { label: 'LinkedIn',  icon: 'linkedin',  href: 'https://www.linkedin.com/company/buena-vista-recovery/' },
+  { label: 'YouTube',   icon: 'youtube',   href: 'https://www.youtube.com/@buenavistarecovery' },
 ];

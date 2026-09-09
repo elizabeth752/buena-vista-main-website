@@ -17,7 +17,9 @@ import WhatIsDetox from '../components/detox/WhatIsDetox.astro';
 import WhatWeDetoxFrom from '../components/detox/WhatWeDetoxFrom.astro';
 import WhatToExpect from '../components/detox/WhatToExpect.astro';
 import AfterDetox from '../components/detox/AfterDetox.astro';
-import DetoxAdmissions from '../components/detox/DetoxAdmissions.astro';
+import StimulantAnswer from '../components/detox/StimulantAnswer.astro';
+import ComplexHealth from '../components/detox/ComplexHealth.astro';
+import AdmissionsPath from '../components/AdmissionsPath.astro';
 
 const title = 'Medical Detox in Chandler, AZ | Buena Vista Health & Recovery';
 const description = 'Safe, medically supervised drug and alcohol detox in Arizona. 24/7 nursing, private rooms, comfort medications, and same-day admission. Call any time to verify your insurance.';
@@ -44,7 +46,7 @@ const faqs = [
   },
   {
     q: 'Do you offer at-home or outpatient detox?',
-    a: "No — Buena Vista provides inpatient medical detox only, meaning you stay with us in our facility where our medical team can monitor and support you 24/7. We don't offer at-home or outpatient detox. This is a safety decision, not an inconvenience. Withdrawal from substances like alcohol and benzodiazepines can become dangerous quickly and unpredictably, and being somewhere with round-the-clock nursing and immediate medical support is what keeps you safe if things escalate. Once you've completed detox with us, lower levels of care become the right next steps — but the detox itself should happen under a watchful medical eye.",
+    a: "Detox at Buena Vista is always an inpatient stay — you stay with us in our facility, where our medical team can monitor and support you 24/7. That is a safety decision rather than an inconvenience. Withdrawal from substances like alcohol and benzodiazepines can become dangerous quickly and unpredictably, and being somewhere with round-the-clock nursing and immediate medical support is what keeps you safe if things escalate. Once you've completed detox with us, lower levels of care become the right next steps — but the detox itself should happen under a watchful medical eye.",
   },
   {
     q: 'What will detox actually be like, day to day?',
@@ -115,26 +117,36 @@ const schema = {
 
   <DetoxHero />
 
-  <!-- Coverage check, one section down from the hero -->
-  <VerifySection />
+  {/* Coverage check, one section down from the hero */}
+  <VerifySection
+    heading="Does insurance cover medical detox in Arizona?"
+    bullets={[
+      'We check your benefits while you are on the phone, usually in a few minutes',
+      'It costs nothing, and you owe nothing either way',
+      'AHCCCS and commercial plans both cover detox here',
+      'Not in network with your plan? We will say so, and help you find who is',
+    ]}
+  />
 
   <WhatIsDetox />
 
-  <!-- BREATHER -->
+  {/* BREATHER */}
   <FacilityShowcase />
 
   <WhatWeDetoxFrom />
+  <StimulantAnswer />
 
-  <!-- BREATHER -->
+  {/* BREATHER */}
   <FacilityGallery />
 
   <WhatToExpect />
+  <ComplexHealth />
 
-  <!-- BREATHER -->
+  {/* BREATHER */}
   <Testimonials />
 
   <AfterDetox />
-  <DetoxAdmissions />
+  <AdmissionsPath heading="How to get into medical detox in Arizona" />
 
   <FAQ
     faqs={faqs}
@@ -142,19 +154,6 @@ const schema = {
     heading="Questions and answers"
     intro="These are the real questions our admissions line fields, answered the same way we would answer them on the phone."
   />
-
-  <!-- Crisis resources. The brief asks for a discreet note for anyone in
-       immediate danger; the footer carries it site-wide as well. -->
-  <section class="bg-sand py-10">
-    <div class="max-w-4xl mx-auto px-5 sm:px-6 lg:px-8">
-      <div class="border-l-2 border-gold pl-6">
-        <p class="font-body font-bold text-charcoal text-[17px] mb-1">If you are in danger right now</p>
-        <p class="font-body text-charcoal text-[16px] leading-[26px]">
-          Detox admission takes a little time to arrange. If you or someone you love is in immediate danger, call or text <a href="tel:988" class="text-teal font-semibold underline underline-offset-2 tel-number">988</a> for the Suicide &amp; Crisis Lifeline, any hour — or call 911 in an emergency.
-        </p>
-      </div>
-    </div>
-  </section>
 
   <FinalCTA />
 

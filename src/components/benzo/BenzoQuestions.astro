@@ -1,4 +1,5 @@
 ---
+import FAQ from '../FAQ.astro';
 /* No taper schedules, no dose guidance, no "reduce gradually by" instructions.
    Every answer routes to supervision. This page will be found by people
    searching how to stop on their own. */
@@ -13,33 +14,9 @@ const faqs = [
   { q: 'I only take a small dose.', a: "Then a call costs you nothing and settles it. Dose is only one of several things that matter here, and it is a reasonable question to ask someone clinical rather than to decide alone." },
 ];
 ---
-<section id="benzo-faq" class="bg-cream py-[70px]">
-  <div class="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8">
-    <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
-      <span class="w-6 h-px bg-gold inline-block"></span>
-      Straight answers
-    </p>
-    <h2 class="font-display text-charcoal mb-10">Questions about benzodiazepines</h2>
-    <div class="divide-y divide-cream-soft border-t border-b border-cream-soft">
-      {faqs.map(f => (
-        <details class="group py-5">
-          <summary class="flex items-start justify-between gap-6 cursor-pointer">
-            <h3 class="font-body font-semibold text-charcoal text-[18px] leading-[28px]">{f.q}</h3>
-            <span class="shrink-0 mt-1 text-teal">
-              <svg class="faq-plus w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg>
-              <svg class="faq-minus w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M5 12h14"/></svg>
-            </span>
-          </summary>
-          <p class="font-body text-charcoal text-[16px] leading-[27px] mt-4 pr-10">{f.a}</p>
-        </details>
-      ))}
-    </div>
-    <div class="mt-10 bg-white border-l-2 border-gold rounded-r-xl p-6">
-      <p class="font-body text-charcoal text-[16px] leading-[27px]">
-        <strong class="font-bold">If you have already cut down and feel unwell,</strong> call
-        <a href="tel:8883625576" class="text-teal font-semibold hover:opacity-70 transition-opacity tel-number">(888) 362-5576</a>
-        or go to an emergency room today. Confusion, hallucinations or a seizure during benzodiazepine withdrawal need medical attention immediately.
-      </p>
-    </div>
-  </div>
-</section>
+<FAQ
+  faqs={faqs}
+  eyebrow="Straight answers"
+  heading="Questions about benzodiazepines"
+  bg="bg-cream"
+/>

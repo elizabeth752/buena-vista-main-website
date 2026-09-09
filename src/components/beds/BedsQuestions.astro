@@ -1,4 +1,5 @@
 ---
+import FAQ from '../FAQ.astro';
 const faqs = [
   { q: 'Do you have beds available right now?', a: "That changes daily, sometimes within a day, so the only honest answer is the one you get on the phone. Call and you will know in a couple of minutes — including which level of care the bed is for and whether your coverage clears." },
   { q: 'Why does the website not just show a number?', a: "Because it would be wrong by the time you read it. Detox beds turn over every few days, and a number that is stale by an afternoon is worse than no number at all — particularly for someone deciding whether it is worth calling." },
@@ -10,26 +11,9 @@ const faqs = [
   { q: 'Is it worth calling at a particular time?', a: "Admissions answers every hour of the day and night including holidays, so there is no wrong time. If you are ready to come in now, say so at the start — it changes how the call is handled." },
 ];
 ---
-<section id="beds-faq" class="bg-cream py-[70px]">
-  <div class="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8">
-    <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
-      <span class="w-6 h-px bg-gold inline-block"></span>
-      Straight answers
-    </p>
-    <h2 class="font-display text-charcoal mb-10">Questions about availability</h2>
-    <div class="divide-y divide-cream-soft border-t border-b border-cream-soft">
-      {faqs.map(f => (
-        <details class="group py-5">
-          <summary class="flex items-start justify-between gap-6 cursor-pointer">
-            <h3 class="font-body font-semibold text-charcoal text-[18px] leading-[28px]">{f.q}</h3>
-            <span class="shrink-0 mt-1 text-teal">
-              <svg class="faq-plus w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg>
-              <svg class="faq-minus w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M5 12h14"/></svg>
-            </span>
-          </summary>
-          <p class="font-body text-charcoal text-[16px] leading-[27px] mt-4 pr-10">{f.a}</p>
-        </details>
-      ))}
-    </div>
-  </div>
-</section>
+<FAQ
+  faqs={faqs}
+  eyebrow="Straight answers"
+  heading="Questions about availability"
+  bg="bg-cream"
+/>

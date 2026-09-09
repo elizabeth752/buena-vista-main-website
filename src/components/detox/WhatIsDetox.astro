@@ -1,65 +1,87 @@
 ---
+import RevealCards from '../RevealCards.astro';
 // Safety is the #1 fear in the call data, so it is answered here rather than
 // held for the FAQ. Language stays "safest way", never "pain-free" or
 // "risk-free" — the brief's compliance guardrail.
+//
+// The left column is sticky and the cards scroll past it, one lifting as it
+// reaches the middle of the screen. Prose on the left is cut to a single
+// paragraph plus bullets; the detail lives in the cards.
 const safety = [
   {
     title: 'Nursing around the clock',
     desc: 'Staff check on you through the night, track your vital signs, and watch for the warning signs that matter — so nobody is guessing whether what they feel is normal.',
+    d: 'M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z',
   },
   {
     title: 'A physician overseeing your care',
     desc: 'A provider reviews your history before you arrive and stays involved, because withdrawal is a medical event and it deserves to be treated as one.',
+    d: 'M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5',
   },
   {
     title: 'Medication to ease the symptoms',
-    desc: 'Comfort medications are the point of medical detox. You are not meant to grit your teeth through this, and our team adjusts your care as things change.',
+    desc: 'Comfort medication is the point of medical detox. You are not meant to grit your teeth through this, and our team adjusts your care as things change.',
+    d: 'M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c.251.023.501.05.75.082M9.75 3.104a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.186c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15.75a9.065 9.065 0 00-6.23-.657L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5',
   },
   {
     title: 'A plan if anything escalates',
     desc: 'Alcohol and benzodiazepine withdrawal can turn serious quickly. If a situation ever needed hospital-level care, we coordinate that immediately.',
+    d: 'M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z',
   },
+  {
+    title: 'Inpatient, every time',
+    desc: 'Detox here is always a stay with us, in the building, with nursing a few steps away. That is what makes it safe when withdrawal moves faster than anyone expected.',
+    d: 'M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75',
+  },
+];
+
+const points = [
+  'Usually five to seven days, set by your body rather than a clock',
+  'For alcohol, opioids, benzodiazepines, and more',
+  'Withdrawal from alcohol and benzodiazepines can be dangerous alone, and this is what prevents that',
+  'If fear of withdrawal is what has stopped you before, this is the part we take off your shoulders',
 ];
 ---
 <section id="what-is-detox" class="bg-white py-[60px]">
   <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
     <div class="grid lg:grid-cols-2 gap-14 lg:gap-20 items-start">
 
-      <div>
+      <div class="lg:sticky lg:top-24">
         <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-5 flex items-center gap-2">
           <span class="w-6 h-px bg-gold inline-block"></span>
-          What medical detox is
+          The safest way through withdrawal
         </p>
         <h2 class="font-display text-charcoal mb-6">
-          The safest way through withdrawal
+          What is medical detox?
         </h2>
 
-        <div class="space-y-5 font-body text-charcoal text-[17px] leading-[29px]">
-          <p>
-            Detox is the short, medically supervised process of getting substances out of your body and through withdrawal. For most people it takes about five to seven days, though the substance, how long you have been using, and how your body responds all move that number.
-          </p>
-          <p>
-            It exists for one reason: withdrawal from alcohol, opioids, and benzodiazepines can be genuinely dangerous on your own. Seizures and delirium tremens are real risks when people stop cold turkey without help. Medical detox is what prevents that.
-          </p>
-          <p>
-            If fear of withdrawal is the thing that has been stopping you, that is exactly the part we take off your shoulders.
-          </p>
-        </div>
+        <p class="font-body text-charcoal text-[17px] leading-[29px] mb-7">
+          Medical detox is the short, supervised process of getting substances out of your body and through withdrawal, with a nurse and a doctor watching the whole way.
+        </p>
 
-        <div class="mt-9 flex flex-col sm:flex-row gap-4">
-          <a href="tel:8883625576" class="inline-flex items-center justify-center bg-teal hover:bg-teal-dark text-white font-semibold h-14 px-8 rounded-lg transition-colors font-body">
-            Talk to someone now
-          </a>
-        </div>
+        <ul class="space-y-3 mb-9">
+          {points.map(p => (
+            <li class="flex items-start gap-3 font-body text-charcoal text-[17px] leading-[29px]">
+              <svg class="w-5 h-5 text-teal mt-1 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
+              </svg>
+              {p}
+            </li>
+          ))}
+        </ul>
+
+        <a href="tel:8883625576" class="inline-flex items-center justify-center bg-teal hover:bg-teal-dark text-white font-semibold h-14 px-8 rounded-lg transition-colors font-body">
+          Talk to someone now
+        </a>
       </div>
 
-      <div class="space-y-5">
+      <RevealCards class="space-y-5">
         {safety.map(item => (
-          <div class="bg-cream rounded-xl p-7 border border-cream-soft">
+          <div class="reveal-card bg-cream rounded-xl p-7 border border-cream-soft">
             <div class="flex items-start gap-4">
-              <div class="w-10 h-10 rounded-full bg-teal/12 flex items-center justify-center shrink-0">
-                <svg class="w-5 h-5 text-teal" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/>
+              <div class="reveal-icon w-11 h-11 rounded-full bg-teal/12 flex items-center justify-center shrink-0">
+                <svg class="w-[22px] h-[22px] text-teal" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d={item.d}/>
                 </svg>
               </div>
               <div>
@@ -69,19 +91,15 @@ const safety = [
             </div>
           </div>
         ))}
-
-        <!-- Inpatient only. The brief is explicit that no outpatient or at-home
-             detox option may be implied anywhere on this page. -->
-        <div class="flex gap-4 bg-navy rounded-xl p-7 text-white">
-          <svg class="w-6 h-6 text-gold shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"/>
-          </svg>
-          <p class="font-body text-white/85 text-[16px] leading-[26px]">
-            <strong class="text-white font-bold">We only offer detox as an inpatient stay.</strong> There is no at-home or outpatient detox here. That is a safety decision rather than an inconvenience — withdrawal can escalate fast, and being somewhere with nursing on hand is what keeps you safe if it does.
-          </p>
-        </div>
-      </div>
+      </RevealCards>
 
     </div>
   </div>
 </section>
+
+<style>
+  /* Cards arrive as you scroll, and the one crossing the middle of the screen
+     lifts out of the stack. Motion is skipped entirely for reduced-motion. */
+
+</style>
+

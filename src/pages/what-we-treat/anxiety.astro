@@ -41,6 +41,7 @@ import AnxietyQuestions from '../../components/anxiety/AnxietyQuestions.astro';
 
 import Testimonials from '../../components/Testimonials.astro';
 import VerifySection from '../../components/VerifySection.astro';
+import AdmissionsPath from '../../components/AdmissionsPath.astro';
 import FinalCTA from '../../components/FinalCTA.astro';
 
 const title = 'Anxiety & Addiction Treatment in Chandler, AZ | Buena Vista Health & Recovery';
@@ -81,7 +82,13 @@ const schema = {
   <TheLoop />
   <HowWeTreatAnxiety />
   <Testimonials />
-  <VerifySection />
+  <VerifySection heading="Does insurance cover anxiety and addiction treatment?" />
+  <AdmissionsPath
+    heading="How to start treatment for anxiety and substance use"
+    bg="bg-white"
+    ring="ring-white"
+    noteBg="bg-navy-deep"
+  />
   <AnxietyQuestions />
 
   <FinalCTA />

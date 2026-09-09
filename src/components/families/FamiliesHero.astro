@@ -1,11 +1,33 @@
 ---
 import Horizon from '../Horizon.astro';
 
+/* Hero standard: H1 carries the keyword, the emotional line sits above the
+   bullets, no subtitle paragraph, every bullet gets its own icon.
+
+   Voice: plain and instructional. This page is read by someone frightened and
+   short on patience, so every line is a direct statement of what they can do,
+   not an observation about their situation. */
 const points = [
-  'You can start the process before they are ready',
-  'We can check their coverage from their name and date of birth',
-  'If it helps, we will call them ourselves',
-  'Someone answers every hour of the day and night',
+  {
+    text: 'You can start the process before they are ready',
+    d: 'M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3',
+  },
+  {
+    text: 'We can check their coverage from a name and date of birth',
+    d: 'M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z',
+  },
+  {
+    text: 'If it helps, we will call them ourselves',
+    d: 'M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z',
+  },
+  {
+    text: 'Nothing you ask commits them, or you, to anything',
+    d: 'M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z',
+  },
+  {
+    text: 'Someone answers every hour of the day and night',
+    d: 'M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z',
+  },
 ];
 ---
 <section id="hero" class="bg-cream">
@@ -15,33 +37,25 @@ const points = [
       <div>
         <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-5 flex items-center gap-2">
           <span class="w-6 h-px bg-gold inline-block"></span>
-          For families &amp; loved ones
+          For families and loved ones
         </p>
 
         <h1 class="font-display text-navy mb-6">
-          You are allowed to call before they do.
+          Help for Families in Chandler, Arizona
         </h1>
 
-        <p class="font-body text-charcoal text-[20px] leading-[33px] max-w-xl mb-8">
-          Often the person making the first call is not the person who needs treatment. It is a wife, a brother, a daughter, a friend — holding more information than they know what to do with, and no clear idea of the next step. If that is you, you have come to the right place.
-        </p>
-
-        <ul class="space-y-3 mb-9">
+        <ul class="space-y-4 mb-9">
           {points.map(item => (
-            <li class="flex items-start gap-3 font-body text-charcoal text-[17px] leading-[29px]">
-              <svg class="w-5 h-5 text-teal mt-1 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
-              </svg>
-              {item}
+            <li class="flex items-start gap-3.5 font-body text-charcoal text-[17px] leading-[29px]">
+              <span class="w-9 h-9 rounded-full bg-teal/10 flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-[19px] h-[19px] text-teal" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d={item.d}/>
+                </svg>
+              </span>
+              <span>{item.text}</span>
             </li>
           ))}
         </ul>
-
-        <div class="border-l-2 border-gold pl-5 mb-9 max-w-xl">
-          <p class="font-body text-charcoal text-[16px] leading-[26px]">
-            <strong class="font-bold">You do not need their permission to ask questions.</strong> You can find out what treatment would involve, what it would cost and whether a bed is open, all without committing anyone to anything. That first call often comes weeks before the person they love is ready, and it is still worth making.
-          </p>
-        </div>
 
         <div class="flex flex-col sm:flex-row gap-4">
           <a href="tel:8883625576" class="inline-flex items-center justify-center gap-2 bg-teal hover:bg-teal-dark text-white font-semibold h-14 px-8 rounded-lg transition-colors font-body">
@@ -68,7 +82,7 @@ const points = [
         </div>
         <Horizon variant="rule" class="mt-5" />
         <p class="font-body text-muted text-[15px] leading-[24px] mt-3">
-          Somewhere you would be glad to leave someone you love.
+          The building you would be handing someone over to.
         </p>
       </div>
 

@@ -1,0 +1,84 @@
+---
+/* Was ScopeBoundary: two co-equal columns, one headed "When somewhere else
+   comes first" with four arrows pointing away from us. Elizabeth's read on
+   2026-09-08 was that it played as openly rejecting people on a behavioral
+   health site, and she was right — a rejection panel is a rejection panel
+   however carefully it is worded.
+
+   Rebuilt as one positive section about what we treat. The two real clinical
+   boundaries survive, but as a single warm closing note rather than a list:
+     1. an acute psychiatric crisis needs 988 or 911 first, which is a safety
+        fact and must not be removed (CrisisBand at the top of the page carries
+        it prominently too)
+     2. mental health care with no substance use is a different kind of facility
+   The court-ordered evaluation item was dropped: niche admin detail, not worth
+   page space, and it read as a third reason to turn someone away. */
+const whatWeDo = [
+  {
+    h: 'Both treated together',
+    p: 'Substance use and the condition underneath it are treated at the same time, inside detox and residential care, by one team rather than two that never speak.',
+    d: 'M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z',
+  },
+  {
+    h: 'Therapy for both',
+    p: 'Medical supervision, group work most days, and one-to-one sessions with your own therapist, all planned around the whole picture instead of the substance use alone.',
+    d: 'M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z',
+  },
+  {
+    h: 'The conditions we see',
+    p: 'Anxiety, depression, PTSD, trauma and bipolar disorder, where they are woven through someone’s substance use. Most people who reach this page are describing exactly that.',
+    d: 'M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z',
+  },
+  {
+    h: 'Your medication reviewed',
+    p: 'Our medical team reviews the psychiatric medication you already take and coordinates the ongoing care and the aftercare, so nothing lapses on the day you leave.',
+    d: 'M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c.251.023.501.05.75.082M9.75 3.104a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.186c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15.75a9.065 9.065 0 00-6.23-.657L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5',
+  },
+];
+---
+<section id="what-we-treat-here" class="bg-white py-[70px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+
+    <div class="max-w-3xl mb-12">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+        <span class="w-6 h-px bg-gold inline-block"></span>
+        What we treat
+      </p>
+      <h2 class="font-display text-charcoal mb-5">
+        Dual diagnosis care, delivered as one course of treatment
+      </h2>
+      <p class="font-body text-charcoal text-[18px] leading-[30px]">
+        Buena Vista is an inpatient detox and residential program, and mental health care is delivered inside it rather than referred out. If both are in the picture for you, this is what that looks like in practice.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+      {whatWeDo.map(w => (
+        <div class="bg-cream rounded-xl p-7 border border-cream-soft border-t-4 border-t-gold h-full">
+          <div class="w-11 h-11 rounded-full bg-teal/12 flex items-center justify-center mb-5">
+            <svg class="w-[22px] h-[22px] text-teal" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d={w.d}/>
+            </svg>
+          </div>
+          <h3 class="treat-title font-display text-navy mb-3">{w.h}</h3>
+          <p class="font-body text-charcoal text-[16px] leading-[26px]">{w.p}</p>
+        </div>
+      ))}
+    </div>
+
+    {/* The two real boundaries, kept as one warm note rather than a column of
+        arrows away from us. Do not turn this back into a list. */}
+    <div class="mt-12 border-l-2 border-gold pl-6 max-w-3xl">
+      <p class="font-body text-charcoal text-[17px] leading-[29px]">
+        <strong class="font-bold">Not sure whether we are the right place? Call and describe it as it is.</strong> If you are in an acute crisis right now, start with <a href="tel:988" class="text-teal font-semibold hover:opacity-70 transition-opacity tel-number">988</a> or 911, because that needs help faster than any admission can be arranged, and call us once things are steadier. And if what you need turns out to be mental health care without the substance use, we will tell you honestly and help you find the specialist facility for it. Either way you get an answer and somewhere to go.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  /* Unlayered, so it beats the global h3 scale. Every title holds one line at
+     this size, which is what keeps the four columns level. */
+  .treat-title { font-size: 21px; line-height: 27px; letter-spacing: 0; }
+</style>

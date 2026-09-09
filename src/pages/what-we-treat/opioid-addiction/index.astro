@@ -27,21 +27,70 @@ import HubCards from '../../../components/hub/HubCards.astro';
 import OpioidPathway from '../../../components/categories/OpioidPathway.astro';
 import Testimonials from '../../../components/Testimonials.astro';
 import VerifySection from '../../../components/VerifySection.astro';
+import FAQ from '../../../components/FAQ.astro';
+import AdmissionsPath from '../../../components/AdmissionsPath.astro';
 import FinalCTA from '../../../components/FinalCTA.astro';
 
 const title = 'Opioid Addiction Treatment in Chandler, AZ | Buena Vista Health & Recovery';
 const description =
   'Medically supervised detox and residential treatment for fentanyl, prescription painkillers and other opioids in Chandler, AZ. AHCCCS accepted. Call (888) 362-5576.';
 
+/* No "most common" or "less common" tags here. Ranking substances tells whoever
+   is not top of the list that they are the afterthought, and every one of these
+   cards is somebody's whole reason for calling. Describe the care, not the
+   volume. */
 const substances = [
-  { label: 'Fentanyl', tag: 'Most common', desc: 'Now the opioid we see most by a wide margin. Withdrawal comes on fast, which is exactly why calling on the day you decide matters.', href: '/what-we-treat/opioid-addiction/fentanyl/' },
-  { label: 'Prescription painkillers', desc: 'Oxycodone, Percocet and similar — whether prescribed originally or not. A very common route in, and not one anybody here will judge you for.' },
-  { label: 'Heroin', desc: 'Less common than it was locally, largely because fentanyl has replaced it. Treated the same way, and often present alongside it.' },
-  { label: 'Methadone & buprenorphine', desc: 'Arriving on a maintenance medication is common. Tell us the dose and how long you have been taking it so our doctors can plan around it before you arrive.' },
+  { label: 'Fentanyl', desc: 'Withdrawal comes on fast, which is exactly why calling on the day you decide matters. Supervised detox first, then residential in the same building.', href: '/what-we-treat/opioid-addiction/fentanyl/' },
+  { label: 'Prescription painkillers', desc: 'Oxycodone, Percocet and similar, whether they were prescribed originally or not. Nobody here will judge how it started, and it changes nothing about your care.' },
+  { label: 'Heroin', desc: 'Treated exactly the same way as any other opioid, and often present alongside fentanyl. Tell us both on the phone so your detox is planned around all of it.' },
+  { label: 'Methadone and buprenorphine', desc: 'Arriving on a maintenance medication is common. Tell us the dose and how long you have taken it, so our providers plan around it before you arrive.' },
+];
+
+/* FAQ bank. These are the questions opioid callers ask most, in the order they
+   ask them. Methadone and Suboxone dominate by a wide margin.
+
+   ⚠ MAT BOUNDARY HOLDS. Maintenance medication is only ever "a provider may
+   determine it is clinically appropriate", never an offer, a promise, or a
+   service we advertise. The wording below matches the approved answer already
+   live on /medical-detox — keep the two in step if either changes. */
+const faqs = [
+  {
+    q: 'I am on methadone. Can I still come to Buena Vista?',
+    a: "Being on methadone is not a barrier to admission, and it comes up often enough that nobody on our team will be surprised by it. What matters is telling us early: your dose, how long you have been on it, and where you get it. That goes to our providers before you arrive so your medical plan is built around it rather than worked out on the day you walk in. One thing to be clear about, because it saves people a wasted call: Buena Vista is not a methadone clinic. We do not dispense or start methadone, and we are not set up to run a two or three month methadone taper. If a long taper is your plan, say so and our team will help you find a program built for that instead.",
+  },
+  {
+    q: 'Do you use Suboxone or Subutex during detox?',
+    a: "Specific medication decisions are always made by our clinical team, based on what you have been using, your medical history, and what is safest for you. In some cases our providers may determine that a buprenorphine-based medication such as Suboxone or Subutex is clinically appropriate as part of your care. What we are not is an outpatient Suboxone clinic, so if what you are looking for is ongoing prescribing without a stay, that is a different kind of provider and we will point you toward one. The useful thing you can do is tell us on the phone exactly what you are taking now, including anything prescribed, so nothing has to be guessed at.",
+  },
+  {
+    q: 'How dangerous is opioid withdrawal, really?',
+    a: "Honestly, opioid withdrawal is rarely the kind of medical emergency that alcohol or benzodiazepine withdrawal can be. It is, however, genuinely punishing, and that is the part people underestimate. The sickness, the sleeplessness and the restlessness are what pull most people back to using within a day or two of trying to stop at home, which is why doing it somewhere with medication and nursing changes the outcome so much. You are not being dramatic for wanting help with it. Almost nobody gets through opioid withdrawal alone on willpower, and there is no prize for trying.",
+  },
+  {
+    q: 'How long does opioid detox take?',
+    a: "For most people it is somewhere in the region of four to seven days, though the exact length depends on which opioid you have been using, how much, for how long, and how your body responds. Fentanyl in particular can behave differently from prescription painkillers, so your assessment matters more than any number on a website. Our team lets your clinical picture set the pace rather than a fixed clock. After detox, most people step straight into residential treatment in the same building, so there is no gap and no second admission to arrange.",
+  },
+  {
+    q: 'When did I need to last use before I can come in?',
+    a: "There is no waiting period, and you do not need to be sober before you arrive. In fact one of the first things we will ask is when you last used and how much, because that is exactly what a provider needs in order to plan your detox safely. Being honest about it helps us, and it is not information anybody uses to judge you. Do not try to stop or cut down on your own in the days before you come in either. Call us and let the medical team manage it, which is the whole point of a supervised detox.",
+  },
+  {
+    q: 'I am using fentanyl and meth together. Is that a problem?',
+    a: "It is common, and it is planned for rather than treated as a complication. A great many people arrive using more than one substance, and fentanyl alongside methamphetamine is one of the combinations we see most. Your detox is built around everything you have been using at once rather than being handled as a sequence of separate admissions. Alcohol in the mix is common too, and it matters clinically because alcohol changes what a safe detox looks like. Tell us all of it on the phone. Nothing you say will disqualify you and it all helps get the plan right.",
+  },
+  {
+    q: 'Can I get in today?',
+    a: "Often, yes. Same-day admission is possible when a bed is open and your assessment and provider review are complete, and our admissions line is answered by a real person around the clock. With opioids that speed matters more than with almost anything else, because withdrawal arrives quickly and the window between deciding to go and changing your mind can be short. The process is a phone assessment of ten to twenty minutes, a coverage check while you are on the line, a provider review, then a bed and a time. If we are full when you call we will say so honestly, give you the earliest realistic slot, and take your details so we are ready the moment something opens.",
+  },
+  {
+    q: 'Do I have to do residential afterwards, or is detox enough?',
+    a: "You are never held anywhere against your will, and the choice is yours. But an honest answer is that detox on its own is the part that gets substances out of your body, not the part that keeps them out. With opioids especially, tolerance drops fast during detox, and going straight back to an old dose afterwards is the most dangerous moment in the whole process. Residential treatment is where the reasons get worked on and where a plan for afterwards gets built. Because both happen in the same Chandler building with the same team, stepping from one into the other takes no second admission and no repeating your history to anybody new.",
+  },
 ];
 
 const schema = {
   '@context': 'https://schema.org',
+  '@graph': [{
   '@type': 'MedicalWebPage',
   name: 'Opioid Addiction Treatment in Chandler, AZ',
   description,
@@ -53,22 +102,49 @@ const schema = {
     telephone: '+1-888-362-5576',
     address: { '@type': 'PostalAddress', streetAddress: '3033 S Arizona Ave', addressLocality: 'Chandler', addressRegion: 'AZ', postalCode: '85286', addressCountry: 'US' },
   },
+  }, {
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(f => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  }],
 };
 ---
 <Layout title={title} description={description}>
   <TopBar /><Nav />
   <HubHero
-    eyebrow="Opioid addiction · Chandler, Arizona"
-    title="Opioids are the ones where detox has to come first."
-    intro="Fentanyl, painkillers, heroin — whatever the route in, physical dependence is the part that makes stopping alone so hard. A medical detox is what turns that from an ordeal into a few supervised days."
-    points={['Nursing on site 24/7 with physician oversight','Medication to take the edge off withdrawal','Same-day admission when a bed is open','Residential treatment straight afterwards, same building']}
+    eyebrow="Opioid and fentanyl treatment"
+    title="Opioid Addiction Treatment in Chandler, Arizona"
+    promise="Opioids are the ones where detox has to come first."
+    points={[
+      { text: 'Nursing on site 24 hours a day, with physician oversight',
+        d: 'M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z' },
+      { text: 'Medication to take the edge off withdrawal, from the first day',
+        d: 'M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c.251.023.501.05.75.082M9.75 3.104a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.186c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15.75a9.065 9.065 0 00-6.23-.657L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5' },
+      { text: 'Same-day admission is often possible when a bed is open',
+        d: 'M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z' },
+      { text: 'Already on methadone or Suboxone? Tell us the dose and we plan around it',
+        d: 'M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z' },
+      { text: 'Residential treatment straight afterwards, in the same building',
+        d: 'M21 8.25H3m18 0a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 8.25m18 0v10.5A2.25 2.25 0 0118.75 21H5.25A2.25 2.25 0 013 18.75V8.25M12 11.25v6m3-3H9' },
+    ]}
     image="/Asset/stock%20photo/Desktop%20Dimensions/Facility/Central%20nurse%20station%20with%20surrounding%20corridors%20and%20administrative%20work%20area.png"
     alt="The central nurse station at Buena Vista"
     caption="Someone awake and nearby, whatever hour it gets hard."
   />
   <OpioidPathway />
   <HubCards eyebrow="What this covers" title="Opioids we treat" intro="Most people arrive using more than one thing. That is planned for rather than treated as a complication." items={substances} columns={4} />
-  <Testimonials /><VerifySection />
+  <Testimonials />
+  <VerifySection heading="Does insurance cover opioid treatment in Arizona?" />
+  <AdmissionsPath
+    heading="How to get into opioid treatment in Arizona"
+    bg="bg-white"
+    ring="ring-white"
+    noteBg="bg-navy-deep"
+  />
+  <FAQ faqs={faqs} eyebrow="Straight answers" heading="Questions about opioid treatment" />
   <FinalCTA />
   <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
 </Layout>

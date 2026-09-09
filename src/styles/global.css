@@ -26,6 +26,7 @@
   --color-teal-dark: #21575F;
   --color-sage-tint: #F3F7F5;
   --color-gold-dark: #94743E;
+  --color-gold-deep: #8A6B36; /* button ground when the label is white — brand gold cannot carry white text */
   --color-cream-soft: #EFE7DA; /* hairline borders on cream and white surfaces */
   --color-ink: #2B2B2B;
   --color-muted: #6B6B6B;
@@ -89,6 +90,12 @@ p {
   text-wrap: pretty;
 }
 
+/* Same rule for list items. A bullet whose second line is a single word reads
+   as a mistake, and most of the page's copy is bullets. */
+li {
+  text-wrap: pretty;
+}
+
 /* Focus ring: 3px, offset, teal at 45%. Never removed. */
 :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
   outline: 3px solid color-mix(in srgb, var(--color-teal) 45%, transparent);
@@ -113,7 +120,7 @@ details:not([open]) .faq-minus { display: none; }
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url('/favicon.svg');
+  background-image: url('/brand-mark.svg');
   background-repeat: no-repeat;
   background-position: right -120px center;
   background-size: 620px auto;

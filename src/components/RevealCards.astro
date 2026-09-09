@@ -1,0 +1,83 @@
+---
+/* The scroll behaviour Elizabeth asked for by name: cards arrive as you scroll
+   and the one crossing the middle of the screen lifts out of the stack.
+
+   Extracted 2026-09-08 because the same CSS and observer had been pasted into
+   four components. Wrap any card grid or column in this and give each card the
+   class `reveal-card`.
+
+   Motion is skipped entirely for prefers-reduced-motion, where the cards simply
+   render in place. */
+interface Props { class?: string; }
+const { class: className = '' } = Astro.props;
+---
+<div class={`reveal-track ${className}`}>
+  <slot />
+</div>
+
+<style is:global>
+  .reveal-card {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity .5s ease, transform .5s ease, box-shadow .35s ease, border-color .35s ease;
+  }
+  .reveal-card.is-in { opacity: 1; transform: translateY(0); }
+  .reveal-card.is-active {
+    transform: translateY(-6px) scale(1.015);
+    border-color: color-mix(in srgb, var(--color-teal) 40%, transparent);
+    box-shadow: 0 18px 40px -18px color-mix(in srgb, var(--color-navy) 45%, transparent);
+  }
+  .reveal-card.is-active .reveal-icon {
+    background-color: color-mix(in srgb, var(--color-teal) 22%, transparent);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal-card,
+    .reveal-card.is-in,
+    .reveal-card.is-active {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  const cards = Array.from(document.querySelectorAll<HTMLElement>('.reveal-card'));
+
+  if (cards.length && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const reveal = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-in');
+          reveal.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.15 });
+
+    cards.forEach(c => reveal.observe(c));
+
+    // Whichever card is nearest the middle of the viewport gets the lift.
+    let ticking = false;
+    const mark = () => {
+      ticking = false;
+      const mid = window.innerHeight / 2;
+      let best: HTMLElement | null = null;
+      let bestDist = Infinity;
+      cards.forEach((card) => {
+        const r = card.getBoundingClientRect();
+        if (r.bottom < 0 || r.top > window.innerHeight) return;
+        const dist = Math.abs(r.top + r.height / 2 - mid);
+        if (dist < bestDist) { bestDist = dist; best = card; }
+      });
+      cards.forEach(c => c.classList.toggle('is-active', c === best));
+    };
+
+    const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(mark); } };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    mark();
+  } else {
+    cards.forEach(c => c.classList.add('is-in'));
+  }
+</script>

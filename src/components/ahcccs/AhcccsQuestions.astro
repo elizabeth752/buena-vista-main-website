@@ -1,8 +1,9 @@
 ---
+import FAQ from '../FAQ.astro';
 const faqs = [
   {
     q: 'Is AHCCCS the same thing as Access?',
-    a: "Yes — two names for the same programme, and Access is the one used day to day. It is Arizona's Medicaid programme, and it covers substance use and mental health treatment.",
+    a: "Yes — two names for the same program, and Access is the one used day to day. It is Arizona's Medicaid program, and it covers substance use and mental health treatment.",
   },
   {
     q: 'Will treatment cost me anything?',
@@ -14,7 +15,7 @@ const faqs = [
   },
   {
     q: 'Do I get less time in treatment on Access?',
-    a: "Generally the opposite. Residential stays authorised through Medicaid often run around thirty to forty-five days, which tends to be longer than commercial plans allow. Detox is usually a shorter stay, sized to what your body needs.",
+    a: "Generally the opposite. Residential stays authorized through Medicaid often run around thirty to forty-five days, which tends to be longer than commercial plans allow. Detox is usually a shorter stay, sized to what your body needs.",
   },
   {
     q: 'What if I have Access but no way to get there?',
@@ -26,31 +27,9 @@ const faqs = [
   },
 ];
 ---
-<section id="ahcccs-faq" class="bg-cream py-[70px]">
-  <div class="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8">
-    <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
-      <span class="w-6 h-px bg-gold inline-block"></span>
-      Straight answers
-    </p>
-    <h2 class="font-display text-charcoal mb-10">Questions about Access coverage</h2>
-
-    <div class="divide-y divide-cream-soft border-t border-b border-cream-soft">
-      {faqs.map(f => (
-        <details class="group py-5">
-          <summary class="flex items-start justify-between gap-6 cursor-pointer">
-            <h3 class="font-body font-semibold text-charcoal text-[18px] leading-[28px]">{f.q}</h3>
-            <span class="shrink-0 mt-1 text-teal">
-              <svg class="faq-plus w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" d="M12 5v14M5 12h14"/>
-              </svg>
-              <svg class="faq-minus w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" d="M5 12h14"/>
-              </svg>
-            </span>
-          </summary>
-          <p class="font-body text-charcoal text-[16px] leading-[27px] mt-4 pr-10">{f.a}</p>
-        </details>
-      ))}
-    </div>
-  </div>
-</section>
+<FAQ
+  faqs={faqs}
+  eyebrow="Straight answers"
+  heading="Questions about Access coverage"
+  bg="bg-cream"
+/>

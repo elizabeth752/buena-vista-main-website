@@ -1,31 +1,34 @@
 ---
 /* The shape of a stay, end to end. Lengths follow the client wiki: detox 5-7
    days commercial / 3 days Medicaid, residential 25-30 commercial / 30-45
-   Medicaid. Stated as ranges, since what a plan authorises varies. */
+   Medicaid. Stated as ranges, since what a plan authorizes varies.
+
+   ALIGNMENT: every title holds one line at the pinned size, every tag is short,
+   and every body is written to the same length. */
 const steps = [
   {
     n: '01',
-    h: 'The call',
-    tag: '10–15 minutes',
-    p: 'A short, plain conversation about how much, how often, and how long — plus anything medical we should know. We check your coverage while you are on the line. Nobody is assessed on whether they sound serious enough.',
+    h: 'The first call',
+    tag: '10 to 15 minutes',
+    p: 'A plain conversation about how much, how often, how long, and anything medical we should know. We check your coverage while you are on the line. Nobody is assessed on whether they sound serious enough to qualify.',
   },
   {
     n: '02',
     h: 'Medical detox',
     tag: 'Around a week',
-    p: 'Alcohol usually needs the longer end of a detox stay, often close to a full week, though the exact length depends on your history and your plan. Nursing on site 24/7, physician oversight, and medication to keep you comfortable.',
+    p: 'Alcohol usually needs the longer end of a detox stay, often close to a full week, though your history and your plan both move that. Nursing on site around the clock, physician oversight, and medication to keep you comfortable.',
   },
   {
     n: '03',
-    h: 'Residential treatment',
+    h: 'Residential care',
     tag: 'Around 30 days',
-    p: 'Once your body is steady, the actual work starts: group therapy twice a day, one-to-one sessions with your therapist, and a case manager building the plan for afterwards. Same building — no moving facilities mid-stay.',
+    p: 'Once your body is steady the actual work starts: group therapy twice a day, one-to-one sessions with your own therapist, and a case manager building what comes next. Same building, so nobody moves facilities mid-stay.',
   },
   {
     n: '04',
-    h: 'What comes after',
-    tag: 'Planned before you leave',
-    p: 'Discharge planning, continuing care, alumni support, and referrals to whatever fits your life next — outpatient care, recovery meetings, or somewhere to live while you settle.',
+    h: 'Your plan for after',
+    tag: 'Built before you go',
+    p: 'Discharge planning, ongoing therapy, and referrals to whatever fits your life next, whether that is outpatient care in the East Valley, recovery meetings near you, or somewhere to live while you settle back in.',
   },
 ];
 ---
@@ -42,11 +45,11 @@ const steps = [
       </p>
     </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
       {steps.map(s => (
-        <div class="bg-white rounded-xl p-7 border border-cream-soft">
+        <div class="bg-white rounded-xl p-7 border border-cream-soft border-t-4 border-t-gold h-full">
           <p class="font-display text-gold text-[32px] leading-none mb-4">{s.n}</p>
-          <h3 class="font-display text-[22px] leading-[28px] text-navy mb-2">{s.h}</h3>
+          <h3 class="path-title font-display text-navy mb-2">{s.h}</h3>
           <span class="inline-block font-body text-xs font-bold uppercase tracking-wide text-gold bg-gold/10 rounded-full px-3 py-1.5 mb-4">{s.tag}</span>
           <p class="font-body text-charcoal text-[16px] leading-[26px]">{s.p}</p>
         </div>
@@ -54,3 +57,9 @@ const steps = [
     </div>
   </div>
 </section>
+
+<style>
+  /* Unlayered, so it beats the global h3 scale. Every title holds one line at
+     this size, which is what keeps the four columns level. */
+  .path-title { font-size: 22px; line-height: 28px; letter-spacing: 0; }
+</style>

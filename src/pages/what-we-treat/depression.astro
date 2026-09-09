@@ -37,6 +37,7 @@ import DepressionQuestions from '../../components/depression/DepressionQuestions
 
 import Testimonials from '../../components/Testimonials.astro';
 import VerifySection from '../../components/VerifySection.astro';
+import AdmissionsPath from '../../components/AdmissionsPath.astro';
 import FinalCTA from '../../components/FinalCTA.astro';
 
 const title = 'Depression & Addiction Treatment in Chandler, AZ | Buena Vista Health & Recovery';
@@ -76,7 +77,13 @@ const schema = {
   <DepressionHero />
   <TwoKindsOfLow />
   <Testimonials />
-  <VerifySection />
+  <VerifySection heading="Does insurance cover depression and addiction treatment?" />
+  <AdmissionsPath
+    heading="How to start treatment for depression and substance use"
+    bg="bg-white"
+    ring="ring-white"
+    noteBg="bg-navy-deep"
+  />
   <DepressionQuestions />
 
   <FinalCTA />

@@ -37,6 +37,7 @@ import FamilyQuestions from '../components/families/FamilyQuestions.astro';
 
 import Testimonials from '../components/Testimonials.astro';
 import VerifySection from '../components/VerifySection.astro';
+import AdmissionsPath from '../components/AdmissionsPath.astro';
 import FinalCTA from '../components/FinalCTA.astro';
 
 const title = 'Help for Families & Loved Ones | Buena Vista Health & Recovery, Chandler AZ';
@@ -48,7 +49,7 @@ const schema = {
   '@type': 'FAQPage',
   mainEntity: [
     ['Can I call a rehab on behalf of someone else?',
-     'Yes. You can ask about the programme, the timing and the cost without the person being present or ready. Health privacy law limits what can be shared back about an adult already in care, but nothing stops you asking questions or starting the process.'],
+     'Yes. You can ask about the program, the timing and the cost without the person being present or ready. Health privacy law limits what can be shared back about an adult already in care, but nothing stops you asking questions or starting the process.'],
     ['Can you check my loved one’s insurance for them?',
      'Usually yes. A name, a date of birth and the plan on their card is normally enough to run a coverage check by phone. It is free and commits nobody to anything.'],
     ['Will you call my loved one directly?',
@@ -70,7 +71,18 @@ const schema = {
   <WhatWeCanDoForYou />
   <WhenTheyAreNotReady />
   <Testimonials />
-  <VerifySection />
+  <VerifySection heading="Will their insurance cover treatment?" />
+  <AdmissionsPath
+    heading="How to get someone you love into treatment"
+    steps={[
+      { title: 'Call, any hour',   note: 'You do not need them with you' },
+      { title: 'Tell us about it', note: 'What you know is enough' },
+      { title: 'Coverage check',   note: 'A name and date of birth' },
+      { title: 'Provider review',  note: 'Confirming the right level' },
+      { title: 'Bed confirmed',    note: 'Often the same day' },
+      { title: 'They arrive',      note: 'We can arrange the ride' },
+    ]}
+  />
   <FamilyQuestions />
 
   <FinalCTA />

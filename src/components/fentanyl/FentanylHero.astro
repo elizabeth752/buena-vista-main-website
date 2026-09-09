@@ -1,11 +1,33 @@
 ---
 import Horizon from '../Horizon.astro';
 
+/* Hero standard: H1 carries the keyword, the emotional line sits above the
+   bullets, no subtitle paragraph, every bullet gets its own icon.
+
+   "If you used today, today is the right day to call" was the old H1 and it is
+   the whole thesis of the page, so it becomes the promise line. Urgency is the
+   defining feature of this segment — do not slow the hero down. */
 const points = [
-  'Medical detox with nursing on site around the clock',
-  'Medication to take the edge off withdrawal',
-  'Same-day admission when a bed is open',
-  'Covered by AHCCCS plans we are in network with',
+  {
+    text: 'Medical detox with nursing on site around the clock',
+    d: 'M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z',
+  },
+  {
+    text: 'Medication to take the edge off withdrawal, from the first day',
+    d: 'M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c.251.023.501.05.75.082M9.75 3.104a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.186c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15.75a9.065 9.065 0 00-6.23-.657L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5',
+  },
+  {
+    text: 'Same-day admission when a bed is open, any hour you call',
+    d: 'M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z',
+  },
+  {
+    text: 'Having used an hour ago changes nothing about how you are treated',
+    d: 'M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z',
+  },
+  {
+    text: 'Covered by the AHCCCS plans we are in network with',
+    d: 'M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z',
+  },
 ];
 ---
 <section id="hero" class="bg-cream">
@@ -15,33 +37,29 @@ const points = [
       <div>
         <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-5 flex items-center gap-2">
           <span class="w-6 h-px bg-gold inline-block"></span>
-          Fentanyl treatment · Chandler, Arizona
+          Fentanyl detox and treatment
         </p>
 
         <h1 class="font-display text-navy mb-6">
-          If you used today, today is the right day to call.
+          Fentanyl Addiction Treatment in Chandler, Arizona
         </h1>
 
-        <p class="font-body text-charcoal text-[20px] leading-[33px] max-w-xl mb-8">
-          With fentanyl the window between deciding to stop and being too sick to act on it is short. That is not a reason to panic — it is a reason to make the call now rather than after the next one, while getting somewhere is still straightforward.
+        <p class="font-display text-navy text-[26px] leading-[34px] md:text-[30px] md:leading-[39px] border-l-[3px] border-gold pl-5 mb-8 max-w-xl">
+          If you used today, today is the right day to call.
         </p>
 
-        <ul class="space-y-3 mb-9">
+        <ul class="space-y-4 mb-9">
           {points.map(item => (
-            <li class="flex items-start gap-3 font-body text-charcoal text-[17px] leading-[29px]">
-              <svg class="w-5 h-5 text-teal mt-1 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
-              </svg>
-              {item}
+            <li class="flex items-start gap-3.5 font-body text-charcoal text-[17px] leading-[29px]">
+              <span class="w-9 h-9 rounded-full bg-teal/10 flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-[19px] h-[19px] text-teal" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d={item.d}/>
+                </svg>
+              </span>
+              <span>{item.text}</span>
             </li>
           ))}
         </ul>
-
-        <div class="border-l-2 border-gold pl-5 mb-9 max-w-xl">
-          <p class="font-body text-charcoal text-[16px] leading-[26px]">
-            <strong class="font-bold">Having used an hour ago is not a problem.</strong> It is the most ordinary way this starts, and it changes nothing about how you will be treated. Tell us honestly when you last used — it is the single most useful thing you can give us, because it decides the timing of everything that follows.
-          </p>
-        </div>
 
         <div class="flex flex-col sm:flex-row gap-4">
           <a href="tel:8883625576" class="inline-flex items-center justify-center gap-2 bg-teal hover:bg-teal-dark text-white font-semibold h-14 px-8 rounded-lg transition-colors font-body">
@@ -59,8 +77,8 @@ const points = [
       <div>
         <div class="overflow-hidden rounded-t-[160px] rounded-b-xl shadow-xl">
           <img
-            src="/Asset/stock%20photo/Desktop%20Dimensions/Facility/Residential%20living%20room%20with%20lounge%20seating,%20coffee%20table,%20and%20open%20kitchen%20view.png"
-            alt="A residential living room with lounge seating and an open kitchen view"
+            src="/Asset/stock%20photo/Desktop%20Dimensions/Facility/Open%20concierge%20lobby%20with%20reception%20counter,%20double-height%20ceiling,%20and%20wood%20flooring.png"
+            alt="The concierge lobby at Buena Vista in Chandler, with a reception counter under a double-height ceiling"
             class="w-full object-cover aspect-[4/5]"
             fetchpriority="high"
             decoding="async"
@@ -68,7 +86,7 @@ const points = [
         </div>
         <Horizon variant="rule" class="mt-5" />
         <p class="font-body text-muted text-[15px] leading-[24px] mt-3">
-          Somewhere to be sick that is not a bathroom floor.
+          The door you come through, at whatever hour you decide.
         </p>
       </div>
 

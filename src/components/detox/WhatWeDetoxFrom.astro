@@ -2,26 +2,53 @@
 // Only substances confirmed in the admissions calls. Stimulants are handled
 // honestly rather than implying a medical "meth detox" that isn't clinically
 // standard — the brief is specific about this.
+//
+// Card bodies are bullets rather than paragraphs: each card answers "what is
+// this withdrawal like" and "what do you do about it", which is what callers
+// are actually asking.
 const substances = [
   {
-    name: 'Alcohol',
-    desc: 'The most common reason people come to us for detox. Callers describe shakes, sweats, tremors, and seizure history — and alcohol withdrawal is one of the few that can genuinely be dangerous without medical care.',
+    name: 'Alcohol detox',
+    lead: 'Shakes, sweats, and the fear of a seizure.',
+    points: [
+      'Detox here is nursed around the clock from the first day',
+      'One of the few withdrawals that can be genuinely dangerous alone',
+      'Watched around the clock for seizure and delirium risk',
+      'Comfort medication from the first day, not day three',
+    ],
   },
   {
-    name: 'Opioids and fentanyl',
-    desc: 'Fentanyl, heroin, oxycodone, Percocet, and other prescription painkillers. Opioid withdrawal is rarely life-threatening, but it is punishing, and medication makes an enormous difference to how you get through it.',
+    name: 'Opioid and fentanyl detox',
+    lead: 'Fentanyl, heroin, oxycodone, Percocet, and other prescription painkillers.',
+    points: [
+      'Rarely life-threatening, but punishing without help',
+      'Medication makes an enormous difference to how you get through it',
+      'Tell us on the phone if you are on methadone or buprenorphine',
+      'Residential treatment continues here afterwards, same team',
+    ],
   },
   {
-    name: 'Benzodiazepines',
-    desc: 'Xanax, Klonopin, Ativan and others. Like alcohol, benzodiazepine withdrawal can become serious quickly, which is exactly why it should be done under supervision rather than tapered alone at home.',
+    name: 'Benzodiazepine detox',
+    lead: 'Xanax, Klonopin, Ativan, and others.',
+    points: [
+      'Like alcohol, this one can turn serious quickly',
+      'Tapered under supervision rather than alone at home',
+      'Vital signs tracked through the night',
+      'Bring your current prescriptions so our providers can plan',
+    ],
   },
   {
-    name: 'Kratom',
-    desc: 'Managed with comfort medications, the same way we approach other withdrawal. People are often surprised how physically dependent they have become — you will not be judged for it here.',
+    name: 'Kratom detox',
+    lead: 'More physically habit-forming than most people expect.',
+    points: [
+      'Managed with comfort medication, the same as any other withdrawal',
+      'People are often surprised how dependent they have become',
+      'No judgment about it here, from anyone on staff',
+    ],
   },
 ];
 ---
-<section id="what-we-detox-from" class="bg-cream py-[60px]">
+<section id="what-we-detox-from" class="bg-white py-[60px]">
   <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
 
     <div class="mb-12 max-w-3xl">
@@ -30,41 +57,28 @@ const substances = [
         What we detox from
       </p>
       <h2 class="font-display text-charcoal mb-4">
-        Whatever brought you here, we have seen it
+        Alcohol, opioid, and benzodiazepine detox in Arizona
       </h2>
       <p class="font-body text-charcoal text-[17px] leading-[29px] max-w-2xl">
-        You will not shock anybody on our admissions line. These are the substances we most often treat, and our team is equipped for the withdrawal that comes with each.
+        You will not shock anybody on our admissions line. Whatever brought you here, we have seen it.
       </p>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-6 mb-10">
+    <div class="grid md:grid-cols-2 gap-6">
       {substances.map(s => (
-        <div class="bg-white rounded-xl p-8 border border-cream-soft flex flex-col h-full">
-          <h3 class="font-display text-2xl text-charcoal mb-3">{s.name}</h3>
-          <p class="font-body text-charcoal text-[16px] leading-[26px]">{s.desc}</p>
+        <div class="bg-cream rounded-xl p-8 border border-cream-soft flex flex-col h-full">
+          <h3 class="font-display text-2xl text-charcoal mb-2">{s.name}</h3>
+          <p class="font-body text-muted text-[16px] leading-[26px] mb-5">{s.lead}</p>
+          <ul class="space-y-2.5">
+            {s.points.map(p => (
+              <li class="flex items-start gap-3 font-body text-charcoal text-[16px] leading-[26px]">
+                <span class="w-1.5 h-1.5 rounded-full bg-gold shrink-0 mt-[10px]"></span>
+                <span>{p}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       ))}
-    </div>
-
-    <!-- Honest handling of stimulants, per the brief -->
-    <div class="bg-sand rounded-xl p-8 max-w-4xl">
-      <h3 class="font-display text-2xl text-charcoal mb-3">A straight answer about meth and cocaine</h3>
-      <p class="font-body text-charcoal text-[16px] leading-[26px] mb-4">
-        Stimulant withdrawal works differently, and it usually does not call for the same kind of medical detox that alcohol or opioids do. We would rather tell you that than sell you a week of treatment you do not clinically need.
-      </p>
-      <p class="font-body text-charcoal text-[16px] leading-[26px]">
-        You are still welcome here. During your assessment we will work out the right starting point for you, which is often moving straight into residential treatment or a short period of observation instead. Call and we will figure it out together.
-      </p>
-    </div>
-
-    <!-- Co-occurring medical complexity is a reassurance point, not a barrier -->
-    <div class="mt-6 flex gap-4 bg-white rounded-xl p-7 border border-cream-soft max-w-4xl">
-      <svg class="w-6 h-6 text-teal shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/>
-      </svg>
-      <p class="font-body text-charcoal text-[16px] leading-[26px]">
-        <strong class="font-bold">If your health is complicated, that is a reason to detox here, not a reason to stay away.</strong> Many of the people we care for arrive with high blood pressure, liver disease, cardiac history, or a mental health condition alongside their substance use. Being medically supervised is precisely what makes detox appropriate when there is more going on.
-      </p>
     </div>
 
   </div>

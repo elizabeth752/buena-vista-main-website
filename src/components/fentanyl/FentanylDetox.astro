@@ -1,32 +1,34 @@
 ---
+import RevealCards from '../RevealCards.astro';
+
 /* Fentanyl detox IS offered — this is core scope, unlike the meth page. Note
    the co-use figures behind the third card: meth appears alongside fentanyl in
    ~36% of these calls and alcohol in ~33%, so one admission covering both is
    the common case rather than the exception. */
 const detail = [
   {
-    h: 'Around five to seven days',
-    p: 'Long enough to get through the worst of it properly rather than being turned out halfway. The exact length depends on how much, how long, and what your body does — your clinical team will tell you what they are seeing as it goes.',
+    h: 'Five to seven days',
+    p: 'Long enough to get through the worst of it properly rather than be turned out halfway. How much, how long, and what your body does all move the number, and your team tells you what they are seeing.',
   },
   {
-    h: 'Medication, so it is bearable',
-    p: 'You will not be left to white-knuckle withdrawal in a room. Comfort medications are part of the process, prescribed under physician oversight and adjusted as the days move.',
+    h: 'Medication from day one',
+    p: 'Nobody is left to white-knuckle withdrawal in a room. Comfort medication is part of the process here, prescribed under physician oversight and adjusted as the days move rather than set once.',
   },
   {
-    h: 'More than one substance is fine',
-    p: 'Meth alongside fentanyl is common, and so is alcohol. Detox is planned around everything in the picture at once — one admission, not a sequence of them.',
+    h: 'More than one substance',
+    p: 'Meth alongside fentanyl is common, and so is alcohol. Your detox is planned around everything in the picture at once, as one admission rather than a sequence of separate ones.',
   },
   {
-    h: 'Then the part that keeps it',
-    p: 'Detox settles the body. Residential treatment is where the reasons get worked on, and it happens in the same building with the same team, so there is no gap to fall through.',
+    h: 'Then what keeps it',
+    p: 'Detox settles the body. Residential is where the reasons get worked on, in the same building with the same team, so there is no gap between the two for anyone to fall through.',
   },
 ];
 ---
-<section id="detox" class="bg-cream py-[55px]">
+<section id="detox" class="bg-white py-[60px]">
   <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
     <div class="grid lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-16 items-start">
 
-      <div>
+      <div class="lg:sticky lg:top-24">
         <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
           <span class="w-6 h-px bg-gold inline-block"></span>
           The detox
@@ -40,6 +42,9 @@ const detail = [
           <p>
             A medical detox means nursing staff on site every hour of the day, a physician overseeing your care, and medication to blunt the worst of the symptoms. You are monitored, kept as comfortable as the situation allows, and not alone for any of it.
           </p>
+          <p>
+            <strong class="font-bold">Having used an hour ago is not a problem.</strong> It is the most ordinary way this starts and it changes nothing about how you are treated. Tell us honestly when you last used, because it is the single most useful thing you can give us and it decides the timing of everything that follows.
+          </p>
         </div>
 
         <div class="mt-8">
@@ -49,15 +54,20 @@ const detail = [
         </div>
       </div>
 
-      <div class="grid sm:grid-cols-2 gap-5">
+      <RevealCards class="grid sm:grid-cols-2 gap-5 items-stretch">
         {detail.map(d => (
-          <div class="bg-white rounded-xl p-7 border border-cream-soft shadow-sm">
-            <h3 class="font-display text-[21px] leading-[27px] text-navy mb-3">{d.h}</h3>
+          <div class="reveal-card bg-cream rounded-xl p-7 border border-cream-soft border-t-4 border-t-gold h-full">
+            <h3 class="fx-title font-display text-navy mb-3">{d.h}</h3>
             <p class="font-body text-charcoal text-[16px] leading-[26px]">{d.p}</p>
           </div>
         ))}
-      </div>
+      </RevealCards>
 
     </div>
   </div>
 </section>
+
+<style>
+  /* Unlayered, so it beats the global h3 scale. */
+  .fx-title { font-size: 21px; line-height: 27px; letter-spacing: 0; }
+</style>

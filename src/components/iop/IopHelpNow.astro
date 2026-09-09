@@ -2,22 +2,28 @@
 /* What admissions can actually do today for an IOP caller. Mirrors the real
    phone flow: assess the level of care, run benefits, then either admit to
    detox/residential or hand the referral to the business-development rep to
-   place them at an in-network outpatient program. */
+   place them at an in-network outpatient program.
+
+   This is NOT the shared AdmissionsPath graph, and deliberately so: that
+   component describes being admitted here, and we do not admit anyone to an
+   IOP. Three things we do, not six steps to a bed.
+
+   ALIGNMENT: three titles of the same length, three bodies of the same length. */
 const steps = [
   {
     n: '01',
-    h: 'We work out what level you actually need',
-    p: "A short conversation about how much, how often, and how long. We will tell you honestly which level of care fits, so you start in the right place rather than the nearest one.",
+    h: 'We find the right level',
+    p: 'A short conversation about how much, how often, and how long. We tell you honestly which level of care fits, so you start in the right place rather than the nearest one.',
   },
   {
     n: '02',
-    h: 'We check your coverage while you are on the phone',
-    p: "Outpatient benefits are often contracted separately from inpatient, so this is worth doing before anything else. We tell you exactly what we find, so there are no surprises later.",
+    h: 'We check your coverage',
+    p: 'Outpatient benefits are often contracted separately from inpatient, so this is worth doing first. We tell you exactly what we find, so nothing surprises you later on.',
   },
   {
     n: '03',
-    h: 'We admit you here, or we place you somewhere that fits',
-    p: "If detox or residential is the right call, we can often admit the same day when a bed is open. If an IOP is the better fit, our referral team finds one that takes your plan and has them call you.",
+    h: 'We get you a place',
+    p: 'If detox or residential fits, we can often admit the same day. If an IOP fits, our referral team finds one that takes your plan and has them call you directly.',
   },
 ];
 ---
@@ -36,11 +42,11 @@ const steps = [
       </p>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-6">
+    <div class="grid md:grid-cols-3 gap-6 items-stretch">
       {steps.map(s => (
-        <div class="bg-white rounded-xl p-7 border border-cream-soft shadow-sm">
+        <div class="bg-white rounded-xl p-7 border border-cream-soft border-t-4 border-t-gold shadow-sm h-full">
           <p class="font-display text-gold text-[32px] leading-none mb-4">{s.n}</p>
-          <h3 class="font-display text-[22px] leading-[28px] text-navy mb-3">{s.h}</h3>
+          <h3 class="help-title font-display text-navy mb-3">{s.h}</h3>
           <p class="font-body text-charcoal text-[16px] leading-[26px]">{s.p}</p>
         </div>
       ))}
@@ -59,3 +65,8 @@ const steps = [
     </div>
   </div>
 </section>
+
+<style>
+  /* Unlayered, so it beats the global h3 scale. */
+  .help-title { font-size: 22px; line-height: 28px; letter-spacing: 0; }
+</style>
