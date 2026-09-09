@@ -17,7 +17,7 @@ const dateLabel = new Date(updated + 'T00:00:00Z').toLocaleDateString('en-US', {
 ---
 <div class="flex flex-wrap items-center gap-x-6 gap-y-4 py-6 border-y border-cream-soft">
   <div class="flex items-center gap-3.5">
-    <img src={person.photo} alt={person.name} class="w-12 h-12 rounded-full object-cover shrink-0" loading="lazy" />
+    <img src={person.photo} alt={person.name} class="w-12 h-12 rounded-full object-cover shrink-0" loading="lazy" decoding="async" />
     <div>
       <p class="font-body text-[15px] leading-tight">
         <span class="text-muted">Written by</span>
@@ -31,7 +31,7 @@ const dateLabel = new Date(updated + 'T00:00:00Z').toLocaleDateString('en-US', {
 
   {reviewer && (
     <div class="flex items-center gap-3.5">
-      <img src={reviewer.photo} alt={reviewer.name} class="w-12 h-12 rounded-full object-cover shrink-0" loading="lazy" />
+      <img src={reviewer.photo} alt={reviewer.name} class="w-12 h-12 rounded-full object-cover shrink-0" loading="lazy" decoding="async" />
       <div>
         <p class="font-body text-[15px] leading-tight">
           <span class="text-muted">Medically reviewed by</span>

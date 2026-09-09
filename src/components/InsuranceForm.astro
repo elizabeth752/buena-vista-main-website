@@ -7,17 +7,17 @@ const { id = 'verify', class: className = '' } = Astro.props;
 ---
 <div id={id} class={`bg-white rounded-xl shadow-2xl px-3 py-7 lg:p-7 text-charcoal ${className}`}>
 
-  <!-- Carrier list covers AHCCCS/Access plans as well as commercial ones.
+  {/* Carrier list covers AHCCCS/Access plans as well as commercial ones.
        Access is the majority payer for this facility, and a form that only
        offered commercial carriers pushed most people to "Other / Not sure".
        Listing a plan here is a picker option, NOT a claim that we are in
        network with it — network status is confirmed on the call.
 
        Form heading + HIPAA badge as trust indicator.
-       In-form headings are H5: Source Sans 3 600 · 22/29, not the display serif. -->
+       In-form headings are H5: Source Sans 3 600 · 22/29, not the display serif. */}
   <div class="flex flex-row items-center justify-between gap-3 mb-1">
     <h5 class="font-body font-semibold text-[22px] leading-[29px] text-charcoal">Check your coverage now</h5>
-    <img src="/Asset/Accreditations/HIPAA%20Compliant.svg" alt="HIPAA Compliant" class="h-9 shrink-0" />
+    <img src="/Asset/Accreditations/HIPAA%20Compliant.svg" alt="HIPAA Compliant" class="h-9 shrink-0" loading="lazy" decoding="async" />
   </div>
   <p class="text-charcoal text-[16px] leading-[26px] font-body mb-5">Takes less than a minute. No commitment required.</p>
 
@@ -63,9 +63,9 @@ const { id = 'verify', class: className = '' } = Astro.props;
       Check my coverage
     </button>
 
-    <!-- INTERIM: submissions are not yet wired to CTM. Rather than silently
+    {/* INTERIM: submissions are not yet wired to CTM. Rather than silently
          discarding what someone typed, we route them to the phone. Remove this
-         block and POST to the CTM API once that integration exists. -->
+         block and POST to the CTM API once that integration exists. */}
     <p class={`form-fallback-${id} hidden font-body text-[15px] leading-[24px] text-charcoal bg-cream border border-cream-soft rounded-lg p-4`}>
       Give us a call and we'll check your coverage with you right now —
       <a href="tel:8883625576" class="text-teal font-semibold underline underline-offset-2 tel-number">(888) 362-5576</a>. Someone real answers, any hour.

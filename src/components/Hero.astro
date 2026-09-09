@@ -92,31 +92,31 @@ const badges = [
           </a>
         </div>
 
-        <!-- Trust strip: accreditations plus a link to the real reviews below. -->
+        {/* Trust strip: accreditations plus a link to the real reviews below. */}
         <div class="flex flex-wrap items-center gap-2.5 pt-7 border-t border-cream-soft">
           {badges.map(b => (
             <div class="bg-white rounded-lg px-3 py-2 flex items-center justify-center border border-cream-soft" style="min-width:72px; height:46px;">
-              <img src={b.src} alt={b.alt} class="h-7 max-w-[78px] object-contain" loading="lazy" />
+              <img src={b.src} alt={b.alt} class="h-7 max-w-[78px] object-contain" fetchpriority="high" decoding="async" />
             </div>
           ))}
           <a href="#reviews" class="bg-white rounded-lg px-3 py-2 flex items-center gap-2.5 border border-cream-soft hover:border-teal transition-colors" style="height:46px;">
-            <img src="/Asset/Accreditations/Google-Reviews.svg" alt="Google Reviews" class="h-6 max-w-[84px] object-contain" loading="lazy" />
+            <img src="/Asset/Accreditations/Google-Reviews.svg" alt="Google Reviews" class="h-6 max-w-[84px] object-contain" fetchpriority="high" decoding="async" />
             <span class="text-[#FBBC05] text-[14px] tracking-tight whitespace-nowrap" aria-label="Five star reviews">★★★★★</span>
           </a>
         </div>
       </div>
 
-      <!-- The atrium. Reads as "not an institution" faster than any sentence,
-           and warmer than the reception shot it replaced. -->
+      {/* The atrium. Reads as "not an institution" faster than any sentence,
+           and warmer than the reception shot it replaced. */}
       <div>
         <div class="overflow-hidden rounded-t-[160px] rounded-b-xl shadow-xl">
           <img
-            src="/Asset/stock%20photo/Desktop%20Dimensions/Facility/Double-height%20social%20atrium%20with%20mixed%20seating%20and%20floor-to-ceiling%20windows.png"
+            src="/Asset/stock%20photo/Desktop%20Dimensions/Facility/Double-height%20social%20atrium%20with%20mixed%20seating%20and%20floor-to-ceiling%20windows.webp"
             alt="The double-height atrium at Buena Vista, with mixed seating and floor-to-ceiling windows"
             class="w-full object-cover aspect-[4/5]"
             fetchpriority="high"
             decoding="async"
-          />
+          width="1600" height="966" />
         </div>
         <Horizon variant="rule" class="mt-5" />
         <p class="font-body text-muted text-[15px] leading-[24px] mt-3">

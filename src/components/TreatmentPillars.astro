@@ -59,8 +59,8 @@ const pillars = [
       </p>
     </div>
 
-    <!-- Three-up so the serif headings have room to sit on one or two lines.
-         h-full equalizes card heights across the row. -->
+    {/* Three-up so the serif headings have room to sit on one or two lines.
+         h-full equalizes card heights across the row. */}
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {pillars.map(p => (
         <div class="bg-white rounded-xl p-8 border border-cream-soft hover:shadow-md hover:border-gold/30 transition-all group flex flex-col h-full">
@@ -70,7 +70,7 @@ const pillars = [
         </div>
       ))}
 
-      <!-- Ninth cell. Eight pillars in a three-column grid left this slot empty. -->
+      {/* Ninth cell. Eight pillars in a three-column grid left this slot empty. */}
       <div class="bg-navy rounded-xl p-8 flex flex-col justify-between h-full">
         <div>
           <h3 class="font-display text-2xl text-white mb-3 leading-snug">Ask us anything you want</h3>

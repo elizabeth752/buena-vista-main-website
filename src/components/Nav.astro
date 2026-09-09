@@ -11,13 +11,13 @@ const visible = mainNav
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between gap-3 h-16 md:h-18">
 
-      <!-- Logo -->
+      {/* Logo */}
       <a href="/" class="shrink-0">
-        <img src="/Asset/stock%20photo/Logo%20Buena%20Vista.svg" alt="Buena Vista Health & Recovery Centers" class="h-7 sm:h-8 md:h-10 w-auto" />
+        <img src="/Asset/stock%20photo/Logo%20Buena%20Vista.svg" alt="Buena Vista Health & Recovery Centers" class="h-7 sm:h-8 md:h-10 w-auto" fetchpriority="high" decoding="async" />
       </a>
 
-      <!-- Desktop nav. Each top-level label is a real link to its hub; the panel
-           opens on hover and on keyboard focus, so no JS is needed here. -->
+      {/* Desktop nav. Each top-level label is a real link to its hub; the panel
+           opens on hover and on keyboard focus, so no JS is needed here. */}
       <ul class="hidden lg:flex items-center gap-0.5 xl:gap-1">
         {visible.map(group => (
           <li class="group relative">
@@ -57,7 +57,7 @@ const visible = mainNav
         ))}
       </ul>
 
-      <!-- CTAs -->
+      {/* CTAs */}
       <div class="flex items-center gap-2 sm:gap-3 shrink-0">
         <a
           href="tel:8883625576"
@@ -70,8 +70,8 @@ const visible = mainNav
           <span class="tel-number hidden sm:inline">(888) 362-5576</span>
         </a>
 
-        <!-- Mobile menu trigger. Below lg the site previously had no navigation
-             at all, so this drawer is the only way in on a phone. -->
+        {/* Mobile menu trigger. Below lg the site previously had no navigation
+             at all, so this drawer is the only way in on a phone. */}
         <button
           type="button"
           id="menu-toggle"
@@ -92,7 +92,7 @@ const visible = mainNav
     </div>
   </div>
 
-  <!-- Mobile drawer: one accordion per group. -->
+  {/* Mobile drawer: one accordion per group. */}
   <div id="mobile-menu" class="lg:hidden hidden border-t border-cream-soft bg-white max-h-[calc(100dvh-4rem)] overflow-y-auto">
     <ul class="px-5 sm:px-6 py-2">
       {visible.map(group => (

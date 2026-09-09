@@ -72,7 +72,7 @@ const schema = {
   },
 };
 ---
-<Layout title={`${post.title} | Buena Vista Health & Recovery`} description={post.description}>
+<Layout title={`${post.metaTitle ?? post.title} | Buena Vista`} description={post.description} ogType="article">
   <TopBar />
   <Nav />
 

@@ -82,7 +82,7 @@ const points = [
         <div class="flex flex-wrap items-center gap-2.5 mb-8">
           {badges.map(b => (
             <div class="bg-white rounded-lg px-3 py-2 flex items-center justify-center border border-cream-soft" style="min-width:80px; height:50px;">
-              <img src={b.src} alt={b.alt} class="max-h-8 max-w-[88px] object-contain" loading="eager" />
+              <img src={b.src} alt={b.alt} class="max-h-8 max-w-[88px] object-contain" loading="eager" decoding="async" />
             </div>
           ))}
         </div>
@@ -124,12 +124,12 @@ const points = [
       <div>
         <div class="overflow-hidden rounded-t-[160px] rounded-b-xl shadow-xl">
           <img
-            src="/Asset/stock%20photo/Desktop%20Dimensions/Chandler%20recovery%20center%20exterior%20with%20covered%20entrance%20and%20tower%20feature.png"
+            src="/Asset/stock%20photo/Desktop%20Dimensions/Chandler%20recovery%20center%20exterior%20with%20covered%20entrance%20and%20tower%20feature.webp"
             alt="The Buena Vista Chandler facility — covered entrance and tower feature"
             class="w-full object-cover aspect-[4/5]"
             fetchpriority="high"
             decoding="async"
-          />
+          width="1120" height="640" />
         </div>
         <Horizon variant="rule" class="mt-5" />
         <p class="font-body text-muted text-[15px] leading-[24px] mt-3">

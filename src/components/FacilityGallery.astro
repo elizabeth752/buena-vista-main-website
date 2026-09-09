@@ -15,22 +15,22 @@
 const BASE = '/Asset/stock%20photo/Desktop%20Dimensions/Facility/';
 
 const featured = {
-  file: 'Contemporary%20healthcare%20building%20with%20tower%20entry%20and%20desert%20landscaping.png',
+  file: 'Contemporary%20healthcare%20building%20with%20tower%20entry%20and%20desert%20landscaping.webp',
   alt: 'The Buena Vista facility in Chandler, Arizona — a contemporary building with tower entry and desert landscaping',
 };
 
 const grid = [
-  { file: 'Private%20bedroom%20with%20upholstered%20bed,%20reading%20chair,%20and%20large%20window.png', alt: 'A private bedroom with an upholstered bed, reading chair and large window' },
-  { file: 'Cafe-style%20dining%20room%20with%20round%20tables,%20upholstered%20chairs,%20and%20large%20windows.png', alt: 'A café-style dining room with round tables and large windows' },
-  { file: 'Intimate%20fireside%20lounge%20with%20four%20armchairs%20and%20built-in%20fireplace.png', alt: 'An intimate fireside lounge with four armchairs and a built-in fireplace' },
-  { file: 'Residential%20living%20room%20with%20lounge%20seating,%20coffee%20table,%20and%20open%20kitchen%20view.png', alt: 'A residential living room with lounge seating and an open kitchen view' },
+  { file: 'Private%20bedroom%20with%20upholstered%20bed,%20reading%20chair,%20and%20large%20window.webp', alt: 'A private bedroom with an upholstered bed, reading chair and large window' },
+  { file: 'Cafe-style%20dining%20room%20with%20round%20tables,%20upholstered%20chairs,%20and%20large%20windows.webp', alt: 'A café-style dining room with round tables and large windows' },
+  { file: 'Intimate%20fireside%20lounge%20with%20four%20armchairs%20and%20built-in%20fireplace.webp', alt: 'An intimate fireside lounge with four armchairs and a built-in fireplace' },
+  { file: 'Residential%20living%20room%20with%20lounge%20seating,%20coffee%20table,%20and%20open%20kitchen%20view.webp', alt: 'A residential living room with lounge seating and an open kitchen view' },
 ];
 
 const bottom = [
-  { file: 'Fireplace%20gathering%20area%20with%20high-back%20chairs,%20sofas,%20and%20table%20lamps.png', alt: 'A fireplace gathering area with high-back chairs, sofas and table lamps' },
-  { file: 'Executive%20dining%20room%20with%20wood%20table,%20upholstered%20seating,%20and%20textured%20wall%20finish.png', alt: 'An executive dining room with a wood table and upholstered seating' },
-  { file: 'Salon%20and%20personal%20care%20room%20with%20styling%20chair,%20mirrors,%20and%20waiting%20seating.png', alt: 'A salon and personal care room with a styling chair and mirrors' },
-  { file: 'Covered%20drop-off%20entrance%20with%20tower%20feature%20and%20circular%20driveway.png', alt: 'The covered drop-off entrance with tower feature and circular driveway' },
+  { file: 'Fireplace%20gathering%20area%20with%20high-back%20chairs,%20sofas,%20and%20table%20lamps.webp', alt: 'A fireplace gathering area with high-back chairs, sofas and table lamps' },
+  { file: 'Executive%20dining%20room%20with%20wood%20table,%20upholstered%20seating,%20and%20textured%20wall%20finish.webp', alt: 'An executive dining room with a wood table and upholstered seating' },
+  { file: 'Salon%20and%20personal%20care%20room%20with%20styling%20chair,%20mirrors,%20and%20waiting%20seating.webp', alt: 'A salon and personal care room with a styling chair and mirrors' },
+  { file: 'Covered%20drop-off%20entrance%20with%20tower%20feature%20and%20circular%20driveway.webp', alt: 'The covered drop-off entrance with tower feature and circular driveway' },
 ];
 ---
 <section id="facility-gallery" class="bg-cream py-[70px]">
@@ -51,7 +51,7 @@ const bottom = [
     </div>
 
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
-      <!-- Featured: two columns wide, two rows tall -->
+      {/* Featured: two columns wide, two rows tall */}
       <div class="col-span-2 row-span-2 overflow-hidden rounded-xl shadow-lg">
         <img src={BASE + featured.file} alt={featured.alt} class="w-full h-full object-cover" loading="lazy" decoding="async" />
       </div>

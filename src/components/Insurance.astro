@@ -69,7 +69,7 @@ const {
             <div class="flex flex-wrap items-center gap-3">
               {insurers.map(ins => (
                 <div class="flex items-center justify-center bg-white rounded-xl px-5 py-3 shadow-sm border border-cream-soft" style="min-width:112px; min-height:56px;">
-                  <img src={ins.logo} alt={ins.name} class="h-7 max-w-[100px] object-contain" loading="lazy" />
+                  <img src={ins.logo} alt={ins.name} class="h-7 max-w-[100px] object-contain" loading="lazy" decoding="async" />
                 </div>
               ))}
               <div class="flex items-center justify-center bg-cream rounded-xl px-5 py-3 border border-dashed border-cream-soft" style="min-width:112px; min-height:56px;">

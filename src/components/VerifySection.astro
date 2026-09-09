@@ -35,12 +35,12 @@ const insurers = [
   // Interleaved on purpose: leading with five AHCCCS plans would read as a
   // Medicaid-first practice, and leading with five commercial ones would bury
   // the plans most of our callers actually hold.
-  { name: 'Banner University Family Care', logo: '/Asset/Insurances/Banner-University-Family-Care.png', max: 'max-h-[54px]' },
+  { name: 'Banner University Family Care', logo: '/Asset/Insurances/Banner-University-Family-Care.webp', max: 'max-h-[54px]' },
   { name: 'Aetna',                         logo: '/Asset/Insurances/Aetna.svg' },
   { name: 'Blue Cross Blue Shield',        logo: '/Asset/Insurances/BCBS.svg' },
-  { name: 'Molina Healthcare',             logo: '/Asset/Insurances/Molina.png' },
+  { name: 'Molina Healthcare',             logo: '/Asset/Insurances/Molina.webp' },
   { name: 'Cigna',                         logo: '/Asset/Insurances/Cigna.svg' },
-  { name: 'AHCCCS',                        logo: '/Asset/Insurances/AHCCCS.png' },
+  { name: 'AHCCCS',                        logo: '/Asset/Insurances/AHCCCS.webp' },
   { name: 'Humana',                        logo: '/Asset/Insurances/Humana.svg' },
   { name: 'Health Choice Arizona',         logo: '/Asset/Insurances/Health-Choice-Arizona.svg', max: 'max-h-[48px]' },
   { name: 'Anthem',                        logo: '/Asset/Insurances/Anthem.svg' },
@@ -85,7 +85,7 @@ const accreditations = [
         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 mb-9">
           {insurers.map(ins => (
             <div class="flex items-center justify-center bg-white rounded-xl px-4 py-3 shadow-sm border border-cream-soft h-[80px]">
-              <img src={ins.logo} alt={ins.name} class={`${ins.max ?? 'max-h-9'} max-w-full object-contain`} loading="lazy" />
+              <img src={ins.logo} alt={ins.name} class={`${ins.max ?? 'max-h-9'} max-w-full object-contain`} loading="lazy" decoding="async" />
             </div>
           ))}
         </div>
@@ -103,7 +103,7 @@ const accreditations = [
           <div class="flex flex-wrap items-center gap-3">
             {accreditations.map(a => (
               <div class="bg-white rounded-lg px-3 py-2 flex items-center justify-center border border-cream-soft" style="min-width:84px; height:52px;">
-                <img src={a.src} alt={a.alt} class="max-h-9 max-w-[92px] object-contain" loading="lazy" />
+                <img src={a.src} alt={a.alt} class="max-h-9 max-w-[92px] object-contain" loading="lazy" decoding="async" />
               </div>
             ))}
           </div>

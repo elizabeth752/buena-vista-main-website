@@ -32,7 +32,7 @@ const { eyebrow, heading, bg = 'bg-white' } = Astro.props;
               src={member.photo}
               alt={`${member.name} — ${member.title} at Buena Vista Recovery`}
               class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-            />
+            loading="lazy" decoding="async" />
           </div>
           <div class="p-5 flex flex-col flex-1">
             <p class="text-gold font-body text-[12px] font-bold tracking-[0.14em] uppercase mb-2">{member.title}</p>

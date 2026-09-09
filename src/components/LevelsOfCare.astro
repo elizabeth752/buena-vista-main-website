@@ -1,21 +1,21 @@
 ---
 const levels = [
   {
-    image: '/Asset/stock%20photo/Desktop%20Dimensions/Medical%20Detox.png',
+    image: '/Asset/stock%20photo/Desktop%20Dimensions/Medical%20Detox.webp',
     label: 'Level of Care · 01',
     title: 'Medical detox',
     desc: 'Safe, medically supervised withdrawal management for alcohol, opioids, benzodiazepines, and other substances. Our clinical team monitors you around the clock to manage symptoms, minimize discomfort, and prepare your body for the next stage of recovery.',
     details: ['Nursing on site around the clock', 'A withdrawal plan built for your body, not a protocol sheet', 'Medication to keep you comfortable', 'A private room with a private bathroom'],
   },
   {
-    image: '/Asset/stock%20photo/Desktop%20Dimensions/Inpatient%20Residential%20Treatment.png',
+    image: '/Asset/stock%20photo/Desktop%20Dimensions/Inpatient%20Residential%20Treatment.webp',
     label: 'Level of Care · 02',
     title: 'Inpatient residential treatment',
     desc: 'Structured, immersive residential care for adults seeking lasting recovery. Daily individual therapy, group sessions, psychoeducation, and clinical programming in a supportive, distraction-free environment with private rooms and meals prepared by a dedicated culinary team.',
     details: ['Group therapy twice a day, plus one-on-one sessions', 'Meals prepared daily by a dedicated culinary team', 'A case manager planning your next step from day one', 'Evenings to call the people who matter to you'],
   },
   {
-    image: '/Asset/stock%20photo/Desktop%20Dimensions/Outpatient%20Continuum.png',
+    image: '/Asset/stock%20photo/Desktop%20Dimensions/Outpatient%20Continuum.webp',
     label: 'Level of Care · 03',
     title: 'Planning what comes next',
     desc: 'Recovery does not end at discharge. Your case manager works with you from early on to line up what follows treatment — continued care, sober living, and the support that keeps you steady once you are home.',
@@ -46,7 +46,7 @@ const levels = [
               src={level.image}
               alt={level.title}
               class="w-full h-full object-cover"
-            />
+            loading="lazy" decoding="async" />
           </div>
           <div class={`bg-white p-5 md:p-10 flex flex-col justify-center ${i % 2 === 1 ? 'lg:order-1' : ''}`}>
             <p class="text-gold font-body text-xs font-bold tracking-[0.15em] uppercase mb-3">{level.label}</p>

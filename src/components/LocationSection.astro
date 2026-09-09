@@ -10,7 +10,7 @@ const locations = [
     open: true,
     address: '3033 S Arizona Ave, Chandler, AZ 85286',
     mapQuery: '3033+S+Arizona+Ave,+Chandler,+AZ+85286',
-    photo: '/Asset/stock%20photo/Desktop%20Dimensions/Chandler%20recovery%20center%20exterior%20with%20covered%20entrance%20and%20tower%20feature.png',
+    photo: '/Asset/stock%20photo/Desktop%20Dimensions/Chandler%20recovery%20center%20exterior%20with%20covered%20entrance%20and%20tower%20feature.webp',
     alt: 'Buena Vista Health & Recovery Centers — Chandler, AZ exterior',
     nearby: 'Easily reached from Phoenix, Tempe, Mesa, Gilbert, and the greater East Valley.',
   },
@@ -32,10 +32,10 @@ const locations = [
       </p>
     </div>
 
-    <!-- Photo runs the full width with the detail card sitting in front of it.
+    {/* Photo runs the full width with the detail card sitting in front of it.
          Previously the card stacked under a half-width photo, which left the
          right-hand half of the row empty. Below lg the card drops beneath the
-         image, because overlaying it there would bury the photo entirely. -->
+         image, because overlaying it there would bury the photo entirely. */}
     {locations.map(loc => (
       <div class="relative">
         <div class="rounded-xl overflow-hidden h-[260px] sm:h-[340px] lg:h-[520px]">
