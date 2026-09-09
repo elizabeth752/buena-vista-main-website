@@ -41,11 +41,47 @@ export const organization = {
     '@type': 'State',
     name: 'Arizona',
   },
+  /* Social profiles plus the third-party listings that describe the same
+     organisation. sameAs is how a search engine ties this site to the entity
+     it already knows from LegitScript, Psychology Today and the Joint
+     Commission provider locator, so the verification pages belong here as much
+     as the social ones do. */
   sameAs: [
-    'https://www.facebook.com/people/Buena-Vista-Health/61589704096967/',
+    'https://www.facebook.com/profile.php?id=61589704096967',
     'https://www.instagram.com/buenavista_recovery/',
     'https://www.linkedin.com/company/buena-vista-recovery/',
     'https://www.youtube.com/@buenavistarecovery',
+    'https://co.pinterest.com/buenavistahealth/',
+    'https://bsky.app/profile/buenavistahealth.bsky.social',
+    'https://www.jointcommission.org/en-us/accreditation/behavioral-health-care-and-human-services/provider-locator/605564',
+    'https://www.legitscript.com/websites/?checker_keywords=buenavistarecovery.com',
+    'https://www.psychologytoday.com/us/treatment-rehab/buena-vista-health-and-recovery-centers-chandler-az/906339',
+    'https://recovery.com/buena-vista-recovery-chandler-arizona/',
+    'https://business.chandlerchamber.com/list/member/buena-vista-health-and-recovery-28591',
+  ],
+  hasCredential: [
+    {
+      '@type': 'EducationalOccupationalCredential',
+      credentialCategory: 'Accreditation',
+      name: 'The Joint Commission Gold Seal of Approval',
+      recognizedBy: { '@type': 'Organization', name: 'The Joint Commission' },
+      url: 'https://www.jointcommission.org/en-us/accreditation/behavioral-health-care-and-human-services/provider-locator/605564',
+    },
+    {
+      '@type': 'EducationalOccupationalCredential',
+      credentialCategory: 'Certification',
+      name: 'LegitScript Certified',
+      recognizedBy: { '@type': 'Organization', name: 'LegitScript' },
+      url: 'https://www.legitscript.com/websites/?checker_keywords=buenavistarecovery.com',
+    },
+  ],
+  memberOf: [
+    { '@type': 'Organization', name: 'National Association of Addiction Treatment Providers' },
+    {
+      '@type': 'Organization',
+      name: 'Chandler Chamber of Commerce',
+      url: 'https://business.chandlerchamber.com/list/member/buena-vista-health-and-recovery-28591',
+    },
   ],
 };
 

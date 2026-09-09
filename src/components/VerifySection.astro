@@ -1,5 +1,6 @@
 ---
 import InsuranceForm from './InsuranceForm.astro';
+import AccreditationStrip from './AccreditationStrip.astro';
 
 /* STANDARD COVERAGE CTA — the one form block used across the site.
 
@@ -48,14 +49,6 @@ const insurers = [
   { name: 'Magellan Health',               logo: '/Asset/Insurances/Magellan.svg' },
   { name: 'Optum',                         logo: '/Asset/Insurances/Optum.svg' },
 ];
-
-const accreditations = [
-  { src: '/Asset/Accreditations/The%20Joint%20Commission.svg', alt: 'The Joint Commission Accredited' },
-  { src: '/Asset/Accreditations/Legit.svg',                    alt: 'LegitScript Certified' },
-  { src: '/Asset/Accreditations/NAATP.svg',                    alt: 'NAATP Member' },
-  { src: '/Asset/Accreditations/psychology_today%201.svg',     alt: 'Psychology Today Verified' },
-  { src: '/Asset/Accreditations/BBB.svg',                      alt: 'BBB Accredited' },
-];
 ---
 <section class={`${bg} py-[60px]`}>
   <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
@@ -95,23 +88,16 @@ const accreditations = [
           we will say so and help you find somewhere that is.
         </p>
 
-        {/* Accreditation, kept high on the page rather than buried in the footer */}
-        <div class="pt-7 border-t border-charcoal/10">
-          <p class="font-body text-muted text-[13px] font-bold tracking-[0.12em] uppercase mb-4">
-            Accredited and verified
-          </p>
-          <div class="flex flex-wrap items-center gap-3">
-            {accreditations.map(a => (
-              <div class="bg-white rounded-lg px-3 py-2 flex items-center justify-center border border-cream-soft" style="min-width:84px; height:52px;">
-                <img src={a.src} alt={a.alt} class="max-h-9 max-w-[92px] object-contain" loading="lazy" decoding="async" />
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
 
       <InsuranceForm id="verify" class="lg:sticky lg:top-24" />
 
+    </div>
+
+    {/* Full width, below both columns. Squeezed into the copy column these read
+        as decoration; across the whole section they read as credentials. */}
+    <div class="mt-14 pt-12 border-t border-charcoal/10">
+      <AccreditationStrip />
     </div>
   </div>
 </section>

@@ -43,19 +43,28 @@ html {
 
 /* Nothing may push the page wider than the viewport on a phone.
 
-   Deliberately NOT applied to <svg>: every icon on this site is sized by a
-   Tailwind class, and this rule is unlayered, so `height: auto` here would beat
-   `h-5` and collapse them all. Same trap as the heading scale above.
+   INSIDE @layer base, and that is the whole point. Unlayered CSS beats every
+   `@layer utilities` rule regardless of specificity, so an unlayered
+   `height: auto` here silently overrides `h-9`, `h-[58px]` and the responsive
+   logo sizing on every <img> on the site. It did exactly that, and it is what
+   flattened the accreditation badges to their intrinsic heights. In `base`,
+   Tailwind's utilities win and the guard only applies to images that were
+   never given a height.
 
-   Deliberately NOT `body { overflow-x: hidden }` either. That makes the body a
-   scroll container and breaks `position: sticky`, which the nav, the article
-   table of contents and half the two-column sections all depend on. Fix the
-   element that overflows instead. */
-img,
-video,
-iframe {
-  max-width: 100%;
-  height: auto;
+   Still not applied to <svg>: inline icons carry no intrinsic size worth
+   preserving and there is nothing to overflow.
+
+   Still not `body { overflow-x: hidden }` either. That makes the body a scroll
+   container and breaks `position: sticky`, which the nav, the article table of
+   contents and half the two-column sections all depend on. Fix the element that
+   overflows instead. */
+@layer base {
+  img,
+  video,
+  iframe {
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 body {

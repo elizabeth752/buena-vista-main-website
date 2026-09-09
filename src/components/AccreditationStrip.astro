@@ -1,0 +1,124 @@
+---
+/* Accreditation and verification badges.
+
+   Was a cramped row of 52px tiles wedged into the left column of
+   VerifySection. Two things were wrong with it. The tiles were too small to
+   read, and every badge was capped at one height — but these logos run from
+   0.92:1 (the LegitScript shield) to 3.35:1 (the Psychology Today wordmark),
+   so a single max-height makes the square seals microscopic and lets the wide
+   wordmarks dominate. They are sized individually here, by eye, so they carry
+   the same visual weight.
+
+   Every badge that has a public verification page links to it. That is the
+   point of a badge: an unlinked one is a picture of a claim, a linked one is
+   the claim itself, and it is also a real citation for E-E-A-T. External, so
+   they open in a new tab.
+
+   NAATP and BBB have no verification URL yet — ask the client for the member
+   directory links and add them here. The Chandler Chamber listing has no logo
+   we hold, so it sits in the footer as a text link until we have one. */
+interface Props {
+  /** Section background. Matches whatever the parent section is using. */
+  bg?: string;
+  /** Heading above the row. */
+  label?: string;
+  class?: string;
+}
+const {
+  bg = '',
+  label = 'Accredited and verified',
+  class: className = '',
+} = Astro.props;
+
+const badges = [
+  {
+    src: '/Asset/Accreditations/The%20Joint%20Commission.svg',
+    alt: 'The Joint Commission Gold Seal of Approval',
+    h: 'h-[76px]',
+    href: 'https://www.jointcommission.org/en-us/accreditation/behavioral-health-care-and-human-services/provider-locator/605564',
+  },
+  {
+    src: '/Asset/Accreditations/Legit.svg',
+    alt: 'LegitScript Certified',
+    h: 'h-[74px]',
+    href: 'https://www.legitscript.com/websites/?checker_keywords=buenavistarecovery.com',
+  },
+  {
+    src: '/Asset/Accreditations/psychology_today%201.svg',
+    alt: 'Verified by Psychology Today',
+    h: 'h-[44px]',
+    href: 'https://www.psychologytoday.com/us/treatment-rehab/buena-vista-health-and-recovery-centers-chandler-az/906339',
+  },
+  {
+    src: '/Asset/Accreditations/Recovery-com-Verified.webp',
+    alt: 'Recovery.com Verified Center',
+    h: 'h-[62px]',
+    href: 'https://recovery.com/buena-vista-recovery-chandler-arizona/',
+  },
+  {
+    src: '/Asset/Accreditations/NAATP.svg',
+    alt: 'Member, National Association of Addiction Treatment Providers',
+    h: 'h-[46px]',
+    href: null,
+  },
+  {
+    src: '/Asset/Accreditations/BBB.svg',
+    alt: 'BBB Accredited Business, A+ rating',
+    h: 'h-[62px]',
+    href: null,
+  },
+];
+---
+<div class={`accred-strip ${bg} ${className}`}>
+  <p class="font-body text-muted text-[13px] font-bold tracking-[0.12em] uppercase mb-6 text-center">
+    {label}
+  </p>
+
+  <ul class="flex flex-wrap items-center justify-center gap-x-12 gap-y-10 sm:gap-x-16">
+    {badges.map(b => {
+      const img = (
+        <img
+          src={b.src}
+          alt={b.alt}
+          class={`${b.h} w-auto max-w-full object-contain`}
+          loading="lazy"
+          decoding="async"
+        />
+      );
+      return (
+        <li class="flex items-center justify-center">
+          {b.href
+            ? <a
+                href={b.href}
+                target="_blank"
+                rel="noopener"
+                class="accred-link block"
+                title={`${b.alt} — verify`}
+              >{img}</a>
+            : img}
+        </li>
+      );
+    })}
+  </ul>
+</div>
+
+<style>
+  /* Badges are supplied art in six different palettes. Lifting them slightly
+     on hover reads as "this is clickable" without recolouring anything. */
+  .accred-link {
+    transition: transform 0.15s ease, opacity 0.15s ease;
+  }
+  .accred-link:hover {
+    transform: translateY(-2px);
+    opacity: 0.85;
+  }
+  .accred-link:focus-visible {
+    outline: 2px solid var(--color-teal);
+    outline-offset: 6px;
+    border-radius: 4px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .accred-link { transition: none; }
+    .accred-link:hover { transform: none; }
+  }
+</style>

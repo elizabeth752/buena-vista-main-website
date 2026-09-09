@@ -208,25 +208,16 @@ export const mainNav: NavGroup[] = [
           { label: 'Casa Grande', href: '/locations/casa-grande/', built: true },
         ],
       },
-      {
-        heading: 'Areas we serve',
-        links: [
-          { label: 'Arizona', href: '/locations/arizona/' },
-          { label: 'Phoenix', href: '/locations/phoenix/', built: true },
-          { label: 'Mesa', href: '/locations/mesa/' },
-          { label: 'Scottsdale', href: '/locations/scottsdale/' },
-        ],
-      },
     ],
   },
   {
     label: 'About',
-    href: '/about',
+    href: '/about/',
     built: true,
     columns: [
       {
         links: [
-          { label: 'About Buena Vista', href: '/about', built: true },
+          { label: 'About Buena Vista', href: '/about/', built: true },
           { label: 'Clinical leadership & team', href: '/about/our-team/' },
           { label: 'Our clinical approach', href: '/about/our-approach/' },
           { label: 'Facility tour', href: '/about/facility-tour/' },
@@ -273,11 +264,13 @@ export const legalLinks: NavLink[] = [
 /* Social profiles. Sourced from the archived pre-brand-system build, which
    already carried them — not guessed. Add TikTok or X here if those exist and
    the footer picks them up automatically. */
-export interface SocialLink { label: string; href: string; icon: 'facebook' | 'instagram' | 'linkedin' | 'youtube'; }
+export interface SocialLink { label: string; href: string; icon: 'facebook' | 'instagram' | 'linkedin' | 'youtube' | 'pinterest' | 'bluesky'; }
 
 export const socialLinks: SocialLink[] = [
-  { label: 'Facebook',  icon: 'facebook',  href: 'https://www.facebook.com/people/Buena-Vista-Health/61589704096967/' },
+  { label: 'Facebook',  icon: 'facebook',  href: 'https://www.facebook.com/profile.php?id=61589704096967' },
   { label: 'Instagram', icon: 'instagram', href: 'https://www.instagram.com/buenavista_recovery/' },
   { label: 'LinkedIn',  icon: 'linkedin',  href: 'https://www.linkedin.com/company/buena-vista-recovery/' },
   { label: 'YouTube',   icon: 'youtube',   href: 'https://www.youtube.com/@buenavistarecovery' },
+  { label: 'Pinterest', icon: 'pinterest', href: 'https://co.pinterest.com/buenavistahealth/' },
+  { label: 'Bluesky',   icon: 'bluesky',   href: 'https://bsky.app/profile/buenavistahealth.bsky.social' },
 ];

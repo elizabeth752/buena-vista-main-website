@@ -19,7 +19,7 @@ const visible = mainNav
       {/* Desktop nav. Each top-level label is a real link to its hub; the panel
            opens on hover and on keyboard focus, so no JS is needed here. */}
       <ul class="hidden lg:flex items-center gap-0.5 xl:gap-1">
-        {visible.map(group => (
+        {visible.map((group, i) => (
           <li class="group relative">
             <a
               href={group.href}
@@ -32,8 +32,21 @@ const visible = mainNav
               </svg>
             </a>
 
-            <div class="invisible opacity-0 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 transition-opacity absolute left-0 top-full pt-1 z-50">
-              <div class="bg-white border border-cream-soft rounded-xl shadow-xl p-6 flex gap-8">
+            {/* Panels are absolutely positioned, and an absolutely positioned
+                 element still counts towards the document's scroll width even
+                 while it is invisible. Left-aligning all seven pushed the
+                 right-hand menus past the viewport and gave the whole site a
+                 horizontal scrollbar between about 1024px and 1400px. The ones
+                 in the right half open leftwards instead, and every panel is
+                 clamped so it can never be wider than the screen. */}
+            <div class:list={[
+              /* w-max matters: with `right-0` and an auto width, the panel is
+                 shrink-to-fit against the <li>, which is only as wide as the
+                 word "Locations", so the columns collapse into one. */
+              'invisible opacity-0 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 transition-opacity absolute top-full pt-1 z-50 w-max',
+              i >= Math.ceil(visible.length / 2) ? 'right-0' : 'left-0',
+            ]}>
+              <div class="bg-white border border-cream-soft rounded-xl shadow-xl p-6 flex gap-8 max-w-[calc(100vw-3rem)]">
                 {group.columns.map(col => (
                   <div class="min-w-[210px]">
                     {col.heading && (
