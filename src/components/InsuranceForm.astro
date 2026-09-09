@@ -23,19 +23,19 @@ const { id = 'verify', class: className = '' } = Astro.props;
   </div>
   <p class="text-charcoal text-[16px] leading-[26px] font-body mb-5">Takes less than a minute. No commitment required.</p>
 
-  <form class={`space-y-4 verify-form verify-form-${id}`} data-form-id={id}>
+  <form class={`space-y-4 verify-form verify-form-${id}`} method="POST" action="/api/lead" data-lead-form data-form-id={id}>
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 lg:gap-4">
       <div>
         <label class="block text-xs font-bold text-charcoal uppercase tracking-wide mb-1.5" for={`${id}-name`}>Your Name</label>
-        <input id={`${id}-name`} type="text" placeholder="First and last name" class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm font-body focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal transition-colors" />
+        <input id={`${id}-name`} name="caller_name" type="text" required autocomplete="name" placeholder="First and last name" class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm font-body focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal transition-colors" />
       </div>
       <div>
         <label class="block text-xs font-bold text-charcoal uppercase tracking-wide mb-1.5" for={`${id}-phone`}>Your Phone</label>
-        <input id={`${id}-phone`} type="tel" placeholder="(555) 000-0000" class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm font-body focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal transition-colors" />
+        <input id={`${id}-phone`} name="phone_number" type="tel" required autocomplete="tel" placeholder="(555) 000-0000" class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm font-body focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal transition-colors" />
       </div>
       <div>
         <label class="block text-xs font-bold text-charcoal uppercase tracking-wide mb-1.5" for={`${id}-insurance`}>Insurance Carrier</label>
-        <select id={`${id}-insurance`} class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm font-body focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal transition-colors text-charcoal bg-white">
+        <select id={`${id}-insurance`} name="custom_fields[insurance_provider]" class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm font-body focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal transition-colors text-charcoal bg-white">
           <option value="">Select your carrier</option>
           <optgroup label="AHCCCS / Access plans">
             <option>Banner University Family Care</option>
@@ -58,7 +58,7 @@ const { id = 'verify', class: className = '' } = Astro.props;
       </div>
       <div>
         <label class="block text-xs font-bold text-charcoal uppercase tracking-wide mb-1.5" for={`${id}-policy`}>Membership Policy ID</label>
-        <input id={`${id}-policy`} type="text" placeholder="Policy ID" class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm font-body focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal transition-colors" />
+        <input id={`${id}-policy`} name="custom_fields[id]" type="text" autocomplete="off" placeholder="Policy ID" class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm font-body focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal transition-colors" />
       </div>
     </div>
     <ConsentFields id={id} />
@@ -67,13 +67,26 @@ const { id = 'verify', class: className = '' } = Astro.props;
       Check my coverage
     </button>
 
-    {/* INTERIM: submissions are not yet wired to CTM. Rather than silently
-         discarding what someone typed, we route them to the phone. Remove this
-         block and POST to the CTM API once that integration exists. */}
-    <p class={`form-fallback-${id} hidden font-body text-[15px] leading-[24px] text-charcoal bg-cream border border-cream-soft rounded-lg p-4`}>
-      Give us a call and we'll check your coverage with you right now —
-      <a href="tel:8883625576" class="text-teal font-semibold underline underline-offset-2 tel-number">(888) 362-5576</a>. Someone real answers, any hour.
-    </p>
+    {/* Honeypot. Hidden from people, irresistible to form-fillers; api/lead.js
+         discards anything that arrives with it filled. Not `display:none` —
+         some bots skip what is obviously hidden — and tabindex/aria-hidden
+         keep it out of the keyboard and screen-reader path. */}
+    <div class="absolute w-px h-px -m-px overflow-hidden" aria-hidden="true">
+      <label for={`${id}-company-website`}>Company website</label>
+      <input id={`${id}-company-website`} name="company_website" type="text" tabindex="-1" autocomplete="off" />
+    </div>
+
+    {/* Filled by the script below. An empty attribution field costs a reporting
+         dimension, not the lead, so none of them is required. */}
+    <input type="hidden" name="rendered_at" value="" />
+    <input type="hidden" name="paid_attribution[form_id]" value={id} />
+    <input type="hidden" name="paid_attribution[gclid]" value="" />
+    <input type="hidden" name="paid_attribution[campaign_id]" value="" />
+    <input type="hidden" name="paid_attribution[adgroup_id]" value="" />
+    <input type="hidden" name="paid_attribution[creative_id]" value="" />
+    <input type="hidden" name="paid_attribution[source]" value="" />
+    <input type="hidden" name="paid_attribution[medium]" value="" />
+    <input type="hidden" name="paid_attribution[campaign]" value="" />
   </form>
 
   <p class="text-xs text-charcoal font-body mt-4 leading-relaxed">
@@ -83,14 +96,66 @@ const { id = 'verify', class: className = '' } = Astro.props;
 </div>
 
 <script>
-// INTERIM behavior until the CTM API integration lands. The form does not yet
-// transmit anything, so instead of failing silently we surface the phone path.
-document.querySelectorAll<HTMLFormElement>('form.verify-form').forEach((form) => {
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const id = form.dataset.formId;
-    const fallback = form.querySelector(`.form-fallback-${id}`);
-    if (fallback) fallback.classList.remove('hidden');
+  // Fills the hidden attribution fields on every lead form on the page (the
+  // hero form on desktop, the standalone section on mobile).
+  //
+  // WHERE THE VALUES COME FROM. Google Ads ValueTrack writes campaignid,
+  // adgroupid and creative onto the landing URL alongside gclid; utm_* is the
+  // fallback for everything else. A visitor who arrives from an ad, wanders off
+  // and comes back would otherwise lose the click id, so it is stashed in
+  // sessionStorage on first sight and reused for the rest of the session.
+  //
+  // ATTRIBUTION ONLY — never the form's own answers. The policy ID and the
+  // carrier are health information and must not be written to storage, a
+  // dataLayer, or a query string. They travel in the POST body and nowhere else.
+  const params = new URLSearchParams(window.location.search);
+
+  function stash(key: string, value: string | null): string {
+    try {
+      if (value) sessionStorage.setItem(key, value);
+      return value || sessionStorage.getItem(key) || '';
+    } catch {
+      return value || '';   // private mode / storage disabled
+    }
+  }
+
+  const attribution: Record<string, string> = {
+    'paid_attribution[gclid]': stash('bv_gclid', params.get('gclid')),
+    'paid_attribution[campaign_id]': stash('bv_campaignid', params.get('campaignid') || params.get('campaign_id')),
+    'paid_attribution[adgroup_id]': stash('bv_adgroupid', params.get('adgroupid') || params.get('adgroup_id')),
+    'paid_attribution[creative_id]': stash('bv_creative', params.get('creative') || params.get('creative_id')),
+    'paid_attribution[source]': stash('bv_source', params.get('utm_source')),
+    'paid_attribution[medium]': stash('bv_medium', params.get('utm_medium')),
+    'paid_attribution[campaign]': stash('bv_campaign', params.get('utm_campaign')),
+  };
+
+  document.querySelectorAll<HTMLFormElement>('form[data-lead-form]').forEach((form) => {
+    for (const [name, value] of Object.entries(attribution)) {
+      const field = form.querySelector<HTMLInputElement>(`input[name="${name}"]`);
+      if (field && value) field.value = value;
+    }
+
+    // When the form was drawn, so the server can reject a submission returned
+    // faster than a person could type it. Set here rather than server-side so a
+    // cached page cannot carry a stale timestamp.
+    const renderedAt = form.querySelector<HTMLInputElement>('input[name="rendered_at"]');
+    if (renderedAt) renderedAt.value = String(Date.now());
+
+    // Stop the double-submit that produces duplicate leads when someone taps
+    // twice on a slow connection. Re-enabled on pageshow so a browser Back does
+    // not leave a dead button behind.
+    const label = form.querySelector<HTMLButtonElement>('button[type="submit"]')?.textContent ?? '';
+    form.addEventListener('submit', () => {
+      const button = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+      if (!button) return;
+      button.disabled = true;
+      button.textContent = 'Checking...';
+    });
+    window.addEventListener('pageshow', () => {
+      const button = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+      if (!button) return;
+      button.disabled = false;
+      button.textContent = label;
+    });
   });
-});
 </script>

@@ -1,0 +1,103 @@
+---
+/* Where /api/lead sends people after a submission.
+
+   noindex: this page has no search value and a thank-you page in the index is
+   how a competitor counts your conversions.
+
+   It always shows the phone number, because a form submission is a request for
+   a callback and the person on the other end may not want to wait for one. When
+   api/lead could not reach CTM it appends ?issue=..., and the page leads with
+   the phone instead — the lead is gone at that point, so the only useful thing
+   left to do is put the number in front of them. */
+import Layout from '../layouts/Layout.astro';
+import TopBar from '../components/TopBar.astro';
+import Nav from '../components/Nav.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+
+const title = 'Thank you | Buena Vista';
+const description = 'We have your details and someone from admissions will call you back.';
+---
+<Layout title={title} description={description} noindex>
+  <TopBar />
+  <Nav />
+
+  <section class="bg-cream py-[80px] lg:py-[110px]">
+    <div class="max-w-2xl mx-auto px-5 sm:px-6 lg:px-8 text-center">
+
+      {/* Both states are rendered; the script below picks one. Doing it this
+          way rather than server-side keeps the page static and cacheable. */}
+      <div id="ty-ok">
+        <div class="w-16 h-16 rounded-full bg-teal/10 flex items-center justify-center mx-auto mb-7">
+          <svg class="w-8 h-8 text-teal" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+          </svg>
+        </div>
+        <h1 class="ty-h1 font-display text-navy mb-5">We have your details</h1>
+        <p class="font-body text-charcoal text-[18px] leading-[30px] mb-8">
+          Someone from admissions will call you back. If you would rather not wait,
+          call now and we will check your coverage while you are on the phone.
+        </p>
+      </div>
+
+      <div id="ty-issue" hidden>
+        <div class="w-16 h-16 rounded-full bg-gold/15 flex items-center justify-center mx-auto mb-7">
+          <svg class="w-8 h-8 text-gold-deep" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" />
+          </svg>
+        </div>
+        <h1 class="ty-h1 font-display text-navy mb-5">Call us instead</h1>
+        <p class="font-body text-charcoal text-[18px] leading-[30px] mb-8">
+          Something went wrong on our end and your details did not reach us. Nothing
+          you typed was lost on purpose, but we cannot see it, so please call.
+          Someone real answers, any hour.
+        </p>
+      </div>
+
+      <a
+        href="tel:8883625576"
+        class="inline-flex items-center justify-center gap-3 bg-teal hover:bg-teal-dark text-white font-body font-bold text-[18px] px-9 py-4 rounded-lg transition-colors"
+      >
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.25 1.01l-2.2 2.2z" />
+        </svg>
+        <span class="tel-number">(888) 362-5576</span>
+      </a>
+
+      <p class="font-body text-muted text-[15px] leading-[25px] mt-8">
+        Confidential, and it costs nothing to ask.
+      </p>
+
+      <div class="mt-12 pt-10 border-t border-charcoal/10">
+        <p class="font-body text-muted text-[13px] font-bold tracking-[0.12em] uppercase mb-5">
+          While you wait
+        </p>
+        <ul class="flex flex-wrap items-center justify-center gap-x-7 gap-y-3">
+          <li><a href="/admissions/" class="font-body text-teal font-semibold text-[16px] hover:opacity-70 transition-opacity">What happens when you arrive</a></li>
+          <li><a href="/resources/withdrawal-timelines/" class="font-body text-teal font-semibold text-[16px] hover:opacity-70 transition-opacity">What withdrawal is like</a></li>
+          <li><a href="/for-families/" class="font-body text-teal font-semibold text-[16px] hover:opacity-70 transition-opacity">Calling about someone else</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <FinalCTA />
+</Layout>
+
+<style>
+  /* Unlayered so it beats the global h1 scale. */
+  .ty-h1 { font-size: 42px; line-height: 50px; letter-spacing: -0.02em; }
+  @media (max-width: 640px) {
+    .ty-h1 { font-size: 32px; line-height: 40px; }
+  }
+</style>
+
+<script>
+  // api/lead.js appends ?issue=... when the submission did not reach CTM.
+  // Use `hidden` rather than a style change: global.css carries
+  // [hidden]{display:none!important}, so this cannot be undone by a utility.
+  if (new URLSearchParams(window.location.search).has('issue')) {
+    document.getElementById('ty-ok')?.setAttribute('hidden', '');
+    document.getElementById('ty-issue')?.removeAttribute('hidden');
+  }
+</script>

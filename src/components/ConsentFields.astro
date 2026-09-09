@@ -16,10 +16,12 @@
    condition of getting a service, so requiring it would undo the consent it
    collects. Flagged to Elizabeth.
 
-   WHEN CTM IS WIRED: these two values must be transmitted and stored with the
-   lead. Consent nobody recorded is consent nobody can prove. The field names
-   below are the payload keys — keep them stable and map them to custom fields
-   on the CTM FormReactor. */
+   THE name= VALUES ARE THE CTM CONTRACT. They go straight through /api/lead
+   into the FormReactor's custom fields, so a lead carries the consent it was
+   given — consent nobody recorded is consent nobody can prove. Note the plural
+   in consent_calls: that is how CTM spells it, and CTM silently drops fields it
+   does not recognise while still answering status:"success", so a typo here
+   would not fail loudly, it would just quietly stop recording consent. */
 interface Props {
   /** Form id, so labels and inputs pair up when several forms share a page. */
   id: string;
@@ -34,7 +36,7 @@ const { id } = Astro.props;
   <label class="flex gap-2.5 mb-3 cursor-pointer" for={`${id}-consent-call`}>
     <input
       id={`${id}-consent-call`}
-      name="consent_call"
+      name="custom_fields[consent_calls]"
       type="checkbox"
       required
       value="yes"
@@ -49,7 +51,7 @@ const { id } = Astro.props;
   <label class="flex gap-2.5 cursor-pointer" for={`${id}-consent-sms`}>
     <input
       id={`${id}-consent-sms`}
-      name="consent_sms"
+      name="custom_fields[consent_sms]"
       type="checkbox"
       value="yes"
       class="consent-box mt-0.5 shrink-0"

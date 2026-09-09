@@ -21,6 +21,9 @@ const SITE = 'https://buenavistarecovery.com';
 const EXCLUDE = [
   '/programs/intensive-outpatient-iop/',
   '/404/',
+  /* Post-submission page. Carries noindex; a thank-you page in the index is
+     how a competitor counts your conversions. */
+  '/thank-you/',
 ];
 
 
