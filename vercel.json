@@ -2223,11 +2223,6 @@
       "permanent": true
     },
     {
-      "source": "/notice-of-privacy-practices/",
-      "destination": "/",
-      "permanent": true
-    },
-    {
       "source": "/our-programs/",
       "destination": "/programs/",
       "permanent": true
@@ -2378,22 +2373,12 @@
       "permanent": true
     },
     {
-      "source": "/privacy-policy/",
-      "destination": "/",
-      "permanent": true
-    },
-    {
       "source": "/site-map/",
       "destination": "/sitemap/",
       "permanent": true
     },
     {
       "source": "/tatum-ranch-arizona-facility/",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/terms-of-use/",
       "destination": "/",
       "permanent": true
     },

@@ -1,0 +1,124 @@
+---
+/* Terms of Use.
+
+   Migrated verbatim from the WordPress site, which is the version the client's
+   counsel signed off. Only the markup changed: WordPress emitted every section
+   title as <p><strong>, so those are real h2s now and the document has an
+   outline. Do not reword the text — it is a legal document, and the consent
+   checkbox on every form links here. */
+import Layout from '../layouts/Layout.astro';
+import TopBar from '../components/TopBar.astro';
+import Nav from '../components/Nav.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+
+const title = 'Terms of Use | Buena Vista';
+const description = 'The terms that govern your use of the Buena Vista Health & Recovery Centers website.';
+
+const content = `<p class="legal-date"><strong>Effective Date: January 20, 2025</strong></p>
+<p>
+Welcome to Buena Vista Health and Recovery Centers, a website owned and operated by Buena Vista Recovery, a substance use disorder treatment facility (“we,” “our,” or “us”). By accessing or using our 
+<a href="/">
+website
+</a>
+, you agree to comply with and be bound by these Terms of Use. If you do not agree with these Terms, please do not use our website.
+ 
+</p>
+<h2>Purpose of the Website</h2>
+<p>
+The purpose of this website is to provide general information about substance use disorder, our treatment services, and resources for individuals seeking assistance. The website may also offer contact information, educational content, and related services.
+ 
+</p>
+<p><strong>
+Please note:
+</strong>
+ This website is not intended to provide medical advice, diagnosis, or treatment. Always seek the advice of a qualified healthcare provider with any questions you may have regarding a medical condition or treatment.
+ 
+</p>
+<h2>Eligibility</h2>
+<p>
+By using this website, you confirm that you are at least 18 years of age, or that you are a minor with the express consent of a parent or guardian, and that you are legally able to access and use the services provided on the site.
+ 
+</p>
+<h2>Use of Content</h2>
+<p>
+All content on this website, including text, graphics, images, videos, and other materials, is the property of Buena Vista Recovery or its licensors and is protected by copyright, trademark, and other intellectual property laws. You may use the content solely for personal, non-commercial purposes. Any unauthorized use of the content, including but not limited to reproduction, modification, distribution, or public display, is prohibited.
+ 
+</p>
+<h2>Medical Disclaimer</h2>
+<p>
+The content provided on this website is for informational purposes only and is not intended to replace professional medical advice, diagnosis, or treatment. If you have or suspect you have a medical or psychological condition, please consult a qualified healthcare professional. Buena Vista Recovery does not provide medical advice through this website and is not liable for any decisions made based on information found here.
+ 
+</p>
+<h2>Privacy and Data Collection</h2>
+<p>
+We take your privacy seriously. Our Privacy Policy, which is incorporated into these Terms of Use, governs how we collect, use, and protect your personal information. By using this website, you consent to our practices as outlined in the Privacy Policy.
+ 
+ 
+</p>
+<h2>User Conduct</h2>
+<p>
+As a condition of your use of this Web site, you will not use the Web site or the Web site information for any purpose that is unlawful or prohibited by these Terms of Use. You will not use this Web site in any manner that could damage, disable, overload or impair the operation of this Web site or use by third parties.
+ 
+</p>
+<h2>Links to Third-Party Websites</h2>
+<p>
+This website may contain links to external websites or resources that are not operated or controlled by Buena Vista Recovery. We are not responsible for the content or practices of these third-party sites, and inclusion of a link does not imply endorsement. You access third-party sites at your own risk.
+ 
+</p>
+<h2>Modification of Terms</h2>
+<p>
+Buena Vista Recovery reserves the right to modify these Terms of Use at any time. Any changes will be posted on this page with an updated &#8220;Effective Date.&#8221; Your continued use of the website after any such changes will constitute your acceptance of the revised Terms.
+ 
+</p>
+<h2>Contact Information</h2>
+<p>
+If you have any questions or concerns regarding these Terms of Use, please contact us at:
+ 
+</p>
+<p>
+Buena Vista Health and Recovery Centers
+ 
+</p>
+<p>
+Corporate Office
+ 
+</p>
+<p>3033 S Arizona Ave, <br />
+Chandler, AZ 85286<br />
+<br />
+Reception: (480) 618-5413
+<br />
+ 
+</p>`;
+---
+<Layout title={title} description={description}>
+  <TopBar />
+  <Nav />
+
+  <section class="bg-cream py-[60px] lg:py-[70px]">
+    <div class="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+        <span class="w-6 h-px bg-gold inline-block"></span>
+        Legal
+      </p>
+      <h1 class="legal-h1 font-display text-navy">Terms of Use</h1>
+    </div>
+  </section>
+
+  <section class="bg-white py-[60px]">
+    <div class="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8">
+      <div class="prose-bv" set:html={content} />
+    </div>
+  </section>
+
+  <FinalCTA />
+</Layout>
+
+<style>
+  /* Unlayered so it beats the global h1 scale, which is sized for marketing
+     headlines rather than a legal document. */
+  .legal-h1 { font-size: 44px; line-height: 52px; letter-spacing: -0.02em; }
+  @media (max-width: 640px) {
+    .legal-h1 { font-size: 34px; line-height: 42px; }
+  }
+</style>

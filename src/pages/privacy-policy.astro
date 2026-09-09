@@ -1,0 +1,79 @@
+---
+/* Privacy Policy.
+
+   Migrated verbatim from the WordPress site, which is the version the client's
+   counsel signed off. Only the markup changed: WordPress emitted every section
+   title as <p><strong>, so those are real h2s now and the document has an
+   outline. Do not reword the text — it is a legal document, and the consent
+   checkbox on every form links here. */
+import Layout from '../layouts/Layout.astro';
+import TopBar from '../components/TopBar.astro';
+import Nav from '../components/Nav.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+
+const title = 'Privacy Policy | Buena Vista';
+const description = 'How Buena Vista Health & Recovery Centers collects, uses and protects information you share through this website.';
+
+const content = `<p class="legal-date"><strong>Effective Date: February 7, 2025</strong></p>
+<p>Buena Vista Recovery respects your privacy and is committed to protecting your personal information when you visit our website.  This privacy policy explains how we collect, use and safeguard information when you visit our website.  By using our website, you agree to the terms of this policy.</p>
+<h2>Information We Collect</h2>
+<p>We collect two types of information when you visit our website:</p>
+<h3>Personal Information</h3>
+<p>Personal information is information that can identify you as an individual.  Some elements of our website may ask you to submit personal information for you to benefit from the specified features.  We may request personal information such as your name and contact information if you request a Buena Vista Recovery representative to contact you.</p>
+<h3>Non-Personal Information</h3>
+<p>Non-personal information is collected automatically when you interact with our website.  This may include:</p>
+<ul>
+<li>Device Information: IP address, browser type operating system and device type.</li>
+<li>Usage information: Pages visited, time spent on each page, and interaction with website content (e.g. buttons clicked, forms submitted).</li>
+<li>Cookies and tracking technologies: We may use cookies and similar technologies to enhance your experience on our site. These technologies help us remember your preferences, improve functionality and analyze web traffic.</li>
+</ul>
+<h2>How We Use Your Information</h2>
+<p>We may use the information we collect for the following purposes:</p>
+<ul>
+<li>To provide services such as responding to your inquiries and providing information about our services.</li>
+<li>To improve user experience based on usage data and feedback.</li>
+<li>For legal and security purposes to ensure our website is functioning correctly and to comply with legal obligations.</li>
+</ul>
+<h2>Cookie Policy</h2>
+<p>We use cookies and similar tracking technologies to improve your experience on our website. A cookie is a small file that your Web browser places on your device to identify you as a user. We do not use cookies to collect any personal information about users, nor do we sell or make them available to other organizations.</p>
+<p>You may disable the cookie function on your browser or erase the contents in your cookies file. To do this, consult the help features in your browser and program manager. However, please bear in mind that doing this prevents the Website from recognizing you as a previous user of the Website.</p>
+<h2>Sharing of Information</h2>
+<p>We respect your privacy and will only use your information for the purposes stated in this policy. We may share your information with trusted third-party vendors who assist in operating our website or conducting business, such as website hosting services or analytics providers.  These providers are obligated to protect your information and use it only for specified purposes.</p>
+<h2>Third-Party Links</h2>
+<p>Our website may contain links to third-party websites or services that are not operated by us.  This Privacy Policy applies only to our website and does not cover other sites you may visit through links.  We encourage you to review the privacy policies of any third-party website before sharing your personal information.</p>
+<h2>Data Security</h2>
+<p>Buena Vista Recovery will take reasonable steps to protect the information collected and provided via the website from loss, misuse, and unauthorized access, disclosure, alteration, or destruction.  However, you should understand that no transmission over the Internet is ever fully secure.</p>
+<h2>Privacy Policy Updates</h2>
+<p>We may update this Privacy Policy from time to time.  Any changes will be posted on this page, along with an updated “Effective Date”.  We encourage you to periodically review this policy to stay informed about how we are protecting your information. If you have any questions about this policy, please contact us at:</p>`;
+---
+<Layout title={title} description={description}>
+  <TopBar />
+  <Nav />
+
+  <section class="bg-cream py-[60px] lg:py-[70px]">
+    <div class="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+        <span class="w-6 h-px bg-gold inline-block"></span>
+        Legal
+      </p>
+      <h1 class="legal-h1 font-display text-navy">Privacy Policy</h1>
+    </div>
+  </section>
+
+  <section class="bg-white py-[60px]">
+    <div class="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8">
+      <div class="prose-bv" set:html={content} />
+    </div>
+  </section>
+
+  <FinalCTA />
+</Layout>
+
+<style>
+  /* Unlayered so it beats the global h1 scale, which is sized for marketing
+     headlines rather than a legal document. */
+  .legal-h1 { font-size: 44px; line-height: 52px; letter-spacing: -0.02em; }
+  @media (max-width: 640px) {
+    .legal-h1 { font-size: 34px; line-height: 42px; }
+  }
+</style>

@@ -442,7 +442,6 @@ source,destination,permanent
 /locations/who-we-serve/out-of-state/florida-drug-rehab-centers/,/locations/,true
 /locations/who-we-serve/out-of-state/utah-substance-abuse-treatment/,/locations/,true
 /locations/who-we-serve/texas-drug-rehab-center/,/locations/,true
-/notice-of-privacy-practices/,/,true
 /our-programs/,/programs/,true
 /our-programs/buena-vista-alumni-program/,/programs/aftercare/,true
 /our-programs/inpatient/,/residential-treatment/,true
@@ -473,10 +472,8 @@ source,destination,permanent
 /our-programs/therapy/trauma-focused-therapy/,/therapies/,true
 /our-programs/virtual-iop-treatment-arizona/,/programs/intensive-outpatient-iop/,true
 /podcast/,/resources/,true
-/privacy-policy/,/,true
 /site-map/,/sitemap/,true
 /tatum-ranch-arizona-facility/,/,true
-/terms-of-use/,/,true
 /the-2-different-types-of-addiction-with-examples/,/what-we-treat/,true
 /tucson-facility/,/,true
 /who-we-help/,/who-we-serve/,true

@@ -13,6 +13,8 @@
 
    ⚠ No date of birth, no address, nothing that could be used to screen. Three
    fields, then a human conversation. */
+import ConsentFields from '../ConsentFields.astro';
+
 interface Props { id?: string; class?: string; }
 const { id = 'apply', class: className = '' } = Astro.props;
 ---
@@ -22,7 +24,7 @@ const { id = 'apply', class: className = '' } = Astro.props;
     Three fields. Someone from our team will call you back to talk it through.
   </p>
 
-  <form class={`space-y-4 apply-form apply-form-${id}`} data-form-id={id} onsubmit="return false;">
+  <form class={`space-y-4 apply-form apply-form-${id}`} data-form-id={id}>
     <div>
       <label class="block text-xs font-bold text-charcoal uppercase tracking-wide mb-1.5" for={`${id}-name`}>Your name</label>
       <input id={`${id}-name`} name="name" type="text" autocomplete="name" placeholder="First and last name"
@@ -39,13 +41,15 @@ const { id = 'apply', class: className = '' } = Astro.props;
              class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm font-body focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal transition-colors" />
     </div>
 
+    <ConsentFields id={id} />
+
     <button type="submit" class="w-full bg-teal hover:bg-teal-dark text-white font-bold py-3.5 rounded-lg transition-colors font-body tracking-wide text-sm">
       Send it over
     </button>
 
     <p class={`form-fallback-${id} hidden font-body text-[15px] leading-[24px] text-charcoal bg-cream border border-cream-soft rounded-lg p-4`}>
       Easiest way to reach us right now is to call
-      <a href="tel:8883625576" class="text-teal font-semibold underline underline-offset-2 tel-number">(888) 362-5576</a>
+      <a href="tel:8883625576" class="text-teal font-semibold underline underline-offset-2 tel-number">(888) 362-5576</a>{' '}
       and ask for hiring.
     </p>
   </form>

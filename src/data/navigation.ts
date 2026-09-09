@@ -264,9 +264,9 @@ export const footerColumns: NavColumn[] = [
 ];
 
 export const legalLinks: NavLink[] = [
-  { label: 'Privacy policy', href: '/privacy-policy/' },
-  { label: 'Notice of privacy practices', href: '/hipaa-notice-of-privacy-practices/' },
-  { label: 'Terms of use', href: '/terms-of-use/' },
+  { label: 'Privacy policy', href: '/privacy-policy/', built: true },
+  { label: 'Notice of privacy practices', href: '/notice-of-privacy-practices/', built: true },
+  { label: 'Terms of use', href: '/terms-of-use/', built: true },
   { label: 'Sitemap', href: '/sitemap/', built: true },
 ];
 
