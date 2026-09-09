@@ -1,0 +1,19 @@
+---
+import FAQ from '../FAQ.astro';
+const faqs = [
+  { q: 'I used an hour ago. Can I still call?', a: "Yes — that is the most ordinary version of this call there is. Recent use is expected and it is genuinely useful information, because it tells the clinical team when withdrawal is likely to start and how quickly to move." },
+  { q: 'How long does fentanyl detox take?', a: "Usually somewhere around five to seven days, though the exact length depends on how much you have been using, for how long, and how your body responds. Your team will keep you informed as it goes rather than holding you to a number set on day one." },
+  { q: 'Will I be given anything for the withdrawal?', a: "Yes. Comfort medications are a normal part of a medical detox, prescribed under physician oversight and adjusted as your symptoms change. The aim is to make this bearable, not to test your resolve." },
+  { q: "I'm using meth as well. Does that change things?", a: "Not in a way that gets in the way. Using more than one substance is common, and detox is planned around all of it at once — one admission covering the whole picture rather than a separate stay for each." },
+  { q: "I'm on methadone. What happens to that?", a: "Raise it at the start of the call with the dose and how long you have been on it. Our doctors review that as part of your assessment and plan around it, which is much better settled before you arrive than on the day." },
+  { q: 'Does AHCCCS cover this?', a: "Access covers medical detox and residential treatment. Banner University Family Care is in network with us and further plan contracts are being added — give us the plan name on your card and we will check it while you are on the phone." },
+  { q: 'Can I go straight into residential instead?', a: "If you are physically dependent on fentanyl, starting with detox is what keeps the rest of it possible. It is a few days, it happens in the same building, and residential follows on directly afterwards without a second admission." },
+  { q: 'I have probation or a court date.', a: "Say so on the first call. Legal obligations are common among the people we treat, and your case manager can help with documentation and scheduling while you are here." },
+];
+---
+<FAQ
+  faqs={faqs}
+  eyebrow="Straight answers"
+  heading="Questions worth asking"
+  bg="bg-cream"
+/>

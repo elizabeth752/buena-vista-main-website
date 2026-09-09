@@ -3,3 +3,5 @@ Allow: /
 
 # Internal reference material — deployed for sharing by link, not for indexing.
 Disallow: /brand-book/
+
+Sitemap: https://buenavistarecovery.com/sitemap-index.xml

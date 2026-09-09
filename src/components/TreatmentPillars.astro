@@ -44,7 +44,7 @@ const pillars = [
   },
 ];
 ---
-<section class="bg-cream py-[60px]">
+<section class="bg-sage-tint py-[60px] relative overflow-hidden bv-watermark">
   <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
     <div class="mb-14 max-w-3xl">
       <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
@@ -59,8 +59,8 @@ const pillars = [
       </p>
     </div>
 
-    <!-- Three-up so the serif headings have room to sit on one or two lines.
-         h-full equalizes card heights across the row. -->
+    {/* Three-up so the serif headings have room to sit on one or two lines.
+         h-full equalizes card heights across the row. */}
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {pillars.map(p => (
         <div class="bg-white rounded-xl p-8 border border-cream-soft hover:shadow-md hover:border-gold/30 transition-all group flex flex-col h-full">
@@ -69,6 +69,25 @@ const pillars = [
           <p class="font-body text-charcoal text-[16px] leading-[26px]">{p.desc}</p>
         </div>
       ))}
+
+      {/* Ninth cell. Eight pillars in a three-column grid left this slot empty. */}
+      <div class="bg-navy rounded-xl p-8 flex flex-col justify-between h-full">
+        <div>
+          <h3 class="font-display text-2xl text-white mb-3 leading-snug">Ask us anything you want</h3>
+          <p class="font-body text-white/75 text-[16px] leading-[26px]">
+            No script, no pressure, and no obligation to book anything. Ask what a day looks like,
+            what it costs, or whether we are the right fit at all.
+          </p>
+        </div>
+        <div class="mt-6 flex flex-col gap-3">
+          <a href="tel:8883625576" class="inline-flex items-center justify-center bg-teal hover:bg-teal-dark text-white font-semibold h-12 px-5 rounded-lg transition-colors font-body text-[16px] tel-number">
+            (888) 362-5576
+          </a>
+          <a href="#verify" class="inline-flex items-center justify-center border-2 border-white/30 text-white hover:bg-white hover:text-navy font-semibold h-12 px-5 rounded-lg transition-colors font-body text-[16px]">
+            Check my coverage
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </section>

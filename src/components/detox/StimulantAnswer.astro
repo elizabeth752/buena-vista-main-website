@@ -1,0 +1,71 @@
+---
+/* Promoted out of WhatWeDetoxFrom to its own section. Stimulants are the
+   question we answer most honestly and it was buried in a box at the bottom of
+   another section.
+
+   Guardrail: never imply a medical "meth detox", which is not clinically
+   standard. Symptom language is kept consistent with meth/TheComedown.astro,
+   which is already approved. */
+const theTruth = [
+  'Stimulant withdrawal is rarely dangerous the way alcohol or benzodiazepine withdrawal can be',
+  'What it is, is bleak: heavy sleep, flat mood, fog, and cravings in waves',
+  'What helps is a safe place, food, rest, and people checking on you',
+];
+
+const whatWeDo = [
+  'We work out the right starting point with you on the phone',
+  'For many people that is moving straight into residential treatment',
+  'Sometimes it is a short period of observation first',
+  'Either way, you are welcome here',
+];
+---
+<section id="stimulants" class="bg-cream py-[70px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-16 items-start">
+
+      <div>
+        <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+          <span class="w-6 h-px bg-gold inline-block"></span>
+          Meth and cocaine
+        </p>
+        <h2 class="font-display text-charcoal mb-6">
+          Do you need medical detox for meth or cocaine?
+        </h2>
+
+        <p class="font-body text-charcoal text-[19px] leading-[31px] mb-7">
+          Usually not, and we would rather tell you that than sell you a week of treatment you do not clinically need.
+        </p>
+
+        <ul class="space-y-3">
+          {theTruth.map(t => (
+            <li class="flex items-start gap-3 font-body text-charcoal text-[17px] leading-[29px]">
+              <span class="w-1.5 h-1.5 rounded-full bg-gold shrink-0 mt-[12px]"></span>
+              <span>{t}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="bg-white rounded-xl border border-cream-soft border-t-4 border-t-gold p-8 shadow-sm">
+        <h3 class="font-display text-2xl text-charcoal mb-5">So what happens if you call?</h3>
+        <ul class="space-y-3 mb-7">
+          {whatWeDo.map(w => (
+            <li class="flex items-start gap-3 font-body text-charcoal text-[16px] leading-[26px]">
+              <svg class="w-5 h-5 text-teal mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
+              </svg>
+              <span>{w}</span>
+            </li>
+          ))}
+        </ul>
+        <a href="tel:8883625576" class="inline-flex items-center justify-center gap-2 bg-teal hover:bg-teal-dark text-white font-semibold h-14 px-8 rounded-lg transition-colors font-body">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+          </svg>
+          Talk it through with us
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>

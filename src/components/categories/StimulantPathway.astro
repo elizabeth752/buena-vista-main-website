@@ -1,0 +1,44 @@
+---
+import RevealCards from '../RevealCards.astro';
+
+/* The mirror of OpioidPathway, and the contrast is the point: stimulants on
+   their own admit straight to residential because there is no separate medical
+   detox stage. Admissions is explicit about this. Do not "fix" this to match
+   the opioid flow. */
+const steps = [
+  { n: '01', h: 'Straight to residential', tag: 'Around 30 days', p: 'Stopping stimulants does not put the body in the danger alcohol or opioids do, so there is normally no detox stage. Treatment starts with a bed, a routine and support through the comedown.' },
+  { n: '02', h: 'Unless there is more', tag: 'Then detox first', p: 'Fentanyl or alcohol alongside stimulants is common, and either does mean a supervised detox before residential. Both happen in this building, as one admission rather than two.' },
+  { n: '03', h: 'Sleep comes first', tag: 'First few days', p: 'People arrive having been awake a very long time and the body takes back what it is owed. Nobody is woken for a group session on day one, and nobody minds that you slept through it.' },
+  { n: '04', h: 'The low is treated', tag: 'Throughout', p: 'The flatness that follows heavy stimulant use is real, temporary, and much easier with staff on site. It is not a character problem, and it is not something you have to wait out alone.' },
+];
+---
+<section id="pathway" class="bg-sage-tint py-[70px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mb-12">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+        <span class="w-6 h-px bg-gold inline-block"></span>
+        How stimulant treatment works here
+      </p>
+      <h2 class="font-display text-charcoal mb-5">Meth and cocaine treatment usually starts without a detox</h2>
+      <p class="font-body text-charcoal text-[18px] leading-[30px]">
+        Worth knowing before you call, because it is the opposite of how opioids and alcohol are handled.
+      </p>
+    </div>
+    <RevealCards class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+      {steps.map(s => (
+        <div class="reveal-card bg-white rounded-xl p-7 border border-cream-soft border-t-4 border-t-gold h-full">
+          <p class="font-display text-gold text-[32px] leading-none mb-4">{s.n}</p>
+          <h3 class="st-title font-display text-navy mb-2">{s.h}</h3>
+          <span class="inline-block font-body text-xs font-bold uppercase tracking-wide text-gold bg-gold/10 rounded-full px-3 py-1.5 mb-4">{s.tag}</span>
+          <p class="font-body text-charcoal text-[16px] leading-[26px]">{s.p}</p>
+        </div>
+      ))}
+    </RevealCards>
+  </div>
+</section>
+
+<style>
+  /* Unlayered, so it beats the global h3 scale. A two-line floor keeps the four
+     columns level whatever the title length. */
+  .st-title { font-size: 21px; line-height: 27px; letter-spacing: 0; min-height: 54px; }
+</style>

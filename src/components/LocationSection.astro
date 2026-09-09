@@ -1,23 +1,18 @@
 ---
-// Both Arizona campuses are presented as active. The phone number is the same
-// tracked line for both locations on purpose — routing Tucson to a separate
-// number would split call attribution in CTM.
+// Homepage shows the operating facility only. Tucson was previously shown here
+// marked "temporarily closed"; leading the homepage with a closed building sells
+// nothing. The /locations/tucson/ page still exists and still catches the ~25%
+// of callers who ask about it — that is the right place for the answer.
+// Restore a second entry here when Tucson reopens.
 const locations = [
   {
     city: 'Chandler',
+    open: true,
     address: '3033 S Arizona Ave, Chandler, AZ 85286',
     mapQuery: '3033+S+Arizona+Ave,+Chandler,+AZ+85286',
-    photo: '/Asset/stock%20photo/Desktop%20Dimensions/Chandler%20recovery%20center%20exterior%20with%20covered%20entrance%20and%20tower%20feature.png',
+    photo: '/Asset/stock%20photo/Desktop%20Dimensions/Chandler%20recovery%20center%20exterior%20with%20covered%20entrance%20and%20tower%20feature.webp',
     alt: 'Buena Vista Health & Recovery Centers — Chandler, AZ exterior',
     nearby: 'Easily reached from Phoenix, Tempe, Mesa, Gilbert, and the greater East Valley.',
-  },
-  {
-    city: 'Tucson',
-    address: '5151 E Pima St, Tucson, AZ',
-    mapQuery: '5151+E+Pima+St,+Tucson,+AZ',
-    photo: '/Asset/stock%20photo/Desktop%20Dimensions/Tucson%20recovery%20center%20exterior%20with%20covered%20drop-off%20area%20and%20desert%20landscaping.png',
-    alt: 'Buena Vista Health & Recovery Centers — Tucson, AZ exterior',
-    nearby: 'Serving Tucson, Oro Valley, Marana, Vail, and southern Arizona.',
   },
 ];
 ---
@@ -30,25 +25,31 @@ const locations = [
         Find us
       </p>
       <h2 class="font-display text-charcoal mb-4">
-        Two Arizona campuses, one standard of care
+        Where to find us
       </h2>
       <p class="font-body text-charcoal max-w-xl text-[17px] leading-[29px]">
-        Detox and residential treatment in Chandler and Tucson — the same private rooms, the same catered meals, and the same team of people who have been where you are.
+        Detox and residential treatment at our Chandler facility — private rooms, catered meals, and a team of people who have been where you are.
       </p>
     </div>
 
-    <div class="grid lg:grid-cols-2 gap-8 items-start">
-      {locations.map(loc => (
-        <div class="flex flex-col gap-5">
+    {/* Photo runs the full width with the detail card sitting in front of it.
+         Previously the card stacked under a half-width photo, which left the
+         right-hand half of the row empty. Below lg the card drops beneath the
+         image, because overlaying it there would bury the photo entirely. */}
+    {locations.map(loc => (
+      <div class="relative">
+        <div class="rounded-xl overflow-hidden h-[260px] sm:h-[340px] lg:h-[520px]">
+          <img src={loc.photo} alt={loc.alt} class={`w-full h-full object-cover ${loc.open ? '' : 'grayscale opacity-60'}`} loading="lazy" decoding="async" />
+        </div>
 
-          <!-- Photo -->
-          <div class="rounded-xl overflow-hidden h-[220px] lg:h-[280px]">
-            <img src={loc.photo} alt={loc.alt} class="w-full h-full object-cover" loading="lazy" decoding="async" />
-          </div>
-
-          <!-- Address & details -->
-          <div class="bg-white border-2 border-navy rounded-xl p-5 lg:p-7">
-            <h3 class="font-display text-2xl text-charcoal mb-4">{loc.city}, Arizona</h3>
+        <div class="relative -mt-10 mx-4 sm:mx-8 lg:mx-0 lg:mt-0 lg:absolute lg:inset-y-0 lg:left-8 xl:left-14 lg:flex lg:items-center lg:w-[440px] xl:w-[480px]">
+          <div class="bg-white rounded-xl shadow-xl border border-cream-soft p-6 lg:p-8 w-full">
+            <div class="flex items-center justify-between gap-3 mb-4">
+              <h3 class="font-display text-2xl text-charcoal">{loc.city}, Arizona</h3>
+              <span class={`shrink-0 font-body text-xs font-bold uppercase tracking-wide rounded-full px-3 py-1.5 ${loc.open ? 'text-teal bg-teal/10' : 'text-muted bg-charcoal/5'}`}>
+                {loc.open ? 'Open · admitting' : 'Temporarily closed'}
+              </span>
+            </div>
 
             <div class="flex items-start gap-3 mb-5">
               <span class="w-8 h-8 bg-gold rounded-lg flex items-center justify-center shrink-0 mt-0.5">
@@ -64,18 +65,20 @@ const locations = [
 
             <p class="font-body text-charcoal text-[16px] leading-[26px] mb-5">{loc.nearby}</p>
 
-            <div class="grid grid-cols-2 gap-4 mb-6">
-              <div>
-                <p class="text-gold font-body text-xs font-bold uppercase tracking-wide mb-1">Hours</p>
-                <p class="font-body text-charcoal text-[16px]">Open 24/7 · 365 days</p>
+            {loc.open && (
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                <div>
+                  <p class="text-gold font-body text-xs font-bold uppercase tracking-wide mb-1">Hours</p>
+                  <p class="font-body text-charcoal text-[16px]">Open 24/7 · 365 days</p>
+                </div>
+                <div>
+                  <p class="text-gold font-body text-xs font-bold uppercase tracking-wide mb-1">Phone</p>
+                  <p class="font-body text-charcoal text-[16px] tel-number">(888) 362-5576</p>
+                </div>
               </div>
-              <div>
-                <p class="text-gold font-body text-xs font-bold uppercase tracking-wide mb-1">Phone</p>
-                <p class="font-body text-charcoal text-[16px] tel-number">(888) 362-5576</p>
-              </div>
-            </div>
+            )}
 
-            <div class="flex flex-col sm:flex-row gap-3">
+            <div class={`flex flex-col sm:flex-row gap-3 ${loc.open ? '' : 'hidden'}`}>
               <a href="tel:8883625576" class="flex-1 inline-flex items-center justify-center bg-teal hover:bg-teal-dark text-white font-semibold h-12 px-5 rounded-lg transition-colors font-body text-[16px]">
                 Talk to someone
               </a>
@@ -92,10 +95,9 @@ const locations = [
               </a>
             </div>
           </div>
-
         </div>
-      ))}
-    </div>
+      </div>
+    ))}
 
   </div>
 </section>

@@ -1,60 +1,83 @@
 ---
+/* Rebuilt for scanning.
+
+   The previous version was six description cards followed by two paragraphs of
+   prose — you read the headings and nothing else. Every substance now has a real
+   page of its own, so this works better as a way IN to those pages than as a
+   summary of them: name first, one short qualifier, whole tile clickable.
+
+   Only tiles with a real destination are linked. Cannabis and prescription
+   misuse fold into the hub and the opioid category rather than getting weak
+   links of their own. */
 const substances = [
-  { name: 'Alcohol addiction', desc: 'Comprehensive detox and residential treatment for alcohol dependence, including medically supervised withdrawal and behavioral therapy.' },
-  { name: 'Opioid addiction', desc: 'Evidence-based care for opioid use disorder — heroin, fentanyl, prescription opioids — with clinical support at every level.' },
-  { name: 'Stimulant addiction', desc: 'Treatment for cocaine, methamphetamine, and prescription stimulant misuse, with a focus on behavioral health and relapse prevention.' },
-  { name: 'Benzodiazepine dependence', desc: 'Medically supervised detox and structured therapy for benzo dependency — one of the most complex withdrawal processes we safely manage.' },
-  { name: 'Cannabis use disorder', desc: 'Targeted support for those struggling with cannabis dependence, including dual diagnosis evaluation for underlying anxiety and mood disorders.' },
-  { name: 'Prescription drug misuse', desc: 'Individualized care for misuse of prescription medications beyond opioids and benzos, including sleep aids and muscle relaxants.' },
+  { name: 'Alcohol', note: 'Nursed detox, then residential', href: '/what-we-treat/alcohol-addiction/' },
+  { name: 'Fentanyl and opioids', note: 'Detox first, with medication', href: '/what-we-treat/opioid-addiction/' },
+  { name: 'Meth and stimulants', note: 'Usually straight to residential', href: '/what-we-treat/stimulant-addiction/' },
+  { name: 'Benzodiazepines', note: 'Xanax, Klonopin, Ativan', href: '/what-we-treat/benzodiazepine-addiction/' },
+  { name: 'Dual diagnosis', note: 'Addiction and mental health together', href: '/dual-diagnosis' },
 ];
 
-const conditions = [
-  'Mood disorders', 'Anxiety disorders', 'Dual diagnosis / co-occurring disorders', 'PTSD & trauma', 'Grief & life stress',
+const mental = [
+  { name: 'Anxiety', href: '/what-we-treat/anxiety/' },
+  { name: 'Depression', href: '/what-we-treat/depression/' },
+  { name: 'PTSD & trauma', href: null },
+  { name: 'Mood disorders', href: null },
 ];
 ---
-<section id="treatment" class="bg-navy-deep text-white py-[50px]">
+<section id="what-we-treat" class="bg-navy-deep text-white py-[70px] relative overflow-hidden bv-watermark bv-watermark--light">
   <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
 
-    <div class="mb-14 max-w-3xl">
+    <div class="mb-10 max-w-3xl">
       <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
         <span class="w-6 h-px bg-gold inline-block"></span>
-        Clinical Scope
+        What we treat
       </p>
       <h2 class="font-display text-white mb-4">
         Find help for what you're facing right now
       </h2>
-      <p class="font-body text-white/70 max-w-2xl text-[17px] leading-[29px]">
-        We treat a wide range of substance use disorders and co-occurring mental health conditions. If you don't see your situation listed, call us — we'll let you know honestly if we can help.
-      </p>
     </div>
 
-    <!-- Substances -->
-    <div class="mb-12">
-      <h3 class="font-display text-2xl text-gold mb-6">Substance use disorders</h3>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        {substances.map(s => (
-          <div class="bg-white border border-cream-soft rounded-xl p-5 sm:p-6 shadow-sm hover:shadow-md transition-shadow">
-            <h4 class="font-display text-xl text-charcoal mb-2">{s.name}</h4>
-            <p class="font-body text-charcoal text-[16px] leading-[26px]">{s.desc}</p>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
+      {substances.map(s => (
+        <a href={s.href} class="group bg-white rounded-xl p-6 hover:bg-cream transition-colors flex flex-col justify-between min-h-[168px]">
+          <h3 class="font-display text-[26px] leading-[32px] text-navy mb-3 [overflow-wrap:anywhere]">{s.name}</h3>
+          <div>
+            <p class="font-body text-charcoal/75 text-[15px] leading-[22px] mb-2">{s.note}</p>
+            <span class="font-body text-teal font-bold text-[14px] group-hover:underline">See treatment &rarr;</span>
           </div>
-        ))}
-      </div>
+        </a>
+      ))}
+      <a href="/what-we-treat/" class="group bg-navy border border-white/15 rounded-xl p-6 hover:border-gold transition-colors flex flex-col justify-between min-h-[168px]">
+        <h3 class="font-display text-[26px] leading-[32px] text-white mb-3">Something else</h3>
+        <div>
+          <p class="font-body text-white/60 text-[15px] leading-[22px] mb-2">Cannabis, prescription drugs, more than one thing at once</p>
+          <span class="font-body text-gold font-bold text-[14px] group-hover:underline">See everything &rarr;</span>
+        </div>
+      </a>
     </div>
 
-    <!-- Mental Health -->
-    <div class="bg-white border border-cream-soft rounded-xl p-5 sm:p-8 shadow-sm">
-      <h3 class="font-display text-2xl text-gold mb-6">Mental health conditions treated</h3>
-      <div class="flex flex-wrap gap-3 mb-6">
-        {conditions.map(c => (
-          <span class="bg-navy text-white font-body text-[15px] font-semibold px-4 py-2 rounded-full whitespace-nowrap shrink-0">{c}</span>
-        ))}
+    <div class="border-t border-white/15 pt-9 grid lg:grid-cols-[1fr_auto] gap-8 items-start">
+      <div>
+        <p class="font-body text-gold text-xs font-bold tracking-[0.18em] uppercase mb-4">Treated alongside, not afterwards</p>
+        <div class="flex flex-wrap gap-2.5 mb-5">
+          {mental.map(c => (
+            c.href
+              ? <a href={c.href} class="bg-white/10 hover:bg-white/20 border border-white/20 text-white font-body text-[15px] font-semibold px-4 py-2 rounded-full whitespace-nowrap transition-colors">{c.name}</a>
+              : <span class="bg-white/5 border border-white/10 text-white/80 font-body text-[15px] font-semibold px-4 py-2 rounded-full whitespace-nowrap">{c.name}</span>
+          ))}
+        </div>
+        <p class="font-body text-white/70 text-[16px] leading-[26px] max-w-2xl">
+          Treating one without the other rarely holds, so both happen in the same program.
+        </p>
       </div>
-      <p class="font-body text-charcoal text-[17px] leading-[29px] mb-4">
-        Our licensed clinical team evaluates and treats co-occurring mental health conditions alongside substance use disorders, because treating one without the other rarely holds.
-      </p>
-      <p class="font-body text-charcoal text-[17px] leading-[29px]">
-        If you have been having thoughts of suicide or of hurting yourself, please say so when you call — it will not disqualify you from care, and it helps us make sure you are safe from the first day. If you need someone right now, you can call or text <a href="tel:988" class="text-teal font-semibold underline underline-offset-2">988</a> at any hour.
-      </p>
+
+      <div class="bg-white/5 border-l-2 border-gold pl-5 py-1 max-w-sm">
+        <p class="font-body text-white/80 text-[15px] leading-[25px]">
+          Having thoughts of suicide will not disqualify you from care, so say so when you call.
+          If you need someone right now, call or text{' '}
+          <a href="tel:988" class="text-gold font-semibold hover:opacity-70 transition-opacity tel-number">988</a>.
+        </p>
+      </div>
     </div>
 
   </div>

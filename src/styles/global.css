@@ -26,6 +26,7 @@
   --color-teal-dark: #21575F;
   --color-sage-tint: #F3F7F5;
   --color-gold-dark: #94743E;
+  --color-gold-deep: #8A6B36; /* button ground when the label is white — brand gold cannot carry white text */
   --color-cream-soft: #EFE7DA; /* hairline borders on cream and white surfaces */
   --color-ink: #2B2B2B;
   --color-muted: #6B6B6B;
@@ -38,6 +39,32 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Nothing may push the page wider than the viewport on a phone.
+
+   INSIDE @layer base, and that is the whole point. Unlayered CSS beats every
+   `@layer utilities` rule regardless of specificity, so an unlayered
+   `height: auto` here silently overrides `h-9`, `h-[58px]` and the responsive
+   logo sizing on every <img> on the site. It did exactly that, and it is what
+   flattened the accreditation badges to their intrinsic heights. In `base`,
+   Tailwind's utilities win and the guard only applies to images that were
+   never given a height.
+
+   Still not applied to <svg>: inline icons carry no intrinsic size worth
+   preserving and there is nothing to overflow.
+
+   Still not `body { overflow-x: hidden }` either. That makes the body a scroll
+   container and breaks `position: sticky`, which the nav, the article table of
+   contents and half the two-column sections all depend on. Fix the element that
+   overflows instead. */
+@layer base {
+  img,
+  video,
+  iframe {
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 body {
@@ -89,6 +116,12 @@ p {
   text-wrap: pretty;
 }
 
+/* Same rule for list items. A bullet whose second line is a single word reads
+   as a mistake, and most of the page's copy is bullets. */
+li {
+  text-wrap: pretty;
+}
+
 /* Focus ring: 3px, offset, teal at 45%. Never removed. */
 :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
   outline: 3px solid color-mix(in srgb, var(--color-teal) 45%, transparent);
@@ -102,3 +135,112 @@ details > summary { list-style: none; cursor: pointer; }
 details > summary::-webkit-details-marker { display: none; }
 details[open] .faq-plus { display: none; }
 details:not([open]) .faq-minus { display: none; }
+
+/* Buena Vista mark as a section watermark.
+
+   Fixed attachment so it holds still while the section scrolls over it, which is
+   the "sticky background" effect. Kept very low contrast — it should register as
+   texture, not as a logo placement. Disabled for reduced-motion users, where a
+   fixed background reads as parallax drift. */
+.bv-watermark::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/brand-mark.svg');
+  background-repeat: no-repeat;
+  background-position: right -120px center;
+  background-size: 620px auto;
+  background-attachment: fixed;
+  opacity: 0.05;
+  pointer-events: none;
+}
+.bv-watermark--light::before { opacity: 0.07; filter: brightness(0) invert(1); }
+.bv-watermark > * { position: relative; }
+
+@media (prefers-reduced-motion: reduce) {
+  .bv-watermark::before { background-attachment: scroll; }
+}
+@media (max-width: 767px) {
+  .bv-watermark::before { background-size: 380px auto; background-position: right -140px top 40px; }
+}
+
+/* --- Article body ---------------------------------------------------------
+   Long-form prose for the migrated blog. Scoped to .prose-bv so it cannot
+   affect the built pages, which set their own type. Sizes are declared here
+   rather than with Tailwind classes because the h1-h3 scale above is unlayered
+   and would win over a utility. */
+.prose-bv > * + * { margin-top: 1.35rem; }
+
+.prose-bv h2 {
+  font-family: var(--font-display);
+  font-size: 30px;
+  line-height: 38px;
+  letter-spacing: -0.01em;
+  color: var(--color-navy);
+  margin-top: 3rem;
+  scroll-margin-top: 7rem;
+}
+
+.prose-bv h3 {
+  font-family: var(--font-display);
+  font-size: 23px;
+  line-height: 30px;
+  letter-spacing: 0;
+  color: var(--color-navy);
+  margin-top: 2.25rem;
+  scroll-margin-top: 7rem;
+}
+
+.prose-bv p,
+.prose-bv li {
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 30px;
+  color: var(--color-charcoal);
+  overflow-wrap: break-word;
+}
+
+/* Article headings are long and set large; let them break rather than
+   overflow a 320px column. */
+.prose-bv h2,
+.prose-bv h3 { overflow-wrap: break-word; }
+
+.prose-bv ul,
+.prose-bv ol { padding-left: 1.4rem; }
+.prose-bv ul { list-style: disc; }
+.prose-bv ol { list-style: decimal; }
+.prose-bv li::marker { color: var(--color-gold); }
+.prose-bv li + li { margin-top: .6rem; }
+
+/* Links inside prose are the one place an underline is right: the surrounding
+   text is long-form, so colour alone is not enough of an affordance. */
+.prose-bv a {
+  color: var(--color-teal);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.prose-bv a:hover { opacity: .7; }
+
+.prose-bv strong { font-weight: 700; color: var(--color-charcoal); }
+
+/* Anything marked not-prose opts out entirely.
+
+   The link rule above is why this matters: `.prose-bv a` beats the `text-white`
+   utility on specificity, so a teal button inside the article body rendered
+   teal text on a teal ground and the label vanished. Reset every property the
+   prose rules set, not just the font. */
+.prose-bv .not-prose,
+.prose-bv .not-prose * { font-family: inherit; }
+
+.prose-bv .not-prose a {
+  color: inherit;
+  font-weight: inherit;
+  text-decoration: none;
+}
+.prose-bv .not-prose a:hover { opacity: 1; }
+
+/* The teal call button and the outlined one keep their own colours. */
+.prose-bv .not-prose a.bg-teal { color: #fff; }
+.prose-bv .not-prose ul { list-style: none; padding-left: 0; }
+.prose-bv .not-prose li::marker { content: none; }

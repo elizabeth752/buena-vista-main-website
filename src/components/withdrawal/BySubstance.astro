@@ -1,0 +1,88 @@
+---
+/* General clinical ranges, deliberately given as ranges and paired with the
+   risk level. The two "supervised" flags are the important part: alcohol and
+   benzodiazepine withdrawal can be fatal, and that must stay prominent — this
+   page will be found by people considering stopping at home.
+
+   Timings here are established general knowledge, not Buena Vista protocol.
+   Our own detox length (4-7 days, often the full week for alcohol) is stated
+   separately as ours. */
+const substances = [
+  {
+    label: 'Alcohol',
+    risk: 'Medically supervised',
+    danger: true,
+    onset: 'Starts 6–24 hours after the last drink',
+    peak: 'Hardest around 24–72 hours',
+    note: 'The one people most underestimate. Seizures and delirium tremens are real risks in heavy, long-term drinking, and both are medical emergencies. This is why alcohol detox with us commonly runs the full week rather than a few days.',
+  },
+  {
+    label: 'Benzodiazepines',
+    risk: 'Medically supervised',
+    danger: true,
+    onset: 'Starts within 1–4 days depending on the drug',
+    peak: 'Can persist for weeks, tapering down',
+    note: 'Xanax, Klonopin, Ativan and similar. Like alcohol, stopping abruptly can cause seizures. These are tapered under medical supervision rather than stopped, and doing that alone is genuinely dangerous.',
+  },
+  {
+    label: 'Opioids & fentanyl',
+    risk: 'Supervised strongly advised',
+    danger: false,
+    onset: 'Often within 8–24 hours; sooner with fentanyl',
+    peak: 'Worst in the first 1–3 days',
+    note: 'Rarely life-threatening on its own, but severe enough that most attempts to stop at home end within a day. Medication makes the difference between an ordeal and a manageable few days.',
+  },
+  {
+    label: 'Stimulants',
+    risk: 'Supported, not detoxed',
+    danger: false,
+    onset: 'Begins within a day of stopping',
+    peak: 'Heaviest in the first week',
+    note: 'Meth and cocaine do not produce the dangerous physical withdrawal alcohol does, so there is usually no separate detox stage. What they do produce is exhaustion and a deep flatness — which is why treatment starts with sleep and support instead.',
+  },
+];
+---
+<section id="by-substance" class="bg-cream py-[60px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mb-12">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+        <span class="w-6 h-px bg-gold inline-block"></span>
+        By substance
+      </p>
+      <h2 class="font-display text-charcoal mb-5">Roughly what to expect, and how risky it is</h2>
+      <p class="font-body text-charcoal text-[18px] leading-[30px]">
+        These are general ranges rather than promises. How long you have been using, how much, and your own health all move them.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      {substances.map(s => (
+        <div class={`rounded-xl p-7 border shadow-sm ${s.danger ? 'bg-white border-gold/40' : 'bg-white border-cream-soft'}`}>
+          <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+            <h3 class="font-display text-[24px] leading-[30px] text-navy">{s.label}</h3>
+            <span class={`shrink-0 font-body text-xs font-bold uppercase tracking-wide rounded-full px-3 py-1.5 ${s.danger ? 'text-gold-dark bg-gold/15' : 'text-teal bg-teal/10'}`}>
+              {s.risk}
+            </span>
+          </div>
+          <dl class="grid grid-cols-1 gap-2 mb-4">
+            <div class="flex gap-3">
+              <dt class="font-body text-muted text-[14px] font-bold uppercase tracking-wide w-16 shrink-0 pt-0.5">Onset</dt>
+              <dd class="font-body text-charcoal text-[16px] leading-[26px]">{s.onset}</dd>
+            </div>
+            <div class="flex gap-3">
+              <dt class="font-body text-muted text-[14px] font-bold uppercase tracking-wide w-16 shrink-0 pt-0.5">Peak</dt>
+              <dd class="font-body text-charcoal text-[16px] leading-[26px]">{s.peak}</dd>
+            </div>
+          </dl>
+          <p class="font-body text-charcoal text-[16px] leading-[26px]">{s.note}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-8 bg-sand/40 border border-sand rounded-xl p-7 max-w-3xl">
+      <p class="font-body text-charcoal text-[16px] leading-[27px]">
+        <strong class="font-bold">Using more than one thing changes all of it.</strong> Most people do, and the combination is what your assessment is actually working out. Tell us everything on the call, including the things that feel embarrassing — it decides what medical support is ready when you arrive.
+      </p>
+    </div>
+  </div>
+</section>

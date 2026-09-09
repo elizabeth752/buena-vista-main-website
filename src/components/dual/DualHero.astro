@@ -1,10 +1,42 @@
 ---
 import Horizon from '../Horizon.astro';
 
-// Many people with co-occurring conditions have been turned away elsewhere for
-// being "too complicated". The page should feel like relief — while staying
-// unambiguous that this is addiction treatment with integrated mental-health
-// support, not psychiatric care.
+/* Hero standard: H1 carries the keyword, the emotional line sits directly above
+   the bullets, no subtitle paragraph, every bullet gets its own icon.
+
+   Many people with co-occurring conditions have been turned away elsewhere for
+   being "too complicated", so the page should feel like relief. The promise
+   line does that by sounding clinically grounded rather than reassuring: it
+   states the connection, which is the thing that makes us the right place.
+   Stay unambiguous that this is addiction treatment with integrated
+   mental-health support, not psychiatric care. */
+const reassurances = [
+  {
+    text: 'Substance use and the condition underneath it, treated at the same time',
+    // sparkles
+    d: 'M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z',
+  },
+  {
+    text: 'Trauma-informed therapy, one-on-one as well as in groups',
+    // chat
+    d: 'M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z',
+  },
+  {
+    text: 'A medical team that reviews the medication you already take',
+    // beaker
+    d: 'M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c.251.023.501.05.75.082M9.75 3.104a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.186c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15.75a9.065 9.065 0 00-6.23-.657L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5',
+  },
+  {
+    text: 'Staff who have been through recovery themselves',
+    // users
+    d: 'M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z',
+  },
+  {
+    text: 'A case manager planning around the whole picture, from day one',
+    // clipboard
+    d: 'M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25z',
+  },
+];
 ---
 <section id="hero" class="bg-cream">
   <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-[60px] lg:py-[80px]">
@@ -13,29 +45,26 @@ import Horizon from '../Horizon.astro';
       <div>
         <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-5 flex items-center gap-2">
           <span class="w-6 h-px bg-gold inline-block"></span>
-          Dual diagnosis · Chandler &amp; Tucson, Arizona
+          Co-occurring care
         </p>
 
         <h1 class="font-display text-navy mb-6">
-          You are not too complicated to help.
+          Dual Diagnosis Treatment in Chandler, Arizona
         </h1>
 
-        <p class="font-body text-charcoal text-[20px] leading-[33px] max-w-xl mb-8">
-          Addiction rarely travels alone. When anxiety, depression, PTSD, or trauma are tangled up in it, we treat both together — because treating one and ignoring the other is how people end up back where they started.
+        <p class="font-display text-navy text-[26px] leading-[34px] md:text-[30px] md:leading-[39px] border-l-[3px] border-gold pl-5 mb-8 max-w-xl">
+          Addiction and mental health are connected, and we treat them together.
         </p>
 
-        <ul class="space-y-3 mb-9">
-          {[
-            'Substance use and co-occurring conditions treated at the same time',
-            'Trauma-informed therapy, one-on-one and in groups',
-            'A medical team that reviews the medication you already take',
-            'Staff who have been through recovery themselves',
-          ].map(item => (
-            <li class="flex items-start gap-3 font-body text-charcoal text-[17px] leading-[29px]">
-              <svg class="w-5 h-5 text-teal mt-1 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
-              </svg>
-              {item}
+        <ul class="space-y-4 mb-9">
+          {reassurances.map(item => (
+            <li class="flex items-start gap-3.5 font-body text-charcoal text-[17px] leading-[29px]">
+              <span class="w-9 h-9 rounded-full bg-teal/10 flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-[19px] h-[19px] text-teal" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d={item.d}/>
+                </svg>
+              </span>
+              <span>{item.text}</span>
             </li>
           ))}
         </ul>
@@ -62,16 +91,16 @@ import Horizon from '../Horizon.astro';
       <div>
         <div class="overflow-hidden rounded-t-[160px] rounded-b-xl shadow-xl">
           <img
-            src="/Asset/stock%20photo/Desktop%20Dimensions/Facility/Quiet%20reading%20nook%20with%20armchairs,%20side%20table,%20and%20natural%20light.png"
-            alt="A quiet reading nook at Buena Vista with armchairs, a side table, and natural light"
+            src="/Asset/stock%20photo/Desktop%20Dimensions/Facility/Sunlit%20common%20hall%20with%20lounge%20furniture,%20tall%20windows,%20and%20open%20floor%20plan.webp"
+            alt="A sunlit common hall at Buena Vista, with tall curtained windows, a lit fireplace, and armchairs in the light"
             class="w-full object-cover aspect-[4/5]"
             fetchpriority="high"
             decoding="async"
-          />
+          width="1600" height="966" />
         </div>
         <Horizon variant="rule" class="mt-5" />
         <p class="font-body text-muted text-[15px] leading-[24px] mt-3">
-          Somewhere quiet to sit with what comes up. That matters more than people expect.
+          Light, height and somewhere to sit with what comes up. It matters more than people expect.
         </p>
       </div>
 

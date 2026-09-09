@@ -1,0 +1,57 @@
+---
+/* Buena Vista does NOT operate sober living — this is referral only, per both
+   the wiki and admissions. Do not add prices: the weekly rates that appear in
+   the call export belong to sister-brand houses, not to anything we run or
+   control. Point at the option; let the house quote its own rate. */
+const stages = [
+  {
+    n: '01',
+    h: 'While you are in treatment',
+    tag: 'Around 30–45 days',
+    p: 'Detox and residential are live-in, so for the first month or so the question of where you sleep is answered. Your own room, your own bathroom, meals included. For someone arriving from a sofa or a car, that alone changes what is possible.',
+  },
+  {
+    n: '02',
+    h: 'Planning what comes next',
+    tag: 'From early in your stay',
+    p: 'Discharge planning starts well before discharge. Your case manager works on housing alongside everything else, because leaving treatment into the same room you left is the single most common way progress comes undone.',
+  },
+  {
+    n: '03',
+    h: 'Sober living, by referral',
+    tag: 'Third party',
+    p: 'We do not run sober living houses ourselves. What we do have is a working knowledge of which ones in the Phoenix area and across Arizona are worth going to, and we will make the introduction rather than hand you a list.',
+  },
+  {
+    n: '04',
+    h: 'Family, and everything else',
+    tag: 'Whatever fits',
+    p: 'Sometimes the answer is a relative, a different city, or a room that only becomes viable once the drinking stops. All of it is worth putting on the table with your case manager.',
+  },
+];
+---
+<section id="options" class="bg-cream py-[60px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mb-12">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+        <span class="w-6 h-px bg-gold inline-block"></span>
+        How the housing question gets solved
+      </p>
+      <h2 class="font-display text-charcoal mb-5">Four stages, and the first one starts immediately</h2>
+      <p class="font-body text-charcoal text-[18px] leading-[30px]">
+        Treatment does not fix housing on its own. What it does is buy you a month of stability to solve it from, with someone helping.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {stages.map(s => (
+        <div class="bg-white rounded-xl p-7 border border-cream-soft shadow-sm">
+          <p class="font-display text-gold text-[32px] leading-none mb-4">{s.n}</p>
+          <h3 class="font-display text-[21px] leading-[27px] text-navy mb-2">{s.h}</h3>
+          <span class="inline-block font-body text-xs font-bold uppercase tracking-wide text-gold bg-gold/10 rounded-full px-3 py-1.5 mb-4">{s.tag}</span>
+          <p class="font-body text-charcoal text-[16px] leading-[26px]">{s.p}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

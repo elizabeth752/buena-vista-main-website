@@ -1,0 +1,109 @@
+---
+/* -----------------------------------------------------------------------------
+   Serving Casa Grande — SERVICE-AREA page, not a location page.
+
+   Casa Grande is the surprise in the data: it generates more calls than most East Valley towns and has far fewer local options, sitting in Pinal County between Phoenix and Tucson. Distance and transport are the real barriers, not choice.
+
+   ⚠ NOT A LOCATION PAGE. There is no Casa Grande facility. This page carries NO
+   LocalBusiness schema and NO Casa Grande NAP, and the hero states plainly that
+   the single building is in Chandler. A fake location page risks a Google
+   penalty and, worse, sends someone in crisis to an address that does not
+   exist. Keep all three guardrails.
+
+   ⚠ NO INVENTED DRIVE TIMES. Naming a freeway or a surface street is a fact.
+   A figure in minutes is not one anybody has verified against traffic.
+----------------------------------------------------------------------------- */
+import Layout from '../../layouts/Layout.astro';
+import TopBar from '../../components/TopBar.astro';
+import Nav from '../../components/Nav.astro';
+
+import ServiceAreaHero from '../../components/servicearea/ServiceAreaHero.astro';
+import ServiceAreaBody from '../../components/servicearea/ServiceAreaBody.astro';
+
+import Testimonials from '../../components/Testimonials.astro';
+import VerifySection from '../../components/VerifySection.astro';
+import AdmissionsPath from '../../components/AdmissionsPath.astro';
+import FAQ from '../../components/FAQ.astro';
+import FinalCTA from '../../components/FinalCTA.astro';
+
+const title = "Drug and Alcohol Rehab Serving Casa Grande, Arizona | Buena Vista";
+const description = "Medical detox and residential treatment serving Casa Grande and Pinal County from our Chandler, AZ facility, a straight run up the I-10. AHCCCS accepted. Call (888) 362-5576.";
+
+const points = [
+      { text: "A straight run north on the I-10, with no route to work out", d: "M15 10.5a3 3 0 11-6 0 3 3 0 016 0z M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" },
+      { text: "Medical detox and residential treatment, open 24 hours", d: "M21 8.25H3m18 0a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 8.25m18 0v10.5A2.25 2.25 0 0118.75 21H5.25A2.25 2.25 0 013 18.75V8.25M12 11.25v6m3-3H9" },
+      { text: "Transport is something we can often arrange, so ask", d: "M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" },
+      { text: "AHCCCS plans and most major commercial and private carriers", d: "M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" },
+      { text: "Somebody answers at any hour, which matters when you are further out", d: "M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" },
+];
+
+const routes = [
+  { h: "Casa Grande and Arizona City", p: "North on the I-10 and off at Chandler Boulevard or Riggs. No complicated navigation at either end." },
+  { h: "Coolidge, Florence and Eloy", p: "Across to the I-10 first, then north. A longer run, and one where asking about a ride is worth doing." },
+  { h: "Maricopa and Stanfield", p: "Up the 347 and across, or the I-10 depending on where you start." },
+  { h: "No car, or no reliable one", p: "This is the single most common barrier for people out here, and it is often solvable. Say so on the first call rather than deciding in advance that you cannot get here." },
+];
+
+const why = [
+  { h: "Getting there at all", p: "Distance is the real barrier in Pinal County, far more than choice or cost. Transport within our service area is something we can often arrange, and it is worth asking before you rule us out." },
+  { h: "Being away from home", p: "An hour up the road is far enough to be out of your routine and close enough that family can still make the trip, which is usually the balance people are looking for." },
+  { h: "AHCCCS and the local options", p: "Coverage follows your plan rather than your address. We check your specific plan on the call, and if we are not the right fit we will help you find a program that is." },
+];
+
+const faqs = [
+  { q: "Do you have a facility in Casa Grande?", a: "No. Buena Vista operates one facility, at 3033 S Arizona Ave in Chandler, and serves Casa Grande and the wider Pinal County from there. It is a straight run north up the I-10, and for a lot of people out here we are among the nearer inpatient detox and residential options rather than a distant one." },
+  { q: "How do I get there if I do not have a car?", a: "Ask. Transport within our local service area is something we can often arrange, and getting here is the single most common practical barrier for people calling from Pinal County. It is worth raising on the first call rather than deciding in advance that the distance rules you out." },
+  { q: "Is it worth travelling that far for treatment?", a: "For most people, yes, and the distance is doing something useful. Being out of your own routine, away from the people and places involved, is often the difference between a stay that holds and one that does not, while still being close enough that family can visit and that your aftercare plan is made of places you can reach." },
+  { q: "Can my family visit from Casa Grande?", a: "Yes. Visiting runs on a schedule so it does not cut across the therapeutic day, and your case manager will explain how it works once you are admitted. Phone access starts in the evenings once you move into residential, which matters more when family cannot make the drive every week." },
+  { q: "Does AHCCCS cover this if I live in Pinal County?", a: "Coverage follows your plan rather than the county you live in. We work with AHCCCS plans and with most major commercial and private carriers, and we check your specific plan while you are on the phone, at no cost and with nothing owed either way." },
+];
+
+// FAQPage only — deliberately no LocalBusiness/MedicalClinic schema, because
+// there is no Casa Grande facility to describe.
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(f => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+---
+<Layout title={title} description={description}>
+  <TopBar />
+  <Nav />
+
+  <ServiceAreaHero
+    city="Casa Grande"
+    title="Treatment for Casa Grande, straight up the I-10."
+    points={points}
+    disclosure="Buena Vista is one facility, at 3033 S Arizona Ave in Chandler. There is no Casa Grande building. We serve Casa Grande and the wider Pinal County from Chandler, north up the I-10."
+    image="/Asset/stock%20photo/Desktop%20Dimensions/Facility/Open%20concierge%20lobby%20with%20reception%20counter,%20double-height%20ceiling,%20and%20wood%20flooring.webp"
+    alt="The concierge lobby at Buena Vista in Chandler, with a reception counter under a double-height ceiling"
+    caption="The end of the drive up the I-10."
+  />
+
+  <ServiceAreaBody
+    city="Casa Grande"
+    routesTitle="Coming up from Casa Grande"
+    routesIntro="There is really only one route, and it is a simple one. The I-10 north out of Casa Grande brings you almost to the door."
+    routes={routes}
+    whyTitle="What people from Casa Grande tend to ask about"
+    why={why}
+  />
+
+  <VerifySection heading="Does your insurance cover treatment from Casa Grande?" />
+  <Testimonials />
+  <AdmissionsPath
+    heading="How to start treatment from Casa Grande"
+    bg="bg-white"
+    ring="ring-white"
+    noteBg="bg-navy-deep"
+  />
+  <FAQ faqs={faqs} eyebrow="Straight answers" heading="Questions from Casa Grande" bg="bg-cream" />
+
+  <FinalCTA />
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
+</Layout>

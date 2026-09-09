@@ -1,0 +1,104 @@
+---
+/* TCPA consent block. Shared by every form on the site so the wording can only
+   ever be changed in one place — if two forms disagree about what someone
+   agreed to, the one that matters is whichever is worse for us.
+
+   Copy is Elizabeth's, verbatim. Do not paraphrase it, do not "tighten" it:
+   this is the text a carrier or a plaintiff reads back, and the SMS wording in
+   particular carries the CTIA-required elements (message frequency, rates,
+   HELP, STOP). Removing any of them can get the sending number filtered.
+
+   TWO SEPARATE CHECKBOXES, NEITHER PRE-TICKED. One consent cannot be bundled
+   into another, and a pre-ticked box is not consent.
+
+   The call box is required, because a callback is the whole point of the form.
+   The SMS box is optional on purpose: marketing SMS consent may not be a
+   condition of getting a service, so requiring it would undo the consent it
+   collects. Flagged to Elizabeth.
+
+   THE name= VALUES ARE THE CTM CONTRACT. They go straight through /api/lead
+   into the FormReactor's custom fields, so a lead carries the consent it was
+   given — consent nobody recorded is consent nobody can prove. Note the plural
+   in consent_calls: that is how CTM spells it, and CTM silently drops fields it
+   does not recognise while still answering status:"success", so a typo here
+   would not fail loudly, it would just quietly stop recording consent. */
+interface Props {
+  /** Form id, so labels and inputs pair up when several forms share a page. */
+  id: string;
+}
+const { id } = Astro.props;
+---
+<fieldset class="consent-block">
+  <legend class="block text-xs font-bold text-charcoal uppercase tracking-wide mb-2.5">
+    Terms and Conditions <span class="text-gold-deep">(Required)</span>
+  </legend>
+
+  <label class="flex gap-2.5 mb-3 cursor-pointer" for={`${id}-consent-call`}>
+    <input
+      id={`${id}-consent-call`}
+      name="custom_fields[consent_calls]"
+      type="checkbox"
+      required
+      value="yes"
+      class="consent-box mt-0.5 shrink-0"
+    />
+    <span class="font-body text-[13px] leading-[19px] text-charcoal">
+      By checking this box, you provide consent for Buena Vista Recovery to call you.
+      We will never share your information.
+    </span>
+  </label>
+
+  <label class="flex gap-2.5 cursor-pointer" for={`${id}-consent-sms`}>
+    <input
+      id={`${id}-consent-sms`}
+      name="custom_fields[consent_sms]"
+      type="checkbox"
+      value="yes"
+      class="consent-box mt-0.5 shrink-0"
+    />
+    <span class="font-body text-[13px] leading-[19px] text-charcoal">
+      By checking this box, you provide consent to receive informational and marketing
+      SMS, MMS, or RCS messages from Buena Vista Recovery. Message frequency may vary.
+      Message and data rates may apply. Reply HELP for help or STOP to opt out.
+    </span>
+  </label>
+
+  <p class="font-body text-[13px] leading-[19px] text-charcoal/80 mt-3">
+    By pressing submit, you accept the{' '}
+    <a href="/terms-of-use/" class="text-teal font-semibold underline underline-offset-2">Terms of Service</a>
+    {' '}and{' '}
+    <a href="/privacy-policy/" class="text-teal font-semibold underline underline-offset-2">Privacy Policy</a>.
+  </p>
+</fieldset>
+
+<style>
+  /* Unlayered, so it beats the global reset. A 16px box is the smallest that
+     still reads as a checkbox next to 13px text, and the label is the real tap
+     target — the whole row is clickable. */
+  .consent-block { border: 0; padding: 0; margin: 0; min-width: 0; }
+  .consent-box {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 1.5px solid var(--color-gray-300, #d1d5db);
+    border-radius: 4px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.12s, border-color 0.12s;
+  }
+  .consent-box:checked {
+    background-color: var(--color-teal);
+    border-color: var(--color-teal);
+    /* Tick drawn in the box rather than loaded, so it cannot fail to appear. */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3.5 8.5l3 3 6-6'/%3E%3C/svg%3E");
+    background-size: 100%;
+  }
+  .consent-box:focus-visible {
+    outline: 2px solid var(--color-teal);
+    outline-offset: 2px;
+  }
+  /* :user-invalid, not :invalid. A required checkbox is invalid from the moment
+     the page loads, so :invalid would paint an error state on a form nobody has
+     touched yet. This only fires after they try to submit. */
+  .consent-box:user-invalid { border-color: var(--color-gold-deep); }
+</style>

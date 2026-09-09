@@ -1,31 +1,38 @@
 ---
+/* ALIGNMENT RULE for this section: every title is exactly two words and every
+   detail is written to roughly the same length, so the four cards line up
+   instead of one being a single word beside a three-line neighbor.
+
+   Title size is set in the scoped <style>, not with a Tailwind class —
+   global.css declares the h3 scale outside any @layer, so a utility class on an
+   h3 is silently ignored. */
 const stages = [
   {
     num: '01',
     title: 'Medical detox',
-    detail: 'If you\'re still physically dependent, you start here. Withdrawal from alcohol, opioids, and benzodiazepines can be dangerous without supervision — so this isn\'t a hurdle, it\'s a safety measure. Typically four to seven days with 24/7 nursing and physician oversight.',
+    detail: 'You start here if your body is still dependent. Four to seven days with nursing around the clock, comfort medication, and a physician overseeing your care.',
   },
   {
     num: '02',
-    title: 'Stabilization',
-    detail: 'Your medical team confirms your body is stable and ready for the deeper therapeutic work. Your case manager is already involved, so nothing about you has to be re-explained to a new team.',
+    title: 'Getting stable',
+    detail: 'Your medical team confirms your body is steady enough for the deeper work. Your case manager is already involved, so nothing about you gets re-explained.',
   },
   {
     num: '03',
-    title: 'Step down into residential',
-    detail: 'You move into the residential program — upgraded accommodations, full therapeutic schedule, phone access in the evenings. Same building, same people, no second admission process.',
+    title: 'Into residential',
+    detail: 'You move into the residential program: better accommodation, the full therapeutic week, evening phone access. Same building, same people, no second intake.',
   },
   {
     num: '04',
-    title: 'Planning what comes next',
-    detail: 'Residential is a beginning, not an ending. Your case manager builds a step-down plan with you so you leave with support and a direction, not just a discharge date.',
+    title: 'Your next step',
+    detail: 'Residential is a beginning rather than an ending. Your case manager builds the step-down plan with you, so you leave with a direction and not just a date.',
   },
 ];
 ---
 <section
   id="pathway"
   class="relative bg-navy-deep text-white py-[50px] overflow-hidden"
-  style="background-image: linear-gradient(to right, rgba(0,43,92,0.88) 50%, rgba(0,43,92,0.55) 100%), url('/Asset/stock%20photo/Desktop%20Dimensions/CTA.png'); background-size: cover; background-position: center;"
+  style="background-image: linear-gradient(to right, rgba(0,43,92,0.88) 50%, rgba(0,43,92,0.55) 100%), url('/Asset/stock%20photo/Desktop%20Dimensions/CTA.webp'); background-size: cover; background-position: center;"
 >
   <div class="absolute left-0 top-0 bottom-0 w-1 bg-gold"></div>
 
@@ -34,21 +41,21 @@ const stages = [
     <div class="max-w-3xl mb-14">
       <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-6 flex items-center gap-2">
         <span class="w-6 h-px bg-gold inline-block"></span>
-        The Pathway
+        The pathway
       </p>
       <h2 class="font-display mb-6">
-        From detox into residential — without starting over
+        From detox into residential, without starting over
       </h2>
       <p class="font-body text-white/80 text-[17px] leading-[29px]">
-        For most people, residential is a step down from medical detox. Both happen here, so there's no scrambling to find a second facility and no repeating your story to a whole new team.
+        For most people residential is a step down from medical detox. Both happen here, so there is no scrambling to find a second facility and no repeating your story to a whole new team.
       </p>
     </div>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
       {stages.map(stage => (
-        <div class="bg-white/8 border border-white/12 rounded-xl p-7 backdrop-blur-sm">
+        <div class="bg-white/8 border border-white/12 border-t-2 border-t-gold rounded-xl p-7 backdrop-blur-sm h-full">
           <div class="font-display text-4xl text-gold mb-4">{stage.num}</div>
-          <h3 class="font-display text-xl text-white mb-3">{stage.title}</h3>
+          <h3 class="stage-title font-display text-white mb-3">{stage.title}</h3>
           <p class="font-body text-white/70 text-[16px] leading-[26px]">{stage.detail}</p>
         </div>
       ))}
@@ -56,9 +63,19 @@ const stages = [
 
     <div class="mt-12 border-l-2 border-gold/40 pl-6 max-w-3xl">
       <p class="font-body text-white/85 text-[17px] leading-[29px]">
-        <strong class="text-white font-bold">Not everyone needs detox first.</strong> Depending on the substance and how recently you used, a clinical assessment may determine you can begin at the residential level — methamphetamine, for instance, often doesn't require a traditional medical detox because the withdrawal profile is different. That's exactly what the phone assessment and provider review are for: placing you safely at the right starting point.
+        <strong class="text-white font-bold">Not everyone needs detox first.</strong> Depending on the substance and how recently you used, a clinical assessment may place you straight into residential. Methamphetamine often works that way, because the withdrawal profile is different. That is exactly what the phone assessment and provider review are for: starting you in the right place.
       </p>
     </div>
 
   </div>
 </section>
+
+<style>
+  /* Unlayered, so it beats the global h3 scale. At 22px a two-word title holds
+     one line in a four-column card, which is what keeps the row aligned. */
+  .stage-title {
+    font-size: 22px;
+    line-height: 29px;
+    letter-spacing: 0;
+  }
+</style>

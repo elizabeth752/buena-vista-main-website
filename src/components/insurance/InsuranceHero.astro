@@ -2,9 +2,33 @@
 import InsuranceForm from '../InsuranceForm.astro';
 import Horizon from '../Horizon.astro';
 
-// Insurance comes up in roughly 7 of every 10 admissions calls, and it is where
-// people most often disqualify themselves. The whole job of this page is to
-// lower that anxiety and make checking feel easy and safe.
+/* Hero standard: eyebrow, keyword H1, bullets with their own icons, CTA. No
+   subtitle paragraph and no styled display line.
+
+   Insurance is where people most often disqualify themselves before calling,
+   so every bullet here removes a reason not to pick up the phone. */
+const points = [
+  {
+    text: 'Free, and there is no obligation either way',
+    d: 'M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z',
+  },
+  {
+    text: 'Confidential, and protected by federal privacy law',
+    d: 'M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z',
+  },
+  {
+    text: 'Usually answered in minutes rather than days',
+    d: 'M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z',
+  },
+  {
+    text: 'AHCCCS plans and most major commercial and private carriers',
+    d: 'M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z',
+  },
+  {
+    text: 'Not a fit? We will say so, and point you somewhere that is',
+    d: 'M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3',
+  },
+];
 ---
 <section id="hero" class="bg-cream">
   <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-[60px] lg:py-[80px]">
@@ -13,29 +37,22 @@ import Horizon from '../Horizon.astro';
       <div>
         <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-5 flex items-center gap-2">
           <span class="w-6 h-px bg-gold inline-block"></span>
-          Insurance &amp; coverage
+          Insurance and coverage
         </p>
 
         <h1 class="font-display text-navy mb-6">
-          Let's check your coverage.
+          Insurance for Addiction Treatment in Chandler, Arizona
         </h1>
 
-        <p class="font-body text-charcoal text-[20px] leading-[33px] max-w-xl mb-8">
-          Most people are relieved to find their coverage is better than they feared. It takes a few minutes, it costs nothing, and it commits you to absolutely nothing.
-        </p>
-
-        <ul class="space-y-3 mb-9">
-          {[
-            'Free, and there is no obligation either way',
-            'Confidential — protected by federal privacy law',
-            'Usually answered in minutes, not days',
-            "If we are not in-network, we'll tell you honestly and point you somewhere that is",
-          ].map(item => (
-            <li class="flex items-start gap-3 font-body text-charcoal text-[17px] leading-[29px]">
-              <svg class="w-5 h-5 text-teal mt-1 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
-              </svg>
-              {item}
+        <ul class="space-y-4 mb-9">
+          {points.map(item => (
+            <li class="flex items-start gap-3.5 font-body text-charcoal text-[17px] leading-[29px]">
+              <span class="w-9 h-9 rounded-full bg-teal/10 flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-[19px] h-[19px] text-teal" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d={item.d}/>
+                </svg>
+              </span>
+              <span>{item.text}</span>
             </li>
           ))}
         </ul>
@@ -54,11 +71,11 @@ import Horizon from '../Horizon.astro';
 
         <Horizon variant="rule" class="mt-10 max-w-xl" />
         <p class="font-body text-muted text-[15px] leading-[24px] mt-3 max-w-xl">
-          Do not have your card in front of you? Call anyway — we can usually find it with your basic details.
+          Do not have your card in front of you? Call anyway. We can usually find it from your name and date of birth.
         </p>
       </div>
 
-      <InsuranceForm id="verify" />
+      <InsuranceForm id="verify-hero" />
 
     </div>
   </div>

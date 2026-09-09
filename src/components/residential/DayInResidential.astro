@@ -1,34 +1,41 @@
 ---
+/* ALIGNMENT RULE: every title is two words and every description is written to
+   roughly the same length, so the two columns line up rather than one item
+   running three lines past its neighbor.
+
+   The divider used to be `i < length - 1`, which drew a rule under item five
+   but not item six — the mismatched underline Elizabeth spotted. It is now a
+   border on every item, removed from the last row at each breakpoint. */
 const rhythm = [
   {
     period: 'Morning',
-    title: 'Group therapy',
-    desc: 'The day opens with group — learning how addiction actually works, building coping skills, and sitting with people who understand exactly what you\'re going through without you having to explain it.',
+    title: 'Morning group',
+    desc: 'The day opens with group: how addiction actually works, coping skills, and a room of people who understand it without you having to explain yourself.',
   },
   {
     period: 'Through the week',
-    title: 'One-on-one therapy',
-    desc: 'Individual sessions with your therapist, where the more personal work happens — the trauma, the patterns, the things that are harder to say out loud in a room full of people.',
+    title: 'Individual therapy',
+    desc: 'Sessions with your own therapist, where the more personal work happens: the trauma, the patterns, the things that are harder to say out loud in a group.',
   },
   {
     period: 'Afternoon',
-    title: 'Second group + case management',
-    desc: 'A second group session, plus check-ins with your case manager, who starts mapping out your life after treatment from your very first day rather than the week you leave.',
+    title: 'Second group',
+    desc: 'A second group session, plus time with your case manager, who starts mapping your life after treatment from day one rather than the week you leave.',
   },
   {
-    period: '4:00 – 9:00 PM',
+    period: '4:00 to 9:00 PM',
     title: 'Phone access',
-    desc: 'Your window to call your kids, text your partner, check in with your sponsor. The therapeutic day needs your focus — the evenings are yours to stay connected to the people who matter.',
+    desc: 'Your window to call your kids, text your partner, check in with your sponsor. The therapeutic day needs your focus and the evening belongs to you.',
   },
   {
     period: 'Evening',
-    title: 'Optional 12-step meetings',
-    desc: 'Nightly meetings for those who want them. Genuinely optional — some people find their footing there, others find it elsewhere, and both are fine.',
+    title: 'Optional meetings',
+    desc: 'Nightly 12-step meetings for anyone who wants them. Genuinely optional: some people find their footing there, others find it elsewhere, both are fine.',
   },
   {
     period: 'Around the clock',
-    title: 'Nursing & support staff',
-    desc: 'Nursing and support staff are present 24/7, so there is always someone there if you need help — at 3 PM or 3 AM.',
+    title: 'Nursing on site',
+    desc: 'Nursing and support staff are here 24 hours a day, so there is always somebody to go to when you need help, whether that is at 3 PM or at 3 AM.',
   },
 ];
 ---
@@ -50,7 +57,7 @@ const rhythm = [
 
     <div class="grid lg:grid-cols-2 gap-x-14 gap-y-2 max-w-5xl mx-auto">
       {rhythm.map((item, i) => (
-        <div class={`flex gap-6 py-6 ${i < rhythm.length - 1 ? 'border-b border-cream-soft' : ''}`}>
+        <div class="flex gap-6 py-6 border-b border-cream-soft last:border-b-0 lg:[&:nth-last-child(-n+2)]:border-b-0">
           <div class="shrink-0 w-10 h-10 rounded-full bg-cream flex items-center justify-center font-body text-sm font-bold text-navy">
             {i + 1}
           </div>

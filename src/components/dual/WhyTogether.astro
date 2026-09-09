@@ -1,66 +1,100 @@
 ---
+import RevealCards from '../RevealCards.astro';
 // Medication language stays general: the calls suggest Buena Vista reviews and
 // coordinates psychiatric care rather than acting as a standalone prescriber.
+//
+// ALIGNMENT: every card title is short enough to hold one line, and every
+// description is written to the same length. The left column is sticky and the
+// cards lift as they cross the middle of the screen.
 const approach = [
   {
     title: 'One team, both problems',
-    desc: 'The people supporting your recovery are the same people paying attention to the anxiety or trauma running underneath it. You are not handed between two programs that never speak to each other.',
+    desc: 'The people supporting your recovery are the same people watching the anxiety or the trauma underneath it. Nobody is handed between two programs.',
+    d: 'M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z',
   },
   {
-    title: 'Therapy that goes underneath',
-    desc: 'Group work most days, plus one-on-one sessions where the more personal material comes up — the things that are harder to say out loud in a room full of people.',
+    title: 'Therapy that goes deeper',
+    desc: 'Group work most days, plus one-on-one sessions where the more personal material comes up: the things that are harder to say in a room full of people.',
+    d: 'M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z',
   },
   {
-    title: 'Your medication reviewed properly',
-    desc: 'Plenty of people arrive on something for anxiety, depression, or bipolar disorder — and plenty have quietly stopped taking it. Our medical team reviews what you are on and coordinates psychiatric care where you need it.',
+    title: 'Your medication reviewed',
+    desc: 'Plenty of people arrive on something for anxiety, depression or bipolar disorder, and plenty have quietly stopped. Our medical team reviews what you take.',
+    d: 'M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c.251.023.501.05.75.082M9.75 3.104a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.186c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15.75a9.065 9.065 0 00-6.23-.657L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5',
   },
   {
-    title: 'A plan that accounts for both',
-    desc: 'Your case manager builds what comes next around the whole picture, not just the substance use, so you are not discharged straight back into the thing that started it.',
+    title: 'A plan for both',
+    desc: 'Your case manager builds what comes next around the whole picture rather than the substance use alone, so you are not discharged back into what started it.',
+    d: 'M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25z',
   },
+];
+
+const points = [
+  'For most people the substances were the way to cope with something painful',
+  'Treat the drinking alone and that pain is still waiting when treatment ends',
+  'It runs the other way too: active use makes mental health almost impossible',
+  'Fighting on two fronts separately is how people end up doing this four times',
 ];
 ---
 <section id="why-together" class="bg-white py-[60px]">
   <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
     <div class="grid lg:grid-cols-2 gap-14 lg:gap-20 items-start">
 
-      <div>
+      <div class="lg:sticky lg:top-24">
         <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-5 flex items-center gap-2">
           <span class="w-6 h-px bg-gold inline-block"></span>
           Why both at once
         </p>
         <h2 class="font-display text-charcoal mb-6">
-          Treating one and ignoring the other rarely holds
+          Why we treat addiction and mental health together
         </h2>
 
-        <div class="space-y-5 font-body text-charcoal text-[17px] leading-[29px]">
-          <p>
-            For a lot of people, substances became the way to cope with something painful — the anxiety, the memories that will not quiet down, the sleeplessness, the grief. If treatment deals with the drinking or the using but never touches what sat underneath it, that pain is still waiting when treatment ends.
-          </p>
-          <p>
-            It works the other way too. It is very hard to make progress on your mental health while active substance use is pulling everything apart underneath you.
-          </p>
-          <p>
-            So we treat them together. Not because it is a nicer thing to say, but because fighting on two fronts separately is how people end up doing this three and four times.
-          </p>
-        </div>
+        <p class="font-body text-charcoal text-[17px] leading-[29px] mb-7">
+          Treating one and ignoring the other rarely holds, and most people reading this already know that from experience.
+        </p>
 
-        <div class="mt-9">
-          <a href="tel:8883625576" class="inline-flex items-center justify-center bg-teal hover:bg-teal-dark text-white font-semibold h-14 px-8 rounded-lg transition-colors font-body">
-            Talk it through with someone
-          </a>
-        </div>
+        <ul class="space-y-3 mb-9">
+          {points.map(p => (
+            <li class="flex items-start gap-3 font-body text-charcoal text-[17px] leading-[29px]">
+              <svg class="w-5 h-5 text-teal mt-1 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
+              </svg>
+              <span>{p}</span>
+            </li>
+          ))}
+        </ul>
+
+        <a href="tel:8883625576" class="inline-flex items-center justify-center bg-teal hover:bg-teal-dark text-white font-semibold h-14 px-8 rounded-lg transition-colors font-body">
+          Talk it through with someone
+        </a>
       </div>
 
-      <div class="space-y-5">
+      <RevealCards class="space-y-5">
         {approach.map(item => (
-          <div class="bg-cream rounded-xl p-7 border border-cream-soft">
-            <h3 class="font-display text-xl text-charcoal mb-2 leading-snug">{item.title}</h3>
-            <p class="font-body text-charcoal text-[16px] leading-[26px]">{item.desc}</p>
+          <div class="reveal-card bg-cream rounded-xl p-7 border border-cream-soft">
+            <div class="flex items-start gap-4">
+              <div class="reveal-icon w-11 h-11 rounded-full bg-teal/12 flex items-center justify-center shrink-0">
+                <svg class="w-[22px] h-[22px] text-teal" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d={item.d}/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="reveal-card-title font-display text-charcoal mb-2">{item.title}</h3>
+                <p class="font-body text-charcoal text-[16px] leading-[26px]">{item.desc}</p>
+              </div>
+            </div>
           </div>
         ))}
-      </div>
+      </RevealCards>
 
     </div>
   </div>
 </section>
+
+<style>
+  /* Unlayered, so it beats the global h3 scale. */
+  .reveal-card-title { font-size: 21px; line-height: 28px; letter-spacing: 0; }
+
+
+</style>
+

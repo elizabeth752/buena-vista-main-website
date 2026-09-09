@@ -47,11 +47,17 @@ const defaultFaqs: FaqItem[] = [
 
 const {
   eyebrow = 'Real Questions, Real Answers',
-  heading = 'The things people actually want to know',
-  intro = 'No talking points. No corporate non-answers. Just honest responses to the questions people are actually afraid to ask.',
-  faqs = defaultFaqs,
+  heading = 'Questions and answers',
+  intro,
+  faqs,
   bg = 'bg-cream',
 } = Astro.props;
+
+// The default intro belongs to the homepage bank. A page that brings its own
+// questions gets no intro unless it passes one, because most of the converted
+// sections never had one and inventing copy for 25 of them would be worse.
+const items = faqs ?? defaultFaqs;
+const introText = intro ?? (faqs ? undefined : 'No talking points. No corporate non-answers. Just honest responses to the questions people are actually afraid to ask.');
 ---
 <section id="faq" class={`${bg} py-[50px]`}>
   <div class="max-w-4xl mx-auto px-5 sm:px-6 lg:px-8">
@@ -61,21 +67,23 @@ const {
         {eyebrow}
       </p>
       <h2 class="font-display text-charcoal mb-4">{heading}</h2>
-      <p class="font-body text-charcoal text-[17px] leading-[29px]">
-        {intro}
-      </p>
+      {introText && (
+        <p class="font-body text-charcoal text-[17px] leading-[29px]">
+          {introText}
+        </p>
+      )}
     </div>
 
     <div class="space-y-3">
-      {faqs.map((faq, i) => (
-        <details class="bg-white rounded-xl border border-cream-soft shadow-sm group" open={i === 0}>
-          <summary class="flex items-start justify-between px-5 py-5 cursor-pointer gap-4">
-            <span class="font-body font-medium text-charcoal text-sm md:text-base leading-snug">{faq.q}</span>
-            <span class="shrink-0 w-7 h-7 rounded-full bg-cream flex items-center justify-center text-charcoal font-bold text-xl leading-none mt-0.5 transition-transform group-open:rotate-45 select-none">
+      {items.map((faq, i) => (
+        <details class="faq-item bg-white rounded-xl border border-cream-soft border-l-4 border-l-cream-soft shadow-sm group transition-colors" open={i === 0}>
+          <summary class="flex items-start justify-between px-6 py-5 cursor-pointer gap-4">
+            <span class="font-display text-charcoal text-[19px] leading-[26px] md:text-[21px] md:leading-[28px] group-open:text-navy transition-colors">{faq.q}</span>
+            <span class="shrink-0 w-8 h-8 rounded-full bg-teal/12 text-teal group-open:bg-teal group-open:text-white flex items-center justify-center font-bold text-xl leading-none mt-0.5 transition-all group-open:rotate-45 select-none">
               +
             </span>
           </summary>
-          <div class="px-5 pb-5">
+          <div class="px-6 pb-6">
             <p class="font-body text-charcoal text-[16px] leading-[26px] border-t border-cream-soft pt-4">{faq.a}</p>
           </div>
         </details>
@@ -83,3 +91,15 @@ const {
     </div>
   </div>
 </section>
+
+<style>
+  /* Open answers get a gold spine and a warm ground, so a long FAQ reads as a
+     sequence of opened things rather than a gray column. */
+  .faq-item[open] {
+    border-left-color: var(--color-gold);
+    background-color: color-mix(in srgb, var(--color-sand) 26%, white);
+  }
+  .faq-item:hover {
+    border-left-color: color-mix(in srgb, var(--color-teal) 55%, transparent);
+  }
+</style>

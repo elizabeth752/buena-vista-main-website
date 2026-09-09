@@ -1,0 +1,109 @@
+---
+/* -----------------------------------------------------------------------------
+   Serving Mesa — SERVICE-AREA page, not a location page.
+
+   Mesa is the largest East Valley source of calls after Chandler and Phoenix. It borders Chandler on the north-east, so the honest angle is proximity: a local drive, family can visit, and there is no travel problem to solve.
+
+   ⚠ NOT A LOCATION PAGE. There is no Mesa facility. This page carries NO
+   LocalBusiness schema and NO Mesa NAP, and the hero states plainly that
+   the single building is in Chandler. A fake location page risks a Google
+   penalty and, worse, sends someone in crisis to an address that does not
+   exist. Keep all three guardrails.
+
+   ⚠ NO INVENTED DRIVE TIMES. Naming a freeway or a surface street is a fact.
+   A figure in minutes is not one anybody has verified against traffic.
+----------------------------------------------------------------------------- */
+import Layout from '../../layouts/Layout.astro';
+import TopBar from '../../components/TopBar.astro';
+import Nav from '../../components/Nav.astro';
+
+import ServiceAreaHero from '../../components/servicearea/ServiceAreaHero.astro';
+import ServiceAreaBody from '../../components/servicearea/ServiceAreaBody.astro';
+
+import Testimonials from '../../components/Testimonials.astro';
+import VerifySection from '../../components/VerifySection.astro';
+import AdmissionsPath from '../../components/AdmissionsPath.astro';
+import FAQ from '../../components/FAQ.astro';
+import FinalCTA from '../../components/FinalCTA.astro';
+
+const title = "Drug and Alcohol Rehab Serving Mesa, Arizona | Buena Vista";
+const description = "Medical detox and residential treatment serving Mesa from our Chandler, AZ facility, a local East Valley drive. AHCCCS accepted, open 24 hours. Call (888) 362-5576.";
+
+const points = [
+      { text: "A local East Valley drive, not a journey", d: "M15 10.5a3 3 0 11-6 0 3 3 0 016 0z M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" },
+      { text: "Medical detox and residential treatment, open 24 hours", d: "M21 8.25H3m18 0a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 8.25m18 0v10.5A2.25 2.25 0 0118.75 21H5.25A2.25 2.25 0 013 18.75V8.25M12 11.25v6m3-3H9" },
+      { text: "Close enough that family can visit without planning a trip", d: "M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" },
+      { text: "We can often arrange a ride to bring you in", d: "M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" },
+      { text: "AHCCCS plans and most major commercial and private carriers", d: "M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" },
+];
+
+const routes = [
+  { h: "West Mesa and Dobson", p: "Straight down Dobson or Alma School and you are here. This is the shortest run of any city we serve." },
+  { h: "Central and east Mesa", p: "The Loop 202 across and then south, or Country Club down to Arizona Avenue. Either works." },
+  { h: "Red Mountain and north-east Mesa", p: "Longer, usually the 202 the whole way. Worth asking about a ride rather than assuming you have to solve it." },
+  { h: "No car at all", p: "Say so on the call. Transport within our local service area is something we can often arrange, and Mesa is inside it." },
+];
+
+const why = [
+  { h: "Staying close to home", p: "Being twenty minutes from your own front door is a real advantage when the aftercare plan has to survive contact with your actual life. Your therapist, your meetings and your family are all still reachable." },
+  { h: "Visiting and phone access", p: "Family visiting runs on a schedule so it does not cut across the therapeutic day, and phone access starts in the evenings once you move into residential." },
+  { h: "Getting in quickly", p: "Same-day admission is possible when a bed is open. The assessment and the coverage check happen on one call, so there is very little between deciding and arriving." },
+];
+
+const faqs = [
+  { q: "Do you have a facility in Mesa?", a: "No. Buena Vista operates one facility, at 3033 S Arizona Ave in Chandler, and serves Mesa from there. It is a local drive between two neighboring East Valley cities rather than a journey, which is why we have never seen a reason to open a second building this close to the first." },
+  { q: "How far is it from Mesa to Chandler?", a: "Close. Mesa borders Chandler on the north-east, so depending on where in Mesa you are starting it is a straightforward run down Dobson, Alma School or Arizona Avenue, or across on the Loop 202. We will not quote you a number in minutes because traffic makes a liar of anybody who does, but it is the sort of drive people make without thinking about it." },
+  { q: "Can I get there without a car?", a: "Often, yes. Transport within our local service area is something we can arrange, and Mesa is inside it. Tell the admissions team on the call that getting here is the problem. It is one of the last practical barriers we can take off the table, and it comes up more often than people expect." },
+  { q: "Will my family be able to visit from Mesa?", a: "Yes, and being close enough for that is one of the better arguments for treating locally rather than travelling out of state. Visiting happens on a schedule so it does not cut across the therapeutic day, and your case manager will walk your family through how it works once you are admitted." },
+  { q: "Does AHCCCS cover this if I live in Mesa?", a: "Coverage follows your plan rather than your address, so living in Mesa changes nothing about it. We work with AHCCCS plans and with most major commercial and private carriers, and we check your specific plan while you are on the phone. It costs nothing and you owe nothing either way." },
+];
+
+// FAQPage only — deliberately no LocalBusiness/MedicalClinic schema, because
+// there is no Mesa facility to describe.
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(f => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+---
+<Layout title={title} description={description}>
+  <TopBar />
+  <Nav />
+
+  <ServiceAreaHero
+    city="Mesa"
+    title="Treatment for Mesa, a short drive down the Valley."
+    points={points}
+    disclosure="Buena Vista is one facility, at 3033 S Arizona Ave in Chandler. There is no separate Mesa building. We serve Mesa from Chandler, and the drive is the only difference it makes."
+    image="/Asset/stock%20photo/Desktop%20Dimensions/Facility/Covered%20drop-off%20entrance%20with%20tower%20feature%20and%20circular%20driveway.webp"
+    alt="The covered drop-off entrance at Buena Vista in Chandler, with a tower feature and circular driveway"
+    caption="The Chandler entrance, a short drive from Mesa."
+  />
+
+  <ServiceAreaBody
+    city="Mesa"
+    routesTitle="Coming down from Mesa"
+    routesIntro="Mesa and Chandler share the same corner of the Valley, so for most people this is an ordinary drive rather than a piece of logistics to arrange."
+    routes={routes}
+    whyTitle="What people from Mesa tend to ask about"
+    why={why}
+  />
+
+  <VerifySection heading="Does your insurance cover treatment from Mesa?" />
+  <Testimonials />
+  <AdmissionsPath
+    heading="How to start treatment from Mesa"
+    bg="bg-white"
+    ring="ring-white"
+    noteBg="bg-navy-deep"
+  />
+  <FAQ faqs={faqs} eyebrow="Straight answers" heading="Questions from Mesa" bg="bg-cream" />
+
+  <FinalCTA />
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
+</Layout>

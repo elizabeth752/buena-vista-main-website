@@ -1,0 +1,72 @@
+---
+/* Careers enquiry form. Name, phone, email — nothing else.
+
+   ⚠ SAME INTERIM STATE AS InsuranceForm: nothing is wired to CTM yet, so the
+   form does not transmit. Rather than swallow what somebody typed, submitting
+   surfaces the phone and email path. Remove the fallback block and POST to CTM
+   once that integration exists.
+
+   ⚠ DO NOT add a CV upload here until CTM is wired AND the file field exists on
+   the receiving form. On the Virtue build an upload was added before the field
+   existed and every CV was silently discarded. A missing upload is an
+   inconvenience; a silent one loses people their application.
+
+   ⚠ No date of birth, no address, nothing that could be used to screen. Three
+   fields, then a human conversation. */
+import ConsentFields from '../ConsentFields.astro';
+
+interface Props { id?: string; class?: string; }
+const { id = 'apply', class: className = '' } = Astro.props;
+---
+<div id={id} class={`bg-white rounded-xl shadow-2xl px-5 py-7 lg:p-8 text-charcoal ${className}`}>
+  <h2 class="font-body font-semibold text-[22px] leading-[29px] text-charcoal mb-1">Tell us you are interested</h2>
+  <p class="text-charcoal text-[16px] leading-[26px] font-body mb-6">
+    Three fields. Someone from our team will call you back to talk it through.
+  </p>
+
+  <form class={`space-y-4 apply-form apply-form-${id}`} data-form-id={id}>
+    <div>
+      <label class="block text-xs font-bold text-charcoal uppercase tracking-wide mb-1.5" for={`${id}-name`}>Your name</label>
+      <input id={`${id}-name`} name="name" type="text" autocomplete="name" placeholder="First and last name"
+             class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm font-body focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal transition-colors" />
+    </div>
+    <div>
+      <label class="block text-xs font-bold text-charcoal uppercase tracking-wide mb-1.5" for={`${id}-phone`}>Your phone</label>
+      <input id={`${id}-phone`} name="phone" type="tel" autocomplete="tel" placeholder="(555) 000-0000"
+             class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm font-body focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal transition-colors" />
+    </div>
+    <div>
+      <label class="block text-xs font-bold text-charcoal uppercase tracking-wide mb-1.5" for={`${id}-email`}>Your email</label>
+      <input id={`${id}-email`} name="email" type="email" autocomplete="email" placeholder="you@example.com"
+             class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm font-body focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal transition-colors" />
+    </div>
+
+    <ConsentFields id={id} />
+
+    <button type="submit" class="w-full bg-teal hover:bg-teal-dark text-white font-bold py-3.5 rounded-lg transition-colors font-body tracking-wide text-sm">
+      Send it over
+    </button>
+
+    <p class={`form-fallback-${id} hidden font-body text-[15px] leading-[24px] text-charcoal bg-cream border border-cream-soft rounded-lg p-4`}>
+      Easiest way to reach us right now is to call
+      <a href="tel:8883625576" class="text-teal font-semibold underline underline-offset-2 tel-number">(888) 362-5576</a>{' '}
+      and ask for hiring.
+    </p>
+  </form>
+
+  <p class="text-xs text-charcoal font-body mt-4 leading-relaxed">
+    We will not share your details with anyone outside our hiring team.
+  </p>
+</div>
+
+<script>
+  // INTERIM until the CTM integration lands. The form does not transmit, so
+  // instead of failing silently it surfaces the phone path.
+  document.querySelectorAll<HTMLFormElement>('form.apply-form').forEach((form) => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const id = form.dataset.formId;
+      form.parentElement?.querySelector('.form-fallback-' + id)?.classList.remove('hidden');
+    });
+  });
+</script>

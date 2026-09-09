@@ -1,11 +1,11 @@
 ---
 const signs = [
-  'You\'ve tried to stop on your own, more than once, and it hasn\'t held',
-  'Your home or daily environment makes staying sober feel impossible',
-  'Withdrawal has been dangerous, frightening, or medically risky before',
+  'You have tried to stop on your own more than once and it has not held',
+  'Home is where the triggers are, and staying sober there feels impossible',
+  'Withdrawal has been frightening or medically risky for you before now',
   'Substance use is tangled up with trauma, anxiety, depression, or grief',
-  'Outpatient treatment hasn\'t been enough structure to keep you steady',
-  'You need to step fully out of your life for a while to get your footing back',
+  'Outpatient treatment has not been enough structure to keep you steady',
+  'You need to step out of your life for a while to get your footing back',
 ];
 
 const substances = [
@@ -42,7 +42,7 @@ const conditions = [
       </p>
     </div>
 
-    <!-- Signs -->
+    {/* Signs */}
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-16">
       {signs.map(sign => (
         <div class="flex gap-4 bg-cream rounded-xl p-6">
@@ -56,7 +56,7 @@ const conditions = [
       ))}
     </div>
 
-    <!-- What we treat -->
+    {/* What we treat */}
     <div class="mb-10 max-w-3xl">
       <h3 class="font-display text-3xl text-charcoal mb-3">What we treat</h3>
       <p class="font-body text-charcoal max-w-2xl text-[17px] leading-[29px]">
@@ -90,13 +90,13 @@ const conditions = [
       </div>
     </div>
 
-    <!-- Scope boundary — honest, keeps the page compliant -->
+    {/* What we treat, stated positively. Never lead with what we do not offer. */}
     <div class="mt-10 flex gap-4 bg-navy-deep rounded-xl p-7 text-white max-w-4xl mx-auto">
       <svg class="w-6 h-6 text-gold shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"/>
       </svg>
       <p class="font-body text-white/85 text-[16px] leading-[26px]">
-        <strong class="text-white font-bold">Being straight with you about our scope.</strong> We're an inpatient detox and residential provider for substance use, with mental health support built in alongside it. We don't offer standalone mental-health-only treatment or court-ordered outpatient evaluations. If that's what you need, tell us when you call and we'll point you toward the right place rather than waste your time.
+        <strong class="text-white font-bold">What we treat here.</strong> Buena Vista is an inpatient detox and residential program for substance use, with mental health care delivered alongside it rather than referred out: trauma, anxiety, depression and bipolar disorder are treated as part of your stay. Tell us what is going on when you call and we will place you where you will do best, here or with the right provider for you.
       </p>
     </div>
 

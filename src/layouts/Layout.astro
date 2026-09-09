@@ -1,16 +1,38 @@
 ---
 import '../styles/global.css';
+import { organization, breadcrumbs } from '../data/schema';
 interface Props {
   title?: string;
   description?: string;
   /** Keeps a page out of search results — used for pages awaiting sign-off. */
   noindex?: boolean;
+  /** Social share image, site-root relative. Defaults to the atrium shot. */
+  ogImage?: string;
+  /** 'article' on blog posts so the published/author tags mean something. */
+  ogType?: 'website' | 'article';
 }
 const {
-  title = 'Buena Vista Health & Recovery Centers | Chandler & Tucson, AZ',
-  description = 'Honest, structured addiction treatment in Arizona. Medically supervised detox and residential treatment in Chandler and Tucson, AZ. Call (888) 362-5576.',
-  noindex = false
+  title = 'Buena Vista Health & Recovery Centers | Chandler, AZ',
+  description = 'Honest, structured addiction treatment in Arizona. Medically supervised detox and residential treatment at our Chandler, AZ facility. Call (888) 362-5576.',
+  noindex = false,
+  ogImage = '/og-default.jpg',
+  ogType = 'website'
 } = Astro.props;
+
+/* Canonical. Astro.url.pathname already carries the trailing slash the build
+   emits, and vercel.json sets trailingSlash: true, so the two agree. Built
+   without a query string on purpose: every ?utm_ variant must fold into one
+   canonical URL or the migration splits its own equity. */
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const ogImageUrl = new URL(ogImage, Astro.site).href;
+
+/* Organisation on every page under one @id, plus the breadcrumb trail. Pages
+   add their own MedicalWebPage / FAQPage / BlogPosting nodes on top. */
+const crumbs = breadcrumbs(Astro.url.pathname);
+const siteSchema = {
+  '@context': 'https://schema.org',
+  '@graph': crumbs ? [organization, crumbs] : [organization],
+};
 ---
 <!doctype html>
 <html lang="en">
@@ -18,10 +40,35 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <link rel="canonical" href={canonical} />
+    {noindex
+      ? <meta name="robots" content="noindex, nofollow" />
+      : <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />}
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#0F2E3D" />
+
+    {/* Open Graph and Twitter. Without these, every share of this site — and
+        every LLM crawler that reads them — falls back to a bare URL. */}
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content="Buena Vista Health & Recovery Centers" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={title} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(siteSchema)} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    {/* One request for both families, display=swap so text paints in the
+        fallback rather than staying invisible while the fonts arrive. */}
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,400&family=Source+Sans+3:wght@300..700&display=swap" rel="stylesheet" />
     <title>{title}</title>
   </head>

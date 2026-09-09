@@ -1,46 +1,79 @@
 ---
 import Horizon from './Horizon.astro';
 
-// Cream carries the page. Navy is saved for the two moments that matter most,
-// so the hero opens warm rather than anchoring. No night exterior, no black.
-const reassurances = [
-  'Someone real answers, any hour',
-  "Most insurance accepted — we'll check for you",
-  "Private rooms, catered meals, staff who've been there",
+/* SEO: the H1 leads with the search term and the location rather than the brand
+   line. "A better view forward" was memorable but carried no keyword at all —
+   it now runs as the subhead where it still does its emotional work.
+
+   The three points are deliberately specific. The previous set ("someone real
+   answers", "most insurance accepted") described what any treatment center
+   would claim. These are things competitors mostly cannot say, and each is
+   corroborated on recorded admissions calls:
+     private room + own bathroom   — 25 calls
+     physician within 24h, daily   — "you'll see a physician within the first
+                                      twenty four hours and daily after that"
+     detox and residential in one building, no second admission
+*/
+/* Kept to a matching shape on purpose: one line of heading, two lines of body
+   each, with no orphan word left sitting on a line of its own. */
+const usps = [
+  {
+    h: 'Your own room, and your own bathroom',
+    p: 'Not a shared ward — rare at this level of care, and the first thing you notice on arrival.',
+  },
+  {
+    h: 'A physician within 24 hours, then daily',
+    p: 'Detox here is a medical process with a doctor attached, not a room you are left to wait in.',
+  },
+  {
+    h: 'Detox and residential under one roof',
+    p: 'No discharge halfway through, and no second facility to find during the hardest two weeks.',
+  },
+];
+
+/* Trust marks. No invented star rating or review count — the Google badge links
+   down to the real reviews already on the page. Add an aggregate rating only
+   once the Google Place ID is available and it can be pulled rather than typed. */
+const badges = [
+  { src: '/Asset/Accreditations/The%20Joint%20Commission.svg', alt: 'Accredited by The Joint Commission' },
+  { src: '/Asset/Accreditations/Legit.svg', alt: 'LegitScript certified' },
+  { src: '/Asset/Accreditations/NAATP.svg', alt: 'NAATP member' },
 ];
 ---
 <section id="hero" class="bg-cream">
-  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-[60px] lg:py-[80px]">
-    <div class="grid lg:grid-cols-[1fr_minmax(0,500px)] gap-12 lg:gap-16 items-center">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 pt-[52px] pb-[40px] lg:pt-[70px] lg:pb-[52px]">
+    <div class="grid lg:grid-cols-[1fr_minmax(0,520px)] gap-12 lg:gap-16 items-center">
 
-      <!-- Left: Copy -->
       <div>
         <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-5 flex items-center gap-2">
           <span class="w-6 h-px bg-gold inline-block"></span>
-          Chandler &amp; Tucson, Arizona
+          Medical detox &amp; residential treatment · Chandler, Arizona
         </p>
 
-        <h1 class="font-display text-navy mb-6">
-          A better view forward.
+        <h1 class="font-display text-navy mb-5">
+          Drug and alcohol treatment in Chandler, Arizona.
         </h1>
 
-        <p class="font-body text-charcoal text-[20px] leading-[33px] max-w-xl mb-8">
-          Medically supervised detox and residential treatment — in a place that treats you like a person, not a number.
+        <p class="font-body text-charcoal text-[20px] leading-[33px] max-w-xl mb-9">
+          A better view forward — in a place that treats you like a person, not a number.
+          Someone real answers the phone at any hour, including holidays.
         </p>
 
-        <ul class="space-y-3 mb-10">
-          {reassurances.map(item => (
-            <li class="flex items-start gap-3 font-body text-charcoal text-[17px] leading-[29px]">
+        <ul class="space-y-4 mb-9">
+          {usps.map(item => (
+            <li class="flex items-start gap-3.5">
               <svg class="w-5 h-5 text-teal mt-1 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
               </svg>
-              {item}
+              <span class="font-body text-charcoal">
+                <strong class="font-bold block text-[17px] leading-[26px]">{item.h}</strong>
+                <span class="text-[16px] leading-[26px] text-charcoal/85">{item.p}</span>
+              </span>
             </li>
           ))}
         </ul>
 
-        <!-- One primary action per screen. Everything else is secondary. -->
-        <div class="flex flex-col sm:flex-row gap-4">
+        <div class="flex flex-col sm:flex-row gap-4 mb-9">
           <a
             href="tel:8883625576"
             class="inline-flex items-center justify-center gap-2 bg-teal hover:bg-teal-dark text-white font-semibold h-14 px-8 rounded-lg transition-colors font-body"
@@ -48,7 +81,7 @@ const reassurances = [
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
               <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
             </svg>
-            Talk to someone now
+            <span class="tel-number">Call (888) 362-5576</span>
           </a>
           <a
             href="#verify"
@@ -57,23 +90,36 @@ const reassurances = [
             Check my insurance
           </a>
         </div>
+
+        {/* Trust strip: accreditations plus a link to the real reviews below. */}
+        <div class="flex flex-wrap items-center gap-2.5 pt-7 border-t border-cream-soft">
+          {badges.map(b => (
+            <div class="bg-white rounded-lg px-3 py-2 flex items-center justify-center border border-cream-soft" style="min-width:72px; height:46px;">
+              <img src={b.src} alt={b.alt} class="h-7 max-w-[78px] object-contain" fetchpriority="high" decoding="async" />
+            </div>
+          ))}
+          <a href="#reviews" class="bg-white rounded-lg px-3 py-2 flex items-center gap-2.5 border border-cream-soft hover:border-teal transition-colors" style="height:46px;">
+            <img src="/Asset/Accreditations/Google-Reviews.svg" alt="Google Reviews" class="h-6 max-w-[84px] object-contain" fetchpriority="high" decoding="async" />
+            <span class="text-[#FBBC05] text-[14px] tracking-tight whitespace-nowrap" aria-label="Five star reviews">★★★★★</span>
+          </a>
+        </div>
       </div>
 
-      <!-- Right: the private room — the shot that proves "not an institution" -->
+      {/* The atrium. Reads as "not an institution" faster than any sentence,
+           and warmer than the reception shot it replaced. */}
       <div>
         <div class="overflow-hidden rounded-t-[160px] rounded-b-xl shadow-xl">
           <img
-            src="/Asset/stock%20photo/Desktop%20Dimensions/Facility/Private%20bedroom%20with%20upholstered%20bed,%20reading%20chair,%20and%20large%20window.png"
-            alt="A private bedroom at Buena Vista — upholstered bed, reading chair, and a large window with natural light"
+            src="/Asset/stock%20photo/Desktop%20Dimensions/Facility/Double-height%20social%20atrium%20with%20mixed%20seating%20and%20floor-to-ceiling%20windows.webp"
+            alt="The double-height atrium at Buena Vista, with mixed seating and floor-to-ceiling windows"
             class="w-full object-cover aspect-[4/5]"
             fetchpriority="high"
             decoding="async"
-          />
+          width="1600" height="966" />
         </div>
-        <!-- The horizon rule sits under the hero image. -->
         <Horizon variant="rule" class="mt-5" />
         <p class="font-body text-muted text-[15px] leading-[24px] mt-3">
-          Your own room, your own bathroom. You won't share.
+          Light, height, and somewhere to sit. Not an institution.
         </p>
       </div>
 

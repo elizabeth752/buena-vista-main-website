@@ -1,0 +1,92 @@
+---
+/* STANDARD "GETTING IN" SECTION. Titles only, centered, six nodes on a gold
+   line. Replaces the six-card walls these sections used to be.
+
+   Rules that keep it aligned:
+     - every title is two or three words, so no node towers over its neighbor
+     - every note is one short line
+     - the title size is set in the scoped <style>, NOT with a Tailwind class:
+       global.css declares the h3 scale outside any @layer, and unlayered rules
+       beat @layer utilities no matter the specificity, so a size class on an h3
+       is silently ignored.
+
+   Pages override the heading so the H2 can carry their keyword. */
+interface Props {
+  heading?: string;
+  intro?: string;
+  bg?: string;
+  ring?: string;
+  noteBg?: string;
+  steps?: { title: string; note: string }[];
+}
+
+const defaultSteps = [
+  { title: 'Call, any hour',   note: 'A real person picks up' },
+  { title: 'Phone assessment', note: 'Ten to twenty minutes' },
+  { title: 'Coverage check',   note: 'While you are on the line' },
+  { title: 'Provider review',  note: 'Confirming this is a safe fit' },
+  { title: 'Bed confirmed',    note: 'Often the same day' },
+  { title: 'You arrive',       note: 'We can arrange the ride' },
+];
+
+const {
+  heading = 'How to get into treatment in Arizona',
+  intro = 'Most of it happens on one phone call, and often on the same day.',
+  bg = 'bg-cream',
+  ring = 'ring-cream',
+  noteBg = 'bg-navy',
+  steps = defaultSteps,
+} = Astro.props;
+---
+<section id="admissions" class={`${bg} py-[70px]`}>
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+
+    <div class="mb-14 max-w-3xl mx-auto text-center">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center justify-center gap-2">
+        <span class="w-6 h-px bg-gold inline-block"></span>
+        Getting in
+        <span class="w-6 h-px bg-gold inline-block"></span>
+      </p>
+      <h2 class="font-display text-charcoal mb-4">{heading}</h2>
+      <p class="font-body text-charcoal text-[17px] leading-[29px]">{intro}</p>
+    </div>
+
+    <div class="relative max-w-6xl mx-auto">
+      {/* The path. Drawn behind the nodes and trimmed by half a column at each
+          end so it starts and finishes at a circle, not in mid-air. Only shown
+          once all six nodes sit on one line. */}
+      <div class="hidden xl:block absolute top-7 left-[8.333%] right-[8.333%] h-[2px] bg-gold/40"></div>
+
+      <ol class="relative grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-y-10 gap-x-4">
+        {steps.map((step, i) => (
+          <li class="text-center">
+            <span class={`relative z-10 w-14 h-14 rounded-full bg-navy text-white font-display text-xl flex items-center justify-center mx-auto mb-4 ring-8 ${ring}`}>
+              {i + 1}
+            </span>
+            <h3 class="step-title font-display text-charcoal">{step.title}</h3>
+            <p class="font-body text-muted text-[14px] leading-[20px] mt-1.5">{step.note}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+
+    <div class={`mt-16 flex gap-4 ${noteBg} rounded-xl p-7 text-white max-w-3xl mx-auto`}>
+      <svg class="w-6 h-6 text-gold shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"/>
+      </svg>
+      <p class="font-body text-white/85 text-[16px] leading-[26px]">
+        <strong class="text-white font-bold">Call before you come, and we will have everything ready for you.</strong> The phone assessment and the benefits check are what let us hold a bed, complete the provider review, and meet you at the door instead of leaving you waiting at it.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  /* Unlayered, so it beats the global h3 scale. See the frontmatter note. */
+  .step-title {
+    font-size: 19px;
+    line-height: 25px;
+    letter-spacing: 0;
+  }
+</style>

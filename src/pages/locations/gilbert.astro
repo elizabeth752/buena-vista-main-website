@@ -1,0 +1,109 @@
+---
+/* -----------------------------------------------------------------------------
+   Serving Gilbert — SERVICE-AREA page, not a location page.
+
+   Gilbert shares a border with Chandler, so it is the nearest town we serve. Proximity raises a real worry worth answering: running into somebody you know. Confidentiality is the differentiating angle here.
+
+   ⚠ NOT A LOCATION PAGE. There is no Gilbert facility. This page carries NO
+   LocalBusiness schema and NO Gilbert NAP, and the hero states plainly that
+   the single building is in Chandler. A fake location page risks a Google
+   penalty and, worse, sends someone in crisis to an address that does not
+   exist. Keep all three guardrails.
+
+   ⚠ NO INVENTED DRIVE TIMES. Naming a freeway or a surface street is a fact.
+   A figure in minutes is not one anybody has verified against traffic.
+----------------------------------------------------------------------------- */
+import Layout from '../../layouts/Layout.astro';
+import TopBar from '../../components/TopBar.astro';
+import Nav from '../../components/Nav.astro';
+
+import ServiceAreaHero from '../../components/servicearea/ServiceAreaHero.astro';
+import ServiceAreaBody from '../../components/servicearea/ServiceAreaBody.astro';
+
+import Testimonials from '../../components/Testimonials.astro';
+import VerifySection from '../../components/VerifySection.astro';
+import AdmissionsPath from '../../components/AdmissionsPath.astro';
+import FAQ from '../../components/FAQ.astro';
+import FinalCTA from '../../components/FinalCTA.astro';
+
+const title = "Drug and Alcohol Rehab Serving Gilbert, Arizona | Buena Vista";
+const description = "Medical detox and residential treatment serving Gilbert from our Chandler, AZ facility, a few minutes away. Confidential, AHCCCS accepted, open 24 hours. Call (888) 362-5576.";
+
+const points = [
+      { text: "The closest town we serve, sharing a border with Chandler", d: "M15 10.5a3 3 0 11-6 0 3 3 0 016 0z M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" },
+      { text: "Medical detox and residential treatment, open 24 hours", d: "M21 8.25H3m18 0a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 8.25m18 0v10.5A2.25 2.25 0 0118.75 21H5.25A2.25 2.25 0 013 18.75V8.25M12 11.25v6m3-3H9" },
+      { text: "Confidential by law, whoever you might run into", d: "M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" },
+      { text: "We can often arrange a ride to bring you in", d: "M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" },
+      { text: "AHCCCS plans and most major commercial and private carriers", d: "M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" },
+];
+
+const routes = [
+  { h: "West Gilbert", p: "Straight across on Warner, Ray or Chandler Boulevard. You are almost certainly closer to us than to anywhere else offering this level of care." },
+  { h: "Central Gilbert and the Heritage District", p: "Down Gilbert Road and west, or the 202 across if the surface streets are busy." },
+  { h: "South Gilbert and Val Vista", p: "South and west on Ocotillo or Chandler Heights, then over to Arizona Avenue." },
+  { h: "No car at all", p: "Say so on the call. Transport within our local service area is something we can often arrange, and Gilbert is well inside it." },
+];
+
+const why = [
+  { h: "Running into someone you know", p: "The most common worry when treatment is this close to home. Your care is confidential under federal law: we cannot confirm you are here, or share anything about it, without your written permission. That protection does not weaken because you live nearby." },
+  { h: "Being close to work and family", p: "Close enough that a partner can visit on an ordinary evening, and close enough that the aftercare plan is made of places you can actually get to once you leave." },
+  { h: "Getting in quickly", p: "Same-day admission is possible when a bed is open, and from Gilbert there is essentially no travel to arrange. The assessment and the coverage check happen on one call." },
+];
+
+const faqs = [
+  { q: "Do you have a facility in Gilbert?", a: "No. Buena Vista operates one facility, at 3033 S Arizona Ave in Chandler. Gilbert borders Chandler, so for most of the town we are the nearest inpatient detox and residential program rather than a distant option, and a second building a few minutes away would serve nobody." },
+  { q: "Is treatment confidential if I live locally?", a: "Yes, and this is the question people from Gilbert ask most. As a healthcare provider we are bound by federal privacy law, including the additional confidentiality protections that apply specifically to substance use treatment. We cannot share information about your care, or even confirm that you are here, without your written permission. Living ten minutes away does not change that." },
+  { q: "What if I see someone I know inside?", a: "It happens, and it is less awkward than people imagine, because everybody in the building is there for the same reason and under the same confidentiality. Nobody is permitted to discuss who they saw. If it genuinely worries you, raise it during your phone assessment and the team will talk it through with you honestly." },
+  { q: "How long does it take to get there from Gilbert?", a: "Minutes rather than a drive worth planning. Depending on where in Gilbert you are, it is Warner, Ray, Chandler Boulevard or Ocotillo heading west, or the Loop 202. We will not quote a figure in minutes, because traffic makes that unreliable, but this is the shortest journey of anywhere we serve." },
+  { q: "Does AHCCCS cover this if I live in Gilbert?", a: "Coverage follows your plan rather than your address. We work with AHCCCS plans and with most major commercial and private carriers, and we check your specific plan while you are on the phone, at no cost and with nothing owed either way." },
+];
+
+// FAQPage only — deliberately no LocalBusiness/MedicalClinic schema, because
+// there is no Gilbert facility to describe.
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(f => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+---
+<Layout title={title} description={description}>
+  <TopBar />
+  <Nav />
+
+  <ServiceAreaHero
+    city="Gilbert"
+    title="Treatment for Gilbert, the next town over."
+    points={points}
+    disclosure="Buena Vista is one facility, at 3033 S Arizona Ave in Chandler. There is no separate Gilbert building. Gilbert borders Chandler, so for most people we are the nearest inpatient option there is."
+    image="/Asset/stock%20photo/Desktop%20Dimensions/Facility/Private%20conversation%20corner%20with%20upholstered%20seating%20and%20accent%20wall.webp"
+    alt="A quiet corner at Buena Vista in Chandler, with two armchairs facing each other beside a window"
+    caption="Somewhere private, a few minutes from Gilbert."
+  />
+
+  <ServiceAreaBody
+    city="Gilbert"
+    routesTitle="Coming over from Gilbert"
+    routesIntro="Gilbert and Chandler run into each other, so this is the shortest journey of anywhere we serve. For most of Gilbert it is a few minutes on surface streets."
+    routes={routes}
+    whyTitle="What people from Gilbert tend to ask about"
+    why={why}
+  />
+
+  <VerifySection heading="Does your insurance cover treatment from Gilbert?" />
+  <Testimonials />
+  <AdmissionsPath
+    heading="How to start treatment from Gilbert"
+    bg="bg-white"
+    ring="ring-white"
+    noteBg="bg-navy-deep"
+  />
+  <FAQ faqs={faqs} eyebrow="Straight answers" heading="Questions from Gilbert" bg="bg-cream" />
+
+  <FinalCTA />
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
+</Layout>

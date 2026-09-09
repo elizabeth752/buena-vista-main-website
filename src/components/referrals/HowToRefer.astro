@@ -1,0 +1,49 @@
+---
+const steps = [
+  { n: '01', h: 'Call the admissions line', tag: 'Any hour', p: 'Say you are calling as a referring professional and you will be routed straight to someone who can give you bed status and start a check.' },
+  { n: '02', h: 'Send what you have', tag: '2 minutes', p: 'Name, date of birth, insurance plan and member ID, substance and last use, current medications, and anything relevant clinically. A discharge summary if you have one.' },
+  { n: '03', h: 'We verify and come back to you', tag: 'Same call where possible', p: 'Benefits are checked on the spot. Where a clinical review is needed — a maintenance medication, a complex medical history — we will tell you what the timeline looks like.' },
+  { n: '04', h: 'We coordinate the handover', tag: 'Same day when a bed is open', p: 'Timing, transport and what your client should bring. Airport pickup is available for anyone flying in.' },
+];
+---
+<section id="how" class="bg-sage-tint py-[70px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mb-12">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+        <span class="w-6 h-px bg-gold inline-block"></span>
+        Making a referral
+      </p>
+      <h2 class="font-display text-charcoal mb-5">How it works from your side</h2>
+      <p class="font-body text-charcoal text-[18px] leading-[30px]">
+        No portal, no form to chase, no waiting on a callback that decides your afternoon.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+      {steps.map(s => (
+        <div class="bg-white rounded-xl p-7 border border-cream-soft">
+          <p class="font-display text-gold text-[32px] leading-none mb-4">{s.n}</p>
+          <h3 class="font-display text-[21px] leading-[27px] text-navy mb-2">{s.h}</h3>
+          <span class="inline-block font-body text-xs font-bold uppercase tracking-wide text-gold bg-gold/10 rounded-full px-3 py-1.5 mb-4">{s.tag}</span>
+          <p class="font-body text-charcoal text-[16px] leading-[26px]">{s.p}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="bg-white rounded-xl p-7 border border-cream-soft grid md:grid-cols-3 gap-6">
+      <div>
+        <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-2">Admissions</p>
+        <a href="tel:8883625576" class="font-body font-semibold text-charcoal text-[18px] tel-number hover:text-teal transition-colors">(888) 362-5576</a>
+        <p class="font-body text-muted text-[15px] leading-[24px] mt-1">24 hours, including holidays</p>
+      </div>
+      <div>
+        <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-2">Referral email</p>
+        <a href="mailto:admissions@buena.health" class="font-body font-semibold text-charcoal text-[17px] break-words hover:text-teal transition-colors">admissions@buena.health</a>
+      </div>
+      <div>
+        <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-2">Facility</p>
+        <p class="font-body text-charcoal text-[16px] leading-[26px]">3033 S Arizona Ave<br />Chandler, AZ 85286</p>
+      </div>
+    </div>
+  </div>
+</section>

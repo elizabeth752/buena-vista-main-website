@@ -1,0 +1,59 @@
+---
+import RevealCards from '../RevealCards.astro';
+/* Group therapy is the single most-dreaded part of treatment and one of the
+   highest-intent informational searches around it ("do you have to talk in
+   group therapy"). This section answers it honestly rather than reassuring
+   vaguely.
+
+   ALIGNMENT: every title is written to hold two lines in a two-column card and
+   every body is the same length, so the four cards line up. */
+const truths = [
+  { h: 'You do not have to speak on day one', p: 'Sitting there saying nothing is a completely normal first group, and nobody will find it remarkable. Most people listen for a few sessions first.' },
+  { h: 'Everyone arrived dreading it too', p: 'The room is not full of people who find this easy. It is full of people who were where you are a few weeks ago, which is exactly why it works.' },
+  { h: 'It is not a confession', p: 'Nobody has to produce their worst story on demand. Groups are built around what is happening now and what to do about it, not your history.' },
+  { h: 'Twice a day sounds like a lot', p: 'It does, and for a few days it feels like it. Then it gives the day a shape, and most people would rather be in the room than in their own head.' },
+];
+---
+<section id="group-fear" class="bg-sage-tint py-[70px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-16 items-start">
+      <div class="lg:sticky lg:top-24">
+        <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+          <span class="w-6 h-px bg-gold inline-block"></span>
+          The bit everyone dreads
+        </p>
+        <h2 class="font-display text-charcoal mb-6">"Do I have to talk in group?"</h2>
+        <div class="space-y-5 font-body text-charcoal text-[17px] leading-[29px]">
+          <p>
+            It is the most common thing people are quietly worried about, and it puts more people off treatment than the detox does. So, plainly: no, not straight away, and not before you are ready.
+          </p>
+          <p>
+            <strong class="font-bold">What tends to happen is more ordinary than the fear.</strong> You sit in a room. Somebody describes something you recognize. At some point you say so out loud, and it turns out to be a great deal less frightening than a month of rehearsing it in your head.
+          </p>
+        </div>
+        <div class="mt-8">
+          <a href="tel:8883625576" class="bg-teal hover:bg-teal-dark text-white font-bold px-7 py-3.5 rounded-lg transition-colors font-body tracking-wide inline-block">
+            Ask us what it is like
+          </a>
+        </div>
+      </div>
+      <RevealCards class="grid sm:grid-cols-2 gap-5 items-stretch">
+        {truths.map(t => (
+          <div class="reveal-card bg-white rounded-xl p-7 border border-cream-soft h-full">
+            <h3 class="fear-title font-display text-navy mb-3">{t.h}</h3>
+            <p class="font-body text-charcoal text-[16px] leading-[26px]">{t.p}</p>
+          </div>
+        ))}
+      </RevealCards>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Unlayered, so these beat the global h3 scale. Two lines held for every
+     title so the body copy starts level across the four cards. */
+  .fear-title { font-size: 20px; line-height: 26px; letter-spacing: 0; min-height: 52px; }
+
+
+</style>
+

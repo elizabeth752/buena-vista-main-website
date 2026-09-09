@@ -1,0 +1,59 @@
+---
+/* Every item corroborated by admissions on recorded calls:
+     "before she leaves residential, she does have a case manager... they can
+      get her all set up with getting a primary care provider, getting a
+      psychiatrist, getting a therapist"
+     "the case manager will help me find somewhere to go to afterwards"
+     "the case manager should be able to set her up with medical transport at
+      discharge"
+     "you work with a case manager to see what your aftercare program is gonna
+      look like"
+
+   ⚠ Do NOT add the wiki's alumni app, alumni events or reunions here — alumni
+   appears in 2 calls and none of those services is corroborated.
+
+   ALIGNMENT: every title holds one line at the pinned size and every body is
+   written to the same length, so the six cards line up. */
+const arranged = [
+  { h: 'A therapist to continue with', p: 'Ongoing therapy set up before you leave, so the week after discharge has an appointment in it rather than a gap where one should be.' },
+  { h: 'Psychiatric care outside', p: 'We do not prescribe psychiatric medication here, so where that is part of your picture your case manager arranges it on the outside.' },
+  { h: 'A primary care provider', p: 'Unglamorous and frequently missing. Many people arrive without one, and leaving with one is quietly among the more useful things here.' },
+  { h: 'Somewhere safe to live', p: 'If home is not somewhere you can stay sober, that gets worked on rather than hoped about, including referrals to sober living houses.' },
+  { h: 'Your journey home', p: 'Transport at discharge is arranged rather than assumed, including the cases where a health plan benefit will cover the cost of it.' },
+  { h: 'Meetings and a sponsor', p: 'If AA is going to be part of this, the habit is formed before you leave. Meetings run here nightly and your sponsor can visit during your stay.' },
+];
+---
+<section id="case-manager" class="bg-sage-tint py-[70px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mb-12">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+        <span class="w-6 h-px bg-gold inline-block"></span>
+        Your case manager
+      </p>
+      <h2 class="font-display text-charcoal mb-5">One person whose whole job is what happens next</h2>
+      <p class="font-body text-charcoal text-[18px] leading-[30px]">
+        You are assigned one in detox and again in residential. They ask what you want to do rather than handing you a plan, and then they go and arrange it.
+      </p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+      {arranged.map(a => (
+        <div class="bg-white rounded-xl p-7 border border-cream-soft border-t-4 border-t-gold h-full">
+          <h3 class="cm-title font-display text-navy mb-3">{a.h}</h3>
+          <p class="font-body text-charcoal text-[16px] leading-[26px]">{a.p}</p>
+        </div>
+      ))}
+    </div>
+    <div class="mt-10 border-l-2 border-gold pl-6 max-w-3xl">
+      <p class="font-body text-charcoal text-[17px] leading-[29px]">
+        <strong class="font-bold">If you are choosing between programs, ask each of them this.</strong> Not what their success rate is, because nobody can substantiate that, but who plans your discharge, when they start, and what is actually booked before you leave. The answers vary far more than the brochures do.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  /* Unlayered, so it beats the global h3 scale. Every title holds one line at
+     this size, which is what keeps the three columns level. */
+  .cm-title { font-size: 21px; line-height: 27px; letter-spacing: 0; }
+</style>

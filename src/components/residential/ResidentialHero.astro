@@ -1,48 +1,70 @@
 ---
 import Horizon from '../Horizon.astro';
 
+/* Hero standard (see the detox page): H1 carries the keyword, the emotional
+   line sits directly above the bullets where eyes land, no subtitle paragraph,
+   and every bullet gets its own icon.
+
+   "Room to breathe, and room to heal" was the old H1 and Elizabeth asked to
+   keep the line — it is the promise line now. */
 const reassurances = [
-  "A private room with your own bathroom — you won't share",
-  'Group therapy twice daily, plus one-on-one sessions',
-  'Catered meals, not cafeteria trays',
-  'Detox and residential under one roof — no second facility',
+  {
+    text: 'Your own room and your own bathroom, never shared',
+    // home
+    d: 'M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75',
+  },
+  {
+    text: 'Group therapy twice a day, plus your own therapist',
+    // users
+    d: 'M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z',
+  },
+  {
+    text: 'Catered meals every day, not cafeteria trays',
+    // open book / plate
+    d: 'M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25',
+  },
+  {
+    text: 'Detox and residential in one building, with one team',
+    // building
+    d: 'M21 8.25H3m18 0a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 8.25m18 0v10.5A2.25 2.25 0 0118.75 21H5.25A2.25 2.25 0 013 18.75V8.25M12 11.25v6m3-3H9',
+  },
+  {
+    text: 'A real person answers, and the assessment takes 15 minutes',
+    // phone
+    d: 'M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z',
+  },
 ];
 ---
 <section id="hero" class="bg-cream">
   <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-[60px] lg:py-[80px]">
     <div class="grid lg:grid-cols-[1fr_minmax(0,500px)] gap-12 lg:gap-16 items-center">
 
-      <!-- Left: Copy -->
       <div>
         <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-5 flex items-center gap-2">
           <span class="w-6 h-px bg-gold inline-block"></span>
-          Residential treatment · Chandler &amp; Tucson, Arizona
+          Inpatient residential rehab
         </p>
 
         <h1 class="font-display text-navy mb-6">
-          Room to breathe, and room to heal.
+          Residential Treatment in Chandler, Arizona
         </h1>
 
-        <p class="font-body text-charcoal text-[20px] leading-[33px] max-w-xl mb-8">
-          Thirty days to step out of everything pulling at you and do the real work of recovery — in your own room, with staff who have walked this road themselves.
+        <p class="font-display text-navy text-[26px] leading-[34px] md:text-[30px] md:leading-[39px] border-l-[3px] border-gold pl-5 mb-8 max-w-xl">
+          Room to breathe, and room to heal.
         </p>
 
-        <ul class="space-y-3 mb-9">
+        <ul class="space-y-4 mb-9">
           {reassurances.map(item => (
-            <li class="flex items-start gap-3 font-body text-charcoal text-[17px] leading-[29px]">
-              <svg class="w-5 h-5 text-teal mt-1 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
-              </svg>
-              {item}
+            <li class="flex items-start gap-3.5 font-body text-charcoal text-[17px] leading-[29px]">
+              <span class="w-9 h-9 rounded-full bg-teal/10 flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-[19px] h-[19px] text-teal" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d={item.d}/>
+                </svg>
+              </span>
+              <span>{item.text}</span>
             </li>
           ))}
         </ul>
-
-        <div class="border-l-2 border-gold pl-5 mb-9 max-w-xl">
-          <p class="font-body text-charcoal text-[16px] leading-[26px]">
-            <strong class="font-bold">When you call, a real person answers.</strong> A short assessment — about 10 to 15 minutes — and we'll check your coverage while you're still on the phone. When a bed is open and you're approved, admission can often happen the same day.
-          </p>
-        </div>
 
         <div class="flex flex-col sm:flex-row gap-4">
           <a
@@ -63,20 +85,19 @@ const reassurances = [
         </div>
       </div>
 
-      <!-- Right: the private room -->
       <div>
         <div class="overflow-hidden rounded-t-[160px] rounded-b-xl shadow-xl">
           <img
-            src="/Asset/stock%20photo/Desktop%20Dimensions/Facility/Private%20bedroom%20with%20upholstered%20bed,%20reading%20chair,%20and%20large%20window.png"
-            alt="A private bedroom at Buena Vista — upholstered bed, reading chair, and a large window with natural light"
+            src="/Asset/stock%20photo/Desktop%20Dimensions/Facility/Residential%20living%20room%20with%20lounge%20seating,%20coffee%20table,%20and%20open%20kitchen%20view.webp"
+            alt="The residential living area at Buena Vista in Chandler, with lounge seating, a coffee table, and an open kitchen beyond"
             class="w-full object-cover aspect-[4/5]"
             fetchpriority="high"
             decoding="async"
-          />
+          width="1600" height="966" />
         </div>
         <Horizon variant="rule" class="mt-5" />
         <p class="font-body text-muted text-[15px] leading-[24px] mt-3">
-          Your own room, your own bathroom. You won't share.
+          Somewhere to actually sit and breathe between sessions, rather than a corridor and a day room.
         </p>
       </div>
 

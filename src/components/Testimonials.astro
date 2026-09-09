@@ -38,21 +38,28 @@ const reviews = [
   },
 ];
 ---
-<section class="bg-sand py-[50px]">
+<section id="reviews" class="bg-cream py-[50px]">
   <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
 
-    <!-- Header -->
+    {/* Header. Google branding throughout, because these are Google reviews —
+         real people, real names. No aggregate rating or review count is shown:
+         those must be pulled from the Google Place ID rather than typed, and we
+         do not have it yet. */}
     <div class="mb-8 max-w-3xl">
       <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
         <span class="w-6 h-px bg-gold inline-block"></span>
-        Patient Stories
+        Reviews
       </p>
-      <h2 class="font-display text-charcoal mb-4">
+      <h2 class="font-display text-charcoal mb-5">
         Real stories. Real recovery.
       </h2>
+      <div class="bg-white rounded-lg px-4 py-2.5 inline-flex items-center gap-3 border border-cream-soft shadow-sm">
+        <img src="/Asset/Accreditations/Google-Reviews.svg" alt="Google Reviews" class="h-6 max-w-[92px] object-contain" loading="lazy" decoding="async" />
+        <span class="text-[#FBBC05] text-[15px] tracking-tight" aria-label="Five star reviews">★★★★★</span>
+      </div>
     </div>
 
-    <!-- Mobile: carousel (1.2 cards visible) · sm+: mosaic -->
+    {/* Mobile: carousel (1.2 cards visible) · sm+: mosaic */}
     <div
       id="reviews-scroll"
       class="no-scrollbar flex overflow-x-auto snap-x snap-mandatory gap-4 sm:block sm:columns-2 lg:columns-3 sm:gap-5 sm:overflow-visible"
@@ -61,20 +68,31 @@ const reviews = [
       {reviews.map(r => (
         <div class="shrink-0 w-[83%] snap-start sm:w-auto sm:shrink sm:snap-align-none sm:break-inside-avoid sm:mb-5 bg-white rounded-xl p-5 shadow-sm border border-cream-soft">
 
-          <!-- Photo + name ABOVE review text -->
+          {/* Photo + name ABOVE review text */}
           <div class="flex items-center gap-3 mb-3 pb-3 border-b border-cream-soft">
             <img
               src={r.photo}
               alt={r.name}
               class="w-9 h-9 rounded-full object-cover flex-shrink-0"
-            />
+            loading="lazy" decoding="async" />
             <div class="flex-1 min-w-0">
               <p class="font-body font-bold text-charcoal text-[16px] leading-tight">{r.name}</p>
-              <div class="flex text-[#FCD504] text-sm mt-0.5">{"★".repeat(r.stars)}</div>
+              <div class="flex items-center gap-2 mt-0.5">
+                <span class="text-[#FCD504] text-sm" aria-label={`${r.stars} star review`}>{"★".repeat(r.stars)}</span>
+                <span class="font-body text-muted text-[12px]">on Google</span>
+              </div>
             </div>
+            {/* Google 'G' on every card, so the reviews read as third-party
+                 rather than as marketing copy we wrote about ourselves. */}
+            <svg class="w-5 h-5 shrink-0 opacity-90" viewBox="0 0 48 48" aria-hidden="true">
+              <path fill="#4285F4" d="M45.1 24.5c0-1.6-.1-2.8-.4-4H24v7.3h12.1c-.2 2-1.6 5-4.5 7l-.1.3 6.5 5 .5.1c4.1-3.8 6.6-9.4 6.6-15.7"/>
+              <path fill="#34A853" d="M24 46c5.9 0 10.9-2 14.5-5.3l-6.9-5.4c-1.8 1.3-4.3 2.2-7.6 2.2-5.8 0-10.7-3.8-12.5-9.700000000000001l-.3.1-6.7 5.2-.1.2C7.9 40.9 15.4 46 24 46"/>
+              <path fill="#FBBC05" d="M11.5 27.8c-.5-1.4-.8-2.9-.8-4.5s.3-3.1.7-4.5v-.3l-6.8-5.3-.2.1C2.9 16.5 2 20.1 2 23.9s.9 7.4 2.4 10.6z"/>
+              <path fill="#EA4335" d="M24 9.9c4.1 0 6.9 1.8 8.5 3.3l6.2-6C34.9 3.7 29.9 1.5 24 1.5 15.4 1.5 7.9 6.6 4.4 13.9l7 5.4C13.3 13.7 18.2 9.9 24 9.9"/>
+            </svg>
           </div>
 
-          <!-- Review text: 4 lines visible, rest scrolls -->
+          {/* Review text: 4 lines visible, rest scrolls */}
           <div class="max-h-[132px] overflow-y-auto pr-1">
             <p class="font-body text-charcoal text-[16px] leading-[26px]">"{r.text}"</p>
           </div>
@@ -84,10 +102,10 @@ const reviews = [
     </div>
 
     <p class="font-body text-muted text-[13px] leading-[20px] mt-8 max-w-3xl">
-      Reviews are published with written consent and lightly condensed for length; wording is unchanged. These are individual experiences and are not a guarantee of any particular outcome. Reviewers were not compensated.
+      Reviews are published from Google with written consent and lightly condensed for length; wording is unchanged. These are individual experiences and are not a guarantee of any particular outcome. Reviewers were not compensated.
     </p>
 
-    <!-- Mobile carousel arrows -->
+    {/* Mobile carousel arrows */}
     <div class="flex justify-center items-center gap-4 mt-6 sm:hidden">
       <button
         id="reviews-prev"

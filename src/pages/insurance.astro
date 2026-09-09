@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import TopBar from '../components/TopBar.astro';
 import Nav from '../components/Nav.astro';
 
-import Insurance from '../components/Insurance.astro';
+import VerifySection from '../components/VerifySection.astro';
 import FacilityShowcase from '../components/FacilityShowcase.astro';
 import Testimonials from '../components/Testimonials.astro';
 import FAQ from '../components/FAQ.astro';
@@ -13,8 +13,8 @@ import InsuranceHero from '../components/insurance/InsuranceHero.astro';
 import HowVerifyWorks from '../components/insurance/HowVerifyWorks.astro';
 import CoverageOptions from '../components/insurance/CoverageOptions.astro';
 
-const title = 'Verify Your Insurance for Rehab in Arizona | Buena Vista Health & Recovery';
-const description = "Wondering if your insurance covers treatment? Verify your benefits in minutes — free, confidential, and with no obligation. Buena Vista accepts most major insurance plans. Call today.";
+const title = 'Verify Your Insurance for Rehab in Arizona | Buena Vista';
+const description = "Does your insurance cover rehab in Arizona? Verify your benefits in minutes, free and with no obligation. Most major plans and AHCCCS accepted.";
 
 // No plan is named and no coverage is promised anywhere in these answers.
 // Network status changes month to month, so everything routes to verification.
@@ -80,16 +80,11 @@ const schema = {
   <InsuranceHero />
   <HowVerifyWorks />
 
-  <!-- Carrier logos + the generic acceptance line -->
-  <Insurance
-    bg="bg-sand"
-    heading="We accept most major insurance plans"
-    intro="Rather than publish a list that goes out of date, we check your specific plan for you — free, in a few minutes, with no obligation."
-  />
+  <VerifySection heading="The plans we work with, and how to check yours" />
 
   <CoverageOptions />
 
-  <!-- BREATHER -->
+  {/* BREATHER */}
   <FacilityShowcase />
 
   <Testimonials />
@@ -97,7 +92,7 @@ const schema = {
   <FAQ
     faqs={faqs}
     eyebrow="Insurance FAQ"
-    heading="What people ask us about paying for treatment"
+    heading="Questions about paying for treatment"
     intro="Money is the reason people most often talk themselves out of getting help. These are the honest answers."
   />
 

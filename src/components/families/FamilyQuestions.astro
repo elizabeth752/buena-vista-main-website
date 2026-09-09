@@ -1,0 +1,39 @@
+---
+import FAQ from '../FAQ.astro';
+const faqs = [
+  {
+    q: 'Can I call on behalf of someone else?',
+    a: "Yes, and a great many people do. You can ask anything you like about the program, the timing and the cost. There are limits on what we can share back about an adult who is already in our care — that is health privacy law rather than a house rule — but nothing stops you asking questions or starting the process.",
+  },
+  {
+    q: 'How quickly could they come in?',
+    a: "When a bed is open and coverage checks out, admission can often happen the same day. Beds move, so the honest answer changes by the week — call and we will tell you what today actually looks like.",
+  },
+  {
+    q: 'Can you find out what their insurance covers?',
+    a: "Usually yes. A name, a date of birth and the plan on their card is normally enough for us to run a check while you are on the phone. It costs nothing and commits nobody to anything, and it means you can raise the subject already knowing the answer.",
+  },
+  {
+    q: 'Will you call them instead of me?',
+    a: "If that would help, yes. Give us a number and a sensible time to try, and someone who has had this conversation many times will make the approach. Coming from outside the family, it sometimes goes better.",
+  },
+  {
+    q: 'They are in hospital right now. What should I do?',
+    a: "Call us while they are still there. Discharge windows tend to be short. Tell us the timing and we will work to it — we can also speak to a case manager or discharge planner directly.",
+  },
+  {
+    q: 'Can I visit, and can we stay in touch?',
+    a: "Yes. There are set arrangements for visiting and for phone and technology access, designed so people can stay connected with family while still getting the benefit of being away from everything for a while. Ask us for the current details when you call.",
+  },
+  {
+    q: 'Is there anything for me in this?',
+    a: "There is. Family therapy is part of what we offer, and family follow-ups continue after discharge. Supporting someone through this is genuinely hard, and you are allowed to need something for yourself as well.",
+  },
+];
+---
+<FAQ
+  faqs={faqs}
+  eyebrow="Straight answers"
+  heading="Questions families have"
+  bg="bg-cream"
+/>

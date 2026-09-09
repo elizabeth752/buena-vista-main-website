@@ -1,0 +1,119 @@
+---
+import Horizon from '../Horizon.astro';
+
+/* Hero standard: H1 carries the keyword, the emotional line sits above the
+   bullets, no subtitle paragraph, every bullet gets its own icon.
+
+   NON-NEGOTIABLE ON THIS PAGE: nothing here may read as a claim that we run an
+   IOP. Six admissions agents say on the record in the call export that we do
+   not. The disclosure card sits directly under the promise line, above the
+   fold, and the bullets are limited to things we can actually do today. */
+const canDoToday = [
+  {
+    text: 'We work out which level of care actually fits, on the phone',
+    // chat
+    d: 'M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z',
+  },
+  {
+    text: 'We check your outpatient benefits while you are on the line',
+    // shield-check
+    d: 'M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z',
+  },
+  {
+    text: 'Medical detox and residential are open in Chandler today',
+    // building
+    d: 'M21 8.25H3m18 0a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 8.25m18 0v10.5A2.25 2.25 0 0118.75 21H5.25A2.25 2.25 0 013 18.75V8.25M12 11.25v6m3-3H9',
+  },
+  {
+    text: 'If an IOP is the right fit, we find one that takes your plan',
+    // map pin
+    d: 'M15 10.5a3 3 0 11-6 0 3 3 0 016 0z M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z',
+  },
+  {
+    text: 'Everyone who calls leaves with somewhere to go',
+    // arrow
+    d: 'M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3',
+  },
+];
+---
+<section id="hero" class="bg-cream">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-[60px] lg:py-[80px]">
+    <div class="grid lg:grid-cols-[1fr_minmax(0,460px)] gap-12 lg:gap-16 items-center">
+
+      <div>
+        <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-5 flex items-center gap-2">
+          <span class="w-6 h-px bg-gold inline-block"></span>
+          Intensive outpatient
+        </p>
+
+        <h1 class="font-display text-navy mb-6">
+          Intensive Outpatient (IOP) in Chandler, Arizona
+        </h1>
+
+        <p class="font-display text-navy text-[26px] leading-[34px] md:text-[30px] md:leading-[39px] border-l-[3px] border-gold pl-5 mb-8 max-w-xl">
+          Treatment that fits around a working life.
+        </p>
+
+        {/* Straight about where our IOP stands, led with what we can do. Callers
+            ask for IOP constantly and should leave feeling helped, not turned
+            away. This card must stay above the fold. */}
+        <div class="bg-white border border-cream-soft border-t-4 border-t-gold rounded-xl p-6 mb-9 max-w-xl shadow-sm">
+          <p class="font-body font-semibold text-charcoal text-[17px] leading-[27px] mb-2">
+            Our Chandler IOP is on the way, and we can help you today.
+          </p>
+          <p class="font-body text-charcoal text-[16px] leading-[26px]">
+            We reopened Chandler with medical detox and residential treatment, and our own intensive outpatient program is being built now. In the meantime we will help you find an IOP that takes your insurance.
+          </p>
+        </div>
+
+        <ul class="space-y-4 mb-9">
+          {canDoToday.map(item => (
+            <li class="flex items-start gap-3.5 font-body text-charcoal text-[17px] leading-[29px]">
+              <span class="w-9 h-9 rounded-full bg-teal/10 flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-[19px] h-[19px] text-teal" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d={item.d}/>
+                </svg>
+              </span>
+              <span>{item.text}</span>
+            </li>
+          ))}
+        </ul>
+
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a
+            href="tel:8883625576"
+            class="inline-flex items-center justify-center gap-2 bg-teal hover:bg-teal-dark text-white font-semibold h-14 px-8 rounded-lg transition-colors font-body"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+            </svg>
+            Help me find an IOP
+          </a>
+          <a
+            href="#verify"
+            class="inline-flex items-center justify-center border-2 border-navy text-navy hover:bg-navy hover:text-white font-semibold h-14 px-8 rounded-lg transition-colors font-body"
+          >
+            Check my insurance
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <div class="overflow-hidden rounded-t-[160px] rounded-b-xl shadow-xl">
+          <img
+            src="/Asset/stock%20photo/Desktop%20Dimensions/Facility/Covered%20drop-off%20entrance%20with%20tower%20feature%20and%20circular%20driveway.webp"
+            alt="The covered drop-off entrance at Buena Vista in Chandler, with a tower feature and circular driveway"
+            class="w-full object-cover aspect-[4/5]"
+            fetchpriority="high"
+            decoding="async"
+          width="1600" height="966" />
+        </div>
+        <Horizon variant="rule" class="mt-5" />
+        <p class="font-body text-muted text-[15px] leading-[24px] mt-3">
+          Chandler is open for medical detox and residential treatment today.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,109 @@
+---
+/* -----------------------------------------------------------------------------
+   Therapy & clinical approach — ONE consolidated page.
+
+   Deliberately a single page rather than a modality tree. Ten pages on CBT,
+   DBT, EMDR and so on would each rest on 0-12 call mentions, eight of them on
+   no verifiable evidence at all, and would compete with each other for the same
+   thin intent. One page that answers what therapy here actually involves is
+   worth more than ten that do not.
+
+   EVERY FACT HERE IS CORROBORATED by admissions on recorded calls:
+     "private rooms, twice-daily groups, one-on-one therapy, nightly AA"
+     "...group therapy and then one individual therapy session a week"
+     "her sponsor can come any day as long as they're doing step work together"
+     "If you're feeling up to going and sitting in and participating in group,
+      you'll be on the detox side"
+
+   Note the individual-therapy frequency: ONE session a week. An earlier draft
+   implied more. Publishing the real number is both honest and differentiating —
+   most competitors imply daily one-to-one care.
+
+   The group-therapy fear section exists because "do I have to talk in group" is
+   the most common unspoken worry and a high-intent search in its own right.
+
+   DO NOT add named modalities (CBT, EMDR, DBT...) without a named clinical
+   confirmation, and record who confirmed it here when you do.
+----------------------------------------------------------------------------- */
+import Layout from '../../layouts/Layout.astro';
+import TopBar from '../../components/TopBar.astro';
+import Nav from '../../components/Nav.astro';
+
+import HubHero from '../../components/hub/HubHero.astro';
+import TheWeek from '../../components/therapy/TheWeek.astro';
+import TheGroupFear from '../../components/therapy/TheGroupFear.astro';
+import TherapyQuestions from '../../components/therapy/TherapyQuestions.astro';
+
+import Testimonials from '../../components/Testimonials.astro';
+import VerifySection from '../../components/VerifySection.astro';
+import FinalCTA from '../../components/FinalCTA.astro';
+import AdmissionsPath from '../../components/AdmissionsPath.astro';
+
+const title = 'Addiction Therapy in Chandler, AZ | Buena Vista';
+const description =
+  'Group therapy twice a day, a weekly one-to-one with your own therapist, and nightly AA. What therapy in residential treatment looks like. Call (888) 362-5576.';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    ['How much therapy is there each day in rehab?',
+     'At Buena Vista, group therapy runs twice a day, morning and afternoon, with an AA meeting in the evenings, plus a one-to-one session with your own therapist each week.'],
+    ['Do I have to talk in group therapy?',
+     'Not on the first day and not before you are ready. Sitting and listening is a normal way to start, and everyone in the room began the same way.'],
+    ['Is there therapy during detox?',
+     'Groups are available during detox if you feel up to attending, and skipped without comment if you do not. The first days are mostly about physical stabilization.'],
+    ['Can my sponsor visit during treatment?',
+     'Yes, on any day rather than only on visiting days, provided you are doing step work together.'],
+  ].map(([q, a]) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+};
+---
+<Layout title={title} description={description}>
+  <TopBar />
+  <Nav />
+
+  <HubHero
+    eyebrow="Therapy and clinical approach"
+    title="Addiction Therapy in Chandler, Arizona"
+    promise="Two groups a day, one session a week, and a meeting every night."
+    points={[
+      { text: 'Group therapy twice a day, morning and afternoon',
+        d: 'M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z' },
+      { text: 'One private session a week with your own therapist',
+        d: 'M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z' },
+      { text: 'AA meetings here every night, not once a week',
+        d: 'M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582' },
+      { text: 'Your sponsor can come in any day for step work',
+        d: 'M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z' },
+      { text: 'Groups are optional in detox, and expected once you are steady',
+        d: 'M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z' },
+    ]}
+    image="/Asset/stock%20photo/Desktop%20Dimensions/Facility/Shared%20commons%20area%20with%20clustered%20seating,%20dining%20nook,%20and%20residential%20finishes.webp"
+    alt="A commons area at Buena Vista with four armchairs clustered around a low table"
+    caption="Four chairs and a low table. Most of the work happens in a room like this one."
+  />
+
+  <TheWeek />
+  <TheGroupFear />
+  <Testimonials />
+  <VerifySection
+    heading="Does insurance cover therapy in addiction treatment?"
+    bullets={[
+      'Therapy is part of your stay here, not billed as an extra',
+      'We check your benefits while you are on the phone, usually in a few minutes',
+      'It costs nothing, and you owe nothing either way',
+      'Not in network with your plan? We will say so, and help you find who is',
+    ]}
+  />
+
+  <AdmissionsPath heading="How to start treatment at Buena Vista" />
+  <TherapyQuestions />
+
+  <FinalCTA />
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
+</Layout>

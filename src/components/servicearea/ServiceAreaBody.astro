@@ -1,0 +1,69 @@
+---
+/* Shared body for the service-area pages: the journey, then what is worth
+   knowing for that community specifically. Content is passed in per city so
+   these do not read as one template repeated four times. */
+interface Props {
+  city: string;
+  routesEyebrow?: string;
+  routesTitle: string;
+  routesIntro: string;
+  routes: { h: string; p: string }[];
+  whyTitle: string;
+  why: { h: string; p: string }[];
+}
+const { city, routesEyebrow, routesTitle, routesIntro, routes, whyTitle, why } = Astro.props;
+---
+<section id="getting-here" class="bg-white py-[70px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+
+      <div class="lg:sticky lg:top-24">
+        <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+          <span class="w-6 h-px bg-gold inline-block"></span>
+          {routesEyebrow ?? 'Getting here'}
+        </p>
+        <h2 class="font-display text-charcoal mb-6">{routesTitle}</h2>
+        <p class="font-body text-charcoal text-[17px] leading-[29px] mb-8">{routesIntro}</p>
+        <a href="tel:8883625576" class="inline-flex items-center justify-center bg-teal hover:bg-teal-dark text-white font-semibold h-14 px-8 rounded-lg transition-colors font-body">
+          Ask about a ride
+        </a>
+      </div>
+
+      <div class="space-y-6">
+        {routes.map(r => (
+          <div class="border-l-2 border-cream-soft pl-5">
+            <h3 class="sa-sub font-body font-bold text-charcoal mb-1.5">{r.h}</h3>
+            <p class="font-body text-charcoal text-[16px] leading-[26px]">{r.p}</p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="why-here" class="bg-cream py-[70px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mb-12">
+      <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+        <span class="w-6 h-px bg-gold inline-block"></span>
+        Worth knowing
+      </p>
+      <h2 class="font-display text-charcoal">{whyTitle}</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6 items-stretch">
+      {why.map(w => (
+        <div class="bg-white rounded-xl p-7 border border-cream-soft border-t-4 border-t-gold h-full">
+          <h3 class="sa-title font-display text-navy mb-3">{w.h}</h3>
+          <p class="font-body text-charcoal text-[16px] leading-[26px]">{w.p}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Unlayered, so these beat the global h3 scale. */
+  .sa-sub   { font-size: 17px; line-height: 24px; letter-spacing: 0; }
+  .sa-title { font-size: 21px; line-height: 27px; letter-spacing: 0; min-height: 54px; }
+</style>
