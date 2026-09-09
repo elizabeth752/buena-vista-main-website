@@ -4,10 +4,10 @@
    contracts are still being reinstated after the Chandler reopening, and a
    list that goes stale is worse than a live check. */
 const learn = [
-  { n: '01', h: 'Whether we are in network with your plan', p: 'The first and biggest question. We are in network with a range of commercial plans and with Access plans including Banner University Family Care, and we are adding contracts as they land.' },
-  { n: '02', h: 'Which level of care is covered', p: 'Detox, residential, or both. Plans authorise these separately, so knowing which one applies matters more than knowing a single yes or no.' },
-  { n: '03', h: 'Roughly how long', p: 'Authorisations come with a length attached — often around a month for residential, sometimes longer. You will know the shape of it before you arrive.' },
-  { n: '04', h: 'What, if anything, you would pay', p: 'Deductibles and co-insurance vary enormously between policies. We tell you what we can see rather than leaving you to discover it later.' },
+  { n: '01', h: 'Whether we are in network', p: 'The first and biggest question. We are in network with a range of commercial plans and with Access plans including Banner University Family Care, and we are adding contracts as they land.' },
+  { n: '02', h: 'Which level is covered', p: 'Detox, residential, or both. Plans approve these separately, so knowing which one applies matters more than knowing a single yes or no.' },
+  { n: '03', h: 'Roughly how long', p: 'Approvals come with a length attached — often around a month for residential, sometimes longer. You will know the shape of it before you arrive.' },
+  { n: '04', h: 'What you would pay', p: 'Deductibles and co-insurance vary enormously between policies. We tell you what we can see rather than leaving you to discover it later.' },
 ];
 ---
 <section id="learn" class="bg-sage-tint py-[70px]">
@@ -17,17 +17,17 @@ const learn = [
         <span class="w-6 h-px bg-gold inline-block"></span>
         What you get back
       </p>
-      <h2 class="font-display text-charcoal mb-5">Four answers by the end of the call</h2>
+      <h2 class="font-display text-charcoal mb-5">What a benefits check actually tells you</h2>
       <p class="font-body text-charcoal text-[18px] leading-[30px]">
         A benefits check is not a yes-or-no. It is a picture of what your policy will actually do.
       </p>
     </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
       {learn.map(l => (
-        <div class="bg-white rounded-xl p-7 border border-cream-soft">
+        <div class="bg-white rounded-xl p-7 border border-cream-soft border-t-4 border-t-gold h-full">
           <p class="font-display text-gold text-[32px] leading-none mb-4">{l.n}</p>
-          <h3 class="font-display text-[21px] leading-[27px] text-navy mb-3">{l.h}</h3>
+          <h3 class="learn-title font-display text-navy mb-3">{l.h}</h3>
           <p class="font-body text-charcoal text-[16px] leading-[26px]">{l.p}</p>
         </div>
       ))}
@@ -42,3 +42,9 @@ const learn = [
     </div>
   </div>
 </section>
+
+<style>
+  /* Unlayered, so it beats the global h3 scale. A two-line floor keeps the four
+     columns level. */
+  .learn-title { font-size: 21px; line-height: 27px; letter-spacing: 0; min-height: 54px; }
+</style>

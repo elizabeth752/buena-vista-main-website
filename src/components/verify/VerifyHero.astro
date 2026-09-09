@@ -1,16 +1,34 @@
 ---
 import InsuranceForm from '../InsuranceForm.astro';
 
+/* Hero standard: eyebrow, keyword H1, bullets with their own icons, CTA, and
+   the form beside it. No subtitle paragraph and no styled display line. */
 const points = [
-  'Free, and it takes a few minutes',
-  'No commitment attached to finding out',
-  'We tell you exactly what we find, either way',
-  'Someone answers at any hour, including holidays',
+  {
+    text: 'Free, and it takes a few minutes',
+    d: 'M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z',
+  },
+  {
+    text: 'No commitment attached to finding out',
+    d: 'M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z',
+  },
+  {
+    text: 'Confidential, and protected by federal privacy law',
+    d: 'M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z',
+  },
+  {
+    text: 'We tell you exactly what we find, either way',
+    d: 'M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z',
+  },
+  {
+    text: 'Someone answers at any hour, including holidays',
+    d: 'M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z',
+  },
 ];
 ---
 <section id="hero" class="bg-cream">
   <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-[60px] lg:py-[80px]">
-    <div class="grid lg:grid-cols-[1fr_minmax(0,430px)] gap-12 lg:gap-16 items-center">
+    <div class="grid lg:grid-cols-[1fr_minmax(0,430px)] gap-12 lg:gap-16 items-start">
 
       <div>
         <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-5 flex items-center gap-2">
@@ -19,29 +37,21 @@ const points = [
         </p>
 
         <h1 class="font-display text-navy mb-6">
-          Find out what your insurance covers, in minutes.
+          Verify Your Insurance Benefits for Treatment
         </h1>
 
-        <p class="font-body text-charcoal text-[20px] leading-[33px] max-w-xl mb-8">
-          You do not have to decode your own policy before you call. Tell us what plan you have and we will work out what it covers — the level of care, roughly how long, and what if anything you would owe.
-        </p>
-
-        <ul class="space-y-3 mb-9">
+        <ul class="space-y-4 mb-9">
           {points.map(item => (
-            <li class="flex items-start gap-3 font-body text-charcoal text-[17px] leading-[29px]">
-              <svg class="w-5 h-5 text-teal mt-1 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
-              </svg>
-              {item}
+            <li class="flex items-start gap-3.5 font-body text-charcoal text-[17px] leading-[29px]">
+              <span class="w-9 h-9 rounded-full bg-teal/10 flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-[19px] h-[19px] text-teal" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d={item.d}/>
+                </svg>
+              </span>
+              <span>{item.text}</span>
             </li>
           ))}
         </ul>
-
-        <div class="border-l-2 border-gold pl-5 mb-9 max-w-xl">
-          <p class="font-body text-charcoal text-[16px] leading-[26px]">
-            <strong class="font-bold">Checking is not a commitment.</strong> Plenty of this is done for people who are still deciding, or who are asking on someone else's behalf. Knowing the answer makes the decision easier — it does not make it for you.
-          </p>
-        </div>
 
         <div class="flex flex-col sm:flex-row gap-4">
           <a href="tel:8883625576" class="inline-flex items-center justify-center gap-2 bg-teal hover:bg-teal-dark text-white font-semibold h-14 px-8 rounded-lg transition-colors font-body">
@@ -53,7 +63,7 @@ const points = [
         </div>
       </div>
 
-      <InsuranceForm id="verify" />
+      <InsuranceForm id="verify" class="lg:sticky lg:top-24" />
 
     </div>
   </div>

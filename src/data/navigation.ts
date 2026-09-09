@@ -132,7 +132,6 @@ export const mainNav: NavGroup[] = [
         heading: 'For families',
         links: [
           { label: 'Families & loved ones', href: '/for-families/', built: true },
-          { label: 'Visitation, phone & contact', href: '/for-families/staying-in-contact/', built: true },
           { label: "Paying for a loved one's care", href: '/for-families/paying-for-a-loved-ones-treatment/' },
         ],
       },
@@ -153,8 +152,6 @@ export const mainNav: NavGroup[] = [
       {
         heading: 'Practical questions',
         links: [
-          { label: 'Your medications', href: '/admissions/medications-and-prescriptions/', built: true },
-          { label: 'Travel & transportation', href: '/admissions/travel-and-transportation/', built: true },
           { label: 'Accessibility & accommodations', href: '/admissions/accessibility-and-accommodations/' },
           { label: 'Admissions FAQ', href: '/admissions/faq/' },
           { label: 'Professional & hospital referrals', href: '/referrals/', built: true },
