@@ -22,7 +22,7 @@ const { id = 'verify', class: className = '' } = Astro.props;
   <p class="text-charcoal text-[16px] leading-[26px] font-body mb-5">Takes less than a minute. No commitment required.</p>
 
   <form class={`space-y-4 verify-form verify-form-${id}`} data-form-id={id} onsubmit="return false;">
-    <div class="grid grid-cols-2 gap-3 lg:gap-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 lg:gap-4">
       <div>
         <label class="block text-xs font-bold text-charcoal uppercase tracking-wide mb-1.5" for={`${id}-name`}>Your Name</label>
         <input id={`${id}-name`} type="text" placeholder="First and last name" class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm font-body focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal transition-colors" />
@@ -55,7 +55,7 @@ const { id = 'verify', class: className = '' } = Astro.props;
         </select>
       </div>
       <div>
-        <label class="block text-xs font-bold text-charcoal uppercase tracking-wide mb-1.5 whitespace-nowrap" for={`${id}-policy`}>Membership Policy ID</label>
+        <label class="block text-xs font-bold text-charcoal uppercase tracking-wide mb-1.5" for={`${id}-policy`}>Membership Policy ID</label>
         <input id={`${id}-policy`} type="text" placeholder="Policy ID" class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm font-body focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal transition-colors" />
       </div>
     </div>

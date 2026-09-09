@@ -41,6 +41,23 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Nothing may push the page wider than the viewport on a phone.
+
+   Deliberately NOT applied to <svg>: every icon on this site is sized by a
+   Tailwind class, and this rule is unlayered, so `height: auto` here would beat
+   `h-5` and collapse them all. Same trap as the heading scale above.
+
+   Deliberately NOT `body { overflow-x: hidden }` either. That makes the body a
+   scroll container and breaks `position: sticky`, which the nav, the article
+   table of contents and half the two-column sections all depend on. Fix the
+   element that overflows instead. */
+img,
+video,
+iframe {
+  max-width: 100%;
+  height: auto;
+}
+
 body {
   font-family: var(--font-body);
   color: var(--color-charcoal);
@@ -171,7 +188,13 @@ details:not([open]) .faq-minus { display: none; }
   font-size: 17px;
   line-height: 30px;
   color: var(--color-charcoal);
+  overflow-wrap: break-word;
 }
+
+/* Article headings are long and set large; let them break rather than
+   overflow a 320px column. */
+.prose-bv h2,
+.prose-bv h3 { overflow-wrap: break-word; }
 
 .prose-bv ul,
 .prose-bv ol { padding-left: 1.4rem; }

@@ -8,12 +8,12 @@ const visible = mainNav
   .filter(g => g.columns.length && (!HIDE_UNBUILT || g.built));
 ---
 <nav id="main-nav" class="sticky top-0 z-50 bg-white border-b border-cream-soft shadow-sm">
-  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16 md:h-18">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between gap-3 h-16 md:h-18">
 
       <!-- Logo -->
       <a href="/" class="shrink-0">
-        <img src="/Asset/stock%20photo/Logo%20Buena%20Vista.svg" alt="Buena Vista Health & Recovery Centers" class="h-8 md:h-10 w-auto" />
+        <img src="/Asset/stock%20photo/Logo%20Buena%20Vista.svg" alt="Buena Vista Health & Recovery Centers" class="h-7 sm:h-8 md:h-10 w-auto" />
       </a>
 
       <!-- Desktop nav. Each top-level label is a real link to its hub; the panel
@@ -58,12 +58,16 @@ const visible = mainNav
       </ul>
 
       <!-- CTAs -->
-      <div class="flex items-center gap-3">
-        <a href="tel:8883625576" class="flex items-center gap-2 bg-teal hover:bg-teal-dark text-white text-sm font-bold px-5 py-2.5 rounded-lg transition-colors tracking-wide whitespace-nowrap">
-          <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+        <a
+          href="tel:8883625576"
+          aria-label="Call Buena Vista on (888) 362-5576"
+          class="flex items-center justify-center gap-2 bg-teal hover:bg-teal-dark text-white text-sm font-bold rounded-lg transition-colors tracking-wide whitespace-nowrap w-11 h-11 sm:w-auto sm:h-auto sm:px-5 sm:py-2.5"
+        >
+          <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
             <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
           </svg>
-          <span class="tel-number">(888) 362-5576</span>
+          <span class="tel-number hidden sm:inline">(888) 362-5576</span>
         </a>
 
         <!-- Mobile menu trigger. Below lg the site previously had no navigation
