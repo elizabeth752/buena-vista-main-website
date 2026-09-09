@@ -147,8 +147,7 @@ export const mainNav: NavGroup[] = [
         heading: 'Getting started',
         links: [
           { label: 'How admissions works', href: '/admissions/', built: true },
-          { label: 'Current bed availability', href: '/admissions/bed-availability/', built: true },
-          { label: 'How long treatment takes', href: '/admissions/length-of-stay/', built: true },
+          { label: 'How long treatment takes', href: '/admissions/how-long-is-treatment/', built: true },
         ],
       },
       {
