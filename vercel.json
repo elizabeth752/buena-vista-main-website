@@ -1,9 +1,2430 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "trailingSlash": true,
   "redirects": [
     {
-      "source": "/medication-assisted-treatment",
+      "source": "/about-us/",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/about-us/faq/",
+      "destination": "/admissions/",
+      "permanent": true
+    },
+    {
+      "source": "/about-us/our-vision-mission-and-values/",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/about-us/staff/",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/about-us/staff/cindy-sneller/",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/about-us/staff/dr-paul-r-valbuena/",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/about-us/staff/jill-byron/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/about-us/staff/jose-leon/",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/about-us/staff/julie-gable/",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/about-us/staff/katie-noetzel/",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/about-us/staff/luca-miller-bvr-alumni/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/about-us/staff/lynn-santella/",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/about-us/staff/mike-kalesk/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/about-us/staff/roxanne-maloney/",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/about-us/staff/sara-cothern-lcsw/",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/about-us/staff/tj-carlini/",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/about-us/travel-help/",
+      "destination": "/locations/chandler/",
+      "permanent": true
+    },
+    {
+      "source": "/about-us/why-buena-vista/",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/addiction-treatment/",
+      "destination": "/programs/",
+      "permanent": true
+    },
+    {
+      "source": "/addiction-treatment/for-a-loved-one/",
+      "destination": "/for-families/",
+      "permanent": true
+    },
+    {
+      "source": "/addiction-treatment/for-me/",
+      "destination": "/programs/",
+      "permanent": true
+    },
+    {
+      "source": "/addiction-treatment/get-started/",
+      "destination": "/admissions/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/2023/08/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/2024/09/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/2024/10/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/5-common-causes-of-addiction-and-how-to-cope-with-them/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/5-ways-to-support-a-loved-one-in-rehab/",
+      "destination": "/for-families/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9-causes-of-alcohol-addiction-that-make-young-men-need-alcohol-rehab/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/a-story-of-redemption-with-garrett-deetz/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/addiction-recovery-care/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/addictions-and-recovery-relapse-prevention/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/addressing-the-social-needs-of-men-in-recovery/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/aerobic-exercise-and-addiction-recovery/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/alcohol-addiction-personality-traits/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/alcohol-addiction/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/alcohol-detox-alcoholism/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/alcohol-detox-arizona/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/alcohol-detox-program/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/alcohol-detox-treatment/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/alcohol-effects/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/alcohol-withdrawal/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/alumni-program/",
+      "destination": "/programs/aftercare/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/anxiety-and-distress-two-signs-of-opioid-addiction/",
       "destination": "/what-we-treat/opioid-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/anxiety-medications-and-addiction-when-treatment-makes-it-worse/",
+      "destination": "/what-we-treat/anxiety/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/arizona-rehab-campus-in-tucson-finding-treatment-and-the-right-facility/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/art-therapy-and-alcohol-addiction-how-does-it-work/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/attending-an-addiction-treatment-center-why-men-struggle-to-reach-out-for-help/",
+      "destination": "/residential-treatment/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/balancing-pain-management-in-addiction-recovery/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/balancing-the-costs-of-addiction/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/balancing-work-while-in-addiction-recovery/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/behavioral-health-tucson/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/benefits-of-rehab/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/binge-drinking-and-men-where-to-find-a-quality-alcohol-detox-program/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/blog-substance-use-disorders-and-domestic-violence/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/blog/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/breaking-the-cycle-understanding-addiction-beyond-choice/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/buena-vista-playbook-processing-grief-during-recovery/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/buena-vista-playbook-what-are-the-benefits-of-anger-management/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/buena-vista-playbook-what-do-sober-people-do-for-fun/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/buena-vista-recovery-playbook-embracing-the-outdoors-in-recovery-this-spring/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/buena-vista-recovery-providing-inspiration-hope-in-addiction/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/building-healthier-habits-at-buena-vista-recovery/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/building-long-term-solutions-starts-with-alcohol-detox/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/can-a-dui-lead-to-trauma/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/can-health-insurance-pay-for-my-rehab-expenses/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/can-i-manage-addiction-while-still-attending-college/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/can-i-overcome-my-addiction-with-an-outpatient-treatment-program/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/can-i-pursue-love-in-recovery/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/can-i-use-insurance-to-pay-for-drug-and-alcohol-rehab/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/can-learning-yoga-in-xanax-addiction-recovery-improve-your-outcome/",
+      "destination": "/what-we-treat/benzodiazepine-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/can-reconnecting-with-your-emotions-at-iop-arizona-help-you-heal/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/can-you-fail-rehab-what-that-actually-means/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/can-you-overcome-a-meth-addiction/",
+      "destination": "/what-we-treat/stimulant-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/causes-effects-and-overcoming-crystal-meth-addiction/",
+      "destination": "/what-we-treat/stimulant-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/celebrating-valentines-day-in-recovery/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/childhood-trauma-and-addiction/",
+      "destination": "/dual-diagnosis/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/choosing-a-detox-center-does-the-treatment-environment-really-matter/",
+      "destination": "/medical-detox/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/co-occurring-disorders-among-men/",
+      "destination": "/dual-diagnosis/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/co-occurring-disorders-and-substance-abuse/",
+      "destination": "/dual-diagnosis/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/cocaine-detox-the-first-step-to-a-more-secure-life/",
+      "destination": "/what-we-treat/stimulant-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/cocaine-detox-the-start-of-a-new-lifestyle/",
+      "destination": "/what-we-treat/stimulant-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/cocaine-vs-meth-which-is-harder-to-quit/",
+      "destination": "/what-we-treat/stimulant-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/cognitive-behavioral-therapy-exercises/",
+      "destination": "/therapies/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/combating-seasonal-affective-disorder-for-relapse-prevention/",
+      "destination": "/programs/aftercare/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/committing-yourself-to-a-continuum-of-addiction-care/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/common-signs-of-addiction/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/commonly-used-short-acting-opioids-list/",
+      "destination": "/what-we-treat/opioid-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/complications-of-alcohol-withdrawal/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/contingency-nanagement-therapy-effective-addiction-treatment-barriers/",
+      "destination": "/therapies/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/continuing-therapy-after-drug-and-alcohol-treatment/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/coping-skills-for-addiction/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/creating-a-personalized-addiction-treatment-plan/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/creating-effective-boundaries-with-workplace-peers/",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/dependence-on-xanax/",
+      "destination": "/what-we-treat/benzodiazepine-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/detox-in-chandler-same-day-admissions-available/",
+      "destination": "/medical-detox/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/dialectical-behavior-therapy/",
+      "destination": "/therapies/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/dieting-and-healthy-eating-habits-in-addiction-recovery/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/different-types-of-addictions-opiates-and-treatments/",
+      "destination": "/what-we-treat/opioid-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/distinguishing-between-self-care-and-aftercare/",
+      "destination": "/programs/aftercare/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/do-i-have-to-quit-my-job-for-detox-and-recovery/",
+      "destination": "/medical-detox/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/do-i-need-xanax-addiction-treatment/",
+      "destination": "/what-we-treat/benzodiazepine-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/do-parents-know-the-signs-of-opioid-addiction/",
+      "destination": "/what-we-treat/opioid-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/does-age-impact-addiction-and-recovery/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/does-alcoholics-anonymous-actually-work/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/does-my-husband-need-to-seek-an-addiction-treatment-center/",
+      "destination": "/for-families/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/does-your-adult-child-need-medical-detox/",
+      "destination": "/for-families/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/dos-and-donts-to-follow-when-your-loved-one-is-struggling-with-addiction/",
+      "destination": "/for-families/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/drug-addiction-treatment-how-to-stay-away-from-drugs-and-avoid-relapse/",
+      "destination": "/programs/aftercare/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/drug-list-where-detox-is-needed-in-cases-of-addiction/",
+      "destination": "/medical-detox/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/dual-diagnosis-how-to-manage-my-mental-health-and-addiction-treatment/",
+      "destination": "/dual-diagnosis/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/dual-diagnosis-rehab/",
+      "destination": "/dual-diagnosis/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/dual-diagnosis-treatment-arizona/",
+      "destination": "/dual-diagnosis/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/embracing-vulnerability-is-part-of-drug-and-alcohol-treatment/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/facing-cocaine-detox-fears/",
+      "destination": "/what-we-treat/stimulant-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/fear-of-leaving-rehab/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/fentanyl-addiction-signs-why-early-intervention-is-critical/",
+      "destination": "/what-we-treat/opioid-addiction/fentanyl/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/fentanyl-addiction-signs/",
+      "destination": "/what-we-treat/opioid-addiction/fentanyl/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/fentanyl-overdose-why-is-fentanyl-so-dangerous/",
+      "destination": "/what-we-treat/opioid-addiction/fentanyl/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/finding-addiction-treatment-centers-after-a-dui/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/finding-help-from-an-addiction-treatment-center/",
+      "destination": "/residential-treatment/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/finding-hope-what-to-do-after-a-relapse/",
+      "destination": "/programs/aftercare/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/finding-the-courage-to-receive-treatment-at-an-arizona-recovery-center/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/from-the-grave-to-grace-the-burning-bush/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/functional-alcoholism/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/gallery/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/getting-help-at-buena-vista-for-a-dual-diagnosis-as-a-man/",
+      "destination": "/dual-diagnosis/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/glossary/adderall/",
+      "destination": "/what-we-treat/stimulant-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/glossary/addiction/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/glossary/alcohol/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/glossary/ayahuasca/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/glossary/bath-salts/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/glossary/benzodiazepines/",
+      "destination": "/what-we-treat/benzodiazepine-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/glossary/buprenorphine/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/glossary/cocaine/",
+      "destination": "/what-we-treat/stimulant-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/glossary/codeine/",
+      "destination": "/what-we-treat/opioid-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/glossary/depression/",
+      "destination": "/what-we-treat/depression/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/glossary/dui/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/glossary/dwi/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/glossary/ecstasy-mdma/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/glossary/fentanyl/",
+      "destination": "/what-we-treat/opioid-addiction/fentanyl/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/glossary/heroin/",
+      "destination": "/what-we-treat/opioid-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/glossary/hydrocodone-facts/",
+      "destination": "/what-we-treat/opioid-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/glossary/ketamine/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/glossary/marijuana/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/glossary/methamphetamine/",
+      "destination": "/what-we-treat/stimulant-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/glossary/naloxone/",
+      "destination": "/what-we-treat/opioid-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/glossary/opioids/",
+      "destination": "/what-we-treat/opioid-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/glossary/oxycodone/",
+      "destination": "/what-we-treat/opioid-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/glossary/painkillers/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/glossary/suboxone/",
+      "destination": "/what-we-treat/opioid-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/glossary/withdrawal/",
+      "destination": "/medical-detox/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/grief-therapy-for-addiction-recovery/",
+      "destination": "/therapies/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/grief-therapy-for-addiction/",
+      "destination": "/therapies/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/group-therapy/",
+      "destination": "/therapies/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/hallucinogenic-drugs-example-list-how-it-affect-ones-brain-and-health/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/hallucinogens-long-term-effects/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/handling-inpatient-substance-abuse-treatment-with-kids/",
+      "destination": "/residential-treatment/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/healing-from-addiction-and-childhood-trauma-at-buena-vista-recovery/",
+      "destination": "/dual-diagnosis/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/heroin-addiction/",
+      "destination": "/what-we-treat/opioid-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/heroin-withdrawal-symptoms-medication/",
+      "destination": "/what-we-treat/opioid-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/heroin-withdrawal-timeline/",
+      "destination": "/what-we-treat/opioid-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-alcohol-addiction-complicates-your-finances-before-alcohol-detox/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-antidepressants-can-help-you-recover-from-addiction/",
+      "destination": "/what-we-treat/depression/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-buena-vista-helps-men-develop-self-care-strategies/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-buena-vistas-opioid-treatment-program-helps-you-make-amends/",
+      "destination": "/what-we-treat/opioid-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-can-a-routine-help-me-thrive-after-addiction-treatment/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-can-an-iop-in-arizona-help-you-cope-with-stress-at-work/",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-can-buena-vista-recovery-help-my-adult-child-fight-addiction/",
+      "destination": "/for-families/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-can-i-celebrate-success-in-sobriety/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-can-i-develop-a-healthy-sober-relationship-in-recovery/",
+      "destination": "/for-families/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-can-i-find-purpose-after-inpatient-substance-abuse-treatment/",
+      "destination": "/residential-treatment/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-can-i-give-back-to-the-recovery-community/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-can-i-support-a-loved-one-in-recovery/",
+      "destination": "/for-families/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-can-immediate-relief-at-buena-vista-help-with-lasting-recovery/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-can-iops-help-me-maintain-sobriety/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-different-types-of-addiction-impact-your-sleep/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-difficult-is-cocaine-detox/",
+      "destination": "/what-we-treat/stimulant-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-do-i-adjust-to-life-after-dui-jail-time/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-do-i-choose-the-right-rehab/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-do-i-create-a-daily-routine-in-an-intensive-outpatient-program/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-do-i-create-a-relapse-prevention-plan-in-recovery/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-do-i-explain-dui-jail-time-to-my-family/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-do-i-set-boundaries-with-old-friends-after-opioid-treatment/",
+      "destination": "/what-we-treat/opioid-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-do-i-support-my-son-through-alcohol-addiction-treatment/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-do-mental-health-disorders-inform-addiction/",
+      "destination": "/dual-diagnosis/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-do-pain-management-and-fentanyl-addiction-connect/",
+      "destination": "/what-we-treat/opioid-addiction/fentanyl/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-does-a-healthy-diet-improve-mental-health/",
+      "destination": "/dual-diagnosis/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-does-language-affect-my-addiction-recovery/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-does-pain-management-in-addiction-recovery-work/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-does-sleep-help-with-pain-management-in-addiction-recovery/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-does-social-media-impact-my-addiction-recovery/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-does-spirituality-in-recovery-affect-me/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-family-support-helps-in-addiction-treatment/",
+      "destination": "/for-families/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-individual-therapy-can-build-your-social-support-network/",
+      "destination": "/therapies/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-learning-to-manage-stress-helps-with-fentanyl-overdose-prevention/",
+      "destination": "/what-we-treat/opioid-addiction/fentanyl/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-long-do-drugs-stay-in-your-system/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-long-do-opioids-stay-in-your-system/",
+      "destination": "/what-we-treat/opioid-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-long-does-addiction-recovery-take/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-long-does-alcohol-stay-in-your-system/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-long-does-alcohol-withdrawal-last/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-long-does-fentanyl-stay-in-your-system/",
+      "destination": "/what-we-treat/opioid-addiction/fentanyl/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-long-does-it-take-to-detox-from-alcohol/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-long-does-xanax-stay-in-your-system/",
+      "destination": "/what-we-treat/benzodiazepine-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-opioid-treatment-helps-men-manage-panic-disorder-while-sober/",
+      "destination": "/what-we-treat/opioid-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-physical-trauma-affects-addiction/",
+      "destination": "/dual-diagnosis/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-to-approach-a-loved-one-about-his-or-her-addiction/",
+      "destination": "/for-families/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-to-break-old-habits-after-leaving-an-addiction-treatment-center/",
+      "destination": "/residential-treatment/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-to-build-a-positive-supportive-network-in-addiction-recovery/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-to-choose-the-best-inpatient-substance-abuse-treatment/",
+      "destination": "/residential-treatment/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-to-combat-social-anxiety/",
+      "destination": "/what-we-treat/anxiety/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-to-cultivate-self-confidence-following-alcohol-detox-and-treatment/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-to-decide-if-a-12-step-program-is-right-for-me/",
+      "destination": "/therapies/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-to-get-help-for-addiction-where-to-start-and-what-you-need-to-do/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-to-handle-holiday-stress-in-recovery/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-to-pay-for-rehab-in-arizona-what-are-your-options/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-to-prepare-before-entering-an-addiction-treatment-center/",
+      "destination": "/residential-treatment/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-to-prepare-for-a-dui-court-hearing/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-to-stay-inspired-to-change-after-drug-and-alcohol-treatment/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-to-tell-if-a-rehab-center-is-actually-clinical/",
+      "destination": "/residential-treatment/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-will-dui-jail-time-affect-my-recovery/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-will-recovery-affect-my-job/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-young-men-can-build-self-esteem-following-alcohol-rehab/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-your-diet-affects-addiction-recovery/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/hydrocodone-addiction/",
+      "destination": "/what-we-treat/opioid-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/hydrocodone-and-alcohol/",
+      "destination": "/what-we-treat/opioid-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/hydrocodone-overdose/",
+      "destination": "/what-we-treat/opioid-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/i-finished-alcohol-detox-and-treatment-now-what/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/identifying-different-types-of-addiction-in-young-adults/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/identifying-the-signs-of-marijuana-addiction/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/individualized-care-improves-pain-management-in-addiction-recovery/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/insurance-plans-that-cover-dual-diagnosis-rehab-programs/",
+      "destination": "/dual-diagnosis/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/intensive-outpatient-program/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/introducing-the-buena-vista-recovery-app-join-our-community/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/is-addiction-genetic/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/is-alcohol-use-among-men-more-common/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/is-an-intensive-outpatient-program-iop-right-for-me/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/is-cocaine-detox-different-for-men/",
+      "destination": "/what-we-treat/stimulant-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/is-inpatient-or-outpatient-treatment-better-for-a-pain-pill-addiction/",
+      "destination": "/residential-treatment/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/is-it-too-late-for-me-to-enter-alcohol-detox-for-my-addiction/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/is-medication-assisted-treatment-effective/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/is-my-child-struggling-with-addiction/",
+      "destination": "/for-families/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/is-my-loved-one-struggling-with-addiction/",
+      "destination": "/for-families/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/is-social-anxiety-affecting-my-substance-use/",
+      "destination": "/what-we-treat/anxiety/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/keeping-yourself-motivated-throughout-recovery/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/learning-to-re-imagine-your-life-after-alcohol-detox/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/legal-issues-associated-with-rehab/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/life-after-rehab-applying-skills-learned-in-rehab-to-your-life/",
+      "destination": "/programs/aftercare/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/local-or-out-of-state-drug-detox-center-how-to-decide/",
+      "destination": "/medical-detox/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/long-term-effects-of-vicodin-risks-addiction-treatment/",
+      "destination": "/what-we-treat/opioid-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/managing-boredom-in-recovery/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/mat-for-opioid-use/",
+      "destination": "/what-we-treat/opioid-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/medical-detox-for-alcohol-addiction-and-the-next-steps/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/medical-detox-overcoming-abuse/",
+      "destination": "/medical-detox/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/medication-assisted-treatment/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/meth-addiction-treatment-and-recovery-where-to-find-help/",
+      "destination": "/what-we-treat/stimulant-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/meth-withdrawal-timeline-what-you-need-to-know/",
+      "destination": "/what-we-treat/stimulant-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/mixing-stimulants-and-depressants-dangers-consequences-/",
+      "destination": "/what-we-treat/stimulant-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/most-common-relapse-triggers-and-how-to-manage-them/",
+      "destination": "/programs/aftercare/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/myths-about-medication-assisted-treatment/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/natural-insomnia-remedies-stop-counting-sheep-and-start-counting-zzzzs/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/negative-impacts-of-alcohol-on-society/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/opiate-addiction-treatment-options/",
+      "destination": "/what-we-treat/opioid-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/opiate-detox-timeline/",
+      "destination": "/what-we-treat/opioid-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/opiate-detox-treatment/",
+      "destination": "/what-we-treat/opioid-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/opiod_addiction_and_chronic_pain/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/opioid-overdose-reversal/",
+      "destination": "/what-we-treat/opioid-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/outpatient-rehab-building-a-social-support-network-managing-stress/",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/overcoming-adverse-childhood-experiences-and-addiction/",
+      "destination": "/for-families/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/overcoming-the-effects-of-anger-in-addiction-recovery/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/overcoming-the-effects-of-seasonal-affective-disorder-sad/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/overcoming-the-stigmas-of-men-pursuing-addiction-treatment/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/page/2/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/page/5/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/parents-with-addiction/",
+      "destination": "/for-families/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/partial-hospitalization-program-vs-iop-understand-the-difference/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/podcast-ep-2-meet-bobby-cording/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/preparing-for-detox-setting-expectations/",
+      "destination": "/medical-detox/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/prescription-drug-withdrawal-symptoms/",
+      "destination": "/medical-detox/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/preventing-relapse-during-quarantine/",
+      "destination": "/programs/aftercare/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/recognizing-the-signs-and-symptoms-of-opioid-abuse/",
+      "destination": "/what-we-treat/opioid-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/recollecting-your-life-after-a-dui/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/rehab-facts-vs-fiction/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/relapse-in-the-recovery-process/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/relapse-prevention-longer-stays-ongoing-support/",
+      "destination": "/programs/aftercare/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/residential-vs-intensive-outpatient-programs-whats-the-difference/",
+      "destination": "/residential-treatment/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/returning-to-work-after-substance-abuse-treatment/",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/scared-to-go-to-rehab/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/sharing-inpatient-substance-abuse-treatment-experience-with-your-wife/",
+      "destination": "/for-families/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/should-i-tell-my-family-i-need-to-go-to-an-opioid-treatment-program/",
+      "destination": "/what-we-treat/opioid-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/signs-and-symptoms-of-substance-abuse/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/signs-that-your-loved-one-might-have-an-addiction/",
+      "destination": "/for-families/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/signs-you-may-be-nearing-a-fentanyl-overdose/",
+      "destination": "/what-we-treat/opioid-addiction/fentanyl/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/suboxone-detox-treatment/",
+      "destination": "/what-we-treat/opioid-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/suboxone-withdrawal/",
+      "destination": "/what-we-treat/opioid-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/substance-abuse-disorder/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/substance-abuse-therapy/",
+      "destination": "/therapies/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/substance-abuse-treatment-for-medical-professionals/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/supporting-a-loved-one-through-anxiety-panic-and-addiction/",
+      "destination": "/what-we-treat/anxiety/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/taking-charge-of-your-sober-thanksgiving/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/talking-to-a-spouse-about-substance-use/",
+      "destination": "/for-families/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/the-2-different-types-of-addiction-with-examples/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/the-benefits-of-group-therapy/",
+      "destination": "/therapies/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/the-benefits-of-mindfulness-meditation-during-addiction-treatment/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/the-biology-of-detox/",
+      "destination": "/medical-detox/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/the-dangerous-effects-of-depression/",
+      "destination": "/what-we-treat/depression/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/the-difference-between-slips-and-relapse-in-recovery/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/the-differences-between-inpatient-and-outpatient-addiction-treatments/",
+      "destination": "/residential-treatment/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/the-different-types-of-goals-to-set-for-2021/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/the-effects-of-addiction-on-children/",
+      "destination": "/for-families/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/the-emotional-impact-of-a-dui-conviction/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/the-good-bad-and-ugly-what-the-road-to-recovery-really-looks-like/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/the-impact-of-addiction-on-the-family/",
+      "destination": "/for-families/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/the-impact-of-dui-jail-time-on-my-recovery/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/the-importance-of-individualized-therapy-after-dui-jail-time/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/the-many-forms-of-addiction/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/the-role-of-comfort-and-luxury-in-overcoming-addiction/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/the-role-of-community-in-recovery/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/the-role-of-community-in-relapse-prevention/",
+      "destination": "/programs/aftercare/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/the-role-of-gratitude-in-addiction-recovery/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/the-story-of-jesus-g-gutierrez/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/tools-for-recovery/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/trauma-and-its-effects-on-substance-use/",
+      "destination": "/dual-diagnosis/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/understanding-addiction-as-a-disease-and-how-it-develops/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/understanding-alcohol-abuse/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/understanding-psychological-addiction/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/understanding-the-different-alcohol-detox-symptoms/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/understanding-the-need-for-medical-detox/",
+      "destination": "/medical-detox/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/using-cognitive-behavioral-therapy-in-addiction-treatment/",
+      "destination": "/therapies/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/using-medication-during-opioid-withdrawal/",
+      "destination": "/what-we-treat/opioid-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/using-technology-to-facilitate-continued-healing/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/vicodin-dependence-short-and-long-term-effects/",
+      "destination": "/what-we-treat/opioid-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/what-actually-happens-in-your-first-72-hours-in-detox/",
+      "destination": "/medical-detox/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/what-are-coping-skills-for-different-types-of-addiction/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/what-are-some-drug-and-alcohol-treatment-centers-in-arizona/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/what-are-the-benefits-of-cognitive-behavioral-therapy-cbt/",
+      "destination": "/therapies/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/what-are-the-differences-between-crack-and-cocaine/",
+      "destination": "/what-we-treat/stimulant-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/what-are-the-signs-of-heroin-overdose/",
+      "destination": "/what-we-treat/opioid-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/what-are-the-symptoms-of-alcohol-withdrawal/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/what-can-i-expect-in-residential-treatment/",
+      "destination": "/residential-treatment/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/what-does-treatment-look-like-at-an-arizona-addiction-recovery-center/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/what-happens-in-outpatient-rehab/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/what-happens-to-my-brain-when-i-become-addicted-to-substances/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/what-happens-when-i-arrive-at-treatment/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/what-is-a-dual-diagnosis/",
+      "destination": "/dual-diagnosis/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/what-is-alcohol-detox-medication/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/what-is-medical-detox/",
+      "destination": "/medical-detox/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/what-is-relapse-in-addiction/",
+      "destination": "/programs/aftercare/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/what-is-the-biology-of-addiction/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/what-is-the-connection-between-trauma-self-medicating-and-addiction/",
+      "destination": "/dual-diagnosis/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/what-is-toxic-positivity-and-how-does-it-affect-addiction-recovery/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/what-recovery-looks-like-6-months-after-rehab/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/whats-the-difference-between-stimulants-depressants/",
+      "destination": "/what-we-treat/stimulant-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/when-is-detwhen-is-detox-necessaryox-necessary/",
+      "destination": "/medical-detox/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/when-is-it-time-to-call-an-inpatient-rehabilitation-center/",
+      "destination": "/residential-treatment/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/which-prescription-drugs-can-lead-to-addiction/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/who-makes-the-most-effective-supports-in-recovery/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/why-connection-matters-so-much-after-an-intensive-outpatient-program/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/why-do-addicts-relapse-even-if-things-are-good/",
+      "destination": "/programs/aftercare/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/why-does-buena-vista-believe-case-management-is-important-in-recovery/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/why-is-detox-necessary/",
+      "destination": "/medical-detox/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/why-is-family-education-important-in-addiction-recovery/",
+      "destination": "/for-families/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/why-is-fentanyl-so-dangerous-a-detailed-look/",
+      "destination": "/what-we-treat/opioid-addiction/fentanyl/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/why-some-people-get-worse-after-rehab/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/why-you-should-consider-going-out-of-state-for-rehab/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/will-a-fentanyl-overdose-change-my-thought-process-long-term/",
+      "destination": "/what-we-treat/opioid-addiction/fentanyl/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/will-alcohol-rehab-help-after-a-dui/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/will-medication-assisted-treatment-help-after-a-fentanyl-overdose/",
+      "destination": "/what-we-treat/opioid-addiction/fentanyl/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/will-my-parents-support-me-through-drug-and-alcohol-treatment/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/will-trying-a-detox-center-near-me-help/",
+      "destination": "/medical-detox/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/will-xanax-detox-have-negative-long-term-effects/",
+      "destination": "/what-we-treat/benzodiazepine-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/work-related-anxiety-and-substance-abuse/",
+      "destination": "/what-we-treat/anxiety/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/xanax-addiction-treatment-plan-whats-the-best-option-for-me/",
+      "destination": "/what-we-treat/benzodiazepine-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/xanax-detox-is-it-safe-to-do-at-home/",
+      "destination": "/what-we-treat/benzodiazepine-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/xanax-withdrawal/",
+      "destination": "/what-we-treat/benzodiazepine-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/your-guide-to-physical-addiction-and-how-to-get-help/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/careers/",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/chandler-facility/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us/",
+      "destination": "/about/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/",
+      "destination": "/resources/",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/adderall/",
+      "destination": "/what-we-treat/stimulant-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/addiction/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/ayahuasca/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/bath-salts/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/benzodiazepines/",
+      "destination": "/what-we-treat/benzodiazepine-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/cocaine/",
+      "destination": "/what-we-treat/stimulant-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/codeine/",
+      "destination": "/what-we-treat/opioid-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/depression/",
+      "destination": "/what-we-treat/depression/",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/dwi/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/ecstasy-mdma/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/hydrocodone-facts/",
+      "destination": "/what-we-treat/opioid-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/ketamine/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/oxycodone/",
+      "destination": "/what-we-treat/opioid-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/painkillers/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/glossary/suboxone/",
+      "destination": "/what-we-treat/opioid-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/insurance/aetna-insurance-for-addiction-treatment/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/insurance/ahcccs-insurance-for-addiction-treatment/",
+      "destination": "/insurance/ahcccs-medicaid/",
+      "permanent": true
+    },
+    {
+      "source": "/insurance/beacon-insurance/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/insurance/bluecross-blueshield-insurance-for-addiction-treatment/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/insurance/cerner-insurance-for-addiction-treatment/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/insurance/cigna-insurance-for-addiction-treatment/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/insurance/compsych-insurance/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/insurance/first-health-network-insurance/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/insurance/harvard-pilgrim-insurance/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/insurance/humana-insurance-for-drug-alcohol-rehab/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/insurance/in-network/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/insurance/in-network/american-indian-health-program/",
+      "destination": "/insurance/ahcccs-medicaid/",
+      "permanent": true
+    },
+    {
+      "source": "/insurance/in-network/care1st/",
+      "destination": "/insurance/ahcccs-medicaid/",
+      "permanent": true
+    },
+    {
+      "source": "/insurance/in-network/usa-mco-insurance/",
+      "destination": "/insurance/ahcccs-medicaid/",
+      "permanent": true
+    },
+    {
+      "source": "/insurance/insurance-verification/",
+      "destination": "/insurance/verify-your-benefits/",
+      "permanent": true
+    },
+    {
+      "source": "/insurance/kaiser_permanente_insurance/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/insurance/kaiser-permanente-insurance/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/insurance/magellan-complete-care/",
+      "destination": "/insurance/ahcccs-medicaid/",
+      "permanent": true
+    },
+    {
+      "source": "/insurance/mercy-care/",
+      "destination": "/insurance/ahcccs-medicaid/",
+      "permanent": true
+    },
+    {
+      "source": "/insurance/multiplan-insurance/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/insurance/out-of-network/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/insurance/out-of-network/anthem-bcbs-insurance-for-addiction-treatment/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/insurance/out-of-network/magellan-health-insurance/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/insurance/out-of-network/presbyterian-insurance/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/insurance/out-of-network/tricare/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/insurance/tufts-health-insurance/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/insurance/unitedhealthcare-insurance/",
+      "destination": "/insurance/",
+      "permanent": true
+    },
+    {
+      "source": "/iop-treatment-arizona/",
+      "destination": "/programs/intensive-outpatient-iop/",
+      "permanent": true
+    },
+    {
+      "source": "/locations/alcohol-and-drug-rehab-chandler-az/",
+      "destination": "/locations/chandler/",
+      "permanent": true
+    },
+    {
+      "source": "/locations/alcohol-and-drug-rehab-tucson-az/",
+      "destination": "/locations/tucson/",
+      "permanent": true
+    },
+    {
+      "source": "/locations/cave-creek/",
+      "destination": "/locations/",
+      "permanent": true
+    },
+    {
+      "source": "/locations/scottsdale-arizona/",
+      "destination": "/locations/scottsdale/",
+      "permanent": true
+    },
+    {
+      "source": "/locations/who-we-serve/",
+      "destination": "/who-we-serve/",
+      "permanent": true
+    },
+    {
+      "source": "/locations/who-we-serve/1182-2/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/locations/who-we-serve/california-substance-abuse-treatment-facility/",
+      "destination": "/locations/",
+      "permanent": true
+    },
+    {
+      "source": "/locations/who-we-serve/georgia-substance-abuse-treatment/",
+      "destination": "/locations/",
+      "permanent": true
+    },
+    {
+      "source": "/locations/who-we-serve/illinois-rehab-centers/",
+      "destination": "/locations/",
+      "permanent": true
+    },
+    {
+      "source": "/locations/who-we-serve/in-state/",
+      "destination": "/locations/",
+      "permanent": true
+    },
+    {
+      "source": "/locations/who-we-serve/in-state/998-2/",
+      "destination": "/locations/",
+      "permanent": true
+    },
+    {
+      "source": "/locations/who-we-serve/in-state/phoenix-az/",
+      "destination": "/locations/phoenix/",
+      "permanent": true
+    },
+    {
+      "source": "/locations/who-we-serve/in-state/scottsdale/",
+      "destination": "/locations/",
+      "permanent": true
+    },
+    {
+      "source": "/locations/who-we-serve/nevada-substance-abuse-treatment/",
+      "destination": "/locations/",
+      "permanent": true
+    },
+    {
+      "source": "/locations/who-we-serve/new-mexico-rehab-facility/",
+      "destination": "/locations/",
+      "permanent": true
+    },
+    {
+      "source": "/locations/who-we-serve/new-york-substance-abuse-treatment/",
+      "destination": "/locations/",
+      "permanent": true
+    },
+    {
+      "source": "/locations/who-we-serve/out-of-state/",
+      "destination": "/locations/",
+      "permanent": true
+    },
+    {
+      "source": "/locations/who-we-serve/out-of-state/colorado-drug-rehab-center/",
+      "destination": "/locations/",
+      "permanent": true
+    },
+    {
+      "source": "/locations/who-we-serve/out-of-state/florida-drug-rehab-centers/",
+      "destination": "/locations/",
+      "permanent": true
+    },
+    {
+      "source": "/locations/who-we-serve/out-of-state/utah-substance-abuse-treatment/",
+      "destination": "/locations/",
+      "permanent": true
+    },
+    {
+      "source": "/locations/who-we-serve/texas-drug-rehab-center/",
+      "destination": "/locations/",
+      "permanent": true
+    },
+    {
+      "source": "/medication-assisted-treatment/",
+      "destination": "/what-we-treat/opioid-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/notice-of-privacy-practices/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/our-programs/",
+      "destination": "/programs/",
+      "permanent": true
+    },
+    {
+      "source": "/our-programs/buena-vista-alumni-program/",
+      "destination": "/programs/aftercare/",
+      "permanent": true
+    },
+    {
+      "source": "/our-programs/inpatient/",
+      "destination": "/residential-treatment/",
+      "permanent": true
+    },
+    {
+      "source": "/our-programs/inpatient/alcoholism/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/our-programs/inpatient/substance-abuse/",
+      "destination": "/residential-treatment/",
+      "permanent": true
+    },
+    {
+      "source": "/our-programs/iop-treatment-arizona/",
+      "destination": "/programs/intensive-outpatient-iop/",
+      "permanent": true
+    },
+    {
+      "source": "/our-programs/medical-detox/",
+      "destination": "/medical-detox/",
+      "permanent": true
+    },
+    {
+      "source": "/our-programs/medical-detox/alcohol-detox/",
+      "destination": "/what-we-treat/alcohol-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/our-programs/medical-detox/drug-detox/",
+      "destination": "/medical-detox/",
+      "permanent": true
+    },
+    {
+      "source": "/our-programs/medical-detox/drug-detox/opioid-drug-detox/",
+      "destination": "/what-we-treat/opioid-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/our-programs/medical-detox/drug-detox/opioid-drug-detox/heroin/",
+      "destination": "/what-we-treat/opioid-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/our-programs/medical-detox/drug-detox/opioid-drug-detox/oxycontin/",
+      "destination": "/what-we-treat/opioid-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/our-programs/medical-detox/drug-detox/opioid-drug-detox/vicodin/",
+      "destination": "/what-we-treat/opioid-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/our-programs/medical-detox/drug-detox/prescription-drug-detox/",
+      "destination": "/what-we-treat/opioid-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/our-programs/medical-detox/drug-detox/prescription-drug-detox/xanax/",
+      "destination": "/what-we-treat/benzodiazepine-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/our-programs/medical-detox/drug-detox/stimulant-drug-detox/",
+      "destination": "/what-we-treat/stimulant-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/our-programs/medical-detox/drug-detox/stimulant-drug-detox/cocaine/",
+      "destination": "/what-we-treat/stimulant-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/our-programs/medical-detox/drug-detox/stimulant-drug-detox/marijuana/",
+      "destination": "/what-we-treat/",
+      "permanent": true
+    },
+    {
+      "source": "/our-programs/medical-detox/drug-detox/stimulant-drug-detox/meth/",
+      "destination": "/what-we-treat/stimulant-addiction/methamphetamine/",
+      "permanent": true
+    },
+    {
+      "source": "/our-programs/medication-assisted-treatment-mat/",
+      "destination": "/what-we-treat/opioid-addiction/",
+      "permanent": true
+    },
+    {
+      "source": "/our-programs/outpatient-treatment/",
+      "destination": "/programs/intensive-outpatient-iop/",
+      "permanent": true
+    },
+    {
+      "source": "/our-programs/therapy/",
+      "destination": "/therapies/",
+      "permanent": true
+    },
+    {
+      "source": "/our-programs/therapy/12-step-program/",
+      "destination": "/therapies/",
+      "permanent": true
+    },
+    {
+      "source": "/our-programs/therapy/cognitive-behavioral-therapy/",
+      "destination": "/therapies/",
+      "permanent": true
+    },
+    {
+      "source": "/our-programs/therapy/grief-therapy/",
+      "destination": "/therapies/",
+      "permanent": true
+    },
+    {
+      "source": "/our-programs/therapy/group-therapy/",
+      "destination": "/therapies/",
+      "permanent": true
+    },
+    {
+      "source": "/our-programs/therapy/individual-counseling/",
+      "destination": "/therapies/",
+      "permanent": true
+    },
+    {
+      "source": "/our-programs/therapy/trauma-focused-therapy/",
+      "destination": "/therapies/",
+      "permanent": true
+    },
+    {
+      "source": "/our-programs/virtual-iop-treatment-arizona/",
+      "destination": "/programs/intensive-outpatient-iop/",
+      "permanent": true
+    },
+    {
+      "source": "/podcast/",
+      "destination": "/resources/",
+      "permanent": true
+    },
+    {
+      "source": "/privacy-policy/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/site-map/",
+      "destination": "/sitemap/",
+      "permanent": true
+    },
+    {
+      "source": "/tatum-ranch-arizona-facility/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/terms-of-use/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/the-2-different-types-of-addiction-with-examples/",
+      "destination": "/what-we-treat/",
+      "permanent": true
+    },
+    {
+      "source": "/tucson-facility/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/who-we-help/",
+      "destination": "/who-we-serve/",
+      "permanent": true
+    },
+    {
+      "source": "/who-we-help/professionals/",
+      "destination": "/referrals/",
+      "permanent": true
+    },
+    {
+      "source": "/who-we-help/professionals/impaired-physicians-program/",
+      "destination": "/referrals/",
+      "permanent": true
+    },
+    {
+      "source": "/who-we-help/young-adults/",
+      "destination": "/who-we-serve/",
       "permanent": true
     }
   ]
