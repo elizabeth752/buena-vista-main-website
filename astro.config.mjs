@@ -419,7 +419,7 @@ const MIGRATION_REDIRECTS = {
     '/blog/xanax-detox-is-it-safe-to-do-at-home/': '/what-we-treat/benzodiazepine-addiction/',
     '/blog/xanax-withdrawal/': '/what-we-treat/benzodiazepine-addiction/',
     '/blog/your-guide-to-physical-addiction-and-how-to-get-help/': '/blog/',
-    '/careers/': '/about/',
+    '/careers/': '/about/careers/',
     '/chandler-facility/': '/',
     '/contact-us/': '/about/contact/',
     '/glossary/': '/resources/',

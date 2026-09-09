@@ -5,7 +5,7 @@ import Nav from '../../../components/Nav.astro';
 import VerifySection from '../../../components/VerifySection.astro';
 import FinalCTA from '../../../components/FinalCTA.astro';
 import Horizon from '../../../components/Horizon.astro';
-import { team } from '../../../data/team';
+import { publishedTeam } from '../../../data/team';
 import posts from '../../../data/blog/posts.json';
 
 /* Individual team pages. These exist for E-E-A-T: a byline that links to a real
@@ -16,7 +16,7 @@ import posts from '../../../data/blog/posts.json';
    different people from before the takeover — do not add them here without
    confirmation from the client. */
 export function getStaticPaths() {
-  return team.map(m => ({ params: { slug: m.slug }, props: { member: m } }));
+  return publishedTeam.map(m => ({ params: { slug: m.slug }, props: { member: m } }));
 }
 
 const { member } = Astro.props;
