@@ -1,0 +1,51 @@
+---
+import { bySlug } from '../../data/team';
+
+/* E-E-A-T byline. An author credit is a claim about who stands behind the
+   content, so it always resolves to a real person in src/data/team.ts with
+   their real credentials.
+
+   Where the author is not a clinician, a separate clinical reviewer is named.
+   Do not fabricate a reviewer to fill the slot — leave it off instead. */
+interface Props { author: string; updated: string; readMinutes: number; category: string; }
+const { author, updated, readMinutes, category } = Astro.props;
+const person = bySlug[author];
+const reviewer = person?.clinicalReviewer ? null : bySlug['will-heise'];
+const dateLabel = new Date(updated + 'T00:00:00Z').toLocaleDateString('en-US', {
+  year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC',
+});
+---
+<div class="flex flex-wrap items-center gap-x-6 gap-y-4 py-6 border-y border-cream-soft">
+  <div class="flex items-center gap-3.5">
+    <img src={person.photo} alt={person.name} class="w-12 h-12 rounded-full object-cover shrink-0" loading="lazy" />
+    <div>
+      <p class="font-body text-[15px] leading-tight">
+        <span class="text-muted">Written by</span>
+        <a href={`/about/team/${person.slug}/`} class="font-semibold text-navy hover:text-teal transition-colors">
+          {person.name}{person.credentials ? `, ${person.credentials}` : ''}
+        </a>
+      </p>
+      <p class="font-body text-muted text-[14px] leading-tight mt-0.5">{person.title}</p>
+    </div>
+  </div>
+
+  {reviewer && (
+    <div class="flex items-center gap-3.5">
+      <img src={reviewer.photo} alt={reviewer.name} class="w-12 h-12 rounded-full object-cover shrink-0" loading="lazy" />
+      <div>
+        <p class="font-body text-[15px] leading-tight">
+          <span class="text-muted">Medically reviewed by</span>
+          <a href={`/about/team/${reviewer.slug}/`} class="font-semibold text-navy hover:text-teal transition-colors">
+            {reviewer.name}, {reviewer.credentials}
+          </a>
+        </p>
+        <p class="font-body text-muted text-[14px] leading-tight mt-0.5">{reviewer.title}</p>
+      </div>
+    </div>
+  )}
+
+  <div class="font-body text-muted text-[14px] leading-tight sm:ml-auto">
+    <p>Updated <time datetime={updated}>{dateLabel}</time></p>
+    <p class="mt-0.5">{readMinutes} min read &middot; {category}</p>
+  </div>
+</div>

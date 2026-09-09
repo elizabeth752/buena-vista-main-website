@@ -13,15 +13,26 @@ import Layout from '../layouts/Layout.astro';
 import TopBar from '../components/TopBar.astro';
 import Nav from '../components/Nav.astro';
 import FinalCTA from '../components/FinalCTA.astro';
+import posts from '../data/blog/posts.json';
+import { team } from '../data/team';
 
 const EXCLUDE = ['/programs/intensive-outpatient-iop', '/404', '/sitemap'];
 
 const files = import.meta.glob('./**/*.astro', { eager: false });
-const routes = Object.keys(files)
+
+/* Dynamic routes glob as their literal pattern ("/blog/[slug]"), which is not a
+   URL. Drop them and expand the real ones from their data instead. */
+const staticRoutes = Object.keys(files)
   .map((f) => f.replace('./', '/').replace(/\.astro$/, '').replace(/\/index$/, ''))
   .map((u) => (u === '' ? '/' : u))
-  .filter((u) => !EXCLUDE.includes(u))
-  .sort();
+  .filter((u) => !u.includes('['))
+  .filter((u) => !EXCLUDE.includes(u));
+
+const routes = [
+  ...staticRoutes,
+  ...posts.map((p) => `/blog/${p.slug}`),
+  ...team.map((m) => `/about/team/${m.slug}`),
+].sort();
 
 // Human labels, section by section. Anything not named here still appears,
 // falling back to the last URL segment.
@@ -43,6 +54,7 @@ const LABELS: Record<string, string> = {
   '/locations/mesa': 'Serving Mesa',
   '/locations/gilbert': 'Serving Gilbert',
   '/locations/tempe': 'Serving Tempe',
+  '/locations/scottsdale': 'Serving Scottsdale',
   '/locations/casa-grande': 'Serving Casa Grande',
   '/locations/phoenix': 'Serving Phoenix, AZ',
   '/locations/tucson': 'Tucson, AZ (temporarily closed)',

@@ -1,0 +1,470 @@
+live_url,destination,status,note
+/,/,ok,
+/about-us/,/about/,ok,
+/about-us/faq/,/admissions/,ok,
+/about-us/our-vision-mission-and-values/,/about/,ok,
+/about-us/staff/cindy-sneller/,,NEEDS DECISION,"staff bio — new site has 4 team members, these are 9 different people"
+/about-us/staff/dr-paul-r-valbuena/,,NEEDS DECISION,"staff bio — new site has 4 team members, these are 9 different people"
+/about-us/staff/jose-leon/,,NEEDS DECISION,"staff bio — new site has 4 team members, these are 9 different people"
+/about-us/staff/julie-gable/,,NEEDS DECISION,"staff bio — new site has 4 team members, these are 9 different people"
+/about-us/staff/katie-noetzel/,,NEEDS DECISION,"staff bio — new site has 4 team members, these are 9 different people"
+/about-us/staff/lynn-santella/,,NEEDS DECISION,"staff bio — new site has 4 team members, these are 9 different people"
+/about-us/staff/roxanne-maloney/,,NEEDS DECISION,"staff bio — new site has 4 team members, these are 9 different people"
+/about-us/staff/sara-cothern-lcsw/,,NEEDS DECISION,"staff bio — new site has 4 team members, these are 9 different people"
+/about-us/staff/tj-carlini/,,NEEDS DECISION,"staff bio — new site has 4 team members, these are 9 different people"
+/about-us/travel-help/,/locations/chandler/,ok,
+/about-us/why-buena-vista/,/about/,ok,
+/addiction-treatment/,/programs/,ok,
+/addiction-treatment/for-a-loved-one/,/for-families/,ok,
+/addiction-treatment/for-me/,/programs/,ok,
+/addiction-treatment/get-started/,/admissions/,ok,
+/blog/,/resources/,ok,
+/blog/5-common-causes-of-addiction-and-how-to-cope-with-them/,,NEEDS DECISION,blog post — not yet migrated
+/blog/5-ways-to-support-a-loved-one-in-rehab/,,NEEDS DECISION,blog post — not yet migrated
+/blog/9-causes-of-alcohol-addiction-that-make-young-men-need-alcohol-rehab/,,NEEDS DECISION,blog post — not yet migrated
+/blog/a-story-of-redemption-with-garrett-deetz/,,NEEDS DECISION,blog post — not yet migrated
+/blog/addiction-recovery-care/,,NEEDS DECISION,blog post — not yet migrated
+/blog/addictions-and-recovery-relapse-prevention/,,NEEDS DECISION,blog post — not yet migrated
+/blog/addressing-the-social-needs-of-men-in-recovery/,,NEEDS DECISION,blog post — not yet migrated
+/blog/aerobic-exercise-and-addiction-recovery/,,NEEDS DECISION,blog post — not yet migrated
+/blog/alcohol-addiction-personality-traits/,,NEEDS DECISION,blog post — not yet migrated
+/blog/alcohol-addiction/,,NEEDS DECISION,blog post — not yet migrated
+/blog/alcohol-cleanse-diet/,,NEEDS DECISION,blog post — not yet migrated
+/blog/alcohol-detox-alcoholism/,,NEEDS DECISION,blog post — not yet migrated
+/blog/alcohol-detox-arizona/,,NEEDS DECISION,blog post — not yet migrated
+/blog/alcohol-detox-program/,,NEEDS DECISION,blog post — not yet migrated
+/blog/alcohol-detox-treatment/,,NEEDS DECISION,blog post — not yet migrated
+/blog/alcohol-effects/,,NEEDS DECISION,blog post — not yet migrated
+/blog/alcohol-poisoning-symptoms-vs-signs-of-being-drunk/,,NEEDS DECISION,blog post — not yet migrated
+/blog/alcohol-withdrawal/,,NEEDS DECISION,blog post — not yet migrated
+/blog/anxiety-and-distress-two-signs-of-opioid-addiction/,,NEEDS DECISION,blog post — not yet migrated
+/blog/anxiety-medications-and-addiction-when-treatment-makes-it-worse/,,NEEDS DECISION,blog post — not yet migrated
+/blog/are-meth-detox-home-remedies-the-best-meth-treatment-option/,,NEEDS DECISION,blog post — not yet migrated
+/blog/arizona-rehab-campus-in-tucson-finding-treatment-and-the-right-facility/,,NEEDS DECISION,blog post — not yet migrated
+/blog/art-therapy-and-alcohol-addiction-how-does-it-work/,,NEEDS DECISION,blog post — not yet migrated
+/blog/attending-an-addiction-treatment-center-why-men-struggle-to-reach-out-for-help/,,NEEDS DECISION,blog post — not yet migrated
+/blog/balancing-pain-management-in-addiction-recovery/,,NEEDS DECISION,blog post — not yet migrated
+/blog/balancing-the-costs-of-addiction/,,NEEDS DECISION,blog post — not yet migrated
+/blog/behavioral-health-tucson/,,NEEDS DECISION,blog post — not yet migrated
+/blog/benefits-of-rehab/,,NEEDS DECISION,blog post — not yet migrated
+/blog/benefits-of-voluntarily-enrolling-in-addiction-treatment-after-a-dui/,,NEEDS DECISION,blog post — not yet migrated
+/blog/binge-drinking-and-men-where-to-find-a-quality-alcohol-detox-program/,,NEEDS DECISION,blog post — not yet migrated
+/blog/blog/,,NEEDS DECISION,blog post — not yet migrated
+/blog/breaking-the-cycle-understanding-addiction-beyond-choice/,,NEEDS DECISION,blog post — not yet migrated
+/blog/buena-vista-playbook-processing-grief-during-recovery/,,NEEDS DECISION,blog post — not yet migrated
+/blog/buena-vista-playbook-what-are-the-benefits-of-anger-management/,,NEEDS DECISION,blog post — not yet migrated
+/blog/buena-vista-playbook-what-do-sober-people-do-for-fun/,,NEEDS DECISION,blog post — not yet migrated
+/blog/buena-vista-recovery-playbook-embracing-the-outdoors-in-recovery-this-spring/,,NEEDS DECISION,blog post — not yet migrated
+/blog/buena-vista-recovery-providing-inspiration-hope-in-addiction/,,NEEDS DECISION,blog post — not yet migrated
+/blog/building-healthier-habits-at-buena-vista-recovery/,,NEEDS DECISION,blog post — not yet migrated
+/blog/building-long-term-solutions-starts-with-alcohol-detox/,,NEEDS DECISION,blog post — not yet migrated
+/blog/can-a-dui-lead-to-trauma/,,NEEDS DECISION,blog post — not yet migrated
+/blog/can-health-insurance-pay-for-my-rehab-expenses/,,NEEDS DECISION,blog post — not yet migrated
+/blog/can-i-manage-addiction-while-still-attending-college/,,NEEDS DECISION,blog post — not yet migrated
+/blog/can-i-overcome-my-addiction-with-an-outpatient-treatment-program/,,NEEDS DECISION,blog post — not yet migrated
+/blog/can-i-pursue-love-in-recovery/,,NEEDS DECISION,blog post — not yet migrated
+/blog/can-i-use-insurance-to-pay-for-drug-and-alcohol-rehab/,,NEEDS DECISION,blog post — not yet migrated
+/blog/can-learning-yoga-in-xanax-addiction-recovery-improve-your-outcome/,,NEEDS DECISION,blog post — not yet migrated
+/blog/can-reconnecting-with-your-emotions-at-iop-arizona-help-you-heal/,,NEEDS DECISION,blog post — not yet migrated
+/blog/can-you-fail-rehab-what-that-actually-means/,,NEEDS DECISION,blog post — not yet migrated
+/blog/can-you-overcome-a-meth-addiction/,,NEEDS DECISION,blog post — not yet migrated
+/blog/can-you-still-travel-with-a-dui/,,NEEDS DECISION,blog post — not yet migrated
+/blog/causes-effects-and-overcoming-crystal-meth-addiction/,,NEEDS DECISION,blog post — not yet migrated
+/blog/celebrating-valentines-day-in-recovery/,,NEEDS DECISION,blog post — not yet migrated
+/blog/childhood-trauma-and-addiction/,,NEEDS DECISION,blog post — not yet migrated
+/blog/choosing-a-detox-center-does-the-treatment-environment-really-matter/,,NEEDS DECISION,blog post — not yet migrated
+/blog/co-occurring-disorders-among-men/,,NEEDS DECISION,blog post — not yet migrated
+/blog/co-occurring-disorders-and-substance-abuse/,,NEEDS DECISION,blog post — not yet migrated
+/blog/cocaine-detox-the-first-step-to-a-more-secure-life/,,NEEDS DECISION,blog post — not yet migrated
+/blog/cocaine-detox-the-start-of-a-new-lifestyle/,,NEEDS DECISION,blog post — not yet migrated
+/blog/cocaine-vs-meth-which-is-harder-to-quit/,,NEEDS DECISION,blog post — not yet migrated
+/blog/cognitive-behavioral-therapy-exercises/,,NEEDS DECISION,blog post — not yet migrated
+/blog/combating-seasonal-affective-disorder-for-relapse-prevention/,,NEEDS DECISION,blog post — not yet migrated
+/blog/committing-yourself-to-a-continuum-of-addiction-care/,,NEEDS DECISION,blog post — not yet migrated
+/blog/common-opioid-list/,,NEEDS DECISION,blog post — not yet migrated
+/blog/common-signs-of-addiction/,,NEEDS DECISION,blog post — not yet migrated
+/blog/commonly-used-short-acting-opioids-list/,,NEEDS DECISION,blog post — not yet migrated
+/blog/complications-of-alcohol-withdrawal/,,NEEDS DECISION,blog post — not yet migrated
+/blog/contingency-nanagement-therapy-effective-addiction-treatment-barriers/,,NEEDS DECISION,blog post — not yet migrated
+/blog/continuing-therapy-after-drug-and-alcohol-treatment/,,NEEDS DECISION,blog post — not yet migrated
+/blog/coping-skills-for-addiction/,,NEEDS DECISION,blog post — not yet migrated
+/blog/creating-a-personalized-addiction-treatment-plan/,,NEEDS DECISION,blog post — not yet migrated
+/blog/creating-effective-boundaries-with-workplace-peers/,,NEEDS DECISION,blog post — not yet migrated
+/blog/dependence-on-xanax/,,NEEDS DECISION,blog post — not yet migrated
+/blog/detox-in-chandler-same-day-admissions-available/,,NEEDS DECISION,blog post — not yet migrated
+/blog/dialectical-behavior-therapy/,,NEEDS DECISION,blog post — not yet migrated
+/blog/dieting-and-healthy-eating-habits-in-addiction-recovery/,,NEEDS DECISION,blog post — not yet migrated
+/blog/different-types-of-addictions-opiates-and-treatments/,,NEEDS DECISION,blog post — not yet migrated
+/blog/distinguishing-between-self-care-and-aftercare/,,NEEDS DECISION,blog post — not yet migrated
+/blog/do-i-have-to-quit-my-job-for-detox-and-recovery/,,NEEDS DECISION,blog post — not yet migrated
+/blog/do-i-need-to-undergo-alcohol-detox-after-a-relapse/,,NEEDS DECISION,blog post — not yet migrated
+/blog/do-i-need-xanax-addiction-treatment/,,NEEDS DECISION,blog post — not yet migrated
+/blog/do-parents-know-the-signs-of-opioid-addiction/,,NEEDS DECISION,blog post — not yet migrated
+/blog/does-age-impact-addiction-and-recovery/,,NEEDS DECISION,blog post — not yet migrated
+/blog/does-alcoholics-anonymous-actually-work/,,NEEDS DECISION,blog post — not yet migrated
+/blog/does-my-husband-need-to-seek-an-addiction-treatment-center/,,NEEDS DECISION,blog post — not yet migrated
+/blog/does-your-adult-child-need-medical-detox/,,NEEDS DECISION,blog post — not yet migrated
+/blog/dos-and-donts-to-follow-when-your-loved-one-is-struggling-with-addiction/,,NEEDS DECISION,blog post — not yet migrated
+/blog/drug-addiction-treatment-how-to-stay-away-from-drugs-and-avoid-relapse/,,NEEDS DECISION,blog post — not yet migrated
+/blog/drug-list-where-detox-is-needed-in-cases-of-addiction/,,NEEDS DECISION,blog post — not yet migrated
+/blog/dual-diagnosis-how-to-manage-my-mental-health-and-addiction-treatment/,,NEEDS DECISION,blog post — not yet migrated
+/blog/dual-diagnosis-rehab/,,NEEDS DECISION,blog post — not yet migrated
+/blog/dual-diagnosis-treatment-arizona/,,NEEDS DECISION,blog post — not yet migrated
+/blog/embracing-vulnerability-is-part-of-drug-and-alcohol-treatment/,,NEEDS DECISION,blog post — not yet migrated
+/blog/facing-cocaine-detox-fears/,,NEEDS DECISION,blog post — not yet migrated
+/blog/fear-of-leaving-rehab/,,NEEDS DECISION,blog post — not yet migrated
+/blog/fentanyl-addiction-signs-why-early-intervention-is-critical/,,NEEDS DECISION,blog post — not yet migrated
+/blog/fentanyl-addiction-signs/,,NEEDS DECISION,blog post — not yet migrated
+/blog/fentanyl-effects/,,NEEDS DECISION,blog post — not yet migrated
+/blog/fentanyl-overdose-why-is-fentanyl-so-dangerous/,,NEEDS DECISION,blog post — not yet migrated
+/blog/finding-addiction-treatment-centers-after-a-dui/,,NEEDS DECISION,blog post — not yet migrated
+/blog/finding-help-from-an-addiction-treatment-center/,,NEEDS DECISION,blog post — not yet migrated
+/blog/finding-hope-what-to-do-after-a-relapse/,,NEEDS DECISION,blog post — not yet migrated
+/blog/finding-the-courage-to-receive-treatment-at-an-arizona-recovery-center/,,NEEDS DECISION,blog post — not yet migrated
+/blog/from-the-grave-to-grace-the-burning-bush/,,NEEDS DECISION,blog post — not yet migrated
+/blog/functional-alcoholism/,,NEEDS DECISION,blog post — not yet migrated
+/blog/gallery/,,NEEDS DECISION,blog post — not yet migrated
+/blog/getting-help-at-buena-vista-for-a-dual-diagnosis-as-a-man/,,NEEDS DECISION,blog post — not yet migrated
+/blog/glossary/adderall/,,NEEDS DECISION,glossary term — no equivalent on the new build
+/blog/glossary/addiction/,,NEEDS DECISION,glossary term — no equivalent on the new build
+/blog/glossary/alcohol/,,NEEDS DECISION,glossary term — no equivalent on the new build
+/blog/glossary/ayahuasca/,,NEEDS DECISION,glossary term — no equivalent on the new build
+/blog/glossary/bath-salts/,,NEEDS DECISION,glossary term — no equivalent on the new build
+/blog/glossary/benzodiazepines/,,NEEDS DECISION,glossary term — no equivalent on the new build
+/blog/glossary/buprenorphine/,,NEEDS DECISION,glossary term — no equivalent on the new build
+/blog/glossary/cocaine/,,NEEDS DECISION,glossary term — no equivalent on the new build
+/blog/glossary/codeine/,,NEEDS DECISION,glossary term — no equivalent on the new build
+/blog/glossary/depression/,,NEEDS DECISION,glossary term — no equivalent on the new build
+/blog/glossary/dui/,,NEEDS DECISION,glossary term — no equivalent on the new build
+/blog/glossary/dwi/,,NEEDS DECISION,glossary term — no equivalent on the new build
+/blog/glossary/ecstasy-mdma/,,NEEDS DECISION,glossary term — no equivalent on the new build
+/blog/glossary/fentanyl/,,NEEDS DECISION,glossary term — no equivalent on the new build
+/blog/glossary/heroin/,,NEEDS DECISION,glossary term — no equivalent on the new build
+/blog/glossary/hydrocodone-facts/,,NEEDS DECISION,glossary term — no equivalent on the new build
+/blog/glossary/ketamine/,,NEEDS DECISION,glossary term — no equivalent on the new build
+/blog/glossary/marijuana/,,NEEDS DECISION,glossary term — no equivalent on the new build
+/blog/glossary/methamphetamine/,,NEEDS DECISION,glossary term — no equivalent on the new build
+/blog/glossary/naloxone/,,NEEDS DECISION,glossary term — no equivalent on the new build
+/blog/glossary/opioids/,,NEEDS DECISION,glossary term — no equivalent on the new build
+/blog/glossary/oxycodone/,,NEEDS DECISION,glossary term — no equivalent on the new build
+/blog/glossary/painkillers/,,NEEDS DECISION,glossary term — no equivalent on the new build
+/blog/glossary/suboxone/,,NEEDS DECISION,glossary term — no equivalent on the new build
+/blog/glossary/withdrawal/,,NEEDS DECISION,glossary term — no equivalent on the new build
+/blog/grief-therapy-for-addiction-recovery/,,NEEDS DECISION,blog post — not yet migrated
+/blog/grief-therapy-for-addiction/,,NEEDS DECISION,blog post — not yet migrated
+/blog/group-therapy/,,NEEDS DECISION,blog post — not yet migrated
+/blog/hallucinogenic-drugs-example-list-how-it-affect-ones-brain-and-health/,,NEEDS DECISION,blog post — not yet migrated
+/blog/hallucinogens-long-term-effects/,,NEEDS DECISION,blog post — not yet migrated
+/blog/handling-inpatient-substance-abuse-treatment-with-kids/,,NEEDS DECISION,blog post — not yet migrated
+/blog/healing-from-addiction-and-childhood-trauma-at-buena-vista-recovery/,,NEEDS DECISION,blog post — not yet migrated
+/blog/heroin-addiction/,,NEEDS DECISION,blog post — not yet migrated
+/blog/heroin-withdrawal-symptoms-medication/,,NEEDS DECISION,blog post — not yet migrated
+/blog/heroin-withdrawal-timeline/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-alcohol-addiction-complicates-your-finances-before-alcohol-detox/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-antidepressants-can-help-you-recover-from-addiction/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-buena-vista-helps-men-develop-self-care-strategies/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-buena-vistas-opioid-treatment-program-helps-you-make-amends/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-can-a-routine-help-me-thrive-after-addiction-treatment/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-can-an-iop-in-arizona-help-you-cope-with-stress-at-work/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-can-buena-vista-recovery-help-my-adult-child-fight-addiction/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-can-i-celebrate-success-in-sobriety/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-can-i-develop-a-healthy-sober-relationship-in-recovery/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-can-i-find-purpose-after-inpatient-substance-abuse-treatment/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-can-i-give-back-to-the-recovery-community/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-can-i-support-a-loved-one-in-recovery/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-can-immediate-relief-at-buena-vista-help-with-lasting-recovery/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-can-iops-help-me-maintain-sobriety/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-different-types-of-addiction-impact-your-sleep/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-difficult-is-cocaine-detox/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-do-i-adjust-to-life-after-dui-jail-time/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-do-i-choose-the-right-rehab/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-do-i-create-a-daily-routine-in-an-intensive-outpatient-program/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-do-i-create-a-relapse-prevention-plan-in-recovery/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-do-i-explain-dui-jail-time-to-my-family/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-do-i-set-boundaries-with-old-friends-after-opioid-treatment/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-do-i-support-my-son-through-alcohol-addiction-treatment/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-do-mental-health-disorders-inform-addiction/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-do-pain-management-and-fentanyl-addiction-connect/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-does-a-healthy-diet-improve-mental-health/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-does-language-affect-my-addiction-recovery/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-does-pain-management-in-addiction-recovery-work/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-does-sleep-help-with-pain-management-in-addiction-recovery/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-does-social-media-impact-my-addiction-recovery/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-does-spirituality-in-recovery-affect-me/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-family-support-helps-in-addiction-treatment/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-individual-therapy-can-build-your-social-support-network/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-learning-to-manage-stress-helps-with-fentanyl-overdose-prevention/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-long-do-drugs-stay-in-your-system/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-long-do-opioids-stay-in-your-system/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-long-does-addiction-recovery-take/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-long-does-alcohol-stay-in-your-system/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-long-does-alcohol-withdrawal-last/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-long-does-fentanyl-stay-in-your-system/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-long-does-it-take-to-detox-from-alcohol/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-long-does-meth-stay-in-my-system/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-long-does-xanax-stay-in-your-system/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-opioid-treatment-helps-men-manage-panic-disorder-while-sober/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-physical-trauma-affects-addiction/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-to-approach-a-loved-one-about-his-or-her-addiction/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-to-break-old-habits-after-leaving-an-addiction-treatment-center/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-to-build-a-positive-supportive-network-in-addiction-recovery/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-to-choose-the-best-inpatient-substance-abuse-treatment/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-to-combat-social-anxiety/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-to-cultivate-self-confidence-following-alcohol-detox-and-treatment/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-to-decide-if-a-12-step-program-is-right-for-me/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-to-get-help-for-addiction-where-to-start-and-what-you-need-to-do/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-to-handle-holiday-stress-in-recovery/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-to-pay-for-rehab-in-arizona-what-are-your-options/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-to-prepare-before-entering-an-addiction-treatment-center/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-to-prepare-for-a-dui-court-hearing/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-to-stay-inspired-to-change-after-drug-and-alcohol-treatment/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-to-tell-if-a-rehab-center-is-actually-clinical/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-will-dui-jail-time-affect-my-recovery/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-will-recovery-affect-my-job/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-young-men-can-build-self-esteem-following-alcohol-rehab/,,NEEDS DECISION,blog post — not yet migrated
+/blog/how-your-diet-affects-addiction-recovery/,,NEEDS DECISION,blog post — not yet migrated
+/blog/hydrocodone-addiction/,,NEEDS DECISION,blog post — not yet migrated
+/blog/hydrocodone-and-alcohol/,,NEEDS DECISION,blog post — not yet migrated
+/blog/hydrocodone-overdose/,,NEEDS DECISION,blog post — not yet migrated
+/blog/i-finished-alcohol-detox-and-treatment-now-what/,,NEEDS DECISION,blog post — not yet migrated
+/blog/identifying-different-types-of-addiction-in-young-adults/,,NEEDS DECISION,blog post — not yet migrated
+/blog/identifying-the-signs-of-marijuana-addiction/,,NEEDS DECISION,blog post — not yet migrated
+/blog/individualized-care-improves-pain-management-in-addiction-recovery/,,NEEDS DECISION,blog post — not yet migrated
+/blog/insurance-plans-that-cover-dual-diagnosis-rehab-programs/,,NEEDS DECISION,blog post — not yet migrated
+/blog/intensive-outpatient-program/,,NEEDS DECISION,blog post — not yet migrated
+/blog/introducing-the-buena-vista-recovery-app-join-our-community/,,NEEDS DECISION,blog post — not yet migrated
+/blog/is-addiction-genetic/,,NEEDS DECISION,blog post — not yet migrated
+/blog/is-alcohol-use-among-men-more-common/,,NEEDS DECISION,blog post — not yet migrated
+/blog/is-an-intensive-outpatient-program-iop-right-for-me/,,NEEDS DECISION,blog post — not yet migrated
+/blog/is-cocaine-detox-different-for-men/,,NEEDS DECISION,blog post — not yet migrated
+/blog/is-inpatient-or-outpatient-treatment-better-for-a-pain-pill-addiction/,,NEEDS DECISION,blog post — not yet migrated
+/blog/is-it-too-late-for-me-to-enter-alcohol-detox-for-my-addiction/,,NEEDS DECISION,blog post — not yet migrated
+/blog/is-medication-assisted-treatment-effective/,,NEEDS DECISION,blog post — not yet migrated
+/blog/is-my-child-struggling-with-addiction/,,NEEDS DECISION,blog post — not yet migrated
+/blog/is-my-loved-one-struggling-with-addiction/,,NEEDS DECISION,blog post — not yet migrated
+/blog/is-social-anxiety-affecting-my-substance-use/,,NEEDS DECISION,blog post — not yet migrated
+/blog/keeping-yourself-motivated-throughout-recovery/,,NEEDS DECISION,blog post — not yet migrated
+/blog/learning-to-re-imagine-your-life-after-alcohol-detox/,,NEEDS DECISION,blog post — not yet migrated
+/blog/legal-issues-associated-with-rehab/,,NEEDS DECISION,blog post — not yet migrated
+/blog/life-after-rehab-applying-skills-learned-in-rehab-to-your-life/,,NEEDS DECISION,blog post — not yet migrated
+/blog/local-or-out-of-state-drug-detox-center-how-to-decide/,,NEEDS DECISION,blog post — not yet migrated
+/blog/long-term-effects-of-vicodin-risks-addiction-treatment/,,NEEDS DECISION,blog post — not yet migrated
+/blog/managing-boredom-in-recovery/,,NEEDS DECISION,blog post — not yet migrated
+/blog/mat-for-opioid-use/,,NEEDS DECISION,blog post — not yet migrated
+/blog/medical-detox-for-alcohol-addiction-and-the-next-steps/,,NEEDS DECISION,blog post — not yet migrated
+/blog/medical-detox-overcoming-abuse/,,NEEDS DECISION,blog post — not yet migrated
+/blog/medication-assisted-treatment/,,NEEDS DECISION,blog post — not yet migrated
+/blog/meth-addiction-treatment-and-recovery-where-to-find-help/,,NEEDS DECISION,blog post — not yet migrated
+/blog/meth-face/,,NEEDS DECISION,blog post — not yet migrated
+/blog/meth-withdrawal-timeline-what-you-need-to-know/,,NEEDS DECISION,blog post — not yet migrated
+/blog/mixing-stimulants-and-depressants-dangers-consequences-and-treatment/,,NEEDS DECISION,blog post — not yet migrated
+/blog/mocktails-for-recovering-alcoholics-a-journey-towards-healing-and-enjoyment/,,NEEDS DECISION,blog post — not yet migrated
+/blog/most-common-relapse-triggers-and-how-to-manage-them/,,NEEDS DECISION,blog post — not yet migrated
+/blog/myths-about-medication-assisted-treatment/,,NEEDS DECISION,blog post — not yet migrated
+/blog/natural-insomnia-remedies-stop-counting-sheep-and-start-counting-zzzzs/,,NEEDS DECISION,blog post — not yet migrated
+/blog/opiate-addiction-treatment-options/,,NEEDS DECISION,blog post — not yet migrated
+/blog/opiate-detox-timeline/,,NEEDS DECISION,blog post — not yet migrated
+/blog/opiate-detox-treatment/,,NEEDS DECISION,blog post — not yet migrated
+/blog/opiod_addiction_and_chronic_pain/,,NEEDS DECISION,blog post — not yet migrated
+/blog/opioid-overdose-reversal/,,NEEDS DECISION,blog post — not yet migrated
+/blog/outpatient-rehab-building-a-social-support-network-managing-stress/,,NEEDS DECISION,blog post — not yet migrated
+/blog/overcoming-the-effects-of-anger-in-addiction-recovery/,,NEEDS DECISION,blog post — not yet migrated
+/blog/overcoming-the-effects-of-seasonal-affective-disorder-sad/,,NEEDS DECISION,blog post — not yet migrated
+/blog/overcoming-the-stigmas-of-men-pursuing-addiction-treatment/,,NEEDS DECISION,blog post — not yet migrated
+/blog/parents-with-addiction/,,NEEDS DECISION,blog post — not yet migrated
+/blog/partial-hospitalization-program-vs-iop-understand-the-difference/,,NEEDS DECISION,blog post — not yet migrated
+/blog/podcast-ep-2-meet-bobby-cording/,,NEEDS DECISION,blog post — not yet migrated
+/blog/preparing-for-detox-setting-expectations/,,NEEDS DECISION,blog post — not yet migrated
+/blog/preventing-relapse-during-quarantine/,,NEEDS DECISION,blog post — not yet migrated
+/blog/recognizing-the-signs-and-symptoms-of-opioid-abuse/,,NEEDS DECISION,blog post — not yet migrated
+/blog/recollecting-your-life-after-a-dui/,,NEEDS DECISION,blog post — not yet migrated
+/blog/rehab-facts-vs-fiction/,,NEEDS DECISION,blog post — not yet migrated
+/blog/relapse-in-the-recovery-process/,,NEEDS DECISION,blog post — not yet migrated
+/blog/relapse-prevention-longer-stays-ongoing-support/,,NEEDS DECISION,blog post — not yet migrated
+/blog/repairing-the-relationship-with-my-wife-after-drug-alcohol-treatment/,,NEEDS DECISION,blog post — not yet migrated
+/blog/residential-vs-intensive-outpatient-programs-whats-the-difference/,,NEEDS DECISION,blog post — not yet migrated
+/blog/returning-to-work-after-substance-abuse-treatment/,,NEEDS DECISION,blog post — not yet migrated
+/blog/scared-to-go-to-rehab/,,NEEDS DECISION,blog post — not yet migrated
+/blog/sharing-inpatient-substance-abuse-treatment-experience-with-your-wife/,,NEEDS DECISION,blog post — not yet migrated
+/blog/should-i-tell-my-family-i-need-to-go-to-an-opioid-treatment-program/,,NEEDS DECISION,blog post — not yet migrated
+/blog/signs-and-symptoms-of-substance-abuse/,,NEEDS DECISION,blog post — not yet migrated
+/blog/signs-that-your-loved-one-might-have-an-addiction/,,NEEDS DECISION,blog post — not yet migrated
+/blog/signs-you-may-be-nearing-a-fentanyl-overdose/,,NEEDS DECISION,blog post — not yet migrated
+/blog/six-stages-of-alcoholism/,,NEEDS DECISION,blog post — not yet migrated
+/blog/suboxone-detox-treatment/,,NEEDS DECISION,blog post — not yet migrated
+/blog/suboxone-detox/,,NEEDS DECISION,blog post — not yet migrated
+/blog/suboxone-withdrawal/,,NEEDS DECISION,blog post — not yet migrated
+/blog/substance-abuse-disorder/,,NEEDS DECISION,blog post — not yet migrated
+/blog/substance-abuse-therapy/,,NEEDS DECISION,blog post — not yet migrated
+/blog/substance-abuse-treatment-for-medical-professionals/,,NEEDS DECISION,blog post — not yet migrated
+/blog/supporting-a-loved-one-through-anxiety-panic-and-addiction/,,NEEDS DECISION,blog post — not yet migrated
+/blog/taking-charge-of-your-sober-thanksgiving/,,NEEDS DECISION,blog post — not yet migrated
+/blog/talking-to-a-spouse-about-substance-use/,,NEEDS DECISION,blog post — not yet migrated
+/blog/the-2-different-types-of-addiction-with-examples/,,NEEDS DECISION,blog post — not yet migrated
+/blog/the-benefits-of-group-therapy/,,NEEDS DECISION,blog post — not yet migrated
+/blog/the-benefits-of-mindfulness-meditation-during-addiction-treatment/,,NEEDS DECISION,blog post — not yet migrated
+/blog/the-biology-of-detox/,,NEEDS DECISION,blog post — not yet migrated
+/blog/the-dangerous-effects-of-depression/,,NEEDS DECISION,blog post — not yet migrated
+/blog/the-difference-between-slips-and-relapse-in-recovery/,,NEEDS DECISION,blog post — not yet migrated
+/blog/the-differences-between-inpatient-and-outpatient-addiction-treatments/,,NEEDS DECISION,blog post — not yet migrated
+/blog/the-different-types-of-goals-to-set-for-2021/,,NEEDS DECISION,blog post — not yet migrated
+/blog/the-effects-of-addiction-on-children/,,NEEDS DECISION,blog post — not yet migrated
+/blog/the-emotional-impact-of-a-dui-conviction/,,NEEDS DECISION,blog post — not yet migrated
+/blog/the-good-bad-and-ugly-what-the-road-to-recovery-really-looks-like/,,NEEDS DECISION,blog post — not yet migrated
+/blog/the-impact-of-addiction-on-the-family/,,NEEDS DECISION,blog post — not yet migrated
+/blog/the-impact-of-dui-jail-time-on-my-recovery/,,NEEDS DECISION,blog post — not yet migrated
+/blog/the-importance-of-individualized-therapy-after-dui-jail-time/,,NEEDS DECISION,blog post — not yet migrated
+/blog/the-many-forms-of-addiction/,,NEEDS DECISION,blog post — not yet migrated
+/blog/the-role-of-comfort-and-luxury-in-overcoming-addiction/,,NEEDS DECISION,blog post — not yet migrated
+/blog/the-role-of-community-in-recovery/,,NEEDS DECISION,blog post — not yet migrated
+/blog/the-role-of-community-in-relapse-prevention/,,NEEDS DECISION,blog post — not yet migrated
+/blog/the-role-of-gratitude-in-addiction-recovery/,,NEEDS DECISION,blog post — not yet migrated
+/blog/the-seven-primary-types-of-drugs/,,NEEDS DECISION,blog post — not yet migrated
+/blog/the-story-of-jesus-g-gutierrez/,,NEEDS DECISION,blog post — not yet migrated
+/blog/tools-for-recovery/,,NEEDS DECISION,blog post — not yet migrated
+/blog/top-5-substance-abuse-group-therapy-activities/,,NEEDS DECISION,blog post — not yet migrated
+/blog/trauma-and-its-effects-on-substance-use/,,NEEDS DECISION,blog post — not yet migrated
+/blog/understanding-addiction-as-a-disease-and-how-it-develops/,,NEEDS DECISION,blog post — not yet migrated
+/blog/understanding-alcohol-abuse/,,NEEDS DECISION,blog post — not yet migrated
+/blog/understanding-psychological-addiction/,,NEEDS DECISION,blog post — not yet migrated
+/blog/understanding-the-different-alcohol-detox-symptoms/,,NEEDS DECISION,blog post — not yet migrated
+/blog/understanding-the-need-for-medical-detox/,,NEEDS DECISION,blog post — not yet migrated
+/blog/using-cognitive-behavioral-therapy-in-addiction-treatment/,,NEEDS DECISION,blog post — not yet migrated
+/blog/using-medication-during-opioid-withdrawal/,,NEEDS DECISION,blog post — not yet migrated
+/blog/using-technology-to-facilitate-continued-healing/,,NEEDS DECISION,blog post — not yet migrated
+/blog/what-actually-happens-in-your-first-72-hours-in-detox/,,NEEDS DECISION,blog post — not yet migrated
+/blog/what-are-coping-skills-for-different-types-of-addiction/,,NEEDS DECISION,blog post — not yet migrated
+/blog/what-are-some-drug-and-alcohol-treatment-centers-in-arizona/,,NEEDS DECISION,blog post — not yet migrated
+/blog/what-are-the-benefits-of-cognitive-behavioral-therapy-cbt/,,NEEDS DECISION,blog post — not yet migrated
+/blog/what-are-the-differences-between-crack-and-cocaine/,,NEEDS DECISION,blog post — not yet migrated
+/blog/what-are-the-effects-of-tramadol/,,NEEDS DECISION,blog post — not yet migrated
+/blog/what-are-the-signs-of-heroin-overdose/,,NEEDS DECISION,blog post — not yet migrated
+/blog/what-are-the-symptoms-of-alcohol-withdrawal/,,NEEDS DECISION,blog post — not yet migrated
+/blog/what-can-i-expect-in-residential-treatment/,,NEEDS DECISION,blog post — not yet migrated
+/blog/what-does-treatment-look-like-at-an-arizona-addiction-recovery-center/,,NEEDS DECISION,blog post — not yet migrated
+/blog/what-happens-in-outpatient-rehab/,,NEEDS DECISION,blog post — not yet migrated
+/blog/what-happens-to-my-brain-when-i-become-addicted-to-substances/,,NEEDS DECISION,blog post — not yet migrated
+/blog/what-happens-when-i-arrive-at-treatment/,,NEEDS DECISION,blog post — not yet migrated
+/blog/what-is-a-dual-diagnosis/,,NEEDS DECISION,blog post — not yet migrated
+/blog/what-is-alcohol-detox-medication/,,NEEDS DECISION,blog post — not yet migrated
+/blog/what-is-hydrocodone/,,NEEDS DECISION,blog post — not yet migrated
+/blog/what-is-medical-detox/,,NEEDS DECISION,blog post — not yet migrated
+/blog/what-is-relapse-in-addiction/,,NEEDS DECISION,blog post — not yet migrated
+/blog/what-is-the-biology-of-addiction/,,NEEDS DECISION,blog post — not yet migrated
+/blog/what-is-the-connection-between-trauma-self-medicating-and-addiction/,,NEEDS DECISION,blog post — not yet migrated
+/blog/what-is-toxic-positivity-and-how-does-it-affect-addiction-recovery/,,NEEDS DECISION,blog post — not yet migrated
+/blog/what-recovery-looks-like-6-months-after-rehab/,,NEEDS DECISION,blog post — not yet migrated
+/blog/what-to-say-to-a-drug-addict-who-relapsed/,,NEEDS DECISION,blog post — not yet migrated
+/blog/whats-the-difference-between-stimulants-depressants/,,NEEDS DECISION,blog post — not yet migrated
+/blog/when-is-detwhen-is-detox-necessaryox-necessary/,,NEEDS DECISION,blog post — not yet migrated
+/blog/when-is-it-time-to-call-an-inpatient-rehabilitation-center/,,NEEDS DECISION,blog post — not yet migrated
+/blog/which-prescription-drugs-can-lead-to-addiction/,,NEEDS DECISION,blog post — not yet migrated
+/blog/who-makes-the-most-effective-supports-in-recovery/,,NEEDS DECISION,blog post — not yet migrated
+/blog/why-connection-matters-so-much-after-an-intensive-outpatient-program/,,NEEDS DECISION,blog post — not yet migrated
+/blog/why-do-addicts-relapse-even-if-things-are-good/,,NEEDS DECISION,blog post — not yet migrated
+/blog/why-does-buena-vista-believe-case-management-is-important-in-recovery/,,NEEDS DECISION,blog post — not yet migrated
+/blog/why-is-detox-necessary/,,NEEDS DECISION,blog post — not yet migrated
+/blog/why-is-family-education-important-in-addiction-recovery/,,NEEDS DECISION,blog post — not yet migrated
+/blog/why-is-fentanyl-so-dangerous-a-detailed-look/,,NEEDS DECISION,blog post — not yet migrated
+/blog/why-some-people-get-worse-after-rehab/,,NEEDS DECISION,blog post — not yet migrated
+/blog/why-you-should-consider-going-out-of-state-for-rehab/,,NEEDS DECISION,blog post — not yet migrated
+/blog/will-a-fentanyl-overdose-change-my-thought-process-long-term/,,NEEDS DECISION,blog post — not yet migrated
+/blog/will-alcohol-rehab-help-after-a-dui/,,NEEDS DECISION,blog post — not yet migrated
+/blog/will-medication-assisted-treatment-help-after-a-fentanyl-overdose/,,NEEDS DECISION,blog post — not yet migrated
+/blog/will-my-parents-support-me-through-drug-and-alcohol-treatment/,,NEEDS DECISION,blog post — not yet migrated
+/blog/will-trying-a-detox-center-near-me-help/,,NEEDS DECISION,blog post — not yet migrated
+/blog/will-xanax-detox-have-negative-long-term-effects/,,NEEDS DECISION,blog post — not yet migrated
+/blog/work-related-anxiety-and-substance-abuse/,,NEEDS DECISION,blog post — not yet migrated
+/blog/xanax-addiction-treatment-plan-whats-the-best-option-for-me/,,NEEDS DECISION,blog post — not yet migrated
+/blog/xanax-detox-is-it-safe-to-do-at-home/,,NEEDS DECISION,blog post — not yet migrated
+/blog/xanax-treatment/,,NEEDS DECISION,blog post — not yet migrated
+/blog/xanax-withdrawal/,,NEEDS DECISION,blog post — not yet migrated
+/blog/your-guide-to-physical-addiction-and-how-to-get-help/,,NEEDS DECISION,blog post — not yet migrated
+/careers/,/about/,ok,
+/chandler-facility/,,NEEDS DECISION,
+/contact-us/,/about/contact/,ok,
+/glossary/,/resources/,ok,
+/insurance/,/insurance/,ok,
+/insurance/aetna-insurance-for-addiction-treatment/,/insurance/,ok,
+/insurance/ahcccs-insurance-for-addiction-treatment/,/insurance/ahcccs-medicaid/,ok,
+/insurance/beacon-insurance/,/insurance/,ok,
+/insurance/bluecross-blueshield-insurance-for-addiction-treatment/,/insurance/,ok,
+/insurance/cerner-insurance-for-addiction-treatment/,/insurance/,ok,
+/insurance/cigna-insurance-for-addiction-treatment/,/insurance/,ok,
+/insurance/compsych-insurance/,/insurance/,ok,
+/insurance/first-health-network-insurance/,/insurance/,ok,
+/insurance/harvard-pilgrim-insurance/,/insurance/,ok,
+/insurance/humana-insurance-for-drug-alcohol-rehab/,/insurance/,ok,
+/insurance/in-network/,/insurance/,ok,
+/insurance/in-network/american-indian-health-program/,/insurance/ahcccs-medicaid/,ok,
+/insurance/in-network/care1st/,/insurance/ahcccs-medicaid/,ok,
+/insurance/in-network/usa-mco-insurance/,/insurance/ahcccs-medicaid/,ok,
+/insurance/insurance-verification/,/insurance/verify-your-benefits/,ok,
+/insurance/kaiser-permanente-insurance/,/insurance/,ok,
+/insurance/magellan-complete-care/,/insurance/ahcccs-medicaid/,ok,
+/insurance/mercy-care/,/insurance/ahcccs-medicaid/,ok,
+/insurance/multiplan-insurance/,/insurance/,ok,
+/insurance/out-of-network/,/insurance/,ok,
+/insurance/out-of-network/anthem-bcbs-insurance-for-addiction-treatment/,/insurance/,ok,
+/insurance/out-of-network/magellan-health-insurance/,/insurance/,ok,
+/insurance/out-of-network/presbyterian-insurance/,/insurance/,ok,
+/insurance/out-of-network/tricare/,/insurance/,ok,
+/insurance/tufts-health-insurance/,/insurance/,ok,
+/insurance/unitedhealthcare-insurance/,/insurance/,ok,
+/locations/,/locations/,ok,
+/locations/chandler/,/locations/chandler/,ok,
+/locations/who-we-serve/,/who-we-serve/,ok,
+/locations/who-we-serve/california-substance-abuse-treatment-facility/,/locations/,ok,
+/locations/who-we-serve/georgia-substance-abuse-treatment/,/locations/,ok,
+/locations/who-we-serve/illinois-rehab-centers/,/locations/,ok,
+/locations/who-we-serve/in-state/,/locations/,ok,
+/locations/who-we-serve/in-state/998-2/,/locations/,ok,
+/locations/who-we-serve/in-state/phoenix-az/,/locations/phoenix/,ok,
+/locations/who-we-serve/in-state/scottsdale/,/locations/,ok,
+/locations/who-we-serve/nevada-substance-abuse-treatment/,/locations/,ok,
+/locations/who-we-serve/new-mexico-rehab-facility/,/locations/,ok,
+/locations/who-we-serve/new-york-substance-abuse-treatment/,/locations/,ok,
+/locations/who-we-serve/out-of-state/,/locations/,ok,
+/locations/who-we-serve/out-of-state/colorado-drug-rehab-center/,/locations/,ok,
+/locations/who-we-serve/out-of-state/florida-drug-rehab-centers/,/locations/,ok,
+/locations/who-we-serve/out-of-state/utah-substance-abuse-treatment/,/locations/,ok,
+/locations/who-we-serve/texas-drug-rehab-center/,/locations/,ok,
+/notice-of-privacy-practices/,/,ok,
+/our-programs/,/programs/,ok,
+/our-programs/inpatient/,/residential-treatment/,ok,
+/our-programs/inpatient/alcoholism/,/what-we-treat/alcohol-addiction/,ok,
+/our-programs/inpatient/substance-abuse/,/residential-treatment/,ok,
+/our-programs/iop-treatment-arizona/,/programs/intensive-outpatient-iop/,ok,
+/our-programs/medical-detox/,/medical-detox/,ok,
+/our-programs/medical-detox/alcohol-detox/,/what-we-treat/alcohol-addiction/,ok,
+/our-programs/medical-detox/drug-detox/,/medical-detox/,ok,
+/our-programs/medical-detox/drug-detox/opioid-drug-detox/,/what-we-treat/opioid-addiction/,ok,
+/our-programs/medical-detox/drug-detox/opioid-drug-detox/heroin/,/what-we-treat/opioid-addiction/,ok,
+/our-programs/medical-detox/drug-detox/opioid-drug-detox/oxycontin/,/what-we-treat/opioid-addiction/,ok,
+/our-programs/medical-detox/drug-detox/opioid-drug-detox/vicodin/,/what-we-treat/opioid-addiction/,ok,
+/our-programs/medical-detox/drug-detox/prescription-drug-detox/,/what-we-treat/opioid-addiction/,ok,
+/our-programs/medical-detox/drug-detox/prescription-drug-detox/xanax/,/what-we-treat/benzodiazepine-addiction/,ok,
+/our-programs/medical-detox/drug-detox/stimulant-drug-detox/,/what-we-treat/stimulant-addiction/,ok,
+/our-programs/medical-detox/drug-detox/stimulant-drug-detox/cocaine/,/what-we-treat/stimulant-addiction/,ok,
+/our-programs/medical-detox/drug-detox/stimulant-drug-detox/marijuana/,/what-we-treat/,ok,
+/our-programs/medical-detox/drug-detox/stimulant-drug-detox/meth/,/what-we-treat/stimulant-addiction/methamphetamine/,ok,
+/our-programs/medication-assisted-treatment-mat/,/what-we-treat/opioid-addiction/,ok,
+/our-programs/outpatient-treatment/,/programs/intensive-outpatient-iop/,ok,
+/our-programs/therapy/,/therapies/,ok,
+/our-programs/therapy/12-step-program/,/therapies/,ok,
+/our-programs/therapy/cognitive-behavioral-therapy/,/therapies/,ok,
+/our-programs/therapy/grief-therapy/,/therapies/,ok,
+/our-programs/therapy/group-therapy/,/therapies/,ok,
+/our-programs/therapy/individual-counseling/,/therapies/,ok,
+/our-programs/therapy/trauma-focused-therapy/,/therapies/,ok,
+/podcast/,/resources/,ok,
+/privacy-policy/,/,ok,
+/site-map/,/sitemap/,ok,
+/sitemap/,/sitemap/,ok,
+/tatum-ranch-arizona-facility/,,NEEDS DECISION,
+/terms-of-use/,/,ok,
+/tucson-facility/,,NEEDS DECISION,
+/who-we-help/,/who-we-serve/,ok,
+/who-we-help/professionals/,/referrals/,ok,
+/who-we-help/professionals/impaired-physicians-program/,/referrals/,ok,
+/who-we-help/young-adults/,/who-we-serve/,ok,

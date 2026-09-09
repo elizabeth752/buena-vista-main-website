@@ -1,0 +1,116 @@
+---
+/* -----------------------------------------------------------------------------
+   Serving Scottsdale — SERVICE-AREA page, not a location page.
+
+   ⚠ THIS PAGE EXISTS TO FIX A LIVE PROBLEM. The old WordPress site has
+   /locations/scottsdale-arizona/ earning 1,092 clicks and 168,119 impressions
+   over 12 months at an average position of 5.4 — for a facility that is CLOSED.
+   It is the single biggest 404 risk in the migration, and redirecting it to
+   Chandler alone would drop a page ranking in the top five.
+
+   So the old URL redirects here, and this page is straight about it: there is
+   no Scottsdale building, there never will be one at that address, and we serve
+   Scottsdale from Chandler. Do NOT restore a Scottsdale location page, do NOT
+   add a Scottsdale NAP, and do NOT add LocalBusiness schema. Presenting a
+   closed facility as open is both a Google penalty risk and sends someone in
+   crisis to a locked door.
+
+   ⚠ NO INVENTED DRIVE TIMES. Freeways and surface streets are facts; a figure
+   in minutes is not one anybody has verified.
+----------------------------------------------------------------------------- */
+import Layout from '../../layouts/Layout.astro';
+import TopBar from '../../components/TopBar.astro';
+import Nav from '../../components/Nav.astro';
+
+import ServiceAreaHero from '../../components/servicearea/ServiceAreaHero.astro';
+import ServiceAreaBody from '../../components/servicearea/ServiceAreaBody.astro';
+
+import Testimonials from '../../components/Testimonials.astro';
+import VerifySection from '../../components/VerifySection.astro';
+import AdmissionsPath from '../../components/AdmissionsPath.astro';
+import FAQ from '../../components/FAQ.astro';
+import FinalCTA from '../../components/FinalCTA.astro';
+
+const title = "Drug and Alcohol Rehab Serving Scottsdale, Arizona | Buena Vista Health & Recovery";
+const description = "Medical detox and residential treatment serving Scottsdale from our Chandler, AZ facility. There is no Scottsdale facility. AHCCCS accepted, open 24 hours. Call (888) 362-5576.";
+
+const points = [
+  { text: 'Our Scottsdale location is closed. Chandler is open and admitting',
+    d: 'M15 10.5a3 3 0 11-6 0 3 3 0 016 0z M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z' },
+  { text: 'Medical detox and residential treatment, open 24 hours',
+    d: 'M21 8.25H3m18 0a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 8.25m18 0v10.5A2.25 2.25 0 0118.75 21H5.25A2.25 2.25 0 013 18.75V8.25M12 11.25v6m3-3H9' },
+  { text: 'A straightforward run south on the 101 or the 202',
+    d: 'M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3' },
+  { text: 'Close enough that family can visit without planning a trip',
+    d: 'M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z' },
+  { text: 'AHCCCS plans and most major commercial and private carriers',
+    d: 'M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z' },
+];
+
+const routes = [
+  { h: 'South Scottsdale and Old Town', p: 'The 101 south, or Scottsdale Road and Rural straight down. One of the shorter runs of anywhere we serve.' },
+  { h: 'Central Scottsdale', p: 'The 101 to the 202 and across, or Hayden and Pima south depending on the traffic.' },
+  { h: 'North Scottsdale', p: 'Longer, usually the 101 the whole way. Worth asking about a ride rather than assuming you have to solve it.' },
+  { h: 'No car at all', p: 'Say so on the call. Transport within our local service area is something we can often arrange, and Scottsdale is inside it.' },
+];
+
+const why = [
+  { h: 'Where we actually are now', p: 'The Scottsdale facility is closed. Buena Vista operates one building, in Chandler, and it is open every hour of every day including holidays.' },
+  { h: 'Being out of your own postcode', p: 'For most people a short drive out of the neighborhood is an advantage rather than a cost. Far enough to be out of the routine, close enough for family to visit.' },
+  { h: 'Getting in quickly', p: 'Same-day admission is possible when a bed is open. The assessment and the coverage check happen on one call, so very little sits between deciding and arriving.' },
+];
+
+const faqs = [
+  { q: 'Is the Buena Vista Scottsdale location still open?',
+    a: "No. The Scottsdale facility is closed and is not admitting. Buena Vista operates one building, at 3033 S Arizona Ave in Chandler, and that is where all care happens. We would rather tell you that plainly on this page than have you drive to an address and find nobody there. If you were searching for Scottsdale because it was the nearest option you knew about, Chandler is a straightforward run south on the 101 or the 202." },
+  { q: 'Where do people from Scottsdale go instead?',
+    a: "To our Chandler facility, which offers medical detox and residential treatment in the same building and is open 24 hours a day. It is a normal Valley drive rather than a journey, and if getting there is the problem then transport within our local service area is something we can often arrange. Say so on the first call rather than deciding in advance that the distance rules you out." },
+  { q: 'How long does it take to get to Chandler from Scottsdale?',
+    a: "It depends where in Scottsdale you start. From Old Town and south Scottsdale it is the 101 south or Scottsdale Road and Rural straight down; from north Scottsdale it is the 101 most of the way. We will not put a figure in minutes on it, because traffic on the 101 makes that unreliable, but it is a drive people make without much planning." },
+  { q: 'Will my family be able to visit?',
+    a: "Yes, and being close enough for that is one of the better arguments for treating locally rather than travelling out of state. Visiting happens on a schedule so it does not cut across the therapeutic day, and your case manager will walk your family through how it works once you are admitted." },
+  { q: 'Does AHCCCS cover this if I live in Scottsdale?',
+    a: "Coverage follows your plan rather than your address, so living in Scottsdale changes nothing about it. We work with AHCCCS plans and with most major commercial and private carriers, and we check your specific plan while you are on the phone. It costs nothing and you owe nothing either way." },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(f => ({
+    '@type': 'Question', name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+---
+<Layout title={title} description={description}>
+  <TopBar />
+  <Nav />
+
+  <ServiceAreaHero
+    city="Scottsdale"
+    title="Treatment for Scottsdale, down in Chandler."
+    points={points}
+    disclosure="Buena Vista is one facility, at 3033 S Arizona Ave in Chandler. Our Scottsdale location is closed and is not admitting. We serve Scottsdale from Chandler, and the drive is the only difference it makes."
+    image="/Asset/stock%20photo/Desktop%20Dimensions/Facility/Covered%20drop-off%20entrance%20with%20tower%20feature%20and%20circular%20driveway.png"
+    alt="The covered drop-off entrance at Buena Vista in Chandler, with a tower feature and circular driveway"
+    caption="The Chandler entrance, a run south from Scottsdale."
+  />
+
+  <ServiceAreaBody
+    city="Scottsdale"
+    routesTitle="Coming down from Scottsdale"
+    routesIntro="Scottsdale sits north of us across the Valley, and every route comes down to one of two freeways."
+    routes={routes}
+    whyTitle="What people from Scottsdale tend to ask about"
+    why={why}
+  />
+
+  <VerifySection heading="Does your insurance cover treatment from Scottsdale?" />
+  <Testimonials />
+  <AdmissionsPath heading="How to start treatment from Scottsdale" bg="bg-white" ring="ring-white" noteBg="bg-navy-deep" />
+  <FAQ faqs={faqs} eyebrow="Straight answers" heading="Questions from Scottsdale" bg="bg-cream" />
+
+  <FinalCTA />
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
+</Layout>

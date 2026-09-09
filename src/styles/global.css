@@ -137,3 +137,61 @@ details:not([open]) .faq-minus { display: none; }
 @media (max-width: 767px) {
   .bv-watermark::before { background-size: 380px auto; background-position: right -140px top 40px; }
 }
+
+/* --- Article body ---------------------------------------------------------
+   Long-form prose for the migrated blog. Scoped to .prose-bv so it cannot
+   affect the built pages, which set their own type. Sizes are declared here
+   rather than with Tailwind classes because the h1-h3 scale above is unlayered
+   and would win over a utility. */
+.prose-bv > * + * { margin-top: 1.35rem; }
+
+.prose-bv h2 {
+  font-family: var(--font-display);
+  font-size: 30px;
+  line-height: 38px;
+  letter-spacing: -0.01em;
+  color: var(--color-navy);
+  margin-top: 3rem;
+  scroll-margin-top: 7rem;
+}
+
+.prose-bv h3 {
+  font-family: var(--font-display);
+  font-size: 23px;
+  line-height: 30px;
+  letter-spacing: 0;
+  color: var(--color-navy);
+  margin-top: 2.25rem;
+  scroll-margin-top: 7rem;
+}
+
+.prose-bv p,
+.prose-bv li {
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 30px;
+  color: var(--color-charcoal);
+}
+
+.prose-bv ul,
+.prose-bv ol { padding-left: 1.4rem; }
+.prose-bv ul { list-style: disc; }
+.prose-bv ol { list-style: decimal; }
+.prose-bv li::marker { color: var(--color-gold); }
+.prose-bv li + li { margin-top: .6rem; }
+
+/* Links inside prose are the one place an underline is right: the surrounding
+   text is long-form, so colour alone is not enough of an affordance. */
+.prose-bv a {
+  color: var(--color-teal);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.prose-bv a:hover { opacity: .7; }
+
+.prose-bv strong { font-weight: 700; color: var(--color-charcoal); }
+
+/* Anything marked not-prose opts out entirely. */
+.prose-bv .not-prose,
+.prose-bv .not-prose * { font-family: inherit; }

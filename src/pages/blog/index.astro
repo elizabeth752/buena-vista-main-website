@@ -1,0 +1,106 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TopBar from '../../components/TopBar.astro';
+import Nav from '../../components/Nav.astro';
+import VerifySection from '../../components/VerifySection.astro';
+import FinalCTA from '../../components/FinalCTA.astro';
+import { bySlug } from '../../data/team';
+import posts from '../../data/blog/posts.json';
+
+/* Blog index. Ordered by search performance rather than by date: the point of
+   migrating these was the traffic they already earn, so the biggest earner is
+   the featured slot. */
+const [featured, ...rest] = posts;
+const categories = [...new Set(posts.map(p => p.category))].sort();
+
+const title = 'Addiction and Recovery Blog | Buena Vista Health & Recovery';
+const description =
+  'Straight answers on detox, withdrawal, substance use and life in recovery, written and clinically reviewed by the team at our Chandler, AZ facility.';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Blog',
+  name: 'Buena Vista Health & Recovery Blog',
+  url: 'https://buenavistarecovery.com/blog/',
+  blogPost: posts.map(p => ({
+    '@type': 'BlogPosting',
+    headline: p.title,
+    url: `https://buenavistarecovery.com/blog/${p.slug}/`,
+    dateModified: p.updated,
+  })),
+};
+---
+<Layout title={title} description={description}>
+  <TopBar />
+  <Nav />
+
+  <section class="bg-cream py-[60px]">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mb-11">
+        <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-5 flex items-center gap-2">
+          <span class="w-6 h-px bg-gold inline-block"></span>
+          Blog
+        </p>
+        <h1 class="font-display text-navy mb-5">Addiction and Recovery Blog</h1>
+        <p class="font-body text-charcoal text-[18px] leading-[30px]">
+          Written by the people who do this work, and clinically reviewed before it goes up.
+        </p>
+      </div>
+
+      <ul class="flex flex-wrap gap-2.5">
+        {categories.map(c => (
+          <li>
+            <span class="inline-block bg-white border border-cream-soft font-body text-charcoal/80 text-[15px] font-semibold px-4 py-2 rounded-full">{c}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  {/* Featured: the best performer, given the space to earn the click. */}
+  <section class="bg-white py-[60px]">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+      <a href={`/blog/${featured.slug}/`} class="group block bg-cream rounded-xl border border-cream-soft border-t-4 border-t-gold p-8 md:p-11 hover:border-teal transition-colors">
+        <p class="font-body text-gold text-xs font-bold tracking-[0.16em] uppercase mb-4">Featured &middot; {featured.category}</p>
+        <h2 class="font-display text-navy mb-4 max-w-3xl">{featured.title}</h2>
+        <p class="font-body text-charcoal text-[17px] leading-[29px] max-w-2xl mb-6">{featured.description}</p>
+        <div class="flex flex-wrap items-center gap-4">
+          <img src={bySlug[featured.author].photo} alt={bySlug[featured.author].name} class="w-10 h-10 rounded-full object-cover" loading="lazy" />
+          <p class="font-body text-charcoal text-[15px]">
+            {bySlug[featured.author].name}{bySlug[featured.author].credentials ? `, ${bySlug[featured.author].credentials}` : ''}
+            <span class="text-muted"> &middot; {featured.readMinutes} min read</span>
+          </p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="bg-cream py-[60px]">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+        {rest.map(p => (
+          <a href={`/blog/${p.slug}/`} class="group bg-white rounded-xl p-7 border border-cream-soft border-t-4 border-t-gold h-full flex flex-col hover:border-teal transition-colors">
+            <p class="font-body text-gold text-xs font-bold tracking-[0.14em] uppercase mb-3">{p.category}</p>
+            <h2 class="card-title font-display text-navy mb-3">{p.title}</h2>
+            <p class="font-body text-charcoal text-[15px] leading-[25px] mb-5 grow">{p.description.slice(0, 130)}{p.description.length > 130 ? '…' : ''}</p>
+            <div class="flex items-center gap-3 pt-4 border-t border-cream-soft">
+              <img src={bySlug[p.author].photo} alt={bySlug[p.author].name} class="w-8 h-8 rounded-full object-cover" loading="lazy" />
+              <p class="font-body text-muted text-[14px]">{bySlug[p.author].name} &middot; {p.readMinutes} min</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <VerifySection heading="Does your insurance cover treatment at Buena Vista?" bg="bg-white" />
+  <FinalCTA />
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
+</Layout>
+
+<style>
+  /* Unlayered, so it beats the global h2 scale. Three lines held so the grid
+     stays level whatever the headline length. */
+  .card-title { font-size: 21px; line-height: 28px; letter-spacing: 0; min-height: 84px; }
+</style>
