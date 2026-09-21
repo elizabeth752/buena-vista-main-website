@@ -1,45 +1,36 @@
 ---
 import Horizon from '../Horizon.astro';
 
-/* Hero standard: H1 carries the keyword, the line above the bullets is one
-   Elizabeth kept, no subtitle paragraph, every bullet gets its own icon.
+/* Hero standard: eyebrow, keyword H1, bullets with one icon each, two CTAs, no
+   promise line and no subtitle paragraph.
 
-   HISTORY, so nobody re-opens this from the call export: this page used to
-   state that Buena Vista had no IOP, because six admissions agents said so on
-   recorded calls between January and July 2026. The client confirmed on
-   2026-09-21 that the outpatient continuum is open, and asked for it to be
-   presented as a live program. The disclosure card and the referral block that
-   used to sit here were removed on that instruction.
-
-   Bullets stay at the level the client confirmed — that the program exists, how
-   it fits the continuum, and how scheduling works. No group times, no days per
-   week, no staffing: none of that has been confirmed and a caller will hold us
-   to whatever is written here. */
+   The bullets are the client's own three points for this phase, supplied
+   2026-09-21, tightened to the site's voice. */
 const bullets = [
   {
-    text: 'A full clinical program you attend while living at home',
-    // home
-    d: 'M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25',
+    text: 'Several outpatient programs, so there is one that fits your week',
+    // squares
+    d: 'M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z',
   },
   {
-    text: 'Schedules that flex around work, school and family',
-    // clock
-    d: 'M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z',
+    text: 'Schedules that grow with you as work and family come back in',
+    // chart up
+    d: 'M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941',
   },
   {
-    text: 'The same team that runs our detox and residential care',
-    // users
-    d: 'M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z',
-  },
-  {
-    text: 'Help lining up sober living alongside your program',
+    text: 'Sober living placement assistance where housing is the gap',
     // key
     d: 'M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z',
   },
   {
-    text: 'Insurance checked while you are on the phone',
-    // shield-check
-    d: 'M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z',
+    text: 'Therapy, groups and clinical support continue throughout',
+    // users
+    d: 'M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z',
+  },
+  {
+    text: 'Typically 45 to 90 days, and longer where that is what helps',
+    // calendar
+    d: 'M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5',
   },
 ];
 ---
@@ -50,16 +41,12 @@ const bullets = [
       <div>
         <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-5 flex items-center gap-2">
           <span class="w-6 h-px bg-gold inline-block"></span>
-          Intensive outpatient
+          Outpatient treatment
         </p>
 
-        <h1 class="font-display text-navy mb-6">
-          Intensive Outpatient (IOP) in Chandler, Arizona
+        <h1 class="font-display text-navy mb-8">
+          Outpatient Treatment in Chandler, Arizona
         </h1>
-
-        <p class="font-display text-navy text-[26px] leading-[34px] md:text-[30px] md:leading-[39px] border-l-[3px] border-gold pl-5 mb-8 max-w-xl">
-          Treatment that fits around a working life.
-        </p>
 
         <ul class="space-y-4 mb-9">
           {bullets.map(item => (
@@ -96,8 +83,8 @@ const bullets = [
       <div>
         <div class="overflow-hidden rounded-t-[160px] rounded-b-xl shadow-xl">
           <img
-            src="/Asset/stock%20photo/Desktop%20Dimensions/Facility/Covered%20drop-off%20entrance%20with%20tower%20feature%20and%20circular%20driveway.webp"
-            alt="The covered drop-off entrance at Buena Vista in Chandler, with a tower feature and circular driveway"
+            src="/Asset/stock%20photo/Desktop%20Dimensions/Facility/Sunlit%20common%20hall%20with%20lounge%20furniture,%20tall%20windows,%20and%20open%20floor%20plan.webp"
+            alt="A sunlit common hall at Buena Vista in Chandler, with lounge furniture and tall windows"
             class="w-full object-cover aspect-[4/5]"
             fetchpriority="high"
             decoding="async"

@@ -422,7 +422,7 @@ source,destination,permanent
 /insurance/unitedhealthcare-insurance/,/insurance/,true
 /iop-treatment-arizona/,/programs/intensive-outpatient-iop/,true
 /locations/alcohol-and-drug-rehab-chandler-az/,/locations/chandler/,true
-/locations/alcohol-and-drug-rehab-tucson-az/,/locations/tucson/,true
+/locations/alcohol-and-drug-rehab-tucson-az/,/locations/,true
 /locations/cave-creek/,/locations/,true
 /locations/scottsdale-arizona/,/locations/scottsdale/,true
 /locations/who-we-serve/,/who-we-serve/,true
@@ -480,3 +480,4 @@ source,destination,permanent
 /who-we-help/professionals/,/referrals/,true
 /who-we-help/professionals/impaired-physicians-program/,/referrals/,true
 /who-we-help/young-adults/,/who-we-serve/,true
+/locations/tucson/,/locations/,true

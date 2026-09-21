@@ -1,0 +1,86 @@
+---
+/* The body copy here is the client's own, supplied 2026-09-21 for this phase,
+   fitted to the site's second-person voice. Keep the substance: treatment and
+   real life overlapping, the same autonomy, and housing handled alongside. */
+const stages = [
+  {
+    label: 'Treatment and real life overlap',
+    tag: 'What changes',
+    desc: 'Therapy, groups, community and clinical support carry on while work, home, family and a new routine come back in around them.',
+  },
+  {
+    label: 'Your schedule grows with you',
+    tag: 'How it fits',
+    desc: 'Hours come down as responsibilities come back, so school, a job and the rest of your life gradually reenter rather than arriving all at once.',
+  },
+  {
+    label: 'Somewhere steady to live',
+    tag: 'Where you sleep',
+    desc: 'Many people pair this phase with a sober living home for structure, with the same autonomy and freedom. Placement help is part of the program.',
+  },
+];
+
+const points = [
+  'Several outpatient programs, so the level can be matched to where you actually are',
+  'The same team and the same case manager who saw you through the phases before it',
+  'Typically 45 to 90 days, and longer when that is what somebody needs',
+  'Co-occurring depression, anxiety and trauma stay part of the work',
+];
+---
+<section id="what-is-outpatient" class="bg-white py-[60px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-14 lg:gap-20 items-start">
+
+      <div class="lg:sticky lg:top-24">
+        <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+          <span class="w-6 h-px bg-gold inline-block"></span>
+          The level of care
+        </p>
+        <h2 class="font-display text-charcoal mb-6">
+          What is outpatient addiction treatment?
+        </h2>
+
+        <p class="font-body text-charcoal text-[17px] leading-[29px] mb-7">
+          Outpatient treatment is the phase designed to help you step back into real life. It is where treatment and real life start to overlap: you stay engaged in therapy, groups, community and clinical support while you return to work, home, family and a new routine.
+        </p>
+
+        <ul class="space-y-3 mb-8">
+          {points.map(p => (
+            <li class="flex items-start gap-3 font-body text-charcoal text-[17px] leading-[29px]">
+              <svg class="w-5 h-5 text-teal mt-1 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
+              </svg>
+              <span>{p}</span>
+            </li>
+          ))}
+        </ul>
+
+        <div class="border-l-2 border-gold pl-5 max-w-xl">
+          <p class="font-body text-charcoal text-[16px] leading-[26px]">
+            Not sure which level you need? It is not a question to guess at. A short call sorts it out: <a href="tel:8883625576" class="text-teal font-semibold hover:opacity-70 transition-opacity tel-number">(888) 362-5576</a>.
+          </p>
+        </div>
+      </div>
+
+      <div class="space-y-4">
+        {stages.map(item => (
+          <div class="rounded-xl p-6 border bg-white border-cream-soft shadow-sm">
+            <div class="flex items-center justify-between gap-4 mb-2.5">
+              <h3 class="stage-label font-display text-charcoal">{item.label}</h3>
+              <span class="shrink-0 font-body text-xs font-bold uppercase tracking-wide text-gold bg-gold/10 rounded-full px-3 py-1.5">
+                {item.tag}
+              </span>
+            </div>
+            <p class="font-body text-charcoal text-[16px] leading-[26px]">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Unlayered, so it beats the global h3 scale. */
+  .stage-label { font-size: 22px; line-height: 28px; letter-spacing: 0; }
+</style>

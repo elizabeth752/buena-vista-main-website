@@ -1,0 +1,80 @@
+---
+/* -----------------------------------------------------------------------------
+   Outpatient treatment
+
+   New on 2026-09-21. The URL was already the planned one in navigation.ts
+   (/programs/outpatient-program/), previously held back because admissions had
+   confirmed we did not run this level of care. The client confirmed the
+   outpatient continuum is open and supplied the copy for this phase; Elizabeth
+   approved building it the same day.
+
+   CONFIRMED BY THE CLIENT, and the source of everything on this page: the phase
+   exists, it runs roughly 45 to 90 days and sometimes longer, the continuum end
+   to end is 90 to 120 days, several outpatient programs are available, sober
+   living placement assistance is part of it, and schedules grow with the person
+   so work and school can gradually return.
+
+   NOT CONFIRMED, so not written: hours, days per week, group structure, which
+   specific outpatient programs run, capacity, staffing, licensure.
+----------------------------------------------------------------------------- */
+import Layout from '../../layouts/Layout.astro';
+import TopBar from '../../components/TopBar.astro';
+import Nav from '../../components/Nav.astro';
+
+import OutpatientHero from '../../components/outpatient/OutpatientHero.astro';
+import WhatIsOutpatient from '../../components/outpatient/WhatIsOutpatient.astro';
+import OutpatientQuestions from '../../components/outpatient/OutpatientQuestions.astro';
+import OutpatientFaq from '../../components/outpatient/OutpatientFaq.astro';
+
+import Testimonials from '../../components/Testimonials.astro';
+import VerifySection from '../../components/VerifySection.astro';
+import FinalCTA from '../../components/FinalCTA.astro';
+
+const title = 'Outpatient Treatment in Chandler, AZ | Buena Vista';
+const description =
+  'Outpatient addiction treatment in Chandler, AZ. Typically 45 to 90 days, with schedules that grow around work and family and sober living placement help. Call (888) 362-5576.';
+
+/* Built from the same answers as OutpatientFaq, so the two cannot drift apart. */
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    ['Does Buena Vista offer outpatient treatment?',
+     'Yes. Outpatient treatment is the final phase of our continuum at Chandler, after medical detox, residential treatment, partial hospitalization and intensive outpatient.'],
+    ['How long is outpatient treatment?',
+     'Typically 45 to 90 days, sometimes more if that is what is needed. End to end, the full continuum from detox through outpatient usually runs around 90 to 120 days.'],
+    ['Can I work or study while I am in outpatient treatment?',
+     'Yes. Schedules grow with you, allowing work, school and other responsibilities to gradually reenter your life while therapy, groups and clinical support continue.'],
+    ['Do you help with sober living?',
+     'Yes. Many people pair this phase with a sober living home for added support and structure, and sober living placement assistance is part of what our case managers do.'],
+    ['Can I start at the outpatient level?',
+     'Sometimes. If you are medically stable and have somewhere settled to live it can be a reasonable starting point. If you are still drinking or using daily, medical detox is the safer first step.'],
+  ].map(([q, a]) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+};
+---
+<Layout title={title} description={description}>
+  <TopBar />
+  <Nav />
+
+  <OutpatientHero />
+  <WhatIsOutpatient />
+  <OutpatientQuestions />
+  <Testimonials />
+  <VerifySection
+    heading="Does insurance cover outpatient treatment?"
+    bullets={[
+      'Outpatient benefits are often contracted separately from inpatient cover',
+      'We check yours while you are on the phone, usually in a few minutes',
+      'Insurance verification is free and confidential',
+      'What we find is what we tell you, whether or not you end up here',
+    ]}
+  />
+  <OutpatientFaq />
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  <FinalCTA />
+</Layout>

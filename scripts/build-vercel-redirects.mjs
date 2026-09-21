@@ -11,7 +11,7 @@
    Run:  node scripts/build-vercel-redirects.mjs
    Then: git diff vercel.json
 */
-import { readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 
 const csv = readFileSync('redirects.csv', 'utf8').trim().split('\n').slice(1);
 
@@ -45,7 +45,21 @@ if (!seen.has('/medication-assisted-treatment')) {
 
 redirects.sort((a, b) => a.source.localeCompare(b.source));
 
+/* This script owns the `redirects` key and NOTHING ELSE. Everything else in
+   vercel.json — headers, rewrites, anything added later — is hand-written and
+   is carried across from the existing file.
+
+   Learned the hard way on 2026-09-21: an earlier version built the config from
+   scratch, so regenerating after a redirect change silently deleted the
+   no-store cache headers on /api/ and /thank-you and the /api/lead/ rewrite.
+   The build stays green either way, and the form keeps working locally, so
+   nothing catches it except reading the diff. */
+const existing = existsSync('vercel.json')
+  ? JSON.parse(readFileSync('vercel.json', 'utf8'))
+  : {};
+
 const config = {
+  ...existing,
   $schema: 'https://openapi.vercel.sh/vercel.json',
   trailingSlash: true,
   redirects,

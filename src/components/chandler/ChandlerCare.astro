@@ -1,8 +1,10 @@
 ---
-/* Chandler runs medical detox and residential. Roughly a fifth of inbound calls
-   ask for a level of care we don't run yet, so those are named here too — but
-   framed as "we'll get you there" rather than as a list of refusals. Nobody
-   reaching this page should feel turned away. */
+/* Chandler runs the full continuum since the client confirmed it on 2026-09-21:
+   medical detox, residential, PHP, IOP and outpatient treatment. This section
+   used to run two cards plus a "we will help you find it elsewhere" block for
+   the outpatient levels; that block now carries only what we genuinely refer
+   out, which is housing and medication-assisted treatment. Nobody reaching this
+   page should feel turned away. */
 const offered = [
   {
     label: 'Medical detox',
@@ -17,17 +19,33 @@ const offered = [
     href: '/residential-treatment',
   },
   {
+    label: 'Partial hospitalization',
+    tag: 'A full clinical day',
+    desc: 'The structure of residential care without living on site. The usual step down once you are steady enough to sleep somewhere else, in the same building with the same team.',
+    href: '/programs/partial-hospitalization-php/',
+  },
+  {
+    label: 'Intensive outpatient',
+    tag: 'Part of the day',
+    desc: 'A few hours at a time, several days a week, built around a working life. Groups, individual therapy and relapse-prevention work carry on.',
+    href: '/programs/intensive-outpatient-iop/',
+  },
+  {
+    label: 'Outpatient treatment',
+    tag: 'Typically 45–90 days',
+    desc: 'Where treatment and real life overlap. Support continues while work, home and a new routine come back in, with sober living placement help where housing is the gap.',
+    href: '/programs/outpatient-program/',
+  },
+  {
     label: 'Co-occurring care',
-    tag: 'Within residential',
-    desc: 'Depression, anxiety, PTSD and trauma addressed alongside substance use rather than after it — inside the residential program, not as a separate track.',
+    tag: 'At every level',
+    desc: 'Depression, anxiety, PTSD and trauma addressed alongside substance use rather than after it — inside the program, not as a separate track.',
     href: '/dual-diagnosis',
   },
 ];
 
-// Care we help people reach elsewhere — for now.
+// The two things we genuinely refer out rather than run.
 const weWillHelpYouFind = [
-  'Intensive outpatient (IOP) and outpatient care',
-  'Partial hospitalization (PHP)',
   'Medication-assisted treatment',
   'Sober living and supportive housing',
 ];
@@ -39,9 +57,9 @@ const weWillHelpYouFind = [
         <span class="w-6 h-px bg-gold inline-block"></span>
         What happens here
       </p>
-      <h2 class="font-display text-charcoal mb-5">The two levels of care we run in Chandler</h2>
+      <h2 class="font-display text-charcoal mb-5">The levels of care we run in Chandler</h2>
       <p class="font-body text-charcoal text-[18px] leading-[30px]">
-        Detox and residential, under one roof, so you do not have to move facilities halfway through.
+        Detox through outpatient, under one roof, so you do not have to move facilities halfway through. Around 90 to 120 days end to end, with the hours coming down as you steady.
       </p>
     </div>
 
@@ -61,9 +79,10 @@ const weWillHelpYouFind = [
     <div class="bg-white border border-cream-soft border border-sand rounded-xl p-7 max-w-3xl">
       <h3 class="font-display text-[22px] leading-[28px] text-charcoal mb-3">Looking for something else? Call us anyway.</h3>
       <p class="font-body text-charcoal text-[16px] leading-[27px] mb-5">
-        Chandler is built around detox and residential care, and that is not where everyone starts.
-        If what you need is one of these, we will help you find it — placing people in the right
-        program, including at other facilities, is something our admissions team does every day.
+        Chandler runs the continuum above, and there are a couple of things we help people reach
+        rather than provide. If what you need is one of these, we will help you find it — placing
+        people in the right program, including at other facilities, is something our admissions
+        team does every day.
       </p>
       <ul class="grid sm:grid-cols-2 gap-x-8 gap-y-2.5 mb-5">
         {weWillHelpYouFind.map(n => (

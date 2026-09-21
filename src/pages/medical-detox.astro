@@ -25,8 +25,8 @@ const title = 'Medical Detox in Chandler, AZ | Buena Vista';
 const description = 'Safe, medically supervised drug and alcohol detox in Arizona. 24/7 nursing, private rooms, comfort medications, and same-day admission. Call any time to verify your insurance.';
 
 // FAQ bank from the content brief. VERIFY items are deliberately excluded:
-// no payer list, no pricing, no transport radius, no IOP promise, no outpatient
-// detox implication, and no specific medication protocols.
+// no payer list, no pricing, no transport radius, no group schedules, no
+// outpatient detox implication, and no specific medication protocols.
 const faqs = [
   {
     q: 'Is medical detox safe? What if I have a seizure or serious withdrawal?',
@@ -34,7 +34,7 @@ const faqs = [
   },
   {
     q: 'Can I get in today? I need help right now.',
-    a: "Often, yes — same-day admission is possible when we have a bed available, and our admissions line is answered by a real person around the clock. We know that when someone is finally ready, or when a family is watching a loved one in withdrawal, waiting even a few hours can feel unbearable. Here's how it works: you call, we do a brief phone assessment (about 10 to 20 minutes) — and yes, we can do this even if you're currently using or under the influence — we verify insurance or discuss private pay, and a provider reviews everything to confirm detox is safe for your situation. Once a bed is confirmed we schedule intake, and in many cases that happens the same day. If we don't have a bed open the moment you call, we'll be honest about the earliest availability and take your information so we're ready the instant a spot opens. One thing to know: we don't take walk-ins, so please always call first.",
+    a: "Often, yes — same-day admission is possible when we have a bed available, and our admissions line is answered around the clock. We know that when someone is finally ready, or when a family is watching a loved one in withdrawal, waiting even a few hours can feel unbearable. Here's how it works: you call, we do a brief phone assessment (about 10 to 20 minutes) — and yes, we can do this even if you're currently using or under the influence — we verify insurance or discuss private pay, and a provider reviews everything to confirm detox is safe for your situation. Once a bed is confirmed we schedule intake, and in many cases that happens the same day. If we don't have a bed open the moment you call, we'll be honest about the earliest availability and take your information so we're ready the instant a spot opens. One thing to know: we don't take walk-ins, so please always call first.",
   },
   {
     q: 'How long does detox take?',
@@ -74,7 +74,7 @@ const faqs = [
   },
   {
     q: 'What happens after detox?',
-    a: "Detox is the first step, not the whole journey — and planning for what comes next starts while you're still with us. Getting substances safely out of your body is essential, but it's the treatment that follows that helps you stay well, so your case manager begins mapping your next step from early on. For most people the recommended next step is residential treatment, where you move from your detox room into more comfortable residential housing and begin the therapeutic work — groups, one-on-one therapy, and building the tools and support system for lasting recovery. Because detox and residential are both here, you don't have to find a new facility or start over with a new team. Your case manager coordinates the details, whether that's residential, ongoing support, or help finding sober living.",
+    a: "Detox is the first step, not the whole journey — and planning for what comes next starts while you're still with us. Getting substances safely out of your body is essential, but it's the treatment that follows that helps you stay well, so your case manager begins mapping your next step from early on. For most people the recommended next step is residential treatment, where you move from your detox room into more comfortable residential housing and begin the therapeutic work — groups, one-on-one therapy, and building the tools and support system for lasting recovery. From there the continuum steps down through partial hospitalization, intensive outpatient and outpatient treatment, all of it in the same building, so you don't have to find a new facility or start over with a new team at any point. Your case manager coordinates the details, including help finding sober living for the later phases.",
   },
   {
     q: 'Is there an age limit, and can anyone come?',
@@ -86,7 +86,7 @@ const faqs = [
   },
   {
     q: "What makes Buena Vista's detox different?",
-    a: "The thing people tell us again and again is that here, even in detox, they were treated like a person rather than a number. A lot of that is our staff — many of them have been through recovery themselves, so the care you feel is real, not rehearsed, and there's no judgment in it. When you're at your lowest and most ashamed, that difference is everything. It's also in the details. You get your own private room and private bathroom during detox, not a shared ward. You're kept as comfortable as possible with medications and around-the-clock nursing. And because detox here is the first step of a full continuum, you're not handed off to strangers at every stage. Finally, we try to make reaching out as human as the care itself: a real person answers the phone, day or night, and we can often get you in the same day.",
+    a: "The thing people tell us again and again is that here, even in detox, they were treated like a person rather than a number. A lot of that is our staff — many of them have been through recovery themselves, so the care you feel is real, not rehearsed, and there's no judgment in it. When you're at your lowest and most ashamed, that difference is everything. It's also in the details. You get your own private room and private bathroom during detox, not a shared ward. You're kept as comfortable as possible with medications and around-the-clock nursing. And because detox here is the first step of a full continuum, you're not handed off to strangers at every stage. Finally, we try to make reaching out as easy as possible: the phone is answered day or night, and we can often get you in the same day.",
   },
 ];
 
@@ -122,7 +122,7 @@ const schema = {
     heading="Does insurance cover medical detox in Arizona?"
     bullets={[
       'We check your benefits while you are on the phone, usually in a few minutes',
-      'It costs nothing, and you owe nothing either way',
+      'Insurance verification is free and confidential',
       'AHCCCS and commercial plans both cover detox here',
       'Not in network with your plan? We will say so, and help you find who is',
     ]}

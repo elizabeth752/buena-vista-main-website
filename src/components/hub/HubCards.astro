@@ -19,7 +19,7 @@ interface Props {
   title: string;
   intro?: string;
   items: HubItem[];
-  columns?: 2 | 3 | 4;
+  columns?: 1 | 2 | 3 | 4;
   bg?: string;
 }
 const { eyebrow, title, intro, items, columns = 3, bg = 'bg-cream' } = Astro.props;
@@ -27,7 +27,9 @@ const { eyebrow, title, intro, items, columns = 3, bg = 'bg-cream' } = Astro.pro
 // Reserve the tag row only when this set uses tags at all. A set with none
 // should not carry an empty band under every label.
 const hasTags = items.some(i => i.tag);
-const grid = columns === 2 ? 'sm:grid-cols-2' : columns === 4 ? 'sm:grid-cols-2 lg:grid-cols-4' : 'sm:grid-cols-2 lg:grid-cols-3';
+// A single card is capped rather than stretched: a full-width row of one reads
+// as a banner, not a card.
+const grid = columns === 1 ? 'grid-cols-1 max-w-2xl' : columns === 2 ? 'sm:grid-cols-2' : columns === 4 ? 'sm:grid-cols-2 lg:grid-cols-4' : 'sm:grid-cols-2 lg:grid-cols-3';
 ---
 <section class={`${bg} py-[60px]`}>
   <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">

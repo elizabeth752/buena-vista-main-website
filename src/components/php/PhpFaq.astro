@@ -1,0 +1,37 @@
+---
+import FAQ from '../FAQ.astro';
+/* Kept to the level of care and how it connects to the rest of the continuum.
+   No schedule, capacity or staffing detail — see the page header. */
+const faqs = [
+  {
+    q: 'Does Buena Vista offer a partial hospitalization program?',
+    a: "Yes. PHP runs at our Chandler facility as part of a full continuum of care, alongside medical detox, residential treatment, intensive outpatient and outpatient treatment. Because all of it happens in one building with one team, stepping down does not mean a second admission somewhere new.",
+  },
+  {
+    q: 'What is the difference between PHP and residential treatment?',
+    a: "Where you sleep. Residential treatment is live-in, with the whole day built around the program. PHP keeps the clinical day and sends you home at the end of it. The therapy, the groups and the mental health care are the same work at a different dose.",
+  },
+  {
+    q: 'What is the difference between PHP and IOP?',
+    a: "Hours. PHP is a full clinical day; IOP is part of one, several days a week, designed to fit around work or school. Most people move from PHP to IOP as they stabilize, and your case manager decides that timing with you rather than to a fixed schedule.",
+  },
+  {
+    q: 'Do I need to complete detox first?',
+    a: "If you are still drinking or using daily, then yes, and medical detox is in the same building. Outpatient levels of care assume your body is already stable. Call and describe the last few days honestly — admissions will tell you which level of care fits, and nothing about that conversation commits you to anything.",
+  },
+  {
+    q: 'Can I work while I am in PHP?',
+    a: "A full clinical day is usually more than a job fits around, which is what IOP and outpatient treatment are for. If work is the thing you cannot move, say so on the call: the point of a continuum is that there is a level of care that fits your week rather than one you have to fail out of.",
+  },
+  {
+    q: 'Do you help with sober living during PHP?',
+    a: "Yes. Sober living placement assistance is part of what our case managers do, for exactly this phase. We do not run the housing ourselves, so the help is in knowing the local landscape and getting it lined up before you step down rather than after.",
+  },
+];
+---
+<FAQ
+  faqs={faqs}
+  eyebrow="Straight answers"
+  heading="Questions about PHP"
+  bg="bg-cream"
+/>

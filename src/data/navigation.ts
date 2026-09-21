@@ -43,11 +43,12 @@ export interface NavGroup {
    The entries stay in this file as the IA of record, and each one reappears
    automatically the moment its page ships and `built: true` is set.
 
-   That default matters for more than tidiness: three of the unbuilt entries
-   (/programs/outpatient-program/, /programs/outpatient-therapy/,
-   /programs/mental-health-treatment/) describe levels of care admissions has
-   confirmed we do NOT run. Rendering them would advertise services that do not
-   exist, in the main navigation, on every page.
+   That default matters for more than tidiness: the two remaining unbuilt
+   entries under Programs (/programs/outpatient-therapy/,
+   /programs/mental-health-treatment/) are not confirmed services. Rendering
+   them would advertise care that may not exist, in the main navigation, on
+   every page. (/programs/outpatient-program/ was in that list until the client
+   confirmed the outpatient continuum on 2026-09-21; it is now built.)
 
    Set HIDE_UNBUILT to false to preview the full planned architecture; the dots
    from SHOW_BUILD_STATUS then mark which pages are not built yet. */
@@ -67,9 +68,10 @@ export const mainNav: NavGroup[] = [
         links: [
           { label: 'Medical detox', href: '/medical-detox', built: true },
           { label: 'Residential treatment', href: '/residential-treatment', built: true },
-          { label: 'Dual diagnosis', href: '/dual-diagnosis', built: true },
+          { label: 'Partial hospitalization (PHP)', href: '/programs/partial-hospitalization-php/', built: true },
           { label: 'Intensive outpatient (IOP)', href: '/programs/intensive-outpatient-iop/', built: true },
-          { label: 'Outpatient program', href: '/programs/outpatient-program/' },
+          { label: 'Outpatient treatment', href: '/programs/outpatient-program/', built: true },
+          { label: 'Dual diagnosis', href: '/dual-diagnosis', built: true },
           { label: 'Outpatient therapy', href: '/programs/outpatient-therapy/' },
           { label: 'Mental health treatment', href: '/programs/mental-health-treatment/' },
           { label: 'Aftercare', href: '/programs/aftercare/', built: true },
@@ -194,7 +196,6 @@ export const mainNav: NavGroup[] = [
         heading: 'Our facilities',
         links: [
           { label: 'Chandler, AZ', href: '/locations/chandler/', built: true },
-          { label: 'Tucson, AZ', href: '/locations/tucson/', built: true },
         ],
       },
       {
@@ -267,8 +268,8 @@ export const legalLinks: NavLink[] = [
 export interface SocialLink { label: string; href: string; icon: 'facebook' | 'instagram' | 'linkedin' | 'youtube' | 'pinterest' | 'bluesky'; }
 
 export const socialLinks: SocialLink[] = [
-  { label: 'Facebook',  icon: 'facebook',  href: 'https://www.facebook.com/profile.php?id=61589704096967' },
-  { label: 'Instagram', icon: 'instagram', href: 'https://www.instagram.com/buenavista_recovery/' },
+  { label: 'Facebook',  icon: 'facebook',  href: 'https://www.facebook.com/buenavistarecovery' },
+  { label: 'Instagram', icon: 'instagram', href: 'https://www.instagram.com/buenavistarecovery/' },
   { label: 'LinkedIn',  icon: 'linkedin',  href: 'https://www.linkedin.com/company/buena-vista-recovery/' },
   { label: 'YouTube',   icon: 'youtube',   href: 'https://www.youtube.com/@buenavistarecovery' },
   { label: 'Pinterest', icon: 'pinterest', href: 'https://co.pinterest.com/buenavistahealth/' },

@@ -1,4 +1,9 @@
 ---
+/* The client asked on 2026-09-21 for outpatient treatment to be added as its
+   own level and for "Planning what comes next" to move down a place. The
+   outpatient copy is theirs, fitted to the site's second-person voice.
+
+   Five cards, so the numbering runs 01–05. Each level links to its page. */
 const levels = [
   {
     image: '/Asset/stock%20photo/Desktop%20Dimensions/Medical%20Detox.webp',
@@ -6,6 +11,7 @@ const levels = [
     title: 'Medical detox',
     desc: 'Safe, medically supervised withdrawal management for alcohol, opioids, benzodiazepines, and other substances. Our clinical team monitors you around the clock to manage symptoms, minimize discomfort, and prepare your body for the next stage of recovery.',
     details: ['Nursing on site around the clock', 'A withdrawal plan built for your body, not a protocol sheet', 'Medication to keep you comfortable', 'A private room with a private bathroom'],
+    href: '/medical-detox',
   },
   {
     image: '/Asset/stock%20photo/Desktop%20Dimensions/Inpatient%20Residential%20Treatment.webp',
@@ -13,13 +19,31 @@ const levels = [
     title: 'Inpatient residential treatment',
     desc: 'Structured, immersive residential care for adults seeking lasting recovery. Daily individual therapy, group sessions, psychoeducation, and clinical programming in a supportive, distraction-free environment with private rooms and meals prepared by a dedicated culinary team.',
     details: ['Group therapy twice a day, plus one-on-one sessions', 'Meals prepared daily by a dedicated culinary team', 'A case manager planning your next step from day one', 'Evenings to call the people who matter to you'],
+    href: '/residential-treatment',
+  },
+  {
+    image: '/Asset/stock%20photo/Desktop%20Dimensions/Facility/Flexible%20gathering%20space%20with%20movable%20seating,%20support%20columns,%20and%20checkerboard%20flooring.webp',
+    label: 'Level of Care · 03',
+    title: 'PHP and IOP',
+    desc: 'The step down, in the same building with the same team. Partial hospitalization keeps the clinical day once living on site is no longer what you need; intensive outpatient brings the hours down again so treatment fits around a working week.',
+    details: ['A full clinical day in PHP, part of the day in IOP', 'Groups, individual therapy and relapse-prevention work continue', 'The case manager you already know carries the plan across', 'No second admission and no new facility to find'],
+    href: '/programs/partial-hospitalization-php/',
   },
   {
     image: '/Asset/stock%20photo/Desktop%20Dimensions/Outpatient%20Continuum.webp',
-    label: 'Level of Care · 03',
+    label: 'Level of Care · 04',
+    title: 'Outpatient treatment',
+    desc: 'Outpatient treatment is designed to help you step back into real life, where treatment and real life start to overlap. You stay engaged in therapy, groups, community and clinical support while you return to work, home, family and a new routine. Many people pair this phase with a sober living home for added support and structure, with the same autonomy and freedom.',
+    details: ['Several outpatient programs to match where you are', 'Sober living placement assistance', 'Schedules that grow with you, so work and school can gradually return', 'Typically 45 to 90 days, and longer where that helps'],
+    href: '/programs/outpatient-program/',
+  },
+  {
+    image: '/Asset/stock%20photo/Desktop%20Dimensions/Facility/Sunlit%20common%20hall%20with%20lounge%20furniture,%20tall%20windows,%20and%20open%20floor%20plan.webp',
+    label: 'Level of Care · 05',
     title: 'Planning what comes next',
     desc: 'Recovery does not end at discharge. Your case manager works with you from early on to line up what follows treatment — continued care, sober living, and the support that keeps you steady once you are home.',
     details: ['A case manager assigned from day one', 'A step-down plan built before you leave', 'Help finding sober living where you need it', 'Ongoing relapse prevention planning'],
+    href: '/programs/aftercare/',
   },
 ];
 ---
@@ -31,10 +55,10 @@ const levels = [
         Levels of Care
       </p>
       <h2 class="font-display text-charcoal mb-4">
-        A clear path: detox, residential, and beyond
+        A full continuum of care: detox, residential, PHP, IOP and outpatient
       </h2>
       <p class="font-body text-charcoal max-w-2xl text-[17px] leading-[29px]">
-        Every step of our program is designed to meet you where you are and move you forward with purpose. From first contact to aftercare, we're with you.
+        Every step is designed to meet you where you are and move you forward with purpose. Long-term treatment that works, in one place, from first contact through to the day real life takes over again.
       </p>
     </div>
 
@@ -62,8 +86,8 @@ const levels = [
                 </li>
               ))}
             </ul>
-            <a href="tel:8883625576" class="self-start bg-teal hover:bg-teal-dark text-white font-bold px-7 py-3 rounded-lg transition-colors font-body tracking-wide text-sm">
-              Ask about this program
+            <a href={level.href} class="self-start bg-teal hover:bg-teal-dark text-white font-bold px-7 py-3 rounded-lg transition-colors font-body tracking-wide text-sm">
+              About this program
             </a>
           </div>
         </div>

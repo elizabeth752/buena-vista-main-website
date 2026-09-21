@@ -47,8 +47,8 @@ export const organization = {
      Commission provider locator, so the verification pages belong here as much
      as the social ones do. */
   sameAs: [
-    'https://www.facebook.com/profile.php?id=61589704096967',
-    'https://www.instagram.com/buenavista_recovery/',
+    'https://www.facebook.com/buenavistarecovery',
+    'https://www.instagram.com/buenavistarecovery/',
     'https://www.linkedin.com/company/buena-vista-recovery/',
     'https://www.youtube.com/@buenavistarecovery',
     'https://co.pinterest.com/buenavistahealth/',

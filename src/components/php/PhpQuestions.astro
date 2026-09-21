@@ -1,0 +1,47 @@
+---
+/* Four things worth knowing about PHP, ordered the way the questions arrive on
+   an admissions call. Same shape as the IOP and outpatient equivalents. */
+const questions = [
+  {
+    q: 'Who is PHP actually for?',
+    a: "Most often somebody finishing residential treatment who is steady but not ready for the week to go back to normal. It is also a reasonable starting point for someone who is medically stable, has somewhere safe to sleep, and needs more than a few hours of treatment a week. Admissions works out which of those is you on the call.",
+  },
+  {
+    q: 'Where do I sleep?',
+    a: "At home, or in a sober living home if home is not the right place yet. That choice matters more than people expect — the stability of where you sleep is usually what decides whether this level of care works. Raise it early and our case managers will help you line the housing up alongside the program.",
+  },
+  {
+    q: 'Will my insurance cover it?',
+    a: "Often, but outpatient levels are contracted separately from inpatient ones, so covering a residential stay does not automatically mean covering PHP at the same rate. It is worth knowing before you start. We will run your benefits with you on the phone and tell you what we find either way.",
+  },
+  {
+    q: 'What happens after PHP?',
+    a: "Usually intensive outpatient, then outpatient treatment, with the hours coming down as work, home and routine come back in. It is one continuum rather than a series of separate admissions, and the same case manager carries the plan through it with you.",
+  },
+];
+---
+<section id="php-questions" class="bg-white py-[70px]">
+  <div class="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8">
+    <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+      <span class="w-6 h-px bg-gold inline-block"></span>
+      Worth knowing
+    </p>
+    <h2 class="font-display text-charcoal mb-10">
+      Four things worth knowing about PHP
+    </h2>
+
+    <div class="space-y-4">
+      {questions.map(item => (
+        <div class="bg-cream rounded-xl p-7 border border-cream-soft">
+          <h3 class="q-title font-display text-navy mb-3">{item.q}</h3>
+          <p class="font-body text-charcoal text-[16px] leading-[27px]">{item.a}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Unlayered, so it beats the global h3 scale. */
+  .q-title { font-size: 24px; line-height: 30px; letter-spacing: 0; }
+</style>

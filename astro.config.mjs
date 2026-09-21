@@ -10,16 +10,14 @@ const SITE = 'https://buenavistarecovery.com';
 
 /* Pages deliberately kept OUT of the XML sitemap.
 
-   /programs/intensive-outpatient-iop/
-     Carries noindex. Admissions states we do not run an IOP; the page exists as
-     an honest referral page only. Including it would invite indexing of a
-     service we do not offer.
-
    /404
      Never belongs in a sitemap.
+
+   /programs/intensive-outpatient-iop/ was excluded until 2026-09-21, while the
+   page carried noindex and existed only as a referral page. The client
+   confirmed the IOP is open, so it is indexed like any other program page now.
 */
 const EXCLUDE = [
-  '/programs/intensive-outpatient-iop/',
   '/404/',
   /* Post-submission page. Carries noindex; a thank-you page in the index is
      how a competitor counts your conversions. */

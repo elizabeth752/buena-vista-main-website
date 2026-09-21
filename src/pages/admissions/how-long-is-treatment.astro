@@ -15,6 +15,8 @@
    RANGES come from the client wiki:
      Detox        5–7 days commercial · 3 days Medicaid
      Residential  25–30 days commercial · 30–45 days Medicaid
+   Outpatient (45–90 days, sometimes more) and the 90–120 day end-to-end figure
+   came from the client on 2026-09-21, with the rest of the continuum.
    Admissions corroborates the detox figure, describing alcohol as usually
    needing "the full seven days".
 
@@ -39,9 +41,9 @@ import Testimonials from '../../components/Testimonials.astro';
 import VerifySection from '../../components/VerifySection.astro';
 import FinalCTA from '../../components/FinalCTA.astro';
 
-const title = 'How Long Is Rehab? Detox and Residential Timelines | Buena Vista';
+const title = 'How Long Is Rehab? Detox, Residential and Outpatient Timelines | Buena Vista';
 const description =
-  'Medical detox usually takes four to seven days and residential treatment around thirty days at our Chandler, AZ facility. What decides your length of stay. Call (888) 362-5576.';
+  'Detox usually takes four to seven days, residential around thirty, and outpatient treatment 45 to 90 days — roughly 90 to 120 days of care end to end in Chandler, AZ. Call (888) 362-5576.';
 
 const schema = {
   '@context': 'https://schema.org',
@@ -53,6 +55,10 @@ const schema = {
      'Around thirty days is typical. Some stays run longer where the clinical picture calls for it and the plan supports it, and Medicaid authorizations often extend toward forty-five days.'],
     ['Can I do detox and residential treatment back to back?',
      'Yes. Both happen in the same building with the same team, so it is one continuous stay rather than a discharge and a separate second admission.'],
+    ['How long is the full continuum of care?',
+     'Around 90 to 120 days end to end. Detox usually runs four to seven days and residential around thirty, then PHP and IOP step the hours down, and outpatient treatment typically runs 45 to 90 days and sometimes more.'],
+    ['How long is outpatient treatment?',
+     'Typically 45 to 90 days, sometimes more if that is what is needed. Schedules grow with you so that work, school and family responsibilities can gradually reenter your life while treatment continues around them.'],
     ['What if I need to leave treatment early?',
      'Treatment is voluntary throughout. Raising it early with your case manager usually surfaces something solvable, and if not they will help plan a safe exit rather than an unsupported one.'],
   ].map(([q, a]) => ({

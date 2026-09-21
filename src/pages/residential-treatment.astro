@@ -26,8 +26,8 @@ const title = 'Residential Treatment in Chandler, AZ | Buena Vista';
 const description = 'Live-in residential addiction treatment in Chandler, AZ. Private rooms, catered meals, and detox through residential under one roof. Call (888) 362-5576.';
 
 // FAQ bank from the content brief. Answers marked "safe to publish" are used as
-// written; VERIFY items (payer names, pricing, transport radius, IOP
-// availability, Tucson) are deliberately kept out of these answers.
+// written; VERIFY items (payer names, pricing, transport radius) are
+// deliberately kept out of these answers.
 const faqs = [
   {
     q: 'What is residential treatment, and how is it different from detox?',
@@ -47,7 +47,7 @@ const faqs = [
   },
   {
     q: 'How fast can I get in? Can I come in the same day?',
-    a: "Often, yes — same-day admission is possible when we have a bed available and your assessment and approval are complete. Our admissions line is answered by a real person, and the process is designed to move quickly because we know that when someone is finally ready to get help, waiting even a day can feel impossible. Here's how it works: you call, we do a brief phone assessment (about 10 to 15 minutes), we verify your insurance or discuss private-pay options, and a provider reviews everything to confirm the program is a safe fit. Once a bed is confirmed and you're approved, we schedule your intake — and in many cases that can happen the same day. If we don't have a bed open the moment you call, we'll tell you honestly and give you the earliest realistic time. We don't accept walk-ins, so please always call first.",
+    a: "Often, yes — same-day admission is possible when we have a bed available and your assessment and approval are complete. Our admissions line is answered around the clock, and the process is designed to move quickly because we know that when someone is finally ready to get help, waiting even a day can feel impossible. Here's how it works: you call, we do a brief phone assessment (about 10 to 15 minutes), we verify your insurance or discuss private-pay options, and a provider reviews everything to confirm the program is a safe fit. Once a bed is confirmed and you're approved, we schedule your intake — and in many cases that can happen the same day. If we don't have a bed open the moment you call, we'll tell you honestly and give you the earliest realistic time. We don't accept walk-ins, so please always call first.",
   },
   {
     q: 'Will my insurance cover residential treatment?',
@@ -128,7 +128,7 @@ const schema = {
     heading="Does insurance cover residential treatment in Arizona?"
     bullets={[
       'We check your benefits while you are on the phone, usually in a few minutes',
-      'It costs nothing, and you owe nothing either way',
+      'Insurance verification is free and confidential',
       'AHCCCS and commercial plans both cover residential care here',
       'Not in network with your plan? We will say so, and help you find who is',
     ]}
@@ -165,7 +165,7 @@ const schema = {
   <AdmissionsPath
     heading="How to get into residential treatment in Arizona"
     steps={[
-      { title: 'Call, any hour',   note: 'A real person picks up' },
+      { title: 'Call, any hour',   note: 'Answered day or night' },
       { title: 'Phone assessment', note: 'Ten to fifteen minutes' },
       { title: 'Coverage check',   note: 'While you are on the line' },
       { title: 'Provider review',  note: 'Confirming this is a safe fit' },

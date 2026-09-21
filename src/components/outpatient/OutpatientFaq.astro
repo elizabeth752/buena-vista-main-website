@@ -1,0 +1,37 @@
+---
+import FAQ from '../FAQ.astro';
+/* Kept to the level of care, its length and how it connects to the rest of the
+   continuum. No schedule, capacity or staffing detail — see the page header. */
+const faqs = [
+  {
+    q: 'Does Buena Vista offer outpatient treatment?',
+    a: "Yes. Outpatient treatment is the final phase of our continuum at Chandler, after medical detox, residential treatment, partial hospitalization and intensive outpatient. Several outpatient programs run, so the level of support can be matched to where you actually are rather than to where the program assumes you should be.",
+  },
+  {
+    q: 'How long is outpatient treatment?',
+    a: "Typically 45 to 90 days, sometimes more if that is what is needed. End to end, the full continuum from detox through outpatient usually runs around 90 to 120 days. The length is reviewed with your case manager as you go, not fixed in advance.",
+  },
+  {
+    q: 'Can I work or study while I am in outpatient treatment?',
+    a: "Yes, and that is largely the point of this phase. Schedules grow with you, allowing work, school and other responsibilities to gradually reenter your life while therapy, groups and clinical support continue around them.",
+  },
+  {
+    q: 'Do you help with sober living?',
+    a: "Yes. Many people pair this phase with a sober living home for added support and structure while keeping the same autonomy and freedom. We do not run the housing ourselves, so the help is in knowing the local landscape and lining it up alongside the program.",
+  },
+  {
+    q: 'Can I start at the outpatient level?',
+    a: "Sometimes. If you are medically stable, have somewhere settled to live and a support system around you, it can be a reasonable starting point. If you are still drinking or using daily, medical detox is the safer first step and it is in the same building. A short call settles which is which.",
+  },
+  {
+    q: 'What happens when outpatient treatment ends?',
+    a: "Planning for it starts before it ends. Ongoing therapy, a primary care provider, psychiatric care where it applies and community support are arranged while there is still time to arrange them, so the week after your last session has appointments in it rather than a gap.",
+  },
+];
+---
+<FAQ
+  faqs={faqs}
+  eyebrow="Straight answers"
+  heading="Questions about outpatient treatment"
+  bg="bg-cream"
+/>

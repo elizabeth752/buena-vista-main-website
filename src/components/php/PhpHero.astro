@@ -1,38 +1,31 @@
 ---
 import Horizon from '../Horizon.astro';
 
-/* Hero standard: H1 carries the keyword, the line above the bullets is one
-   Elizabeth kept, no subtitle paragraph, every bullet gets its own icon.
+/* Hero standard: eyebrow, keyword H1, bullets with one icon each, two CTAs.
+   No promise line — that device is reserved for the lines Elizabeth kept, and
+   there isn't one for this page.
 
-   HISTORY, so nobody re-opens this from the call export: this page used to
-   state that Buena Vista had no IOP, because six admissions agents said so on
-   recorded calls between January and July 2026. The client confirmed on
-   2026-09-21 that the outpatient continuum is open, and asked for it to be
-   presented as a live program. The disclosure card and the referral block that
-   used to sit here were removed on that instruction.
-
-   Bullets stay at the level the client confirmed — that the program exists, how
-   it fits the continuum, and how scheduling works. No group times, no days per
-   week, no staffing: none of that has been confirmed and a caller will hold us
-   to whatever is written here. */
+   Everything here describes the level of care and how it connects to the rest
+   of the continuum. No hours, no days per week, no staffing: the client
+   confirmed on 2026-09-21 that PHP is open, not what its timetable looks like. */
 const bullets = [
   {
-    text: 'A full clinical program you attend while living at home',
-    // home
-    d: 'M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25',
+    text: 'A full clinical day, without living on site',
+    // sun
+    d: 'M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z',
   },
   {
-    text: 'Schedules that flex around work, school and family',
-    // clock
-    d: 'M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z',
+    text: 'The usual step down from residential treatment',
+    // arrow down
+    d: 'M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3',
   },
   {
-    text: 'The same team that runs our detox and residential care',
-    // users
-    d: 'M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z',
+    text: 'Same building, same team, no second admission',
+    // building
+    d: 'M21 8.25H3m18 0a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 8.25m18 0v10.5A2.25 2.25 0 0118.75 21H5.25A2.25 2.25 0 013 18.75V8.25M12 11.25v6m3-3H9',
   },
   {
-    text: 'Help lining up sober living alongside your program',
+    text: 'Help lining up somewhere steady to live alongside it',
     // key
     d: 'M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z',
   },
@@ -50,16 +43,12 @@ const bullets = [
       <div>
         <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-5 flex items-center gap-2">
           <span class="w-6 h-px bg-gold inline-block"></span>
-          Intensive outpatient
+          Partial hospitalization
         </p>
 
-        <h1 class="font-display text-navy mb-6">
-          Intensive Outpatient (IOP) in Chandler, Arizona
+        <h1 class="font-display text-navy mb-8">
+          Partial Hospitalization (PHP) in Chandler, Arizona
         </h1>
-
-        <p class="font-display text-navy text-[26px] leading-[34px] md:text-[30px] md:leading-[39px] border-l-[3px] border-gold pl-5 mb-8 max-w-xl">
-          Treatment that fits around a working life.
-        </p>
 
         <ul class="space-y-4 mb-9">
           {bullets.map(item => (
@@ -96,8 +85,8 @@ const bullets = [
       <div>
         <div class="overflow-hidden rounded-t-[160px] rounded-b-xl shadow-xl">
           <img
-            src="/Asset/stock%20photo/Desktop%20Dimensions/Facility/Covered%20drop-off%20entrance%20with%20tower%20feature%20and%20circular%20driveway.webp"
-            alt="The covered drop-off entrance at Buena Vista in Chandler, with a tower feature and circular driveway"
+            src="/Asset/stock%20photo/Desktop%20Dimensions/Facility/Flexible%20gathering%20space%20with%20movable%20seating,%20support%20columns,%20and%20checkerboard%20flooring.webp"
+            alt="A flexible gathering space at Buena Vista in Chandler, with movable seating and tall windows"
             class="w-full object-cover aspect-[4/5]"
             fetchpriority="high"
             decoding="async"

@@ -1,0 +1,48 @@
+---
+/* Four things worth knowing about outpatient treatment, in the order the
+   questions arrive on an admissions call. Same shape as the PHP and IOP
+   equivalents. */
+const questions = [
+  {
+    q: 'Can I go back to work?',
+    a: "Going back is the point of this phase, not a risk to it. Schedules are built to grow with you, so work, school and the other responsibilities you have been away from come back gradually rather than all in one week. Tell admissions what your week needs to look like and they will work the timing out with you.",
+  },
+  {
+    q: 'Where will I live during it?',
+    a: "At home, if home is somewhere steady. Many people pair this phase with a sober living home for the added support and structure while keeping the same autonomy and freedom. Sober living placement assistance is part of what our case managers do, so raise it before you get to this phase rather than after.",
+  },
+  {
+    q: 'How long does it last?',
+    a: "Typically 45 to 90 days, and longer when that is what somebody needs. Taken end to end with detox, residential and the step-down phases, the continuum usually runs around 90 to 120 days. Your case manager reviews it with you as you go rather than holding you to a number fixed on day one.",
+  },
+  {
+    q: 'What if I slip while I am in it?',
+    a: "Tell us. This is the phase where real life is back, which is exactly why it is the phase where it happens, and a program that only works when nothing goes wrong is not much of a program. The response is to adjust the level of care, not to end it, and every rung above this one is in the same building.",
+  },
+];
+---
+<section id="outpatient-questions" class="bg-white py-[70px]">
+  <div class="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8">
+    <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+      <span class="w-6 h-px bg-gold inline-block"></span>
+      Worth knowing
+    </p>
+    <h2 class="font-display text-charcoal mb-10">
+      Four things worth knowing about outpatient treatment
+    </h2>
+
+    <div class="space-y-4">
+      {questions.map(item => (
+        <div class="bg-cream rounded-xl p-7 border border-cream-soft">
+          <h3 class="q-title font-display text-navy mb-3">{item.q}</h3>
+          <p class="font-body text-charcoal text-[16px] leading-[27px]">{item.a}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Unlayered, so it beats the global h3 scale. */
+  .q-title { font-size: 24px; line-height: 30px; letter-spacing: 0; }
+</style>

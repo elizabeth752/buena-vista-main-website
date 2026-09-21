@@ -1,0 +1,95 @@
+---
+/* Sticky text column with cards revealed alongside, the layout Elizabeth
+   prefers. The three cards answer the only question anyone actually has about
+   PHP: how is this different from the level above and the level below it.
+
+   Nothing here states hours or days. PHP is described by what it is for. */
+const compare = [
+  {
+    label: 'Residential treatment',
+    tag: 'You live here',
+    desc: 'The whole day is the program, and you sleep in the building. The right dose when home is not somewhere you can safely be yet.',
+    href: '/residential-treatment',
+  },
+  {
+    label: 'Partial hospitalization',
+    tag: 'You live at home',
+    desc: 'The clinical day continues, but the evening is yours. The usual next rung down when you are steady enough to sleep somewhere else.',
+    href: null,
+  },
+  {
+    label: 'Intensive outpatient',
+    tag: 'Part of the day',
+    desc: 'Fewer hours again, several days a week, built around work or school. Where most people go once a full day is more than they need.',
+    href: '/programs/intensive-outpatient-iop/',
+  },
+];
+
+const points = [
+  'The same clinical work as residential care: groups, individual therapy, relapse prevention',
+  'Co-occurring depression, anxiety and trauma stay part of the program, not a separate track',
+  'A case manager who already knows you carries the plan across from residential',
+  'Sober living placement help, so where you sleep is settled before the step down',
+];
+---
+<section id="what-is-php" class="bg-white py-[60px]">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-14 lg:gap-20 items-start">
+
+      <div class="lg:sticky lg:top-24">
+        <p class="text-gold font-body text-xs font-bold tracking-[0.18em] uppercase mb-4 flex items-center gap-2">
+          <span class="w-6 h-px bg-gold inline-block"></span>
+          The level of care
+        </p>
+        <h2 class="font-display text-charcoal mb-6">
+          What is partial hospitalization treatment?
+        </h2>
+
+        <p class="font-body text-charcoal text-[17px] leading-[29px] mb-7">
+          PHP is a full day of treatment that you go home from. It keeps the structure of residential care at the point where living on site is no longer what you need, which is exactly where recovery is easiest to drop.
+        </p>
+
+        <ul class="space-y-3 mb-8">
+          {points.map(p => (
+            <li class="flex items-start gap-3 font-body text-charcoal text-[17px] leading-[29px]">
+              <svg class="w-5 h-5 text-teal mt-1 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
+              </svg>
+              <span>{p}</span>
+            </li>
+          ))}
+        </ul>
+
+        <div class="border-l-2 border-gold pl-5 max-w-xl">
+          <p class="font-body text-charcoal text-[16px] leading-[26px]">
+            Not sure which level you need? It is not a question to guess at. A short call sorts it out: <a href="tel:8883625576" class="text-teal font-semibold hover:opacity-70 transition-opacity tel-number">(888) 362-5576</a>.
+          </p>
+        </div>
+      </div>
+
+      <div class="space-y-4">
+        {compare.map(item => (
+          <div class="rounded-xl p-6 border bg-white border-cream-soft shadow-sm">
+            <div class="flex items-center justify-between gap-4 mb-2.5">
+              <h3 class="compare-label font-display text-charcoal">{item.label}</h3>
+              <span class="shrink-0 font-body text-xs font-bold uppercase tracking-wide text-gold bg-gold/10 rounded-full px-3 py-1.5">
+                {item.tag}
+              </span>
+            </div>
+            <p class="font-body text-charcoal text-[16px] leading-[26px] mb-3">{item.desc}</p>
+            {item.href
+              ? <a href={item.href} class="font-body text-[13px] font-bold uppercase tracking-[0.1em] text-teal hover:opacity-70 transition-opacity">Read about this level</a>
+              : <p class="font-body text-[13px] font-bold uppercase tracking-[0.1em] text-muted">You are here</p>}
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Unlayered, so it beats the global h3 scale. Every label holds one line at
+     this size, which is what keeps the rows level. */
+  .compare-label { font-size: 22px; line-height: 28px; letter-spacing: 0; }
+</style>

@@ -2,34 +2,21 @@
 /* -----------------------------------------------------------------------------
    Intensive Outpatient (IOP)
 
-   IMPORTANT — read before editing the copy on this page.
+   This page used to say we did not have an IOP. That was correct at the time:
+   across 122 IOP calls in the Jan–Jul 2026 CTM export, six named Buena Vista
+   agents state on the record that the program was not open, and every
+   affirmative "we offer IOP" quote in that export belongs to a different PIR
+   brand. The page ranked for the term, told the truth, and handed the demand on.
 
-   The client wiki lists IOP as an active level of care. The call export
-   (CallTrackingMetrics, Jan–Jul 2026, 4,030 calls) contradicts that. Across 122
-   calls mentioning IOP, six different Buena Vista agents state on the record
-   that we do not have one:
+   The client confirmed on 2026-09-21 that the outpatient continuum is now open
+   and asked for it to be presented as a live program. Elizabeth approved the
+   change the same day. So: the referral disclosure and IopHelpNow are gone, the
+   noindex is lifted, and `built: true` is set in src/data/navigation.ts.
 
-     Elizabeth Pruitt  "We actually don't have an IOP program currently."
-     Clay Williams     "We don't have IOP right now. We do plan to have one,
-                        but it's a little bit down the road."
-     Carlos Armenta    "We don't have outpatient at our facility. However, our
-                        sister company does."
-     Michael Montoya   "Buena Vista, we don't have our IOP program open just yet."
-     Hailey Jones      "We haven't gotten our IOP up and running just yet."
-
-   Every affirmative "we offer IOP" quote in the export belongs to a different
-   PIR brand (Revive, Plugged In Recovery, Mosaic Minds) — the export covers all
-   of them, not just Buena Vista. The residential page's own FAQ comment already
-   flags "IOP availability" as unverified.
-
-   So this page does NOT claim we run an IOP. It ranks for the term, tells the
-   truth about availability, and captures the demand as a referral — which is
-   what admissions already does on the phone. It is noindex until availability
-   is confirmed either way.
-
-   WHEN THE IOP OPENS: drop the hero disclosure and IopHelpNow, replace with real
-   program detail (schedule, group structure, length), remove noindex, and flip
-   `built: true` in src/data/navigation.ts.
+   WHAT IS STILL NOT CONFIRMED, and must not be written until it is: days per
+   week, group times and schedule, program capacity, staffing, and whether the
+   outpatient levels carry their own licensure or sit under the facility's.
+   Admissions gets held to anything published here.
 ----------------------------------------------------------------------------- */
 import Layout from '../../layouts/Layout.astro';
 import TopBar from '../../components/TopBar.astro';
@@ -37,35 +24,58 @@ import Nav from '../../components/Nav.astro';
 
 import IopHero from '../../components/iop/IopHero.astro';
 import WhatIsIop from '../../components/iop/WhatIsIop.astro';
-import IopHelpNow from '../../components/iop/IopHelpNow.astro';
 import IopQuestions from '../../components/iop/IopQuestions.astro';
 import IopFaq from '../../components/iop/IopFaq.astro';
 
+import Testimonials from '../../components/Testimonials.astro';
 import VerifySection from '../../components/VerifySection.astro';
 import FinalCTA from '../../components/FinalCTA.astro';
 
 const title = 'Intensive Outpatient (IOP) in Chandler, AZ | Buena Vista';
 const description =
-  'What intensive outpatient treatment involves and how it fits after detox and residential care. We will help you find an IOP in Arizona that takes your plan.';
+  'Intensive outpatient treatment (IOP) in Chandler, AZ. Structured care around work and family, part of a full continuum from medical detox through outpatient. Call (888) 362-5576.';
+
+/* Built from the same answers as IopFaq, so the two cannot drift apart. */
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    ['Does Buena Vista have an intensive outpatient program?',
+     'Yes. IOP runs at our Chandler facility as part of a full continuum of care, alongside medical detox, residential treatment, partial hospitalization and outpatient treatment.'],
+    ['How is IOP different from residential treatment?',
+     'Mainly where you sleep. In residential treatment you live here. In IOP you live at home, or in sober living, and come in for treatment for part of the day, several days a week.'],
+    ['How long does IOP last?',
+     'The outpatient phase of the continuum typically runs 45 to 90 days, and longer where that is what somebody needs.'],
+    ['Can I keep working or studying while I attend?',
+     'Yes. Schedules are built to flex around work, school and family responsibilities, and they grow with you as those things gradually come back in.'],
+    ['Do you help with housing during outpatient treatment?',
+     'Yes. Many people pair this phase with a sober living home, and sober living placement assistance is part of what our case managers do.'],
+  ].map(([q, a]) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+};
 ---
-<Layout title={title} description={description} noindex={true}>
+<Layout title={title} description={description}>
   <TopBar />
   <Nav />
 
   <IopHero />
   <WhatIsIop />
-  <IopHelpNow />
   <IopQuestions />
+  <Testimonials />
   <VerifySection
     heading="Does insurance cover intensive outpatient treatment?"
     bullets={[
       'Outpatient benefits are often contracted separately from inpatient cover',
       'We check yours while you are on the phone, usually in a few minutes',
-      'It costs nothing, and you owe nothing either way',
+      'Insurance verification is free and confidential',
       'What we find is what we tell you, whether or not you end up here',
     ]}
   />
   <IopFaq />
 
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   <FinalCTA />
 </Layout>

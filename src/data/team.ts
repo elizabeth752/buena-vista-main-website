@@ -76,7 +76,7 @@ export const team: TeamMember[] = [
     clinicalReviewer: false,
     bio: [
       'Wade leads Buena Vista and the wider Plugged In Recovery group, and was behind the reopening of the Chandler campus.',
-      'His focus is on the parts of treatment that are usually invisible from the outside: whether a real person answers the phone at four in the morning, whether a bed can be confirmed the same day, and whether somebody who calls and cannot be admitted still ends up somewhere good.',
+      'His focus is on the parts of treatment that are usually invisible from the outside: whether the phone gets answered at four in the morning, whether a bed can be confirmed the same day, and whether somebody who calls and cannot be admitted still ends up somewhere good.',
     ],
     focus: ['Access to treatment', 'The Chandler reopening', 'Continuum of care'],
   },
@@ -102,9 +102,9 @@ export const bySlug = Object.fromEntries(team.map(m => [m.slug, m]));
      Wade Muhlhauser is our CEO.
 
    Publishing both sets would put two CMOs and two CEOs on one healthcare site.
-   Others hold roles at locations that are closed — Jose Leon as Executive
-   Director of Tucson, Katie Noetzel as Executive Director of Cave Creek — which
-   is strong evidence this whole list predates the takeover.
+   Others hold roles at locations Buena Vista does not operate — Katie Noetzel
+   as Executive Director of Cave Creek — which is strong evidence this whole
+   list predates the takeover.
 
    TO PUBLISH: confirm each person with the client, move them into `team` above
    with a real photo and correct credentials, and set PUBLISH_LEGACY_BIOS true.
@@ -131,16 +131,6 @@ export const legacyTeam: TeamMember[] = [
     photo: '',
     clinicalReviewer: false,
     bio: ["Paul R. Valbuena, M.D. is the current Chief Medical Officer of Buena Vista Health and Recovery. He is a double board-certified psychiatrist in adult, child, and adolescent psychiatry, a Diplomate of the American Board of Psychiatry and Neurology, also specializing in addiction medicine. He completed his B.S. in Microbiology and undergraduate training at the University of Oklahoma in 1993, went onto Michigan State University to complete his adult psychiatry residency training, and proceeded to a Child and Adolescent Psychiatry Fellowship at Maricopa Integrated Health System in Phoenix, AZ. He is the founder and owner of Valbuena 360 Wellness Center in North Scottsdale, where he provides 360-degree medical services from Medical Aesthetics and Integrative Medicine to outpatient psychiatry services. Dr. Valbuena lives in Scottsdale, AZ, is happily married to his wife, Gina, whom he met in medical school, and is also the proud father of 4 children. He is dedicated to providing optimal and cutting edge medical services to all ages."],
-    focus: [],
-  },
-  {
-    slug: "jose-leon",
-    name: "Jose Leon",
-    credentials: "",
-    title: "Executive Director of Tucson",
-    photo: '',
-    clinicalReviewer: false,
-    bio: ["Jose Leon appears on the previous Buena Vista website as Executive Director of Tucson. This biography has not been confirmed with the client."],
     focus: [],
   },
   {

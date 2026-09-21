@@ -16,7 +16,7 @@ import FinalCTA from '../components/FinalCTA.astro';
 import posts from '../data/blog/posts.json';
 import { publishedTeam as team } from '../data/team';
 
-const EXCLUDE = ['/programs/intensive-outpatient-iop', '/404', '/sitemap'];
+const EXCLUDE = ['/404', '/sitemap'];
 
 const files = import.meta.glob('./**/*.astro', { eager: false });
 
@@ -57,10 +57,12 @@ const LABELS: Record<string, string> = {
   '/locations/scottsdale': 'Serving Scottsdale',
   '/locations/casa-grande': 'Serving Casa Grande',
   '/locations/phoenix': 'Serving Phoenix, AZ',
-  '/locations/tucson': 'Tucson, AZ (temporarily closed)',
   '/medical-detox': 'Medical detox',
   '/programs': 'Programs & levels of care',
   '/programs/aftercare': 'Aftercare',
+  '/programs/intensive-outpatient-iop': 'Intensive outpatient (IOP)',
+  '/programs/outpatient-program': 'Outpatient treatment',
+  '/programs/partial-hospitalization-php': 'Partial hospitalization (PHP)',
   '/referrals': 'Professional & hospital referrals',
   '/residential-treatment': 'Residential treatment',
   '/resources': 'Recovery resources',
@@ -120,7 +122,7 @@ const description = 'Every page on the Buena Vista Health & Recovery site, group
         If you would rather scan a list than work through a menu, this is the whole site on one page.
         If you cannot find what you are looking for, call
         <a href="tel:8883625576" class="text-teal font-semibold hover:opacity-70 transition-opacity tel-number">(888) 362-5576</a>{' '}
-        and ask — someone answers at any hour.
+        and ask — we answer at any hour.
       </p>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-10">

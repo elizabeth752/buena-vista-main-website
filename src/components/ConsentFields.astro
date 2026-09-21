@@ -14,7 +14,10 @@
    The call box is required, because a callback is the whole point of the form.
    The SMS box is optional on purpose: marketing SMS consent may not be a
    condition of getting a service, so requiring it would undo the consent it
-   collects. Flagged to Elizabeth.
+   collects. Each box is labelled (Required) or (Optional) individually — a
+   single "(Required)" legend over both reads as though SMS consent is a
+   condition of submitting, which is exactly what CTM's Trust Center rejects.
+   The client raised this on 2026-09-21 against the legacy WordPress forms.
 
    THE name= VALUES ARE THE CTM CONTRACT. They go straight through /api/lead
    into the FormReactor's custom fields, so a lead carries the consent it was
@@ -30,7 +33,7 @@ const { id } = Astro.props;
 ---
 <fieldset class="consent-block">
   <legend class="block text-xs font-bold text-charcoal uppercase tracking-wide mb-2.5">
-    Terms and Conditions <span class="text-gold-deep">(Required)</span>
+    Terms and Conditions
   </legend>
 
   <label class="flex gap-2.5 mb-3 cursor-pointer" for={`${id}-consent-call`}>
@@ -43,6 +46,7 @@ const { id } = Astro.props;
       class="consent-box mt-0.5 shrink-0"
     />
     <span class="font-body text-[13px] leading-[19px] text-charcoal">
+      <span class="font-bold text-gold-deep">(Required)</span>{' '}
       By checking this box, you provide consent for Buena Vista Recovery to call you.
       We will never share your information.
     </span>
@@ -57,6 +61,7 @@ const { id } = Astro.props;
       class="consent-box mt-0.5 shrink-0"
     />
     <span class="font-body text-[13px] leading-[19px] text-charcoal">
+      <span class="font-bold text-charcoal/60">(Optional)</span>{' '}
       By checking this box, you provide consent to receive informational and marketing
       SMS, MMS, or RCS messages from Buena Vista Recovery. Message frequency may vary.
       Message and data rates may apply. Reply HELP for help or STOP to opt out.

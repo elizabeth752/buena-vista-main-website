@@ -1,0 +1,79 @@
+---
+/* -----------------------------------------------------------------------------
+   Partial hospitalization (PHP)
+
+   New on 2026-09-21. The client confirmed the outpatient continuum is open and
+   asked for PHP, IOP and outpatient treatment to be presented as live programs
+   across the site; Elizabeth approved building the pages the same day. Before
+   that, PHP appeared on the programs hub as something we would help somebody
+   find elsewhere.
+
+   WHAT IS CONFIRMED: that the level of care exists here, that it sits between
+   residential and IOP, that the outpatient phase of the continuum runs roughly
+   45 to 90 days, and that sober living placement assistance is part of it.
+
+   WHAT IS NOT, and must not be written until it is: hours per day, days per
+   week, group structure, capacity, staffing, and whether these levels carry
+   their own licensure. Admissions gets held to whatever is published here.
+----------------------------------------------------------------------------- */
+import Layout from '../../layouts/Layout.astro';
+import TopBar from '../../components/TopBar.astro';
+import Nav from '../../components/Nav.astro';
+
+import PhpHero from '../../components/php/PhpHero.astro';
+import WhatIsPhp from '../../components/php/WhatIsPhp.astro';
+import PhpQuestions from '../../components/php/PhpQuestions.astro';
+import PhpFaq from '../../components/php/PhpFaq.astro';
+
+import Testimonials from '../../components/Testimonials.astro';
+import VerifySection from '../../components/VerifySection.astro';
+import FinalCTA from '../../components/FinalCTA.astro';
+
+const title = 'Partial Hospitalization (PHP) in Chandler, AZ | Buena Vista';
+const description =
+  'Partial hospitalization treatment (PHP) in Chandler, AZ. A full clinical day you go home from, between residential and outpatient care. Call (888) 362-5576.';
+
+/* Built from the same answers as PhpFaq, so the two cannot drift apart. */
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    ['Does Buena Vista offer a partial hospitalization program?',
+     'Yes. PHP runs at our Chandler facility as part of a full continuum of care, alongside medical detox, residential treatment, intensive outpatient and outpatient treatment.'],
+    ['What is the difference between PHP and residential treatment?',
+     'Where you sleep. Residential treatment is live-in, with the whole day built around the program. PHP keeps the clinical day and sends you home at the end of it.'],
+    ['What is the difference between PHP and IOP?',
+     'Hours. PHP is a full clinical day; IOP is part of one, several days a week, designed to fit around work or school. Most people move from PHP to IOP as they stabilize.'],
+    ['Do I need to complete detox first?',
+     'If you are still drinking or using daily, then yes, and medical detox is in the same building. Outpatient levels of care assume your body is already stable.'],
+    ['Do you help with sober living during PHP?',
+     'Yes. Sober living placement assistance is part of what our case managers do, for exactly this phase.'],
+  ].map(([q, a]) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+};
+---
+<Layout title={title} description={description}>
+  <TopBar />
+  <Nav />
+
+  <PhpHero />
+  <WhatIsPhp />
+  <PhpQuestions />
+  <Testimonials />
+  <VerifySection
+    heading="Does insurance cover partial hospitalization?"
+    bullets={[
+      'Outpatient benefits are often contracted separately from inpatient cover',
+      'We check yours while you are on the phone, usually in a few minutes',
+      'Insurance verification is free and confidential',
+      'What we find is what we tell you, whether or not you end up here',
+    ]}
+  />
+  <PhpFaq />
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  <FinalCTA />
+</Layout>

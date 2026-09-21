@@ -1,7 +1,12 @@
 ---
-/* Level-of-care ladder. Described generically ("most programs run…") rather
-   than as Buena Vista's own schedule — our IOP is still being built, so no
-   hours, days, or group structure here may be presented as ours.
+/* Level-of-care ladder. Every rung is Buena Vista's own since the client
+   confirmed the outpatient continuum on 2026-09-21 — see the note in
+   IopHero.astro for why the earlier version marked the bottom two as
+   somebody else's.
+
+   Lengths are the ones the client gave. Nothing here states days per week or
+   group times, because those have not been confirmed and admissions would be
+   held to them on the phone.
 
    ALIGNMENT: every label holds one line at the pinned size, every tag follows
    the same shape, and every description is written to the same length. */
@@ -10,33 +15,34 @@ const ladder = [
     label: 'Medical detox',
     tag: 'Typically 4 to 7 days',
     desc: 'Substances out of your body under nursing around the clock and physician oversight. You stay with us the whole time.',
-    us: true,
   },
   {
     label: 'Residential treatment',
     tag: 'Typically 30 days',
     desc: 'Live-in care once your body is steady. Two groups a day, your own therapist, and a case manager planning what follows.',
-    us: true,
   },
   {
     label: 'Partial hospitalization',
-    tag: 'Around 6 hours a day',
-    desc: 'A full clinical day without living on site. More structure than IOP, and usually too many hours to hold a job alongside.',
-    us: false,
+    tag: 'A full clinical day',
+    desc: 'The structure of residential care without living on site. The usual step down when a full day of treatment is still the right dose.',
   },
   {
     label: 'Intensive outpatient',
-    tag: 'Around 3 hours a day',
-    desc: 'Most IOPs run three to five days a week, often with an evening track. You live at home or in sober living while you attend.',
-    us: false,
+    tag: 'Part of the day',
+    desc: 'A few hours at a time, several days a week, around a working life. Groups, therapy and relapse-prevention work continue.',
+  },
+  {
+    label: 'Outpatient treatment',
+    tag: 'Typically 45 to 90 days',
+    desc: 'The phase where treatment and real life overlap. Support continues while work, home and routine come back in.',
   },
 ];
 
 const points = [
   'A real clinical program, not a check-in: groups, therapy, relapse-prevention work',
   'The difference from residential is simply where you sleep at night',
-  'Usually a step down rather than a starting point',
-  'Still drinking or using daily? Detox is the safer first step, and that is here',
+  'Usually a step down from residential rather than a starting point',
+  'Still drinking or using daily? Detox is the safer first step, and that is here too',
 ];
 ---
 <section id="what-is-iop" class="bg-white py-[60px]">
@@ -53,7 +59,7 @@ const points = [
         </h2>
 
         <p class="font-body text-charcoal text-[17px] leading-[29px] mb-7">
-          IOP is structured treatment you attend for a few hours at a time, several days a week, while living at home.
+          IOP is structured treatment you attend for a few hours at a time, several days a week, while living at home. It is one rung of a continuum that runs from medical detox through to outpatient care, all of it at Chandler.
         </p>
 
         <ul class="space-y-3 mb-8">
@@ -76,7 +82,7 @@ const points = [
 
       <div class="space-y-4">
         {ladder.map(item => (
-          <div class={`rounded-xl p-6 border ${item.us ? 'bg-white border-cream-soft shadow-sm' : 'bg-cream border-cream-soft'}`}>
+          <div class="rounded-xl p-6 border bg-white border-cream-soft shadow-sm">
             <div class="flex items-center justify-between gap-4 mb-2.5">
               <h3 class="ladder-label font-display text-charcoal">{item.label}</h3>
               <span class="shrink-0 font-body text-xs font-bold uppercase tracking-wide text-gold bg-gold/10 rounded-full px-3 py-1.5">
@@ -85,9 +91,7 @@ const points = [
             </div>
             <p class="font-body text-charcoal text-[16px] leading-[26px] mb-3">{item.desc}</p>
             <p class="font-body text-[13px] font-bold uppercase tracking-[0.1em]">
-              {item.us
-                ? <span class="text-teal">Offered at our Chandler facility</span>
-                : <span class="text-muted">We'll help you find one</span>}
+              <span class="text-teal">Offered at our Chandler facility</span>
             </p>
           </div>
         ))}
@@ -99,6 +103,6 @@ const points = [
 
 <style>
   /* Unlayered, so it beats the global h3 scale. Every label holds one line at
-     this size, which is what keeps the four rows level. */
+     this size, which is what keeps the rows level. */
   .ladder-label { font-size: 22px; line-height: 28px; letter-spacing: 0; }
 </style>

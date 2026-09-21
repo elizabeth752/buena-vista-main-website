@@ -2145,7 +2145,7 @@
     },
     {
       "source": "/locations/alcohol-and-drug-rehab-tucson-az/",
-      "destination": "/locations/tucson/",
+      "destination": "/locations/",
       "permanent": true
     },
     {
@@ -2156,6 +2156,11 @@
     {
       "source": "/locations/scottsdale-arizona/",
       "destination": "/locations/scottsdale/",
+      "permanent": true
+    },
+    {
+      "source": "/locations/tucson/",
+      "destination": "/locations/",
       "permanent": true
     },
     {
