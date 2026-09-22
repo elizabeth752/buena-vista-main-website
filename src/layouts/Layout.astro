@@ -44,7 +44,13 @@ const siteSchema = {
     {noindex
       ? <meta name="robots" content="noindex, nofollow" />
       : <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />}
+    {/* SVG first for anything modern; the PNG covers the rest. Both are the
+       gold mark on transparency — the old navy plate read as a dark block
+       in a light tab. /favicon.ico carries the same PNG bytes because
+       browsers request that path unprompted, and what was there was the
+       Astro starter logo. */}
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
     <meta name="theme-color" content="#0F2E3D" />
 
     {/* Open Graph and Twitter. Without these, every share of this site — and
