@@ -96,11 +96,43 @@ const siteSchema = {
     <meta name="twitter:image" content={ogImageUrl} />
 
     <script type="application/ld+json" set:html={JSON.stringify(siteSchema)} />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    {/* One request for both families, display=swap so text paints in the
-        fallback rather than staying invisible while the fonts arrive. */}
-    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,400&family=Source+Sans+3:wght@300..700&display=swap" rel="stylesheet" />
+    {/* FONTS ARE SELF-HOSTED. They used to come from fonts.googleapis.com, which
+        cost two DNS/TLS handshakes and a chained round trip: the CSS request had
+        to resolve (301ms) before the browser even learned the woff2 URLs, which
+        then came from a third origin (854ms). PageSpeed measured that chain as
+        the critical path on 2026-09-21, with the page at LCP 11.1s.
+
+        Serving them from our own origin removes both handshakes, and the
+        @font-face rules are inlined here so there is no stylesheet request at
+        all. The two latin faces are preloaded because they are the only ones an
+        English page actually pulls; the latin-ext, italic and other slices stay
+        gated behind unicode-range and cost nothing until something needs them.
+
+        To update: re-run the fetch against the Google Fonts css2 URL with a
+        modern UA, keep the latin slices, and drop the files in public/Fonts/gf.
+        The family names must stay exactly 'Newsreader' and 'Source Sans 3' to
+        match --font-display and --font-body in global.css. */}
+    {/* PageSpeed flagged these as preconnect candidates on 2026-09-21, worth
+        320-400ms of LCP between them. They are all pulled in by GTM, so the
+        browser otherwise does not learn about them until the container has
+        parsed and run. Kept to the three PSI named — more than about four
+        preconnects starts costing more than it saves. */}
+    <link rel="preconnect" href="https://218503.tctm.co" crossorigin />
+    <link rel="preconnect" href="https://8ab0a26cb0027939bcf5-49c99c3c0c9c98b3365b710757036e1b.ssl.cf5.rackcdn.com" crossorigin />
+    <link rel="preconnect" href="https://leads-api.gonorth.io" crossorigin />
+
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+          href="/Fonts/gf/newsreader-normal-latin.woff2" />
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+          href="/Fonts/gf/source-sans-3-normal-latin.woff2" />
+    <style is:inline>
+      @font-face{font-family:'Newsreader';font-style:italic;font-weight:400;font-display:swap;src:url('/Fonts/gf/newsreader-italic-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+      @font-face{font-family:'Newsreader';font-style:italic;font-weight:400;font-display:swap;src:url('/Fonts/gf/newsreader-italic-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+      @font-face{font-family:'Newsreader';font-style:normal;font-weight:300 600;font-display:swap;src:url('/Fonts/gf/newsreader-normal-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+      @font-face{font-family:'Newsreader';font-style:normal;font-weight:300 600;font-display:swap;src:url('/Fonts/gf/newsreader-normal-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+      @font-face{font-family:'Source Sans 3';font-style:normal;font-weight:300 700;font-display:swap;src:url('/Fonts/gf/source-sans-3-normal-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+      @font-face{font-family:'Source Sans 3';font-style:normal;font-weight:300 700;font-display:swap;src:url('/Fonts/gf/source-sans-3-normal-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+    </style>
     <title>{title}</title>
   </head>
   <body class="font-body antialiased">

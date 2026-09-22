@@ -28,7 +28,12 @@ export const organization = {
   },
   image: `${SITE}/og-default.jpg`,
   telephone: '+1-888-362-5576',
-  medicalSpecialty: 'Addiction Medicine',
+  /* medicalSpecialty is an ENUMERATION, not free text. "Addiction Medicine" is
+     not a member, which is what the schema validator rejects. Psychiatric is
+     the closest valid term for substance use and co-occurring mental health
+     care, and is what behavioral health facilities are normally typed as.
+     The human-readable specialism is carried in `description`, not here. */
+  medicalSpecialty: 'https://schema.org/Psychiatric',
   address: {
     '@type': 'PostalAddress',
     streetAddress: '3033 S Arizona Ave',
