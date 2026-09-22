@@ -1,7 +1,21 @@
 ---
-/* Distances are described directionally rather than in minutes. Chandler's
+import InsuranceForm from '../InsuranceForm.astro';
+
+/* Shared by /about/contact/ and /locations/chandler/. The contact form is
+   OPT-IN because the Chandler page already carries the standard coverage block,
+   and two forms on one page split the intent rather than doubling the leads.
+   On the contact page the right-hand column was map-then-nothing, so the form
+   fills it instead of adding another section.
+
+   Distances are described directionally rather than in minutes. Chandler's
    position in the East Valley is a fact; a claimed drive time is not one we
    have verified. */
+interface Props {
+  /** Render the name-and-number contact form under the map. */
+  contactForm?: boolean;
+}
+const { contactForm = false } = Astro.props;
+
 const areas = [
   { h: 'From Phoenix', p: 'Chandler sits south-east of Phoenix in the East Valley, a straightforward run down the I-10 or the 101. Sky Harbor is the nearest airport.' },
   { h: 'From Mesa, Gilbert and Tempe', p: 'These are neighboring East Valley towns — Chandler is a local drive rather than a journey, which matters when someone is making the trip on the day they decide.' },
@@ -51,6 +65,15 @@ const areas = [
         <p class="font-body text-muted text-[15px] leading-[24px] mt-3">
           3033 S Arizona Ave, Chandler, AZ 85286 · open 24 hours
         </p>
+
+        {contactForm && (
+          <div class="mt-8">
+            {/* id="contact" is load-bearing: it becomes
+                paid_attribution[form_id], which is what keeps these leads
+                separable from coverage-form leads in CTM reporting. */}
+            <InsuranceForm id="contact" variant="contact" />
+          </div>
+        )}
       </div>
 
     </div>

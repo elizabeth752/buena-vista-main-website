@@ -4,8 +4,22 @@ import ConsentFields from './ConsentFields.astro';
 interface Props {
   id?: string;
   class?: string;
+  /* 'coverage' is the standard block on ~37 pages: it asks for carrier and
+     policy ID so admissions can run a benefits check before calling back.
+
+     'contact' asks for a name and a number and nothing else. The carrier and
+     policy fields were never `required` even on the coverage form, but the
+     heading, the button and the two insurance inputs made it READ as though
+     they were, so anyone without insurance — or not ready to hand over a policy
+     number — bounced. The client asked for this variant on 2026-09-21.
+
+     Both post to the same /api/lead endpoint and the same CTM FormReactor.
+     They stay separable in reporting because `paid_attribution[form_id]` is the
+     form's `id`, so give this one a distinct id wherever it is used. */
+  variant?: 'coverage' | 'contact';
 }
-const { id = 'verify', class: className = '' } = Astro.props;
+const { id = 'verify', class: className = '', variant = 'coverage' } = Astro.props;
+const isContact = variant === 'contact';
 ---
 <div id={id} class={`bg-white rounded-xl shadow-2xl px-3 py-7 lg:p-7 text-charcoal ${className}`}>
 
@@ -18,13 +32,17 @@ const { id = 'verify', class: className = '' } = Astro.props;
        Form heading + HIPAA badge as trust indicator.
        In-form headings are H5: Source Sans 3 600 · 22/29, not the display serif. */}
   <div class="flex flex-row items-center justify-between gap-3 mb-1">
-    <h5 class="font-body font-semibold text-[22px] leading-[29px] text-charcoal">Check your coverage now</h5>
+    <h5 class="font-body font-semibold text-[22px] leading-[29px] text-charcoal">{isContact ? 'Have us call you' : 'Check your coverage now'}</h5>
     <img src="/Asset/Accreditations/HIPAA%20Compliant.svg" alt="HIPAA Compliant" class="h-9 shrink-0" loading="lazy" decoding="async" />
   </div>
-  <p class="text-charcoal text-[16px] leading-[26px] font-body mb-5">Takes less than a minute. No commitment required.</p>
+  <p class="text-charcoal text-[16px] leading-[26px] font-body mb-5">
+    {isContact
+      ? 'Just a name and a number. Insurance details are not needed to talk to us.'
+      : 'Takes less than a minute. No commitment required.'}
+  </p>
 
   <form class={`space-y-4 verify-form verify-form-${id}`} method="POST" action="/api/lead" data-lead-form data-form-id={id}>
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 lg:gap-4">
+    <div class={`grid grid-cols-1 gap-3 lg:gap-4 ${isContact ? '' : 'sm:grid-cols-2'}`}>
       <div>
         <label class="block text-xs font-bold text-charcoal uppercase tracking-wide mb-1.5" for={`${id}-name`}>Your Name</label>
         <input id={`${id}-name`} name="caller_name" type="text" required autocomplete="name" placeholder="First and last name" class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm font-body focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal transition-colors" />
@@ -33,6 +51,7 @@ const { id = 'verify', class: className = '' } = Astro.props;
         <label class="block text-xs font-bold text-charcoal uppercase tracking-wide mb-1.5" for={`${id}-phone`}>Your Phone</label>
         <input id={`${id}-phone`} name="phone_number" type="tel" required autocomplete="tel" placeholder="(555) 000-0000" class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm font-body focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal transition-colors" />
       </div>
+{!isContact && (<>
       <div>
         <label class="block text-xs font-bold text-charcoal uppercase tracking-wide mb-1.5" for={`${id}-insurance`}>Insurance Carrier</label>
         <select id={`${id}-insurance`} name="custom_fields[insurance_provider]" class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm font-body focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal transition-colors text-charcoal bg-white">
@@ -60,11 +79,12 @@ const { id = 'verify', class: className = '' } = Astro.props;
         <label class="block text-xs font-bold text-charcoal uppercase tracking-wide mb-1.5" for={`${id}-policy`}>Membership Policy ID</label>
         <input id={`${id}-policy`} name="custom_fields[id]" type="text" autocomplete="off" placeholder="Policy ID" class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm font-body focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal transition-colors" />
       </div>
+</>)}
     </div>
     <ConsentFields id={id} />
 
     <button type="submit" class="w-full bg-teal hover:bg-teal-dark text-white font-bold py-3.5 rounded-lg transition-colors font-body tracking-wide text-sm">
-      Check my coverage
+      {isContact ? 'Request a call' : 'Check my coverage'}
     </button>
 
     {/* Honeypot. Hidden from people, irresistible to form-fillers; api/lead.js
