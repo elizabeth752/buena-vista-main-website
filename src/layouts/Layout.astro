@@ -39,6 +39,31 @@ const siteSchema = {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {/* Google Tag Manager — container GTM-N9GP4KF, the same one the legacy
+        WordPress site ran. Placed as high in <head> as the charset and viewport
+        allow, per Google's install instructions. `is:inline` keeps Astro from
+        bundling it, which would delay the container and break the snippet
+        Google gives you.
+
+        WHAT THIS CONTAINER CARRIES (v30, 77 tags): GA4 G-85BKQVLVE7, Google Ads
+        AW-860469019 with ten conversion labels plus AW-6088253076, a Facebook
+        pixel firing Lead, Bing UET, CallRail (a second call-tracking system
+        running alongside CTM), a dead UA property, and the CTM tags that do the
+        dynamic number swap.
+
+        ⚠ ONE TAG SWEEPS EVERY URL QUERY PARAMETER into enhanced_conversion_data
+        and ships it to Google Ads. On the old WordPress site that was a direct
+        PHI path. This site is built so nothing sensitive ever reaches a URL —
+        see the note in InsuranceForm.astro — so the tag has far less to grab
+        here, but it is still the first thing to fix in the container itself.
+        Raised with Elizabeth on 2026-09-21. */}
+    <script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N9GP4KF');</script>
+
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     {noindex
@@ -79,6 +104,9 @@ const siteSchema = {
     <title>{title}</title>
   </head>
   <body class="font-body antialiased">
+    {/* GTM noscript fallback. Must be the first thing inside <body>. */}
+    <noscript is:inline><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N9GP4KF"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <slot />
   </body>
 </html>
