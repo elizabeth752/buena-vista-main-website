@@ -115,6 +115,25 @@ const schema = {
               : b.t === 'h3' ? <h3 set:html={b.html} />
               : b.t === 'p'  ? <p set:html={b.html} />
               : b.t === 'ul' ? <ul>{b.items.map((i: string) => <li set:html={i} />)}</ul>
+              : b.t === 'embed' ? (
+                /* Podcast episode. referrerpolicy is not decoration: without it
+                   the embed hands Spotify the full article URL, and on this site
+                   a URL is a diagnosis. Lazy so it never blocks the article. */
+                <figure class="not-prose my-10">
+                  <iframe
+                    src={b.src}
+                    title={b.title}
+                    width="100%"
+                    height="232"
+                    frameborder="0"
+                    loading="lazy"
+                    referrerpolicy="no-referrer"
+                    allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    class="rounded-xl w-full"
+                  ></iframe>
+                  {b.caption && <figcaption class="font-body text-muted text-[15px] leading-[24px] mt-3" set:html={b.caption} />}
+                </figure>
+              )
               : <ol>{b.items.map((i: string) => <li set:html={i} />)}</ol>
             ))}
 

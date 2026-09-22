@@ -169,11 +169,6 @@
       "permanent": true
     },
     {
-      "source": "/blog/a-story-of-redemption-with-garrett-deetz/",
-      "destination": "/blog/",
-      "permanent": true
-    },
-    {
       "source": "/blog/addiction-recovery-care/",
       "destination": "/insurance/",
       "permanent": true
