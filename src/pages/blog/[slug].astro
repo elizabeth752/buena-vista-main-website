@@ -115,6 +115,12 @@ const schema = {
               : b.t === 'h3' ? <h3 set:html={b.html} />
               : b.t === 'p'  ? <p set:html={b.html} />
               : b.t === 'ul' ? <ul>{b.items.map((i: string) => <li set:html={i} />)}</ul>
+              : b.t === 'img' ? (
+                <figure class="not-prose my-10">
+                  <img src={b.src} alt={b.alt} loading="lazy" decoding="async" class="rounded-xl w-full" />
+                  {b.caption && <figcaption class="font-body text-muted text-[14px] leading-[22px] mt-3 text-center" set:html={b.caption} />}
+                </figure>
+              )
               : b.t === 'embed' ? (
                 /* Podcast episode. referrerpolicy is not decoration: without it
                    the embed hands Spotify the full article URL, and on this site
