@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="190" viewBox="0 0 640 190" role="img" aria-labelledby="mn-title mn-desc">
+  <title id="mn-title">Medicaid, by the numbers</title>
+  <desc id="mn-desc">71% of drug and alcohol rehab centers accept Medicaid. Medicaid accounted for 26% of all behavioral health spending in 2009.</desc>
+
+  <rect x="1" y="1" width="638" height="188" rx="14" fill="#FAF7F2" stroke="#EFE7DA" stroke-width="1"/>
+  <rect x="1" y="1" width="638" height="5" rx="2.5" fill="#B9975B"/>
+
+  <text x="40" y="38" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" letter-spacing="1.6" fill="#B9975B">MEDICAID, BY THE NUMBERS</text>
+
+  <!-- Row 1: rehab centers accepting Medicaid -->
+  <text x="40" y="70" font-family="Arial, Helvetica, sans-serif" font-size="13.5" fill="#2B2B2B">of drug and alcohol rehab centers accept Medicaid</text>
+  <text x="600" y="72" font-family="Georgia, 'Times New Roman', serif" font-size="23" font-weight="700" fill="#002B5C" text-anchor="end">71%</text>
+  <rect x="40" y="82" width="520" height="14" rx="7" fill="#EFE7DA"/>
+  <rect x="40" y="82" width="369" height="14" rx="7" fill="#2E7D8A"/>
+
+  <!-- Row 2: share of behavioral health spending -->
+  <text x="40" y="132" font-family="Arial, Helvetica, sans-serif" font-size="13.5" fill="#2B2B2B">of all US behavioral health spending nationally (2009)</text>
+  <text x="600" y="134" font-family="Georgia, 'Times New Roman', serif" font-size="23" font-weight="700" fill="#002B5C" text-anchor="end">26%</text>
+  <rect x="40" y="144" width="520" height="14" rx="7" fill="#EFE7DA"/>
+  <rect x="40" y="144" width="135" height="14" rx="7" fill="#B9975B"/>
+
+  <text x="40" y="178" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#7A7568">Sources: SAMHSA N-SSATS 2020, MACPAC — see Sources below</text>
+</svg>

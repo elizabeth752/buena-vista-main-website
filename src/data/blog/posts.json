@@ -4851,5 +4851,192 @@
         "html": "Nothing gets decided on a first phone call. You can ring and just start talking."
       }
     ]
+  },
+  {
+    "slug": "how-to-pay-for-rehab-without-insurance",
+    "title": "How to Pay for Rehab Without Insurance",
+    "description": "Health insurance isn’t the only way to pay for rehab. See how Medicaid, private pay, payment plans, and community resources can cover treatment costs.",
+    "updated": "2026-09-23",
+    "author": "darren-lee",
+    "category": "Paying for Treatment",
+    "links": [
+      [
+        "/insurance/ahcccs-medicaid/",
+        "AHCCCS & Medicaid coverage"
+      ],
+      [
+        "/insurance/private-pay/",
+        "Private pay rates"
+      ],
+      [
+        "/admissions/",
+        "Start the admissions process"
+      ]
+    ],
+    "words": 1163,
+    "readMinutes": 5,
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Choosing to go to rehab takes huge strength. Knowing how to navigate payment requires another layer of energy that you may not feel you have right now. But payment can be straightforward, and a good admissions team will walk you through it clearly."
+      },
+      {
+        "t": "p",
+        "html": "Health insurance is one of the biggest barriers to accessing adequate addiction treatment [<a href=\"https://www.naatp.org/membership/member-news/addiction-treatment-longer-better-insurance-companies-usually-cut-it-short\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">1</a>]. That&rsquo;s why more people are exploring how to join a rehab program using alternative payment routes. The reason may be due to limitations with providers and plans, excessive additional costs, or simply preference."
+      },
+      {
+        "t": "p",
+        "html": "The most important thing to know is that there are options to pay for rehab without insurance, and that there are diverse financial paths to get high-quality care."
+      },
+      {
+        "t": "h2",
+        "html": "Why Choose Alternative Payment Routes?"
+      },
+      {
+        "t": "img",
+        "src": "/Asset/Blog/coverage-gap-stats.svg",
+        "alt": "Four statistics on the coverage gap in addiction treatment: rehab averages over $13,000, nearly 10% of adults under 65 are uninsured, 1 in 4 people using insurance struggled to find an in-network therapist, and only 6.3% of people with a substance use disorder receive treatment."
+      },
+      {
+        "t": "p",
+        "html": "The average cost of <a href=\"/insurance/private-pay/\">rehab</a> is over $13,000 in the US [<a href=\"https://drugabusestatistics.org/cost-of-rehab/\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">2</a>]. While rehab is life-changing and life-saving, the cost can understandably be difficult to manage, especially when nearly 10% of the US population under the age of 65 don&rsquo;t have health insurance [<a href=\"https://www.kff.org/uninsured/key-facts-about-the-uninsured-population/?entry=executive-summary-key-takeaways\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">3</a>]. In particular, people with a substance use disorder (SUD) are more likely to be uninsured compared to the general public [<a href=\"https://psychiatryonline.org/doi/full/10.1176/appi.ps.201600182\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">4</a>]."
+      },
+      {
+        "t": "p",
+        "html": "Even those who do have health insurance may find their provider is not &ldquo;in-network&rdquo; (accepted) by the rehab center they want to work with. Or, their plan may not cover substance use treatment, or it may not be to the full extent and time duration the person needs. Alternatively, health insurance may have high deductibles and co-pay structures that mean treatment remains expensive, even when using the plan for care."
+      },
+      {
+        "t": "p",
+        "html": "One study found more than a quarter of people receiving addiction treatment through insurance had challenges locating mental health or substance use therapists who were in network. More than 20% of people had difficulties finding a psychiatrist [<a href=\"https://www.nami.org/wp-content/uploads/2023/08/2015-ALongRoadAhead.pdf\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">5</a>]."
+      },
+      {
+        "t": "p",
+        "html": "On the other hand, some people may simply choose not to pay for rehab via insurance because of preference, including privacy, time restraints, financial ease, and other unique factors."
+      },
+      {
+        "t": "h2",
+        "html": "How Can I Pay for Rehab Without Insurance?"
+      },
+      {
+        "t": "p",
+        "html": "There are a number of ways you can pay for rehab outside of health insurance. These include Medicaid, paying out-of-pocket, using payment plans, and leveraging community resources."
+      },
+      {
+        "t": "img",
+        "src": "/Asset/Blog/four-ways-to-pay.svg",
+        "alt": "Four ways to pay for rehab without insurance: Medicaid, paying out-of-pocket, payment plans or sliding scale fees, and community resources, all leading to treatment."
+      },
+      {
+        "t": "h3",
+        "html": "Medicaid"
+      },
+      {
+        "t": "p",
+        "html": "<a href=\"/insurance/ahcccs-medicaid/\">Medicaid</a> is a government-run health program offering free or low-cost healthcare for people with low-income households. It has specific eligibility requirements by state but is the largest payer of behavioral health services, including for drug rehab. In 2009, it accounted for 26% of all behavioral health spending [<a href=\"https://www.macpac.gov/publication/behavioral-health-in-the-medicaid-program%E2%80%95people-use-and-expenditures/\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">6</a>]."
+      },
+      {
+        "t": "p",
+        "html": "In most states, people with Medicaid don&rsquo;t have co-payments for addiction care, meaning treatment is free of charge. If there are co-payments, the maximum charge is capped."
+      },
+      {
+        "t": "p",
+        "html": "As of 2020, around 71% of all drug and alcohol rehab centers accept Medicaid [<a href=\"https://www.samhsa.gov/data/sites/default/files/reports/rpt35313/2020_NSSATS_FINAL.pdf\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">7</a>]. It&rsquo;s mostly available at places offering medical detox and inpatient programs, however, it can also contribute to further addiction care, such as outpatient programs and addiction medication."
+      },
+      {
+        "t": "img",
+        "src": "/Asset/Blog/medicaid-by-the-numbers.svg",
+        "alt": "Medicaid by the numbers: 71% of drug and alcohol rehab centers accept Medicaid, and Medicaid accounted for 26% of all US behavioral health spending in 2009."
+      },
+      {
+        "t": "h3",
+        "html": "Pay Out-of-Pocket"
+      },
+      {
+        "t": "p",
+        "html": "<a href=\"/insurance/private-pay/\">Paying out-of-pocket</a> means you pay the rehab center directly for treatment. Out-of-pocket payment can include using earnings, savings, or loans from family members. Choosing this route is substantially more expensive than using other payment options. Still, data from 2011 highlights how 46% of people who received substance use treatment used their savings or earnings to cover care. 26% of people said they used funds from family members [<a href=\"https://www.samhsa.gov/data/sites/default/files/Revised2k11NSDUHSummNatFindings/Revised2k11NSDUHSummNatFindings/NSDUHresults2011.htm\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">8</a>]."
+      },
+      {
+        "t": "h3",
+        "html": "Payment Plans / Sliding Scale Fees"
+      },
+      {
+        "t": "p",
+        "html": "Some rehab facilities offer alternative financing, including payment plans and sliding scale fees. Both options require paying out of pocket, but can make payment more manageable. Payment plans involve smaller, more spread out payments for addiction treatment, which suits anyone who has regular cash flow and can commit to a longer period of consistent charges."
+      },
+      {
+        "t": "p",
+        "html": "Sliding scale fees are when a rehab center adjusts costs according to your specific situation. For example, if you aren&rsquo;t employed, if you need less time in residential care, or if you are entering rehab as a couple, the center can choose to change the pricing according to what you can pay. Keep in mind that centers are not obliged to do this, and the amount they discount or change is at their discretion."
+      },
+      {
+        "t": "h3",
+        "html": "Community Resources"
+      },
+      {
+        "t": "p",
+        "html": "<a href=\"/resources/\">Local health centers, social services, and community-centered organizations</a> may offer financial assistance for rehab. Non-profit organizations that focus on addiction and behavioral health may also have scholarships or grants to support people in need of rehab."
+      },
+      {
+        "t": "p",
+        "html": "Crowdfunding and fundraising can help, too. Online platforms such as GoFundMe allow you to share your story and receive donations."
+      },
+      {
+        "t": "p",
+        "html": "If you&rsquo;re employed, it&rsquo;s worth asking if you have an Employer Assistance Program (EAP), which may provide contributions toward addiction treatment."
+      },
+      {
+        "t": "p",
+        "html": "Remember that all these options require research and being open about your addiction, so before you explore them, be honest about where you are right now and how outwardly vulnerable you can be."
+      },
+      {
+        "t": "h2",
+        "html": "Why Accessible Addiction Treatment Matters"
+      },
+      {
+        "t": "p",
+        "html": "More diverse payment options give more people access to essential addiction care. Only 6.3% of people with an SUD receive treatment &mdash; with more routes to pay for treatment, more people can heal and create a fulfilled life [<a href=\"https://nida.nih.gov/about-nida/legislative-activities/budget-information/fiscal-year-2025-budget-information-congressional-justification-national-institute-drug-abuse/ic-fact-sheet-2025\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">9</a>]."
+      },
+      {
+        "t": "p",
+        "html": "However you decide to pay for rehab doesn&rsquo;t affect the level of care you receive. Rehab is built on evidence-based therapies and approaches that support people as they overcome addiction, learn healthier coping skills, improve emotion regulation, and build healthy relationships."
+      },
+      {
+        "t": "p",
+        "html": "It is possible to pay for rehab without insurance, to feel confident in your decision, and to start recovering."
+      },
+      {
+        "t": "h2",
+        "html": "AHCCCS (Arizona Medicaid) at Buena Vista Health &amp; Recovery Centers in Chandler"
+      },
+      {
+        "t": "p",
+        "html": "If you&rsquo;re ready to start rehab, we&rsquo;re here. We work with <a href=\"/insurance/ahcccs-medicaid/\">AHCCCS, Arizona&rsquo;s Medicaid program</a>, and Banner University Family Care is in network for <a href=\"/medical-detox/\">medical detox</a> and <a href=\"/residential-treatment/\">residential treatment</a>. More health-plan contracts are being reinstated, so the fastest way to know about your plan is a free coverage check. If you are paying without insurance, see our <a href=\"/insurance/private-pay/\">private pay options</a>. We integrate evidence-based therapies, such as <a href=\"/therapies/\">Cognitive Behavioral Therapy (CBT)</a>, to help you develop self-awareness and address the underlying drivers of addiction. We also have Medication-Assisted Treatment (MAT) to alleviate withdrawal and cravings when clinically needed."
+      },
+      {
+        "t": "p",
+        "html": "At our center in Arizona, we assign <a href=\"/admissions/\">individual case managers</a> to monitor your progress in rehab. We are empathetic and inclusive, and we prioritize your safety, privacy, and dignity at all times."
+      },
+      {
+        "t": "p",
+        "html": "Finances shouldn&rsquo;t stop your journey to a better life. Start with a conversation. <a href=\"/about/contact/\">Contact our admissions team today</a>."
+      },
+      {
+        "t": "h2",
+        "html": "Sources"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "National Association of Addiction Providers. 2023. <a href=\"https://www.naatp.org/membership/member-news/addiction-treatment-longer-better-insurance-companies-usually-cut-it-short\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">For addiction treatment, longer is better. But insurance companies usually cut it short.</a> naatp.org.",
+          "National Center for Drug Abuse Statistics. 2025. <a href=\"https://drugabusestatistics.org/cost-of-rehab/\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">Average Cost of Drug Rehab.</a> drugabusestatistics.org.",
+          "Tolbert, J. et al. 2026. <a href=\"https://www.kff.org/uninsured/key-facts-about-the-uninsured-population/?entry=executive-summary-key-takeaways\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">Key Facts about the Uninsured Population.</a> The Kaiser Family Foundation.",
+          "Saloner, B. et al. 2017. <a href=\"https://psychiatryonline.org/doi/full/10.1176/appi.ps.201600182\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">Insurance Coverage and Treatment Use Under the Affordable Care Act Among Adults With Mental and Substance Use Disorders.</a> Psychiatric Services.",
+          "National Alliance on Mental Illness. 2015. <a href=\"https://www.nami.org/wp-content/uploads/2023/08/2015-ALongRoadAhead.pdf\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">A Long Road Ahead.</a> nami.org.",
+          "MACPAC. 2015. <a href=\"https://www.macpac.gov/publication/behavioral-health-in-the-medicaid-program%E2%80%95people-use-and-expenditures/\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">Behavioral Health in the Medicaid Program―People, Use, and Expenditures.</a> macpac.gov.",
+          "SAMHSA. 2021. <a href=\"https://www.samhsa.gov/data/sites/default/files/reports/rpt35313/2020_NSSATS_FINAL.pdf\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">National Survey of Substance Abuse Treatment Services (N-SSATS): 2020.</a> samhsa.gov.",
+          "SAMHSA. 2012. <a href=\"https://www.samhsa.gov/data/sites/default/files/Revised2k11NSDUHSummNatFindings/Revised2k11NSDUHSummNatFindings/NSDUHresults2011.htm\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">Results from the 2011 National Survey on Drug Use and Health.</a> samhsa.gov.",
+          "National Institute on Drug Abuse. 2024. <a href=\"https://nida.nih.gov/about-nida/legislative-activities/budget-information/fiscal-year-2025-budget-information-congressional-justification-national-institute-drug-abuse/ic-fact-sheet-2025\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">NIDA IC Fact Sheet 2025.</a> nida.nih.gov."
+        ]
+      }
+    ]
   }
 ]
