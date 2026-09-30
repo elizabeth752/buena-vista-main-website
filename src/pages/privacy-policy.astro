@@ -5,7 +5,31 @@
    counsel signed off. Only the markup changed: WordPress emitted every section
    title as <p><strong>, so those are real h2s now and the document has an
    outline. Do not reword the text — it is a legal document, and the consent
-   checkbox on every form links here. */
+   checkbox on every form links here.
+
+   2026-09-30 SMS AMENDMENT. CTM/Twilio's Trust Center rejected the client's
+   SMS campaign (Twilio errors 30923 / 30896) because this policy never said
+   what happens to phone numbers and SMS consent. Deliberate changes, all
+   requested by the client and nothing else touched:
+
+     0. "Personal Information" and "How We Use Your Information" mention phone
+        numbers, text messages and the recorded opt-in, so the SMS section
+        below is not the first place the word "text" appears.
+     1. "Sharing of Information" now states that phone numbers and SMS/MMS/RCS
+        consent are never shared with or sold to third parties for their own
+        marketing. The Trust Center reads the old "trusted third-party vendors"
+        sentence as permission to resell opt-in data, so the carve-out has to
+        be explicit and sit in the same section.
+     2. A new "SMS/Text Messaging and Mobile Information" section documents the
+        opt-in (web form + verbal script), frequency, rates, HELP/STOP, and the
+        CTIA "no mobile information will be shared" clause. The verbal script
+        itself lives at /sms-consent-script.pdf so the reviewer can see it.
+     3. The dangling "please contact us at:" at the very end finally has an
+        address. It was cut off in the WordPress export and a policy with no
+        contact block is itself a Trust Center rejection reason.
+
+   If the SMS wording changes here, change ConsentFields.astro and the PDF in
+   the same commit: the three have to agree or the campaign fails review. */
 import Layout from '../layouts/Layout.astro';
 import TopBar from '../components/TopBar.astro';
 import Nav from '../components/Nav.astro';
@@ -14,12 +38,12 @@ import FinalCTA from '../components/FinalCTA.astro';
 const title = 'Privacy Policy | Buena Vista';
 const description = 'How Buena Vista Health & Recovery Centers collects, uses and protects information you share through this website.';
 
-const content = `<p class="legal-date"><strong>Effective Date: February 7, 2025</strong></p>
+const content = `<p class="legal-date"><strong>Effective Date: September 30, 2026</strong></p>
 <p>Buena Vista Recovery respects your privacy and is committed to protecting your personal information when you visit our website.  This privacy policy explains how we collect, use and safeguard information when you visit our website.  By using our website, you agree to the terms of this policy.</p>
 <h2>Information We Collect</h2>
 <p>We collect two types of information when you visit our website:</p>
 <h3>Personal Information</h3>
-<p>Personal information is information that can identify you as an individual.  Some elements of our website may ask you to submit personal information for you to benefit from the specified features.  We may request personal information such as your name and contact information if you request a Buena Vista Recovery representative to contact you.</p>
+<p>Personal information is information that can identify you as an individual.  Some elements of our website may ask you to submit personal information for you to benefit from the specified features.  We may request personal information such as your name, email address and phone number if you request a Buena Vista Recovery representative to contact you. If you choose to opt in, we also record your consent to receive text messages from us and the date and method by which that consent was given.</p>
 <h3>Non-Personal Information</h3>
 <p>Non-personal information is collected automatically when you interact with our website.  This may include:</p>
 <ul>
@@ -31,6 +55,7 @@ const content = `<p class="legal-date"><strong>Effective Date: February 7, 2025<
 <p>We may use the information we collect for the following purposes:</p>
 <ul>
 <li>To provide services such as responding to your inquiries and providing information about our services.</li>
+<li>To contact you by phone, email or text message when you have asked us to and, in the case of text messages, only after you have given us your express consent as described in the “SMS/Text Messaging and Mobile Information” section below.</li>
 <li>To improve user experience based on usage data and feedback.</li>
 <li>For legal and security purposes to ensure our website is functioning correctly and to comply with legal obligations.</li>
 </ul>
@@ -38,13 +63,36 @@ const content = `<p class="legal-date"><strong>Effective Date: February 7, 2025<
 <p>We use cookies and similar tracking technologies to improve your experience on our website. A cookie is a small file that your Web browser places on your device to identify you as a user. We do not use cookies to collect any personal information about users, nor do we sell or make them available to other organizations.</p>
 <p>You may disable the cookie function on your browser or erase the contents in your cookies file. To do this, consult the help features in your browser and program manager. However, please bear in mind that doing this prevents the Website from recognizing you as a previous user of the Website.</p>
 <h2>Sharing of Information</h2>
-<p>We respect your privacy and will only use your information for the purposes stated in this policy. We may share your information with trusted third-party vendors who assist in operating our website or conducting business, such as website hosting services or analytics providers.  These providers are obligated to protect your information and use it only for specified purposes.</p>
+<p>We respect your privacy and will only use your information for the purposes stated in this policy. We do not sell, rent or trade your personal information. We may share your information with trusted third-party service providers who assist in operating our website or conducting our business, such as website hosting services, analytics providers, and call tracking and messaging platforms. These providers act on our behalf, are obligated to protect your information, and may use it only to perform the specific services we have engaged them for. They are not permitted to use your information for their own marketing or any other purpose.</p>
+<p><strong>Phone numbers and text messaging consent are never shared for marketing purposes.</strong> Your mobile phone number and any consent you give to receive SMS, MMS or RCS messages from us (including the fact that you opted in, and when and how you did so) will not be shared with, sold to, or otherwise made available to any third party or affiliate for their own marketing or promotional purposes. The only exception is the messaging service provider that delivers our text messages on our behalf, which may not use that information for any other purpose.</p>
+<p>We may also disclose information when required to do so by law, or when we believe in good faith that disclosure is necessary to protect our rights, your safety or the safety of others, or to respond to a lawful request from a government authority.</p>
+<h2>SMS/Text Messaging and Mobile Information</h2>
+<p>Buena Vista Recovery offers to send informational and marketing text messages (SMS, MMS or RCS) to people who ask us to contact them. Examples include appointment and admissions reminders, follow-ups on an inquiry you submitted, insurance verification updates, and information about our programs and services.</p>
+<h3>How You Opt In</h3>
+<p>We only send text messages to people who have given us their express consent. You may consent in one of two ways:</p>
+<ul>
+<li><strong>Website forms:</strong> by checking the separate, optional SMS consent box on one of our contact forms. This box is never pre-checked, and you can submit any form and receive a call from us without checking it.</li>
+<li><strong>Verbally:</strong> by telling one of our admissions representatives that you would like to receive text messages from us. Our staff read the following script and record your answer, the date and the phone number you provided: <em>“Would you like to receive texts from Buena Vista Recovery? Message frequency varies. Message and data rates may apply. You can reply STOP at any time to opt out.”</em> A copy of this script is available at <a href="/sms-consent-script.pdf">buenavistarecovery.com/sms-consent-script.pdf</a>.</li>
+</ul>
+<p>Consent to receive text messages is not a condition of purchasing or receiving any of our services.</p>
+<h3>Message Frequency, Rates and Opting Out</h3>
+<p>Message frequency varies. Message and data rates may apply. You can opt out at any time by replying <strong>STOP</strong> to any message we send you, after which you will receive one final confirmation message and no further texts. Reply <strong>HELP</strong> for assistance, or contact us using the information at the end of this policy.</p>
+<h3>Mobile Information Sharing</h3>
+<p>No mobile information will be shared with third parties or affiliates for marketing or promotional purposes. All the categories of information and sharing described elsewhere in this policy exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties, other than the messaging service provider that delivers our messages on our behalf.</p>
 <h2>Third-Party Links</h2>
 <p>Our website may contain links to third-party websites or services that are not operated by us.  This Privacy Policy applies only to our website and does not cover other sites you may visit through links.  We encourage you to review the privacy policies of any third-party website before sharing your personal information.</p>
 <h2>Data Security</h2>
 <p>Buena Vista Recovery will take reasonable steps to protect the information collected and provided via the website from loss, misuse, and unauthorized access, disclosure, alteration, or destruction.  However, you should understand that no transmission over the Internet is ever fully secure.</p>
 <h2>Privacy Policy Updates</h2>
-<p>We may update this Privacy Policy from time to time.  Any changes will be posted on this page, along with an updated “Effective Date”.  We encourage you to periodically review this policy to stay informed about how we are protecting your information. If you have any questions about this policy, please contact us at:</p>`;
+<p>We may update this Privacy Policy from time to time.  Any changes will be posted on this page, along with an updated “Effective Date”.  We encourage you to periodically review this policy to stay informed about how we are protecting your information.</p>
+<h2>Contact Us</h2>
+<p>If you have any questions about this policy, or wish to exercise any of your rights regarding your information, please contact us at:</p>
+<p>Buena Vista Health and Recovery Centers<br />
+Corporate Office<br />
+3033 S Arizona Ave<br />
+Chandler, AZ 85286</p>
+<p>Reception: <a href="tel:+14806185413">(480) 618-5413</a><br />
+Email: <a href="mailto:privacy@buenavistarecovery.com">privacy@buenavistarecovery.com</a></p>`;
 ---
 <Layout title={title} description={description}>
   <TopBar />

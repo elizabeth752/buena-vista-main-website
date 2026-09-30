@@ -1,0 +1,153 @@
+%PDF-1.4
+%âãÏÓ
+1 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+2 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Oblique /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Pages /Kids [6 0 R 8 0 R 10 0 R] /Count 3 >>
+endobj
+5 0 obj
+<< /Length 3826 >>
+stream
+BT /F2 9 Tf 72.00 720.00 Td (BUENA VISTA HEALTH AND RECOVERY CENTERS) Tj ET
+BT /F2 20 Tf 72.00 698.00 Td (SMS Agent Consent Script) Tj ET
+BT /F1 11 Tf 72.00 674.00 Td (Verbal opt-in procedure for admissions staff) Tj ET
+BT /F1 9.5 Tf 72.00 656.00 Td (Version 1.0  —  Effective September 30, 2026  —  Permanent URL: https://buenavistarecovery.com/sms-consent-script.pdf) Tj ET
+0.75 w 0.6 0.6 0.6 RG 72 642.00 m 540 642.00 l S
+BT /F2 13 Tf 72.00 620.00 Td (Purpose) Tj ET
+BT /F1 10.5 Tf 72.00 599.85 Td (This document describes how Buena Vista Recovery admissions representatives obtain, record) Tj ET
+BT /F1 10.5 Tf 72.00 584.85 Td (and honor a caller’s express consent to receive SMS, MMS or RCS text messages. It is published) Tj ET
+BT /F1 10.5 Tf 72.00 569.85 Td (so that our messaging providers \(CallTrackingMetrics and Twilio\) and their carrier partners can) Tj ET
+BT /F1 10.5 Tf 72.00 554.85 Td (verify our opt-in process. It supplements the SMS section of our Privacy Policy at) Tj ET
+BT /F1 10.5 Tf 72.00 539.85 Td (https://buenavistarecovery.com/privacy-policy/ and our Terms of Use at) Tj ET
+BT /F1 10.5 Tf 72.00 524.85 Td (https://buenavistarecovery.com/terms-of-use/.) Tj ET
+BT /F2 13 Tf 72.00 492.85 Td (When to use this script) Tj ET
+BT /F1 10.5 Tf 72.00 472.70 Td (Read the script verbatim during any phone call in which the caller has given us a mobile phone) Tj ET
+BT /F1 10.5 Tf 72.00 457.70 Td (number and a text message would be useful, for example to send admissions paperwork,) Tj ET
+BT /F1 10.5 Tf 72.00 442.70 Td (appointment reminders, insurance verification updates, directions to a facility, or program) Tj ET
+BT /F1 10.5 Tf 72.00 427.70 Td (information. Read it every time; do not assume consent from a previous call, a web form, or a) Tj ET
+BT /F1 10.5 Tf 72.00 412.70 Td (family member.) Tj ET
+BT /F2 13 Tf 72.00 380.70 Td (The script \(read verbatim\)) Tj ET
+0.96 0.95 0.92 rg 0.75 0.65 0.35 RG 1 w 72 288.55 468 76.00 re B 0 0 0 rg
+BT /F3 12 Tf 86.00 340.55 Td (“Would you like to receive texts from Buena Vista Recovery? Message frequency) Tj ET
+BT /F3 12 Tf 86.00 322.55 Td (varies. Message and data rates may apply. You can reply STOP at any time to opt) Tj ET
+BT /F3 12 Tf 86.00 304.55 Td (out.”) Tj ET
+BT /F2 13 Tf 72.00 268.55 Td (Rules the agent must follow) Tj ET
+BT /F1 10.5 Tf 76.00 248.40 Td (•) Tj ET
+BT /F1 10.5 Tf 90.00 248.40 Td (Consent is optional. Never state or imply that agreeing to texts is required to speak with us, be) Tj ET
+BT /F1 10.5 Tf 90.00 233.40 Td (assessed, verify insurance, or be admitted. If the caller declines, continue the call normally and) Tj ET
+BT /F1 10.5 Tf 90.00 218.40 Td (do not ask again during that call.) Tj ET
+BT /F1 10.5 Tf 76.00 199.40 Td (•) Tj ET
+BT /F1 10.5 Tf 90.00 199.40 Td (Consent must be a clear “yes” from the person who owns or uses the phone number. A family) Tj ET
+BT /F1 10.5 Tf 90.00 184.40 Td (member or friend cannot consent on behalf of the prospective patient, and the prospective) Tj ET
+BT /F1 10.5 Tf 90.00 169.40 Td (patient cannot consent on behalf of a family member.) Tj ET
+BT /F1 10.5 Tf 76.00 150.40 Td (•) Tj ET
+BT /F1 10.5 Tf 90.00 150.40 Td (Confirm the number. Repeat the mobile number back to the caller before recording consent.) Tj ET
+BT /F1 10.5 Tf 76.00 131.40 Td (•) Tj ET
+BT /F1 10.5 Tf 90.00 131.40 Td (Do not add, remove or reorder the four elements of the script: the request, message frequency,) Tj ET
+BT /F1 10.5 Tf 90.00 116.40 Td (message and data rates, and how to opt out \(STOP\). Each is a carrier requirement.) Tj ET
+BT /F1 10.5 Tf 76.00 97.40 Td (•) Tj ET
+BT /F1 10.5 Tf 90.00 97.40 Td (Never read the script to a caller who has previously replied STOP unless they explicitly ask, in) Tj ET
+BT /F1 8.5 Tf 72 40 Td (Buena Vista Recovery — SMS Agent Consent Script v1.0 — Page 1 of 3) Tj ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 4 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 5 0 R >>
+endobj
+7 0 obj
+<< /Length 3794 >>
+stream
+BT /F1 10.5 Tf 90.00 720.00 Td (their own words, to receive texts again.) Tj ET
+BT /F2 13 Tf 72.00 693.00 Td (Recording the consent) Tj ET
+BT /F1 10.5 Tf 72.00 672.85 Td (Immediately after the caller says yes, record the following in the caller’s CallTrackingMetrics) Tj ET
+BT /F1 10.5 Tf 72.00 657.85 Td (contact record \(custom field consent_sms = yes\) or, if the record cannot be updated during the call,) Tj ET
+BT /F1 10.5 Tf 72.00 642.85 Td (in the call notes so it can be entered afterwards:) Tj ET
+BT /F1 10.5 Tf 76.00 618.85 Td (•) Tj ET
+BT /F1 10.5 Tf 90.00 618.85 Td (Date and time of the call and the agent’s name.) Tj ET
+BT /F1 10.5 Tf 76.00 599.85 Td (•) Tj ET
+BT /F1 10.5 Tf 90.00 599.85 Td (The mobile phone number that consent applies to.) Tj ET
+BT /F1 10.5 Tf 76.00 580.85 Td (•) Tj ET
+BT /F1 10.5 Tf 90.00 580.85 Td (Method of consent: “Verbal — SMS Agent Consent Script v1.0”.) Tj ET
+BT /F1 10.5 Tf 76.00 561.85 Td (•) Tj ET
+BT /F1 10.5 Tf 90.00 561.85 Td (The caller’s answer \(yes / no\). A “no” is recorded too, so the number is not asked again) Tj ET
+BT /F1 10.5 Tf 90.00 546.85 Td (unnecessarily.) Tj ET
+BT /F1 10.5 Tf 72.00 527.85 Td (Where the call is recorded, the recording is retained under our normal call-recording retention) Tj ET
+BT /F1 10.5 Tf 72.00 512.85 Td (schedule and serves as the proof of consent. Consent records are kept for as long as we message) Tj ET
+BT /F1 10.5 Tf 72.00 497.85 Td (the number and for at least four years after the last message.) Tj ET
+BT /F2 13 Tf 72.00 468.85 Td (Confirmation message) Tj ET
+BT /F1 10.5 Tf 72.00 448.70 Td (After a verbal opt-in, the first text sent to the number is a confirmation that restates the key) Tj ET
+BT /F1 10.5 Tf 72.00 433.70 Td (disclosures, for example:) Tj ET
+BT /F3 10.5 Tf 90.00 409.70 Td (“Buena Vista Recovery: Thanks for opting in to texts. Msg frequency varies. Msg & data rates) Tj ET
+BT /F3 10.5 Tf 90.00 394.70 Td (may apply. Reply HELP for help, STOP to opt out.”) Tj ET
+BT /F2 13 Tf 72.00 362.70 Td (Opting out and help) Tj ET
+BT /F1 10.5 Tf 76.00 342.55 Td (•) Tj ET
+BT /F1 10.5 Tf 90.00 342.55 Td (STOP, STOPALL, UNSUBSCRIBE, CANCEL, END or QUIT received by text immediately) Tj ET
+BT /F1 10.5 Tf 90.00 327.55 Td (removes the number from all SMS campaigns. One final confirmation message is sent and) Tj ET
+BT /F1 10.5 Tf 90.00 312.55 Td (nothing further.) Tj ET
+BT /F1 10.5 Tf 76.00 293.55 Td (•) Tj ET
+BT /F1 10.5 Tf 90.00 293.55 Td (HELP received by text returns our name, a contact phone number, and how to opt out.) Tj ET
+BT /F1 10.5 Tf 76.00 274.55 Td (•) Tj ET
+BT /F1 10.5 Tf 90.00 274.55 Td (A caller may also revoke consent verbally or by email at any time. Agents must record the) Tj ET
+BT /F1 10.5 Tf 90.00 259.55 Td (revocation in the contact record the same day and set consent_sms to no.) Tj ET
+BT /F2 13 Tf 72.00 232.55 Td (What we never do with mobile information) Tj ET
+BT /F1 10.5 Tf 72.00 212.40 Td (Mobile phone numbers and text messaging opt-in data are used only to send the messages the) Tj ET
+BT /F1 10.5 Tf 72.00 197.40 Td (caller agreed to receive. No mobile information will be shared with third parties or affiliates for) Tj ET
+BT /F1 10.5 Tf 72.00 182.40 Td (marketing or promotional purposes. Text messaging originator opt-in data and consent will not be) Tj ET
+BT /F1 10.5 Tf 72.00 167.40 Td (shared with any third parties, other than the messaging service provider that delivers our messages) Tj ET
+BT /F1 10.5 Tf 72.00 152.40 Td (on our behalf.) Tj ET
+BT /F2 13 Tf 72.00 120.40 Td (Web form opt-in \(for reference\)) Tj ET
+BT /F1 10.5 Tf 72.00 100.25 Td (Consent collected on buenavistarecovery.com uses a separate, optional, never pre-checked) Tj ET
+BT /F1 8.5 Tf 72 40 Td (Buena Vista Recovery — SMS Agent Consent Script v1.0 — Page 2 of 3) Tj ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 4 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 7 0 R >>
+endobj
+9 0 obj
+<< /Length 910 >>
+stream
+BT /F1 10.5 Tf 72.00 720.00 Td (checkbox with the following label: “By checking this box, you provide consent to receive) Tj ET
+BT /F1 10.5 Tf 72.00 705.00 Td (informational and marketing SMS, MMS, or RCS messages from Buena Vista Recovery. Message) Tj ET
+BT /F1 10.5 Tf 72.00 690.00 Td (frequency may vary. Message and data rates may apply. Reply HELP for help or STOP to opt out.”) Tj ET
+BT /F1 10.5 Tf 72.00 675.00 Td (The web consent and the verbal consent are recorded in the same consent_sms field.) Tj ET
+BT /F2 13 Tf 72.00 643.00 Td (Contact) Tj ET
+BT /F1 10.5 Tf 72.00 622.85 Td (Buena Vista Health and Recovery Centers, Corporate Office, 3033 S Arizona Ave, Chandler, AZ) Tj ET
+BT /F1 10.5 Tf 72.00 607.85 Td (85286. Reception \(480\) 618-5413. Privacy questions: privacy@buenavistarecovery.com.) Tj ET
+BT /F1 8.5 Tf 72 40 Td (Buena Vista Recovery — SMS Agent Consent Script v1.0 — Page 3 of 3) Tj ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 4 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 9 0 R >>
+endobj
+11 0 obj
+<< /Title (SMS Agent Consent Script) /Author (Buena Vista Health and Recovery Centers) /Subject (Verbal SMS opt-in procedure for admissions staff) /Creator (buenavistarecovery.com) /CreationDate (D:20260930000000-07'00') >>
+endobj
+12 0 obj
+<< /Type /Catalog /Pages 4 0 R >>
+endobj
+xref
+0 13
+0000000000 65535 f 
+0000000015 00000 n 
+0000000112 00000 n 
+0000000214 00000 n 
+0000000319 00000 n 
+0000000389 00000 n 
+0000004267 00000 n 
+0000004413 00000 n 
+0000008259 00000 n 
+0000008405 00000 n 
+0000009366 00000 n 
+0000009513 00000 n 
+0000009753 00000 n 
+trailer
+<< /Size 13 /Root 12 0 R /Info 11 0 R >>
+startxref
+9803
+%%EOF
