@@ -8,7 +8,13 @@
 
    Backwards compatible on purpose — the other hubs still pass a plain string
    array and an intro, and get the check icon and the old layout until each is
-   converted one page at a time. */
+   converted one page at a time.
+
+   `verifyHref` exists because "Check my insurance" defaults to the in-page
+   #verify anchor, which only works on pages that render VerifySection. The
+   contact page does not (its one form is #contact, name-and-number only), so
+   the button silently did nothing there — client ticket 2026-09-29. Pages
+   without a coverage form pass the verify-your-benefits URL instead. */
 interface Point { text: string; d: string; }
 interface Props {
   eyebrow: string;
@@ -19,8 +25,10 @@ interface Props {
   image: string;
   alt: string;
   caption?: string;
+  /** Destination of "Check my insurance". Default is the in-page form. */
+  verifyHref?: string;
 }
-const { eyebrow, title, promise, intro, points = [], image, alt, caption } = Astro.props;
+const { eyebrow, title, promise, intro, points = [], image, alt, caption, verifyHref = '#verify' } = Astro.props;
 
 const CHECK = 'M4.5 12.75l6 6 9-13.5';
 const items: Point[] = points.map(p => typeof p === 'string' ? { text: p, d: CHECK } : p);
@@ -67,7 +75,7 @@ import Horizon from '../Horizon.astro';
             </svg>
             Talk to someone now
           </a>
-          <a href="#verify" class="inline-flex items-center justify-center border-2 border-navy text-navy hover:bg-navy hover:text-white font-semibold h-14 px-8 rounded-lg transition-colors font-body">
+          <a href={verifyHref} class="inline-flex items-center justify-center border-2 border-navy text-navy hover:bg-navy hover:text-white font-semibold h-14 px-8 rounded-lg transition-colors font-body">
             Check my insurance
           </a>
         </div>
