@@ -1383,6 +1383,11 @@
       "permanent": true
     },
     {
+      "source": "/blog/opioid-strength-chart-from-weakest-to-strongest/",
+      "destination": "/blog/common-opioid-list/",
+      "permanent": true
+    },
+    {
       "source": "/blog/outpatient-rehab-building-a-social-support-network-managing-stress/",
       "destination": "/about/",
       "permanent": true
