@@ -96,8 +96,15 @@ const description = 'We have your details and someone from admissions will call 
   // api/lead.js appends ?issue=... when the submission did not reach CTM.
   // Use `hidden` rather than a style change: global.css carries
   // [hidden]{display:none!important}, so this cannot be undone by a utility.
-  if (new URLSearchParams(window.location.search).has('issue')) {
+  const params = new URLSearchParams(window.location.search);
+  if (params.has('issue')) {
     document.getElementById('ty-ok')?.setAttribute('hidden', '');
     document.getElementById('ty-issue')?.removeAttribute('hidden');
+  } else if (params.get('sent') === '1') {
+    // The one signal that a lead really reached CTM. GTM counts GA4
+    // form_submissions on this event, not on the browser's submit.
+    const w = window as unknown as { dataLayer?: unknown[] };
+    w.dataLayer = w.dataLayer || [];
+    w.dataLayer.push({ event: 'lead_accepted' });
   }
 </script>

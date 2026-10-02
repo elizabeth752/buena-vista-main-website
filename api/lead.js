@@ -275,7 +275,10 @@ export default async function handler(req, res) {
   }
 
   console.log('[lead] accepted', { trackback: ctm.trackback_id });
-  return redirect(res, '/thank-you/');
+  // ?sent=1 marks a lead CTM accepted, and only that page view counts as a
+  // conversion (GA4 lead_accepted, Google Ads "Form Submit (Contact)"). Spam
+  // lands on the bare /thank-you/ and failures carry ?issue=, so neither does.
+  return redirect(res, '/thank-you/?sent=1');
 }
 
 function redirect(res, path) {
