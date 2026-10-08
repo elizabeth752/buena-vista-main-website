@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="400" viewBox="0 0 760 400" role="img" aria-labelledby="ct-title ct-desc">
+  <title id="ct-title">Six common alcohol relapse triggers</title>
+  <desc id="ct-desc">Six triggers arranged around a center hub labeled relapse triggers: stress, poor health, trauma, a set-back in recovery, associative memories, and lack of support.</desc>
+
+  <text x="40" y="30" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" letter-spacing="1.6" fill="#B9975B">SIX COMMON RELAPSE TRIGGERS</text>
+
+  <!-- spokes, drawn first so the hub and nodes cover their ends -->
+  <line x1="380" y1="185" x2="380" y2="45" stroke="#B9975B" stroke-width="2" stroke-dasharray="1 5" stroke-linecap="round"/>
+  <line x1="380" y1="185" x2="501.2" y2="115" stroke="#B9975B" stroke-width="2" stroke-dasharray="1 5" stroke-linecap="round"/>
+  <line x1="380" y1="185" x2="501.2" y2="255" stroke="#B9975B" stroke-width="2" stroke-dasharray="1 5" stroke-linecap="round"/>
+  <line x1="380" y1="185" x2="380" y2="325" stroke="#B9975B" stroke-width="2" stroke-dasharray="1 5" stroke-linecap="round"/>
+  <line x1="380" y1="185" x2="258.8" y2="255" stroke="#B9975B" stroke-width="2" stroke-dasharray="1 5" stroke-linecap="round"/>
+  <line x1="380" y1="185" x2="258.8" y2="115" stroke="#B9975B" stroke-width="2" stroke-dasharray="1 5" stroke-linecap="round"/>
+
+  <!-- center hub -->
+  <circle cx="380" cy="185" r="54" fill="#002B5C"/>
+  <text font-family="Georgia, 'Times New Roman', serif" font-weight="700" fill="#FFFFFF" text-anchor="middle">
+    <tspan x="380" y="180" font-size="15">Relapse</tspan>
+    <tspan x="380" y="200" font-size="15">Triggers</tspan>
+  </text>
+
+  <!-- Node 1: Stress (top) -->
+  <g transform="translate(380,45)">
+    <circle r="26" fill="#FFFFFF" stroke="#002B5C" stroke-width="2"/>
+    <path d="M-6,-8 L2,-8 L-2,0 L6,0 L-4,10 L-2,1 L-8,1 Z" fill="#002B5C"/>
+  </g>
+  <text font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#002B5C" text-anchor="middle">
+    <tspan x="380" y="85">Stress</tspan>
+  </text>
+
+  <!-- Node 2: Poor health (upper right) -->
+  <g transform="translate(501.2,115)">
+    <circle r="26" fill="#FFFFFF" stroke="#002B5C" stroke-width="2"/>
+    <path d="M-9,-2 C-9,-9 -1,-10 0,-4 C1,-10 9,-9 9,-2 C9,3 2,9 0,11 C-2,9 -9,3 -9,-2 Z" fill="none" stroke="#002B5C" stroke-width="1.6" stroke-linejoin="round"/>
+  </g>
+  <text font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#002B5C" text-anchor="middle">
+    <tspan x="501.2" y="155">Poor health</tspan>
+  </text>
+
+  <!-- Node 3: Trauma (lower right) -->
+  <g transform="translate(501.2,255)">
+    <circle r="26" fill="#FFFFFF" stroke="#002B5C" stroke-width="2"/>
+    <path d="M0,-10 L9,8 L-9,8 Z" fill="none" stroke="#002B5C" stroke-width="1.6" stroke-linejoin="round"/>
+    <line x1="0" y1="-5" x2="0" y2="2" stroke="#002B5C" stroke-width="1.6" stroke-linecap="round"/>
+    <circle cx="0" cy="5.5" r="1.2" fill="#002B5C"/>
+  </g>
+  <text font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#002B5C" text-anchor="middle">
+    <tspan x="501.2" y="295">Trauma</tspan>
+  </text>
+
+  <!-- Node 4: A set-back in recovery (bottom) -->
+  <g transform="translate(380,325)">
+    <circle r="26" fill="#FFFFFF" stroke="#002B5C" stroke-width="2"/>
+    <path d="M-9,5 L-3,-3 L2,2 L9,-7" fill="none" stroke="#002B5C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M9,-1 L9,-7 L3,-7" fill="none" stroke="#002B5C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#002B5C" text-anchor="middle">
+    <tspan x="380" y="365">A set-back</tspan>
+  </text>
+
+  <!-- Node 5: Associative memories (lower left) -->
+  <g transform="translate(258.8,255)">
+    <circle r="26" fill="#FFFFFF" stroke="#002B5C" stroke-width="2"/>
+    <path d="M-9,-2 A9,9 0 1 1 -9,2" fill="none" stroke="#002B5C" stroke-width="1.6"/>
+    <path d="M-9,-7 L-9,-1 L-3,-1" fill="none" stroke="#002B5C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#002B5C" text-anchor="middle">
+    <tspan x="258.8" y="295">Old memories</tspan>
+  </text>
+
+  <!-- Node 6: Lack of support (upper left) -->
+  <g transform="translate(258.8,115)">
+    <circle r="26" fill="#FFFFFF" stroke="#002B5C" stroke-width="2"/>
+    <circle cx="-5" cy="-6" r="4" fill="none" stroke="#002B5C" stroke-width="1.6"/>
+    <path d="M-11,8 C-11,1 1,1 1,8" fill="none" stroke="#002B5C" stroke-width="1.6" stroke-linecap="round"/>
+    <line x1="5" y1="-8" x2="10" y2="-3" stroke="#B9975B" stroke-width="1.8" stroke-linecap="round"/>
+    <line x1="10" y1="-8" x2="5" y2="-3" stroke="#B9975B" stroke-width="1.8" stroke-linecap="round"/>
+  </g>
+  <text font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#002B5C" text-anchor="middle">
+    <tspan x="258.8" y="155">Lack of support</tspan>
+  </text>
+</svg>

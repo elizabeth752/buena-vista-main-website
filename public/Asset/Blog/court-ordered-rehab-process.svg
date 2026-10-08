@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="320" viewBox="0 0 760 320" role="img" aria-labelledby="cp-title cp-desc">
+  <title id="cp-title">How court-ordered rehab works, in four steps</title>
+  <desc id="cp-desc">A judge orders treatment instead of or alongside a sentence. The person attends treatment while a probation officer or case manager is notified of attendance and progress. The treatment team reports back to the court. The court reviews the outcome at sentencing or a progress hearing.</desc>
+
+  <text x="40" y="34" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" letter-spacing="1.6" fill="#B9975B">FOUR STEPS, ONE COURSE OF TREATMENT</text>
+
+  <!-- connecting rail -->
+  <line x1="130" y1="160" x2="630" y2="160" stroke="#EFE7DA" stroke-width="3"/>
+
+  <!-- Step 1 -->
+  <g>
+    <circle cx="130" cy="160" r="34" fill="#FFFFFF" stroke="#002B5C" stroke-width="2"/>
+    <text x="130" y="168" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="700" fill="#002B5C" text-anchor="middle">1</text>
+    <rect x="50" y="214" width="160" height="4" rx="2" fill="#B9975B"/>
+    <text font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="700" fill="#002B5C">
+      <tspan x="130" y="240" text-anchor="middle">Judge orders</tspan>
+      <tspan x="130" y="258" text-anchor="middle">treatment</tspan>
+    </text>
+    <text font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#6B6B6B">
+      <tspan x="130" y="278" text-anchor="middle">In place of, or</tspan>
+      <tspan x="130" y="294" text-anchor="middle">alongside, a sentence</tspan>
+    </text>
+  </g>
+
+  <!-- Step 2 -->
+  <g>
+    <circle cx="300" cy="160" r="34" fill="#FFFFFF" stroke="#002B5C" stroke-width="2"/>
+    <text x="300" y="168" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="700" fill="#002B5C" text-anchor="middle">2</text>
+    <rect x="220" y="214" width="160" height="4" rx="2" fill="#B9975B"/>
+    <text font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="700" fill="#002B5C">
+      <tspan x="300" y="240" text-anchor="middle">Treatment and</tspan>
+      <tspan x="300" y="258" text-anchor="middle">monitoring begin</tspan>
+    </text>
+    <text font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#6B6B6B">
+      <tspan x="300" y="278" text-anchor="middle">Drug testing and</tspan>
+      <tspan x="300" y="294" text-anchor="middle">attendance tracked</tspan>
+    </text>
+  </g>
+
+  <!-- Step 3 -->
+  <g>
+    <circle cx="470" cy="160" r="34" fill="#FFFFFF" stroke="#002B5C" stroke-width="2"/>
+    <text x="470" y="168" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="700" fill="#002B5C" text-anchor="middle">3</text>
+    <rect x="390" y="214" width="160" height="4" rx="2" fill="#B9975B"/>
+    <text font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="700" fill="#002B5C">
+      <tspan x="470" y="240" text-anchor="middle">Progress reported</tspan>
+      <tspan x="470" y="258" text-anchor="middle">to the court</tspan>
+    </text>
+    <text font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#6B6B6B">
+      <tspan x="470" y="278" text-anchor="middle">By a probation officer</tspan>
+      <tspan x="470" y="294" text-anchor="middle">or case manager</tspan>
+    </text>
+  </g>
+
+  <!-- Step 4 -->
+  <g>
+    <circle cx="630" cy="160" r="34" fill="#FFFFFF" stroke="#2E7D8A" stroke-width="2.5"/>
+    <path d="M617,160 L626,170 L645,148" fill="none" stroke="#2E7D8A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="550" y="214" width="160" height="4" rx="2" fill="#2E7D8A"/>
+    <text font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="700" fill="#002B5C">
+      <tspan x="630" y="240" text-anchor="middle">Case reviewed</tspan>
+      <tspan x="630" y="258" text-anchor="middle">at sentencing</tspan>
+    </text>
+    <text font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#6B6B6B">
+      <tspan x="630" y="278" text-anchor="middle">Completion can reduce</tspan>
+      <tspan x="630" y="294" text-anchor="middle">or end the sentence</tspan>
+    </text>
+  </g>
+</svg>
