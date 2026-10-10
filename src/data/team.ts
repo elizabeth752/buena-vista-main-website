@@ -80,6 +80,25 @@ export const team: TeamMember[] = [
     ],
     focus: ['Access to treatment', 'The Chandler reopening', 'Continuum of care'],
   },
+  {
+    /* Source: her Clinical Author Bio Questionnaire (ClickUp 86e37z28v, Sept
+       2026). Byline format is her own: "Vanessa Diaz, LMSW, Therapist." Her
+       answer about her own mental health history was marked for compliance
+       review in the questionnaire and is deliberately left out. */
+    slug: 'vanessa-diaz',
+    name: 'Vanessa Diaz',
+    credentials: 'LMSW',
+    title: 'Therapist',
+    photo: '/Asset/Our%20Team/Vanessa-Diaz-LMSW.webp',
+    clinicalReviewer: false,
+    bio: [
+      "Vanessa is a therapist in Buena Vista's partial hospitalization and intensive outpatient programs in Chandler. She is a licensed master social worker in Arizona and earned both her bachelor's and master's degrees in social work at Arizona State University.",
+      'She has worked in behavioral health for five years, with people of every age from preschoolers to adults. That work has covered depression, anxiety, substance use, serious mental illness, trauma, domestic violence, personality disorders and homelessness. Her time with children and young people showed her how much the environment someone grows up in shapes the beliefs and habits they carry into adult life, which is why she works with the whole person.',
+      'Her approach starts with meeting each person where they are. She draws most on cognitive behavioral therapy and dialectical behavior therapy, because our thoughts and behaviors shape the everyday choices we make. Her goal is to help each person find the solutions and strength already within them, and to leave more empowered than when they arrived.',
+      'Vanessa grew up in a Hispanic household where mental health was not something people talked about. That experience helps her connect with people and families who have lived with the same silence, and it is part of why she works to make asking for help feel normal.',
+    ],
+    focus: ['PHP and IOP therapy', 'Cognitive behavioral therapy', 'Dialectical behavior therapy', 'Depression and anxiety', 'Substance use and mental health'],
+  },
 ];
 
 export const bySlug = Object.fromEntries(team.map(m => [m.slug, m]));
