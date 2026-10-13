@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="440" viewBox="0 0 760 440" role="img" aria-labelledby="rc-title rc-desc">
+  <title id="rc-title">Risks of opioid use disorder during pregnancy, to mother and child</title>
+  <desc id="rc-desc">Risks to the mother: death, complications during birth, and worse mental health. Risks to the child: premature birth, death, developmental defects, neonatal opioid withdrawal syndrome, and a possible higher risk of addiction later in life.</desc>
+
+  <rect x="1" y="1" width="758" height="438" rx="14" fill="#FFFFFF" stroke="#EFE7DA" stroke-width="1"/>
+  <text x="380" y="36" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" letter-spacing="1.6" fill="#B9975B">RISKS OF OPIOID USE DISORDER DURING PREGNANCY</text>
+
+  <!-- Left panel: Risks to the Mother -->
+  <rect x="32" y="56" width="332" height="360" rx="12" fill="#FAF7F2" stroke="#EFE7DA" stroke-width="1"/>
+  <rect x="32" y="56" width="332" height="5" rx="2.5" fill="#002B5C"/>
+  <text x="198" y="92" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="18" font-weight="700" fill="#002B5C">Risks to the Mother</text>
+
+  <g font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#2B2B2B">
+    <circle cx="64" cy="134" r="4" fill="#002B5C"/>
+    <text x="80" y="139">Death during childbirth or postpartum</text>
+
+    <circle cx="64" cy="174" r="4" fill="#002B5C"/>
+    <text x="80" y="179">High blood pressure and severe bleeding</text>
+
+    <circle cx="64" cy="214" r="4" fill="#002B5C"/>
+    <text x="80" y="219">Serious bacterial or blood-borne infection</text>
+
+    <circle cx="64" cy="254" r="4" fill="#002B5C"/>
+    <text x="80" y="259">Worsened depression and anxiety</text>
+  </g>
+  <text x="198" y="400" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" fill="#002B5C">25&#8211;33% have a psychiatric comorbidity</text>
+
+  <!-- Right panel: Risks to the Child -->
+  <rect x="396" y="56" width="332" height="360" rx="12" fill="#FAF7F2" stroke="#EFE7DA" stroke-width="1"/>
+  <rect x="396" y="56" width="332" height="5" rx="2.5" fill="#2E7D8A"/>
+  <text x="562" y="92" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="18" font-weight="700" fill="#2E7D8A">Risks to the Child</text>
+
+  <g font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#2B2B2B">
+    <circle cx="428" cy="124" r="4" fill="#2E7D8A"/>
+    <text x="444" y="129">Premature birth, underdeveloped lungs</text>
+
+    <circle cx="428" cy="158" r="4" fill="#2E7D8A"/>
+    <text x="444" y="163">Miscarriage, stillbirth, or post-birth death</text>
+
+    <circle cx="428" cy="192" r="4" fill="#2E7D8A"/>
+    <text x="444" y="197">Low birth weight, developmental delays</text>
+
+    <circle cx="428" cy="226" r="4" fill="#2E7D8A"/>
+    <text x="444" y="231">Neonatal opioid withdrawal syndrome</text>
+
+    <circle cx="428" cy="260" r="4" fill="#2E7D8A"/>
+    <text x="444" y="265">Possible higher addiction risk later in life</text>
+  </g>
+  <text x="562" y="400" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" fill="#2E7D8A">Up to 80% of exposed newborns develop NOWS</text>
+</svg>

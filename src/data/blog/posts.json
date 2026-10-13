@@ -5574,5 +5574,245 @@
     ],
     "words": 1155,
     "readMinutes": 5
+  },
+  {
+    "slug": "pregnancy-and-opioid-addiction",
+    "title": "Pregnancy and Opioid Addiction",
+    "description": "Opioid addiction during pregnancy poses serious risks to mother and baby. Know what the possible outcomes are, why they occur, and what treatment is available.",
+    "updated": "2026-10-12",
+    "author": "darren-lee",
+    "category": "Opioids",
+    "links": [
+      [
+        "/what-we-treat/opioid-addiction/",
+        "Opioid addiction treatment"
+      ],
+      [
+        "/medical-detox/",
+        "Medical detox"
+      ],
+      [
+        "/residential-treatment/",
+        "Residential treatment"
+      ]
+    ],
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Around 1.5 million women in the U.S. have an opioid use disorder (OUD) <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC10906498/\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">[1]</a>. Women are about twice as likely to be prescribed prescription opioids compared to men, which makes women especially vulnerable to developing OUD, even when opioids come from a trusted source <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC5675036/\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">[2]</a>."
+      },
+      {
+        "t": "p",
+        "html": "Women face unique risks as a result of opioid addiction. In particular, being pregnant while using opioids can cause complications during pregnancy, premature birth, severe health defects to the baby, and even death. Neonatal Opioid Withdrawal Syndrome (NOWS) is also a condition where a child experiences withdrawal symptoms from opioids after being born."
+      },
+      {
+        "t": "p",
+        "html": "Pregnancy and opioid addiction are very dangerous. Here&rsquo;s what you need to know and how structured treatment can support women and their children."
+      },
+      {
+        "t": "img",
+        "src": "/Asset/Blog/pregnancy-opioid-addiction-by-the-numbers.svg",
+        "alt": "Pregnancy and opioid addiction by the numbers: around 1.5 million women in the US have OUD, women are twice as likely as men to be prescribed opioids, 25 to 33 percent of pregnant women with OUD have a psychiatric comorbidity, and up to 80 percent of exposed newborns develop NOWS."
+      },
+      {
+        "t": "h2",
+        "html": "What Is an Opioid Addiction?"
+      },
+      {
+        "t": "p",
+        "html": "An opioid addiction is when someone cannot stop using opioids despite negative consequences to their health, relationships, finances, and general quality of life. It is not a conscious choice. Opioids are highly addictive. They attach to receptors in the brain that block pain signals and trigger the release of endorphins, the body&rsquo;s own feel-good chemicals <a href=\"https://www.mayoclinic.org/diseases-conditions/prescription-drug-abuse/in-depth/how-opioid-addiction-occurs/art-20360372\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">[3]</a>. This process leads to reward-seeking behaviors where a person craves opioids, even in scenarios such as pregnancy."
+      },
+      {
+        "t": "p",
+        "html": "An opioid addiction can form via using illicit opioids (manufactured in a lab and sold illegally) &mdash; in some cases just one time is enough to develop an addiction &mdash; or from prescribed opioids that are used for legitimate pain management, typically for chronic illness or after major surgery."
+      },
+      {
+        "t": "p",
+        "html": "The most commonly used and abused opioids are:"
+      },
+      {
+        "t": "p",
+        "html": "<strong>Illicit opioids</strong>"
+      },
+      {
+        "t": "ul",
+        "items": [
+          "<a href=\"/what-we-treat/opioid-addiction/fentanyl/\">Fentanyl</a> (100 times stronger than morphine <a href=\"https://www.cdc.gov/stop-overdose/caring/fentanyl-facts.html\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">[4]</a>)",
+          "Heroin"
+        ]
+      },
+      {
+        "t": "p",
+        "html": "<strong>Prescription opioids</strong>"
+      },
+      {
+        "t": "ul",
+        "items": [
+          "Oxycodone (OxyContin, Percocet)",
+          "Hydrocodone (Vicodin)",
+          "Hydromorphone (Dilaudid)",
+          "Morphine",
+          "Codeine"
+        ]
+      },
+      {
+        "t": "p",
+        "html": "Opioid use disorder can be present before a pregnancy begins or, less often, develop during it. In the cases where it develops during pregnancy, it is usually linked to opioids prescribed to manage pregnancy-related pain &mdash; most often codeine and hydrocodone <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC4020039/\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">[6]</a>."
+      },
+      {
+        "t": "h2",
+        "html": "What Are the Risks of Being Pregnant and Having an Opioid Addiction?"
+      },
+      {
+        "t": "p",
+        "html": "The CDC links opioid use disorder during pregnancy to maternal death, poor fetal growth, preterm birth, stillbirth, and specific birth defects <a href=\"https://www.cdc.gov/opioid-use-during-pregnancy/about/index.html\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">[5]</a>. There are many risks that arise when a woman is pregnant and has an opioid addiction."
+      },
+      {
+        "t": "h3",
+        "html": "Risks to the Mother"
+      },
+      {
+        "t": "p",
+        "html": "<strong>Death.</strong> Opioid use disorder is a fast-growing cause of maternal mortality in the U.S. &mdash; the maternal mortality rate linked to OUD rose from 11.2 to 48.5 per 100,000 live births between 1999 and 2017, an increase of nearly 77% <a href=\"https://journals.lww.com/greenjournal/Abstract/2020/05001/Opioid_Use_Disorder__A_Poorly_Understood_Cause_of.195.aspx\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">[7]</a>. The risk continues after birth: women with OUD overdose at a rate of about 349 per 10,000 deliveries in the year after birth, compared with just 5.9 per 10,000 for women without OUD <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC10365595/\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">[8]</a>."
+      },
+      {
+        "t": "p",
+        "html": "<strong>Complications during birth.</strong> Opioid use during pregnancy increases the likelihood of high blood pressure and severe bleeding when giving birth. There&rsquo;s also an increased risk of serious bacterial or blood-borne infections during delivery."
+      },
+      {
+        "t": "p",
+        "html": "<strong>Worse mental health.</strong> Conditions such as depression and anxiety are often present with opioid addiction. Pregnancy can exacerbate poor mental health or cause the onset of new conditions and symptoms. Studies highlight that 25-33% of pregnant women with OUD have a <a href=\"/dual-diagnosis/\">psychiatric comorbidity</a> <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC5350195/\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">[9]</a>."
+      },
+      {
+        "t": "h3",
+        "html": "Risks to the Child"
+      },
+      {
+        "t": "p",
+        "html": "<strong>Premature birth.</strong> Women with an OUD can go into labor as early as 37 weeks of pregnancy. At this stage, the baby has underdeveloped lungs, meaning they struggle to breathe on their own. Child deaths are more likely with premature birth."
+      },
+      {
+        "t": "p",
+        "html": "<strong>Death.</strong> Miscarriage, stillbirth, and post-birth death are more common among pregnant women with OUD."
+      },
+      {
+        "t": "p",
+        "html": "<strong>Development defects.</strong> Disrupted placental function due to opioid use can lead to low birth weight and a smaller head circumference. Children of women with OUD may also have challenges with executive functioning and academic performance, delays in speech acquisition, problems with motor skills, and greater emotional disturbances."
+      },
+      {
+        "t": "p",
+        "html": "<strong>Neonatal Opioid Withdrawal Syndrome (NOWS).</strong> Opioids consumed by the mother during pregnancy are passed to the baby in the womb through the placenta. At birth, the child experiences withdrawal from opioids."
+      },
+      {
+        "t": "p",
+        "html": "<strong>Possible addiction risk later in life.</strong> Prenatal opioid exposure may raise a child&rsquo;s vulnerability to substance use later on. In one Norwegian study, young adults who had been exposed to heroin and other drugs before birth were more likely to report ongoing substance misuse than those who had not been exposed (13% versus 2%). Human research on this question is still limited, but animal studies back it up, showing lasting changes in the brain&rsquo;s reward system after prenatal opioid exposure <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC8012222/\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">[10]</a>."
+      },
+      {
+        "t": "p",
+        "html": "<strong>Environmental restrictions.</strong> Having a parent with an OUD may mean a child is exposed to opioids and other substance use from a young age. Lower income settings, relationship instability, and limited access to healthcare can compound an unhealthy environment for a child to grow."
+      },
+      {
+        "t": "img",
+        "src": "/Asset/Blog/pregnancy-opioid-risks-comparison.svg",
+        "alt": "Risks of opioid use disorder during pregnancy: risks to the mother include death, birth complications, and worse mental health; risks to the child include premature birth, death, developmental defects, neonatal opioid withdrawal syndrome, and a possible higher addiction risk later in life."
+      },
+      {
+        "t": "h2",
+        "html": "What Is Neonatal Opioid Withdrawal Syndrome (NOWS)?"
+      },
+      {
+        "t": "p",
+        "html": "NOWS is a condition that affects newborn babies of women with an OUD. During pregnancy, the baby receives opioids used by the mother and becomes dependent on them. At birth, when the placenta is cut, the baby no longer has access to opioids and gradually passes through a withdrawal stage."
+      },
+      {
+        "t": "p",
+        "html": "Symptoms of NOWS start to show 1-3 days after birth and can last between one week and six months, depending on the opioid, the amount of use during pregnancy, and other variable factors. Babies have to stay in the hospital under medical supervision while they exhibit withdrawal symptoms, including:"
+      },
+      {
+        "t": "ul",
+        "items": [
+          "High-pitched crying",
+          "Shaking",
+          "Problems sleeping",
+          "Vomiting",
+          "Diarrhea",
+          "Difficulty gaining weight",
+          "Fever and sweating",
+          "Rapid breathing"
+        ]
+      },
+      {
+        "t": "p",
+        "html": "Up to 80% of children born to women with an OUD have NOWS <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC6759228/\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">[11]</a>. Unlike Neonatal Abstinence Syndrome (NAS), which refers to infant withdrawal from any addictive substance (such as alcohol or sedatives), NOWS only refers to opioid withdrawal among infants."
+      },
+      {
+        "t": "h2",
+        "html": "Treatment for Pregnant Women with OUD"
+      },
+      {
+        "t": "p",
+        "html": "Treatment for OUD while pregnant can increase the chances of a healthy pregnancy, birth, and life for both the mother and child. It involves many of the core elements of recovery care &mdash; including <a href=\"/medical-detox/\">medical detox</a>, evidence-based therapies, and activities to nurture mental and physical health &mdash; but with the addition of tailored medication."
+      },
+      {
+        "t": "p",
+        "html": "Methadone and buprenorphine are commonly administered FDA-approved medications for pregnant women with OUD. They are only given by licensed clinicians, and the dose and frequency are carefully monitored according to the mother&rsquo;s health, addiction history, and individual case."
+      },
+      {
+        "t": "p",
+        "html": "Research shows these types of medications during and after pregnancy cut the odds of opioid-related overdose death by approximately 60% <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC10125002/\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">[12]</a>. They also help stabilize the mother&rsquo;s brain chemistry, prevent severe withdrawal, and protect the unborn child from risks that come with opioid use."
+      },
+      {
+        "t": "img",
+        "src": "/Asset/Blog/pregnancy-opioid-moud-overdose-risk.svg",
+        "alt": "Medication for opioid use disorder, such as methadone or buprenorphine, lowers the odds of opioid-related overdose death by about 60 percent during and after pregnancy, compared with not taking medication."
+      },
+      {
+        "t": "p",
+        "html": "Medication such as methadone and buprenorphine is rarely discontinued immediately after birth. It&rsquo;s usually integrated into a broader, long-term care plan that supports the mother to abstain from opioid use, address the underlying causes of addiction, and foster a safe and healthy relationship with the child."
+      },
+      {
+        "t": "h2",
+        "html": "Opioid Addiction Treatment at Buena Vista Health & Recovery Center, AZ"
+      },
+      {
+        "t": "p",
+        "html": "We are specialists in <a href=\"/what-we-treat/opioid-addiction/\">opioid addiction treatment</a>, providing care to people from all backgrounds who arrive at our center in Arizona for many different reasons. We don&rsquo;t judge and we don&rsquo;t change the quality of treatment depending on your story. What we do is personalize our programs according to where you are right now and where you hope to be."
+      },
+      {
+        "t": "p",
+        "html": "Our team of licensed clinicians offers therapies including cognitive behavioral therapy (CBT) and dialectical behavioral therapy (DBT). We also offer medication-assisted treatment (MAT), including methadone and buprenorphine."
+      },
+      {
+        "t": "p",
+        "html": "We have <a href=\"/residential-treatment/\">private residences</a> complete with your own room and bathroom and catered meals, to ensure you heal with dignity."
+      },
+      {
+        "t": "p",
+        "html": "Change is possible. Take a step toward yours today. <a href=\"/admissions/\">Contact our admissions team</a>."
+      },
+      {
+        "t": "h2",
+        "html": "Sources"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Skogseth, E. et al. 2024. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC10906498/\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">Women and Treatment for Opioid Use Disorder: Contributors to Treatment Success From the Perspectives of Women in Recovery, Women With Past Attempts in Drug Treatment, and Health and Criminal Justice Professionals.</a> Substance Use: Research and Treatment.",
+          "Serdarevic, M. et al. 2018. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC5675036/\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">Gender differences in prescription opioid use.</a> Current Opinion in Psychiatry.",
+          "Mayo Clinic. 2024. <a href=\"https://www.mayoclinic.org/diseases-conditions/prescription-drug-abuse/in-depth/how-opioid-addiction-occurs/art-20360372\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">How opioid use disorder occurs.</a> mayoclinic.org.",
+          "Centers for Disease Control and Prevention. 2026. <a href=\"https://www.cdc.gov/stop-overdose/caring/fentanyl-facts.html\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">Fentanyl Facts.</a> cdc.gov.",
+          "CDC. 2026. <a href=\"https://www.cdc.gov/opioid-use-during-pregnancy/about/index.html\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">About Opioid Use During Pregnancy.</a> cdc.gov.",
+          "Desai, R. et al. 2015. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC4020039/\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">Increase in Prescription Opioid Use During Pregnancy Among Medicaid-Enrolled Women.</a> Obstetrics &amp; Gynecology.",
+          "Mitra, A. et al. 2020. <a href=\"https://journals.lww.com/greenjournal/Abstract/2020/05001/Opioid_Use_Disorder__A_Poorly_Understood_Cause_of.195.aspx\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">Opioid Use Disorder: A Poorly Understood Cause of Maternal Mortality in the United States.</a> Obstetrics &amp; Gynecology.",
+          "Frankeberger, J. et al. 2024. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC10365595/\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">Opioid use disorder and overdose in the first year postpartum: A rapid scoping review and implications for future research.</a> Maternal and Child Health Journal.",
+          "Arnaudo, C. et al. 2017. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC5350195/\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">Psychiatric Co-Morbidities in Pregnant Women with Opioid Use Disorders: Prevalence, Impact, and Implications for Treatment.</a> Current Addiction Reports.",
+          "Abu, Y., Roy, S. 2021. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC8012222/\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">Prenatal opioid exposure and vulnerability to future substance use disorders in offspring.</a> Experimental Neurology.",
+          "Conradt, E. et al. 2019. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC6759228/\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">Prenatal Opioid Exposure: Neurodevelopmental Consequences and Future Research Priorities.</a> Pediatrics.",
+          "Suarez, E. et al. 2023. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC10125002/\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">Postpartum Opioid-Related Mortality in Publicly Insured Patients.</a> Obstetrics &amp; Gynecology."
+        ]
+      }
+    ],
+    "words": 1508,
+    "readMinutes": 7
   }
 ]

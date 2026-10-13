@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="340" viewBox="0 0 640 340" role="img" aria-labelledby="mr-title mr-desc">
+  <title id="mr-title">Medication for opioid use disorder lowers overdose death risk</title>
+  <desc id="mr-desc">Comparison bar chart: without medication for opioid use disorder, overdose death risk is shown at full height. With medication for opioid use disorder such as methadone or buprenorphine during and after pregnancy, the odds of opioid-related overdose death are about 60 percent lower.</desc>
+
+  <rect x="1" y="1" width="638" height="338" rx="14" fill="#FAF7F2" stroke="#EFE7DA" stroke-width="1"/>
+  <rect x="1" y="1" width="638" height="5" rx="2.5" fill="#B9975B"/>
+
+  <text x="40" y="42" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" letter-spacing="1.6" fill="#B9975B">MEDICATION LOWERS OVERDOSE RISK</text>
+  <line x1="40" y1="54" x2="600" y2="54" stroke="#EFE7DA" stroke-width="1"/>
+
+  <!-- Baseline for both bars -->
+  <line x1="60" y1="270" x2="580" y2="270" stroke="#2B2B2B" stroke-width="1.5"/>
+
+  <!-- Bar 1: Without MOUD, full height baseline -->
+  <rect x="190" y="110" width="110" height="160" fill="#002B5C"/>
+  <text x="245" y="96" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="20" font-weight="700" fill="#002B5C">Baseline</text>
+  <text x="245" y="292" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#2B2B2B">Without MOUD</text>
+
+  <!-- Bar 2: With MOUD, about 40% of baseline height (60% lower odds) -->
+  <rect x="340" y="206" width="110" height="64" fill="#2E7D8A"/>
+  <text x="395" y="192" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="20" font-weight="700" fill="#2E7D8A">~60% lower</text>
+  <text x="395" y="292" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#2B2B2B">With MOUD</text>
+
+  <text x="320" y="318" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#7A7568">Methadone or buprenorphine, during and after pregnancy &#8212; see Sources below</text>
+</svg>
