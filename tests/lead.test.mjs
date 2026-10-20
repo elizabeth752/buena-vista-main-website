@@ -76,14 +76,22 @@ test('payload uses the field names this reactor expects', () => {
   assert.equal(p.get('paid_attribution[gclid]'), 'Cj0KC');
 });
 
+test('date of birth reaches CTM', () => {
+  const p = buildPayload(form({
+    phone_number: '4805551234',
+    'custom_fields[date_of_birth]': '03/14/1985',
+  }));
+  assert.equal(p.get('custom_fields[date_of_birth]'), '03/14/1985');
+});
+
 test('anything not on the allowlist is dropped', () => {
   const p = buildPayload(form({
     phone_number: '4805551234',
-    'custom_fields[date_of_birth]': '1990-01-01',   // real reactor field, not ours
+    'custom_fields[group]': '12345',                // real reactor field, not ours
     notify_email: 'attacker@example.com',           // routing override attempt
     tag_list: 'whatever',
   }));
-  assert.equal(p.get('custom_fields[date_of_birth]'), null);
+  assert.equal(p.get('custom_fields[group]'), null);
   assert.equal(p.get('notify_email'), null);
   assert.equal(p.get('tag_list'), null);
 });
