@@ -22,6 +22,8 @@ const EXCLUDE = [
   /* Post-submission page. Carries noindex; a thank-you page in the index is
      how a competitor counts your conversions. */
   '/thank-you/',
+  /* Review page texted to alumni after discharge. Carries noindex. */
+  '/review/',
 ];
 
 
