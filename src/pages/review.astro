@@ -129,10 +129,10 @@ const reviews = [
 </Layout>
 
 <script>
-  /* Where 1–3 star feedback is delivered. Pending: a Formspree (or similar)
-     form tied to admissions@buena.health, confirmed once from that inbox.
-     Until it is set, the form refuses to pretend it sent anything. */
-  const FEEDBACK_ENDPOINT = '';
+  /* Where 1–3 star feedback is delivered: Formspree form "Review Page Buena
+     Vista" (Elev8 Marketing account), which emails admissions@buena.health.
+     If this is ever emptied, the form refuses to pretend it sent anything. */
+  const FEEDBACK_ENDPOINT = 'https://formspree.io/f/mkjoljrb';
 
   const WORDS = ['Poor', 'Fair', 'Okay', 'Good', 'Excellent'];
   const group = document.getElementById('rv-stars')!;
