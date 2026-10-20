@@ -82,13 +82,16 @@ const reviews = [
           <span>How can we improve?</span>
           <textarea id="rv-text" name="feedback" rows="5" required placeholder="Tell us what happened, or what you would change"></textarea>
         </label>
+        {/* CTM rejects a submission without a phone number, so it is the one
+            contact field that is required. */}
         <div class="rv-row">
-          <label class="rv-field" for="rv-name"><span>Name <em>(optional)</em></span><input id="rv-name" name="name" autocomplete="name" /></label>
-          <label class="rv-field" for="rv-contact"><span>Phone or email <em>(optional)</em></span><input id="rv-contact" name="contact" autocomplete="email" /></label>
+          <label class="rv-field" for="rv-phone"><span>Phone</span><input id="rv-phone" name="phone_number" type="tel" inputmode="tel" autocomplete="tel" required /></label>
+          <label class="rv-field" for="rv-name"><span>Name <em>(optional)</em></span><input id="rv-name" name="caller_name" autocomplete="name" /></label>
         </div>
+        <label class="rv-field" for="rv-email"><span>Email <em>(optional)</em></span><input id="rv-email" name="email_address" type="email" autocomplete="email" /></label>
         {/* Honeypot. Hidden from people, filled by bots. */}
-        <input class="rv-hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" />
-        <p class="rv-hint">Leave your contact only if you'd like someone from our team to follow up.</p>
+        <input class="rv-hp" type="text" name="rv_extra" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <p class="rv-hint">We only use your number to follow up on your feedback.</p>
         <p class="rv-error" id="rv-error" role="alert" hidden></p>
         <div class="rv-btns">
           <button class="rv-btn rv-btn-primary" type="submit" id="rv-send">Send my feedback</button>
@@ -99,7 +102,7 @@ const reviews = [
 
       <div class="rv-result" data-state="sent" hidden>
         <h2>Thank you. We hear you.</h2>
-        <p>Your feedback reached our team. If you left your contact, someone will reach out soon.</p>
+        <p>Your feedback reached our team, and someone may reach out to follow up.</p>
         <p class="rv-also">You can still <a href={GOOGLE_REVIEW} target="_blank" rel="noopener">leave a Google review</a> if you'd like.</p>
       </div>
     </section>
@@ -129,10 +132,14 @@ const reviews = [
 </Layout>
 
 <script>
-  /* Where 1–3 star feedback is delivered: Formspree form "Review Page Buena
-     Vista" (Elev8 Marketing account), which emails admissions@buena.health.
-     If this is ever emptied, the form refuses to pretend it sent anything. */
-  const FEEDBACK_ENDPOINT = 'https://formspree.io/f/mkjoljrb';
+  /* 1–3 star feedback goes to CTM through api/feedback.js, on its own reactor
+     so it never lands in the admissions lead queue. */
+  const FEEDBACK_ENDPOINT = '/api/feedback';
+  const ERRORS: Record<string, string> = {
+    phone: 'Please enter a phone number we can reach you at.',
+    empty: 'Please write a few words before sending.',
+  };
+  const phone = document.getElementById('rv-phone') as HTMLInputElement;
 
   const WORDS = ['Poor', 'Fair', 'Okay', 'Good', 'Excellent'];
   const group = document.getElementById('rv-stars')!;
@@ -183,23 +190,25 @@ const reviews = [
       text.focus();
       return;
     }
-    if (!FEEDBACK_ENDPOINT) {
-      error.textContent = 'Feedback delivery is not connected yet. Please call us at (888) 362-5576.';
+    if (phone.value.replace(/\D/g, '').length < 10) {
+      error.textContent = ERRORS.phone;
       error.hidden = false;
+      phone.focus();
       return;
     }
     send.disabled = true;
     send.textContent = 'Sending…';
     try {
-      const data = new FormData(form);
-      data.append('rating', String(current));
-      data.append('_subject', `Review page feedback (${current} star${current > 1 ? 's' : ''})`);
-      const res = await fetch(FEEDBACK_ENDPOINT, { method: 'POST', body: data, headers: { Accept: 'application/json' } });
-      if (!res.ok) throw new Error(String(res.status));
+      const data = new URLSearchParams(new FormData(form) as any);
+      data.set('rating', String(current));
+      const res = await fetch(FEEDBACK_ENDPOINT, { method: 'POST', body: data });
+      const body = await res.json().catch(() => ({}));
+      if (!res.ok || !body.ok) throw new Error(body.error || String(res.status));
       form.reset();
       show('sent');
-    } catch {
-      error.textContent = "We couldn't send that. Please try again, or call us at (888) 362-5576.";
+    } catch (err) {
+      const reason = err instanceof Error ? err.message : '';
+      error.textContent = ERRORS[reason] || "We couldn't send that. Please try again, or call us at (888) 362-5576.";
       error.hidden = false;
     } finally {
       send.disabled = false;
