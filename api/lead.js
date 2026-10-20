@@ -54,17 +54,19 @@ const DEFAULT_REACTOR =
 //     custom_fields[consent_calls]        note the plural — the form field is
 //                                         consent_call, CTM's is consent_calls
 //     custom_fields[consent_sms]
+//     custom_fields[date_of_birth]        added 2026-10-20: admissions needs it
+//                                         to verify benefits
 //
-// The reactor also accepts date_of_birth, other_insurance_info, group and
-// insurance_phone. We deliberately do not ask for those: four fields is what
-// the form asks and a reactor field with nothing to put in it is not a reason
-// to lengthen it.
+// The reactor also accepts other_insurance_info, group and insurance_phone.
+// We deliberately do not ask for those: a reactor field with nothing to put in
+// it is not a reason to lengthen the form.
 const ALLOWED = new Set([
   'caller_name',
   'phone_number',
   'email_address',
   'custom_fields[insurance_provider]',
   'custom_fields[id]',
+  'custom_fields[date_of_birth]',
   'custom_fields[consent_calls]',
   'custom_fields[consent_sms]',
   'paid_attribution[gclid]',

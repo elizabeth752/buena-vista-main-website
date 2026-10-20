@@ -81,7 +81,31 @@ const isContact = variant === 'contact';
       </div>
 </>)}
     </div>
-    <ConsentFields id={id} />
+
+    {/* Date of birth and the consent block stay folded until the visitor starts
+         typing a name, so the form looks short at first glance (client request,
+         2026-10-20). The script below opens it; it opens on submit too, so the
+         required call-consent box can never block a submission while hidden.
+         Without JavaScript the <noscript> rule keeps it open. */}
+    <div class="lead-reveal" data-lead-reveal>
+      <div class="lead-reveal-inner">
+        <div class="lead-reveal-content">
+{!isContact && (
+          /* Admissions cannot run a benefits check without it (client request,
+             2026-10-20). A masked text field rather than type="date": the
+             native picker opens on today and makes people scroll back decades
+             on iOS. Optional like the policy ID — a lead without a birth date
+             is still a call, and the date is asked for on it. */
+          <div class="mb-4">
+            <label class="block text-xs font-bold text-charcoal uppercase tracking-wide mb-1.5" for={`${id}-dob`}>Date of Birth</label>
+            <input id={`${id}-dob`} name="custom_fields[date_of_birth]" type="text" inputmode="numeric" autocomplete="bday" maxlength="10" placeholder="MM/DD/YYYY" pattern="(0[1-9]|1[0-2])/(0[1-9]|[12][0-9]|3[01])/(19|20)[0-9]{2}" title="Use the format MM/DD/YYYY" data-dob class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm font-body focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal transition-colors" />
+          </div>
+)}
+          <ConsentFields id={id} />
+        </div>
+      </div>
+    </div>
+    <noscript><style>.lead-reveal { grid-template-rows: 1fr !important; }</style></noscript>
 
     <button type="submit" class="w-full bg-teal hover:bg-teal-dark text-white font-bold py-3.5 rounded-lg transition-colors font-body tracking-wide text-sm">
       {isContact ? 'Request a call' : 'Check my coverage'}
@@ -115,6 +139,29 @@ const isContact = variant === 'contact';
 
 </div>
 
+<style>
+  /* 0fr -> 1fr animates to the content's real height with no measuring. The
+     form's space-y gap sits on the grid above, so the folded block adds no
+     space; the padding below the consent text is what separates it from the
+     button once open. */
+  .lead-reveal {
+    display: grid;
+    grid-template-rows: 0fr;
+    margin: 0 !important;
+    transition: grid-template-rows 0.35s ease;
+  }
+  .lead-reveal.is-open { grid-template-rows: 1fr; }
+  /* Clips while folded. The side padding (cancelled by the negative margin)
+     leaves room for the inputs' focus ring, which would otherwise be cut.
+     Sides only: vertical padding would let the top of the fields peek out
+     while folded. */
+  .lead-reveal-inner { min-height: 0; overflow: hidden; margin: 0 -4px; padding: 0 4px; }
+  .lead-reveal-content { padding-bottom: 24px; }
+  @media (prefers-reduced-motion: reduce) {
+    .lead-reveal { transition: none; }
+  }
+</style>
+
 <script>
   // Fills the hidden attribution fields on every lead form on the page (the
   // hero form on desktop, the standalone section on mobile).
@@ -125,8 +172,8 @@ const isContact = variant === 'contact';
   // and comes back would otherwise lose the click id, so it is stashed in
   // sessionStorage on first sight and reused for the rest of the session.
   //
-  // ATTRIBUTION ONLY — never the form's own answers. The policy ID and the
-  // carrier are health information and must not be written to storage, a
+  // ATTRIBUTION ONLY — never the form's own answers. The policy ID, the
+  // carrier and the date of birth are health information and must not be written to storage, a
   // dataLayer, or a query string. They travel in the POST body and nowhere else.
   const params = new URLSearchParams(window.location.search);
 
@@ -160,6 +207,35 @@ const isContact = variant === 'contact';
     // cached page cannot carry a stale timestamp.
     const renderedAt = form.querySelector<HTMLInputElement>('input[name="rendered_at"]');
     if (renderedAt) renderedAt.value = String(Date.now());
+
+    // Unfold date of birth + consent once a name is being typed. Listening on
+    // the whole form catches autofill, which can fill the name without the
+    // name field ever being focused. inert keeps the folded fields out of the
+    // tab order and away from screen readers until then.
+    const reveal = form.querySelector<HTMLElement>('[data-lead-reveal]');
+    const name = form.querySelector<HTMLInputElement>('input[name="caller_name"]');
+    if (reveal) {
+      const open = () => {
+        if (reveal.classList.contains('is-open')) return;
+        reveal.inert = false;
+        reveal.classList.add('is-open');
+      };
+      if (name?.value.trim()) open();   // restored by the browser on Back
+      else reveal.inert = true;
+      form.addEventListener('input', () => { if (name?.value.trim()) open(); });
+      form.addEventListener('change', () => { if (name?.value.trim()) open(); });
+      // Runs before validation, so a hidden required box is shown, not stuck.
+      form.querySelector('button[type="submit"]')?.addEventListener('click', open);
+    }
+
+    // Type digits, get MM/DD/YYYY. Deletions are left alone, otherwise
+    // backspacing over a slash would put it straight back.
+    form.querySelector<HTMLInputElement>('input[data-dob]')?.addEventListener('input', (e) => {
+      const field = e.target as HTMLInputElement;
+      if ((e as InputEvent).inputType?.startsWith('delete')) return;
+      const d = field.value.replace(/\D/g, '').slice(0, 8);
+      field.value = [d.slice(0, 2), d.slice(2, 4), d.slice(4)].filter(Boolean).join('/');
+    });
 
     // Stop the double-submit that produces duplicate leads when someone taps
     // twice on a slow connection. Re-enabled on pageshow so a browser Back does
