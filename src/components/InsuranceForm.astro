@@ -51,6 +51,18 @@ const isContact = variant === 'contact';
         <label class="block text-xs font-bold text-charcoal uppercase tracking-wide mb-1.5" for={`${id}-phone`}>Your Phone</label>
         <input id={`${id}-phone`} name="phone_number" type="tel" required autocomplete="tel" placeholder="(555) 000-0000" class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm font-body focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal transition-colors" />
       </div>
+      {/* Date of birth: admissions cannot run a benefits check without it
+           (client request, 2026-10-20). Always visible since 2026-10-26: folded
+           behind the name field, people read the form as not asking for it.
+           A masked text field rather than type="date": the native picker opens
+           on today and makes people scroll back decades on iOS. Optional like
+           the policy ID — a lead without a birth date is still a call. The
+           contact form promises "just a name and a number", so there it says
+           optional. */}
+      <div>
+        <label class="block text-xs font-bold text-charcoal uppercase tracking-wide mb-1.5" for={`${id}-dob`}>Date of Birth{isContact && <span class="normal-case font-normal tracking-normal text-charcoal/60"> (optional)</span>}</label>
+        <input id={`${id}-dob`} name="custom_fields[date_of_birth]" type="text" inputmode="numeric" autocomplete="bday" maxlength="10" placeholder="MM/DD/YYYY" pattern="(0[1-9]|1[0-2])/(0[1-9]|[12][0-9]|3[01])/(19|20)[0-9]{2}" title="Use the format MM/DD/YYYY" data-dob class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm font-body focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal transition-colors" />
+      </div>
 {!isContact && (<>
       <div>
         <label class="block text-xs font-bold text-charcoal uppercase tracking-wide mb-1.5" for={`${id}-insurance`}>Insurance Carrier</label>
@@ -75,32 +87,21 @@ const isContact = variant === 'contact';
           <option>I don't have insurance</option>
         </select>
       </div>
-      <div>
+      <div class="sm:col-span-2">
         <label class="block text-xs font-bold text-charcoal uppercase tracking-wide mb-1.5" for={`${id}-policy`}>Membership Policy ID</label>
         <input id={`${id}-policy`} name="custom_fields[id]" type="text" autocomplete="off" placeholder="Policy ID" class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm font-body focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal transition-colors" />
       </div>
 </>)}
     </div>
 
-    {/* Date of birth and the consent block stay folded until the visitor starts
-         typing a name, so the form looks short at first glance (client request,
-         2026-10-20). The script below opens it; it opens on submit too, so the
-         required call-consent box can never block a submission while hidden.
+    {/* The consent block stays folded until the visitor starts typing a name,
+         so the form looks short at first glance (client request, 2026-10-20).
+         The script below opens it; it opens on submit too, so the required
+         call-consent box can never block a submission while hidden.
          Without JavaScript the <noscript> rule keeps it open. */}
     <div class="lead-reveal" data-lead-reveal>
       <div class="lead-reveal-inner">
         <div class="lead-reveal-content">
-          {/* Admissions cannot run a benefits check without it (client request,
-               2026-10-20; on the contact variant too since 2026-10-26, so every
-               lead form asks for it). A masked text field rather than type="date": the
-               native picker opens on today and makes people scroll back decades
-               on iOS. Optional like the policy ID — a lead without a birth date
-               is still a call, and the date is asked for on it. The contact form
-               promises "just a name and a number", so there it says optional. */}
-          <div class="mb-4">
-            <label class="block text-xs font-bold text-charcoal uppercase tracking-wide mb-1.5" for={`${id}-dob`}>Date of Birth{isContact && <span class="normal-case font-normal tracking-normal text-charcoal/60"> (optional)</span>}</label>
-            <input id={`${id}-dob`} name="custom_fields[date_of_birth]" type="text" inputmode="numeric" autocomplete="bday" maxlength="10" placeholder="MM/DD/YYYY" pattern="(0[1-9]|1[0-2])/(0[1-9]|[12][0-9]|3[01])/(19|20)[0-9]{2}" title="Use the format MM/DD/YYYY" data-dob class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm font-body focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal transition-colors" />
-          </div>
           <ConsentFields id={id} />
         </div>
       </div>
@@ -208,7 +209,7 @@ const isContact = variant === 'contact';
     const renderedAt = form.querySelector<HTMLInputElement>('input[name="rendered_at"]');
     if (renderedAt) renderedAt.value = String(Date.now());
 
-    // Unfold date of birth + consent once a name is being typed. Listening on
+    // Unfold the consent block once a name is being typed. Listening on
     // the whole form catches autofill, which can fill the name without the
     // name field ever being focused. inert keeps the folded fields out of the
     // tab order and away from screen readers until then.
