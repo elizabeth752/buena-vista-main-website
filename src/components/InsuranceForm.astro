@@ -90,17 +90,17 @@ const isContact = variant === 'contact';
     <div class="lead-reveal" data-lead-reveal>
       <div class="lead-reveal-inner">
         <div class="lead-reveal-content">
-{!isContact && (
-          /* Admissions cannot run a benefits check without it (client request,
-             2026-10-20). A masked text field rather than type="date": the
-             native picker opens on today and makes people scroll back decades
-             on iOS. Optional like the policy ID — a lead without a birth date
-             is still a call, and the date is asked for on it. */
+          {/* Admissions cannot run a benefits check without it (client request,
+               2026-10-20; on the contact variant too since 2026-10-26, so every
+               lead form asks for it). A masked text field rather than type="date": the
+               native picker opens on today and makes people scroll back decades
+               on iOS. Optional like the policy ID — a lead without a birth date
+               is still a call, and the date is asked for on it. The contact form
+               promises "just a name and a number", so there it says optional. */}
           <div class="mb-4">
-            <label class="block text-xs font-bold text-charcoal uppercase tracking-wide mb-1.5" for={`${id}-dob`}>Date of Birth</label>
+            <label class="block text-xs font-bold text-charcoal uppercase tracking-wide mb-1.5" for={`${id}-dob`}>Date of Birth{isContact && <span class="normal-case font-normal tracking-normal text-charcoal/60"> (optional)</span>}</label>
             <input id={`${id}-dob`} name="custom_fields[date_of_birth]" type="text" inputmode="numeric" autocomplete="bday" maxlength="10" placeholder="MM/DD/YYYY" pattern="(0[1-9]|1[0-2])/(0[1-9]|[12][0-9]|3[01])/(19|20)[0-9]{2}" title="Use the format MM/DD/YYYY" data-dob class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm font-body focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal transition-colors" />
           </div>
-)}
           <ConsentFields id={id} />
         </div>
       </div>
