@@ -19,6 +19,13 @@
    condition of submitting, which is exactly what CTM's Trust Center rejects.
    The client raised this on 2026-09-21 against the legacy WordPress forms.
 
+   2026-10-28 CTM FOLLOW-UP. The Trust Center wants the SMS checkbox itself to
+   carry the full disclosure: "you agree to receive", the brand, the purpose,
+   frequency, rates, STOP, HELP, and links to the Privacy Policy and Terms of
+   Service. The links stop click propagation so opening one does not tick the
+   box. If this sentence changes, change the quoted language in terms-of-use.astro
+   and the website-consent paragraph in /sms-consent-script.pdf with it.
+
    THE name= VALUES ARE THE CTM CONTRACT. They go straight through /api/lead
    into the FormReactor's custom fields, so a lead carries the consent it was
    given — consent nobody recorded is consent nobody can prove. Note the plural
@@ -62,9 +69,13 @@ const { id } = Astro.props;
     />
     <span class="font-body text-[13px] leading-[19px] text-charcoal">
       <span class="font-bold text-charcoal/60">(Optional)</span>{' '}
-      By checking this box, you provide consent to receive informational and marketing
-      SMS, MMS, or RCS messages from Buena Vista Recovery. Message frequency may vary.
-      Message and data rates may apply. Reply HELP for help or STOP to opt out.
+      By checking this box, you agree to receive informational and marketing text
+      messages from Buena Vista Recovery about admissions, appointments, and our
+      programs. Message frequency may vary. Message and data rates may apply.
+      Reply STOP to opt out. Reply HELP for help.
+      <a href="/privacy-policy/" class="text-teal font-semibold underline underline-offset-2" onclick="event.stopPropagation()">Privacy Policy</a>
+      {' '}&amp;{' '}
+      <a href="/terms-of-use/" class="text-teal font-semibold underline underline-offset-2" onclick="event.stopPropagation()">Terms of Service</a>.
     </span>
   </label>
 
