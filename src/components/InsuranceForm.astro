@@ -94,19 +94,9 @@ const isContact = variant === 'contact';
 </>)}
     </div>
 
-    {/* The consent block stays folded until the visitor starts typing a name,
-         so the form looks short at first glance (client request, 2026-10-20).
-         The script below opens it; it opens on submit too, so the required
-         call-consent box can never block a submission while hidden.
-         Without JavaScript the <noscript> rule keeps it open. */}
-    <div class="lead-reveal" data-lead-reveal>
-      <div class="lead-reveal-inner">
-        <div class="lead-reveal-content">
-          <ConsentFields id={id} />
-        </div>
-      </div>
-    </div>
-    <noscript><style>.lead-reveal { grid-template-rows: 1fr !important; }</style></noscript>
+    {/* Consent stays visible on load. CTM's reviewer opens the page and has to
+         see both checkboxes without typing a name first (2026-10-29). */}
+    <ConsentFields id={id} />
 
     <button type="submit" class="w-full bg-teal hover:bg-teal-dark text-white font-bold py-3.5 rounded-lg transition-colors font-body tracking-wide text-sm">
       {isContact ? 'Request a call' : 'Check my coverage'}
@@ -139,29 +129,6 @@ const isContact = variant === 'contact';
   </p>
 
 </div>
-
-<style>
-  /* 0fr -> 1fr animates to the content's real height with no measuring. The
-     form's space-y gap sits on the grid above, so the folded block adds no
-     space; the padding below the consent text is what separates it from the
-     button once open. */
-  .lead-reveal {
-    display: grid;
-    grid-template-rows: 0fr;
-    margin: 0 !important;
-    transition: grid-template-rows 0.35s ease;
-  }
-  .lead-reveal.is-open { grid-template-rows: 1fr; }
-  /* Clips while folded. The side padding (cancelled by the negative margin)
-     leaves room for the inputs' focus ring, which would otherwise be cut.
-     Sides only: vertical padding would let the top of the fields peek out
-     while folded. */
-  .lead-reveal-inner { min-height: 0; overflow: hidden; margin: 0 -4px; padding: 0 4px; }
-  .lead-reveal-content { padding-bottom: 24px; }
-  @media (prefers-reduced-motion: reduce) {
-    .lead-reveal { transition: none; }
-  }
-</style>
 
 <script>
   // Fills the hidden attribution fields on every lead form on the page (the
@@ -208,26 +175,6 @@ const isContact = variant === 'contact';
     // cached page cannot carry a stale timestamp.
     const renderedAt = form.querySelector<HTMLInputElement>('input[name="rendered_at"]');
     if (renderedAt) renderedAt.value = String(Date.now());
-
-    // Unfold the consent block once a name is being typed. Listening on
-    // the whole form catches autofill, which can fill the name without the
-    // name field ever being focused. inert keeps the folded fields out of the
-    // tab order and away from screen readers until then.
-    const reveal = form.querySelector<HTMLElement>('[data-lead-reveal]');
-    const name = form.querySelector<HTMLInputElement>('input[name="caller_name"]');
-    if (reveal) {
-      const open = () => {
-        if (reveal.classList.contains('is-open')) return;
-        reveal.inert = false;
-        reveal.classList.add('is-open');
-      };
-      if (name?.value.trim()) open();   // restored by the browser on Back
-      else reveal.inert = true;
-      form.addEventListener('input', () => { if (name?.value.trim()) open(); });
-      form.addEventListener('change', () => { if (name?.value.trim()) open(); });
-      // Runs before validation, so a hidden required box is shown, not stuck.
-      form.querySelector('button[type="submit"]')?.addEventListener('click', open);
-    }
 
     // Type digits, get MM/DD/YYYY. Deletions are left alone, otherwise
     // backspacing over a slash would put it straight back.
