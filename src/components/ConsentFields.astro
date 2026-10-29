@@ -20,7 +20,7 @@
    The client raised this on 2026-09-21 against the legacy WordPress forms.
 
    2026-10-28 CTM FOLLOW-UP. The Trust Center wants the SMS checkbox itself to
-   carry the full disclosure: "you agree to receive", the brand, the purpose,
+   carry the full disclosure: "you consent to receive", the brand, the purpose,
    frequency, rates, STOP, HELP, and links to the Privacy Policy and Terms of
    Service. The links stop click propagation so opening one does not tick the
    box. If this sentence changes, change the quoted language in terms-of-use.astro
@@ -69,10 +69,9 @@ const { id } = Astro.props;
     />
     <span class="font-body text-[13px] leading-[19px] text-charcoal">
       <span class="font-bold text-charcoal/60">(Optional)</span>{' '}
-      By checking this box, you agree to receive informational and marketing text
-      messages from Buena Vista Recovery about admissions, appointments, and our
-      programs. Message frequency may vary. Message and data rates may apply.
-      Reply STOP to opt out. Reply HELP for help.
+      By checking this box, you consent to receive admissions and appointment text
+      messages from Buena Vista Recovery. Message frequency may vary. Message and data
+      rates may apply. Reply STOP to opt out. Reply HELP for help.
       <a href="/privacy-policy/" class="text-teal font-semibold underline underline-offset-2" onclick="event.stopPropagation()">Privacy Policy</a>
       {' '}&amp;{' '}
       <a href="/terms-of-use/" class="text-teal font-semibold underline underline-offset-2" onclick="event.stopPropagation()">Terms of Service</a>.
