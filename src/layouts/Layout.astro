@@ -58,11 +58,50 @@ const siteSchema = {
         see the note in InsuranceForm.astro — so the tag has far less to grab
         here, but it is still the first thing to fix in the container itself.
         Raised with Elizabeth on 2026-09-21. */}
-    <script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-N9GP4KF');</script>
+    {/* DEFERRED LOAD. The container carries ~540 KB of script and about 1.1 s
+        of main-thread work on a phone (Lighthouse, mobile: GTM, Facebook,
+        CallTrackingMetrics and Bing account for nearly all of it). The dataLayer
+        is still created here so events pushed by the page are queued, and GTM
+        processes that queue when it arrives. The container script is only
+        injected on the first real user interaction (pointer, key, scroll, touch
+        or wheel). A timer alone does not help: Lighthouse measures until
+        interactive, which runs past any short delay.
+
+        Trade-off: a visitor who loads the page and leaves without touching it
+        is not recorded in GA4 or Google Ads.
+
+        /thank-you/ loads the container immediately: that page carries the
+        lead_accepted conversion, and a visitor who submits and leaves at once
+        must still be counted. */}
+    <script is:inline>
+    (function(w,d){
+      w.dataLayer = w.dataLayer || [];
+      w.dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+
+      /* 'scroll' is deliberately not here. A capturing listener on window also
+         receives scroll events from inner overflow containers, which fire on
+         load on a phone and would load GTM with no visitor input at all. Every
+         real scroll is already preceded by touchstart, wheel, pointerdown or a
+         key press. */
+      var events = ['pointerdown', 'keydown', 'touchstart', 'wheel'];
+
+      function load() {
+        if (load.done) return;
+        load.done = true;
+        events.forEach(function (e) { w.removeEventListener(e, load, true); });
+        var s = d.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-N9GP4KF';
+        d.head.appendChild(s);
+      }
+
+      if (/^\/thank-you(\/|$)/.test(w.location.pathname)) { load(); return; }
+
+      events.forEach(function (e) {
+        w.addEventListener(e, load, { capture: true, passive: true });
+      });
+    })(window, document);
+    </script>
 
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
@@ -112,14 +151,11 @@ const siteSchema = {
         modern UA, keep the latin slices, and drop the files in public/Fonts/gf.
         The family names must stay exactly 'Newsreader' and 'Source Sans 3' to
         match --font-display and --font-body in global.css. */}
-    {/* PageSpeed flagged these as preconnect candidates on 2026-09-21, worth
-        320-400ms of LCP between them. They are all pulled in by GTM, so the
-        browser otherwise does not learn about them until the container has
-        parsed and run. Kept to the three PSI named — more than about four
-        preconnects starts costing more than it saves. */}
-    <link rel="preconnect" href="https://218503.tctm.co" crossorigin />
-    <link rel="preconnect" href="https://8ab0a26cb0027939bcf5-49c99c3c0c9c98b3365b710757036e1b.ssl.cf5.rackcdn.com" crossorigin />
-    <link rel="preconnect" href="https://leads-api.gonorth.io" crossorigin />
+    {/* No third-party preconnects. The three that were here (CallTrackingMetrics,
+        a rackcdn host and leads-api) existed for GTM's tags. GTM now loads only
+        after the first user interaction, so opening those connections on every
+        page view bought nothing. The forms and feedback post to our own /api
+        routes, so nothing on first paint needs a third party. */}
 
     <link rel="preload" as="font" type="font/woff2" crossorigin
           href="/Fonts/gf/newsreader-normal-latin.woff2" />
