@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="280" viewBox="0 0 720 280" role="img" aria-labelledby="mdw-title mdw-desc">
+  <title id="mdw-title">How long meth is detectable, by test type</title>
+  <desc id="mdw-desc">Three detection windows: urine testing detects meth for 3 to 10 days after last use, blood testing for 1 to 3 days, and hair testing for up to 90 days.</desc>
+
+  <rect x="1" y="1" width="718" height="278" rx="14" fill="#FAF7F2" stroke="#EFE7DA" stroke-width="1"/>
+  <rect x="1" y="1" width="718" height="5" rx="2.5" fill="#B9975B"/>
+
+  <text x="40" y="42" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" letter-spacing="1.6" fill="#B9975B">HOW LONG METH IS DETECTABLE, BY TEST</text>
+  <line x1="40" y1="54" x2="680" y2="54" stroke="#EFE7DA" stroke-width="1"/>
+
+  <line x1="255" y1="72" x2="255" y2="252" stroke="#EFE7DA" stroke-width="1" stroke-dasharray="2 4"/>
+  <line x1="465" y1="72" x2="465" y2="252" stroke="#EFE7DA" stroke-width="1" stroke-dasharray="2 4"/>
+
+  <!-- Column 1: Urine -->
+  <g transform="translate(150,108)">
+    <circle r="24" fill="#FFFFFF" stroke="#002B5C" stroke-width="2"/>
+    <path d="M-7,-9 L-7,2 C-7,8 -2,11 0,11 C2,11 7,8 7,2 L7,-9 Z" fill="none" stroke="#002B5C" stroke-width="1.6" stroke-linejoin="round"/>
+    <path d="M-9,-9 L9,-9" fill="none" stroke="#002B5C" stroke-width="1.6" stroke-linecap="round"/>
+  </g>
+  <text x="150" y="166" font-family="Georgia, 'Times New Roman', serif" font-size="25" font-weight="600" fill="#002B5C" text-anchor="middle">3&ndash;10 days</text>
+  <text x="150" y="192" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#2B2B2B" text-anchor="middle">
+    <tspan x="150" dy="0">urine test</tspan>
+    <tspan x="150" dy="16">the most common type</tspan>
+  </text>
+
+  <!-- Column 2: Blood -->
+  <g transform="translate(360,108)">
+    <circle r="24" fill="#FFFFFF" stroke="#002B5C" stroke-width="2"/>
+    <path d="M0,-11 C5,-3 9,2 9,6 C9,11.5 4.5,15 0,15 C-4.5,15 -9,11.5 -9,6 C-9,2 -5,-3 0,-11 Z" fill="none" stroke="#002B5C" stroke-width="1.6" stroke-linejoin="round"/>
+  </g>
+  <text x="360" y="166" font-family="Georgia, 'Times New Roman', serif" font-size="25" font-weight="600" fill="#002B5C" text-anchor="middle">1&ndash;3 days</text>
+  <text x="360" y="192" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#2B2B2B" text-anchor="middle">
+    <tspan x="360" dy="0">blood test</tspan>
+    <tspan x="360" dy="16">used in ER and forensic settings</tspan>
+  </text>
+
+  <!-- Column 3: Hair -->
+  <g transform="translate(570,108)">
+    <circle r="24" fill="#FFFFFF" stroke="#2E7D8A" stroke-width="2"/>
+    <path d="M-7,-11 C-9,-6 -5,-3 -7,2 C-9,7 -5,10 -7,13" fill="none" stroke="#2E7D8A" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M0,-11 C-2,-6 2,-3 0,2 C-2,7 2,10 0,13" fill="none" stroke="#2E7D8A" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M7,-11 C5,-6 9,-3 7,2 C5,7 9,10 7,13" fill="none" stroke="#2E7D8A" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+  <text x="570" y="166" font-family="Georgia, 'Times New Roman', serif" font-size="25" font-weight="600" fill="#002B5C" text-anchor="middle">90 days</text>
+  <text x="570" y="192" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#2B2B2B" text-anchor="middle">
+    <tspan x="570" dy="0">hair test, upper limit</tspan>
+    <tspan x="570" dy="16">longest detection window</tspan>
+  </text>
+
+  <text x="40" y="264" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#7A7568" text-anchor="start">Detection windows vary by frequency of use, dose, purity, and method of use &mdash; see Sources below</text>
+</svg>
