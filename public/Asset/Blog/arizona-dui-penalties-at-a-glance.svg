@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="380" viewBox="0 0 720 380" role="img" aria-labelledby="dui-title dui-desc">
+  <title id="dui-title">Arizona DUI penalties at a glance</title>
+  <desc id="dui-desc">First DUI at BAC 0.08% to 0.149%: minimum 10 days jail, $1,250 fine, 90-day license suspension. First DUI at BAC 0.15% to 0.199%: minimum 30 days jail, $2,500 fine, 90-day suspension. First DUI at BAC 0.20% and above: minimum 45 days jail, $2,750 fine, 90-day suspension. Second DUI within 7 years: minimum 90 days jail, $3,000 fine, license revoked for 1 year.</desc>
+
+  <rect x="1" y="1" width="718" height="378" rx="14" fill="#FAF7F2" stroke="#EFE7DA" stroke-width="1"/>
+  <rect x="1" y="1" width="718" height="5" rx="2.5" fill="#B9975B"/>
+
+  <text x="40" y="42" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" letter-spacing="1.6" fill="#B9975B">ARIZONA DUI PENALTIES AT A GLANCE</text>
+  <line x1="40" y1="54" x2="680" y2="54" stroke="#EFE7DA" stroke-width="1"/>
+
+  <!-- Header row -->
+  <rect x="40" y="66" width="640" height="32" fill="#F3EBDA"/>
+  <text x="56" y="87" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" fill="#002B5C">BAC Level</text>
+  <text x="360" y="87" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" fill="#002B5C" text-anchor="middle">Min. Jail</text>
+  <text x="480" y="87" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" fill="#002B5C" text-anchor="middle">Min. Fine</text>
+  <text x="610" y="87" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" fill="#002B5C" text-anchor="middle">License Suspension</text>
+
+  <!-- Row backgrounds -->
+  <rect x="40" y="98" width="640" height="53" fill="#FFFFFF"/>
+  <rect x="40" y="151" width="640" height="53" fill="#F7F2E8"/>
+  <rect x="40" y="204" width="640" height="53" fill="#FFFFFF"/>
+  <rect x="40" y="257" width="640" height="53" fill="#F7F2E8"/>
+
+  <!-- Row divider lines -->
+  <line x1="40" y1="98" x2="680" y2="98" stroke="#EFE7DA" stroke-width="1"/>
+  <line x1="40" y1="151" x2="680" y2="151" stroke="#EFE7DA" stroke-width="1"/>
+  <line x1="40" y1="204" x2="680" y2="204" stroke="#EFE7DA" stroke-width="1"/>
+  <line x1="40" y1="257" x2="680" y2="257" stroke="#EFE7DA" stroke-width="1"/>
+  <line x1="40" y1="310" x2="680" y2="310" stroke="#EFE7DA" stroke-width="1"/>
+
+  <!-- Column divider lines -->
+  <line x1="300" y1="66" x2="300" y2="310" stroke="#EFE7DA" stroke-width="1" stroke-dasharray="2 4"/>
+  <line x1="420" y1="66" x2="420" y2="310" stroke="#EFE7DA" stroke-width="1" stroke-dasharray="2 4"/>
+  <line x1="540" y1="66" x2="540" y2="310" stroke="#EFE7DA" stroke-width="1" stroke-dasharray="2 4"/>
+
+  <!-- Row 1: First DUI, 0.08-0.149 -->
+  <text x="56" y="120" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#2B2B2B">First DUI</text>
+  <text x="56" y="138" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#7A7568">BAC 0.08%&#8211;0.149%</text>
+  <text x="360" y="130" font-family="Georgia, 'Times New Roman', serif" font-size="17" font-weight="600" fill="#002B5C" text-anchor="middle">10 days</text>
+  <text x="480" y="130" font-family="Georgia, 'Times New Roman', serif" font-size="17" font-weight="600" fill="#002B5C" text-anchor="middle">$1,250</text>
+  <text x="610" y="130" font-family="Georgia, 'Times New Roman', serif" font-size="17" font-weight="600" fill="#002B5C" text-anchor="middle">90 days</text>
+
+  <!-- Row 2: First DUI, 0.15-0.199 -->
+  <text x="56" y="173" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#2B2B2B">First DUI</text>
+  <text x="56" y="191" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#7A7568">BAC 0.15%&#8211;0.199%</text>
+  <text x="360" y="183" font-family="Georgia, 'Times New Roman', serif" font-size="17" font-weight="600" fill="#002B5C" text-anchor="middle">30 days</text>
+  <text x="480" y="183" font-family="Georgia, 'Times New Roman', serif" font-size="17" font-weight="600" fill="#002B5C" text-anchor="middle">$2,500</text>
+  <text x="610" y="183" font-family="Georgia, 'Times New Roman', serif" font-size="17" font-weight="600" fill="#002B5C" text-anchor="middle">90 days</text>
+
+  <!-- Row 3: First DUI, 0.20+ -->
+  <text x="56" y="226" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#2B2B2B">First DUI</text>
+  <text x="56" y="244" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#7A7568">BAC 0.20% and above</text>
+  <text x="360" y="236" font-family="Georgia, 'Times New Roman', serif" font-size="17" font-weight="600" fill="#002B5C" text-anchor="middle">45 days</text>
+  <text x="480" y="236" font-family="Georgia, 'Times New Roman', serif" font-size="17" font-weight="600" fill="#002B5C" text-anchor="middle">$2,750</text>
+  <text x="610" y="236" font-family="Georgia, 'Times New Roman', serif" font-size="17" font-weight="600" fill="#002B5C" text-anchor="middle">90 days</text>
+
+  <!-- Row 4: Second DUI in 7 years -->
+  <text x="56" y="279" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#2B2B2B">Second DUI</text>
+  <text x="56" y="297" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#7A7568">within 7 years</text>
+  <text x="360" y="289" font-family="Georgia, 'Times New Roman', serif" font-size="17" font-weight="600" fill="#2E7D8A" text-anchor="middle">90 days</text>
+  <text x="480" y="289" font-family="Georgia, 'Times New Roman', serif" font-size="17" font-weight="600" fill="#2E7D8A" text-anchor="middle">$3,000</text>
+  <text x="610" y="289" font-family="Georgia, 'Times New Roman', serif" font-size="17" font-weight="600" fill="#2E7D8A" text-anchor="middle">Revoked 1 yr</text>
+
+  <text x="40" y="340" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#7A7568" text-anchor="start">Minimums under Arizona&#8217;s DUI statutes (A.R.S. 28-1381, 28-1382) &#8212; penalties rise with prior offenses</text>
+</svg>
