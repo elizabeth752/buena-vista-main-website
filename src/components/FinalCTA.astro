@@ -1,25 +1,62 @@
 ---
-import Horizon from './Horizon.astro';
+/* Closing CTA: the Chandler building at dusk. The phone is swapped by CTM. */
+const base = '/Asset/stock%20photo/Desktop%20Dimensions/Facility/Evening%20exterior%20facade%20with%20illuminated%20entrance%20and%20curved%20driveway-cta';
+// The benefits page never links to itself.
+const verify = '/insurance/verify-your-benefits/';
+const showVerify = Astro.url.pathname.replace(/\/?$/, '/') !== verify;
 ---
-{/* Closing CTA. One soft ridge rises behind it — the motif's second and final
-     appearance on the page. */}
-<section class="bg-cream">
-  <Horizon variant="ridge" class="-mb-px" />
-
-  <div class="bg-cream-soft">
-    <div class="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8 py-[70px]">
-      <h2 class="font-display text-charcoal mb-5">
-        Start with one call. We'll take it from there.
-      </h2>
-      <p class="font-body text-charcoal text-[20px] leading-[33px] mb-9">
-        We answer at any hour of the day or night. There is nothing you have to decide on that first call, and nothing you need to have worked out before you make it.
-      </p>
-      <a href="tel:8883625576" class="inline-flex items-center justify-center gap-3 bg-gold-deep hover:bg-navy text-white font-semibold h-14 px-9 rounded-lg transition-colors font-body text-[17px]">
-        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
-        </svg>
-        <span class="tel-number">Call (888) 362-5576</span>
-      </a>
+<section class="fc">
+  <img
+    src={`${base}-1600.webp`}
+    srcset={`${base}-900.webp 900w, ${base}-1600.webp 1600w`}
+    sizes="100vw"
+    width="1600"
+    height="966"
+    alt=""
+    loading="lazy"
+    decoding="async"
+  />
+  <div class="fc-wrap">
+    <div class="fc-copy">
+      <h2 class="font-display">Start with one call. We'll take it from there.</h2>
+      <p class="font-body">We answer at any hour of the day or night. There is nothing you have to decide on that first call.</p>
+      <div class:list={['fc-btns', !showVerify && 'fc-single']}>
+        <a class="fc-btn fc-white font-body" href="tel:8883625576">
+          <svg class="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+          </svg>
+          <span class="tel-number">(888) 362-5576</span>
+        </a>
+        {showVerify && <a class="fc-btn fc-line font-body" href={verify}>Verify insurance</a>}
+      </div>
     </div>
   </div>
 </section>
+
+<style>
+  .fc { position: relative; overflow: hidden; background: #001E42; color: #fff; }
+  .fc > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 70% 60%; }
+  .fc::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgb(0 30 66 / .94) 0%, rgb(0 30 66 / .82) 42%, rgb(0 30 66 / .25) 100%); }
+  .fc-wrap { position: relative; z-index: 1; max-width: 80rem; margin-inline: auto; padding: 96px 20px; }
+  .fc-copy { max-width: 600px; }
+  .fc h2 { margin-bottom: 18px; color: #fff; }
+  .fc p { margin-bottom: 30px; font-size: 19px; line-height: 31px; color: rgb(255 255 255 / .9); }
+  .fc-btns { display: grid; gap: 12px; grid-template-columns: 1fr; }
+  .fc-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 45px; padding: 0 18px; border: 2px solid transparent; border-radius: 8px; font-weight: 700; font-size: 16px; line-height: 1; white-space: nowrap; transition: background-color .2s, color .2s, border-color .2s; }
+  .fc-white { background: #fff; color: #002B5C; }
+  .fc-white:hover { background: #EFE7DA; }
+  .fc-line { border-color: rgb(255 255 255 / .7); color: #fff; }
+  .fc-line:hover { background: #fff; color: #002B5C; }
+  @media (min-width: 640px) {
+    .fc-btns { grid-template-columns: repeat(2, 210px); }
+    .fc-single { grid-template-columns: 210px; }
+  }
+  @media (min-width: 1024px) { .fc-wrap { padding-inline: 32px; } }
+  @media (max-width: 767px) {
+    .fc-wrap { padding-block: 76px 64px; }
+  }
+  /* Below desktop the copy spans most of the photo, so the shade covers it evenly. */
+  @media (max-width: 1023px) {
+    .fc::after { background: linear-gradient(180deg, rgb(0 30 66 / .78), rgb(0 30 66 / .92)); }
+  }
+</style>
