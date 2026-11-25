@@ -1,0 +1,22 @@
+---
+/* Portrait photo for the arched heroes. `src` is the landscape WebP; the files
+   served are its 4:5 crops (-v-520/-780/-1024), cut from the 2120x1280 master by
+   scripts/photo-variants.mjs. Serving the landscape file here made the browser
+   size it by width and then stretch it to the arch height. */
+interface Props { src: string; alt: string }
+const { src, alt } = Astro.props;
+const v = (w: number) => src.replace(/\.webp$/, `-v-${w}.webp`);
+// srcset is split on commas, and some file names contain them.
+const safe = (w: number) => v(w).replaceAll(',', '%2C');
+---
+<img
+  src={v(780)}
+  srcset={[520, 780, 1024].map(w => `${safe(w)} ${w}w`).join(', ')}
+  sizes="(min-width: 1024px) 520px, calc(100vw - 40px)"
+  alt={alt}
+  class="w-full object-cover aspect-[4/5]"
+  fetchpriority="high"
+  decoding="async"
+  width="1024"
+  height="1280"
+/>

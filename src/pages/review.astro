@@ -22,6 +22,7 @@ const WORDS = ['Poor', 'Fair', 'Okay', 'Good', 'Excellent'];
 const STAR = 'M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z';
 
 const band = encodeURI('/Asset/stock photo/Desktop Dimensions/Facility/Sunlit common hall with lounge furniture, tall windows, and open floor plan.webp');
+const bandSet = [[1000, '-w-1000'], [1600, ''], [2120, '-w-2120']].map(([w, s]) => `${band.replace(/\.webp$/, `${s}.webp`)} ${w}w`).join(', ');
 const logo = encodeURI('/Asset/stock photo/Logo Buena Vista.svg');
 
 /* Verbatim excerpts of the Google reviews already used in Testimonials.astro. */
@@ -41,7 +42,7 @@ const reviews = [
   </header>
 
   <div class="rv-band" role="region" aria-label="Photo of the facility">
-    <img src={band} alt="Sunlit common hall at Buena Vista Chandler" fetchpriority="high" />
+    <img src={band} srcset={bandSet} sizes="100vw" alt="Sunlit common hall at Buena Vista Chandler" fetchpriority="high" />
   </div>
 
   <main id="main" tabindex="-1" class="rv-wrap">

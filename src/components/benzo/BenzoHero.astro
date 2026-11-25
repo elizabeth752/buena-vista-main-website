@@ -1,4 +1,5 @@
 ---
+import ArchPhoto from '../ArchPhoto.astro';
 import Horizon from '../Horizon.astro';
 
 /* Hero standard: H1 carries the keyword, the emotional line sits above the
@@ -78,13 +79,7 @@ const points = [
 
       <div>
         <div class="overflow-hidden rounded-t-[160px] rounded-b-xl shadow-xl">
-          <img
-            src="/Asset/stock%20photo/Desktop%20Dimensions/Facility/Intimate%20fireside%20lounge%20with%20four%20armchairs%20and%20built-in%20fireplace.webp"
-            alt="A fireside lounge at Buena Vista in Chandler, with armchairs around a lit built-in fireplace"
-            class="w-full object-cover aspect-[4/5]"
-            fetchpriority="high"
-            decoding="async"
-          width="1600" height="966" />
+          <ArchPhoto src="/Asset/stock%20photo/Desktop%20Dimensions/Facility/Intimate%20fireside%20lounge%20with%20four%20armchairs%20and%20built-in%20fireplace.webp" alt="A fireside lounge at Buena Vista in Chandler, with armchairs around a lit built-in fireplace" />
         </div>
         <Horizon variant="rule" class="mt-5" />
         <p class="font-body text-muted text-[15px] leading-[24px] mt-3">

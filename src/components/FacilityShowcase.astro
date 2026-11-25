@@ -20,7 +20,11 @@ const images = [
     file: 'Sunlit%20common%20hall%20with%20lounge%20furniture,%20tall%20windows,%20and%20open%20floor%20plan.webp',
     alt: 'A sunlit common hall with lounge furniture, tall windows and an open floor plan',
   },
-].map(i => ({ ...i, src: BASE + i.file }));
+].map(i => {
+  const u = BASE + i.file;
+  const v = (w: number) => u.replace(/\.webp$/, `-w-${w}.webp`);
+  return { ...i, src: u, set: `${v(1000)} 1000w, ${u} 1600w, ${v(2120)} 2120w` };
+});
 ---
 <section class="w-full" aria-hidden="true">
   <div class="flex flex-col md:flex-row w-full">
@@ -28,6 +32,8 @@ const images = [
       <div class={`${i === 1 ? 'hidden md:block' : ''} w-full md:w-1/2 h-[420px] md:h-[640px]`}>
         <img
           src={img.src}
+          srcset={img.set}
+          sizes="(min-width: 768px) 1060px, 534px"
           alt={img.alt}
           class="w-full h-full object-cover"
           loading="lazy"

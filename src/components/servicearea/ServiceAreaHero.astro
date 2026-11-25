@@ -1,4 +1,5 @@
 ---
+import ArchPhoto from '../ArchPhoto.astro';
 import Horizon from '../Horizon.astro';
 
 /* Shared hero for the service-area pages.
@@ -72,7 +73,7 @@ const { city, eyebrow, title, points, disclosure, image, alt, caption } = Astro.
 
       <div>
         <div class="overflow-hidden rounded-t-[160px] rounded-b-xl shadow-xl">
-          <img src={image} alt={alt} class="w-full object-cover aspect-[4/5]" fetchpriority="high" decoding="async" />
+          <ArchPhoto src={image} alt={alt} />
         </div>
         <Horizon variant="rule" class="mt-5" />
         <p class="font-body text-muted text-[15px] leading-[24px] mt-3">{caption}</p>

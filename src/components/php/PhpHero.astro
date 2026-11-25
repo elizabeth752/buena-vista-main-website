@@ -1,4 +1,5 @@
 ---
+import ArchPhoto from '../ArchPhoto.astro';
 import Horizon from '../Horizon.astro';
 
 /* Hero standard: eyebrow, keyword H1, bullets with one icon each, two CTAs.
@@ -84,13 +85,7 @@ const bullets = [
 
       <div>
         <div class="overflow-hidden rounded-t-[160px] rounded-b-xl shadow-xl">
-          <img
-            src="/Asset/stock%20photo/Desktop%20Dimensions/Facility/Flexible%20gathering%20space%20with%20movable%20seating,%20support%20columns,%20and%20checkerboard%20flooring.webp"
-            alt="A flexible gathering space at Buena Vista in Chandler, with movable seating and tall windows"
-            class="w-full object-cover aspect-[4/5]"
-            fetchpriority="high"
-            decoding="async"
-          width="1600" height="966" />
+          <ArchPhoto src="/Asset/stock%20photo/Desktop%20Dimensions/Facility/Flexible%20gathering%20space%20with%20movable%20seating,%20support%20columns,%20and%20checkerboard%20flooring.webp" alt="A flexible gathering space at Buena Vista in Chandler, with movable seating and tall windows" />
         </div>
         <Horizon variant="rule" class="mt-5" />
         <p class="font-body text-muted text-[15px] leading-[24px] mt-3">

@@ -6,7 +6,8 @@ const locations = [
     open: true,
     address: '3033 S Arizona Ave, Chandler, AZ 85286',
     mapQuery: '3033+S+Arizona+Ave,+Chandler,+AZ+85286',
-    photo: '/Asset/stock%20photo/Desktop%20Dimensions/Chandler%20recovery%20center%20exterior%20with%20covered%20entrance%20and%20tower%20feature.webp',
+    photo: '/Asset/stock%20photo/Desktop%20Dimensions/Facility/Contemporary%20healthcare%20building%20with%20tower%20entry%20and%20desert%20landscaping-w-2120.webp',
+    photoSet: '/Asset/stock%20photo/Desktop%20Dimensions/Facility/Contemporary%20healthcare%20building%20with%20tower%20entry%20and%20desert%20landscaping-w-1000.webp 1000w, /Asset/stock%20photo/Desktop%20Dimensions/Facility/Contemporary%20healthcare%20building%20with%20tower%20entry%20and%20desert%20landscaping-w-2120.webp 2120w',
     alt: 'Buena Vista Health & Recovery Centers — Chandler, AZ exterior',
     nearby: 'Easily reached from Phoenix, Tempe, Mesa, Gilbert, and the greater East Valley.',
   },
@@ -35,7 +36,7 @@ const locations = [
     {locations.map(loc => (
       <div class="relative">
         <div class="rounded-xl overflow-hidden h-[260px] sm:h-[340px] lg:h-[520px]">
-          <img src={loc.photo} alt={loc.alt} class={`w-full h-full object-cover ${loc.open ? '' : 'grayscale opacity-60'}`} loading="lazy" decoding="async" />
+          <img src={loc.photo} srcset={loc.photoSet} sizes="(min-width: 1024px) 1216px, (min-width: 640px) 100vw, 440px" alt={loc.alt} class={`w-full h-full object-cover ${loc.open ? '' : 'grayscale opacity-60'}`} loading="lazy" decoding="async" />
         </div>
 
         <div class="relative -mt-10 mx-4 sm:mx-8 lg:mx-0 lg:mt-0 lg:absolute lg:inset-y-0 lg:left-8 xl:left-14 lg:flex lg:items-center lg:w-[440px] xl:w-[480px]">

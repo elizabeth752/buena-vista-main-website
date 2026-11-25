@@ -6,7 +6,7 @@
    Five cards, so the numbering runs 01–05. Each level links to its page. */
 const levels = [
   {
-    image: '/Asset/stock%20photo/Desktop%20Dimensions/Medical%20Detox.webp',
+    image: '/Asset/stock%20photo/Desktop%20Dimensions/Facility/Private%20bedroom%20with%20upholstered%20bed,%20reading%20chair,%20and%20large%20window.webp',
     label: 'Level of Care · 01',
     title: 'Medical detox',
     desc: 'Safe, medically supervised withdrawal management for alcohol, opioids, benzodiazepines, and other substances. Our clinical team monitors you around the clock to manage symptoms, minimize discomfort, and prepare your body for the next stage of recovery.',
@@ -14,7 +14,7 @@ const levels = [
     href: '/medical-detox',
   },
   {
-    image: '/Asset/stock%20photo/Desktop%20Dimensions/Inpatient%20Residential%20Treatment.webp',
+    image: '/Asset/stock%20photo/Desktop%20Dimensions/Facility/Residential%20living%20room%20with%20lounge%20seating,%20coffee%20table,%20and%20open%20kitchen%20view.webp',
     label: 'Level of Care · 02',
     title: 'Inpatient residential treatment',
     desc: 'Structured, immersive residential care for adults seeking lasting recovery. Group therapy twice a day, a weekly individual session, psychoeducation, and clinical programming in a supportive, distraction-free environment where the majority of rooms are private suites, with meals prepared by a dedicated culinary team.',
@@ -30,7 +30,7 @@ const levels = [
     href: '/programs/partial-hospitalization-php/',
   },
   {
-    image: '/Asset/stock%20photo/Desktop%20Dimensions/Outpatient%20Continuum.webp',
+    image: '/Asset/stock%20photo/Desktop%20Dimensions/Facility/Central%20welcome%20desk%20with%20pendant%20lighting%20and%20adjacent%20activity%20area.webp',
     label: 'Level of Care · 04',
     title: 'Outpatient treatment',
     desc: 'Outpatient treatment is designed to help you step back into real life, where treatment and real life start to overlap. You stay engaged in therapy, groups, community and clinical support while you return to work, home, family and a new routine. Many people pair this phase with a sober living home for added support and structure, with the same autonomy and freedom.',
@@ -46,6 +46,8 @@ const levels = [
     href: '/programs/aftercare/',
   },
 ];
+// Copies cut by scripts/photo-variants.mjs. The card crops the sides, so the slot is sized by its height.
+const set = (u: string) => [1000, 1800].map(w => `${u.replace(/\.webp$/, `-w-${w}.webp`)} ${w}w`).join(', ');
 ---
 <section id="programs" class="bg-white py-[50px]">
   <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
@@ -68,6 +70,8 @@ const levels = [
           <div class={`relative aspect-[16/9] lg:aspect-auto ${i % 2 === 1 ? 'lg:order-2' : ''}`}>
             <img
               src={level.image}
+              srcset={set(level.image)}
+              sizes="(min-width: 1024px) 900px, 100vw"
               alt={level.title}
               class="w-full h-full object-cover"
             loading="lazy" decoding="async" />
