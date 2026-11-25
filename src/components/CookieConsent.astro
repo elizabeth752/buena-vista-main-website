@@ -271,7 +271,11 @@ const theme = `--cc-primary:${primary};--cc-primary-dark:${primaryDark};--cc-tex
         });
 
         var saved = read();
-        if (saved && saved.functional) loadEmbeds();
+        // The banner sits at the top of <body> so it paints with the page; the embeds come later in the document
+        if (saved && saved.functional) {
+          if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', loadEmbeds);
+          else loadEmbeds();
+        }
         if (!saved) open(); else reserve();
       })();
     </script>
