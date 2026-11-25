@@ -13,6 +13,7 @@ import Layout from '../layouts/Layout.astro';
 import TopBar from '../components/TopBar.astro';
 import Nav from '../components/Nav.astro';
 import FinalCTA from '../components/FinalCTA.astro';
+import SiteFooter from '../components/SiteFooter.astro';
 import posts from '../data/blog/posts.json';
 import { publishedTeam as team } from '../data/team';
 
@@ -110,6 +111,7 @@ const description = 'Every page on the Buena Vista Health & Recovery site, group
 <Layout title={title} description={description}>
   <TopBar />
   <Nav />
+  <main id="main" tabindex="-1">
 
   <section class="bg-cream py-[70px]">
     <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
@@ -155,4 +157,6 @@ const description = 'Every page on the Buena Vista Health & Recovery site, group
   </section>
 
   <FinalCTA />
+  </main>
+  <SiteFooter />
 </Layout>

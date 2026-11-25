@@ -23,6 +23,7 @@ import ApplyForm from '../../components/careers/ApplyForm.astro';
 import OurTeam from '../../components/OurTeam.astro';
 import Testimonials from '../../components/Testimonials.astro';
 import FinalCTA from '../../components/FinalCTA.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
 
 const title = 'Careers at Buena Vista Health & Recovery, Chandler AZ';
 const description =
@@ -68,6 +69,7 @@ const schema = {
 <Layout title={title} description={description}>
   <TopBar />
   <Nav />
+  <main id="main" tabindex="-1">
 
   <section id="hero" class="bg-cream">
     <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-[60px] lg:py-[80px]">
@@ -155,6 +157,8 @@ const schema = {
   </section>
 
   <FinalCTA />
+  </main>
+  <SiteFooter />
 
   <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
 </Layout>

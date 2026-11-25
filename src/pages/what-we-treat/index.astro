@@ -10,6 +10,7 @@ import HubCards from '../../components/hub/HubCards.astro';
 import Testimonials from '../../components/Testimonials.astro';
 import VerifySection from '../../components/VerifySection.astro';
 import FinalCTA from '../../components/FinalCTA.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
 
 const title = 'What We Treat | Buena Vista, Chandler AZ';
 const description = 'Alcohol, opioids and fentanyl, stimulants, benzodiazepines and co-occurring mental health conditions, treated at our Chandler, AZ facility.';
@@ -33,6 +34,7 @@ const mentalHealth = [
 ---
 <Layout title={title} description={description}>
   <TopBar /><Nav />
+  <main id="main" tabindex="-1">
   <HubHero
     eyebrow="What we treat"
     title="What We Treat in Chandler, Arizona"
@@ -46,4 +48,6 @@ const mentalHealth = [
   <HubCards eyebrow="Mental health" title="What we treat alongside it" intro="These are addressed within detox and residential care rather than as a separate program." items={mentalHealth} bg="bg-sage-tint" />
   <Testimonials /><VerifySection />
   <FinalCTA />
+  </main>
+  <SiteFooter />
 </Layout>

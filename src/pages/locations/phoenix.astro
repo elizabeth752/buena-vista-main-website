@@ -29,6 +29,7 @@ import PhoenixQuestions from '../../components/phoenix/PhoenixQuestions.astro';
 import Testimonials from '../../components/Testimonials.astro';
 import VerifySection from '../../components/VerifySection.astro';
 import FinalCTA from '../../components/FinalCTA.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
 
 const title = 'Drug & Alcohol Rehab Serving Phoenix, AZ | Buena Vista';
 const description =
@@ -58,6 +59,7 @@ const schema = {
 <Layout title={title} description={description}>
   <TopBar />
   <Nav />
+  <main id="main" tabindex="-1">
 
   <PhoenixHero />
   <FromPhoenix />
@@ -66,6 +68,8 @@ const schema = {
   <PhoenixQuestions />
 
   <FinalCTA />
+  </main>
+  <SiteFooter />
 
   <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
 </Layout>

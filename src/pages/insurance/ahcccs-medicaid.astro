@@ -35,6 +35,7 @@ import AhcccsQuestions from '../../components/ahcccs/AhcccsQuestions.astro';
 import Testimonials from '../../components/Testimonials.astro';
 import VerifySection from '../../components/VerifySection.astro';
 import FinalCTA from '../../components/FinalCTA.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
 
 const title = 'AHCCCS & Medicaid Rehab Coverage in Chandler, AZ | Buena Vista';
 const description =
@@ -62,6 +63,7 @@ const schema = {
 <Layout title={title} description={description}>
   <TopBar />
   <Nav />
+  <main id="main" tabindex="-1">
 
   <AhcccsHero />
   <WhatAhcccsCovers />
@@ -71,6 +73,8 @@ const schema = {
   <AhcccsQuestions />
 
   <FinalCTA />
+  </main>
+  <SiteFooter />
 
   <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
 </Layout>

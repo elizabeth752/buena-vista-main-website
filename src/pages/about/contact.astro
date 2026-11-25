@@ -26,6 +26,7 @@ import HubHero from '../../components/hub/HubHero.astro';
 import ContactRoutes from '../../components/contactpage/ContactRoutes.astro';
 import GettingHere from '../../components/chandler/GettingHere.astro';
 import FinalCTA from '../../components/FinalCTA.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
 
 const title = 'Contact Us | Buena Vista, Chandler AZ';
 const description =
@@ -58,6 +59,7 @@ const schema = {
 <Layout title={title} description={description}>
   <TopBar />
   <Nav />
+  <main id="main" tabindex="-1">
 
   <HubHero
     eyebrow="Contact us"
@@ -94,6 +96,8 @@ const schema = {
   </section>
 
   <FinalCTA />
+  </main>
+  <SiteFooter />
 
   <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
 </Layout>

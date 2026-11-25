@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import A11yWidget from '../components/A11yWidget.astro';
 import { organization, breadcrumbs } from '../data/schema';
 interface Props {
   title?: string;
@@ -175,7 +176,9 @@ const siteSchema = {
     {/* GTM noscript fallback. Must be the first thing inside <body>. */}
     <noscript is:inline><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N9GP4KF"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <a href="#main" class="skip-link">Skip to content</a>
     <slot />
+    <A11yWidget />
   </body>
 </html>
 

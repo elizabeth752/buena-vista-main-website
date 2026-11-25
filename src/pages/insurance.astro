@@ -8,6 +8,7 @@ import FacilityShowcase from '../components/FacilityShowcase.astro';
 import Testimonials from '../components/Testimonials.astro';
 import FAQ from '../components/FAQ.astro';
 import FinalCTA from '../components/FinalCTA.astro';
+import SiteFooter from '../components/SiteFooter.astro';
 
 import InsuranceHero from '../components/insurance/InsuranceHero.astro';
 import HowVerifyWorks from '../components/insurance/HowVerifyWorks.astro';
@@ -76,6 +77,7 @@ const schema = {
 <Layout title={title} description={description}>
   <TopBar />
   <Nav />
+  <main id="main" tabindex="-1">
 
   <InsuranceHero />
   <HowVerifyWorks />
@@ -97,6 +99,8 @@ const schema = {
   />
 
   <FinalCTA />
+  </main>
+  <SiteFooter />
 
   <script type="application/ld+json" set:html={JSON.stringify(schema)} />
 </Layout>

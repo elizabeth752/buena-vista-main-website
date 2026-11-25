@@ -4,6 +4,7 @@ import TopBar from '../../../components/TopBar.astro';
 import Nav from '../../../components/Nav.astro';
 import VerifySection from '../../../components/VerifySection.astro';
 import FinalCTA from '../../../components/FinalCTA.astro';
+import SiteFooter from '../../../components/SiteFooter.astro';
 import Horizon from '../../../components/Horizon.astro';
 import { publishedTeam } from '../../../data/team';
 import posts from '../../../data/blog/posts.json';
@@ -51,6 +52,7 @@ const schema = {
 >
   <TopBar />
   <Nav />
+  <main id="main" tabindex="-1">
 
   <section class="bg-cream py-[60px] lg:py-[70px]">
     <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
@@ -137,6 +139,8 @@ const schema = {
 
   <VerifySection heading="Does your insurance cover treatment at Buena Vista?" bg="bg-cream" />
   <FinalCTA />
+  </main>
+  <SiteFooter />
 
   <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
 </Layout>

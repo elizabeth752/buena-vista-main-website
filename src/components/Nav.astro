@@ -7,13 +7,13 @@ const visible = mainNav
   .map(g => ({ ...g, columns: g.columns.map(c => ({ ...c, links: c.links.filter(l => !HIDE_UNBUILT || l.built) })).filter(c => c.links.length) }))
   .filter(g => g.columns.length && (!HIDE_UNBUILT || g.built));
 ---
-<nav id="main-nav" class="sticky top-0 z-50 bg-white border-b border-cream-soft shadow-sm">
+<nav id="main-nav" aria-label="Main" class="sticky top-0 z-50 bg-white border-b border-cream-soft shadow-sm">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between gap-3 h-16 md:h-18">
 
       {/* Logo */}
       <a href="/" class="shrink-0">
-        <img src="/Asset/stock%20photo/Logo%20Buena%20Vista.svg" alt="Buena Vista Health & Recovery Centers" class="h-7 sm:h-8 md:h-10 w-auto" fetchpriority="high" decoding="async" />
+        <img src="/Asset/stock%20photo/Logo%20Buena%20Vista.svg" alt="Buena Vista Health & Recovery Centers" class="h-7 sm:h-8 md:h-10 lg:h-8 xl:h-10 w-auto" fetchpriority="high" decoding="async" />
       </a>
 
       {/* Desktop nav. Each top-level label is a real link to its hub; the panel
@@ -23,7 +23,7 @@ const visible = mainNav
           <li class="group relative">
             <a
               href={group.href}
-              class="flex items-center gap-1 px-2.5 xl:px-3 py-6 text-charcoal/80 hover:text-teal text-[13px] xl:text-[15px] font-semibold tracking-tight xl:tracking-normal transition-colors whitespace-nowrap"
+              class="flex items-center gap-1 px-1.5 xl:px-3 py-6 text-charcoal/80 hover:text-teal text-[13px] xl:text-[15px] font-semibold tracking-tight xl:tracking-normal transition-colors whitespace-nowrap"
             >
               {group.label}
               {SHOW_BUILD_STATUS && !group.built && <span class="w-1 h-1 rounded-full bg-gold/70" aria-hidden="true"></span>}
@@ -44,7 +44,7 @@ const visible = mainNav
                  shrink-to-fit against the <li>, which is only as wide as the
                  word "Locations", so the columns collapse into one. */
               'invisible opacity-0 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 transition-opacity absolute top-full pt-1 z-50 w-max',
-              i >= Math.ceil(visible.length / 2) ? 'right-0' : 'left-0',
+              i >= Math.floor(visible.length / 2) ? 'right-0' : 'left-0',
             ]}>
               <div class="bg-white border border-cream-soft rounded-xl shadow-xl p-6 flex gap-8 max-w-[calc(100vw-3rem)]">
                 {group.columns.map(col => (

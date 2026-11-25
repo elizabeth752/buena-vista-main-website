@@ -244,3 +244,22 @@ details:not([open]) .faq-minus { display: none; }
 .prose-bv .not-prose a.bg-teal { color: #fff; }
 .prose-bv .not-prose ul { list-style: none; padding-left: 0; }
 .prose-bv .not-prose li::marker { content: none; }
+
+/* Skip link: visible only on keyboard focus. */
+.skip-link { position: absolute; left: 16px; top: -100px; z-index: 100; padding: 12px 18px; background: #fff; color: #002B5C; font-weight: 700; border-radius: 8px; }
+.skip-link:focus { top: 12px; }
+main:focus { outline: none; }
+
+/* Map and player placeholders, shown until Functional cookies are allowed. */
+.consent-ph { display: grid; place-content: center; justify-items: center; gap: 12px; padding: 24px; text-align: center; background: #F3F7F5; }
+.consent-ph p { margin: 0; }
+.consent-ph button { height: 45px; padding: 0 20px; border: 0; border-radius: 8px; background: #002B5C; color: #fff; font: inherit; font-weight: 700; cursor: pointer; }
+.consent-ph button:hover { background: #001E42; }
+.consent-ph a { color: #002B5C; text-decoration: underline; }
+
+/* Accessible text tones. Brand gold (2.6:1) and teal (4.4:1) do not reach AA on the light surfaces, so text uses a
+   darker ink there and keeps the brand tone on the dark ones. */
+:root, .bg-white, .bg-cream, .bg-cream-soft, .bg-sage-tint, .bg-sand { --gold-text: #7A5C24; --teal-text: #21616B; }
+.bg-navy, .bg-navy-deep, .bg-navy-mid, .bg-teal-dark, .bg-charcoal { --gold-text: #B9975B; --teal-text: #7CC4CF; }
+.text-gold, .text-gold-dark { color: var(--gold-text); }
+.text-teal { color: var(--teal-text); }

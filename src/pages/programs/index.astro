@@ -12,6 +12,7 @@ import HubCards from '../../components/hub/HubCards.astro';
 import Testimonials from '../../components/Testimonials.astro';
 import VerifySection from '../../components/VerifySection.astro';
 import FinalCTA from '../../components/FinalCTA.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
 
 const title = 'Programs & Levels of Care | Buena Vista, Chandler AZ';
 const description = 'The full continuum of care in Chandler, AZ: medical detox, residential treatment, PHP, IOP and outpatient treatment, with co-occurring mental health care throughout.';
@@ -33,6 +34,7 @@ const alongside = [
 ---
 <Layout title={title} description={description}>
   <TopBar /><Nav />
+  <main id="main" tabindex="-1">
   <HubHero
     eyebrow="Programs & levels of care"
     title="Treatment Programs and Levels of Care"
@@ -57,4 +59,6 @@ const alongside = [
   />
   <Testimonials /><VerifySection />
   <FinalCTA />
+  </main>
+  <SiteFooter />
 </Layout>

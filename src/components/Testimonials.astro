@@ -62,6 +62,9 @@ const reviews = [
     {/* Mobile: carousel (1.2 cards visible) · sm+: mosaic */}
     <div
       id="reviews-scroll"
+      tabindex="0"
+      role="group"
+      aria-label="Patient reviews"
       class="no-scrollbar flex overflow-x-auto snap-x snap-mandatory gap-4 sm:block sm:columns-2 lg:columns-3 sm:gap-5 sm:overflow-visible"
     >
       <div class="shrink-0 w-4 sm:hidden" aria-hidden="true"></div>
@@ -93,7 +96,7 @@ const reviews = [
           </div>
 
           {/* Review text: 4 lines visible, rest scrolls */}
-          <div class="max-h-[132px] overflow-y-auto pr-1">
+          <div class="max-h-[132px] overflow-y-auto pr-1" tabindex="0" role="group" aria-label={`Review by ${r.name}`}>
             <p class="font-body text-charcoal text-[16px] leading-[26px]">"{r.text}"</p>
           </div>
         </div>

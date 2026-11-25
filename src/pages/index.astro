@@ -18,10 +18,12 @@ import FacilityShowcase from '../components/FacilityShowcase.astro';
 import Testimonials from '../components/Testimonials.astro';
 import FAQ from '../components/FAQ.astro';
 import FinalCTA from '../components/FinalCTA.astro';
+import SiteFooter from '../components/SiteFooter.astro';
 ---
 <Layout>
   <TopBar />
   <Nav />
+  <main id="main" tabindex="-1">
 
   {/* Warm open, no form. Both audiences are spoken to before anything is asked. */}
   <Hero />
@@ -44,4 +46,6 @@ import FinalCTA from '../components/FinalCTA.astro';
   <FAQ />
 
   <FinalCTA />
+  </main>
+  <SiteFooter />
 </Layout>

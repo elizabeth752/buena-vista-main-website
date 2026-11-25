@@ -32,7 +32,7 @@ const isContact = variant === 'contact';
        Form heading + HIPAA badge as trust indicator.
        In-form headings are H5: Source Sans 3 600 · 22/29, not the display serif. */}
   <div class="flex flex-row items-center justify-between gap-3 mb-1">
-    <h5 class="font-body font-semibold text-[22px] leading-[29px] text-charcoal">{isContact ? 'Have us call you' : 'Check your coverage now'}</h5>
+    <p class="font-body font-semibold text-[22px] leading-[29px] text-charcoal">{isContact ? 'Have us call you' : 'Check your coverage now'}</p>
     <img src="/Asset/Accreditations/HIPAA%20Compliant.svg" alt="HIPAA Compliant" class="h-9 shrink-0" loading="lazy" decoding="async" />
   </div>
   <p class="text-charcoal text-[16px] leading-[26px] font-body mb-5">
@@ -60,7 +60,7 @@ const isContact = variant === 'contact';
            contact form promises "just a name and a number", so there it says
            optional. */}
       <div>
-        <label class="block text-xs font-bold text-charcoal uppercase tracking-wide mb-1.5" for={`${id}-dob`}>Date of Birth{isContact && <span class="normal-case font-normal tracking-normal text-charcoal/60"> (optional)</span>}</label>
+        <label class="block text-xs font-bold text-charcoal uppercase tracking-wide mb-1.5" for={`${id}-dob`}>Date of Birth{isContact && <span class="normal-case font-normal tracking-normal text-muted"> (optional)</span>}</label>
         <input id={`${id}-dob`} name="custom_fields[date_of_birth]" type="text" inputmode="numeric" autocomplete="bday" maxlength="10" placeholder="MM/DD/YYYY" pattern="(0[1-9]|1[0-2])/(0[1-9]|[12][0-9]|3[01])/(19|20)[0-9]{2}" title="Use the format MM/DD/YYYY" data-dob class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm font-body focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal transition-colors" />
       </div>
 {!isContact && (<>

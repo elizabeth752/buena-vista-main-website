@@ -40,11 +40,11 @@ const reviews = [
     <img src={logo} alt="Buena Vista Health &amp; Recovery Centers" width="232" height="40" />
   </header>
 
-  <div class="rv-band">
+  <div class="rv-band" role="region" aria-label="Photo of the facility">
     <img src={band} alt="Sunlit common hall at Buena Vista Chandler" fetchpriority="high" />
   </div>
 
-  <main class="rv-wrap">
+  <main id="main" tabindex="-1" class="rv-wrap">
     <section class="rv-note" aria-labelledby="rv-q">
       <img class="rv-mark" src="/brand-mark.svg" alt="" width="44" height="44" />
       <h1 id="rv-q">How was your experience at <em>Buena&nbsp;Vista?</em></h1>
@@ -127,6 +127,10 @@ const reviews = [
     <div class="rv-wrap">
       <span>Buena Vista Health &amp; Recovery Centers · 3033 S Arizona Ave, Chandler, AZ 85286</span>
       <span>Need us? <a class="tel-number" href="tel:8883625576">(888) 362-5576</a></span>
+      <span class="rv-legal">
+        <button type="button" class="cc-link" data-cookie-prefs>Cookie preferences</button>
+        <button type="button" class="cc-link" data-cookie-dns>Do Not Sell or Share My Personal Information</button>
+      </span>
     </div>
   </footer>
 </Layout>
@@ -235,8 +239,8 @@ const reviews = [
   .rv-lead { color: var(--color-muted); max-width: 46ch; margin: 0 auto; }
 
   .rv-stars { display: flex; justify-content: center; gap: clamp(4px, 1.6vw, 12px); margin-top: 6px; }
-  .rv-star { display: inline-block; appearance: none; border: 0; background: none; padding: 6px; cursor: pointer; border-radius: 8px; line-height: 0; }
-  .rv-star :global(svg) { width: clamp(44px, 11vw, 60px); height: auto; fill: #fff; stroke: var(--color-sand); stroke-width: 1.4; transition: fill .15s, stroke .15s, transform .15s; }
+  .rv-star { display: inline-block; appearance: none; border: 0; background: none; padding: clamp(0px, 1.6vw, 6px); cursor: pointer; border-radius: 8px; line-height: 0; }
+  .rv-star :global(svg) { width: clamp(40px, 11vw, 60px); height: auto; fill: #fff; stroke: var(--color-sand); stroke-width: 1.4; transition: fill .15s, stroke .15s, transform .15s; }
   .rv-star.on :global(svg) { fill: var(--color-gold); stroke: var(--color-gold); }
   .rv-star:hover :global(svg) { transform: translateY(-2px) scale(1.04); }
   .rv-word { font-family: var(--font-display); font-style: italic; color: var(--color-gold-deep); font-size: 20px; min-height: 1.5em; margin: 0; }
@@ -277,7 +281,8 @@ const reviews = [
   .rv-cards figcaption img { width: 38px; height: 38px; border-radius: 50%; object-fit: cover; }
   .rv-cards figcaption span { display: block; color: #E3A008; font-size: 13px; letter-spacing: 1px; font-weight: 400; }
 
-  .rv-footer { border-top: 1px solid var(--color-cream-soft); padding-block: 28px 40px; color: var(--color-muted); font-size: 15px; }
+  .rv-legal { display: flex; flex-wrap: wrap; gap: 6px 20px; }
+  .rv-footer { border-top: 1px solid var(--color-cream-soft); padding-block: 28px max(40px, var(--cc-reserve, 0px)); color: var(--color-muted); font-size: 15px; }
   .rv-footer .rv-wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
   .rv-footer a { color: var(--color-navy); font-weight: 600; text-decoration: none; }
 

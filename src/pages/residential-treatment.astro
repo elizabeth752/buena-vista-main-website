@@ -11,6 +11,7 @@ import Testimonials from '../components/Testimonials.astro';
 import FAQ from '../components/FAQ.astro';
 import VerifySection from '../components/VerifySection.astro';
 import FinalCTA from '../components/FinalCTA.astro';
+import SiteFooter from '../components/SiteFooter.astro';
 
 // Residential-specific sections
 import ResidentialHero from '../components/residential/ResidentialHero.astro';
@@ -119,6 +120,7 @@ const schema = {
 <Layout title={title} description={description}>
   <TopBar />
   <Nav />
+  <main id="main" tabindex="-1">
 
   {/* 1. Hero */}
   <ResidentialHero />
@@ -188,6 +190,8 @@ const schema = {
 
   {/* 10. Final CTA */}
   <FinalCTA />
+  </main>
+  <SiteFooter />
 
   <script type="application/ld+json" set:html={JSON.stringify(schema)} />
 </Layout>

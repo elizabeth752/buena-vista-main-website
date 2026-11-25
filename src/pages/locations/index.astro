@@ -10,6 +10,7 @@ import HubCards from '../../components/hub/HubCards.astro';
 import Testimonials from '../../components/Testimonials.astro';
 import VerifySection from '../../components/VerifySection.astro';
 import FinalCTA from '../../components/FinalCTA.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
 
 const title = 'Our Locations | Buena Vista, Arizona';
 const description = 'Buena Vista Health & Recovery Centers in Chandler, AZ — detox, residential, and outpatient treatment, open 24 hours. Serving Phoenix and the East Valley.';
@@ -29,6 +30,7 @@ const areas = [
 ---
 <Layout title={title} description={description}>
   <TopBar /><Nav />
+  <main id="main" tabindex="-1">
   <HubHero
     eyebrow="Our locations"
     title="Our Locations in Arizona"
@@ -42,4 +44,6 @@ const areas = [
   <HubCards eyebrow="Areas we serve" title="Where people come from" intro="These are service areas rather than additional facilities — care happens at Chandler." items={areas} bg="bg-sage-tint" />
   <Testimonials /><VerifySection />
   <FinalCTA />
+  </main>
+  <SiteFooter />
 </Layout>

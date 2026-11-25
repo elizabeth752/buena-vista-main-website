@@ -16,6 +16,7 @@ import HubCards from '../../components/hub/HubCards.astro';
 import Testimonials from '../../components/Testimonials.astro';
 import VerifySection from '../../components/VerifySection.astro';
 import FinalCTA from '../../components/FinalCTA.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
 
 const title = 'Who We Serve | Buena Vista, Chandler AZ';
 const description = 'Adults 18 and over, in a co-ed program with separate male and female housing. Detox and residential treatment in Chandler, AZ.';
@@ -40,6 +41,7 @@ const circumstances = [
 ---
 <Layout title={title} description={description}>
   <TopBar /><Nav />
+  <main id="main" tabindex="-1">
   <HubHero
     eyebrow="Who we serve"
     title="Who We Treat at Buena Vista"
@@ -53,4 +55,6 @@ const circumstances = [
   <HubCards eyebrow="However you arrive" title="Circumstances we plan around" intro="None of these makes treatment harder to get. They change the logistics, and the logistics are our job." items={circumstances} bg="bg-sage-tint" />
   <Testimonials /><VerifySection />
   <FinalCTA />
+  </main>
+  <SiteFooter />
 </Layout>

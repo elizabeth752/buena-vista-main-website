@@ -67,7 +67,7 @@ const weWillHelpYouFind = [
       {offered.map(o => (
         <a href={o.href} class="group bg-white rounded-xl p-7 border border-cream-soft shadow-sm hover:border-teal transition-colors block">
           <div class="flex items-start justify-between gap-3 mb-3">
-            <h3 class="font-display text-[24px] leading-[30px] text-navy">{o.label}</h3>
+            <h3 class="font-display text-[24px] leading-[30px] text-navy hyphens-auto break-words">{o.label}</h3>
           </div>
           <span class="inline-block font-body text-xs font-bold uppercase tracking-wide text-gold bg-gold/10 rounded-full px-3 py-1.5 mb-4">{o.tag}</span>
           <p class="font-body text-charcoal text-[16px] leading-[26px] mb-4">{o.desc}</p>

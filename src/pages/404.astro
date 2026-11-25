@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import TopBar from '../components/TopBar.astro';
 import Nav from '../components/Nav.astro';
 import FinalCTA from '../components/FinalCTA.astro';
+import SiteFooter from '../components/SiteFooter.astro';
 ---
 <Layout
   title="Page not found | Buena Vista"
@@ -11,6 +12,7 @@ import FinalCTA from '../components/FinalCTA.astro';
 >
   <TopBar />
   <Nav />
+  <main id="main" tabindex="-1">
 
   <section class="bg-cream">
     <div class="max-w-2xl mx-auto px-5 sm:px-6 lg:px-8 py-[90px] md:py-[130px]">
@@ -42,4 +44,6 @@ import FinalCTA from '../components/FinalCTA.astro';
   </section>
 
   <FinalCTA />
+  </main>
+  <SiteFooter />
 </Layout>

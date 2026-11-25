@@ -12,6 +12,7 @@ import HubHero from '../../components/hub/HubHero.astro';
 import HubCards from '../../components/hub/HubCards.astro';
 import VerifySection from '../../components/VerifySection.astro';
 import FinalCTA from '../../components/FinalCTA.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
 
 const title = 'Recovery Resources | Buena Vista, Arizona';
 const description = 'Plain guides to withdrawal, sober living and getting into treatment in Arizona, plus the crisis numbers worth having to hand.';
@@ -27,6 +28,7 @@ const guides = [
 ---
 <Layout title={title} description={description}>
   <TopBar /><Nav />
+  <main id="main" tabindex="-1">
   <HubHero
     eyebrow="Recovery resources"
     title="Addiction Recovery Resources in Arizona"
@@ -65,4 +67,6 @@ const guides = [
 
   <VerifySection />
   <FinalCTA />
+  </main>
+  <SiteFooter />
 </Layout>

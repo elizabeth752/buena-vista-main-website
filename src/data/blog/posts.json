@@ -4524,8 +4524,8 @@
         "html": "<strong>Disclaimer:</strong> This post serves a strictly educational use. It does not reflect the services, products, or therapeutic approaches of this establishment or its healthcare practitioners. The purpose of this blog is not to advertise the products, services, or therapeutic approaches of any other establishment that may be associated with this site. On the subject of safe or legal services, products, and appropriate therapies, recommendations ought to be given by a qualified professional on a case to case basis."
       },
       {
-        "t": "h3",
-        "html": "Related Posts"
+        "t": "p",
+        "html": "<strong>Related Posts</strong>"
       },
       {
         "t": "ul",
@@ -4535,8 +4535,8 @@
         ]
       },
       {
-        "t": "h3",
-        "html": "Contact us"
+        "t": "p",
+        "html": "<strong>Contact us</strong>"
       }
     ]
   },

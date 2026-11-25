@@ -35,6 +35,7 @@ import ReferralQuestions from '../components/referrals/ReferralQuestions.astro';
 
 import Testimonials from '../components/Testimonials.astro';
 import FinalCTA from '../components/FinalCTA.astro';
+import SiteFooter from '../components/SiteFooter.astro';
 
 const title = 'Professional & Hospital Referrals | Buena Vista, Chandler AZ';
 const description =
@@ -62,6 +63,7 @@ const schema = {
 <Layout title={title} description={description}>
   <TopBar />
   <Nav />
+  <main id="main" tabindex="-1">
 
   <ReferralsHero />
   <WhoWeCanTake />
@@ -70,6 +72,8 @@ const schema = {
   <ReferralQuestions />
 
   <FinalCTA />
+  </main>
+  <SiteFooter />
 
   <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
 </Layout>

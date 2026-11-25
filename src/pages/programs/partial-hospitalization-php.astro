@@ -28,6 +28,7 @@ import PhpFaq from '../../components/php/PhpFaq.astro';
 import Testimonials from '../../components/Testimonials.astro';
 import VerifySection from '../../components/VerifySection.astro';
 import FinalCTA from '../../components/FinalCTA.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
 
 const title = 'Partial Hospitalization (PHP) in Chandler, AZ | Buena Vista';
 const description =
@@ -58,6 +59,7 @@ const schema = {
 <Layout title={title} description={description}>
   <TopBar />
   <Nav />
+  <main id="main" tabindex="-1">
 
   <PhpHero />
   <WhatIsPhp />
@@ -76,4 +78,6 @@ const schema = {
 
   <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   <FinalCTA />
+  </main>
+  <SiteFooter />
 </Layout>

@@ -26,6 +26,7 @@ import VerifySection from '../../../components/VerifySection.astro';
 import FAQ from '../../../components/FAQ.astro';
 import AdmissionsPath from '../../../components/AdmissionsPath.astro';
 import FinalCTA from '../../../components/FinalCTA.astro';
+import SiteFooter from '../../../components/SiteFooter.astro';
 
 const title = 'Stimulant Addiction Treatment in Chandler, AZ | Buena Vista';
 const description =
@@ -108,6 +109,7 @@ const schema = {
 ---
 <Layout title={title} description={description}>
   <TopBar /><Nav />
+  <main id="main" tabindex="-1">
   <HubHero
     eyebrow="Meth and cocaine treatment"
     title="Stimulant Addiction Treatment in Chandler, Arizona"
@@ -148,5 +150,7 @@ const schema = {
   />
   <FAQ faqs={faqs} eyebrow="Straight answers" heading="Questions about stimulant treatment" />
   <FinalCTA />
+  </main>
+  <SiteFooter />
   <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
 </Layout>

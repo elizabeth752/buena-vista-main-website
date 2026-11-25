@@ -30,6 +30,7 @@ import VerifySection from '../../components/VerifySection.astro';
 import AdmissionsPath from '../../components/AdmissionsPath.astro';
 import FAQ from '../../components/FAQ.astro';
 import FinalCTA from '../../components/FinalCTA.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
 
 const title = "Drug and Alcohol Rehab Serving Scottsdale, Arizona | Buena Vista";
 const description = "Medical detox and residential treatment serving Scottsdale from our Chandler, AZ facility. There is no Scottsdale facility. AHCCCS accepted, open 24 hours.";
@@ -85,6 +86,7 @@ const schema = {
 <Layout title={title} description={description}>
   <TopBar />
   <Nav />
+  <main id="main" tabindex="-1">
 
   <ServiceAreaHero
     city="Scottsdale"
@@ -111,6 +113,8 @@ const schema = {
   <FAQ faqs={faqs} eyebrow="Straight answers" heading="Questions from Scottsdale" bg="bg-cream" />
 
   <FinalCTA />
+  </main>
+  <SiteFooter />
 
   <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
 </Layout>

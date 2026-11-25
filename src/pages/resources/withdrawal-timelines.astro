@@ -34,6 +34,7 @@ import WithdrawalQuestions from '../../components/withdrawal/WithdrawalQuestions
 import Testimonials from '../../components/Testimonials.astro';
 import VerifySection from '../../components/VerifySection.astro';
 import FinalCTA from '../../components/FinalCTA.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
 
 const title = 'Withdrawal Timelines: What to Expect | Buena Vista, Chandler AZ';
 const description =
@@ -61,6 +62,7 @@ const schema = {
 <Layout title={title} description={description}>
   <TopBar />
   <Nav />
+  <main id="main" tabindex="-1">
 
   <WithdrawalHero />
   <BySubstance />
@@ -69,6 +71,8 @@ const schema = {
   <WithdrawalQuestions />
 
   <FinalCTA />
+  </main>
+  <SiteFooter />
 
   <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
 </Layout>

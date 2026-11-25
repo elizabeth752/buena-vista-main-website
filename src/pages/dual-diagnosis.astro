@@ -8,6 +8,7 @@ import FacilityShowcase from '../components/FacilityShowcase.astro';
 import Testimonials from '../components/Testimonials.astro';
 import FAQ from '../components/FAQ.astro';
 import FinalCTA from '../components/FinalCTA.astro';
+import SiteFooter from '../components/SiteFooter.astro';
 import AdmissionsPath from '../components/AdmissionsPath.astro';
 
 import DualHero from '../components/dual/DualHero.astro';
@@ -81,6 +82,7 @@ const schema = {
 <Layout title={title} description={description}>
   <TopBar />
   <Nav />
+  <main id="main" tabindex="-1">
 
   <DualHero />
 
@@ -131,6 +133,8 @@ const schema = {
   />
 
   <FinalCTA />
+  </main>
+  <SiteFooter />
 
   <script type="application/ld+json" set:html={JSON.stringify(schema)} />
 </Layout>
