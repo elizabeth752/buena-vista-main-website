@@ -8,6 +8,7 @@ import ShareBar from '../../components/blog/ShareBar.astro';
 import RelatedPosts from '../../components/blog/RelatedPosts.astro';
 import VerifySection from '../../components/VerifySection.astro';
 import FinalCTA from '../../components/FinalCTA.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
 import { bySlug } from '../../data/team';
 import posts from '../../data/blog/posts.json';
 
@@ -75,6 +76,7 @@ const schema = {
 <Layout title={`${post.metaTitle ?? post.title} | Buena Vista`} description={post.description} ogType="article">
   <TopBar />
   <Nav />
+  <main id="main" tabindex="-1">
 
   <article>
     <header class="bg-cream pt-[50px] pb-[40px]">
@@ -126,8 +128,9 @@ const schema = {
                    the embed hands Spotify the full article URL, and on this site
                    a URL is a diagnosis. Lazy so it never blocks the article. */
                 <figure class="not-prose my-10">
+                  <div class="relative">
                   <iframe
-                    src={b.src}
+                    data-consent-src={b.src}
                     title={b.title}
                     width="100%"
                     height="232"
@@ -135,8 +138,15 @@ const schema = {
                     loading="lazy"
                     referrerpolicy="no-referrer"
                     allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                    class="rounded-xl w-full"
+                    class="block rounded-xl w-full h-[232px]"
+                    tabindex="-1"
+                    aria-hidden="true"
                   ></iframe>
+                  <div class="consent-ph absolute inset-0 rounded-xl" data-consent-placeholder>
+                    <p class="font-body text-charcoal">This player is from a third party and may set cookies.</p>
+                    <button type="button" data-consent-load>Load the player</button>
+                  </div>
+                  </div>
                   {b.caption && <figcaption class="font-body text-muted text-[15px] leading-[24px] mt-3" set:html={b.caption} />}
                 </figure>
               )
@@ -182,6 +192,8 @@ const schema = {
   <RelatedPosts slug={post.slug} category={post.category} />
   <VerifySection heading="Does your insurance cover treatment at Buena Vista?" bg="bg-white" />
   <FinalCTA />
+  </main>
+  <SiteFooter />
 
   <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
 </Layout>

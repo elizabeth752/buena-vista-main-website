@@ -51,16 +51,24 @@ const areas = [
       </div>
 
       <div>
-        <div class="rounded-xl overflow-hidden border border-cream-soft shadow-sm">
+        <div class="relative rounded-xl overflow-hidden border border-cream-soft shadow-sm">
           <iframe
             title="Map showing Buena Vista Health & Recovery Centers, 3033 S Arizona Ave, Chandler, AZ 85286"
-            src="https://www.google.com/maps?q=3033+S+Arizona+Ave,+Chandler,+AZ+85286&output=embed"
+            data-consent-src="https://www.google.com/maps?q=3033+S+Arizona+Ave,+Chandler,+AZ+85286&output=embed"
             width="100%"
             height="420"
             style="border:0"
             loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
+            class="block w-full h-[420px]"
+            referrerpolicy="no-referrer"
+            tabindex="-1"
+            aria-hidden="true"
           ></iframe>
+          <div class="consent-ph absolute inset-0" data-consent-placeholder>
+            <p class="font-body text-charcoal">The map is from Google and may set cookies.</p>
+            <button type="button" data-consent-load>Load the map</button>
+            <a href="https://www.google.com/maps/search/?api=1&query=3033+S+Arizona+Ave,+Chandler,+AZ+85286" target="_blank" rel="noopener">Open in Google Maps<span class="sr-only"> (opens in a new tab)</span></a>
+          </div>
         </div>
         <p class="font-body text-muted text-[15px] leading-[24px] mt-3">
           3033 S Arizona Ave, Chandler, AZ 85286 · open 24 hours

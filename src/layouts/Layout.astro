@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import CookieConsent from '../components/CookieConsent.astro';
 import A11yWidget from '../components/A11yWidget.astro';
 import { organization, breadcrumbs } from '../data/schema';
 interface Props {
@@ -40,6 +41,9 @@ const siteSchema = {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {/* Consent Mode v2 defaults (denied) must run before the GTM loader below. */}
+    <CookieConsent part="head" prefix="bv" cookieDomain=".buenavistarecovery.com" />
 
     {/* Google Tag Manager — container GTM-N9GP4KF, the same one the legacy
         WordPress site ran. Placed as high in <head> as the charset and viewport
@@ -179,6 +183,7 @@ const siteSchema = {
     <a href="#main" class="skip-link">Skip to content</a>
     <slot />
     <A11yWidget />
+    <CookieConsent prefix="bv" privacyHref="/privacy-policy/" primary="#002B5C" primaryDark="#001E42" text="#2B2B2B" tint="#F3F7F5" titleFont="'Newsreader', Georgia, serif" cookieDomain=".buenavistarecovery.com" functionalText="Loads embedded content such as maps and podcast players, which may set their own cookies." />
   </body>
 </html>
 
