@@ -55,6 +55,26 @@ const description = 'We have your details and someone from admissions will call 
         </p>
       </div>
 
+      {/* ?issue=rejected (CTM refused the lead) and ?issue=phone (the number
+          could not exist). Nearly always a mistyped number, so the page asks
+          them to check it instead of blaming "our end" (ClickUp 1dfm34y8ap4). */}
+      <div id="ty-check" hidden>
+        <div class="w-16 h-16 rounded-full bg-gold/15 flex items-center justify-center mx-auto mb-7">
+          <svg class="w-8 h-8 text-gold-deep" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" />
+          </svg>
+        </div>
+        <h1 class="ty-h1 font-display text-navy mb-5">Please check your phone number</h1>
+        <p class="font-body text-charcoal text-[18px] leading-[30px] mb-4 text-pretty">
+          Your details did not reach us, and the usual reason is a typo in the
+          phone number. Go back to the form to check it, or call us and we will
+          take your details on the phone. We answer at any hour.
+        </p>
+        <p class="mb-8">
+          <a href="/" data-back class="font-body text-teal font-semibold text-[16px] underline underline-offset-4 hover:opacity-70 transition-opacity">Go back and check my number</a>
+        </p>
+      </div>
+
       <a
         href="tel:8883625576"
         class="inline-flex items-center justify-center gap-3 bg-teal hover:bg-teal-dark text-white font-body font-bold text-[18px] px-9 py-4 rounded-lg transition-colors"
@@ -101,9 +121,20 @@ const description = 'We have your details and someone from admissions will call 
   // Use `hidden` rather than a style change: global.css carries
   // [hidden]{display:none!important}, so this cannot be undone by a utility.
   const params = new URLSearchParams(window.location.search);
-  if (params.has('issue')) {
+  const issue = params.get('issue');
+  if (issue !== null) {
+    const numberProblem = issue === 'rejected' || issue === 'phone';
     document.getElementById('ty-ok')?.setAttribute('hidden', '');
-    document.getElementById('ty-issue')?.removeAttribute('hidden');
+    document.getElementById(numberProblem ? 'ty-check' : 'ty-issue')?.removeAttribute('hidden');
+    // Back keeps what they typed (the browser restores the form), which a
+    // fresh load of the page would not. Without history, the link's href
+    // (the homepage, which has the form) still works.
+    document.querySelector<HTMLAnchorElement>('#ty-check [data-back]')?.addEventListener('click', (e) => {
+      if (history.length > 1 && document.referrer) {
+        e.preventDefault();
+        history.back();
+      }
+    });
   } else if (params.get('sent') === '1') {
     // The one signal that a lead really reached CTM. GTM counts GA4
     // form_submissions on this event, not on the browser's submit.
