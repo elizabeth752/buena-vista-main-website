@@ -195,7 +195,12 @@ const reviews = [
       text.focus();
       return;
     }
-    if (phone.value.replace(/\D/g, '').length < 10) {
+    // Same check as InsuranceForm.astro: CTM refuses a US number whose area
+    // code or exchange starts with 0 or 1 (ClickUp 1dfm34y8ap4).
+    const typed = phone.value.trim();
+    let digits = typed.replace(/\D/g, '');
+    if (digits.length === 11 && digits.startsWith('1')) digits = digits.slice(1);
+    if (!/^\+(?!1)/.test(typed) && !/^[2-9]\d{2}[2-9]\d{6}$/.test(digits)) {
       error.textContent = ERRORS.phone;
       error.hidden = false;
       phone.focus();
