@@ -8,7 +8,7 @@
 // submission from the deployed site appear on a lead in CTM.
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { toE164, spamReason, rateLimited, buildPayload, redactDigits } from '../api/lead.js';
+import { toE164, spamReason, rateLimited, buildPayload, redactDigits, isDialableE164, ctmReason } from '../api/lead.js';
 
 test('toE164 accepts the shapes people actually type', () => {
   assert.equal(toE164('(480) 555-1234'), '+14805551234');
@@ -116,4 +116,34 @@ test('log redaction keeps the diagnosis and drops the person', () => {
   assert.equal(redactDigits('number 14805551234 invalid'), 'number ########### invalid');
   assert.equal(redactDigits('status 404'), 'status 404');   // short runs survive
   assert.equal(redactDigits(null), null);
+});
+
+// ── ClickUp 1dfm34y8ap4: numbers CTM refuses never reach it ────────────────
+test('isDialableE164 refuses area codes and exchanges that start with 0 or 1', () => {
+  assert.equal(isDialableE164(toE164('(123) 456-7890')), false);   // Luis's repro
+  assert.equal(isDialableE164(toE164('(480) 123-4567')), false);
+  assert.equal(isDialableE164(toE164('(023) 456-7890')), false);
+  assert.equal(isDialableE164(toE164('1 (123) 456-7890')), false);
+  assert.equal(isDialableE164(null), false);
+});
+
+test('isDialableE164 lets real numbers through, including other countries', () => {
+  assert.equal(isDialableE164(toE164('(480) 555-1234')), true);
+  assert.equal(isDialableE164(toE164('1-888-362-5576')), true);
+  assert.equal(isDialableE164('+447911123456'), true);
+});
+
+test('buildPayload refuses a number CTM would refuse', () => {
+  assert.equal(buildPayload(new URLSearchParams({ phone_number: '(123) 456-7890' })), null);
+  assert.ok(buildPayload(new URLSearchParams({ phone_number: '(480) 555-1234' })));
+});
+
+test('ctmReason keeps the reason and drops the person', () => {
+  const f = new URLSearchParams({ caller_name: 'Jane Doe', email_address: 'jane@example.com' });
+  const r = ctmReason({ status: 'error', text: 'phone +11234567890 for Jane Doe (jane@example.com) is invalid' }, f);
+  assert.ok(r.includes('is invalid'));
+  assert.ok(!r.includes('Jane') && !r.includes('Doe') && !r.includes('jane@'));
+  assert.ok(!/\d{5,}/.test(r));
+  assert.equal(ctmReason({ status: 'error' }, f), 'status:error');
+  assert.ok(ctmReason({ text: 'x'.repeat(900) }, f).length <= 300);
 });

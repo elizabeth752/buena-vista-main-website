@@ -97,6 +97,40 @@ export function toE164(raw) {
   return null;                                                // too short to guess
 }
 
+/**
+ * True when a +1 number could exist. CTM refuses a US/CA number whose area
+ * code or exchange (the 3 digits after it) starts with 0 or 1, e.g.
+ * (123) 456-7890, and before this check the visitor only learned that from a
+ * "something went wrong" page (ClickUp 1dfm34y8ap4, 2026-11-27). Numbers in
+ * another country code are left to CTM. InsuranceForm.astro runs the same
+ * check in the browser so the visitor stays on the form; this copy covers
+ * anyone without JavaScript.
+ */
+export function isDialableE164(e164) {
+  if (!e164) return false;
+  if (!e164.startsWith('+1')) return true;
+  const local = e164.slice(2);
+  return /^[2-9]\d{2}[2-9]\d{6}$/.test(local);
+}
+
+/**
+ * CTM's reason for refusing a lead, safe for the logs: the submitted name and
+ * email are cut out, any e-mail address or run of 5+ digits is masked, and the
+ * text is capped. The reason is what we need to debug; the person is not.
+ */
+export function ctmReason(ctm, fields) {
+  let text = [ctm?.text, ctm?.error, ctm?.message, ctm?.errors && JSON.stringify(ctm.errors)]
+    .filter(Boolean)
+    .join(' | ') || `status:${ctm?.status ?? 'none'}`;
+  for (const name of ['caller_name', 'email_address']) {
+    for (const part of String(fields?.get(name) || '').split(/\s+/)) {
+      if (part.length >= 2) text = text.split(part).join('[redacted]');
+    }
+  }
+  text = text.replace(/[^\s@]+@[^\s@]+/g, '[email]');
+  return redactDigits(text).slice(0, 300);
+}
+
 // ── SPAM CHECKS ────────────────────────────────────────────────────────────
 // ⚠️ EVERY RULE HERE IS A FALSE-POSITIVE RISK ON A CRISIS LEAD. They are
 // deliberately narrow: patterns no real person filling in a rehab enquiry
@@ -163,7 +197,7 @@ export function buildPayload(fields) {
   const out = new URLSearchParams();
 
   const phone = toE164(fields.get('phone_number'));
-  if (!phone) return null;
+  if (!isDialableE164(phone)) return null;
   out.set('phone_number', phone);
 
   for (const name of ALLOWED) {
@@ -258,8 +292,9 @@ export default async function handler(req, res) {
   const url = `${CTM_ENDPOINT}/${reactor}?key=${encodeURIComponent(key)}`;
 
   let ctm;
+  let upstream;
   try {
-    const upstream = await fetch(url, {
+    upstream = await fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: payload.toString(),
@@ -272,7 +307,12 @@ export default async function handler(req, res) {
 
   // CTM returns HTTP 200 with status:"error" — treat that as the failure it is.
   if (ctm.status !== 'success') {
-    console.error('[lead] CTM rejected the submission', { text: redactDigits(ctm.text) });
+    // CTM's reason, never the person: see ctmReason(). Vercel keeps runtime
+    // logs for 1 day on this plan, so check them the day a rejection shows up.
+    console.error('[lead] CTM rejected the submission', {
+      reason: ctmReason(ctm, fields),
+      http: upstream.status,
+    });
     return fail(res, 'rejected');
   }
 

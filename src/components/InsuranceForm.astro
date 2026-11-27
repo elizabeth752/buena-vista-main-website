@@ -49,7 +49,8 @@ const isContact = variant === 'contact';
       </div>
       <div>
         <label class="block text-xs font-bold text-charcoal uppercase tracking-wide mb-1.5" for={`${id}-phone`}>Your Phone</label>
-        <input id={`${id}-phone`} name="phone_number" type="tel" required autocomplete="tel" placeholder="(555) 000-0000" class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm font-body focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal transition-colors" />
+        <input id={`${id}-phone`} name="phone_number" type="tel" required autocomplete="tel" placeholder="(555) 000-0000" aria-describedby={`${id}-phone-error`} data-phone class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm font-body focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal aria-invalid:border-red-700 transition-colors" />
+        <p id={`${id}-phone-error`} role="alert" class="mt-1.5 text-[13px] leading-[19px] font-body font-semibold text-red-700" hidden>Please check your phone number</p>
       </div>
       {/* Date of birth: admissions cannot run a benefits check without it
            (client request, 2026-10-20). Always visible since 2026-10-26: folded
@@ -145,6 +146,17 @@ const isContact = variant === 'contact';
   // dataLayer, or a query string. They travel in the POST body and nowhere else.
   const params = new URLSearchParams(window.location.search);
 
+  /** 10 digits (a leading 1 is allowed), and neither the area code nor the
+      next 3 digits start with 0 or 1. A number typed with another country
+      code (+44 ...) is left to CTM. */
+  function phoneLooksReal(raw: string): boolean {
+    const value = raw.trim();
+    if (/^\+(?!1)/.test(value)) return true;
+    let digits = value.replace(/\D/g, '');
+    if (digits.length === 11 && digits.startsWith('1')) digits = digits.slice(1);
+    return /^[2-9]\d{2}[2-9]\d{6}$/.test(digits);
+  }
+
   function stash(key: string, value: string | null): string {
     try {
       if (value) sessionStorage.setItem(key, value);
@@ -188,8 +200,30 @@ const isContact = variant === 'contact';
     // Stop the double-submit that produces duplicate leads when someone taps
     // twice on a slow connection. Re-enabled on pageshow so a browser Back does
     // not leave a dead button behind.
+    // Phone check before anything leaves the page. CTM refuses a number whose
+    // area code or exchange starts with 0 or 1, and the visitor used to find
+    // out only from an error page, then resubmit the same number (ClickUp
+    // 1dfm34y8ap4). Here they stay on the form with what they typed, and the
+    // message clears as soon as they edit the number. api/lead.js repeats the
+    // check (isDialableE164) for anyone without JavaScript.
+    const phoneField = form.querySelector<HTMLInputElement>('input[data-phone]');
+    const phoneError = phoneField ? document.getElementById(`${phoneField.id}-error`) : null;
+    const setPhoneError = (on: boolean) => {
+      if (!phoneField || !phoneError) return;
+      phoneError.hidden = !on;
+      if (on) phoneField.setAttribute('aria-invalid', 'true');
+      else phoneField.removeAttribute('aria-invalid');
+    };
+    phoneField?.addEventListener('input', () => setPhoneError(false));
+
     const label = form.querySelector<HTMLButtonElement>('button[type="submit"]')?.textContent ?? '';
-    form.addEventListener('submit', () => {
+    form.addEventListener('submit', (e) => {
+      if (phoneField && !phoneLooksReal(phoneField.value)) {
+        e.preventDefault();
+        setPhoneError(true);
+        phoneField.focus();
+        return;
+      }
       const button = form.querySelector<HTMLButtonElement>('button[type="submit"]');
       if (!button) return;
       button.disabled = true;
