@@ -5777,5 +5777,174 @@
     ],
     "words": 1508,
     "readMinutes": 7
+  },
+  {
+    "slug": "arizona-dui-laws-what-a-dui-means-for-your-drinking",
+    "title": "Arizona DUI Laws: What a DUI Means for Your Drinking",
+    "description": "Arizona DUI laws carry mandatory jail time, fines, license suspension, and alcohol screening. See what a DUI charge can mean for your drinking.",
+    "updated": "2026-11-24",
+    "author": "will-heise",
+    "category": "Alcohol",
+    "links": [
+      [
+        "/what-we-treat/alcohol-addiction/",
+        "Alcohol addiction treatment"
+      ],
+      [
+        "/programs/intensive-outpatient-iop/",
+        "Intensive outpatient program (IOP)"
+      ],
+      [
+        "/insurance/verify-your-benefits/",
+        "Verify your insurance benefits"
+      ]
+    ],
+    "blocks": [
+      {
+        "t": "p",
+        "html": "Arizona has some of the strictest DUI laws in the U.S., with mandatory jail time, fines, license suspension, and alcohol screening attached to every conviction."
+      },
+      {
+        "t": "p",
+        "html": "In 2025, state troopers in Arizona made over 5,000 DUI arrests <a href=\"https://gohs.az.gov/sites/default/files/2025-04/Copy%20of%2010%20Year%20DUI%20Statistics%20Statewide%20%28Per%20Agency%29.xlsx%20-%20Sheet1_0.pdf\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">[1]</a>. Understanding what a DUI is, how it&rsquo;s handled under Arizona law, and how it connects to alcohol use disorder (AUD) can be a first step toward recognizing a harmful pattern and getting help before it costs you more than a license."
+      },
+      {
+        "t": "h2",
+        "html": "What Is a DUI in Arizona?"
+      },
+      {
+        "t": "p",
+        "html": "A DUI is a criminal charge for being in physical control of a vehicle while impaired by alcohol, drugs, or toxic vapor. Arizona&rsquo;s core DUI statute, <a href=\"https://azleg.gov/ars/28/01381.htm\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">A.R.S. 28-1381</a>, makes it illegal to be in physical control of a vehicle under any of the following conditions:"
+      },
+      {
+        "t": "ul",
+        "items": [
+          "Impaired &ldquo;to the slightest degree&rdquo; by alcohol, drugs, or toxic vapor",
+          "A blood alcohol concentration (BAC) of 0.08% or higher within two hours of driving",
+          "Any drug or its metabolite in your system, excluding medication taken as prescribed",
+          "A BAC of 0.04% or higher while driving a commercial, rideshare, or rental vehicle"
+        ]
+      },
+      {
+        "t": "p",
+        "html": "You don&rsquo;t have to be driving to be charged with a DUI in Arizona. Sitting in a parked car with the engine running counts as physical control of the vehicle, and a BAC under 0.08% doesn&rsquo;t rule out an arrest &mdash; the &ldquo;slightest degree&rdquo; standard means any visible sign of impairment can be enough."
+      },
+      {
+        "t": "p",
+        "html": "A second statute, <a href=\"https://www.azleg.gov/ars/28/01382.htm\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">A.R.S. 28-1382</a>, covers &ldquo;extreme&rdquo; DUI and applies at a BAC of 0.15% and above, with stiffer penalties than a standard first offense."
+      },
+      {
+        "t": "h2",
+        "html": "What Are Arizona’s DUI Penalties?"
+      },
+      {
+        "t": "p",
+        "html": "Arizona requires mandatory jail time and fines for every DUI conviction, and both increase with BAC and with prior offenses &mdash; including DUIs from other states."
+      },
+      {
+        "t": "img",
+        "src": "/Asset/Blog/arizona-dui-penalties-at-a-glance.svg",
+        "alt": "Arizona DUI penalties at a glance: first DUI at BAC 0.08%-0.149% carries a 10-day minimum jail term, $1,250 fine, and 90-day license suspension; at BAC 0.15%-0.199%, 30 days and $2,500; at BAC 0.20% and above, 45 days and $2,750; a second DUI within 7 years carries a 90-day minimum, $3,000 fine, and a 1-year license revocation."
+      },
+      {
+        "t": "p",
+        "html": "Every alcohol-related DUI in Arizona also requires:"
+      },
+      {
+        "t": "ul",
+        "items": [
+          "Installing a certified ignition interlock device (IID) on any vehicle you drive",
+          "Completing a traffic survival school course",
+          "A court-ordered alcohol or drug screening at an approved facility"
+        ]
+      },
+      {
+        "t": "p",
+        "html": "The cost of the IID, the screening, and any legal fees falls on the person convicted. An IID is a breathalyzer wired into a vehicle&rsquo;s ignition: breathe into it, and if your BAC reads above 0.02%, the engine won&rsquo;t start."
+      },
+      {
+        "t": "p",
+        "html": "Some DUIs are charged as felonies. An aggravated DUI applies in cases such as driving with a child under 15 in the vehicle, or driving while already required to use an IID, and carries longer prison time along with an extended IID requirement."
+      },
+      {
+        "t": "h2",
+        "html": "Does a DUI Mean I Have an Alcohol Use Disorder?"
+      },
+      {
+        "t": "p",
+        "html": "A DUI conviction in Arizona triggers a mandatory screening to determine whether substance use treatment is needed. The screening is conducted by a medical professional, and when treatment is recommended for an aggravated DUI, it may mean attending an <a href=\"/programs/intensive-outpatient-iop/\">intensive outpatient program (IOP)</a>."
+      },
+      {
+        "t": "p",
+        "html": "A DUI can also be the consequence of an existing alcohol use disorder, and for some people it&rsquo;s the event that forces a reckoning with their drinking. <a href=\"/blog/six-stages-of-alcoholism/\">Denial is common at every stage of alcohol misuse</a>, and a DUI is often the first piece of evidence that&rsquo;s hard to argue with."
+      },
+      {
+        "t": "p",
+        "html": "Research backs up the connection. Roughly two-thirds of convicted DUI offenders are alcohol dependent <a href=\"https://www.responsibility.org/wp-content/uploads/2015/03/ScreeningandAssessment.docx.pdf\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">[2]</a>, people with AUD drive under the influence at far higher rates than the general population <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC6396510/\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">[3]</a>, and among people with repeat DUIs, nearly all meet the criteria for an AUD diagnosis <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC4628836/\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">[4]</a>."
+      },
+      {
+        "t": "p",
+        "html": "Even without a treatment requirement, a DUI is worth treating as a moment to reflect. The <a href=\"https://www.publicsafetymedicine.org/leo/substance-use-disorders/appendix-a-dsm-iv-tr-and-dsm-5-diagnostic-criteria\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">DSM-5 diagnostic criteria for AUD</a> is a reasonable place to start: Do you often drink more, or longer, than you planned? Have you tried to cut back and found you couldn&rsquo;t? Has drinking affected your job, your studies, or your relationships?"
+      },
+      {
+        "t": "p",
+        "html": "Talk to a medical professional about how much you drink, how often, whether you experience cravings, and what role alcohol played in the arrest. They can help you decide on next steps, and <a href=\"/insurance/verify-your-benefits/\">verifying your insurance benefits</a> is a quick way to find out what treatment could look like."
+      },
+      {
+        "t": "h2",
+        "html": "What Does Treatment for AUD Involve?"
+      },
+      {
+        "t": "p",
+        "html": "Treatment for AUD, whether <a href=\"/blog/court-ordered-rehab-in-arizona/\">court-ordered</a> or sought independently, typically combines psychotherapy, medication-assisted treatment (MAT) where appropriate, and structured daily routines."
+      },
+      {
+        "t": "p",
+        "html": "Psychotherapy is most often cognitive behavioral therapy (CBT) or dialectical behavioral therapy (DBT), delivered through <a href=\"/therapies/\">individual and group sessions</a> that work through the thought patterns driving the drinking. Sessions also address trauma that frequently sits underneath alcohol use, and build the emotional regulation and communication skills that carry over into work and relationships."
+      },
+      {
+        "t": "p",
+        "html": "Where it&rsquo;s clinically necessary, <a href=\"/medical-detox/\">MAT can ease withdrawal</a> and reduce cravings during alcohol detox. MAT is administered only by medical professionals in a licensed setting."
+      },
+      {
+        "t": "p",
+        "html": "Exercise, nutrition, and practices like meditation round out treatment, supporting the self-esteem and motivation it takes to sustain an alcohol-free life. And <a href=\"/blog/do-i-need-to-undergo-alcohol-detox-after-a-relapse/\">if a relapse follows treatment</a>, a return to detox doesn&rsquo;t mean starting over from nothing."
+      },
+      {
+        "t": "h2",
+        "html": "Heal From Alcohol Addiction at Buena Vista Health & Recovery Center, AZ"
+      },
+      {
+        "t": "p",
+        "html": "It doesn&rsquo;t take a DUI to decide you need to recover. We specialize in <a href=\"/what-we-treat/alcohol-addiction/\">alcohol addiction treatment</a>, with effective, empathetic care at our <a href=\"/residential-treatment/\">residential program</a> in Arizona."
+      },
+      {
+        "t": "p",
+        "html": "Our team of licensed clinicians offers therapies including CBT and DBT, and we offer MAT when it&rsquo;s appropriate, adjusting the program to where you are now and where you hope to be."
+      },
+      {
+        "t": "p",
+        "html": "We offer private residences, your own room and bathroom, and catered meals to ensure you heal with dignity. If you work with the court system as a probation officer, case manager, or attorney, see our <a href=\"/referrals/\">referral page</a> for how to place someone directly."
+      },
+      {
+        "t": "p",
+        "html": "If you&rsquo;re the one facing a DUI, <a href=\"/blog/benefits-of-voluntarily-enrolling-in-addiction-treatment-after-a-dui/\">voluntary treatment carries its own benefits</a>, even before a court requires it. Change is possible. Contact our admissions team today."
+      },
+      {
+        "t": "h2",
+        "html": "Sources"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Arizona Governor&rsquo;s Office of Highway Safety. 2025. <a href=\"https://gohs.az.gov/sites/default/files/2025-04/Copy%20of%2010%20Year%20DUI%20Statistics%20Statewide%20%28Per%20Agency%29.xlsx%20-%20Sheet1_0.pdf\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">10-Year DUI Statistics Statewide (Per Agency).</a> gohs.az.gov.",
+          "Foundation for Advancing Alcohol Responsibility. <a href=\"https://www.responsibility.org/wp-content/uploads/2015/03/ScreeningandAssessment.docx.pdf\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">Screening and Assessment for All Convicted Drunk Drivers.</a> responsibility.org.",
+          "Roberts, W. et al. 2019. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC6396510/\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">High Risk of Alcohol-Impaired Driving in Adults With Comorbid Alcohol and Substance Use Disorders in the U.S. Population.</a> Journal of Studies on Alcohol and Drugs.",
+          "Nelson, S. et al. 2016. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC4628836/\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">A Prospective Study of Psychiatric Comorbidity and Recidivism Among Repeat DUI Offenders.</a> Archives of Scientific Psychology."
+        ]
+      }
+    ],
+    "words": 1028,
+    "readMinutes": 5
   }
 ]
